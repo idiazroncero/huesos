@@ -1,5 +1,5 @@
 # HUESOS
-by [idiaz.roncero](http://idiazroncero.com)
+v0.0.2 | By [idiaz.roncero](http://idiazroncero.com)
 
 __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools. 
 
@@ -21,6 +21,6 @@ Presentations aren't needed here. No grid system will *ever* beat Susy. No one. 
 
 
 
-BTW, in spanish 'huesos' means __bones__ and 'osamenta' is a fancy way to say __skeleton__.
+BTW, in spanish 'huesos' means *bones* and 'osamenta' is a fancy way to say *skeleton*.
 
 Shake your osamenta.
