@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nacho Diaz",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "git@github.com:idiazroncero/huesos.git",
+  "dependencies": {
+    "ritmo": "^0.5.0",
+    "susy": "^2.2.12"
+  }
 }
