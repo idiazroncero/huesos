@@ -19,6 +19,11 @@ Presentations aren't needed here. No grid system will *ever* beat Susy. No one. 
 
 (Well, CSS grid will, but that's something completely different, that's an official CSS spec. We talkin' about SCSS tools here)
 
+## NPM Scripts
+
+For further reference, see `package.json`
+
+`build` runs webpack.
 
 
 BTW, in spanish 'huesos' means *bones* and 'osamenta' is a fancy way to say *skeleton*.
