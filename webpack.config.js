@@ -1,24 +1,44 @@
+// Path es parte de Node.js y permite crear rutas
 const path = require('path');
+
+// Cargamos los plugins en un archivo aparte
 const plugins = require('./webpack.plugins');
 
+// Un objeto constante que incluye todos nuestros PATHS
+const PATHS = {
+	src: path.join(__dirname, 'src/js'),
+	build: path.join(__dirname, 'dist'),
+};
+
 module.exports = {
-	entry: './src/js/index.js',
+	entry: {
+		src : PATHS.src,
+	},
 	output: {
-		filename: 'js/bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		filename: 'js/[name].[hash:6].js',
+		path: PATHS.build,
 	},
 	module: {
 		rules: [
-			// JS
+			// JS BABEL
 			{
 				test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['env']
-					}
-				}
+						presets: ['env'],
+					},
+				},
+			},
+			// JS LINTING
+			{
+				test: /\.js$/,
+				enforce: 'pre',
+				loader: 'eslint-loader',
+				options: {
+					emitWarning: true,
+				},
 			},
 			// CSS Y SCSS
 			{
@@ -26,14 +46,17 @@ module.exports = {
 				use: plugins.extraeCSS.extract({
 					use: [
 						'css-loader', // translates CSS into CommonJS
-						'sass-loader' // compiles Sass to CSS
+						'postcss-loader',
+						'sass-loader', // compiles Sass to CSS
 					],
-					fallback: 'style-loader'
-				})
-			}
-		]
+					fallback: 'style-loader',
+				}),
+			},
+		],
 	},
 	plugins: [
-	    plugins.extraeCSS
-	]
+		plugins.limpiaBuild,
+		plugins.generaHTML,
+		plugins.extraeCSS,
+	],
 };

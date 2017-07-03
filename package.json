@@ -4,25 +4,37 @@
   "description": "Huesos is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "lint:js": "eslint src/ webpack.*.js --cache",
+    "lint:css": "stylelint dist/css/*.css"
   },
   "author": "Nacho Diaz",
   "license": "MIT",
   "repository": "git@github.com:idiazroncero/huesos.git",
   "dependencies": {
+    "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.5.2",
+    "clean-webpack-plugin": "^0.1.16",
     "concise.css": "^4.1.2",
     "css-loader": "^0.28.4",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0",
     "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.29.0",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
     "ritmo": "^0.5.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "stylelint": "^7.12.0",
     "susy": "^2.2.12",
     "uikit": "^3.0.0-beta.25",
     "webpack": "^3.0.0"
-  }
+  },
+  "browserslist": [
+    "> 1%"
+  ]
 }

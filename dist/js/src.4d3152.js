@@ -81,12 +81,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // We use webpack tutorial to bootstrap things and check it's all up and running
 
 function component() {
-  var element = document.createElement('div');
+	var element = document.createElement('div');
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _lodash2.default.join(['Hello', 'webpack'], ' ');
+	// Lodash, currently included via a script, is required for this line to work
+	element.innerHTML = _lodash2.default.join(['Hello', 'webpack'], ' ');
 
-  return element;
+	return element;
 }
 
 document.body.appendChild(component());
