@@ -1,1 +1,7 @@
+# npm / yarn modules
 node_modules
+
+# Visual Studio project-level config
+.vscode
+
+

@@ -40,6 +40,11 @@ module.exports = {
 					emitWarning: true,
 				},
 			},
+			// HANDLEBARS TEMPLATES
+			{
+				test: /\.hbs$/,
+				loader: 'handlebars-loader'
+			},
 			// CSS Y SCSS
 			{
 				test: /\.scss$/,

@@ -8,9 +8,9 @@ __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS 
 
 __Huesos__ shamelessly grabs pieces of code from these amazing projects:
 
-#### UIKit + Concise.css
+#### UIKit / Concise.css / Foundation
 
-Normalization, basic components, mixins, helpers && UI.
+Grabs normalization, basic components, mixins, helpers , UI... from here and there.
 
 #### Ritmo
 

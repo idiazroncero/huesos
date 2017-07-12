@@ -10,7 +10,8 @@ exports.extraeCSS = new ExtractTextPlugin({
 });
 
 exports.generaHTML = new HtmlWebpackPlugin({
-	title: 'Huesos',
+	title: 'Huesecillos',
+	template: 'src/html/index.hbs'
 });
 
 exports.limpiaBuild = new CleanWebpackPlugin(['dist'], {

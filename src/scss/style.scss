@@ -1,5 +1,10 @@
-$red: #ff00ff;
+// Versión alternativa, más reducida, de normalize.css. IE8+
+@import "~sanitize.css/sanitize";
+
+@import "config";
+
+@include ritmo-baseline();
+
 body {
-	background:$red;
-	display:flex;
+    background: #FF00FF;
 }
