@@ -46,7 +46,7 @@ SCSS is compiled to CSS through Sass using node-sass and then post-processed usi
 
 Webpack automagically compiles a living styleguide on `./styleguide`. It uses KSS-node under the hood.
 
-Please note the Styleguide template is based on `./styleguide/kss-demo`, which is a separate NPM/Yarn project. To modify the styleguide look and feel, modify the kss-demo source files and then `npm run sass` inside its root folder.
+Please note the Styleguide template is based on `./src/kss-src`, which is a separate NPM/Yarn project. To modify the styleguide look and feel, modify the kss-demo source files and then `npm run sass` inside its root folder.
 
 ___
 

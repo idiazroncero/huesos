@@ -1,3 +1,14 @@
 // Mixins y librerías de terceros
-
 @import "~ritmo/ritmo";
+
+// ------
+// RITMO VERTICAL
+// ------
+
+$base-font-size: 16px;
+$base-line-unit: $base-font-size / 4;
+$base-line-multi: 4;
+$ritmo-unit: 'rem';
+$rem-with-px-fallback: true;
+$ritmo-border-width: 1px;
+$round-to-nearest-half-size: true;

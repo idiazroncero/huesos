@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "lint:js": "eslint src/ webpack.*.js --cache",
-    "lint:css": "stylelint dist/css/*.css",
-    "kss" : "kss"
+    "lint:css": "stylelint dist/css/*.css"
   },
   "author": "Nacho Diaz",
   "license": "MIT",
