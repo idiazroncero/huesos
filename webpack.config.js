@@ -63,5 +63,6 @@ module.exports = {
 		plugins.limpiaBuild,
 		plugins.generaHTML,
 		plugins.extraeCSS,
+		plugins.generateKSS,
 	],
 };

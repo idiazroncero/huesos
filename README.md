@@ -42,6 +42,12 @@ Javascript runs through Babel transpiling and ESLint with custom rules defined i
 
 SCSS is compiled to CSS through Sass using node-sass and then post-processed using autoprefixer.
 
+#### KSS-Node Styleguide
+
+Webpack automagically compiles a living styleguide on `./styleguide`. It uses KSS-node under the hood.
+
+Please note the Styleguide template is based on `./styleguide/kss-demo`, which is a separate NPM/Yarn project. To modify the styleguide look and feel, modify the kss-demo source files and then `npm run sass` inside its root folder.
+
 ___
 
 BTW, in spanish 'huesos' means *bones* and 'osamenta' is a fancy way to say *skeleton*.

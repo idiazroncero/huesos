@@ -8,3 +8,21 @@
 body {
     background: #FF00FF;
 }
+
+// Botón.
+//
+// Puede usarse en <button>s o en <a.button>
+//
+// Markup:
+// <button class="button {{modifier_class}}">Button</button>
+//
+// :hover             - Subtle hover highlight.
+// .stars-given       - A highlight indicating you’ve already given a star.
+// .stars-given:hover - Subtle hover highlight on top of stars-given styling.
+// .disabled          - Dims the button to indicate it cannot be used.
+//
+// Styleguide components.buttons
+
+.button {
+    color:red;
+}

@@ -134,7 +134,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -513,6 +514,10 @@ textarea,
 
 html {
   font-size: 100%;
-  line-height: 1.5625em; 
-  color:#ff00ff}
-  
+  line-height: 1.5625em; }
+
+body {
+  background: #FF00FF; }
+
+.button {
+  color: red; }
