@@ -2534,3 +2534,33 @@ h1, h2, h3, h4, .clases, #ids {
 
 .button {
   color: red; }
+
+body {
+  background-color: #ffffff; }
+
+a, a:link {
+  color: #2b90d9;
+  text-decoration: none; }
+
+a:visited {
+  color: #1573b6; }
+
+a:focus, a:hover {
+  color: yellow;
+  text-decoration: none;
+  background-color: wheat;
+  position: relative; }
+  a:focus:before, a:focus:after, a:hover:before, a:hover:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: wheat; }
+  a:focus:before, a:hover:before {
+    left: -2px; }
+  a:focus:after, a:hover:after {
+    right: -2px; }
+
+a:active {
+  color: #4eb1f9; }

@@ -24,3 +24,11 @@
 .button {
     color:red;
 }
+
+body {
+    background-color: contrast-color(#333);
+}
+
+a {
+    @include set-link();
+}

@@ -7,6 +7,8 @@
 @import "base/mixins/pow";
 @import "base/mixins/type-scale";
 @import "base/mixins/get-color";
+@import "base/mixins/contrast-color";
+@import "base/mixins/set-link";
 
 // ------
 // RITMO VERTICAL
@@ -64,10 +66,11 @@ $h6-font-size: typeScale(1);
 
 
 // ------
-// Color palette
+// PALETAS DE COLOR
 // ------
-// Usa la función getColor() para extraer los valores.
+// Usa la función get-color() para extraer los valores.
 // Por ejemplo: getColor('base', 'primary') => #C65146
+// Usa la function contrast-color($color) para contrastar sobre un fondo dado.
 
 $colors: (
   base: (
@@ -120,11 +123,29 @@ $colors: (
     "lighter": #fa8181
   ),
 
-  gray: (
-    "darker":  #333333,
-    "dark":    #4d4d4d,
-    "base":    #666666,
-    "light":   #808080,
-    "lighter": #999999
+  grises: (
+    "negro":    #000000,
+    "blanco":   #ffffff
   )
 ) !default;
+
+// ------
+// ENLACES
+// ------
+// Todala funcionalidad queda encapsulada en un mixin, set-link()
+// Existen cuatro estrategias de enlaces.
+
+$link-strategy: mark; // Alternativas: border, smart, mark
+$link-decoration-on-hover: true; // False para actuar antes del hover 
+
+// Sólo para $link-strategy:border
+$link-border-color: get-color(blue, base);
+$link-border-width: ritmo(1);
+
+// Sólo para $link-strategy:mark
+$link-mark-color: wheat;
+
+$link-color: get-color(blue, base);
+$link-visited: get-color(blue, darker);
+$link-hover: get-color(blue, light);
+$link-active: get-color(blue, lighter);
