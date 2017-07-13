@@ -1,0 +1,28 @@
+h1 { @include ritmo-font-size($h1-font-size); }
+h2 { @include ritmo-font-size($h2-font-size); }
+h3 { @include ritmo-font-size($h3-font-size); }
+h4 { @include ritmo-font-size($h4-font-size); }
+h5 { @include ritmo-font-size($h5-font-size); }
+h6 { @include ritmo-font-size($h6-font-size); }
+
+h1, h2, h3, h4, h5, h6 {
+  color: getColor(text, heading);
+  small {
+    color: inherit;
+    vertical-align: 0;
+    // Use the next smaller size in the scale
+    font-size: 100% / $scale-ratio;
+  }
+}
+
+// Consigue la lista de elementos con fuente secundaria y les aplica el placeholder
+
+%font-secondary {
+    font-family: $font-secondary;
+}
+
+@each $item in $font-secondary-items {
+    #{$item} {
+        @extend %font-secondary;
+    }
+}

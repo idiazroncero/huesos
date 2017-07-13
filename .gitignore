@@ -4,4 +4,7 @@ node_modules
 # Visual Studio project-level config
 .vscode
 
+# MAC OSx files
+.DS_Store
+
 

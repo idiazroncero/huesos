@@ -1,0 +1,21 @@
+// Global mixins, placeholders, etc...
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%escondido { // Fuente: http://webaim.org/techniques/css/invisiblecontent/
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}

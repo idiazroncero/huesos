@@ -77,6 +77,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+animate-scss@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/animate-scss/-/animate-scss-3.2.1.tgz#1bb32331ea1233407f22007c8815011d2e342b03"
+
 ansi-escapes@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-2.0.0.tgz#5bae52be424878dd9783e8910e3fc2922e83c81b"
@@ -771,6 +775,10 @@ braces@^1.8.2:
     expand-range "^1.8.1"
     preserve "^0.2.0"
     repeat-element "^1.1.2"
+
+breakpoint-sass@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/breakpoint-sass/-/breakpoint-sass-2.7.1.tgz#8ef6c4744dcc25ba83d969b6c9a17e5daa29980a"
 
 brorand@^1.0.1:
   version "1.1.0"
@@ -1774,6 +1782,10 @@ extract-text-webpack-plugin@^2.1.2:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
+
+family.scss@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/family.scss/-/family.scss-1.0.8.tgz#b68ced23cc58c969aed5a313b3adc3339a104fe6"
 
 fast-deep-equal@^1.0.0:
   version "1.0.0"

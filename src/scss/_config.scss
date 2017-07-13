@@ -1,14 +1,130 @@
 // Mixins y librerías de terceros
-@import "~ritmo/ritmo";
+@import "~ritmo/ritmo"; // Fuente: https://ritmo.marzeelabs.org/
+@import "~family.scss/source/src/family"; // Fuente: http://lukyvj.github.io/family.scss/
+@import "~animate-scss/animate"; // Fuente: https://www.npmjs.com/package/animate-scss
+
+@import "base/mixins/helpers";
+@import "base/mixins/pow";
+@import "base/mixins/type-scale";
+@import "base/mixins/get-color";
 
 // ------
 // RITMO VERTICAL
 // ------
 
-$base-font-size: 16px;
-$base-line-unit: $base-font-size / 4;
+$base-font-size: 18px;
+$vertical-rhythm: 1.333;
+$base-line-height: 18px * $vertical-rhythm;
+$base-line-unit: $base-line-height / 4;
 $base-line-multi: 4;
 $ritmo-unit: 'rem';
 $rem-with-px-fallback: true;
 $ritmo-border-width: 1px;
 $round-to-nearest-half-size: true;
+
+// ------
+// TIPOGRAFIA
+// ------
+
+$font-main: Futura, Helvetica, Arial, sans-serif;
+$font-secondary: Georgia, Times, Times News Roman, serif;
+
+// Listado de elementos HTML que usarán la fuente secundaria
+$font-secondary-items: 
+    h1,h2,h3,h4,
+    '.clases',
+    '#ids'
+;
+
+// ------
+// TYPE SCALE
+// Fuente: http://type-scale.com/ y concise.css
+// ------
+
+$minor-second:     1.067 !default;
+$major-second:     1.125 !default;
+$minor-third:      1.200 !default;
+$major-third:      1.250 !default;
+$perfect-fourth:   1.333 !default;
+$augmented-fourth: 1.414 !default;
+$perfect-fifth:    1.500 !default;
+$golden-ratio:     1.618 !default;
+
+// Elige la ratio para todo el sitio
+$scale-ratio: $perfect-fourth !default;
+
+// Para su uso con ritmo(), equivalencias deseadas
+
+$h1-font-size: typeScale(6);
+$h2-font-size: typeScale(5);
+$h3-font-size: typeScale(4);
+$h4-font-size: typeScale(3);
+$h5-font-size: typeScale(2); // Equals base-font-size
+$h6-font-size: typeScale(1);
+
+
+// ------
+// Color palette
+// ------
+// Usa la función getColor() para extraer los valores.
+// Por ejemplo: getColor('base', 'primary') => #C65146
+
+$colors: (
+  base: (
+    "primary":   #C65146,
+    "selection": #EBE1D3,
+    "lines":     #DCDCDC
+  ),
+
+  text: (
+    "primary":   #444,
+    "secondary": #777,
+    "heading":   #222,
+    "inverted":  white
+  ),
+
+  background: (
+    "dark":  #32373d,
+    "light": #f5f5f5,
+    "body":  white
+  ),
+
+  state: (
+    "muted":   #eee,
+    "success": #10a887,
+    "warning": #F17F42,
+    "error":   #da3c3c
+  ),
+
+  blue: (
+    "darker":  #1573b6,
+    "dark":    #1e80c6,
+    "base":    #2b90d9,
+    "light":   #3fa2e9,
+    "lighter": #4eb1f9
+  ),
+
+  green: (
+    "darker":  #089073,
+    "dark":    #0b9d7d,
+    "base":    #10a887,
+    "light":   #1eb896,
+    "lighter": #28ceaa
+  ),
+
+  red: (
+    "darker":  #653131,
+    "dark":    #b73333,
+    "base":    #da3c3c,
+    "light":   #f25a5a,
+    "lighter": #fa8181
+  ),
+
+  gray: (
+    "darker":  #333333,
+    "dark":    #4d4d4d,
+    "base":    #666666,
+    "light":   #808080,
+    "lighter": #999999
+  )
+) !default;

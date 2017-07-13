@@ -38,12 +38,21 @@ html {
 	cursor: default; /* 2 */
 	-ms-text-size-adjust: 100%; /* 3 */
 	-webkit-text-size-adjust: 100%; /* 3 */
+	font-family: $font-main;
 }
 
 // Añade base de vertical rhythm basado en config de ritmo.
 // Saber mas: https://ritmo.marzeelabs.org/
 
 @include ritmo-baseline;
+
+// Todos los elementos reciben sólo margin-bottom para evitar collapsing margins
+p, h1, h2, h3, h4, h5, h6,
+ul, ol,
+article, aside, footer, header, nav, section,
+figure, audio, video {
+    margin: 0 0 ritmo(4) 0;
+}
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -69,16 +78,6 @@ body {
 	margin: 0;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-	font-size: 2em;
-	margin: .67em 0;
-}
-
 /* Grouping content (https://html.spec.whatwg.org/multipage/semantics.html#grouping-content)
    ========================================================================== */
 
@@ -98,7 +97,7 @@ main { /* 1 */
  */
 
 figure {
-	margin: 1em 40px;
+	margin: 0;
 }
 
 /**
@@ -128,7 +127,7 @@ nav ul {
 
 pre {
 	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
+	@include ritmo-font-size($base-font-size); /* 2 */
 }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
@@ -182,7 +181,7 @@ code,
 kbd,
 samp {
 	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
+	@include ritmo-font-size($base-font-size); /* 2 */
 }
 
 /**
@@ -207,7 +206,7 @@ mark {
  */
 
 small {
-	font-size: 80%;
+	@include ritmo-font-size($h6-font-size);
 }
 
 /**
@@ -217,7 +216,7 @@ small {
 
 sub,
 sup {
-	font-size: 75%;
+	@include ritmo-font-size($h6-font-size);
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
