@@ -197,8 +197,8 @@ dfn {
  */
 
 mark {
-	background-color: #ffff00;
-	color: #000000;
+	background-color: get-color(text, mark);
+	color: contrast-color(get-color(text, mark));
 }
 
 /**
@@ -232,18 +232,19 @@ sup {
 
 /*
  * Remove the text shadow on text selections (opinionated).
+ * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
 
 ::-moz-selection {
-	background-color: #b3d4fc; /* 1 */
-	color: #000000; /* 1 */
+	background-color: get-color(text, mark); /* 1 */
+	color: contrast-color(get-color(text, mark)); /* 1 */
 	text-shadow: none;
 }
 
 ::selection {
-	background-color: #b3d4fc; /* 1 */
-	color: #000000; /* 1 */
+	background-color: get-color(text, mark); /* 1 */
+	color: contrast-color(get-color(text, mark)); /* 1 */
 	text-shadow: none;
 }
 

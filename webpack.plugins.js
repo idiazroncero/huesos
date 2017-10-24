@@ -12,7 +12,7 @@ exports.extraeCSS = new ExtractTextPlugin({
 
 exports.generaHTML = new HtmlWebpackPlugin({
 	title: 'Huesecillos',
-	template: 'src/html/index.hbs'
+	template: 'src/html/index.hbs',
 });
 
 exports.limpiaBuild = new CleanWebpackPlugin(['dist'], {
@@ -22,5 +22,5 @@ exports.limpiaBuild = new CleanWebpackPlugin(['dist'], {
 
 exports.generateKSS = new KssWebpackPlugin({
 	source: 'src/scss',
-	builder: 'src/kss-src'
-})
+	builder: 'src/kss-src',
+});

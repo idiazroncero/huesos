@@ -43,7 +43,7 @@ module.exports = {
 			// HANDLEBARS TEMPLATES
 			{
 				test: /\.hbs$/,
-				loader: 'handlebars-loader'
+				loader: 'handlebars-loader',
 			},
 			// CSS Y SCSS
 			{
@@ -52,7 +52,12 @@ module.exports = {
 					use: [
 						'css-loader', // translates CSS into CommonJS
 						'postcss-loader',
-						'sass-loader', // compiles Sass to CSS
+						{
+							loader : 'sass-loader', // compiles Sass to CSS
+							options : {
+								includePaths : ['node_modules'],
+							},
+						},
 					],
 					fallback: 'style-loader',
 				}),

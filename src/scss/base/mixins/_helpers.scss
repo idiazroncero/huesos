@@ -19,3 +19,28 @@
     height:1px;
     overflow:hidden;
 }
+
+@mixin block-align($align: center) {
+  @if $align == left {
+    margin-left:0;
+    margin-right:auto;
+  } @else if $align == right {
+    margin-right:0;
+    margin-left:auto;
+  } @else {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@function z-index($item) {
+  @return map-get($z-index, $item);
+}
+
+@mixin layer($top: 0, $right: 0, $bottom: 0, $left:0) {
+  position:absolute;
+  top:$top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

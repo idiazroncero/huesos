@@ -1,4 +1,4 @@
-@function contrast-color($color, $dark: get-color('grises', 'negro'), $light: get-color('grises', 'blanco')) {
+@function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
   @if (lightness($color) > 50) {
     @return $dark; // Lighter backgorund, return dark color
   } @else {

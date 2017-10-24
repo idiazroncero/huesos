@@ -40,7 +40,7 @@
     &, 
     &:link {
         color: $base;
-        @if $link-decoration-on-hover {
+        @if $link-highlight-on-hover {
             text-decoration:none;
         } @else {
             @include get-link-decoration();
@@ -52,7 +52,7 @@
     &:focus,
     &:hover { // Tratamos :hover y :focus siempre indistintamente
         color: $hover;
-        @if $link-decoration-on-hover {
+        @if $link-highlight-on-hover {
             @include get-link-decoration();
         } @else {
             text-decoration:none;
@@ -63,4 +63,20 @@
     &:active {
         color: $active;
     }
+}
+
+@mixin kill-link($color) {
+    @include set-link($color, $color, $color, $color)
+}
+
+@mixin kill-link-decoration($strategy: $link-strategy) {
+    @if $strategy == underline {
+        text-decoration:none;
+    } @else if $strategy == border {
+        border-bottom: none; 
+    } @else if $strategy == smart {
+        box-shadow:none;
+    } @else if $strategy == mark {
+        background-color:none;
+    } 
 }

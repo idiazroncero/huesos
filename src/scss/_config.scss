@@ -1,46 +1,95 @@
-// Mixins y librerías de terceros
-@import "~ritmo/ritmo"; // Fuente: https://ritmo.marzeelabs.org/
-@import "~family.scss/source/src/family"; // Fuente: http://lukyvj.github.io/family.scss/
-@import "~animate-scss/animate"; // Fuente: https://www.npmjs.com/package/animate-scss
+// --------------------
+// TOOLS
+// Mixins and third-party libraries
+// --------------------
+@import "ritmo/ritmo"; // Source: https://ritmo.marzeelabs.org/
+@import "family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
+@import "animate-scss/animate.scss"; // Source: https://www.npmjs.com/package/animate-scss
+@import "breakpoint-sass/stylesheets/breakpoint";
 
 @import "base/mixins/helpers";
 @import "base/mixins/pow";
 @import "base/mixins/type-scale";
 @import "base/mixins/get-color";
 @import "base/mixins/contrast-color";
-@import "base/mixins/set-link";
+@import "base/mixins/links";
+@import "base/mixins/form-reset";
+@import "base/mixins/lists";
 
-// ------
-// RITMO VERTICAL
-// ------
 
-$base-font-size: 18px;
-$vertical-rhythm: 1.333;
-$base-line-height: 18px * $vertical-rhythm;
-$base-line-unit: $base-line-height / 4;
+
+
+
+// --------------------
+// VERTICAL RHYTHM
+// Using Ritmo.scss
+// --------------------
+
+$base-font-size: 20px;
+$vertical-rhythm: 1.5;
+$base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
+$base-line-unit: $base-line-height / $base-line-multi;
 $ritmo-unit: 'rem';
 $rem-with-px-fallback: true;
 $ritmo-border-width: 1px;
 $round-to-nearest-half-size: true;
 
+// Show a grid to see vertical rhythm in action
+$show-grid: true;
+
+
+
+
+
 // ------
-// TIPOGRAFIA
+// TIPOGRAPHY
 // ------
 
-$font-main: Futura, Helvetica, Arial, sans-serif;
-$font-secondary: Georgia, Times, Times News Roman, serif;
+// Web-safe fonts library
+$helvetica: Helvetica, Arial sans-serif;
+$arial: Arial, Helvetica, sans-serif;
+$lucida-sans: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$tahoma: Tahoma, Geneva, sans-serif;
+$trebuchet: "Trebuchet MS", Helvetica, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
 
-// Listado de elementos HTML que usarán la fuente secundaria
-$font-secondary-items: 
-    h1,h2,h3,h4,
-    '.clases',
-    '#ids'
+$courier: Courier, monospace;
+$courier-new: "Courier New", Courier, monospace;
+$lucida-console: "Lucida Console", Monaco, monospace;
+
+$palatino: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$times-new-roman: "Times New Roman", Times, Georgia, serif;
+$times: "Times New Roman", Times, Georgia, serif;
+$georgia: Georgia, serif;
+
+// Custom fonts
+$today: "TodaySHOP", $helvetica;
+
+// Global variables. It is good practice (performance & design) to only use one or two typefaces.
+$font-main: $tahoma;
+$font-secondary: $palatino;
+
+// List of all elements which use $font-secondary.
+$font-secondary-items:
+    h1, h2, h3, h4,
+    '.your-classes',
+    '#your-ids'
 ;
+
+// Custom values for bold and light allow for more precise mapping
+$bold: 500;
+$light: light;
+$normal: normal;
+
+// Select a font weight for your headings
+$heading-font-weight: normal;
+
+
 
 // ------
 // TYPE SCALE
-// Fuente: http://type-scale.com/ y concise.css
+// Source: http://type-scale.com/ and concise.css
 // ------
 
 $minor-second:     1.067 !default;
@@ -52,11 +101,10 @@ $augmented-fourth: 1.414 !default;
 $perfect-fifth:    1.500 !default;
 $golden-ratio:     1.618 !default;
 
-// Elige la ratio para todo el sitio
+// Choose your type-scale ratio
 $scale-ratio: $perfect-fourth !default;
 
-// Para su uso con ritmo(), equivalencias deseadas
-
+// Uses concise.css typeScale mixin to map font-sizes
 $h1-font-size: typeScale(6);
 $h2-font-size: typeScale(5);
 $h3-font-size: typeScale(4);
@@ -64,32 +112,39 @@ $h4-font-size: typeScale(3);
 $h5-font-size: typeScale(2); // Equals base-font-size
 $h6-font-size: typeScale(1);
 
+// Set font sizes of specific, size-aware elements
+$sub-font-size: $h6-font-size;
+$small-font-size: $h6-font-size;
+
+
+
+
 
 // ------
-// PALETAS DE COLOR
+// COLOR PALETTE
 // ------
-// Usa la función get-color() para extraer los valores.
-// Por ejemplo: getColor('base', 'primary') => #C65146
-// Usa la function contrast-color($color) para contrastar sobre un fondo dado.
+// Use get-color('palette', 'color') in your .scss files to get values
+// For example: getColor('base', 'primary') => #C65146
+// Use contrast-color($color) to get your black || white color against a background
+// ------
 
 $colors: (
   base: (
     "primary":   #C65146,
-    "selection": #EBE1D3,
+    "secondary":   #C65146,
     "lines":     #DCDCDC
   ),
 
   text: (
-    "primary":   #444,
-    "secondary": #777,
-    "heading":   #222,
-    "inverted":  white
+    "primary":   #1a1a19,
+    "heading":   #1a1a19,
+    "active": #383837,
+    "mark" : #FCEE35,
   ),
 
   background: (
-    "dark":  #32373d,
-    "light": #f5f5f5,
-    "body":  white
+    "dark":  #1a1a19,
+    "light": #efece7,
   ),
 
   state: (
@@ -123,29 +178,139 @@ $colors: (
     "lighter": #fa8181
   ),
 
-  grises: (
-    "negro":    #000000,
-    "blanco":   #ffffff
+  gray: (
+    "darker":  #653131,
+    "dark":    #b73333,
+    "base":    #da3c3c,
+    "light":   #f25a5a,
+    "lighter": #fa8181
   )
 ) !default;
 
-// ------
-// ENLACES
-// ------
-// Todala funcionalidad queda encapsulada en un mixin, set-link()
-// Existen cuatro estrategias de enlaces.
+// CONTRAST BLACK AND WHITE / Do not remove
+// This values are used as return values for contrast-color()
+$contrast-dark: #1a1a19;
+$contrast-light: #ffffff;
 
-$link-strategy: mark; // Alternativas: border, smart, mark
-$link-decoration-on-hover: true; // False para actuar antes del hover 
+// Global % to apply to darken and lighten operations
+$color-modify-ratio: 33%;
 
-// Sólo para $link-strategy:border
+
+
+
+
+// ------
+// LINKS
+// ------
+// This values are used by set-link() to get your linking strategy
+// There are four link strategies available.
+// ------
+
+$link-strategy: underline; // Alternatives: underline, border, smart, mark
+$link-highlight-on-hover: true; // "false" highlights the link before :hover
+
+// Only for $link-strategy:border
 $link-border-color: get-color(blue, base);
 $link-border-width: ritmo(1);
 
-// Sólo para $link-strategy:mark
-$link-mark-color: wheat;
+// Only for $link-strategy:mark
+$link-mark-color: get-color(green, lighter);
 
-$link-color: get-color(blue, base);
-$link-visited: get-color(blue, darker);
-$link-hover: get-color(blue, light);
-$link-active: get-color(blue, lighter);
+// Link colors
+$link-color: get-color(text, primary);
+$link-visited: get-color(text, active);
+$link-hover: get-color(text, active);
+$link-active: get-color(text, active);
+
+
+
+
+
+// ------
+// FORMS
+// ------
+
+// General reset
+$form-border-radius: 0;
+
+// Inputs
+$input-border-strategy: bottom; // Options: full, bottom, none;
+$input-border-color: darken(get-color(background,light), 25%);
+$input-border: 2px solid $input-border-color;
+$input-padding: 0;
+
+// Buttons
+$button-border-color: darken(get-color(background,light), 50%);
+$button-border: 2px solid $button-border-color;
+$button-padding: 0 ritmo(2);
+
+// Checkboxes / Selects
+$pseudo-checkbox : true;
+$pseudo-option : true;
+
+// Selects
+$select-border-strategy: full; // Options: full, bottom, none;
+$select-border-color: darken(get-color(background,light), 25%);
+$select-border: 2px solid $input-border-color;
+$select-padding: 0 ritmo(2);
+
+// Browser quirks
+$webkit-autofill-color: get-color(background, light); // When webkit fills the fields whith your stored data.
+
+
+
+// ------
+// LAYOUT
+// We asume a centered, responsive and max-width limited viewport.
+// ------
+
+$max-width: 960px;
+$layout-align: center; // left, right
+$spacer: ritmo(4); // A "spacer" is a basic unit for both vertical and horizontal spacing
+
+
+
+
+// ------
+// Z-INDEX
+// To use in pair with the z-index() function
+// ------
+
+$z-index : (
+  item1 : 0,
+  item2 : 1,
+);
+
+
+
+
+
+// ------
+// BREAKPOINTS
+// ------
+
+$small: 640px;
+$medium: 960px;
+$large: 1120px;
+
+
+
+
+
+// ------
+// ANIMATIONS && TRANSITIONS
+// ------
+
+$transitions: true;
+$transition-time: 0.33s;
+$transition-delay: 0.25s;
+
+
+
+
+
+// ------
+// YOUR PROJECT
+// Project-specific variables
+// ------
+

@@ -1956,6 +1956,21 @@
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom; } }
 
+/* ----------------------------------------------------------------------------------------------------
+SCSS Form Reset Helpers - Forked from: https://gist.github.com/anthonyshort/552543
+Intended usage:
+- MIXINS: for very specific use cases, when you dont want to reset absolutly all the forms, very verbose output.
+- PLACEHOLDER SELECTORS: use as extending classes. Less verbose, more generic overrides.
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
 /*! sanitize.css v5.0.0 | CC0 License | github.com/jonathantneal/sanitize.css */
 /* Modificado para HUESOS por idiaz.roncero */
 /* Document (https://html.spec.whatwg.org/multipage/semantics.html#semantics)
@@ -1997,17 +2012,17 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  font-family: Futura, Helvetica, Arial, sans-serif; }
+  font-family: Tahoma, Geneva, sans-serif; }
 
 html {
-  font-size: 112.5%;
-  line-height: 1.333em; }
+  font-size: 125%;
+  line-height: 1.5em; }
 
 p, h1, h2, h3, h4, h5, h6,
 ul, ol,
 article, aside, footer, header, nav, section,
 figure, audio, video {
-  margin: 0 0 1.333rem 0; }
+  margin: 0 0 1.5rem 0; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -2072,10 +2087,10 @@ nav ul {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 18px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.333rem;
+  line-height: 30px;
+  line-height: 1.5rem;
   /* 2 */ }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
@@ -2126,10 +2141,10 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 18px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.333rem;
+  line-height: 30px;
+  line-height: 1.5rem;
   /* 2 */ }
 
 /**
@@ -2142,17 +2157,17 @@ dfn {
  * Add the correct background and color in IE 9-.
  */
 mark {
-  background-color: #ffff00;
-  color: #000000; }
+  background-color: #FCEE35;
+  color: #1a1a19; }
 
 /**
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 14px;
+  font-size: 15px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 0.99975rem; }
+  line-height: 23px;
+  line-height: 1.125rem; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -2160,10 +2175,10 @@ small {
  */
 sub,
 sup {
-  font-size: 14px;
+  font-size: 15px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 0.99975rem;
+  line-height: 23px;
+  line-height: 1.125rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -2176,19 +2191,20 @@ sup {
 
 /*
  * Remove the text shadow on text selections (opinionated).
+ * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
 ::-moz-selection {
-  background-color: #b3d4fc;
+  background-color: #FCEE35;
   /* 1 */
-  color: #000000;
+  color: #1a1a19;
   /* 1 */
   text-shadow: none; }
 
 ::selection {
-  background-color: #b3d4fc;
+  background-color: #FCEE35;
   /* 1 */
-  color: #000000;
+  color: #1a1a19;
   /* 1 */
   text-shadow: none; }
 
@@ -2487,80 +2503,75 @@ textarea,
   cursor: default; }
 
 h1 {
-  font-size: 57px;
+  font-size: 63px;
   font-size: 3.15733rem;
-  line-height: 66px;
-  line-height: 3.66575rem; }
+  line-height: 68px;
+  line-height: 3.375rem; }
 
 h2 {
-  font-size: 43px;
+  font-size: 47px;
   font-size: 2.36859rem;
-  line-height: 48px;
-  line-height: 2.666rem; }
+  line-height: 53px;
+  line-height: 2.625rem; }
 
 h3 {
-  font-size: 32px;
+  font-size: 36px;
   font-size: 1.77689rem;
-  line-height: 36px;
-  line-height: 1.9995rem; }
+  line-height: 45px;
+  line-height: 2.25rem; }
 
 h4 {
-  font-size: 24px;
+  font-size: 27px;
   font-size: 1.333rem;
-  line-height: 30px;
-  line-height: 1.66625rem; }
+  line-height: 38px;
+  line-height: 1.875rem; }
 
 h5 {
-  font-size: 18px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.333rem; }
+  line-height: 30px;
+  line-height: 1.5rem; }
 
 h6 {
-  font-size: 14px;
+  font-size: 15px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 0.99975rem; }
+  line-height: 23px;
+  line-height: 1.125rem; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #222; }
+  color: #1a1a19; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: inherit;
     vertical-align: 0;
     font-size: 75.01875%; }
 
-h1, h2, h3, h4, .clases, #ids {
-  font-family: Georgia, Times, Times News Roman, serif; }
+h1, h2, h3, h4, .your-classes, #your-ids {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 
 .button {
   color: red; }
 
 body {
-  background-color: #ffffff; }
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: 0.75rem 0.75rem;
+  background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
+  background-repeat: repeat; }
+
+#main-wrapper {
+  padding: 1.5rem; }
 
 a, a:link {
-  color: #2b90d9;
+  color: #1a1a19;
   text-decoration: none; }
 
 a:visited {
-  color: #1573b6; }
+  color: #383837; }
 
 a:focus, a:hover {
-  color: yellow;
-  text-decoration: none;
-  background-color: wheat;
-  position: relative; }
-  a:focus:before, a:focus:after, a:hover:before, a:hover:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: wheat; }
-  a:focus:before, a:hover:before {
-    left: -2px; }
-  a:focus:after, a:hover:after {
-    right: -2px; }
+  color: #383837;
+  text-decoration: underline; }
 
 a:active {
-  color: #4eb1f9; }
+  color: #383837; }

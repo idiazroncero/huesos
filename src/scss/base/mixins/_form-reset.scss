@@ -1,0 +1,174 @@
+/* ----------------------------------------------------------------------------------------------------
+SCSS Form Reset Helpers - Forked from: https://gist.github.com/anthonyshort/552543
+Intended usage:
+- MIXINS: for very specific use cases, when you dont want to reset absolutly all the forms, very verbose output.
+- PLACEHOLDER SELECTORS: use as extending classes. Less verbose, more generic overrides.
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+
+@mixin form-reset-general {
+    display: inline-block;
+    margin: 0;
+    border:0;
+    width: auto;
+    vertical-align: middle; // IE6,IE7
+    white-space: normal;
+    line-height: inherit;
+    background: none;
+    border-radius: $form-border-radius;
+  
+    /* Browsers have different default form fonts */
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+@mixin form-border($strategy) {
+  // Border strategy
+  @if ($strategy == full){
+    border: $input-border;
+    &:hover, &:focus {
+      border-color: darken($input-border-color, $color-modify-ratio);
+    }
+  } @else if ($strategy == bottom){
+    border-bottom: $input-border;
+    &:hover, &:focus {
+      border-color: darken($input-border-color, $color-modify-ratio);
+    }
+  }
+}
+  
+@mixin form-reset-input {
+
+  @include form-border($input-border-strategy);
+  padding: $input-padding;
+  &:focus {
+    outline: 0;
+  }
+
+  &[type=checkbox],
+  &[type=radio] {
+    width:  ritmo(3);
+    height:  ritmo(3);
+  }
+
+  @if($pseudo-checkbox == true) {
+    &[type=checkbox] {
+      &:before {
+        content:"";
+        display:inline-block;
+        width: ritmo(3);
+        height: ritmo(3);
+        border: $input-border;
+        background-color: $white; // We need to hide the real checkbox
+        vertical-align:top;
+        cursor: pointer;
+      }
+      &:checked:before {
+        background-color: $input-border-color;
+      }
+    }
+  }
+
+  @if($pseudo-option == true) {
+    &[type=radio] {
+      &:before {
+        content:"";
+        display:inline-block;
+        width:ritmo(3);
+        height:ritmo(3);
+        border: $input-border;
+        background-color: $white; // We need to hide the real checkbox
+        vertical-align:top;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      &:checked:before {
+        background-color: $input-border-color;
+      }
+    }
+  }
+
+  /* Make webkit render the search input like a normal text field */
+  &[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+  }
+
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  @at-root {
+    ::-webkit-search-decoration {
+      display: none;
+    }
+  }
+
+  /* Fix IE7 display bug */
+  &[type="reset"],
+  &[type="button"],
+  &[type="submit"] {
+    overflow: visible;
+  }
+}
+  
+@mixin form-reset-select {
+  @include form-border($select-border-strategy);
+  padding: $select-padding;
+  /* Move the label to the top */
+  &[multiple] {
+    vertical-align: top;
+  }
+}
+  
+  
+  
+@mixin form-reset-button {
+    background: none;
+    outline: none;
+    padding: $button-padding;
+  
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  
+    /* IE8 and FF freak out if this rule is within another selector */
+    @at-root {
+      ::-webkit-file-upload-button {
+        padding: 0;
+        border: 0;
+        background: none;
+      }
+    }
+}
+
+
+@mixin form-reset-textarea {
+    /* Move the label to the top */
+    vertical-align: top;
+  
+    /* Turn off scroll bars in IE unless needed */
+    overflow: auto;
+}
+
+
+@mixin kill-button {
+  border:none;
+  background:transparent;
+  &:hover, &:focus {
+    border:none;
+    background:transparent;  
+  }
+}

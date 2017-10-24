@@ -26,7 +26,17 @@
 }
 
 body {
-    background-color: contrast-color(#333);
+    max-width: $max-width;
+    @include block-align($layout-align);
+    @if $show-grid == true {
+        background-size: ritmo(2) ritmo(2);
+        background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
+        background-repeat: repeat;
+    }
+}
+
+#main-wrapper {
+    padding: $spacer;
 }
 
 a {

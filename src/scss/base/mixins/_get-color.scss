@@ -4,6 +4,16 @@
 // Easily retrieve colors from the $colors map.
 //
 
-@function get-color($color, $value: "base") {
-  @return map-get(map-get($colors, $color), $value);
+@function get-color($color, $value) {
+  $curmap : map-get($colors, $color);
+  @if type-of($curmap) == map {
+    $map-exists: map-has-key($curmap, $value);
+    @if $map-exists == true {
+      @return map-get($curmap, $value);
+    } @else  {
+      @error 'Parece que el color no existe. Revisa tu get-color()';
+    }
+  } @else {
+    @error 'Parece que el mapa de color no existe. Revisa tu get-color()';
+  }
 }
