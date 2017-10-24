@@ -1,6 +1,6 @@
 # HUESOS
 #### Shake your osamenta
-v0.0.3 | By [idiaz.roncero](http://idiazroncero.com)
+v0.0.5 | By [idiaz.roncero](http://idiazroncero.com)
 
 __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools.
 
