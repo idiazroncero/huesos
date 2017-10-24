@@ -26,6 +26,17 @@ select {
     @include form-reset-select();
 }
 
+// Botón.
+//
+// Puede usarse en `<button>` o en `<a class="button">`
+//
+// Markup:
+// <button class="button {{modifier_class}}">Clica!</button>
+//
+// .button--disabled          - Atenúa el color para indicar que está desactivado.
+//
+// Styleguide Componentes.buttons
+
 button,
 .button {
     @include form-reset-button();
@@ -36,9 +47,19 @@ button,
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     @include ritmo-font-size($h6-font-size, 5);
-    &:hover {
+    &:hover,
+    &:focus {
         background:$button-border-color;
         color: contrast-color($button-border-color);
+    }
+}
+
+.button--disabled {
+    opacity:0.5;
+    &:hover, 
+    &:focus {
+        background: inherit;
+        color: inherit;
     }
 }
 

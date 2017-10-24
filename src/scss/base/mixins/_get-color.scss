@@ -1,8 +1,12 @@
+
+// get-color($color, $value)
 //
-// getColor Function
-// --------------------------------------------------
-// Easily retrieve colors from the $colors map.
+// Función que devuelve un color de un mapa determinado
 //
+// $color - Nombre del mapa
+// $value  - Nombre del color
+//
+// Styleguide Funciones.get-color
 
 @function get-color($color, $value) {
   $curmap : map-get($colors, $color);

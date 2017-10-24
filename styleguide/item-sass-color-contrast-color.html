@@ -28,47 +28,73 @@
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-base.html">
-          <span class="kss-nav__ref">1</span><span class="kss-nav__name">base</span>
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Base</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-components.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">components</span>
+        <a class="kss-nav__menu-link" href="section-componentes.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Componentes</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-components.html#kssref-components-buttons">
-                  <span class="kss-nav__ref ">2.1</span
-                  ><span class="kss-nav__name">Botón.</span>
-                </a>
-              </li>
-            </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-sass.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Sass</span>
+        </a>
       </li>
     </ul>
   </nav>
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-components" class="kss-section kss-section--depth-1 is-fullscreen">
+    <div id="kssref-sass-color-contrast-color" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
-        <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-components">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-sass-color-contrast-color">
             <span class="kss-title__ref">
-              2
+              3.1.1
               <span class="kss-title__permalink-hash">
-                  #components
+                  #Sass.color.contrast-color
               </span>
             </span>
-            components
+            Contrastar color
           </a>
-        </h1>
+        </h3>
 
 
+          <div class="kss-description">
+            <p>Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo</p>
+<p>Compatibility untested</p>
 
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Color de fondo
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$dark</code></div>
+              <div class="kss-parameters__description">
+                Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$light</code></div>
+              <div class="kss-parameters__description">
+                Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+              </div>
+            </li>
+          </ul>
       </div>
 
 
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 1
+        </div>
 
     </div>
 </article>

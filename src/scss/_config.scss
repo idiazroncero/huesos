@@ -25,8 +25,8 @@
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 20px;
-$vertical-rhythm: 1.5;
+$base-font-size: 16px;
+$vertical-rhythm: 1.33;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -36,7 +36,7 @@ $ritmo-border-width: 1px;
 $round-to-nearest-half-size: true;
 
 // Show a grid to see vertical rhythm in action
-$show-grid: true;
+$show-grid: false;
 
 
 
@@ -304,6 +304,17 @@ $large: 1120px;
 $transitions: true;
 $transition-time: 0.33s;
 $transition-delay: 0.25s;
+
+
+
+
+
+// ------
+// ALIASES
+// Because sometimes you remember the wrong / old / deprecated word...
+// ------
+
+$gutter: $spacer;
 
 
 

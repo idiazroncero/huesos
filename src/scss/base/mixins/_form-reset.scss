@@ -68,7 +68,7 @@ A couple of things to watch out for:
         width: ritmo(3);
         height: ritmo(3);
         border: $input-border;
-        background-color: $white; // We need to hide the real checkbox
+        background-color: get-color(background, light); // We need to hide the real checkbox
         vertical-align:top;
         cursor: pointer;
       }
@@ -86,7 +86,7 @@ A couple of things to watch out for:
         width:ritmo(3);
         height:ritmo(3);
         border: $input-border;
-        background-color: $white; // We need to hide the real checkbox
+        background-color: get-color(background, light); // We need to hide the real checkbox
         vertical-align:top;
         border-radius: 50%;
         cursor: pointer;

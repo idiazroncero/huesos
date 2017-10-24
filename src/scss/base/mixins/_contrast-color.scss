@@ -1,3 +1,14 @@
+// contrast-color($color, $dark, $light)
+//
+// Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+//
+// $color - Color de fondo
+// $dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+// $light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+//
+// Styleguide Funciones.contrast-color
+
+
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
   @if (lightness($color) > 50) {
     @return $dark; // Lighter backgorund, return dark color

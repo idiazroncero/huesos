@@ -2015,14 +2015,14 @@ html {
   font-family: Tahoma, Geneva, sans-serif; }
 
 html {
-  font-size: 125%;
-  line-height: 1.5em; }
+  font-size: 100%;
+  line-height: 1.33em; }
 
 p, h1, h2, h3, h4, h5, h6,
 ul, ol,
 article, aside, footer, header, nav, section,
 figure, audio, video {
-  margin: 0 0 1.5rem 0; }
+  margin: 0 0 1.33rem 0; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -2087,10 +2087,10 @@ nav ul {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 20px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 30px;
-  line-height: 1.5rem;
+  line-height: 21px;
+  line-height: 1.33rem;
   /* 2 */ }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
@@ -2141,10 +2141,10 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 20px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 30px;
-  line-height: 1.5rem;
+  line-height: 21px;
+  line-height: 1.33rem;
   /* 2 */ }
 
 /**
@@ -2164,10 +2164,10 @@ mark {
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 15px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 23px;
-  line-height: 1.125rem; }
+  line-height: 21px;
+  line-height: 1.33rem; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -2175,10 +2175,10 @@ small {
  */
 sub,
 sup {
-  font-size: 15px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 23px;
-  line-height: 1.125rem;
+  line-height: 21px;
+  line-height: 1.33rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -2503,40 +2503,40 @@ textarea,
   cursor: default; }
 
 h1 {
-  font-size: 63px;
+  font-size: 51px;
   font-size: 3.15733rem;
-  line-height: 68px;
-  line-height: 3.375rem; }
+  line-height: 59px;
+  line-height: 3.6575rem; }
 
 h2 {
-  font-size: 47px;
+  font-size: 38px;
   font-size: 2.36859rem;
-  line-height: 53px;
-  line-height: 2.625rem; }
+  line-height: 43px;
+  line-height: 2.66rem; }
 
 h3 {
-  font-size: 36px;
+  font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 45px;
-  line-height: 2.25rem; }
+  line-height: 37px;
+  line-height: 2.3275rem; }
 
 h4 {
-  font-size: 27px;
+  font-size: 21px;
   font-size: 1.333rem;
-  line-height: 38px;
-  line-height: 1.875rem; }
+  line-height: 27px;
+  line-height: 1.6625rem; }
 
 h5 {
-  font-size: 20px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 30px;
-  line-height: 1.5rem; }
+  line-height: 21px;
+  line-height: 1.33rem; }
 
 h6 {
-  font-size: 15px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 23px;
-  line-height: 1.125rem; }
+  line-height: 21px;
+  line-height: 1.33rem; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #1a1a19; }
@@ -2548,19 +2548,162 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, .your-classes, #your-ids {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 
+input,
+label,
+select,
+button,
+textarea {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  width: auto;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  border-radius: 0;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit; }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #efece7 inset;
+  color: #1a1a19; }
+
+input {
+  border-bottom: 2px solid #bcaf9b;
+  padding: 0;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */ }
+  input:hover, input:focus {
+    border-color: #695b46; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 0.9975rem;
+    height: 0.9975rem; }
+  input[type=checkbox]:before {
+    content: "";
+    display: inline-block;
+    width: 0.9975rem;
+    height: 0.9975rem;
+    border: 2px solid #bcaf9b;
+    background-color: #efece7;
+    vertical-align: top;
+    cursor: pointer; }
+  input[type=checkbox]:checked:before {
+    background-color: #bcaf9b; }
+  input[type=radio]:before {
+    content: "";
+    display: inline-block;
+    width: 0.9975rem;
+    height: 0.9975rem;
+    border: 2px solid #bcaf9b;
+    background-color: #efece7;
+    vertical-align: top;
+    border-radius: 50%;
+    cursor: pointer; }
+  input[type=radio]:checked:before {
+    background-color: #bcaf9b; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=file] {
+    border: none;
+    width: 100%;
+    padding: 0; }
+
+select {
+  border: 2px solid #bcaf9b;
+  padding: 0 0.665rem;
+  /* Move the label to the top */ }
+  select:hover, select:focus {
+    border-color: #695b46; }
+  select[multiple] {
+    vertical-align: top; }
+
+button,
 .button {
-  color: red; }
+  background: none;
+  outline: none;
+  padding: 0 0.665rem;
+  /* IE8 and FF freak out if this rule is within another selector */
+  cursor: pointer;
+  border: 2px solid #817156;
+  display: inline-block;
+  padding: 0 0.665rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 27px;
+  line-height: 1.6625rem; }
+  button::-moz-focus-inner,
+  .button::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  button:hover, button:active, button:focus,
+  .button:hover,
+  .button:active,
+  .button:focus {
+    outline: 0; }
+  ::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none; }
+  button:hover, button:focus,
+  .button:hover,
+  .button:focus {
+    background: #817156;
+    color: #ffffff; }
+
+.button--disabled {
+  opacity: 0.5; }
+  .button--disabled:hover, .button--disabled:focus {
+    background: inherit;
+    color: inherit; }
+
+a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
+  text-decoration: none;
+  border-bottom: 2px solid #817156; }
+
+textarea {
+  border: 2px solid #bcaf9b;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto; }
+
+fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  border-color: #bcaf9b;
+  padding: 0.665rem; }
+
+nav ul,
+.nav ul {
+  margin: 0;
+  padding: 0; }
+  nav ul li,
+  .nav ul li {
+    list-style-type: none;
+    display: inline-block; }
 
 body {
   max-width: 960px;
   margin-left: auto;
-  margin-right: auto;
-  background-size: 0.75rem 0.75rem;
-  background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
-  background-repeat: repeat; }
+  margin-right: auto; }
 
 #main-wrapper {
-  padding: 1.5rem; }
+  padding: 1.33rem; }
 
 a, a:link {
   color: #1a1a19;
