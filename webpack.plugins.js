@@ -24,4 +24,5 @@ exports.generateKSS = new KssWebpackPlugin({
 	source: 'src/scss',
 	css: '../dist/css/style.css', 
 	builder: 'src/kss-src',
+	destination: 'docs',
 });
