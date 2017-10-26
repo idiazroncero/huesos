@@ -37,6 +37,9 @@ select {
 //
 // Styleguide Componentes.buttons
 
+input[type=submit],
+input[type=reset],
+input[type=button],
 button,
 .button {
     @include form-reset-button();
@@ -54,6 +57,10 @@ button,
     }
 }
 
+input[type=submit][disabled],
+input[type=reset][disabled],
+input[type=button][disabled],
+button[disabled],
 .button--disabled {
     opacity:0.5;
     &:hover, 
@@ -76,11 +83,17 @@ a.button {
 textarea {
     border: $input-border;
     @include form-reset-textarea();
+    width:100%;
+    padding: 0 ($spacer / 4);
 }
 
 fieldset {
     margin-right:0;
     margin-left:0;
-    border-color: $input-border-color;
-    padding: ritmo(2);
+    border: $input-border;
+    padding: $spacer;
+}
+
+legend {
+    font-weight: $bold;
 }

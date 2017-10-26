@@ -44,16 +44,37 @@ html {
 // Añade base de vertical rhythm basado en config de ritmo.
 // Saber mas: https://ritmo.marzeelabs.org/
 
-@include ritmo-baseline;
+@include ritmo-baseline();
 
-// Todos los elementos reciben sólo margin-bottom para evitar collapsing margins
+// All margins are set as margin-bottom to avoid collapsing margins
 p, h1, h2, h3, h4, h5, h6,
-ul, ol,
+ul, ol, dl, 
 article, aside, footer, header, nav, section,
-figure, audio, video {
-    margin: 0 0 ritmo(4) 0;
+figure, audio, video,
+hr,
+table, caption, figcaption,
+fieldset {
+	margin: 0 0 $spacer 0;
 }
 
+blockquote {
+	margin: 0 0 $spacer ($spacer * 2);
+}
+dd {
+	margin: 0 0 0 $spacer;
+}
+
+ol,ul {
+	padding-left:$spacer;
+}
+
+caption {
+	text-align: $caption-align;
+}
+
+figcaption {
+	text-align: $figcaption-align;
+}
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
 
@@ -93,14 +114,6 @@ main { /* 1 */
 }
 
 /**
- * Add the correct margin in IE 8.
- */
-
-figure {
-	margin: 0;
-}
-
-/**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
@@ -109,6 +122,10 @@ hr {
 	box-sizing: content-box; /* 1 */
 	height: 0; /* 1 */
 	overflow: visible; /* 2 */
+	@if $separators == true {
+		border:none;
+		border-bottom: $separator-width solid $separator-color;
+	}
 }
 
 /**
@@ -160,17 +177,9 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: inherit;
+	font-weight: $bold;
 }
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-	font-weight: bolder;
-}
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -264,6 +273,15 @@ video {
 	vertical-align: middle;
 }
 
+/*
+ * Deletes ugly iframe border and makes it fill its parent by default
+ */
+
+ iframe {
+	 border:none;
+	 width:100%;
+ }
+
 /**
  * Add the correct display in IE 9-.
  */
@@ -284,10 +302,12 @@ audio:not([controls]) {
 
 /**
  * Remove the border on images inside links in IE 10-.
+ * Make all images responsive by default
  */
 
 img {
 	border-style: none;
+	max-width:100%;
 }
 
 /**

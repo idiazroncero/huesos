@@ -26,7 +26,7 @@
 // --------------------
 
 $base-font-size: 16px;
-$vertical-rhythm: 1.33;
+$vertical-rhythm: 1.5;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -37,6 +37,9 @@ $round-to-nearest-half-size: true;
 
 // Show a grid to see vertical rhythm in action
 $show-grid: false;
+
+// A "spacer" is a basic unit for both vertical and horizontal spacing
+$spacer: ritmo(4); 
 
 
 
@@ -78,12 +81,22 @@ $font-secondary-items:
 ;
 
 // Custom values for bold and light allow for more precise mapping
-$bold: 500;
+$bold: 600;
 $light: light;
 $normal: normal;
 
 // Select a font weight for your headings
 $heading-font-weight: normal;
+
+// Text alignment for some elements
+$caption-align: left;
+$figcaption-align:left;
+
+// Quotes
+// Here are some common quotes: “ ” ‘ ’ ‛ ‟ ‚ „ ' " ‹ › « »
+$quotes: "“" "”" "‘" "’";
+
+
 
 
 
@@ -115,6 +128,7 @@ $h6-font-size: typeScale(1);
 // Set font sizes of specific, size-aware elements
 $sub-font-size: $h6-font-size;
 $small-font-size: $h6-font-size;
+$figcaption-font-size: $h6-font-size;
 
 
 
@@ -144,7 +158,7 @@ $colors: (
 
   background: (
     "dark":  #1a1a19,
-    "light": #efece7,
+    "light": #ffffff,
   ),
 
   state: (
@@ -179,11 +193,13 @@ $colors: (
   ),
 
   gray: (
-    "darker":  #653131,
-    "dark":    #b73333,
-    "base":    #da3c3c,
-    "light":   #f25a5a,
-    "lighter": #fa8181
+    "black" : #1b1b1b,
+    "darker":  #333333,
+    "dark":    #666666,
+    "base":    #888888,
+    "light":   #cccccc,
+    "lighter": #dddddd,
+    "white" : #ffffff,
   )
 ) !default;
 
@@ -199,6 +215,24 @@ $color-modify-ratio: 33%;
 
 
 
+
+// ------
+// COMMON ELEMENTS
+// ------
+// Some common patterns
+// ------
+
+$separators: true;
+$separator-width: 1px;
+$separator-color: get-color(gray,light);
+
+$table-border: 1px solid $separator-color; // CSS value or none
+$table-padding: $spacer / 2;
+$table-th-align: left;
+
+
+
+
 // ------
 // LINKS
 // ------
@@ -206,8 +240,8 @@ $color-modify-ratio: 33%;
 // There are four link strategies available.
 // ------
 
-$link-strategy: underline; // Alternatives: underline, border, smart, mark
-$link-highlight-on-hover: true; // "false" highlights the link before :hover
+$link-strategy: smart; // Alternatives: underline, border, smart, mark
+$link-highlight-on-hover: false; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
 $link-border-color: get-color(blue, base);
@@ -216,11 +250,14 @@ $link-border-width: ritmo(1);
 // Only for $link-strategy:mark
 $link-mark-color: get-color(green, lighter);
 
+// Only for $link-strategy:smart
+$link-smart-background: get-color(gray, "white");
+
 // Link colors
-$link-color: get-color(text, primary);
-$link-visited: get-color(text, active);
-$link-hover: get-color(text, active);
-$link-active: get-color(text, active);
+$link-color: get-color(blue, base);
+$link-visited: get-color(blue, darker);
+$link-hover: get-color(blue,light);
+$link-active: get-color(blue, darker);
 
 
 
@@ -235,27 +272,28 @@ $form-border-radius: 0;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
-$input-border-color: darken(get-color(background,light), 25%);
-$input-border: 2px solid $input-border-color;
+$input-border-color: darken(get-color(gray, base), 25%);
+$input-border: 1px solid $input-border-color;
 $input-padding: 0;
 
 // Buttons
-$button-border-color: darken(get-color(background,light), 50%);
-$button-border: 2px solid $button-border-color;
-$button-padding: 0 ritmo(2);
+$button-border-color: darken(get-color(gray,base), 50%);
+$button-border: 1px solid $button-border-color;
+$button-padding: 0 ($spacer / 2);
 
 // Checkboxes / Selects
-$pseudo-checkbox : true;
-$pseudo-option : true;
+// TODO: Pseudo-elements are badly spaced
+$pseudo-checkbox : false;
+$pseudo-option : false;
 
 // Selects
 $select-border-strategy: full; // Options: full, bottom, none;
-$select-border-color: darken(get-color(background,light), 25%);
-$select-border: 2px solid $input-border-color;
-$select-padding: 0 ritmo(2);
+$select-border-color: darken(get-color(gray,base), 25%);
+$select-border: 1px solid $input-border-color;
+$select-padding: 0 ($spacer / 2);
 
 // Browser quirks
-$webkit-autofill-color: get-color(background, light); // When webkit fills the fields whith your stored data.
+$webkit-autofill-color: get-color(gray, base); // When webkit fills the fields whith your stored data.
 
 
 
@@ -266,8 +304,6 @@ $webkit-autofill-color: get-color(background, light); // When webkit fills the f
 
 $max-width: 960px;
 $layout-align: center; // left, right
-$spacer: ritmo(4); // A "spacer" is a basic unit for both vertical and horizontal spacing
-
 
 
 

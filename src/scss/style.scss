@@ -4,8 +4,9 @@
 // Versión alternativa, más reducida, de normalize.css. IE8+
 // Adaptada para usar nuestra configuración
 @import "base/sanitize";
-@import "base/tipografia";
+@import "base/typography";
 @import "base/forms";
+@import "base/table";
 
 
 // Menú de navegación
@@ -27,6 +28,9 @@ nav,
 .nav {
     ul {
         @include list();
+        ul {
+            margin-left: $spacer;
+        }
     }
 }
 

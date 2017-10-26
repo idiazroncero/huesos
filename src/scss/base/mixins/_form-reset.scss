@@ -56,17 +56,20 @@ A couple of things to watch out for:
 
   &[type=checkbox],
   &[type=radio] {
-    width:  ritmo(3);
-    height:  ritmo(3);
+    width:  $base-font-size;
+    height:  $base-font-size;
+    vertical-align: baseline;
   }
 
   @if($pseudo-checkbox == true) {
     &[type=checkbox] {
+      appearance: none;
+      border-bottom:0;
       &:before {
         content:"";
         display:inline-block;
-        width: ritmo(3);
-        height: ritmo(3);
+        width: $base-font-size;
+        height: $base-font-size;
         border: $input-border;
         background-color: get-color(background, light); // We need to hide the real checkbox
         vertical-align:top;
@@ -80,11 +83,13 @@ A couple of things to watch out for:
 
   @if($pseudo-option == true) {
     &[type=radio] {
+      appearance: none;
+      border-bottom:0;
       &:before {
         content:"";
         display:inline-block;
-        width:ritmo(3);
-        height:ritmo(3);
+        width:$base-font-size;
+        height:$base-font-size;
         border: $input-border;
         background-color: get-color(background, light); // We need to hide the real checkbox
         vertical-align:top;

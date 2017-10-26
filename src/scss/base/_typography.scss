@@ -26,3 +26,11 @@ h1, h2, h3, h4, h5, h6 {
         @extend %font-secondary;
     }
 }
+
+q {
+    quotes: $quotes;
+}
+
+figcaption {
+    @include ritmo-font-size($figcaption-font-size);
+}

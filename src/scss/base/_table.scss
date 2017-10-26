@@ -1,0 +1,14 @@
+table {
+    // Make tables occupy allavailable space
+    table-layout: fixed;
+    width:100%;
+}
+
+th, td {
+    border: $table-border;
+    padding: $table-padding;
+}
+
+th {
+    text-align: $table-th-align;
+}
