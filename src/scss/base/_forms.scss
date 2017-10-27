@@ -72,10 +72,21 @@ button[disabled],
 
 // Links as buttons
 a.button {
-    &:link, &:visited, &:focus, &:hover, &:active {
-        text-decoration: none;
-        // Prevent link strategy "border" from overriding button borders
-        border-bottom: $button-border;
+    @include kill-link(get-color(text, primary));
+    @include kill-link-decoration();
+    &:hover,
+    &:focus {
+        border: $button-border;
+        background:$button-border-color;
+        color: contrast-color($button-border-color);
+    }
+}
+
+a.button--disabled {
+    &:hover, 
+    &:focus {
+        background: inherit;
+        color: inherit;
     }
 }
 

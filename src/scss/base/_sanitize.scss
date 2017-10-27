@@ -75,6 +75,11 @@ caption {
 figcaption {
 	text-align: $figcaption-align;
 }
+
+a {
+    @include set-link();
+}
+
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
 

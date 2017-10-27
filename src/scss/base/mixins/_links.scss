@@ -66,19 +66,25 @@
 }
 
 @mixin kill-link($color) {
-    @include set-link($color, $color, $color, $color)
+    &, &:link {
+        @include set-link($color, $color, $color, $color)
+    }
 }
 
 @mixin kill-link-decoration($strategy: $link-strategy) {
-    @if $strategy == underline {
-        text-decoration:none;
-    } @else if $strategy == border {
-        border-bottom: none; 
-    } @else if $strategy == smart {
-        box-shadow:none;
-    } @else if $strategy == mark {
-        background-color:none;
-    } 
+    &, &:link {
+        @if $strategy == underline {
+            text-decoration:none;
+        } @else if $strategy == border {
+            border-bottom: none; 
+        } @else if $strategy == smart {
+            text-shadow: none;
+            background-image:none;
+            color: inherit;
+        } @else if $strategy == mark {
+            background-color:none;
+        } 
+    }   
 }
 
 // Smart text-underline fromhttps://eager.io/blog/smarter-link-underlines/

@@ -2043,6 +2043,41 @@ caption {
 figcaption {
   text-align: left; }
 
+a, a:link {
+  color: #2b90d9;
+  color: #2b90d9;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff), linear-gradient(#2b90d9, #2b90d9);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a::-moz-selection, a:link::-moz-selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a::selection, a:link::selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a::-moz-selection, a:link::-moz-selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a:before, a:after, a *, a *:before, a *:after, a:link:before, a:link:after, a:link *, a:link *:before, a:link *:after {
+    text-shadow: none; }
+  a:visited, a:link:visited {
+    color: #2b90d9; }
+
+a:visited {
+  color: #1573b6; }
+
+a:focus, a:hover {
+  color: #3fa2e9;
+  text-decoration: none;
+  border: none;
+  background: transparent; }
+
+a:active {
+  color: #1573b6; }
+
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
 /**
@@ -2519,61 +2554,6 @@ textarea,
 [aria-disabled] {
   cursor: default; }
 
-h1 {
-  font-size: 51px;
-  font-size: 3.15733rem;
-  line-height: 60px;
-  line-height: 3.75rem; }
-
-h2 {
-  font-size: 38px;
-  font-size: 2.36859rem;
-  line-height: 42px;
-  line-height: 2.625rem; }
-
-h3 {
-  font-size: 28px;
-  font-size: 1.77689rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
-
-h4 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 30px;
-  line-height: 1.875rem; }
-
-h5 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
-
-h6 {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #1a1a19; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: inherit;
-    vertical-align: 0;
-    font-size: 75.01875%; }
-
-h1, h2, h3, h4, .your-classes, #your-ids {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
-
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
-
-figcaption {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
-
 input,
 label,
 select,
@@ -2708,9 +2688,54 @@ button[disabled],
     background: inherit;
     color: inherit; }
 
-a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
+a.button, a.button:link, a.button:link, a.button:link:link {
+  color: #1a1a19;
+  color: #2b90d9;
   text-decoration: none;
-  border-bottom: 1px solid #090909; }
+  text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff), linear-gradient(#2b90d9, #2b90d9);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a.button::-moz-selection, a.button:link::-moz-selection, a.button:link::-moz-selection, a.button:link:link::-moz-selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a.button::selection, a.button:link::selection, a.button:link::selection, a.button:link:link::selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a.button::-moz-selection, a.button:link::-moz-selection, a.button:link::-moz-selection, a.button:link:link::-moz-selection {
+    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+    background: #b4d5fe; }
+  a.button:before, a.button:after, a.button *, a.button *:before, a.button *:after, a.button:link:before, a.button:link:after, a.button:link *, a.button:link *:before, a.button:link *:after, a.button:link:before, a.button:link:after, a.button:link *, a.button:link *:before, a.button:link *:after, a.button:link:link:before, a.button:link:link:after, a.button:link:link *, a.button:link:link *:before, a.button:link:link *:after {
+    text-shadow: none; }
+  a.button:visited, a.button:link:visited, a.button:link:visited, a.button:link:link:visited {
+    color: #2b90d9; }
+
+a.button:visited, a.button:link:visited {
+  color: #1a1a19; }
+
+a.button:focus, a.button:hover, a.button:link:focus, a.button:link:hover {
+  color: #1a1a19;
+  text-decoration: none;
+  border: none;
+  background: transparent; }
+
+a.button:active, a.button:link:active {
+  color: #1a1a19; }
+
+a.button, a.button:link {
+  text-shadow: none;
+  background-image: none;
+  color: inherit; }
+
+a.button:hover, a.button:focus {
+  border: 1px solid #090909;
+  background: #090909;
+  color: #ffffff; }
+
+a.button--disabled:hover, a.button--disabled:focus {
+  background: inherit;
+  color: inherit; }
 
 textarea {
   border: 1px solid #484848;
@@ -2729,6 +2754,61 @@ fieldset {
 
 legend {
   font-weight: 600; }
+
+h1 {
+  font-size: 51px;
+  font-size: 3.15733rem;
+  line-height: 60px;
+  line-height: 3.75rem; }
+
+h2 {
+  font-size: 38px;
+  font-size: 2.36859rem;
+  line-height: 42px;
+  line-height: 2.625rem; }
+
+h3 {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+
+h4 {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 30px;
+  line-height: 1.875rem; }
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
+h6 {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a19; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: inherit;
+    vertical-align: 0;
+    font-size: 75.01875%; }
+
+h1, h2, h3, h4, .your-classes, #your-ids {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
 
 table {
   table-layout: fixed;
@@ -2760,38 +2840,3 @@ body {
 
 #main-wrapper {
   padding: 1.5rem; }
-
-a, a:link {
-  color: #2b90d9;
-  color: #2b90d9;
-  text-decoration: none;
-  text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
-  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff), linear-gradient(#2b90d9, #2b90d9);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a::-moz-selection, a:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a::selection, a:link::selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a::-moz-selection, a:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a:before, a:after, a *, a *:before, a *:after, a:link:before, a:link:after, a:link *, a:link *:before, a:link *:after {
-    text-shadow: none; }
-  a:visited, a:link:visited {
-    color: #2b90d9; }
-
-a:visited {
-  color: #1573b6; }
-
-a:focus, a:hover {
-  color: #3fa2e9;
-  text-decoration: none;
-  border: none;
-  background: transparent; }
-
-a:active {
-  color: #1573b6; }
