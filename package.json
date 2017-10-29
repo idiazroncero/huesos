@@ -12,7 +12,7 @@
   "author": "Nacho Diaz",
   "license": "MIT",
   "repository": "git@github.com:idiazroncero/huesos.git",
-  "dependencies": {
+  "devDependencies": {
     "animate-scss": "^3.2.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
