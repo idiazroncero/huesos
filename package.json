@@ -1,6 +1,6 @@
 {
   "name": "huesos",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "Huesos is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools.",
   "main": "index.js",
   "scripts": {
