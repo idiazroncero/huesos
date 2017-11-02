@@ -31,7 +31,9 @@ __Huesos__ is built upon yarn/npm, with webpack 3 as the bundling tool.
 
 For further reference, see `package.json`
 
-`npm run build` runs webpack. No prod/dev environments are used: this is a static assets generator, so the output is always the final bundle.
+`npm run build` runs webpack. No prod/dev environments are used: this is a static assets generator, so the output is always the final bundle. `npm run huesos` is an alias to this. 
+
+This script also runs `npm run sass` on `./src/kss-src`. The KSS styleguide template is a separate NPM/Yarn project. If you want to only compile the docs, run `npm run sass` inside of the `kss-src` folder.
 
 `npm run js:lint` lints all javascript, including webpack files. ESLint also works during build, but it is only scoped to app files.
 
@@ -47,9 +49,7 @@ SCSS is compiled to CSS through Sass using node-sass and then post-processed usi
 
 #### KSS-Node Styleguide
 
-Webpack automagically compiles a living styleguide on `./styleguide`. It uses KSS-node under the hood.
-
-Please note the Styleguide template is based on `./src/kss-src`, which is a separate NPM/Yarn project. To modify the styleguide look and feel, modify the kss-demo source files and then `npm run sass` inside its root folder.
+Webpack automagically compiles a living styleguide on `./docs`. It uses KSS-node under the hood.
 
 ___
 
