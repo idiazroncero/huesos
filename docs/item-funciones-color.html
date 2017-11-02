@@ -40,52 +40,54 @@
         <a class="kss-nav__menu-link" href="section-funciones.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Funciones</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-color">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">contrast-color($color, $dark, $light)</span>
-                </a>
-              </li>
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-color">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">get-color($color, $value)</span>
-                </a>
-              </li>
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-links">
-                  <span class="kss-nav__ref ">3.2</span
-                  ><span class="kss-nav__name">set-link($base, $visited, $hover, $active)</span>
-                </a>
-              </li>
-            </ul>
       </li>
     </ul>
   </nav>
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-funciones" class="kss-section kss-section--depth-1 is-fullscreen">
+    <div id="kssref-funciones-color" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
-        <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-funciones">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-funciones-color">
             <span class="kss-title__ref">
-              3
+              3.1
               <span class="kss-title__permalink-hash">
-                  #Funciones
+                  #Funciones.color
               </span>
             </span>
-            Funciones
+            get-color($color, $value)
           </a>
-        </h1>
+        </h2>
 
 
+          <div class="kss-description">
+            <p>Función que devuelve un color de un mapa determinado</p>
 
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Nombre del mapa
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$value</code></div>
+              <div class="kss-parameters__description">
+                Nombre del color
+              </div>
+            </li>
+          </ul>
       </div>
 
 
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_get-color.scss</code>, line 2
+        </div>
 
     </div>
 </article>
@@ -104,6 +106,25 @@
     className: 'is-in-viewport'
   });
   var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
+n = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',
     elementClass: 'is-fullscreen'

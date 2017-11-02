@@ -26,14 +26,14 @@ select {
     @include form-reset-select();
 }
 
-// Botón.
+// Button.
 //
-// Puede usarse en `<button>` o en `<a class="button">`
+// Either `<input>`, `<button>` or `<a class="button">`
 //
 // Markup:
-// <button class="button {{modifier_class}}">Clica!</button>
+// <button class="button {{modifier_class}}">Click!</button>
 //
-// .button--disabled          - Atenúa el color para indicar que está desactivado.
+// .button--disabled          - Dims color and deactivates hover to indicate disability.
 //
 // Styleguide Componentes.buttons
 
@@ -62,7 +62,7 @@ input[type=reset][disabled],
 input[type=button][disabled],
 button[disabled],
 .button--disabled {
-    opacity:0.5;
+    opacity: $disabled-opacity;
     &:hover, 
     &:focus {
         background: inherit;
@@ -89,7 +89,6 @@ a.button--disabled {
         color: inherit;
     }
 }
-
 
 textarea {
     border: $input-border;

@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, h6 {
 @each $item in $font-secondary-items {
     #{$item} {
         @extend %font-secondary;
+        font-weight:$font-secondary-weight;
+        // In case is a link, we have to kill all effects!
+        a {
+            @include kill-link-decoration();
+        }
     }
 }
 

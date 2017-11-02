@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn run styleguide; webpack --config webpack.config.js",
+    "huesos": "yarn run build",
     "styleguide": "cd src/kss-src; npm run sass",
     "lint:js": "eslint src/js webpack.*.js --cache",
     "lint:css": "stylelint dist/css/*.css"

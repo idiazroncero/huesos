@@ -6,7 +6,7 @@
 // $dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
 // $light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
 //
-// Styleguide Funciones.contrast-color
+// Styleguide Funciones.color
 
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {

@@ -1,23 +1,22 @@
-// Variables y mixins
+// Mixins and variables
 @import "config";
 
-// Versión alternativa, más reducida, de normalize.css. IE8+
-// Adaptada para usar nuestra configuración
-@import "base/sanitize";
+@import "base/fonts"; // Fonts are loaded first to optimize performance
+@import "base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
 @import "base/forms";
 @import "base/typography";
 @import "base/table";
 
 
-// Menú de navegación
+// Navigation-like menus
 //
-// Elementos `<nav>` o marcados con la clase `.nav`
+// Either `<nav>` HTML elements or enabled via the css class `.nav`
 //
 // Markup:
 // <nav>
 //   <ul>
-//     <li>Elemento 1</li>
-//     <li>Elemento 2</li>
+//     <li>Element 1</li>
+//     <li>Element 2</li>
 //   </ul>
 // </nav>
 //

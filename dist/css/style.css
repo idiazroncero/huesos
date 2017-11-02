@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Martel:700,900|Quicksand:400,700);@charset "UTF-8";
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
@@ -1972,14 +1972,6 @@ A couple of things to watch out for:
 - IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
 - By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
 ----------------------------------------------------------------------------------------------------*/
-/*! sanitize.css v5.0.0 | CC0 License | github.com/jonathantneal/sanitize.css */
-/* Modificado para HUESOS por idiaz.roncero */
-/* Document (https://html.spec.whatwg.org/multipage/semantics.html#semantics)
-   ========================================================================== */
-/**
- * 1. Remove repeating backgrounds in all browsers (opinionated).
- * 2. Add box sizing inheritence in all browsers (opinionated).
- */
 *,
 ::before,
 ::after {
@@ -1988,10 +1980,6 @@ A couple of things to watch out for:
   box-sizing: inherit;
   /* 2 */ }
 
-/**
- * 1. Add text decoration inheritance in all browsers (opinionated).
- * 2. Add vertical alignment inheritence in all browsers (opinionated).
- */
 ::before,
 ::after {
   text-decoration: inherit;
@@ -1999,11 +1987,6 @@ A couple of things to watch out for:
   vertical-align: inherit;
   /* 2 */ }
 
-/**
- * 1. Add border box sizing in all browsers (opinionated).
- * 2. Add the default cursor in all browsers (opinionated).
- * 3. Prevent font size adjustments after orientation changes in IE and iOS.
- */
 html {
   box-sizing: border-box;
   /* 1 */
@@ -2013,7 +1996,7 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  font-family: Tahoma, Geneva, sans-serif; }
+  font-family: Quicksand, Helvetica, Arial sans-serif; }
 
 html {
   font-size: 100%;
@@ -2053,14 +2036,14 @@ a, a:link {
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
   a::-moz-selection, a:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
   a::selection, a:link::selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
   a::-moz-selection, a:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
   a:before, a:after, a *, a *:before, a *:after, a:link:before, a:link:after, a:link *, a:link *:before, a:link *:after {
     text-shadow: none; }
   a:visited, a:link:visited {
@@ -2077,6 +2060,49 @@ a:focus, a:hover {
 
 a:active {
   color: #1573b6; }
+
+a.link--inactive, a.link--inactive:link {
+  color: #1a1a19;
+  color: #2b90d9;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff), linear-gradient(#2b90d9, #2b90d9);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a.link--inactive::-moz-selection, a.link--inactive:link::-moz-selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.link--inactive::selection, a.link--inactive:link::selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.link--inactive::-moz-selection, a.link--inactive:link::-moz-selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.link--inactive:before, a.link--inactive:after, a.link--inactive *, a.link--inactive *:before, a.link--inactive *:after, a.link--inactive:link:before, a.link--inactive:link:after, a.link--inactive:link *, a.link--inactive:link *:before, a.link--inactive:link *:after {
+    text-shadow: none; }
+  a.link--inactive:visited, a.link--inactive:link:visited {
+    color: #2b90d9; }
+
+a.link--inactive:visited {
+  color: #1a1a19; }
+
+a.link--inactive:focus, a.link--inactive:hover {
+  color: #1a1a19;
+  text-decoration: none;
+  border: none;
+  background: transparent; }
+
+a.link--inactive:active {
+  color: #1a1a19; }
+
+a.link--inactive, a.link--inactive:link {
+  text-shadow: none;
+  background-image: none;
+  color: inherit; }
+
+a.link--disabled {
+  opacity: 0.33; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -2173,7 +2199,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: 600; }
+  font-weight: 700; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -2675,7 +2701,7 @@ input[type=reset][disabled],
 input[type=button][disabled],
 button[disabled],
 .button--disabled {
-  opacity: 0.5; }
+  opacity: 0.33; }
   input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
   input[type=reset][disabled]:hover,
   input[type=reset][disabled]:focus,
@@ -2688,7 +2714,7 @@ button[disabled],
     background: inherit;
     color: inherit; }
 
-a.button, a.button:link, a.button:link, a.button:link:link {
+a.button, a.button:link {
   color: #1a1a19;
   color: #2b90d9;
   text-decoration: none;
@@ -2697,31 +2723,36 @@ a.button, a.button:link, a.button:link, a.button:link:link {
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.button::-moz-selection, a.button:link::-moz-selection, a.button:link::-moz-selection, a.button:link:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a.button::selection, a.button:link::selection, a.button:link::selection, a.button:link:link::selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a.button::-moz-selection, a.button:link::-moz-selection, a.button:link::-moz-selection, a.button:link:link::-moz-selection {
-    text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-  a.button:before, a.button:after, a.button *, a.button *:before, a.button *:after, a.button:link:before, a.button:link:after, a.button:link *, a.button:link *:before, a.button:link *:after, a.button:link:before, a.button:link:after, a.button:link *, a.button:link *:before, a.button:link *:after, a.button:link:link:before, a.button:link:link:after, a.button:link:link *, a.button:link:link *:before, a.button:link:link *:after {
+  a.button::-moz-selection, a.button:link::-moz-selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.button::selection, a.button:link::selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.button::-moz-selection, a.button:link::-moz-selection {
+    text-shadow: 0.03em 0 #ffffff, -0.03em 0 #ffffff, 0 0.03em #ffffff, 0 -0.03em #ffffff, 0.06em 0 #ffffff, -0.06em 0 #ffffff, 0.09em 0 #ffffff, -0.09em 0 #ffffff, 0.12em 0 #ffffff, -0.12em 0 #ffffff, 0.15em 0 #ffffff, -0.15em 0 #ffffff;
+    background: #ffffff; }
+  a.button:before, a.button:after, a.button *, a.button *:before, a.button *:after, a.button:link:before, a.button:link:after, a.button:link *, a.button:link *:before, a.button:link *:after {
     text-shadow: none; }
-  a.button:visited, a.button:link:visited, a.button:link:visited, a.button:link:link:visited {
+  a.button:visited, a.button:link:visited {
     color: #2b90d9; }
 
-a.button:visited, a.button:link:visited {
+a.button:visited {
   color: #1a1a19; }
 
-a.button:focus, a.button:hover, a.button:link:focus, a.button:link:hover {
+a.button:focus, a.button:hover {
   color: #1a1a19;
   text-decoration: none;
   border: none;
   background: transparent; }
 
-a.button:active, a.button:link:active {
+a.button:active {
   color: #1a1a19; }
+
+a.button, a.button:link {
+  text-shadow: none;
+  background-image: none;
+  color: inherit; }
 
 a.button, a.button:link {
   text-shadow: none;
@@ -2753,7 +2784,7 @@ fieldset {
   padding: 1.5rem; }
 
 legend {
-  font-weight: 600; }
+  font-weight: 700; }
 
 h1 {
   font-size: 51px;
@@ -2799,7 +2830,49 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 75.01875%; }
 
 h1, h2, h3, h4, .your-classes, #your-ids {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+  font-family: Martel, Georgia, serif; }
+
+h1 {
+  font-weight: 900; }
+  h1 a, h1 a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
+
+h2 {
+  font-weight: 900; }
+  h2 a, h2 a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
+
+h3 {
+  font-weight: 900; }
+  h3 a, h3 a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
+
+h4 {
+  font-weight: 900; }
+  h4 a, h4 a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
+
+.your-classes {
+  font-weight: 900; }
+  .your-classes a, .your-classes a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
+
+#your-ids {
+  font-weight: 900; }
+  #your-ids a, #your-ids a:link {
+    text-shadow: none;
+    background-image: none;
+    color: inherit; }
 
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }

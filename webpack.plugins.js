@@ -24,4 +24,7 @@ exports.generateKSS = new KssWebpackPlugin({
 	source: 'src/scss',
 	builder: 'src/kss-src',
 	destination: 'docs',
+	title: 'Huesos',
+	subtitle: 'Style Guide',
+	
 });

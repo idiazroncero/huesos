@@ -30,7 +30,16 @@
     }
 }
 
-
+// set-link($base, $visited, $hover, $active)
+//
+// Sets all link values according to global config.
+//
+// $base - Base color
+// $visited  - Color when visited
+// $hover   - Color when hovered and focused
+// $hover   - Color when active
+//
+// Styleguide Funciones.links
 @mixin set-link(
     $base: $link-color,
     $visited: $link-visited,
@@ -66,9 +75,8 @@
 }
 
 @mixin kill-link($color) {
-    &, &:link {
-        @include set-link($color, $color, $color, $color)
-    }
+    @include set-link($color, $color, $color, $color);
+    @include kill-link-decoration();
 }
 
 @mixin kill-link-decoration($strategy: $link-strategy) {
@@ -87,8 +95,7 @@
     }   
 }
 
-// Smart text-underline fromhttps://eager.io/blog/smarter-link-underlines/
-$selectionColor : #b4d5fe;
+// Smart text-underline from https://eager.io/blog/smarter-link-underlines/
 
 @mixin textShadowToCropUnderline($color) {
   text-shadow: .03em 0 $color, -.03em 0 $color, 0 .03em $color, 0 -.03em $color, .06em 0 $color, -.06em 0 $color, .09em 0 $color, -.09em 0 $color, .12em 0 $color, -.12em 0 $color, .15em 0 $color, -.15em 0 $color
@@ -104,13 +111,13 @@ $selectionColor : #b4d5fe;
   background-position: 0% 90%, 100% 90%, 0% 90%;
 
   &::selection {
-    @include textShadowToCropUnderline($selectionColor)
-    background: $selectionColor;
+    @include textShadowToCropUnderline($backgroundColor)
+    background: $backgroundColor;
   }
 
   &::-moz-selection {
-    @include textShadowToCropUnderline($selectionColor)
-    background: $selectionColor;
+    @include textShadowToCropUnderline($backgroundColor)
+    background: $backgroundColor;
   }
 
   &:before, &:after, *, *:before, *:after {

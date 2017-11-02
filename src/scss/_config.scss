@@ -15,6 +15,7 @@
 @import "base/mixins/links";
 @import "base/mixins/form-reset";
 @import "base/mixins/lists";
+@import "base/mixins/typography";
 
 
 
@@ -67,11 +68,19 @@ $times: "Times New Roman", Times, Georgia, serif;
 $georgia: Georgia, serif;
 
 // Custom fonts
-$today: "TodaySHOP", $helvetica;
+$martel: Martel, $georgia;
+$quicksand: Quicksand, $helvetica;
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $tahoma;
-$font-secondary: $palatino;
+$font-main: $quicksand;
+$font-secondary: $martel;
+
+// Custom values for bold and light allow for more precise mapping
+$bold: 700;
+$font-main-bold: 700;
+$font-secondary-bold: 900;
+$light: light;
+$normal: normal;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
@@ -79,11 +88,7 @@ $font-secondary-items:
     '.your-classes',
     '#your-ids'
 ;
-
-// Custom values for bold and light allow for more precise mapping
-$bold: 600;
-$light: light;
-$normal: normal;
+$font-secondary-weight: $font-secondary-bold;
 
 // Select a font weight for your headings
 $heading-font-weight: normal;
@@ -340,6 +345,8 @@ $large: 1120px;
 $transitions: true;
 $transition-time: 0.33s;
 $transition-delay: 0.25s;
+
+$disabled-opacity: 0.33;
 
 
 
