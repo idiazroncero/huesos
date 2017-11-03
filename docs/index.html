@@ -12,7 +12,6 @@
   
 </head>
 <body id="kss-node" >
-
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos</h1>
@@ -32,13 +31,18 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-componentes.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Componentes</span>
+        <a class="kss-nav__menu-link" href="section-components.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-funciones.html">
-          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Funciones</span>
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Functions</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-helpers.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Helpers</span>
         </a>
       </li>
     </ul>
@@ -54,6 +58,7 @@
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/kss-source.js"></script>
 <script>
   prettyPrint();
   var spy = new ScrollSpy('#kss-node', {
@@ -71,6 +76,10 @@
   var kssMarkup = new KssMarkup({
     bodyClass: 'kss-markup-mode',
     detailsClass: 'kss-markup'
+  });
+  var kssSource = new KssSource({
+    bodyClass: 'kss-source-mode',
+    detailsClass: 'kss-source'
   });
 </script>
 

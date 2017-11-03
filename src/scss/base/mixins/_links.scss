@@ -1,3 +1,10 @@
+// Links
+//
+// Functions that set and modify link strategies and values
+//
+// Styleguide Functions.links
+
+
 @mixin get-link-decoration($strategy: $link-strategy) {
     @if $strategy == underline {
         text-decoration:underline;
@@ -39,7 +46,7 @@
 // $hover   - Color when hovered and focused
 // $hover   - Color when active
 //
-// Styleguide Funciones.links
+// Styleguide Functions.links
 @mixin set-link(
     $base: $link-color,
     $visited: $link-visited,

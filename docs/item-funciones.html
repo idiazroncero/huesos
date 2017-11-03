@@ -12,7 +12,6 @@
   
 </head>
 <body id="kss-node" class="kss-fullscreen-mode">
-
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos</h1>
@@ -32,8 +31,8 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-componentes.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Componentes</span>
+        <a class="kss-nav__menu-link" href="section-components.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
@@ -42,24 +41,22 @@
         </a>
             <ul class="kss-nav__menu-child">
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-color">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">contrast-color($color, $dark, $light)</span>
-                </a>
-              </li>
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-color">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">get-color($color, $value)</span>
-                </a>
-              </li>
-              <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-links">
-                  <span class="kss-nav__ref ">3.2</span
+                  <span class="kss-nav__ref">3.1</span
                   ><span class="kss-nav__name">set-link($base, $visited, $hover, $active)</span>
                 </a>
               </li>
             </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Functions</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-helpers.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helpers</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -97,6 +94,7 @@
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/kss-source.js"></script>
 <script>
   prettyPrint();
   var spy = new ScrollSpy('#kss-node', {
@@ -114,6 +112,10 @@
   var kssMarkup = new KssMarkup({
     bodyClass: 'kss-markup-mode',
     detailsClass: 'kss-markup'
+  });
+  var kssSource = new KssSource({
+    bodyClass: 'kss-source-mode',
+    detailsClass: 'kss-source'
   });
 </script>
 

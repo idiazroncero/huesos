@@ -12,7 +12,6 @@
   
 </head>
 <body id="kss-node" class="kss-fullscreen-mode">
-
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos</h1>
@@ -41,6 +40,11 @@
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Funciones</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-helpers.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Helpers</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -54,40 +58,18 @@
             <span class="kss-title__ref">
               3.1
               <span class="kss-title__permalink-hash">
-                  #Funciones.color
+                  #Funciones.Color
               </span>
             </span>
-            get-color($color, $value)
+            Funciones.Color
           </a>
         </h2>
 
 
-          <div class="kss-description">
-            <p>Función que devuelve un color de un mapa determinado</p>
 
-          </div>
-
-          <div class="kss-parameters__title">Parameters:</div>
-          <ul class="kss-parameters">
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$color</code></div>
-              <div class="kss-parameters__description">
-                Nombre del mapa
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$value</code></div>
-              <div class="kss-parameters__description">
-                Nombre del color
-              </div>
-            </li>
-          </ul>
       </div>
 
 
-        <div class="kss-source kss-style">
-          Source: <code>base/mixins/_get-color.scss</code>, line 2
-        </div>
 
     </div>
 </article>
@@ -106,25 +88,6 @@
     className: 'is-in-viewport'
   });
   var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-
-
-
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
-</body>
-</html>
-n = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',
     elementClass: 'is-fullscreen'

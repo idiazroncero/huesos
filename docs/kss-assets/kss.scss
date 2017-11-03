@@ -248,7 +248,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
       @media screen and (min-width: 769px) {
         content: ' ';
         position: absolute;
-        left: -20px;
+        left: ritmo(-4);
         width: 0;
         height: 100%;
         background-color: rgba(#000, 0);
@@ -257,7 +257,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
     &.is-in-viewport:before {
       background-color: #000;
-      width: 5px;
+      width: ritmo(1);
       transition: background-color .4s, width .6s;
     }
   }
@@ -268,22 +268,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     @media screen and (min-width: 769px) {
       display: block;
       list-style-type: none;
-      margin: 0;
-      padding: 0;
-
-      // @TODO: The ul is output even when there are no children. Fix this, so
-      // we can put these :first-child and :last child styles back on the ul.
-      li:first-child {
-        margin-top: 10px;
-        border-top: 1px solid #ccc;
-        padding: 10px 0 0;
-      }
-
-      li:last-child {
-        margin-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-        padding: 0 0 10px;
-      }
+      margin: ritmo(2) 0;
+      padding: 0 0 0 $gutter;
     }
   }
 
@@ -296,7 +282,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     }
   }
   .kss-nav__ref-child {
-    font-weight: normal;
+    span {font-weight: normal;}
+    margin-left:ritmo(2);
   }
 }
 
@@ -340,8 +327,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
   .kss-title__ref {
     display: block;
-    font-size: $kss-font-size;
-    line-height: $kss-font-size;
+    @include ritmo-font-size($h6-font-size);
     color: #666;
 
     &:before {
@@ -370,21 +356,17 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
 
   .kss-toolbar {
-    margin: 6px 0 24px;
+    margin: 0 0 ritmo(4) 0;
     display: inline-block;
-    border: 1px solid #eee;
-    background-color: #f9f9f9;
-    border-right-color: #e0e0e0;
-    border-bottom-color: #e0e0e0;
     line-height: 1;
     padding: 3px;
 
     a {
       box-sizing: content-box;
       display: inline-block;
-      width: 16px;
-      height: 16px;
-      padding: 3px;
+      width: ritmo(3);
+      height: ritmo(3);
+      padding: rimto(1);
       vertical-align: top;
       // Tooltip wrapper styles:
       position: relative;
@@ -396,6 +378,10 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
       .kss-toolbar__icon-fill {
         fill: #ccc;
+      }
+
+      svg {
+        display: block;
       }
 
       svg.on {
@@ -412,7 +398,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
       }
     }
   }
-  .kss-toolbar__tooltip {
+  .kss-toolbar__tooltip,
+  .kss-toolbar__source {
     position: absolute;
     z-index: 1;
     display: inline-block;
@@ -457,7 +444,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
   a:focus,
   a:hover {
-    > .kss-toolbar__tooltip {
+    > .kss-toolbar__tooltip,
+    > .kss-toolbar__source {
       opacity: 1;
       // Visually hidden off
       clip: auto;
@@ -511,8 +499,6 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
 
   .kss-modifier__wrapper {
-    border: 1px solid #ccc;
-    padding: 0 10px 10px;
   }
   .is-fullscreen .kss-modifier__wrapper {
     // Un-do padding on .kss-section.
@@ -524,10 +510,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     border: none;
   }
   .kss-modifier__heading {
-    margin: 0 -10px 10px -10px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    background-color: #eee;
+    margin: 0 0 ritmo(4) 0;
+    border-bottom: 1px solid get-color(gray, light);
     font-weight: bold;
   }
   .is-fullscreen .kss-modifier__heading {
@@ -558,10 +542,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
   .kss-modifier__example {
     clear: left;
-    border: 2px dashed transparent;
     position: relative; // Contain the example's absolute positioning.
     z-index: 0; // Establishes a local stacking context.
-    margin: -2px -2px ($kss-vertical-rhythm - 2px);
 
     &:last-child {
       margin-bottom: 0;
@@ -653,7 +635,13 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
 
   .kss-source {
-    font-size: 80%;
+    transform: scale(0.7);
+    transform-origin: left;
+    display:none;
+  }
+
+  .kss-source--open {
+    display:block;
   }
 
   .kss-github {

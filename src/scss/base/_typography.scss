@@ -1,11 +1,27 @@
-h1 { @include ritmo-font-size($h1-font-size); }
-h2 { @include ritmo-font-size($h2-font-size); }
-h3 { @include ritmo-font-size($h3-font-size); }
-h4 { @include ritmo-font-size($h4-font-size); }
-h5 { @include ritmo-font-size($h5-font-size); }
-h6 { @include ritmo-font-size($h6-font-size); }
+// Headings
+//
+// The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
+//
+// Markup:
+// <h1>Main titles use heading one</h1>
+// <h2>Subtitules and main sections use h2</h2>
+// <h3>H3 is mainly for nested sections</h3>
+// <h4>In case you need furher sectioning, use an h4</h4>
+// <h5>Rarely you will need a heading five</h5>
+// <h6>Heading six is rather unexpected</h6>
+//
+//
+// Styleguide Base.headings
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1 { @include ritmo-font-size($h1-font-size); }
+h2, .h2 { @include ritmo-font-size($h2-font-size); }
+h3, .h3 { @include ritmo-font-size($h3-font-size); }
+h4, .h4 { @include ritmo-font-size($h4-font-size); }
+h5, .h5 { @include ritmo-font-size($h5-font-size); }
+h6, .h6 { @include ritmo-font-size($h6-font-size); }
+
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6  {
   color: get-color(text, heading);
   small {
     color: inherit;
@@ -15,8 +31,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Consigue la lista de elementos con fuente secundaria y les aplica el placeholder
+// Secondary font
+//
+// Helper class and `%placeholder` used to apply the secondary font as set on `_config.scss`
+//
+// Markup:
+// <p class="font-secondary">This paragraph has been set to use the secondary font.
+// It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+// to achive the same effect</p>
+//
+//
+// Styleguide Helpers.secondary-font
 
+.font-secondary,
 %font-secondary {
     font-family: $font-secondary;
 }
@@ -32,10 +59,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+// Quotes
+//
+// Tipographic quotes can be explicitly defined using the variable `$quotes`
+//
+// Markup:
+// <q>>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+//
+// Styleguide Base.quotes
 q {
     quotes: $quotes;
-}
-
-figcaption {
-    @include ritmo-font-size($figcaption-font-size);
 }

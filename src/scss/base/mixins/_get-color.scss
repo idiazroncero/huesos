@@ -6,7 +6,7 @@
 // $color - Nombre del mapa
 // $value  - Nombre del color
 //
-// Styleguide Funciones.color
+// Styleguide Functions.Color.getColor
 
 @function get-color($color, $value) {
   $curmap : map-get($colors, $color);

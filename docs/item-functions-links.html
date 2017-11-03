@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos</h1>
@@ -36,26 +36,13 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-funciones.html">
-          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Funciones</span>
-        </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-funciones.html#kssref-funciones-links">
-                  <span class="kss-nav__ref">3.1</span
-                  ><span class="kss-nav__name">set-link($base, $visited, $hover, $active)</span>
-                </a>
-              </li>
-            </ul>
-      </li>
-      <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-functions.html">
-          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Functions</span>
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Functions</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-helpers.html">
-          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helpers</span>
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Helpers</span>
         </a>
       </li>
     </ul>
@@ -63,84 +50,78 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-funciones" class="kss-section kss-section--depth-1 ">
-
-      <div class="kss-style">
-        <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-funciones">
-            <span class="kss-title__ref">
-              3
-              <span class="kss-title__permalink-hash">
-                  #Funciones
-              </span>
-            </span>
-            Funciones
-          </a>
-        </h1>
-
-
-
-      </div>
-
-
-
-    </div>
-    <section id="kssref-funciones-links" class="kss-section kss-section--depth-2 ">
+    <div id="kssref-functions-links" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
         <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-funciones-links">
+          <a class="kss-title__permalink" href="#kssref-functions-links">
             <span class="kss-title__ref">
-              3.1
+              3.2
               <span class="kss-title__permalink-hash">
-                  #Funciones.links
+                  #Functions.links
               </span>
             </span>
-            set-link($base, $visited, $hover, $active)
+            Links
           </a>
         </h2>
 
 
           <div class="kss-description">
-            <p>Sets all link values according to global config.</p>
+            <p>Functions that set and modify link strategies and values</p>
 
           </div>
 
-          <div class="kss-parameters__title">Parameters:</div>
-          <ul class="kss-parameters">
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$base</code></div>
-              <div class="kss-parameters__description">
-                Base color
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$visited</code></div>
-              <div class="kss-parameters__description">
-                Color when visited
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$hover</code></div>
-              <div class="kss-parameters__description">
-                Color when hovered and focused
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$hover</code></div>
-              <div class="kss-parameters__description">
-                Color when active
-              </div>
-            </li>
-          </ul>
       </div>
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_links.scss</code>, line 33
+          Source: <code>base/mixins/_links.scss</code>, line 1
         </div>
 
-    </section>
+    </div>
+</article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/kss-source.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+  var kssSource = new KssSource({
+    bodyClass: 'kss-source-mode',
+    detailsClass: 'kss-source'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
+ce: <code>base/mixins/_links.scss</code>, line 40
+        </div>
+
+    </div>
 </article>
 
 <!-- SCRIPTS -->

@@ -1,0 +1,18 @@
+// Images
+//
+// Styleguide Base.images
+
+// Figcaption
+//
+// The variable `$figcaption-font-size` defines the sizing of image captions.
+//
+// Markup:
+// <figure>
+//   <img src="http://placehold.it/400x200" />
+//   <figcaption>Well documented code is always a bliss</figcaption>
+// </figure>
+//
+// Styleguide Base.images.figcaption
+figcaption {
+    @include ritmo-font-size($figcaption-font-size);
+}

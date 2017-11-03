@@ -245,8 +245,8 @@ $table-th-align: left;
 // There are four link strategies available.
 // ------
 
-$link-strategy: smart; // Alternatives: underline, border, smart, mark
-$link-highlight-on-hover: false; // "false" highlights the link before :hover
+$link-strategy: underline; // Alternatives: underline, border, smart, mark
+$link-highlight-on-hover: true; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
 $link-border-color: get-color(blue, base);
