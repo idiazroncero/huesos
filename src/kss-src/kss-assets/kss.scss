@@ -294,7 +294,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 #kss-node {
 
   .kss-section {
-    margin-bottom: ($kss-vertical-rhythm * 2);
+    margin-bottom: ritmo(4);
 
     // "fullscreen" styles copied from Mozilla's default stylesheet.
     &.is-fullscreen {
@@ -316,6 +316,24 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
       // Turn on scrolling if needed.
       overflow: auto !important;
       padding: 20px;
+    }
+  }
+
+  .kss-section--depth-1 {
+    background: get-color(gray, 'black');
+    padding:$gutter $gutter * 2;
+    margin: -$gutter (-$gutter * 2) $gutter (-$gutter * 2);
+    .kss-title__permalink,
+    .kss-title__ref,
+    .kss-title__permalink-hash {
+      color: contrast-color(get-color(gray,'black'));
+    }
+  }
+
+  .kss-section--depth-2 {
+    margin-bottom: $gutter * 4;
+    &.kss-section--empty {
+      margin-bottom: $gutter;
     }
   }
 
