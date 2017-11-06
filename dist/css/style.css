@@ -2011,54 +2011,21 @@ table, caption, figcaption,
 fieldset {
   margin: 0 0 1.5rem 0; }
 
-blockquote {
-  margin: 0 0 1.5rem 3rem; }
-
 dd {
   margin: 0 0 0 1.5rem; }
 
 ol, ul {
   padding-left: 1.5rem; }
 
+.list--inline {
+  margin: 0;
+  padding: 0; }
+  .list--inline li {
+    list-style-type: none;
+    display: inline-block; }
+
 caption {
   text-align: left; }
-
-figcaption {
-  text-align: left; }
-
-a, a:link {
-  color: #2b90d9;
-  text-decoration: none; }
-
-a:visited {
-  color: #1573b6; }
-
-a:focus, a:hover {
-  color: #3fa2e9;
-  text-decoration: underline; }
-
-a:active {
-  color: #1573b6; }
-
-a.link--inactive, a.link--inactive:link {
-  color: #1a1a19;
-  text-decoration: none; }
-
-a.link--inactive:visited {
-  color: #1a1a19; }
-
-a.link--inactive:focus, a.link--inactive:hover {
-  color: #1a1a19;
-  text-decoration: underline; }
-
-a.link--inactive:active {
-  color: #1a1a19; }
-
-a.link--inactive, a.link--inactive:link {
-  text-decoration: none; }
-
-a.link--disabled {
-  opacity: 0.33; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -2802,6 +2769,9 @@ h4 {
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
+blockquote {
+  margin: 0 0 1.5rem 3rem; }
+
 .blockquote--decorated {
   position: relative; }
   .blockquote--decorated:before {
@@ -2830,7 +2800,42 @@ figcaption {
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 1.125rem;
+  text-align: left; }
+
+a, a:link {
+  color: #2b90d9;
+  text-decoration: none; }
+
+a:visited {
+  color: #1573b6; }
+
+a:focus, a:hover {
+  color: #3fa2e9;
+  text-decoration: underline; }
+
+a:active {
+  color: #1573b6; }
+
+a.link--inactive, a.link--inactive:link {
+  color: #1a1a19;
+  text-decoration: none; }
+
+a.link--inactive:visited {
+  color: #1a1a19; }
+
+a.link--inactive:focus, a.link--inactive:hover {
+  color: #1a1a19;
+  text-decoration: underline; }
+
+a.link--inactive:active {
+  color: #1a1a19; }
+
+a.link--inactive, a.link--inactive:link {
+  text-decoration: none; }
+
+a.link--disabled {
+  opacity: 0.33; }
 
 nav ul,
 .nav ul {

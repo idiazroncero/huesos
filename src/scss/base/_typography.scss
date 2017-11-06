@@ -11,7 +11,7 @@
 // <h6>Heading six is rather unexpected</h6>
 //
 //
-// Styleguide Base.headings
+// Styleguide Typography.headings
 
 h1, .h1 { @include ritmo-font-size($h1-font-size); }
 h2, .h2 { @include ritmo-font-size($h2-font-size); }
@@ -66,9 +66,28 @@ h1, h2, h3, h4, h5, h6
 // Markup:
 // <q>>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
 //
-// Styleguide Base.quotes
+// Styleguide Typography.quotes
 q {
     quotes: $quotes;
+}
+
+// Blockquotes
+//
+// Blockquotes receive a padding based on '$gutter`
+//
+// Markup:
+// <blockquote class="myclass {{modifier_class}}">
+//   <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+//   <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+//   <cite><a href="#!">Said no one, ever.</a></cite>
+// </blockquote>
+//
+// .blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+//
+// Styleguide Typography.blockquote
+
+blockquote {
+	margin: 0 0 $spacer $blockquote-whitespace;
 }
 
 .blockquote--decorated{

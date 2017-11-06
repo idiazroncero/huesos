@@ -1,0 +1,21 @@
+// Links.
+//
+// All links are formatted throught `set-link()` mixin.
+//
+// Markup:
+// <a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
+//
+// .link--inactive         - Makes link appear as normal
+// .link--disabled         - Dims the link to mark it as disabled
+//
+// Styleguide Typography.links
+
+a {
+	@include set-link();
+	&.link--inactive {
+		@include kill-link(get-color(text, primary))
+	}
+	&.link--disabled {
+		opacity: $disabled-opacity;
+	}
+}

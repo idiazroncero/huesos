@@ -7,17 +7,23 @@
 @import "base/typography";
 @import "base/table";
 @import "base/images";
+@import "base/links";
 
 
 // Navigation menus
 //
-// Either `<nav>` HTML elements or enabled via the css class `.nav`
+// Either `<nav>` HTML elements or enabled via the css class `.nav`.
+// The behavior is exactly the same as in `.list--inline`
 //
 // Markup:
 // <nav>
 //   <ul>
-//     <li>Element 1</li>
-//     <li>Element 2</li>
+//     <li>Home</li>
+//     <li>Section</li>
+//     <li>Works</li>
+//     <li>About us</li>
+//     <li>Contact</li>
+//     <li>Exit</li>
 //   </ul>
 // </nav>
 //
@@ -27,7 +33,7 @@
 nav,
 .nav {
     ul {
-        @include list();
+        @include inline-list();
         ul {
             margin-left: $spacer;
         }

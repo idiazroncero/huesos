@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" class="kss-fullscreen-mode">
+<body id="kss-node" >
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos</h1>
@@ -49,6 +49,20 @@
         <a class="kss-nav__menu-link" href="section-mixins.html">
           <span class="kss-nav__ref">5</span><span class="kss-nav__name">Mixins</span>
         </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-links">
+                  <span class="kss-nav__ref">5.1</span
+                  ><span class="kss-nav__name">Links</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link kss-nav__ref-child" href="section-mixins.html#kssref-mixins-links-setlink">
+                  <span class="kss-nav__ref">5.1.1</span
+                  ><span class="kss-nav__name">set-link($base, $visited, $hover, $active)</span>
+                </a>
+              </li>
+            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-functions.html">
@@ -60,45 +74,105 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-functions-color-contrastcolor" class="kss-section kss-section--depth-3  is-fullscreen">
+    <div id="kssref-mixins" class="kss-section kss-section--depth-1 kss-section--empty ">
+
+      <div class="kss-style">
+        <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-mixins">
+            <span class="kss-title__ref">
+              5
+              <span class="kss-title__permalink-hash">
+                  #Mixins
+              </span>
+            </span>
+            Mixins
+          </a>
+        </h1>
+
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>_config.scss</code>, line 411
+        </div>
+
+    </div>
+    <section id="kssref-mixins-links" class="kss-section kss-section--depth-2  ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-links">
+            <span class="kss-title__ref">
+              5.1
+              <span class="kss-title__permalink-hash">
+                  #Mixins.links
+              </span>
+            </span>
+            Links
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Functions that set and modify link strategies and values</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_links.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-links-setlink" class="kss-section kss-section--depth-3  ">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-functions-color-contrastcolor">
+          <a class="kss-title__permalink" href="#kssref-mixins-links-setlink">
             <span class="kss-title__ref">
-              6.1.1
+              5.1.1
               <span class="kss-title__permalink-hash">
-                  #Functions.Color.ContrastColor
+                  #Mixins.links.setLink
               </span>
             </span>
-            contrast-color($color, $dark, $light)
+            set-link($base, $visited, $hover, $active)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo</p>
+            <p>Sets all link values according to global config.</p>
 
           </div>
 
           <div class="kss-parameters__title">Parameters:</div>
           <ul class="kss-parameters">
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__name"><code>$base</code></div>
               <div class="kss-parameters__description">
-                Color de fondo
+                Base color
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$dark</code></div>
+              <div class="kss-parameters__name"><code>$visited</code></div>
               <div class="kss-parameters__description">
-                Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+                Color when visited
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$light</code></div>
+              <div class="kss-parameters__name"><code>$hover</code></div>
               <div class="kss-parameters__description">
-                Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+                Color when hovered and focused
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$hover</code></div>
+              <div class="kss-parameters__description">
+                Color when active
               </div>
             </li>
           </ul>
@@ -106,10 +180,10 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_contrast-color.scss</code>, line 7
+          Source: <code>base/mixins/_links.scss</code>, line 40
         </div>
 
-    </div>
+    </section>
 </article>
 
 <!-- SCRIPTS -->

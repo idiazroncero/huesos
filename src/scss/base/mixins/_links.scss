@@ -2,7 +2,7 @@
 //
 // Functions that set and modify link strategies and values
 //
-// Styleguide Functions.links
+// Styleguide Mixins.links
 
 
 @mixin get-link-decoration($strategy: $link-strategy) {
@@ -46,7 +46,8 @@
 // $hover   - Color when hovered and focused
 // $hover   - Color when active
 //
-// Styleguide Functions.links
+// Styleguide Mixins.links.setLink
+
 @mixin set-link(
     $base: $link-color,
     $visited: $link-visited,

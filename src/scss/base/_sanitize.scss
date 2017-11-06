@@ -50,61 +50,50 @@ fieldset {
 	margin: 0 0 $spacer 0;
 }
 
-// Blockquotes
+// Definition lists
 //
-// Blockquotes receive a padding based on '$gutter`
+// By default, all `<dd>` items are spaced with a `$spacer`
 //
 // Markup:
-// <blockquote class="myclass {{modifier_class}}">
-//   <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-//   <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-//   <cite><a href="#!">Said no one, ever.</a></cite>
-// </blockquote>
+// <dl>
+//   dt>Definition List Title</dt>
+//   <dd>This is a definition list division.</dd>
+// </dl>
 //
-// .blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-//
-// Styleguide Base.blockquote
-
-blockquote {
-	margin: 0 0 $spacer $blockquote-whitespace;
-}
-
+// Styleguide Base.definitionLists
 dd {
 	margin: 0 0 0 $spacer;
 }
 
+// Unordered and ordered lists
+//
+// By default, `$gutter` is applied as margin.
+//
+// Markup:
+// <ol class="class {{ modifier_class }}">
+//   <li>List Item 1</li>
+//   <li>List Item 2</li>
+//   <li>List Item 3</li>
+// </ol>
+// <ul class="class {{ modifier_class }}">
+//   <li>List Item 1</li>
+//   <li>List Item 2</li>
+//   <li>List Item 3</li>
+// </ul>
+//
+// .list--inline	-  Inlines list items and removes decoration 
+//
+// Styleguide Base.lists
 ol,ul {
 	padding-left:$spacer;
 }
 
+.list--inline {
+	@include inline-list();
+}
+
 caption {
 	text-align: $caption-align;
-}
-
-figcaption {
-	text-align: $figcaption-align;
-}
-
-// Links.
-//
-// All links are formatted throught `set-link()` mixin.
-//
-// Markup:
-// <a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
-//
-// .link--inactive         - Makes link appear as normal
-// .link--disabled         - Dims the link to mark it as disabled
-//
-// Styleguide Base.links
-
-a {
-	@include set-link();
-	&.link--inactive {
-		@include kill-link(get-color(text, primary))
-	}
-	&.link--disabled {
-		opacity: $disabled-opacity;
-	}
 }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
@@ -150,6 +139,14 @@ main { /* 1 */
  * 2. Show the overflow in Edge and IE.
  */
 
+// Horizontal rule
+//
+// Applies styling defined on `_config.scss`. Eliminates ridge/bevel effects.
+//
+// Markup:
+// <hr/>
+//
+// Styleguide Base.hr
 hr {
 	box-sizing: content-box; /* 1 */
 	height: 0; /* 1 */
@@ -173,7 +170,14 @@ nav ul {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
+// Pre-formatted text
+//
+// Applies selected monospace and `$base-font-size`
+//
+// Markup:
+// <pre>Hey there! I am a pre-formatted text</pre>
+//
+// Styleguide Typography.pre
 pre {
 	font-family: monospace, monospace; /* 1 */
 	@include ritmo-font-size($base-font-size); /* 2 */

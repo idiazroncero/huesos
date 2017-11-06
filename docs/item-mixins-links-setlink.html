@@ -39,14 +39,6 @@
         <a class="kss-nav__menu-link" href="section-components.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Components</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-components.html#kssref-components-buttons">
-                  <span class="kss-nav__ref">3.1</span
-                  ><span class="kss-nav__name">Button</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-helpers.html">
@@ -68,28 +60,59 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-components" class="kss-section kss-section--depth-1 kss-section--empty is-fullscreen">
+    <div id="kssref-mixins-links-setlink" class="kss-section kss-section--depth-3  is-fullscreen">
 
       <div class="kss-style">
-        <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-components">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-mixins-links-setlink">
             <span class="kss-title__ref">
-              3
+              5.1.1
               <span class="kss-title__permalink-hash">
-                  #Components
+                  #Mixins.links.setLink
               </span>
             </span>
-            Components
+            set-link($base, $visited, $hover, $active)
           </a>
-        </h1>
+        </h3>
 
 
+          <div class="kss-description">
+            <p>Sets all link values according to global config.</p>
 
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$base</code></div>
+              <div class="kss-parameters__description">
+                Base color
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$visited</code></div>
+              <div class="kss-parameters__description">
+                Color when visited
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$hover</code></div>
+              <div class="kss-parameters__description">
+                Color when hovered and focused
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$hover</code></div>
+              <div class="kss-parameters__description">
+                Color when active
+              </div>
+            </li>
+          </ul>
       </div>
 
 
         <div class="kss-source kss-style">
-          Source: <code>_config.scss</code>, line 399
+          Source: <code>base/mixins/_links.scss</code>, line 40
         </div>
 
     </div>
