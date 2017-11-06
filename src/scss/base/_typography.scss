@@ -70,3 +70,15 @@ h1, h2, h3, h4, h5, h6
 q {
     quotes: $quotes;
 }
+
+.blockquote--decorated{
+    position:relative;
+    &:before {
+        content: $blockquote-decoration;
+        @include ritmo-font-size($blockquote-decoration-size);
+        font-family: $blockquote-font;
+        position: absolute;
+        top:ritmo(1);
+        left: - $blockquote-whitespace;
+    }
+}

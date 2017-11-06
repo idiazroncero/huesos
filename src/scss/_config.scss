@@ -235,6 +235,11 @@ $table-border: 1px solid $separator-color; // CSS value or none
 $table-padding: $spacer / 2;
 $table-th-align: left;
 
+$blockquote-whitespace: $spacer * 2;
+$blockquote-decoration: '*';
+$blockquote-decoration-size: $h2-font-size;
+$blockquote-font: $font-secondary;
+
 
 
 
@@ -302,6 +307,8 @@ $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields w
 
 
 
+
+
 // ------
 // LAYOUT
 // We asume a centered, responsive and max-width limited viewport.
@@ -309,6 +316,8 @@ $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields w
 
 $max-width: 960px;
 $layout-align: center; // left, right
+
+
 
 
 

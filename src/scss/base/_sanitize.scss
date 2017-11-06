@@ -50,9 +50,25 @@ fieldset {
 	margin: 0 0 $spacer 0;
 }
 
+// Blockquotes
+//
+// Blockquotes receive a padding based on '$gutter`
+//
+// Markup:
+// <blockquote class="myclass {{modifier_class}}">
+//   <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+//   <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+//   <cite><a href="#!">Said no one, ever.</a></cite>
+// </blockquote>
+//
+// .blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+//
+// Styleguide Base.blockquote
+
 blockquote {
-	margin: 0 0 $spacer ($spacer * 2);
+	margin: 0 0 $spacer $blockquote-whitespace;
 }
+
 dd {
 	margin: 0 0 0 $spacer;
 }
@@ -69,14 +85,12 @@ figcaption {
 	text-align: $figcaption-align;
 }
 
-// Sets links
-
 // Links.
 //
 // All links are formatted throught `set-link()` mixin.
 //
 // Markup:
-// <a href="#" class="clase {{modifier_class}}">This is a link! Here! Click!</a>
+// <a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
 //
 // .link--inactive         - Makes link appear as normal
 // .link--disabled         - Dims the link to mark it as disabled

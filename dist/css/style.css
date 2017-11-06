@@ -2802,6 +2802,19 @@ h4 {
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
+.blockquote--decorated {
+  position: relative; }
+  .blockquote--decorated:before {
+    content: "*";
+    font-size: 38px;
+    font-size: 2.36859rem;
+    line-height: 42px;
+    line-height: 2.625rem;
+    font-family: Martel, Georgia, serif;
+    position: absolute;
+    top: 0.375rem;
+    left: -3rem; }
+
 table {
   table-layout: fixed;
   width: 100%; }
@@ -2812,6 +2825,12 @@ th, td {
 
 th {
   text-align: left; }
+
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
 
 nav ul,
 .nav ul {
