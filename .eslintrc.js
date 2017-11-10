@@ -1,15 +1,16 @@
 module.exports = {
-  env: {
+  root: true, // IMPORTANT!! This is to avoid eslint for travelling all parents
+  env:{
     browser: true,
     commonjs: true,
     es6: true,
     node: true,
   },
-  extends: 'eslint:recommended',
+  extends : 'eslint:recommended',
   parserOptions: {
     sourceType: 'module',
   },
-  rules: {
+  rules:{
     'comma-dangle': ['error', 'always-multiline'],
     indent: ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],
