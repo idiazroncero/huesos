@@ -8,7 +8,7 @@
     "watch": "yarn run styleguide; webpack --watch --config webpack.config.js",
     "huesos": "yarn run build",
     "styleguide": "cd src/kss-src; npm run sass",
-    "lint:js": "eslint src/js webpack.*.js --cache",
+    "lint:js": "eslint src/js webpack.*.js --cache --debug",
     "lint:css": "stylelint dist/css/*.css"
   },
   "author": "Nacho Diaz",
@@ -50,11 +50,5 @@
   },
   "browserslist": [
     "> 1%"
-  ],
-  "dependencies": {
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
-  }
+  ]
 }
