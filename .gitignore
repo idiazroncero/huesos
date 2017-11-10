@@ -10,5 +10,8 @@ node_modules
 # Dist folder is the result of the build process and needn't be commited
 dist/*
 
+# .eslintcache
+.eslintcache
+
 
 
