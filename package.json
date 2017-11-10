@@ -50,5 +50,9 @@
   },
   "browserslist": [
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2"
+  }
 }
