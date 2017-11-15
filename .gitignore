@@ -14,7 +14,7 @@ dist/*
 .eslintcache
 
 # _config.scss must be part of the repo but never synced
-# src/scss/_config.scss
+src/scss/_config.scss
 
 
 
