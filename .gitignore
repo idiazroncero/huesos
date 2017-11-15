@@ -21,5 +21,8 @@ src/scss/components/*
 src/scss/layout/*
 !src/scss/layout/_layout.scss
 
+# Ignore custom docs
+build-docs/*
+
 
 
