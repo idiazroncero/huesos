@@ -9,6 +9,8 @@
 @import "base/images";
 @import "base/links";
 
+@import "layout/layout";
+
 
 // Navigation menus
 //
@@ -40,11 +42,6 @@ nav,
     }
 }
 
-body {
-    max-width: $max-width;
-    @include block-align($layout-align);
-}
-
 @if $show-grid == true {
     h1, 
     h2, 
@@ -57,8 +54,4 @@ body {
         background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 1px, transparent 1px);
         background-repeat: repeat;
     }
-}
-
-#main-wrapper {
-    padding: $spacer;
 }
