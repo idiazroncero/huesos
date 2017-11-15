@@ -13,5 +13,8 @@ dist/*
 # .eslintcache
 .eslintcache
 
+# _config.scss must be part of the repo but never synced
+_config.scss
+
 
 

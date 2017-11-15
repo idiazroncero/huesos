@@ -235,6 +235,11 @@ $table-border: 1px solid $separator-color; // CSS value or none
 $table-padding: $spacer / 2;
 $table-th-align: left;
 
+$blockquote-whitespace: $spacer * 2;
+$blockquote-decoration: '*';
+$blockquote-decoration-size: $h2-font-size;
+$blockquote-font: $font-secondary;
+
 
 
 
@@ -302,13 +307,17 @@ $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields w
 
 
 
+
+
 // ------
 // LAYOUT
 // We asume a centered, responsive and max-width limited viewport.
 // ------
 
-$max-width: 1200px;
+$max-width: 960px;
 $layout-align: center; // left, right
+
+
 
 
 
@@ -367,4 +376,47 @@ $gutter: $spacer;
 // YOUR PROJECT
 // Project-specific variables
 // ------
+
+
+
+// ------
+// KSS-NODE
+// This is to be parsed with KSS-Node and assign custom weight to elements
+// ------
+
+// Base
+//
+// Weight: 1
+//
+// Styleguide Base
+
+// Typography
+//
+// Weight: 2
+//
+// Styleguide Typography
+
+// Components
+//
+// Weight: 3
+//
+// Styleguide Components
+
+// Helpers
+//
+// Weight: 4
+//
+// Styleguide Helpers
+
+// Mixins
+//
+// Weight: 5
+//
+// Styleguide Mixins
+
+// Functions
+//
+// Weight: 6
+//
+// Styleguide Functions
 
