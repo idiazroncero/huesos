@@ -10,5 +10,8 @@ node_modules
 # Dist folder is the result of the build process and needn't be commited
 dist/*
 
+# _config.scss must be part of the repo but never synced
+_config.scss
+
 
 
