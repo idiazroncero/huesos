@@ -6,6 +6,12 @@ __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS 
 
 idiaz.roncero is a Madrid-based front-end dev. He does not enjoy talking about himself in the third person but, hey, this is a Readme.md, not a letter or an email.
 
+## Install
+
+Copy `src/scss/_config_sample.scss` to `src/scss/_config.scss` and tweak the values to adapt to your needs.
+
+Run the build scripts (see [Build Process](#build-process)).
+
 ## Toolkit
 
 __Huesos__ shamelessly grabs pieces of code from these amazing projects:
