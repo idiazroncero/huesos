@@ -153,8 +153,8 @@ $colors: (
   ),
 
   text: (
-    "primary":   #3b3b3b,
-    "heading":   #1f1f1f,
+    "primary":   #222222,
+    "heading":   #3b3b3b,
     "active": #383837,
     "mark" : #FCEE35,
   ),
@@ -312,7 +312,7 @@ $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields w
 // We asume a centered, responsive and max-width limited viewport.
 // ------
 
-$max-width: 960px;
+$max-width: 1500px;
 $layout-align: center; // left, right
 
 
