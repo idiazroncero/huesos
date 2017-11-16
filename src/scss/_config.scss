@@ -27,7 +27,7 @@
 // --------------------
 
 $base-font-size: 20px;
-$vertical-rhythm: 1.4;
+$vertical-rhythm: 1.414;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -118,7 +118,7 @@ $perfect-fifth:    1.500 !default;
 $golden-ratio:     1.618 !default;
 
 // Choose your type-scale ratio
-$scale-ratio: $perfect-fourth !default;
+$scale-ratio: $augmented-fourth !default;
 
 // Uses concise.css typeScale mixin to map font-sizes
 $h1-font-size: typeScale(6);
