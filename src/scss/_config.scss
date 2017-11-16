@@ -26,8 +26,8 @@
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 16px;
-$vertical-rhythm: 1.5;
+$base-font-size: 20px;
+$vertical-rhythm: 1.4;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -72,8 +72,8 @@ $martel: Martel, $georgia;
 $quicksand: Quicksand, $helvetica;
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $quicksand;
-$font-secondary: $martel;
+$font-main: $martel;
+$font-secondary: $quicksand;
 
 // Custom values for bold and light allow for more precise mapping
 $bold: 700;
