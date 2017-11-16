@@ -89,7 +89,7 @@ $font-secondary-items:
 ;
 
 // Select a font weight for your headings
-$heading-font-weight: normal;
+$heading-font-weight: $font-secondary-bold;
 
 // Text alignment for some elements
 $caption-align: left;
@@ -153,8 +153,8 @@ $colors: (
   ),
 
   text: (
-    "primary":   #1a1a19,
-    "heading":   #1a1a19,
+    "primary":   #3b3b3b,
+    "heading":   #1f1f1f,
     "active": #383837,
     "mark" : #FCEE35,
   ),
