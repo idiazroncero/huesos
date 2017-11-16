@@ -70,23 +70,22 @@ $georgia: Georgia, serif;
 // Custom fonts
 $martel: Martel, $georgia;
 $quicksand: Quicksand, $helvetica;
+$domine: Domine, $helvetica;
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
 $font-main: $martel;
-$font-secondary: $quicksand;
+$font-secondary: $domine;
 
 // Custom values for bold and light allow for more precise mapping
 $bold: 700;
 $font-main-bold: 700;
-$font-secondary-bold: 900;
+$font-secondary-bold: 700;
 $light: light;
-$normal: normal;
+$normal: 300;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
-    h1, h2, h3, h4,
-    '.your-classes',
-    '#your-ids'
+    h1, h2, h3, h4
 ;
 
 // Select a font weight for your headings
