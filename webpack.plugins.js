@@ -23,7 +23,7 @@ exports.limpiaBuild = new CleanWebpackPlugin(['dist'], {
 exports.generateKSS = new KssWebpackPlugin({
 	source: 'src/scss',
 	builder: 'src/kss-src',
-	destination: 'build-docs',
+	destination: 'docs',
 	title: 'Huesos',
 	subtitle: 'Style Guide',
 	

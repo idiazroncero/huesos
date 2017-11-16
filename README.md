@@ -12,6 +12,10 @@ Copy `src/scss/_config_sample.scss` to `src/scss/_config.scss` and tweak the val
 
 Run the build scripts (see [Build Process](#build-process)).
 
+## Use as a submodule
+
+Usually it will be needed to include Huesos inside another Git repo. In that case, in order to keep tracking changes the best solution is to add as a submodule and create a local branch of the code.
+
 ## Toolkit
 
 __Huesos__ shamelessly grabs pieces of code from these amazing projects:
