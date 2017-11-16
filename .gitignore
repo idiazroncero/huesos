@@ -13,16 +13,10 @@ dist/*
 # .eslintcache
 .eslintcache
 
-# _config.scss must be part of the repo but never synced
-src/scss/_config.scss
-
 # Ignore user-added files
 src/scss/components/*
 src/scss/layout/*
 !src/scss/layout/_layout.scss
-
-# Ignore custom docs
-build-docs/*
 
 
 
