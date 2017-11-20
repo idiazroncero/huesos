@@ -26,8 +26,8 @@
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 20px;
-$vertical-rhythm: 1.414;
+$base-font-size: 18px;
+$vertical-rhythm: 1.5;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -71,25 +71,29 @@ $georgia: Georgia, serif;
 $martel: Martel, $georgia;
 $quicksand: Quicksand, $helvetica;
 $domine: Domine, $helvetica;
+$libreBaskerville: 'Libre Baskerville';
+$libreFranklin: 'Libre Franklin';
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
 $font-main: $martel;
-$font-secondary: $domine;
+$font-secondary: $libreFranklin;
 
 // Custom values for bold and light allow for more precise mapping
 $bold: 700;
 $font-main-bold: 700;
-$font-secondary-bold: 700;
+$font-secondary-bold: 600;
 $light: light;
-$normal: 300;
+$normal: 200;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
-    h1, h2, h3, h4
+    h1, h2, h3, h4,
+    'nav ul li',
+    '.private-message-thread',
 ;
 
 // Select a font weight for your headings
-$heading-font-weight: $font-secondary-bold;
+$heading-font-weight: 200;
 
 // Text alignment for some elements
 $caption-align: left;
@@ -262,10 +266,10 @@ $link-mark-color: get-color(green, lighter);
 $link-smart-background: get-color(gray, "white");
 
 // Link colors
-$link-color: get-color(blue, base);
-$link-visited: get-color(blue, darker);
-$link-hover: get-color(blue,light);
-$link-active: get-color(blue, darker);
+$link-color: get-color(gray, dark);
+$link-visited: get-color(gray, darker);
+$link-hover: get-color(gray,light);
+$link-active: get-color(gray, darker);
 
 
 
@@ -325,8 +329,7 @@ $layout-align: center; // left, right
 // ------
 
 $z-index : (
-  item1 : 0,
-  item2 : 1,
+  notifications : 1
 );
 
 
