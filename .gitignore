@@ -13,10 +13,5 @@ dist/*
 # .eslintcache
 .eslintcache
 
-# Ignore user-added files
-src/scss/components/*
-src/scss/layout/*
-!src/scss/layout/_layout.scss
-
 
 

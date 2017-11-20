@@ -1,0 +1,16 @@
+.notifications {
+    background-color: get-color(green, light);
+    padding: $gutter;
+}
+
+.notifications__toggler {
+    @include kill-button();
+    position:absolute;
+    top:0;
+    left:100%;
+    padding:0 $gutter / 4;
+    background-color: get-color(green, dark);
+    &:hover, &:focus {
+        background-color: get-color(green, darker);
+    }
+}

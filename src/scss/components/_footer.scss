@@ -1,0 +1,14 @@
+#block-mentalstones-account-menu,
+#block-mentalstones-footer {
+    margin-right:$gutter;
+    > ul {
+        display:block;
+    }
+    > ul li {
+        display:block;
+        a {
+            @include ritmo-font-size($h6-font-size);
+            text-transform:uppercase;
+        }
+    }
+}
