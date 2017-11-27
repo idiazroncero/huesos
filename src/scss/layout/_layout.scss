@@ -4,6 +4,10 @@ body {
 }
 
 #main-wrapper {
-    padding: $spacer;
+    padding: $spacer $spacer * 2 $spacer $spacer * 4;
+    position:relative;
+}
+
+.layout-content {
     position:relative;
 }

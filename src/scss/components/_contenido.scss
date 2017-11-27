@@ -1,0 +1,27 @@
+.contenido {
+    display: flex;
+}
+
+.content__main {
+    width:66%;
+    margin-right: ritmo(8);
+}
+
+.content__aside {
+    flex:1;
+    opacity:0.5;
+    transition: opacity 0.5s ease-out;
+    &:hover {
+        opacity:1;
+    }
+}
+
+.contenido__autor {
+    max-width:150px;
+    @include ritmo-font-size($h6-font-size);
+    font-weight:bold();
+    text-transform: uppercase;
+    margin-bottom:ritmo(4);
+    padding-bottom:ritmo(4);
+    border-bottom:1px dotted get-color(gray,base);
+}

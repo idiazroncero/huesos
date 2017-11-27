@@ -14,3 +14,10 @@
         background-color: get-color(green, darker);
     }
 }
+
+.notifications .block-private-message-notification-block {
+    position:absolute;
+    top:ritmo(8);
+    left:100%;
+    background-color: get-color(green, dark);
+}

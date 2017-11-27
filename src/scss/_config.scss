@@ -90,6 +90,7 @@ $font-secondary-items:
     h1, h2, h3, h4,
     'nav ul li',
     '.private-message-thread',
+    '.contenido__autor',
 ;
 
 // Select a font weight for your headings
@@ -329,7 +330,8 @@ $layout-align: center; // left, right
 // ------
 
 $z-index : (
-  notifications : 1
+  notifications : 1,
+  nav : 9,
 );
 
 

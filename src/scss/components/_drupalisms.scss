@@ -1,0 +1,24 @@
+// Nav-like menus
+#block-mentalstones-local-tasks {
+    .video &,
+    .imagen &,
+    .audio & {
+        position:absolute;
+        top:0;
+        left:0;
+    }
+    z-index: z-index(nav);
+    @extend nav;
+    li {
+        display:block;
+        float:left;
+        a {
+            padding:0 5px;
+            border-right:1px solid #000;
+            background:get-color(gray,lighter);
+            @include ritmo-font-size($h6-font-size);
+            font-weight: bold();
+            display:block;
+        }
+    }
+}
