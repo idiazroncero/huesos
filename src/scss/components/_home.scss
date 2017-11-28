@@ -1,0 +1,35 @@
+.cuadricula {
+    @extend %clearfix;
+    .views-row {
+        float:left;
+        width:25%;
+        position:relative;
+        overflow:hidden;
+        .contenido {
+            margin:0;
+            display:block;
+            padding-bottom:100%;
+            .video-embed-field-responsive-video,
+            &.contenido--audio iframe {
+                display:block;
+                position:absolute;
+                top:0;
+                right:0;
+                left:0;
+                bottom:0;
+                height:100%;
+                width:100%;
+            }
+            .instagram-media {
+                display:block;
+                position:absolute;
+                top:50%;
+                right:0;
+                left:0;
+                width:100%;
+                top:50%;
+                transform:translateY(-50%);
+            }
+        }
+    }
+}

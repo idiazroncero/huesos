@@ -25,3 +25,8 @@
     padding-bottom:ritmo(4);
     border-bottom:1px dotted get-color(gray,base);
 }
+
+.contenido__link-layer {
+    @include layer();
+    z-index: z-index(link-layer);
+}

@@ -1,0 +1,29 @@
+.home {
+    #main-wrapper {
+        padding:0;
+        padding-left:150px;
+        min-height:150vh;
+    }
+    .header {
+        position:fixed;
+        height:100%;
+        width:150px;
+        top:0;
+        left:0;
+        bottom:0;
+        margin:0;
+        background:get-color(gray, 'black');
+    }
+    .logo {
+        position:absolute;
+        bottom: ritmo(4);
+        left: 50%;
+        transform: rotate(-90deg) translateY(50%);
+        transform-origin: 0 100%;
+        color:get-color(gray, 'white');
+    }
+    .cuadricula {
+        width:100%;
+        height:100%;
+    }
+}
