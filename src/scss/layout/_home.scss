@@ -1,6 +1,6 @@
 .home {
     #main-wrapper {
-        padding:0;
+        padding:$gutter;
         padding-left:150px;
         min-height:150vh;
     }
@@ -12,7 +12,7 @@
         left:0;
         bottom:0;
         margin:0;
-        background:get-color(gray, 'black');
+        //background:get-color(gray, 'black');
     }
     .logo {
         position:absolute;
@@ -20,7 +20,7 @@
         left: 50%;
         transform: rotate(-90deg) translateY(50%);
         transform-origin: 0 100%;
-        color:get-color(gray, 'white');
+        //color:get-color(gray, 'white');
     }
     .cuadricula {
         width:100%;

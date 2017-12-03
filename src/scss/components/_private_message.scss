@@ -1,0 +1,48 @@
+.private-message__form {
+    .filter-wrapper,
+    .js-form-type-textarea label,
+    .captcha-admin-links {
+        display:none;
+    }
+    .cke {
+        border:none !important;
+        margin-bottom:ritmo(4) !important;
+    }
+}
+
+.private-message-recipients {
+    padding-bottom:ritmo(2);
+    margin-bottom: ritmo(2);
+    border-bottom: 1px dotted get-color(gray, base);
+}
+
+.private-message {
+    display:flex;
+    align-items: baseline;
+    margin-bottom:ritmo(4);
+}
+
+.private-message__meta {
+    width:25%;
+    margin-right: $gutter;
+}
+
+.private-message__who {
+    @include ritmo-font-size($h6-font-size);
+    font-weight:bold(div);
+    display:flex;
+    align-items:center;
+    &:after {
+        content:"";
+        height:0;
+        width:0;
+        border-width:0.25rem;
+        border-style:solid;
+        border-color: transparent transparent transparent get-color(text, primary);
+        margin-left:auto;
+    }
+}
+
+.private-message__when {
+    @include ritmo-font-size($h7-font-size);
+}

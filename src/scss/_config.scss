@@ -132,6 +132,7 @@ $h3-font-size: typeScale(4);
 $h4-font-size: typeScale(3);
 $h5-font-size: typeScale(2); // Equals base-font-size
 $h6-font-size: typeScale(1);
+$h7-font-size: typeScale(0.85);
 
 // Set font sizes of specific, size-aware elements
 $sub-font-size: $h6-font-size;
@@ -281,7 +282,7 @@ $link-active: get-color(gray, darker);
 // ------
 
 // General reset
-$form-border-radius: 0;
+$form-border-radius: 2px;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
@@ -291,7 +292,7 @@ $input-padding: 0;
 
 // Buttons
 $button-border-color: darken(get-color(gray,base), 50%);
-$button-border: 1px solid $button-border-color;
+$button-border: 2px solid $button-border-color;
 $button-padding: 0 ($spacer / 2);
 
 // Checkboxes / Selects
@@ -330,9 +331,11 @@ $layout-align: center; // left, right
 // ------
 
 $z-index : (
-  notifications : 1,
   link-layer : 5,
-  nav : 9,
+  nav : 7,
+  contenido-title : 8,
+  notifications : 9,
+  notifications-form : 10,
 );
 
 

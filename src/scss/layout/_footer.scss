@@ -3,7 +3,8 @@ aside {
 }
 
 .page-footer {
-    padding-top: ritmo(4);
+    margin-top: $gutter;
+    padding-top: $gutter;
     border-top: 1px solid get-color(gray, "lighter");
     display:flex;
 }

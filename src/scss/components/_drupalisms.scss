@@ -6,19 +6,35 @@
         position:absolute;
         top:0;
         left:0;
+        li a {
+            padding:0 5px;
+            @include ritmo-font-size($h6-font-size);
+        }
     }
     z-index: z-index(nav);
     @extend nav;
+    ul {
+        @extend %clearfix;
+    }
     li {
         display:block;
         float:left;
         a {
-            padding:0 5px;
-            border-right:1px solid #000;
-            background:get-color(gray,lighter);
-            @include ritmo-font-size($h6-font-size);
+            padding-right:$gutter;
+            background:get-color(gray,'white');
             font-weight: bold();
             display:block;
         }
     }
+}
+
+.form-item {
+    margin-bottom: $gutter;
+    label {
+        margin-right: $gutter / 2;
+    }
+}
+
+.description {
+    @include ritmo-font-size($h7-font-size);
 }

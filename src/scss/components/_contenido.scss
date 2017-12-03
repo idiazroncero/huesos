@@ -16,6 +16,10 @@
     }
 }
 
+.contenido__inner {
+    padding:ritmo(4);
+}
+
 .contenido__autor {
     max-width:150px;
     @include ritmo-font-size($h6-font-size);
@@ -29,4 +33,41 @@
 .contenido__link-layer {
     @include layer();
     z-index: z-index(link-layer);
+}
+
+.contenido__title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: calc(100% + #{$gutter});
+    bottom: 0;
+    opacity:0;
+    display:flex;
+    width: 100%;
+    padding: ritmo(4);
+    background: get-color(gray,'white');
+    z-index: z-index(contenido-title);
+    flex-direction:column;
+    transition: opacity 0.25s ease-out;
+    h1 {
+        font-weight:bold(h1);
+        max-width:250px;
+        font-family: $font-main;
+        margin:0;
+        @include ritmo-font-size($h2-font-size, 8);
+        a { 
+            //@include kill-link(get-color(gray,'white'));
+        }
+    }
+    p {
+        margin:ritmo(2) 0 0 0;
+        font-family:$font-secondary;
+        @include ritmo-font-size($h6-font-size);
+        font-weight:bold(p);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        flex:1;
+        border-bottom: ritmo(1) solid get-color(gray, "black");
+        //color: get-color(gray,'white');
+    }
 }

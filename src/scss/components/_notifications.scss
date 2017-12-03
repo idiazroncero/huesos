@@ -1,23 +1,26 @@
 .notifications {
-    background-color: get-color(green, light);
+    background-color: get-color(gray, 'white');
+    border-right:2px solid get-color(green,'light');
     padding: $gutter;
 }
 
-.notifications__toggler {
-    @include kill-button();
-    position:absolute;
-    top:0;
-    left:100%;
-    padding:0 $gutter / 4;
-    background-color: get-color(green, dark);
-    &:hover, &:focus {
-        background-color: get-color(green, darker);
-    }
-}
+// .notifications__toggler {
+//     @include kill-button();
+//     position:absolute;
+//     top:0;
+//     left:100%;
+//     padding:0 $gutter / 4;
+//     background-color: get-color(green, dark);
+//     &:hover, &:focus {
+//         background-color: get-color(green, darker);
+//     }
+// }
 
 .notifications .block-private-message-notification-block {
     position:absolute;
-    top:ritmo(8);
+    top:ritmo(0);
     left:100%;
-    background-color: get-color(green, dark);
+    margin: ritmo(1);
+    background-color: get-color(gray, 'white');
+    // background-color: get-color(green, dark);
 }
