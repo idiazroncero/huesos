@@ -133,6 +133,7 @@ $h4-font-size: typeScale(3);
 $h5-font-size: typeScale(2); // Equals base-font-size
 $h6-font-size: typeScale(1);
 $h7-font-size: typeScale(0.85);
+$h8-font-size: typeScale(0.66);
 
 // Set font sizes of specific, size-aware elements
 $sub-font-size: $h6-font-size;
@@ -307,7 +308,7 @@ $select-border: 1px solid $input-border-color;
 $select-padding: 0 ($spacer / 2);
 
 // Browser quirks
-$webkit-autofill-color: get-color(gray, base); // When webkit fills the fields whith your stored data.
+$webkit-autofill-color: get-color(gray, lighter); // When webkit fills the fields whith your stored data.
 
 
 

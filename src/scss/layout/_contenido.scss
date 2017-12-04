@@ -1,0 +1,13 @@
+.content__main {
+    width:60%;
+    margin-right: ritmo(8);
+}
+
+.content__aside {
+    flex:1;
+    opacity:0.5;
+    transition: opacity 0.5s ease-out;
+    &:hover {
+        opacity:1;
+    }
+}
