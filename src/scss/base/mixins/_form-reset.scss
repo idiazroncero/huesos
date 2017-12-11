@@ -138,6 +138,7 @@ A couple of things to watch out for:
     background: none;
     outline: none;
     padding: $button-padding;
+    border-radius: $button-border-radius;
   
     &::-moz-focus-inner {
       border: 0;

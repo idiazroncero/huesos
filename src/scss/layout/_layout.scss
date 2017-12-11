@@ -4,10 +4,35 @@ body {
 }
 
 #main-wrapper {
-    padding: $spacer $spacer * 2 $spacer $spacer * 4;
-    position:relative;
+    // Don't allow for pages less tall than the viewport
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    // Make room for aside.
+    margin-right:25%;
+    margin-right:25vw;
+    padding: $spacer $spacer * 2;
+    &.page--noaside {
+        margin-right:0;
+    }
 }
 
 .layout-content {
     position:relative;
+}
+
+.page__main {
+    flex:1;
+}
+
+.page__aside {
+    width:25%;
+    width:25vw;
+    background-color: get-color(gray,"black");
+    position:absolute;
+    top:0;
+    right:0;
+    min-height: 100%;
+    min-height: 100vh;
+    padding: ritmo(4 * 6) $spacer $spacer $spacer;
 }

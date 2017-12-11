@@ -283,7 +283,7 @@ $link-active: get-color(gray, darker);
 // ------
 
 // General reset
-$form-border-radius: 2px;
+$form-border-radius: 0px;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
@@ -294,6 +294,7 @@ $input-padding: 0;
 // Buttons
 $button-border-color: darken(get-color(gray,base), 50%);
 $button-border: 2px solid $button-border-color;
+$button-border-radius: 2px;
 $button-padding: 0 ($spacer / 2);
 
 // Checkboxes / Selects
@@ -308,7 +309,7 @@ $select-border: 1px solid $input-border-color;
 $select-padding: 0 ($spacer / 2);
 
 // Browser quirks
-$webkit-autofill-color: get-color(gray, lighter); // When webkit fills the fields whith your stored data.
+$webkit-autofill-color: get-color(gray, "white"); // When webkit fills the fields whith your stored data.
 
 
 

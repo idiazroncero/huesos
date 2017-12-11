@@ -1,0 +1,18 @@
+.user {
+    .layout-content {
+        display:flex;
+    }
+    #block-mentalstones-local-tasks {
+        ul li {
+            width:100%;
+            a {
+                @include set-link(
+                    get-color(gray, "white"), 
+                    get-color(gray, "lighter"),
+                    get-color(gray, "lighter"),
+                    get-color(gray, "dark")
+                );
+            }
+        }
+    }
+}
