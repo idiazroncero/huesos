@@ -1,17 +1,28 @@
 // Nav-like menus
 #block-mentalstones-local-tasks {
-    .video &,
-    .imagen &,
-    .audio & {
-        position:absolute;
-        top:0;
-        left:0;
-        li {
-            float:left;
-            a {
-                padding:0 5px;
-                background:get-color(gray,'white');
-            }
+    // .video &,
+    // .imagen &,
+    // .audio & {
+    //     position:absolute;
+    //     top:0;
+    //     left:0;
+    //     li {
+    //         float:left;
+    //         a {
+    //             padding:0 5px;
+    //             background:get-color(gray,'white');
+    //         }
+    //     }
+    // }
+    ul li {
+        width:100%;
+        a {
+            @include set-link(
+                get-color(gray, "white"), 
+                get-color(gray, "lighter"),
+                get-color(gray, "lighter"),
+                get-color(gray, "dark")
+            );
         }
     }
     z-index: z-index(nav);

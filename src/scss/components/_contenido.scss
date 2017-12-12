@@ -1,7 +1,3 @@
-.contenido {
-    display: flex;
-}
-
 .contenido__inner {
     padding:ritmo(4);
 }
@@ -11,9 +7,6 @@
     @include ritmo-font-size($h6-font-size);
     font-weight:bold();
     text-transform: uppercase;
-    margin-bottom:ritmo(4);
-    padding-bottom:ritmo(4);
-    border-bottom:1px dotted get-color(gray,base);
 }
 
 .contenido__link-layer {

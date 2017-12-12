@@ -1,6 +1,7 @@
 body {
     max-width: $max-width;
     @include block-align($layout-align);
+    position:relative; // Absolute scope for aside
 }
 
 #main-wrapper {
@@ -11,7 +12,7 @@ body {
     // Make room for aside.
     margin-right:25%;
     margin-right:25vw;
-    padding: $spacer $spacer * 2;
+    padding: $spacer * 2;
     &.page--noaside {
         margin-right:0;
     }
@@ -32,7 +33,9 @@ body {
     position:absolute;
     top:0;
     right:0;
-    min-height: 100%;
-    min-height: 100vh;
+    bottom:0;
+    height:100%;
+    // min-height: 100%;
+    // min-height: 100vh;
     padding: ritmo(4 * 6) $spacer $spacer $spacer;
 }

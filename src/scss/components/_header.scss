@@ -1,6 +1,7 @@
 .header {
     display:flex;
     margin-bottom:ritmo(8);
+    align-items: baseline;
 }
 
 .logo {
@@ -14,6 +15,7 @@
 
 .main-title {
     h1 {
+        @include ritmo-font-size($h2-font-size);
         display:flex;
         &:before {
             content: "/";
