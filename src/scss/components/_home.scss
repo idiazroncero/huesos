@@ -134,6 +134,7 @@ $gutter : ritmo(6);
                 .contenido__title {
                     width:50%;
                     height:50%;
+                    opacity:1;
                 }
             }
             &:nth-child(3) {
@@ -142,6 +143,10 @@ $gutter : ritmo(6);
                 .contenido__inner {
                     padding:0;
                     @include layer();
+                    img {
+                        object-fit:cover;
+                        height:100%;
+                    }
                 }
             }
             &:nth-child(7) {

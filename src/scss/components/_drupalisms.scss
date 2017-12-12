@@ -1,46 +1,3 @@
-// Nav-like menus
-#block-mentalstones-local-tasks {
-    // .video &,
-    // .imagen &,
-    // .audio & {
-    //     position:absolute;
-    //     top:0;
-    //     left:0;
-    //     li {
-    //         float:left;
-    //         a {
-    //             padding:0 5px;
-    //             background:get-color(gray,'white');
-    //         }
-    //     }
-    // }
-    ul li {
-        width:100%;
-        a {
-            @include set-link(
-                get-color(gray, "white"), 
-                get-color(gray, "lighter"),
-                get-color(gray, "lighter"),
-                get-color(gray, "dark")
-            );
-        }
-    }
-    z-index: z-index(nav);
-    @extend nav;
-    ul {
-        @extend %clearfix;
-    }
-    li {
-        display:block;
-        a {
-            padding-right:$gutter;
-            font-weight: bold();
-            display:block;
-            @include ritmo-font-size($h6-font-size);
-        }
-    }
-}
-
 .form-item {
     margin-bottom: $gutter;
     label {
@@ -58,4 +15,8 @@
 
 .description {
     @include ritmo-font-size($h7-font-size, 4);
+}
+
+.g-recaptcha {
+    margin-bottom: $spacer;
 }

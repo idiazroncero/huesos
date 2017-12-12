@@ -1,8 +1,8 @@
 .home {
     #main-wrapper {
-        padding:$gutter;
-        padding-left:150px;
-        min-height:150vh;
+        padding:$gutter $gutter * 2;
+        padding-left: 150px + ($base-line-height * 2);
+        padding-left: calc(150px + #{$gutter * 2});
     }
     .header {
         position:fixed;
@@ -12,7 +12,7 @@
         left:0;
         bottom:0;
         margin:0;
-        //background:get-color(gray, 'black');
+        background:get-color(gray, 'black');
     }
     .logo {
         position:absolute;
@@ -20,7 +20,9 @@
         left: 50%;
         transform: rotate(-90deg) translateY(50%);
         transform-origin: 0 100%;
-        //color:get-color(gray, 'white');
+        a {
+            @include kill-link(get-color(gray, 'white'));
+        }
     }
     .cuadricula {
         width:100%;

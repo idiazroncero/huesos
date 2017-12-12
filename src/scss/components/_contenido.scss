@@ -4,9 +4,7 @@
 
 .contenido__autor {
     max-width:150px;
-    @include ritmo-font-size($h6-font-size);
-    font-weight:bold();
-    text-transform: uppercase;
+    @extend %peque;    
 }
 
 .contenido__link-layer {

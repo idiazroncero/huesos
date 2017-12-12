@@ -1,0 +1,33 @@
+.page__aside {
+    h2,p {
+        color: get-color(gray,"light");
+    }
+    a {
+        @include set-link(
+            get-color(gray, "white"), 
+            get-color(gray, "lighter"),
+            get-color(gray, "lighter"),
+            get-color(gray, "dark")
+        );
+    }
+}
+
+.nav-block {
+    @extend %clearfix;
+    @extend nav;
+    h2 {
+        @include ritmo-font-size($h5-font-size);
+    };
+    ul {
+        li {
+            display:block;
+            width:100%;
+            a {
+                padding-right:$gutter;
+                font-weight: bold();
+                display:block;
+                @include ritmo-font-size($h6-font-size);
+            }
+        } 
+    }
+}

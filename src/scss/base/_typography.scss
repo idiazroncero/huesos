@@ -101,3 +101,11 @@ blockquote {
         left: - $blockquote-whitespace;
     }
 }
+
+
+%peque {
+    @include ritmo-font-size($h6-font-size);
+    font-weight:bold();
+    text-transform: uppercase;
+    font-family: $font-secondary;
+}
