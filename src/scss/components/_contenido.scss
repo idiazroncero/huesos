@@ -82,3 +82,22 @@
         //color: get-color(gray,'white');
     }
 }
+
+.box {
+    display:flex;
+    flex-direction:column;
+    vertical-align:center;
+    justify-content:center;
+    padding:ritmo(2);
+    margin:0;
+    background-color: get-color(gray,"black");
+    color: get-color(gray,"white");
+    a {
+        @include set-link(
+            get-color(gray, "white"), 
+            get-color(gray, "lighter"),
+            get-color(gray, "lighter"),
+            get-color(gray, "dark")
+        );
+    }
+}
