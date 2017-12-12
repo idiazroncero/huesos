@@ -83,6 +83,16 @@
     }
 }
 
+.contenido--page {
+    p:first-child:first-letter {
+        float:left;
+        @include ritmo-font-size($h1-font-size);
+        line-height:1;
+        font-weight:bold(p);
+        margin-right:5px;
+    }
+}
+
 .box {
     display:flex;
     flex-direction:column;
