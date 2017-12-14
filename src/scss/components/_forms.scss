@@ -1,0 +1,45 @@
+.field--name-field-soundcloud,
+.field--name-field-imagen,
+.field--name-field-instagram,
+.field--name-field-video {
+    fieldset {
+        padding:0;
+        margin:0;
+        border:none;
+        legend {
+            display:none;
+        }
+    }
+}
+
+.field--name-body {
+    .form-item {
+        flex-direction:column;
+        width:100%;
+        label {
+            display:none;
+        }
+        .form-item {
+            display:block;
+            margin:0;
+            padding:0;
+            border:none;
+        }
+    }
+    .filter-wrapper {
+        display:none;
+    }
+}
+
+.js-form-type-vertical-tabs {
+    display:none;
+}
+
+.node-form {
+    margin-bottom: $gutter;
+    padding-bottom: $gutter;
+    border-bottom: ritmo(2) solid get-color(gray, "black");
+    h2 {
+        @include ritmo-font-size($h4-font-size);
+    }
+} 

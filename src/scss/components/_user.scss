@@ -3,3 +3,55 @@
         display:flex;
     }
 }
+
+.user-form {
+    margin-bottom:$spacer;
+    #edit-account {
+        display:flex;
+        flex-direction:column;
+        .form-item-name {
+            order:0;
+        }
+        .form-item-current-pass {
+            order:1
+        }
+        .form-item-mail {
+            order:2;
+        }
+        .form-item-pass {
+            order:3;
+            align-items:stretch;
+            justify-content:space-between;
+            margin:0;
+            padding:0;
+            border:none;
+            .form-item {
+                align-items: flex-start;
+                width:45%;
+                margin:0;
+                padding:0;
+                border:none;
+            }
+        }
+        #password-policy-status {
+            order: 4;
+            margin: $spacer 0;
+            padding-bottom: $spacer;
+            border-bottom: 1px dotted get-color(gray, "lighter");
+            @include ritmo-font-size($h6-font-size);
+            font-family: $font-secondary;
+            table {
+                margin:0;
+            }
+            td, th {
+                border:none;
+                padding: $gutter / 6 $gutter $gutter / 4 0;
+            }
+        }
+    }
+
+}
+
+#password-policy-status {
+
+}

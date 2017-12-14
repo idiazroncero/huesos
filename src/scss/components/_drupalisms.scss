@@ -1,20 +1,96 @@
 .form-item {
     margin-bottom: $gutter;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
     label {
         margin-right: $gutter / 2;
     }
     input {
+        flex:1;
         opacity: 0.5;
         transition: $transition-time;
         &:hover, &:focus {
             opacity:1;
         }
     }
+    .description,
+    .password-strength,
+    .password-confirm {
+        width:100%;
+    }
     
 }
 
-.description {
-    @include ritmo-font-size($h7-font-size, 4);
+// File uploader
+
+.js-form-type-managed-file {
+    label {
+        @extend .button;
+        cursor:pointer;
+    }
+    .image-widget {
+        width:100%;
+        display:flex;
+        align-items:center;
+        img {
+            margin: $spacer 0 0 0;
+        }
+        span {
+            flex:0 1 auto;
+            padding: 0 0 0 $spacer;
+            margin: $spacer 0;
+        }
+        .form-submit {
+            flex: 0 1 auto;
+            margin-left:auto;
+        }
+    }
+}
+
+.form-item {
+    margin-bottom: $spacer;
+    padding-bottom: $spacer;
+    border-bottom: 1px dotted get-color(gray, "lighter");
+}
+
+div[role="alert"] {
+    background: get-color(state, "error");
+    padding: ritmo(2);
+    margin-bottom: $spacer;
+    @extend %peque;
+    color: get-color(gray, "white");
+    ul  {
+        @include inline-list();
+    }
+}
+
+div[role="contentinfo"] {
+    background: get-color(state, "success");
+    padding: ritmo(2);
+    margin-bottom: $spacer;
+    @extend %peque;
+    color: get-color(gray, "white");
+    ul  {
+        @include inline-list();
+    }
+}
+
+.form-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.description,
+.password-confirm {
+    margin:ritmo(2) 0 0 0;
+    @include ritmo-font-size($h6-font-size);
+    color: get-color(gray, "dark");
+    br {height:0;};
 }
 
 .g-recaptcha {
