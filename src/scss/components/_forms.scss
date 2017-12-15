@@ -43,3 +43,16 @@
         @include ritmo-font-size($h4-font-size);
     }
 } 
+
+// If it is a create image form...
+#node-imagen-form .field--name-field-imagen {
+    .image-widget {
+        flex-wrap:wrap;
+        span {
+            padding:0;
+        }
+    }
+    .focal-point-wrapper {
+        width:100%;
+    }
+}

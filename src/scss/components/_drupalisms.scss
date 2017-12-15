@@ -3,16 +3,22 @@
     display:flex;
     flex-wrap:wrap;
     align-items:center;
+    margin-bottom: $spacer;
+    padding-bottom: $spacer;
+    border-bottom: 1px dotted get-color(gray, "lighter");
     label {
         margin-right: $gutter / 2;
     }
-    input {
+    input[type="text"] {
         flex:1;
         opacity: 0.5;
         transition: $transition-time;
         &:hover, &:focus {
             opacity:1;
         }
+    }
+    input[type="checkbox"] {
+        margin: 0 $gutter / 2 0 0;
     }
     .description,
     .password-strength,
@@ -48,34 +54,6 @@
     }
 }
 
-.form-item {
-    margin-bottom: $spacer;
-    padding-bottom: $spacer;
-    border-bottom: 1px dotted get-color(gray, "lighter");
-}
-
-div[role="alert"] {
-    background: get-color(state, "error");
-    padding: ritmo(2);
-    margin-bottom: $spacer;
-    @extend %peque;
-    color: get-color(gray, "white");
-    ul  {
-        @include inline-list();
-    }
-}
-
-div[role="contentinfo"] {
-    background: get-color(state, "success");
-    padding: ritmo(2);
-    margin-bottom: $spacer;
-    @extend %peque;
-    color: get-color(gray, "white");
-    ul  {
-        @include inline-list();
-    }
-}
-
 .form-file {
 	width: 0.1px;
 	height: 0.1px;
@@ -90,7 +68,7 @@ div[role="contentinfo"] {
     margin:ritmo(2) 0 0 0;
     @include ritmo-font-size($h6-font-size);
     color: get-color(gray, "dark");
-    br {height:0;};
+    br {height:0; width:0};
 }
 
 .g-recaptcha {

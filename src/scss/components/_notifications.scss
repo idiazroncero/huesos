@@ -1,7 +1,20 @@
+
+@keyframes pop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .notifications {
-    background-color: get-color(gray, 'white');
-    border-right:2px solid get-color(green,'light');
-    padding: $gutter;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    transform: translateY(-100%);
+    animation: pop 1s ease-in-out 0.75s 1 normal forwards ;
 }
 
 // .notifications__toggler {
@@ -16,11 +29,46 @@
 //     }
 // }
 
-.notifications .block-private-message-notification-block {
+.message {
+    @extend %peque;
+    color: get-color(gray, "white");
+    a {
+        @include set-link(
+            get-color(gray, "lighter"), 
+            get-color(gray, "light"),
+            get-color(gray, "light"),
+            get-color(gray, "white")
+        );
+    }
+    ul  {
+        @include inline-list();
+    }
+}
+
+.message--error {
+    padding: ritmo(2);
+    background: get-color(state, "error");
+}
+
+.message--info {
+    padding: ritmo(2);
+    background: get-color(state, "success");
+}
+
+.message__close {
     position:absolute;
-    top:ritmo(0);
-    left:100%;
-    margin: ritmo(1);
-    background-color: get-color(gray, 'white');
-    // background-color: get-color(green, dark);
+    top:ritmo(2);
+    right:ritmo(2);
+    @include ritmo-font-size($h5-font-size);
+    line-height:1;
+    border:none;
+    padding:0;
+    margin:0;
+    &:hover, &:focus, &:active {
+        background:none;
+        color: get-color(gray, "black");
+    }
+    &:before {
+        display:block;
+    }
 }

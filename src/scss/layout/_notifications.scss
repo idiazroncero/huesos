@@ -1,28 +1,28 @@
-.notifications {
-    position:absolute;
-    z-index: z-index(notifications);
-    top:0;
-    width:40%;
-    left:-40%;
-    bottom:0;
-    margin-bottom:0;
-    transition: left 0.5s ease-out;
-    // .private-message__form {
-    //     position:absolute;
-    //     top:0;
-    //     bottom:0;
-    //     left:-100%;
-    //     width:100%;
-    //     z-index: z-index(notifications-form);
-    //     background-color: get-color(green,'light');
-    //     padding: $gutter;
-    //     transition: left 0.5s ease-out;
-    // }
-    // .private-message__form--active {
-    //     left:100%;
-    // }
-}
+// .notifications {
+//     position:absolute;
+//     z-index: z-index(notifications);
+//     top:0;
+//     width:40%;
+//     left:-40%;
+//     bottom:0;
+//     margin-bottom:0;
+//     transition: left 0.5s ease-out;
+//     // .private-message__form {
+//     //     position:absolute;
+//     //     top:0;
+//     //     bottom:0;
+//     //     left:-100%;
+//     //     width:100%;
+//     //     z-index: z-index(notifications-form);
+//     //     background-color: get-color(green,'light');
+//     //     padding: $gutter;
+//     //     transition: left 0.5s ease-out;
+//     // }
+//     // .private-message__form--active {
+//     //     left:100%;
+//     // }
+// }
 
-.notifications--open {
-    left:0px;
-}
+// .notifications--open {
+//     left:0px;
+// }

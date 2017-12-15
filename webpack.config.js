@@ -63,6 +63,15 @@ module.exports = {
 					fallback: 'style-loader',
 				}),
 			},
+			// FILES
+			{
+				test: /\.(eot|woff|woff2|ttf|svg)$/,
+				loader : 'file-loader',
+				options : {
+					name : 'fonts/[name].[ext]',
+					publicPath : '../'
+				}
+			}
 		],
 	},
 	plugins: [
