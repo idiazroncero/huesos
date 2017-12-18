@@ -1,18 +1,19 @@
 .home {
     #main-wrapper {
         padding:$gutter $gutter * 2;
-        padding-left: 150px + ($base-line-height * 2);
-        padding-left: calc(150px + #{$gutter * 2});
+        padding-left: 100px + ($base-line-height * 2);
+        padding-left: calc(100px + #{$gutter * 2});
     }
     .header {
         position:fixed;
         height:100%;
-        width:150px;
+        width:100px;
         top:0;
         left:0;
         bottom:0;
         margin:0;
         background:get-color(gray, 'black');
+        z-index: z-index(front-header);
     }
     .logo {
         position:absolute;
@@ -27,5 +28,99 @@
     .cuadricula {
         width:100%;
         height:100%;
+    }
+}
+
+.front__menu {
+    position: fixed;
+    width:calc(100% - 100px);
+    height:100%;
+    top:0;
+    left:-100%;
+    background-color: get-color(gray, "darker");
+    z-index:z-index('front-menu');
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition: left $transition-time ease-out;
+    a {
+        @include set-link(
+            get-color(gray, "white"), 
+            get-color(gray, "lighter"),
+            get-color(gray, "lighter"),
+            get-color(gray, "dark")
+        );
+    }
+    ul {
+        text-align:center;
+        li {
+            list-style-type:none;
+            display:block;
+            text-transform: uppercase;
+            margin-bottom: $gutter;
+            &:last-child {
+                margin:0;
+            }
+        }
+        a {
+            @include ritmo-font-size($h4-font-size);
+        }
+    }
+}
+
+.front__menu--open {
+    left:100px;
+}
+
+.front__menu__open {
+    @include kill-button();
+    position:absolute;
+    top:$gutter;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.front__menu__open--open {
+    .front__burguer {
+        height:9px;
+        margin-bottom:0;
+    }
+    .front__cross {
+        height:5px !important;
+        margin-bottom:0 !important;
+        &:nth-child(4) {
+            transform: translateY(-50%) rotate(45deg) scale(1);
+        }
+        &:nth-child(5) {
+            transform: translateY(-50%) rotate(-45deg) scale(1);
+        }
+    }
+}
+
+.front__burguer {
+    display:block;
+    width:$gutter;
+    margin-bottom:6px;
+    height:3px;
+    background-color:get-color(gray, "white");
+    transition: all $transition-time ease-in-out;
+    &:nth-child(3) {
+        margin-bottom:0;
+    }
+}
+
+.front__cross {
+    background-color:get-color(gray, "black");
+    position:absolute;
+    top:50%;
+    margin:0;
+    transition: all $transition-time ease-in-out;
+    transform-origin: center center;
+    &:nth-child(4) {
+        transform: translateY(-50%) rotate(45deg) scale(0);
+    }
+    &:nth-child(5) {
+        transform: translateY(-50%) rotate(-45deg) scale(0);
     }
 }

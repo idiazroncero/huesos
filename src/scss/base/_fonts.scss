@@ -98,7 +98,8 @@ $icon-star: "\e90d";
     content: $icon-question;
   }
 }
-.icon-pen {
+.icon-pen,
+.icon-texto {
   &:before {
     content: $icon-pen;
   }

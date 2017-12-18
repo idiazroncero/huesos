@@ -5,6 +5,7 @@
 }
 
 .logo {
+    @include ritmo-font-size($h3-font-size);
     display:inline-block;
     letter-spacing: -0.03em;
     margin:0;
@@ -15,7 +16,7 @@
 
 .main-title {
     h1 {
-        @include ritmo-font-size($h2-font-size);
+        @include ritmo-font-size($h3-font-size);
         display:flex;
         &:before {
             content: "/";
