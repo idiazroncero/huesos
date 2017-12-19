@@ -19,3 +19,8 @@ a {
 		opacity: $disabled-opacity;
 	}
 }
+
+.link__layer {
+	@include layer();
+	z-index: z-index(link-layer);
+}

@@ -2,16 +2,6 @@
 
 .relacionados {
     margin-bottom: $spacer;
-    .box {
-        margin-bottom: $spacer;
-        width:150px;
-        height:150px;
-        h1 {
-            @extend %peque;
-            color: get-color(gray,"white");
-            margin:0;
-        }
-    }
 }
 
 .relacionados ul {

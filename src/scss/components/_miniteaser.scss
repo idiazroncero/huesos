@@ -5,6 +5,7 @@
 .miniteaser {
     display:flex;
     justify-content:space-between;
+    position:relative; // For link-layer
 }
 
 .miniteaser__thumb {

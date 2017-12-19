@@ -1,8 +1,11 @@
 .user {
-    .layout-content {
-        display:flex;
-    }
+    // .layout-content {
+    //     display:flex;
+    // }
 }
+
+
+// Forms
 
 .user-form {
     margin-bottom:$spacer;
@@ -52,6 +55,74 @@
 
 }
 
-#password-policy-status {
+// PROFILE
 
+.profile {
+    padding-bottom: $gutter;
+}
+
+.profile__img {
+    width:200px;
+    height:200px;
+    float:left;
+    margin: $spacer $spacer $spacer 0;
+    shape-outside:circle();
+    img {
+        border-radius: 50%;
+        display:block;
+    }
+}
+
+.profile__desc {
+
+}
+
+.micontenido {
+    h2 {
+        @include ritmo-font-size($h4-font-size);
+    }
+    .miniteaser {
+        margin:0;
+    }
+}
+
+.micontenido__list {
+    @include inline-list();
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.micontenido__item {
+    width:48%;
+    width: calc(50% - #{$gutter});
+    margin-bottom: $gutter;
+    &:nth-child(odd) {
+        margin-right:auto;
+    }
+}
+
+.micontenido__link {
+    display:inline-block;
+    margin: $gutter / 6  4px 0 0;
+    background-color: get-color(state, "success");
+    width:73px;
+    text-align:center;
+    a {
+        padding: $gutter / 6 $gutter / 4;
+        display:block;
+        @extend %mini;
+        @include kill-link(
+            get-color(gray, "white")
+        )
+    }
+    &:hover {
+        background-color: darken(get-color(state, "success"), 15%);
+    }
+}
+
+.micontenido__link--delete {
+    background-color: get-color(state, "error");
+    &:hover {
+        background-color: darken(get-color(state, "error"), 15%);
+    }
 }
