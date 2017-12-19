@@ -82,6 +82,24 @@
     }
 }
 
+@mixin invert-link(
+    $base: $link-color,
+    $visited: $link-visited,
+    $hover: $link-hover,
+    $active: $link-active
+) {
+    @include set-link(
+        invert($base),
+        invert($visited),
+        invert($hover),
+        invert($active)
+    );
+}
+
+@mixin kill-link-color($color) {
+    @include set-link($color, $color, $color, $color);
+}
+
 @mixin kill-link($color) {
     @include set-link($color, $color, $color, $color);
     @include kill-link-decoration();

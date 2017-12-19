@@ -50,5 +50,8 @@
   },
   "browserslist": [
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "file-loader": "^1.1.6"
+  }
 }

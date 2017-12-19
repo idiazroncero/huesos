@@ -63,6 +63,14 @@ module.exports = {
 					fallback: 'style-loader',
 				}),
 			},
+			{
+				test: /\.(jpg|jpeg|png)$/,
+				loader : 'file-loader',
+				options : {
+					name : 'assets/[name].[ext]',
+					publicPath : '../'
+				}
+			}
 		],
 	},
 	plugins: [

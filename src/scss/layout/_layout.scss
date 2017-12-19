@@ -1,8 +1,11 @@
 body {
-    max-width: $max-width;
-    @include block-align($layout-align);
 }
 
-#main-wrapper {
-    padding: $spacer;
+header {
+    margin:0;
+}
+
+.wrapper {
+    max-width: $max-width;
+    margin:0 auto;
 }

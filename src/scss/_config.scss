@@ -67,30 +67,25 @@ $times-new-roman: "Times New Roman", Times, Georgia, serif;
 $times: "Times New Roman", Times, Georgia, serif;
 $georgia: Georgia, serif;
 
-// Custom fonts
-$martel: Martel, $georgia;
-$quicksand: Quicksand, $helvetica;
+// Custom font
+$montserrat: 'Montserrat', $helvetica;
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $quicksand;
-$font-secondary: $martel;
+$font-main: $montserrat;
+$font-secondary: $montserrat;
 
 // Custom values for bold and light allow for more precise mapping
 $bold: 700;
 $font-main-bold: 700;
-$font-secondary-bold: 900;
+$font-secondary-bold: 700;
 $light: light;
-$normal: normal;
+$normal: 400;
 
 // List of all elements which use $font-secondary.
-$font-secondary-items:
-    h1, h2, h3, h4,
-    '.your-classes',
-    '#your-ids'
-;
+$font-secondary-items: ();
 
 // Select a font weight for your headings
-$heading-font-weight: normal;
+$heading-font-weight: $bold;
 
 // Text alignment for some elements
 $caption-align: left;
@@ -154,14 +149,21 @@ $colors: (
   ),
 
   text: (
-    "primary":   #1a1a19,
-    "heading":   #1a1a19,
+    "primary":   #222222,
+    "heading":   #222222,
     "active": #383837,
     "mark" : #FCEE35,
   ),
 
+  palette : (
+    "naranja_o": #c4604e,
+    "naranja_c" : #ff9482,
+    "gris" : #f5f5f5,
+    "negro" : #222222,
+  ),
+
   background: (
-    "dark":  #1a1a19,
+    "dark":  #222222,
     "light": #ffffff,
   ),
 
@@ -197,7 +199,7 @@ $colors: (
   ),
 
   gray: (
-    "black" : #1b1b1b,
+    "black" : #222222,
     "darker":  #333333,
     "dark":    #666666,
     "base":    #888888,
@@ -209,7 +211,7 @@ $colors: (
 
 // CONTRAST BLACK AND WHITE / Do not remove
 // This values are used as return values for contrast-color()
-$contrast-dark: #1a1a19;
+$contrast-dark: #222222;
 $contrast-light: #ffffff;
 
 // Global % to apply to darken and lighten operations
