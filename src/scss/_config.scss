@@ -116,7 +116,10 @@ $golden-ratio:     1.618 !default;
 // Choose your type-scale ratio
 $scale-ratio: $perfect-fourth !default;
 
+
 // Uses concise.css typeScale mixin to map font-sizes
+// Uses concise.css typeScale mixin to map font-sizes
+$h0-font-size: typeScale(8);
 $h1-font-size: typeScale(6);
 $h2-font-size: typeScale(5);
 $h3-font-size: typeScale(4);
@@ -134,9 +137,9 @@ $figcaption-font-size: $h6-font-size;
 
 
 // ------
-// COLOR PALETTE
+// COLOR z-index
 // ------
-// Use get-color('palette', 'color') in your .scss files to get values
+// Use get-color('z-index', 'color') in your .scss files to get values
 // For example: getColor('base', 'primary') => #C65146
 // Use contrast-color($color) to get your black || white color against a background
 // ------
@@ -315,7 +318,7 @@ $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields w
 // We asume a centered, responsive and max-width limited viewport.
 // ------
 
-$max-width: 960px;
+$max-width: 1200px;
 $layout-align: center; // left, right
 
 
@@ -328,8 +331,7 @@ $layout-align: center; // left, right
 // ------
 
 $z-index : (
-  item1 : 0,
-  item2 : 1,
+  cabecera: 1,
 );
 
 
