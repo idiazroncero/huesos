@@ -33,6 +33,7 @@
 .js-form-type-managed-file {
     label {
         @extend .button;
+        color:get-color(gray, "black");
         cursor:pointer;
     }
     .image-widget {

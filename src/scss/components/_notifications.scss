@@ -30,6 +30,9 @@
 // }
 
 .message {
+}
+
+.message__text {
     @extend %peque;
     color: get-color(gray, "white");
     a {
