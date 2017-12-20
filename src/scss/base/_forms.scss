@@ -15,6 +15,7 @@ select:-webkit-autofill {
 
 input {
     @include form-reset-input();
+    background-color:#fff;
     &[type=file] {
         border:none;
         width:100%;
@@ -46,10 +47,13 @@ button,
     cursor:pointer;
     border: $button-border;
     display: inline-block;
-    padding: 0 ritmo(2);
+    padding: 0 ritmo(4);
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     @include ritmo-font-size($h6-font-size, 5);
+    background-color: get-color(palette, "negro");
+    color: get-color(palette, "naranja_c");
+    border-radius: $gutter / 2;
     &:hover,
     &:focus {
         background:$button-border-color;
@@ -91,10 +95,11 @@ a.button--disabled {
 }
 
 textarea {
-    border: $input-border;
+    border: none;
     @include form-reset-textarea();
     width:100%;
-    padding: 0 ($spacer / 4);
+    padding: $gutter / 2;
+    background-color:#fff;
 }
 
 fieldset {
