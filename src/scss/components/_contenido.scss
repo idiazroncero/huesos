@@ -65,7 +65,8 @@
         max-width:250px;
         font-family: $font-main;
         margin:0;
-        @include ritmo-font-size($h2-font-size, 8);
+        @include ritmo-font-size($h3-font-size);
+        line-height:1;
         a { 
             //@include kill-link(get-color(gray,'white'));
         }
