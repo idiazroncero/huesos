@@ -1,12 +1,12 @@
 .page__aside {
     h2,p {
-        color: get-color(gray,"light");
+        color: get-color(gray,"white");
     }
     a {
         @include set-link(
             get-color(gray, "white"), 
-            get-color(gray, "lighter"),
-            get-color(gray, "lighter"),
+            get-color(gray, "white"),
+            get-color(gray, "light"),
             get-color(gray, "dark")
         );
     }
@@ -17,16 +17,39 @@
     @extend nav;
     h2 {
         @include ritmo-font-size($h5-font-size);
+        font-weight:bold;
+        display:inline-block;
+        border-bottom: 2px solid get-color(gray, "light");
     };
     ul {
         li {
             display:block;
             width:100%;
             a {
+                position:relative;
                 padding-right:$gutter;
-                font-weight: bold();
                 display:block;
                 @include ritmo-font-size($h6-font-size);
+            }
+            &:hover a {
+                &:before {
+                    content:"";
+                    width: 1em;
+                    height:1em;
+                    background-color:get-color(gray,"white");
+                    position:absolute;
+                    top:ritmo(0.5);
+                    left: -$gutter;
+                }
+                &:after {
+                    content:"";
+                    width: 0.5em;
+                    height:0.5em;
+                    background-color:get-color(gray,"black");
+                    position:absolute;
+                    top:ritmo(1);
+                    left: -$gutter;
+                }
             }
         } 
     }

@@ -36,13 +36,14 @@
 .miniteaser__title {
     @include ritmo-font-size($h4-font-size);
     line-height:1;
-    font-weight:bold(h1);
+    font-weight:normal;
     margin:0;
     font-family: $font-main;
 }
 
 .miniteaser__autor {
     flex:1;
+    margin-top:ritmo(1);
     font-weight:bold(p);
     font-family:$font-secondary;
     @include ritmo-font-size($h7-font-size);

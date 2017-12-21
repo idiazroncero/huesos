@@ -69,6 +69,7 @@ $gutter : ritmo(6);
     .contenido__title {
         left: calc(100% + #{$gutter});
         pointer-events: none;
+        font-weight: $bold;
     }
     .contenido {
         margin:0;

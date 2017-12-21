@@ -1,25 +1,29 @@
 .create {
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     margin: 0 0 $gutter 0;
     padding:0;
 }
 
 .create__item {
     list-style-type: none;
-    width:47%;
-    width: calc(50% - #{$gutter / 2});
+    width:100%;
+    // width:47%;
+    // width: calc(50% - #{$gutter / 2});
     text-align:center;
-    margin-bottom: $gutter;
-    min-height:250px;
+    margin-bottom: 0; //$gutter;
     display:flex;
+    padding: $gutter;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     position:relative;
     overflow:hidden;
     .h3 {
-        font-family: $font-secondary;
+        @include ritmo-font-size($h4-font-size);
+        text-transform: uppercase;
+        font-weight: $bold;
         transform: translateY(0);
         transition: transform $transition-time ease-out $transition-delay;
     }
@@ -37,19 +41,31 @@
         font-size:1px;
         color: transparent;
     }
-    &:nth-child(2),
+    &:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    &:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    &:nth-child(3) {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
     &:nth-child(4) {
-        margin-left:auto;
+        grid-column: 4/5;
+        grid-row: 2/3;
     }
     // &:nth-child(3) {
     //     margin: 0 auto;
     // }
+    .icon, .h3 {
+        color: get-color(gray, "white");
+    }
     &:hover {
-        .icon, .h3 {
-            color: get-color(gray, "white");
-        }
         .icon {
-            transform: scale(1.2);
+            transform: scale(1.05);
         }
         // .h3 {
         //     transform: translateY(10%);
@@ -59,40 +75,45 @@
 
 .create--video {
     border: ritmo(1) solid get-color(blue, 'base');
-    .icon {
-        color: get-color(blue, 'base');
-    }
+    background-color:get-color(blue, 'base');
     &:hover {
-        background-color:get-color(blue, 'base');
+        background-color:transparent;
+        .icon, .h3 {
+            color: get-color(blue, 'base');
+        }
     }
 }
 
 .create--audio {
     border: ritmo(1) solid get-color(red, 'base');
-    .icon {
-        color: get-color(red, 'base');
-    }
+    background-color:get-color(red, 'base');
     &:hover {
-        background-color:get-color(red, 'base');
+        background-color:transparent;
+        .icon, .h3 {
+            color: get-color(red, 'base');
+        }
     }
 }
 
 .create--imagen {
     border: ritmo(1) solid get-color(green, 'base');
-    .icon {
-        color: get-color(green, 'base');
-    }
+    background-color:get-color(green, 'base');
     &:hover {
-        background-color:get-color(green, 'base');
+        background-color:transparent;
+        .icon , .h3 {
+            color: get-color(green, 'base');
+        }
     }
 }
 
 .create--texto {
     border: ritmo(1) solid get-color(gray, 'base');
-    .icon {
-        color: get-color(gray, 'base');
-    }
+    background-color:get-color(gray, 'base');
+
     &:hover {
-        background-color:get-color(gray, 'base');
+        background-color:transparent;
+        .icon, .h3 {
+            color: get-color(gray, 'base');
+        }
     }
 }

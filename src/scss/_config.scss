@@ -73,28 +73,26 @@ $quicksand: Quicksand, $helvetica;
 $domine: Domine, $helvetica;
 $libreBaskerville: 'Libre Baskerville';
 $libreFranklin: 'Libre Franklin';
+$geomanist: 'Geomanist', $helvetica;
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $martel;
-$font-secondary: $libreFranklin;
+$font-main: $geomanist;
+$font-secondary: $geomanist;
 
 // Custom values for bold and light allow for more precise mapping
-$bold: 700;
-$font-main-bold: 700;
+$bold: 600;
+$font-main-bold: 600;
 $font-secondary-bold: 600;
-$light: light;
-$normal: 200;
+$light: 200;
+$normal: normal;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
     h1, h2, h3, h4,
-    'nav ul li',
-    '.private-message-thread',
-    '.contenido__autor',
 ;
 
 // Select a font weight for your headings
-$heading-font-weight: 200;
+$heading-font-weight: normal;
 
 // Text alignment for some elements
 $caption-align: left;
@@ -160,14 +158,14 @@ $colors: (
   ),
 
   text: (
-    "primary":   #222222,
+    "primary":   #2b2b2b,
     "heading":   #3b3b3b,
     "active": #383837,
     "mark" : #FCEE35,
   ),
 
   background: (
-    "dark":  #1a1a19,
+    "dark":  #2b2b2b,
     "light": #ffffff,
   ),
 
@@ -203,7 +201,7 @@ $colors: (
   ),
 
   gray: (
-    "black" : #1b1b1b,
+    "black" : #2b2b2b,
     "darker":  #333333,
     "dark":    #666666,
     "base":    #888888,
@@ -269,10 +267,10 @@ $link-mark-color: get-color(green, lighter);
 $link-smart-background: get-color(gray, "white");
 
 // Link colors
-$link-color: get-color(gray, dark);
-$link-visited: get-color(gray, darker);
-$link-hover: get-color(gray,light);
-$link-active: get-color(gray, darker);
+$link-color: get-color(text, "primary");
+$link-visited: get-color(text, "primary");
+$link-hover: get-color(gray, light);
+$link-active: get-color(text, "primary");
 
 
 

@@ -61,7 +61,7 @@
     flex-direction:column;
     transition: opacity 0.25s ease-out;
     h1 {
-        font-weight:bold(h1);
+        font-weight: normal;
         max-width:250px;
         font-family: $font-main;
         margin:0;
@@ -91,4 +91,17 @@
     //     font-weight:bold(p);
     //     margin-right:5px;
     // }
+}
+
+// TEXTO
+
+.contenido--texto {
+    .contenido__fit {
+        transform: scale(1.5) rotate(20deg);
+        @include ritmo-font-size($h1-font-size);
+        font-weight: $light;
+        background-color: get-color(gray, "lighter");
+        color: get-color(gray, "white");
+        text-shadow: 1px 1px 0px get-color(gray, "white"), 3px 3px 3px get-color(gray, "light");
+    }
 }

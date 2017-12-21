@@ -36,6 +36,31 @@ $icon-star: "\e90d";
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-thin-webfont.woff2') format('woff2'),
+       url('../fonts/geomanist-thin-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-light-webfont.woff2') format('woff2'),
+       url('../fonts/geomanist-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-bold-webfont.woff2') format('woff2'),
+       url('../fonts/geomanist-bold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'mentalstones' !important;
