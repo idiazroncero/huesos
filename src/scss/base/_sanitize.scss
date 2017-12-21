@@ -283,13 +283,13 @@ sup {
 
 ::-moz-selection {
 	background-color: get-color(text, mark); /* 1 */
-	color: contrast-color(get-color(text, mark)); /* 1 */
+	color: #fff; /* 1 */
 	text-shadow: none;
 }
 
 ::selection {
 	background-color: get-color(text, mark); /* 1 */
-	color: contrast-color(get-color(text, mark)); /* 1 */
+	color: #fff; /* 1 */
 	text-shadow: none;
 }
 
