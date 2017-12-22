@@ -41,15 +41,6 @@
                     top:ritmo(0.5);
                     left: -$gutter;
                 }
-                &:after {
-                    content:"";
-                    width: 0.5em;
-                    height:0.5em;
-                    background-color:get-color(gray,"black");
-                    position:absolute;
-                    top:ritmo(1);
-                    left: -$gutter;
-                }
             }
         } 
     }
