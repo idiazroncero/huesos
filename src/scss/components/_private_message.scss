@@ -1,48 +1,87 @@
 .private-message__form {
+    display:none;
+    margin: $gutter 0;
     .filter-wrapper,
     .js-form-type-textarea label,
     .captcha-admin-links {
         display:none;
     }
+    .form-item {
+        display:block;
+        width:100%;
+        margin:0;
+        padding:0;
+        border:none;
+    }
     .cke {
-        border:none !important;
+        width:100%;
+        //border:none !important;
         margin-bottom:ritmo(4) !important;
     }
+}
+
+.private-message__form--active {
+    display:block;
 }
 
 .private-message-recipients {
     padding-bottom:ritmo(2);
     margin-bottom: ritmo(2);
-    border-bottom: 1px dotted get-color(gray, base);
 }
 
 .private-message {
     display:flex;
-    align-items: baseline;
+    align-items: center;
     margin-bottom:ritmo(4);
 }
 
 .private-message__meta {
-    width:25%;
+    width:75px;
+    height:75px;
+    border-radius:50%;
     margin-right: $gutter;
+    background-color: get-color(green, 'light');
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    * {
+        max-width:66%;
+        word-break: break-all;
+    }
+}
+
+.private-message__content {
+    flex:1;
+    p:last-child {
+        margin:0;
+    }
 }
 
 .private-message__who {
     @include ritmo-font-size($h6-font-size);
+    line-height:1;
     font-weight:bold(div);
-    display:flex;
-    align-items:center;
-    &:after {
-        content:"";
-        height:0;
-        width:0;
-        border-width:0.25rem;
-        border-style:solid;
-        border-color: transparent transparent transparent get-color(text, primary);
-        margin-left:auto;
-    }
 }
 
 .private-message__when {
     @include ritmo-font-size($h7-font-size);
+}
+
+.private-message__thread {
+    padding: $gutter;
+    margin-bottom: $gutter;
+    border: 2px solid get-color(gray, "black");
+}
+
+.private-message-odd {
+    .private-message__meta {
+        order:9;
+        margin-right:0;
+        margin-left:$gutter;
+    }
+    .private-message__content {
+        text-align:right;
+    }
 }
