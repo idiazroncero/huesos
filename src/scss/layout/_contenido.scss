@@ -26,11 +26,34 @@
     border-bottom:1px dotted get-color(gray,base);
 }
 
+.contenido__tools {
+    display:flex;
+    align-items:flex-start;
+    margin-bottom: $gutter;
+    a {
+        @include ritmo-font-size($h7-font-size,4);
+        text-transform: uppercase;
+        font-weight: bold(a);
+        @include kill-link(get-color(gray, "white"));
+        padding: 0 ritmo(2);
+        //height:25px;
+        margin-right:5px;
+        background-color: #000;
+        display:inline-block;
+        vertical-align:top;
+    }
+}
+
+.contenido__rrss {
+    display:flex;
+    align-items:flex-start;
+}
+
 @supports (display: grid) {
     .contenido__aside {
         display:grid;
         grid-template-columns: 150px 1fr;
-        grid-template-rows: 150px 1fr;
+        grid-template-rows: 1fr;
         grid-gap: $gutter $gutter * 2;
     }
     .contenido__autor {

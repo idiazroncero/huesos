@@ -1,5 +1,5 @@
 .private-message__form {
-    display:none;
+    //display:none;
     margin: $gutter 0;
     .filter-wrapper,
     .js-form-type-textarea label,
@@ -20,40 +20,42 @@
     }
 }
 
-.private-message__form--active {
-    display:block;
-}
+// .private-message__form--active {
+//     display:block;
+// }
 
 .private-message-recipients {
     padding-bottom:ritmo(2);
     margin-bottom: ritmo(2);
 }
 
-.private-message {
+.private-message__inner {
     display:flex;
-    align-items: center;
     margin-bottom:ritmo(4);
 }
 
 .private-message__meta {
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    margin-right: $gutter;
-    background-color: get-color(green, 'light');
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    * {
-        max-width:66%;
+    // width:60px;
+    // height:60px;
+    // border-radius:50%;
+    margin-right: $gutter / 2;
+    padding-right: $gutter / 2;
+    border-right: 1px solid get-color(gray, "dark");
+    //background-color: get-color(red, 'light');
+    // display: flex;
+    // flex-direction:column;
+    // align-items:center;
+    // justify-content:center;
+    // text-align:center;
+    > * {
+        // max-width:66%;
         word-break: break-all;
     }
 }
 
 .private-message__content {
     flex:1;
+    // font-weight:bold(p);
     p:last-child {
         margin:0;
     }
@@ -63,25 +65,59 @@
     @include ritmo-font-size($h6-font-size);
     line-height:1;
     font-weight:bold(div);
+    p {
+        margin:0;
+    }
 }
 
 .private-message__when {
     @include ritmo-font-size($h7-font-size);
 }
 
-.private-message__thread {
+.private-message-thread {
     padding: $gutter;
     margin-bottom: $gutter;
-    border: 2px solid get-color(gray, "black");
+    //border: 2px solid get-color(gray, "black");
+    background-color: get-color(gray, "lighter");
 }
 
-.private-message-odd {
+.private-message__inner--odd {
     .private-message__meta {
         order:9;
         margin-right:0;
-        margin-left:$gutter;
+        padding-right:0;
+        margin-left: $gutter / 2;
+        padding-left: $gutter / 2;
+        border-left: 1px solid get-color(gray,"dark");
+        border-right:none;
     }
     .private-message__content {
         text-align:right;
+    }
+    .private-message__content {
+        font-weight:normal;
+    }
+}
+
+
+// MESSAGE LINK
+
+.private-message__reply,
+.private-message__link  {
+    @include ritmo-font-size($h7-font-size,4);
+    vertical-align:middle;
+}
+
+.private-message__link {
+    //@extend .button;
+}
+
+// BLOCK
+
+.block-private-message .content {
+    display:flex;
+    justify-content: space-between;
+    .private-message-thread {
+        width:48%;
     }
 }

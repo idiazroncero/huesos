@@ -12,6 +12,10 @@
     }
 }
 
+.filter-wrapper {
+    display:none;
+}
+
 .field--name-field-instagram fieldset {
     margin-bottom: $spacer;
     padding-bottom: $spacer;
@@ -32,9 +36,6 @@
             padding:0;
             border:none;
         }
-    }
-    .filter-wrapper {
-        display:none;
     }
 }
 
