@@ -5,9 +5,18 @@
   "main": "builder.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "./node_modules/.bin/node-sass --include-path '../../node_modules/' --output-style compressed kss-assets/kss.scss kss-assets/kss.css"
+    "sass": "./node_modules/.bin/node-sass --include-path '../../node_modules/' --output-style compressed kss-assets/kss.scss kss-assets/kss.css",
+    "postcss": "./node_modules/.bin/postcss kss-assets/kss.css -o kss-assets/kss.css --use autoprefixer"
   },
   "devDependencies": {
     "node-sass": "^3.4.2"
-  }
+  },
+  "dependencies": {
+    "autoprefixer": "^7.2.4",
+    "postcss": "^6.0.15",
+    "postcss-cli": "^4.1.1"
+  },
+  "browserslist": [
+    "> 1%"
+  ]
 }

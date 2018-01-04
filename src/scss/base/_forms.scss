@@ -30,6 +30,10 @@ textarea {
     @include form-reset-general();
 }
 
+label {
+    margin-right: $spacer / 2; // Gives some room between inlined labels and inputs
+}
+
 input:-webkit-autofill, 
 textarea:-webkit-autofill, 
 select:-webkit-autofill {
@@ -38,11 +42,44 @@ select:-webkit-autofill {
 }
 
 input {
+    // Input
+    //
+    // General text input.<br>
+    // Please note a wrapper with a `.form-item` class is added in order to create separate blocks
+    // and apply a vertical-rhythm based margin.<br>
+    // Without this wrapper and class, all the form elements would behave as inline-block elements.
+    //
+    // Markup:
+    // <div class="form-item">
+    //   <label for="text">Text</label>
+    //   <input type="text" id="text" name="text">
+    // </div>
+    // <div class="form-item">
+    //   <label for="password">Password</label>
+    //   <input type="password" id="password" name="password">
+    // </div>
+    // <div class="form-item">
+    //   <label for="email">Email</label>
+    //   <input type="email" id="email" name="email">
+    // </div>
+    //
+    // Styleguide Forms.input
     @include form-reset-input();
+    // File Input
+    //
+    // Uses the label for handling click and hides the actual input element.
+    // Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+    //
+    // Markup:
+    // <input type="file" id="file" name="file">
+    // <label for="file">Upload your file</label>
+    //
+    // Styleguide Forms.file
     &[type=file] {
-        border:none;
-        width:100%;
-        padding:0;
+        @extend %hidden;
+        + label {
+            @extend .button;
+        }
     }
     // Give an opt-in using a class if pseudo is deactivated
     @if($pseudo-checkbox == false) {
@@ -58,6 +95,25 @@ input {
 }
 
 select {
+    // Select
+    //
+    // Handles multiple selection
+    //
+    // Markup:
+    // <select>
+    //   <option value="volvo">Volvo</option>
+    //   <option value="saab">Saab</option>
+    //   <option value="mercedes">Mercedes</option>
+    //   <option value="audi">Audi</option>
+    // </select>
+    // <select multiple>
+    //   <option value="volvo">Volvo</option>
+    //   <option value="saab">Saab</option>
+    //   <option value="mercedes">Mercedes</option>
+    //   <option value="audi">Audi</option>
+    // </select> 
+    //
+    // Styleguide Forms.select
     @include form-reset-select();
 }
 
@@ -142,4 +198,9 @@ fieldset {
 
 legend {
     font-weight: $bold;
+}
+
+// General block-level wrapper for spacing between items
+.form-item {
+    margin-bottom : $gutter;
 }
