@@ -331,6 +331,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
 
   .kss-section--depth-2 {
+    @extend .card;
     margin-bottom: $gutter * 4;
     &.kss-section--empty {
       margin-bottom: $gutter;

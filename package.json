@@ -2,7 +2,7 @@
   "name": "huesos",
   "version": "0.0.7",
   "description": "Huesos is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools.",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
     "build": "yarn run styleguide; webpack --config webpack.config.js",
     "watch": "yarn run styleguide; webpack --watch --config webpack.config.js",
@@ -14,7 +14,7 @@
   "author": "Nacho Diaz",
   "license": "MIT",
   "repository": "git@github.com:idiazroncero/huesos.git",
-  "devDependencies": {
+  "dependencies": {
     "animate-scss": "^3.2.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
@@ -29,6 +29,7 @@
     "eslint-loader": "^1.8.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "family.scss": "^1.0.8",
+    "file-loader": "^1.1.6",
     "foundation-sites": "^6.4.1",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
@@ -45,6 +46,7 @@
     "stylelint": "^7.12.0",
     "susy": "^2.2.12",
     "uikit": "^3.0.0-beta.25",
+    "url-loader": "^0.6.2",
     "waypoints": "^4.0.1",
     "webpack": "^3.0.0"
   },

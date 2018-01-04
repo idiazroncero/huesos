@@ -27,14 +27,12 @@ h1, h2, h3, h4, h5, h6
   small {
     color: inherit;
     vertical-align: 0;
-    // Use the next smaller size in the scale
-    font-size: 100% / $scale-ratio;
   }
 }
 
 // Secondary font
 //
-// Helper class and `%placeholder` used to apply the secondary font as set on `_config.scss`
+// Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
 //
 // Markup:
 // <p class="font-secondary">This paragraph has been set to use the secondary font.
@@ -64,7 +62,7 @@ h1, h2, h3, h4, h5, h6
 // Tipographic quotes can be explicitly defined using the variable `$quotes`
 //
 // Markup:
-// <q>>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+// <q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
 //
 // Styleguide Typography.quotes
 q {

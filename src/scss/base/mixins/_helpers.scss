@@ -11,7 +11,7 @@
   }
 }
 
-%escondido { // Fuente: http://webaim.org/techniques/css/invisiblecontent/
+%hidden { // Fuente: http://webaim.org/techniques/css/invisiblecontent/
     position:absolute;
     left:-10000px;
     top:auto;
@@ -43,4 +43,12 @@
   right: $right;
   bottom: $bottom;
   left: $left;
+}
+
+@mixin separator($ritmo:$spacer, $border-width:$separator-width, $border-color:$separator-color) {
+  margin-bottom: $ritmo;
+  @if $separators == true {
+    padding-bottom: $ritmo;
+    border-bottom: $border-width solid $border-color;
+  }
 }

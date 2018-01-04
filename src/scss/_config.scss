@@ -13,7 +13,7 @@
 @import "base/mixins/get-color";
 @import "base/mixins/contrast-color";
 @import "base/mixins/links";
-@import "base/mixins/form-reset";
+@import "base/mixins/forms";
 @import "base/mixins/lists";
 @import "base/mixins/typography";
 
@@ -84,7 +84,7 @@ $normal: normal;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
-    h1, h2, h3, h4,
+    h1, h2, h3, h4, dt,
     '.your-classes',
     '#your-ids'
 ;
@@ -239,6 +239,9 @@ $blockquote-decoration: '*';
 $blockquote-decoration-size: $h2-font-size;
 $blockquote-font: $font-secondary;
 
+$shadows: true;
+$shadow-definition: 2px 2px 2px 0px rgba(get-color(gray, "black"), 0.1);
+
 
 
 
@@ -289,11 +292,11 @@ $input-padding: 0;
 $button-border-color: darken(get-color(gray,base), 50%);
 $button-border: 1px solid $button-border-color;
 $button-padding: 0 ($spacer / 2);
+$button-border-radius: 0;
 
 // Checkboxes / Selects
-// TODO: Pseudo-elements are badly spaced
 $pseudo-checkbox : false;
-$pseudo-option : false;
+$pseudo-radio: false;
 
 // Selects
 $select-border-strategy: full; // Options: full, bottom, none;
@@ -368,6 +371,16 @@ $disabled-opacity: 0.33;
 $gutter: $spacer;
 
 
+
+
+
+// ------
+// CARDS
+// Component for indvidual, card-like componentes
+// ------
+
+$card-border-color: $separator-color;
+$card-border-radius: 2px;
 
 
 

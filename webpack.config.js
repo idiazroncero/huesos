@@ -63,6 +63,25 @@ module.exports = {
 					fallback: 'style-loader',
 				}),
 			},
+			// FILES
+			{
+				test: /\.(png|jpg|gif)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						outputPath: 'assets/images'
+					} 
+				} 
+			},
+			{
+				test: /\.(woff|woff2)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						outputPath: 'assets/fonts'
+					} 
+				} 
+			}
 		],
 	},
 	plugins: [

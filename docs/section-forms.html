@@ -29,6 +29,20 @@
         <a class="kss-nav__menu-link" href="section-forms.html">
           <span class="kss-nav__ref">1</span><span class="kss-nav__name">Forms</span>
         </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-checkbox">
+                  <span class="kss-nav__ref">1.1</span
+                  ><span class="kss-nav__name">Checkboxes</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-radio">
+                  <span class="kss-nav__ref">1.2</span
+                  ><span class="kss-nav__name">Radio buttons</span>
+                </a>
+              </li>
+            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-pseudo-elements.html">
@@ -54,14 +68,6 @@
         <a class="kss-nav__menu-link" href="section-helpers.html">
           <span class="kss-nav__ref">6</span><span class="kss-nav__name">Helpers</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-helpers.html#kssref-helpers-secondary-font">
-                  <span class="kss-nav__ref">6.1</span
-                  ><span class="kss-nav__name">Secondary font</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-mixins.html">
@@ -78,18 +84,18 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-helpers" class="kss-section kss-section--depth-1 kss-section--empty ">
+    <div id="kssref-forms" class="kss-section kss-section--depth-1 kss-section--empty ">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-helpers">
+          <a class="kss-title__permalink" href="#kssref-forms">
             <span class="kss-title__ref">
-              6
+              1
               <span class="kss-title__permalink-hash">
-                  #Helpers
+                  #Forms
               </span>
             </span>
-            Helpers
+            Forms
           </a>
         </h1>
 
@@ -98,28 +104,25 @@
       </div>
 
 
-        <div class="kss-source kss-style">
-          Source: <code>_config.scss</code>, line 417
-        </div>
 
     </div>
-    <section id="kssref-helpers-secondary-font" class="kss-section kss-section--depth-2  ">
+    <section id="kssref-forms-checkbox" class="kss-section kss-section--depth-2  ">
 
       <div class="kss-style">
         <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-helpers-secondary-font">
+          <a class="kss-title__permalink" href="#kssref-forms-checkbox">
             <span class="kss-title__ref">
-              6.1
+              1.1
               <span class="kss-title__permalink-hash">
-                  #Helpers.secondary-font
+                  #Forms.checkbox
               </span>
             </span>
-            Secondary font
+            Checkboxes
           </a>
         </h2>
 
           <p class="kss-toolbar">
-            <a class="link--inactive" href="#kssref-helpers-secondary-font" data-kss-guides="true">
+            <a class="link--inactive" href="#kssref-forms-checkbox" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -140,14 +143,14 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a class="link--inactive" href="#kssref-helpers-secondary-font" data-kss-markup="true">
+            <a class="link--inactive" href="#kssref-forms-checkbox" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
                 <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
               </svg>
             </a>
-            <a class="link--inactive" href="#kssref-helpers-secondary-font" data-kss-source="true">
+            <a class="link--inactive" href="#kssref-forms-checkbox" data-kss-source="true">
               <span class="kss-toolbar__source">Toggle Source</span>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -157,7 +160,7 @@
           </p>
 
           <div class="kss-description">
-            <p>Helper <code>.class</code> and <code>%placeholder</code> used to apply the secondary font as set on <code>_config.scss</code></p>
+            <p>Can be styled using <code>$pseudo-checkbox</code> global variable or the <code>.pseudo-checkbox</code> class</p>
 
           </div>
 
@@ -170,9 +173,10 @@
 
 
           <div class="kss-modifier__example">
-            <p class="font-secondary">This paragraph has been set to use the secondary font.
-It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
-to achive the same effect</p>
+            <input type="checkbox" id="check" name="check">
+<label for="check">Checkbox normal</label>
+<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
+<label for="check2">Pseudo Checkbox</label>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -182,13 +186,105 @@ to achive the same effect</p>
             <summary>
                 Markup
             </summary>
-            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class&#x3D;&quot;font-secondary&quot;&gt;This paragraph has been set to use the secondary font.
-It could otherwise have used a regular CSS selector with &lt;code&gt;@extend %font-secondary&lt;/code&gt;
-to achive the same effect&lt;/p&gt;</code></pre>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;check&quot; name&#x3D;&quot;check&quot;&gt;
+&lt;label for&#x3D;&quot;check&quot;&gt;Checkbox normal&lt;/label&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;check2&quot; class&#x3D;&quot;pseudo-checkbox&quot; name&#x3D;&quot;check2&quot;&gt;
+&lt;label for&#x3D;&quot;check2&quot;&gt;Pseudo Checkbox&lt;/label&gt;</code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_typography.scss</code>, line 33
+          Source: <code>base/_forms.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-forms-radio" class="kss-section kss-section--depth-2  ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-forms-radio">
+            <span class="kss-title__ref">
+              1.2
+              <span class="kss-title__permalink-hash">
+                  #Forms.radio
+              </span>
+            </span>
+            Radio buttons
+          </a>
+        </h2>
+
+          <p class="kss-toolbar">
+            <a class="link--inactive" href="#kssref-forms-radio" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a class="link--inactive" href="#kssref-forms-radio" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+            <a class="link--inactive" href="#kssref-forms-radio" data-kss-source="true">
+              <span class="kss-toolbar__source">Toggle Source</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+
+          <div class="kss-description">
+            <p>Can be styled using <code>$pseudo-radio</code> global variable or the <code>.pseudo-checkbox</code> class</p>
+
+          </div>
+
+      </div>
+
+        <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Example
+          </div>
+
+
+          <div class="kss-modifier__example">
+            <input type="radio" id="radio" name="radio">
+<label for="radio">Radio normal</label>
+<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+<label for="radio2">Pseudo Radio</label>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+        </div>
+
+          <details class="kss-markup kss-style">
+            <summary>
+                Markup
+            </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+&lt;label for&#x3D;&quot;radio&quot;&gt;Radio normal&lt;/label&gt;
+&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;radio2&quot; class&#x3D;&quot;pseudo-radio&quot; name&#x3D;&quot;radio&quot;&gt;
+&lt;label for&#x3D;&quot;radio2&quot;&gt;Pseudo Radio&lt;/label&gt;</code></pre>
+          </details>
+
+        <div class="kss-source kss-style">
+          Source: <code>base/_forms.scss</code>, line 13
         </div>
 
     </section>

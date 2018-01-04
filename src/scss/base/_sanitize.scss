@@ -56,7 +56,7 @@ fieldset {
 //
 // Markup:
 // <dl>
-//   dt>Definition List Title</dt>
+//   <dt>Definition List Title</dt>
 //   <dd>This is a definition list division.</dd>
 // </dl>
 //
@@ -141,7 +141,7 @@ main { /* 1 */
 
 // Horizontal rule
 //
-// Applies styling defined on `_config.scss`. Eliminates ridge/bevel effects.
+// Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
 //
 // Markup:
 // <hr/>
@@ -200,7 +200,14 @@ a {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-
+// Abbreviation
+//
+// Normalizes styling (underline)
+//
+// Markup:
+// <p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
+//
+// Styleguide Typography.abbr
 abbr[title] {
 	border-bottom: none; /* 1 */
 	text-decoration: underline; /* 2 */
@@ -210,7 +217,14 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-
+// Bold
+//
+// Applies bolding weight defined on `_config.scss` using `bold()` mixin.
+//
+// Markup:
+// <p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
+//
+// Styleguide Typography.bold
 b,
 strong {
 	font-weight: bold(strong);
@@ -221,10 +235,18 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
+// Code, Keyboard, Samp, Var
+//
+// Ensures monospaced fonts are used for computer-related text markup.
+//
+// Markup:
+// <p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
+//
+// Styleguide Typography.code
 code,
 kbd,
-samp {
+samp,
+var {
 	font-family: monospace, monospace; /* 1 */
 	@include ritmo-font-size($base-font-size); /* 2 */
 }
@@ -232,7 +254,14 @@ samp {
 /**
  * Add the correct font style in Android 4.3-.
  */
-
+// Definition
+//
+// Ensures monospaced fonts are used for computer-related text markup.
+//
+// Markup:
+// <p><dfn>Definition</dfn> is a tag used for defining terms</p>
+//
+// Styleguide Typography.dfn
 dfn {
 	font-style: italic;
 }
@@ -240,7 +269,14 @@ dfn {
 /**
  * Add the correct background and color in IE 9-.
  */
-
+// Mark
+//
+// Uses color defined on the palette `text`, key `mark`.
+//
+// Markup:
+// <p><mark>Really important</mark> and thus, marked text</p>
+//
+// Styleguide Typography.mark
 mark {
 	background-color: get-color(text, mark);
 	color: contrast-color(get-color(text, mark));
@@ -249,16 +285,45 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-
+// Small
+//
+// Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
+//
+// Markup:
+// <p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
+// <h1>A big heading with <small>an small portion of text</small></h1>
+// <h2>A second-level title <small>featuring a minor text</small></h2>
+// <h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+//
+// Styleguide Typography.small
 small {
 	@include ritmo-font-size($h6-font-size);
+}
+
+h1 small {
+	@include ritmo-font-size($h3-font-size);
+}
+
+h2 small {
+	@include ritmo-font-size($h4-font-size);
+}
+
+h3 small {
+	@include ritmo-font-size($h5-font-size);
 }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-
+// Sub, Sup
+//
+// Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+//
+// Markup:
+// <p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+//
+// Styleguide Typography.sub
 sub,
 sup {
 	@include ritmo-font-size($h6-font-size);
@@ -280,7 +345,14 @@ sup {
  * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
-
+// Selection
+//
+// Uses the same color as in `<mark>` for text highlighting.
+//
+// Markup:
+// <p>Try selecting a part of this text for <code>::selection</code> testing</p>
+//
+// Styleguide Pseudo-elements.selection
 ::-moz-selection {
 	background-color: get-color(text, mark); /* 1 */
 	color: contrast-color(get-color(text, mark)); /* 1 */
@@ -312,10 +384,18 @@ video {
 /*
  * Deletes ugly iframe border and makes it fill its parent by default
  */
-
+// Iframe
+//
+// Deletes border, displays iframes as a block element that fills its parent width.
+//
+// Markup:
+// <iframe src="http://idiazroncero.com"></iframe>
+//
+// Styleguide Base.iframe
  iframe {
 	 border:none;
 	 width:100%;
+	 display:block;
  }
 
 /**
@@ -340,7 +420,14 @@ audio:not([controls]) {
  * Remove the border on images inside links in IE 10-.
  * Make all images responsive by default
  */
-
+// Img
+//
+// All images are responsive by default.
+//
+// Markup:
+// <img src="http://placehold.it/300x300" />"
+//
+// Styleguide Base.img
 img {
 	border-style: none;
 	max-width:100%;
@@ -386,20 +473,6 @@ optgroup,
 select,
 textarea {
 	margin: 0;
-}
-
-/**
- * Inherit styling in all browsers (opinionated).
- */
-
-button,
-input,
-select,
-textarea {
-	background-color: transparent;
-	color: inherit;
-	font-size: inherit;
-	line-height: inherit;
 }
 
 /**

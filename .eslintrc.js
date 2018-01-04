@@ -11,7 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules:{
-    'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', 'never'],
     indent: ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
