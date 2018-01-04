@@ -12,7 +12,7 @@
         left:0;
         bottom:0;
         margin:0;
-        background:get-color(gray, 'black');
+        background:get-color(base, 'primary');
         z-index: z-index(front-header);
     }
     .logo {
@@ -37,7 +37,7 @@
     height:100%;
     top:0;
     left:-100%;
-    background-color: get-color(gray, "darker");
+    background-color: get-color(base, "secondary");
     z-index:z-index('front-menu');
     display:flex;
     flex-direction:column;

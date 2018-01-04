@@ -29,7 +29,7 @@ body {
 .page__aside {
     width:25%;
     width:25vw;
-    background-color: get-color(gray,"black");
+    background-color: get-color(base, "primary");
     position:fixed;
     top:0;
     right:0;

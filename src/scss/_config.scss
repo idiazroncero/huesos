@@ -152,8 +152,11 @@ $figcaption-font-size: $h6-font-size;
 
 $colors: (
   base: (
-    "primary":   #C65146,
-    "secondary":   #C65146,
+    "primary":   #283044,
+    "secondary" : #40798c,
+    //"secondary":   #5d536b,
+    //"alt" :#40798c,
+    "alt2" : #f79f79,
     "lines":     #DCDCDC
   ),
 
@@ -166,6 +169,7 @@ $colors: (
 
   background: (
     "dark":  #2b2b2b,
+    "base" : #e7dfc6,
     "light": #ffffff,
   ),
 
@@ -209,6 +213,12 @@ $colors: (
     "lighter": #dddddd,
     "smoke" : #f5f5f5,
     "white" : #ffffff,
+  ),
+
+  social : (
+    "facebook" : #3b5998,
+    "twitter" : #55acee,
+    "whatsapp" : #4dc247
   )
 ) !default;
 

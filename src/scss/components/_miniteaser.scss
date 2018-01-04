@@ -31,6 +31,8 @@
 .miniteaser__text {
     display:flex;
     flex-direction:column;
+    background-color: get-color(background, base);
+    padding: $gutter / 2;
 }
 
 .miniteaser__title {
@@ -49,7 +51,7 @@
     @include ritmo-font-size($h7-font-size);
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    border-bottom: ritmo(1) solid get-color(gray, "black");
+    //border-bottom: ritmo(1) solid get-color(gray, "black");
 }
 
 

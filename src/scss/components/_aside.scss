@@ -1,5 +1,5 @@
 .page__aside {
-    h2,p {
+    p {
         color: get-color(gray,"white");
     }
     a {
@@ -16,10 +16,15 @@
     @extend %clearfix;
     @extend nav;
     h2 {
+        background: get-color(base, "secondary");
+        color: get-color(gray,"white");
+        padding: 0 $gutter / 2 0 $gutter;
         @include ritmo-font-size($h5-font-size);
         font-weight:bold;
         display:inline-block;
-        border-bottom: 2px solid get-color(gray, "light");
+        position:relative;
+        left: - $gutter;
+        //border-bottom: 2px solid get-color(gray, "light");
     };
     ul {
         li {

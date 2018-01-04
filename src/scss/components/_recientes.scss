@@ -2,6 +2,10 @@
 
 .relacionados {
     margin-bottom: $spacer;
+    // TODO: Pendiente de validación para hacer en el markup, esto es una chapucilla visual
+    .box {
+        position:absolute;
+    }
 }
 
 .relacionados ul {
