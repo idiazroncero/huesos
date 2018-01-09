@@ -81,7 +81,7 @@
         @include kill-link(get-color(gray,'white'));
     }
     p {
-        border-bottom-color: solid get-color(gray, "white");
+        border-bottom-color: get-color(gray, "white");
     }
 }
 
