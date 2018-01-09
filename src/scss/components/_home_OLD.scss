@@ -1,0 +1,382 @@
+// ------
+// FALLBACK NON-GRID
+// A clever use of floats and nth-childs in order to create a repeating grid
+// ------
+
+$gutter : ritmo(6);
+
+.cuadricula {
+    @extend %clearfix;
+    .views-row {
+        float:left;
+        width:33.32%;
+        position:relative;
+        // Every 3 rows, 1 item double size (left/right)
+        &:nth-child(10n + 1),
+        &:nth-child(10n + 7) {
+            width:66.64%;
+            .contenido__inner {
+                padding-bottom: calc(50% - #{$gutter * 1.5});
+                overflow: hidden;
+            }
+        }
+        // Title position is inside the frame
+        &:nth-child(10n + 1) {
+            .contenido__link-layer:hover ~ .contenido__fit {
+                right: 50%;
+                left: -25%;
+            }
+            .contenido__title {
+                width: calc(50% + #{$gutter / 2});
+                left: calc(50% - #{$gutter / 2});
+                border-left: $gutter solid get-color(background,light);
+            }
+            // And the next title receive an extra - fake - gutter
+            + .views-row .contenido__title {
+                border-left: $gutter solid get-color(background,light);
+                width: calc(100% + #{$gutter});
+                left: calc(-100% - #{$gutter * 2});
+            }
+        }
+        // Title position is inside the frame
+        &:nth-child(10n + 7) {
+            .contenido__link-layer:hover ~ .contenido__fit {
+                left: 50%;
+                right: -25%;
+            }
+            .contenido__title {
+                width: calc(50% + #{$gutter / 2});
+                right: calc(50% - #{$gutter / 2});
+                left:auto;
+                border-right: $gutter solid get-color(background,light);
+            }
+        }
+        // And the prev titles receive an extra - fake - gutter
+        &:nth-child(10n + 6) .contenido__title {
+            border-right: $gutter solid get-color(background,light);;
+        }
+        // Last col items put their title on the left side
+        &:nth-child(10n + 2),
+        &:nth-child(5n + 5) {
+            .contenido__title {
+                left: calc(-100% - #{$gutter});
+            }
+        }
+    }
+    .contenido--dimmed {
+        opacity: 0.25;
+    }
+    .contenido__title {
+        left: calc(100% + #{$gutter});
+        pointer-events: none;
+        font-weight: $bold;
+    }
+    .contenido {
+        margin:0;
+        display:block;
+    }
+    .contenido--teaser {
+        margin:$gutter / 2;
+        transition: opacity 0.5s linear 1s;
+    }
+    .contenido__inner {
+        padding-bottom:calc(100% - #{$gutter});
+        position:relative;
+    }
+}
+
+// ------
+// GRID
+// That's sweeeeeeeet
+// ------
+
+@supports (display: grid) {
+    // General reset off fallback
+    .cuadricula {
+        &:after, &:before {
+            display:none;
+        }
+        display:grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: $gutter;
+        grid-row-gap: $gutter;
+        .views-row {
+            &:nth-child(n) {
+                float:none;
+                width:100%;
+                position:relative;
+                grid-column: span 2;
+                grid-row: span 2;
+                overflow:visible;
+                .contenido__inner {
+                    padding: 0 0 100% 0;
+                }
+                .contenido__link-layer:hover ~ .contenido__fit {
+                    right: 0;
+                    left: 0;
+                }
+                .contenido__title {
+                    width: 100%;
+                    left: 0;
+                    right: 0;
+                    border: none;
+                }
+                // Fokin' specific
+                &:nth-child(10n + 1) + .views-row .contenido__title {
+                    border:none;
+                    width: 100%;
+                    left:0;
+                }
+            }
+            &:nth-child(1) {
+                grid-column: 1 / span 4;
+                grid-row: 1 / span 4;
+                .contenido__title {
+                    width:50%;
+                    height:50%;
+                    opacity:1;
+                }
+            }
+            &:nth-child(3) {
+                grid-column: 7 / 9; 
+                grid-row: 1 / span 4;
+                .contenido__inner {
+                    padding:0;
+                    @include layer();
+                    img {
+                        object-fit:cover;
+                        height:100%;
+                    }
+                }
+            }
+            &:nth-child(7) {
+                grid-column: 5 / 9; 
+                .contenido__inner {
+                    padding:0;
+                    @include layer();
+                }
+                .contenido__title {
+                    width:50%;
+                }
+            }
+            &:nth-child(8) {
+                grid-column: 2 / 3;
+                grid-row: span 1;
+                .contenido__title {
+                    left:calc(-100% - #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }
+            }
+            &:nth-child(9) {
+                grid-column: 4 / 6;
+                grid-row: span 1;
+                .contenido__title {
+                    left:calc(-50% - #{$gutter / 2})!important;
+                    width:calc(50% - #{$gutter / 2})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }
+                .contenido__inner {
+                    padding-bottom: calc(50% - #{$gutter / 2})
+                }
+            }
+            &:nth-child(10) {
+                grid-column: 6 / 8;
+                grid-row: span 1;
+                .contenido__title {
+                    width:calc(50% - #{$gutter / 2})!important;
+                    left:calc(100% + #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }
+                .contenido__inner {
+                    padding-bottom: calc(50% - #{$gutter / 2})
+                }
+            }
+            &:nth-child(11) {
+                grid-column: span 6;
+                .contenido__inner {
+                    padding-bottom: calc(33.33% - #{$gutter / 2});
+                }
+            }
+            &:nth-child(13) {
+                grid-column:1/2;
+                grid-row:10/11;
+                .contenido__title {
+                    left:calc(100% + #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }
+            }
+            &:nth-child(14) {
+                grid-column:2/3;
+                grid-row:11/12;
+                .contenido__title {
+                    left:calc(-100% - #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }      
+            }
+            &:nth-child(15) {
+                grid-column:3/4;
+                grid-row:10/11; 
+                .contenido__title {
+                    left:calc(100% + #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }              
+            }
+            &:nth-child(16) {
+                grid-column:4/5;
+                grid-row:11/12; 
+                .contenido__title {
+                    left:calc(-100% - #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }              
+            }
+            &:nth-child(17) {
+                grid-column:5/6;
+                grid-row:10/11; 
+                .contenido__title {
+                    left:calc(100% + #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }
+                .contenido__inner {
+                    overflow:visible;
+                }             
+            }
+            &:nth-child(18) {
+                grid-column:6/7;
+                grid-row:11/12; 
+                .contenido__title {
+                    left:calc(-100% - #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }             
+            }
+            &:nth-child(19) {
+                grid-column:7/8;
+                grid-row:10/11; 
+                .contenido__title {
+                    left:calc(100% + #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }             
+            }
+            &:nth-child(20) {
+                grid-column:8/9;
+                grid-row:11/12; 
+                .contenido__title {
+                    left:calc(-100% - #{$gutter})!important;
+                    padding:0;
+                    opacity:1;
+                    h1 {
+                        @include ritmo-font-size($h5-font-size);
+                        line-height:1;
+                    }
+                    p {
+                        @include ritmo-font-size($h8-font-size);
+                        margin:0;
+                    }
+                }             
+            }
+            &:nth-child(n + 21) {
+                display:none;
+            }
+        }
+        .contenido {
+            margin:0;
+            display:block;
+        }
+        .contenido__inner {
+            padding-bottom:100%;
+            position:relative;
+        }
+    }
+}
+
+$gutter : ritmo(4);
