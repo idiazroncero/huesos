@@ -117,3 +117,7 @@ blockquote {
     text-transform: uppercase;
     font-family: $font-secondary;
 }
+
+.escondido {
+    @extend %escondido;
+}
