@@ -4,11 +4,11 @@ v0.0.7 | By [idiaz.roncero](http://idiazroncero.com)
 
 __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS osamenta by combining some preferred and battle-tested tools.
 
-idiaz.roncero is a Madrid-based front-end dev. He does not enjoy talking about himself in the third person but, hey, this is a Readme.md, not a letter or an email.
+idiaz.roncero is a Madrid-based front-end dev. He does not enjoy talking about himself in the third person but, hey, this is a Readme.md.
 
 ## Install
 
-Copy `src/scss/_config_sample.scss` to `src/scss/_config.scss` and tweak the values to adapt to your needs.
+Clone, open `src/scss/_config.scss` and tweak the values to adapt to your needs.
 
 Run the build scripts (see [Build Process](#build-process)).
 
@@ -43,7 +43,7 @@ For further reference, see `package.json`
 
 `npm run build` runs webpack. No prod/dev environments are used: this is a static assets generator, so the output is always the final bundle. `npm run huesos` is an alias to this. 
 
-This script also runs `npm run sass` on `./src/kss-src`. The KSS styleguide template is a separate NPM/Yarn project. If you want to only compile the docs, run `npm run sass` inside of the `kss-src` folder.
+This script also runs `npm run sass` on `./src/kss-src`. The KSS styleguide template is a separate NPM/Yarn project. If you want to only compile the docs, run `npm run sass; npm run postcss` inside of the `kss-src` folder.
 
 `npm run js:lint` lints all javascript, including webpack files. ESLint also works during build, but it is only scoped to app files.
 

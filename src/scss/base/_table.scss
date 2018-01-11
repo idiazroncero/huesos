@@ -60,15 +60,15 @@
 // Styleguide Base.tables
 
 table {
-    table-layout: fixed;
-    width:100%;
+	table-layout: fixed;
+	width:100%;
 }
 
 th, td {
-    border: $table-border;
-    padding: $table-padding;
+	border: $table-border;
+	padding: $table-padding;
 }
 
 th {
-    text-align: $table-th-align;
+	text-align: $table-th-align;
 }

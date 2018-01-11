@@ -1,178 +1,178 @@
 @mixin form-reset-general {
-    display: inline-block;
-    margin: 0;
-    border:0;
-    width: auto;
-    vertical-align: middle; // IE6,IE7
-    white-space: normal;
-    line-height: inherit;
-    background: none;
-    border-radius: $form-border-radius;
+	display: inline-block;
+	margin: 0;
+	border:0;
+	width: auto;
+	vertical-align: middle; // IE6,IE7
+	white-space: normal;
+	line-height: inherit;
+	background: none;
+	border-radius: $form-border-radius;
   
-    /* Browsers have different default form fonts */
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
+	/* Browsers have different default form fonts */
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
 }
 
 @mixin form-border($strategy) {
-  // Border strategy
-  @if ($strategy == full){
-    border: $input-border;
-    &:hover, &:focus {
-      border-color: darken($input-border-color, $color-modify-ratio);
-    }
-  } @else if ($strategy == bottom){
-    border-bottom: $input-border;
-    &:hover, &:focus {
-      border-color: darken($input-border-color, $color-modify-ratio);
-    }
-  }
+	// Border strategy
+	@if ($strategy == full){
+		border: $input-border;
+		&:hover, &:focus {
+			border-color: darken($input-border-color, $color-modify-ratio);
+		}
+	} @else if ($strategy == bottom){
+		border-bottom: $input-border;
+		&:hover, &:focus {
+			border-color: darken($input-border-color, $color-modify-ratio);
+		}
+	}
 }
   
 @mixin form-reset-input {
 
-  @include form-border($input-border-strategy);
-  padding: $input-padding;
-  &:focus {
-    outline: 0;
-  }
+	@include form-border($input-border-strategy);
+	padding: $input-padding;
+	&:focus {
+		outline: 0;
+	}
 
-  &[type=checkbox],
-  &[type=radio] {
-    width:  $base-font-size;
-    height:  $base-font-size;
-    vertical-align: middle;
-  }
+	&[type=checkbox],
+	&[type=radio] {
+		width:  $base-font-size;
+		height:  $base-font-size;
+		vertical-align: middle;
+	}
 
-  @if($pseudo-checkbox == true) {
-    &[type=checkbox] {
-      @include pseudo-checkbox();
-    }
-  }
+	@if($pseudo-checkbox == true) {
+		&[type=checkbox] {
+			@include pseudo-checkbox();
+		}
+	}
 
-  @if($pseudo-radio == true) {
-    &[type=radio] {
-      @include pseudo-radio();
-    }
-  }
+	@if($pseudo-radio == true) {
+		&[type=radio] {
+			@include pseudo-radio();
+		}
+	}
 
-  /* Make webkit render the search input like a normal text field */
-  &[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-  }
+	/* Make webkit render the search input like a normal text field */
+	&[type=search] {
+		-webkit-appearance: textfield;
+		-webkit-box-sizing: content-box;
+	}
 
-  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  @at-root {
-    ::-webkit-search-decoration {
-      display: none;
-    }
-  }
+	/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+	@at-root {
+		::-webkit-search-decoration {
+			display: none;
+		}
+	}
 
-  /* Fix IE7 display bug */
-  &[type="reset"],
-  &[type="button"],
-  &[type="submit"] {
-    overflow: visible;
-  }
+	/* Fix IE7 display bug */
+	&[type="reset"],
+	&[type="button"],
+	&[type="submit"] {
+		overflow: visible;
+	}
 }
   
 @mixin form-reset-select {
-  @include form-border($select-border-strategy);
-  padding: $select-padding;
-  appearance:none;
-  /* Move the label to the top */
-  &[multiple] {
-    vertical-align: top;
-  }
+	@include form-border($select-border-strategy);
+	padding: $select-padding;
+	appearance:none;
+	/* Move the label to the top */
+	&[multiple] {
+		vertical-align: top;
+	}
 }
   
   
   
 @mixin form-reset-button {
-    background: none;
-    outline: none;
-    padding: $button-padding;
+	background: none;
+	outline: none;
+	padding: $button-padding;
   
-    &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-      outline: 0;
-    }
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		outline: 0;
+	}
   
-    /* IE8 and FF freak out if this rule is within another selector */
-    @at-root {
-      ::-webkit-file-upload-button {
-        padding: 0;
-        border: 0;
-        background: none;
-      }
-    }
+	/* IE8 and FF freak out if this rule is within another selector */
+	@at-root {
+		::-webkit-file-upload-button {
+			padding: 0;
+			border: 0;
+			background: none;
+		}
+	}
 }
 
 
 @mixin form-reset-textarea {
-    /* Move the label to the top */
-    vertical-align: top;
+	/* Move the label to the top */
+	vertical-align: top;
   
-    /* Turn off scroll bars in IE unless needed */
-    overflow: auto;
+	/* Turn off scroll bars in IE unless needed */
+	overflow: auto;
 }
 
 
 @mixin kill-button {
-  border:none;
-  background:transparent;
-  &:hover, &:focus {
-    border:none;
-    background:transparent;  
-  }
+	border:none;
+	background:transparent;
+	&:hover, &:focus {
+		border:none;
+		background:transparent;  
+	}
 }
 
 @mixin pseudo-checkbox() {
-  @extend %hidden;
-  &:checked + label:before {
-    background-color: $input-border-color;
-  }
-  + label {
-    cursor:pointer;
-    &:before {
-      content:"";
-      display:inline-block;
-      width: 1em; // Same as the label
-      height: 1em;
-      margin: ($base-line-height - $base-font-size) / 2;
-      border: $input-border;
-      background-color: get-color(background, light); // We need to hide the real checkbox
-      vertical-align:top;
-      cursor: pointer;
-    }
-  }
+	@extend %hidden;
+	&:checked + label:before {
+		background-color: $input-border-color;
+	}
+	+ label {
+		cursor:pointer;
+		&:before {
+			content:"";
+			display:inline-block;
+			width: 1em; // Same as the label
+			height: 1em;
+			margin: ($base-line-height - $base-font-size) / 2;
+			border: $input-border;
+			background-color: get-color(background, light); // We need to hide the real checkbox
+			vertical-align:top;
+			cursor: pointer;
+		}
+	}
 }
 
 @mixin pseudo-radio() {
-  @extend %hidden;
-  &:checked + label:before {
-    background-color: $input-border-color;
-  }
-  + label {
-    cursor:pointer;
-    &:before {
-      content:"";
-      display:inline-block;
-      margin: ($base-line-height - $base-font-size) / 2;
-      width:1em;
-      height:1em;
-      border: $input-border;
-      background-color: get-color(background, light); // We need to hide the real checkbox
-      vertical-align:top;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-  }
+	@extend %hidden;
+	&:checked + label:before {
+		background-color: $input-border-color;
+	}
+	+ label {
+		cursor:pointer;
+		&:before {
+			content:"";
+			display:inline-block;
+			margin: ($base-line-height - $base-font-size) / 2;
+			width:1em;
+			height:1em;
+			border: $input-border;
+			background-color: get-color(background, light); // We need to hide the real checkbox
+			vertical-align:top;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	}
 }

@@ -21,6 +21,86 @@
 
 
 
+// ------
+// COLOR PALETTE
+// ------
+// Use get-color('palette', 'color') in your .scss files to get values
+// For example: getColor('base', 'primary') => #C65146
+// Use contrast-color($color) to get your black || white color against a background
+// ------
+
+$colors: (
+	base: (
+		"primary":   #C65146,
+		"secondary":   #C65146,
+		"lines":     #DCDCDC
+	),
+
+	text: (
+		"primary":   #1A1A19,
+		"heading":   #1A1A19,
+		"active": #383837,
+		"mark" : #FCEE35,
+	),
+
+	background: (
+		"dark":  #1A1A19,
+		"dim" : #EEEEEE,
+		"light": #FFFFFF,
+	),
+
+	state: (
+		"muted":   #EEE,
+		"success": #10A887,
+		"warning": #F17F42,
+		"error":   #DA3C3C
+	),
+
+	blue: (
+		"darker":  #1573B6,
+		"dark":    #1E80C6,
+		"base":    #2B90D9,
+		"light":   #3FA2E9,
+		"lighter": #4EB1F9
+	),
+
+	green: (
+		"darker":  #089073,
+		"dark":    #0B9D7D,
+		"base":    #10A887,
+		"light":   #1EB896,
+		"lighter": #28CEAA
+	),
+
+	red: (
+		"darker":  #653131,
+		"dark":    #B73333,
+		"base":    #DA3C3C,
+		"light":   #F25A5A,
+		"lighter": #FA8181
+	),
+
+	gray: (
+		"black" : #1B1B1B,
+		"darker":  #333333,
+		"dark":    #666666,
+		"base":    #888888,
+		"light":   #CCCCCC,
+		"lighter": #DDDDDD,
+		"white" : #FFFFFF,
+	)
+) !default;
+
+// CONTRAST BLACK AND WHITE / Do not remove
+// This values are used as return values for contrast-color()
+$contrast-dark: #1A1A19;
+$contrast-light: #FFFFFF;
+
+// Global % to apply to darken and lighten operations
+$color-modify-ratio: 33%;
+
+
+
 // --------------------
 // VERTICAL RHYTHM
 // Using Ritmo.scss
@@ -84,10 +164,9 @@ $normal: normal;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
-    h1, h2, h3, h4, dt,
-    '.your-classes',
-    '#your-ids'
-;
+	h1, h2, h3, h4, dt,
+	'.your-classes',
+	'#your-ids';
 
 // Select a font weight for your headings
 $heading-font-weight: normal;
@@ -99,6 +178,10 @@ $figcaption-align:left;
 // Quotes
 // Here are some common quotes: “ ” ‘ ’ ‛ ‟ ‚ „ ' " ‹ › « »
 $quotes: "“" "”" "‘" "’";
+
+// Code-like items
+$code-background: get-color(background, dim);
+$code-border-radius: 3px;
 
 
 
@@ -134,86 +217,6 @@ $sub-font-size: $h6-font-size;
 $small-font-size: $h6-font-size;
 $figcaption-font-size: $h6-font-size;
 
-
-
-
-
-// ------
-// COLOR PALETTE
-// ------
-// Use get-color('palette', 'color') in your .scss files to get values
-// For example: getColor('base', 'primary') => #C65146
-// Use contrast-color($color) to get your black || white color against a background
-// ------
-
-$colors: (
-  base: (
-    "primary":   #C65146,
-    "secondary":   #C65146,
-    "lines":     #DCDCDC
-  ),
-
-  text: (
-    "primary":   #1a1a19,
-    "heading":   #1a1a19,
-    "active": #383837,
-    "mark" : #FCEE35,
-  ),
-
-  background: (
-    "dark":  #1a1a19,
-    "light": #ffffff,
-  ),
-
-  state: (
-    "muted":   #eee,
-    "success": #10a887,
-    "warning": #F17F42,
-    "error":   #da3c3c
-  ),
-
-  blue: (
-    "darker":  #1573b6,
-    "dark":    #1e80c6,
-    "base":    #2b90d9,
-    "light":   #3fa2e9,
-    "lighter": #4eb1f9
-  ),
-
-  green: (
-    "darker":  #089073,
-    "dark":    #0b9d7d,
-    "base":    #10a887,
-    "light":   #1eb896,
-    "lighter": #28ceaa
-  ),
-
-  red: (
-    "darker":  #653131,
-    "dark":    #b73333,
-    "base":    #da3c3c,
-    "light":   #f25a5a,
-    "lighter": #fa8181
-  ),
-
-  gray: (
-    "black" : #1b1b1b,
-    "darker":  #333333,
-    "dark":    #666666,
-    "base":    #888888,
-    "light":   #cccccc,
-    "lighter": #dddddd,
-    "white" : #ffffff,
-  )
-) !default;
-
-// CONTRAST BLACK AND WHITE / Do not remove
-// This values are used as return values for contrast-color()
-$contrast-dark: #1a1a19;
-$contrast-light: #ffffff;
-
-// Global % to apply to darken and lighten operations
-$color-modify-ratio: 33%;
 
 
 
@@ -284,15 +287,15 @@ $form-border-radius: 0;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
-$input-border-color: darken(get-color(gray, base), 25%);
+$input-border-color: get-color(gray, dark);
 $input-border: 1px solid $input-border-color;
 $input-padding: 0;
 
 // Buttons
-$button-border-color: darken(get-color(gray,base), 50%);
-$button-border: 1px solid $button-border-color;
+$button-border-color: get-color(gray, dark);
+$button-border: 2px solid $button-border-color;
 $button-padding: 0 ($spacer / 2);
-$button-border-radius: 0;
+$button-border-radius: 3px;
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;
@@ -329,8 +332,8 @@ $layout-align: center; // left, right
 // ------
 
 $z-index : (
-  item1 : 0,
-  item2 : 1,
+	item1 : 0,
+	item2 : 1,
 );
 
 

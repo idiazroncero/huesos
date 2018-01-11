@@ -16,9 +16,9 @@
 
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
-  @if (lightness($color) > 50) {
-    @return $dark; // Lighter backgorund, return dark color
-  } @else {
-    @return $light; // Darker background, return light color
-  }
+	@if (lightness($color) > 50) {
+		@return $dark; // Lighter backgorund, return dark color
+	} @else {
+		@return $light; // Darker background, return light color
+	}
 }

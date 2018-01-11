@@ -1,54 +1,54 @@
 // Global mixins, placeholders, etc...
 
 %clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
 }
 
 %hidden { // Fuente: http://webaim.org/techniques/css/invisiblecontent/
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
 }
 
 @mixin block-align($align: center) {
-  @if $align == left {
-    margin-left:0;
-    margin-right:auto;
-  } @else if $align == right {
-    margin-right:0;
-    margin-left:auto;
-  } @else {
-    margin-left: auto;
-    margin-right: auto;
-  }
+	@if $align == left {
+		margin-left:0;
+		margin-right:auto;
+	} @else if $align == right {
+		margin-right:0;
+		margin-left:auto;
+	} @else {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @function z-index($item) {
-  @return map-get($z-index, $item);
+	@return map-get($z-index, $item);
 }
 
 @mixin layer($top: 0, $right: 0, $bottom: 0, $left:0) {
-  position:absolute;
-  top:$top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+	position:absolute;
+	top:$top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
 
 @mixin separator($ritmo:$spacer, $border-width:$separator-width, $border-color:$separator-color) {
-  margin-bottom: $ritmo;
-  @if $separators == true {
-    padding-bottom: $ritmo;
-    border-bottom: $border-width solid $border-color;
-  }
+	margin-bottom: $ritmo;
+	@if $separators == true {
+		padding-bottom: $ritmo;
+		border-bottom: $border-width solid $border-color;
+	}
 }

@@ -22,12 +22,12 @@ h6, .h6 { @include ritmo-font-size($h6-font-size); }
 
 h1, h2, h3, h4, h5, h6
 .h1, .h2, .h3, .h4, .h5, .h6  {
-  color: get-color(text, heading);
-  font-weight:$heading-font-weight;
-  small {
-    color: inherit;
-    vertical-align: 0;
-  }
+	color: get-color(text, heading);
+	font-weight:$heading-font-weight;
+	small {
+		color: inherit;
+		vertical-align: 0;
+	}
 }
 
 // Secondary font
@@ -44,17 +44,17 @@ h1, h2, h3, h4, h5, h6
 
 .font-secondary,
 %font-secondary {
-    font-family: $font-secondary;
+	font-family: $font-secondary;
 }
 
 @each $item in $font-secondary-items {
-    #{$item} {
-        @extend %font-secondary;
-        // In case is a link, we have to kill all effects!
-        a {
-            @include kill-link-decoration();
-        }
-    }
+	#{$item} {
+		@extend %font-secondary;
+		// In case is a link, we have to kill all effects!
+		a {
+			@include kill-link-decoration();
+		}
+	}
 }
 
 // Quotes
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6
 //
 // Styleguide Typography.quotes
 q {
-    quotes: $quotes;
+	quotes: $quotes;
 }
 
 // Blockquotes
@@ -89,13 +89,26 @@ blockquote {
 }
 
 .blockquote--decorated{
-    position:relative;
-    &:before {
-        content: $blockquote-decoration;
-        @include ritmo-font-size($blockquote-decoration-size);
-        font-family: $blockquote-font;
-        position: absolute;
-        top:ritmo(1);
-        left: - $blockquote-whitespace;
-    }
+	position:relative;
+	&:before {
+		content: $blockquote-decoration;
+		@include ritmo-font-size($blockquote-decoration-size);
+		font-family: $blockquote-font;
+		position: absolute;
+		top:ritmo(1);
+		left: - $blockquote-whitespace;
+	}
+}
+
+code,
+kbd,
+samp,
+var {
+	@if $code-background != false {
+		background-color: $code-background;
+		padding: 0 ritmo(1);
+	}
+	@if $code-border-radius != false {
+		border-radius: $code-border-radius;
+	}
 }

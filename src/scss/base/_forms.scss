@@ -27,94 +27,121 @@ label,
 select,
 button,
 textarea {
-    @include form-reset-general();
+	@include form-reset-general();
 }
 
 label {
-    margin-right: $spacer / 2; // Gives some room between inlined labels and inputs
+	margin-right: $spacer / 2; // Gives some room between inlined labels and inputs
 }
 
 input:-webkit-autofill, 
 textarea:-webkit-autofill, 
 select:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px $webkit-autofill-color inset; 
-    color:contrast-color($webkit-autofill-color);
+	box-shadow: 0 0 0px 1000px $webkit-autofill-color inset; 
+	color:contrast-color($webkit-autofill-color);
 }
 
 input {
-    // Input
-    //
-    // General text input.<br>
-    // Please note a wrapper with a `.form-item` class is added in order to create separate blocks
-    // and apply a vertical-rhythm based margin.<br>
-    // Without this wrapper and class, all the form elements would behave as inline-block elements.
-    //
-    // Markup:
-    // <div class="form-item">
-    //   <label for="text">Text</label>
-    //   <input type="text" id="text" name="text">
-    // </div>
-    // <div class="form-item">
-    //   <label for="password">Password</label>
-    //   <input type="password" id="password" name="password">
-    // </div>
-    // <div class="form-item">
-    //   <label for="email">Email</label>
-    //   <input type="email" id="email" name="email">
-    // </div>
-    //
-    // Styleguide Forms.input
-    @include form-reset-input();
-    // File Input
-    //
-    // Uses the label for handling click and hides the actual input element.
-    // Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
-    //
-    // Markup:
-    // <input type="file" id="file" name="file">
-    // <label for="file">Upload your file</label>
-    //
-    // Styleguide Forms.file
-    &[type=file] {
-        @extend %hidden;
-        + label {
-            @extend .button;
-        }
-    }
-    // Give an opt-in using a class if pseudo is deactivated
-    @if($pseudo-checkbox == false) {
-        &[type=checkbox].pseudo-checkbox {
-            @include pseudo-checkbox();
-        }
-    }
-    @if($pseudo-radio == false) {
-        &[type=radio].pseudo-radio {
-            @include pseudo-radio();
-        }
-    }
+	// Input
+	//
+	// General text input.<br>
+	// Please note a wrapper with a `.form-item` class is added in order to create separate blocks
+	// and apply a vertical-rhythm based margin.<br>
+	// This wrapper also applies a flexbox in order to take the full width of the parent.
+	// Without this wrapper and class, all the form elements would behave as inline-block elements.
+	// A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
+	//
+	// Markup:
+	// <div class="form-item">
+	//   <label for="text">Text</label>
+	//   <input type="text" id="text" name="text">
+	// </div>
+	// <div class="form-item form-item--required">
+	//   <label for="text">Text Required</label>
+	//   <input required type="text" id="text" name="text">
+	// </div>
+	// <div class="form-item">
+	//   <label for="text">Text Disabled</label>
+	//   <input disabled type="text" id="text" name="text">
+	// </div>
+	// <div class="form-item">
+	//   <label for="password">Password</label>
+	//   <input type="password" id="password" name="password">
+	// </div>
+	// <div class="form-item">
+	//   <label for="email">Email</label>
+	//   <input type="email" id="email" name="email">
+	// </div>
+	// <div class="form-item">
+	//   <label for="url">Web Address</label>
+	//   <input id="url" type="url" placeholder="http://yoursite.com">
+	// </div>
+	// <div class="form-item">
+	//   <label for="input__phone">Phone Number</label>
+	//   <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+	// </div>
+	// <div class="form-item">
+	//   <label for="input__search">Search</label>
+	//   <input id="input__search" type="search" placeholder="Enter Search Term">
+	// </div>
+	//
+	// Styleguide Forms.input
+	@include form-reset-input();
+	// File Input
+	//
+	// Uses the label for handling click and hides the actual input element.
+	// Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	//
+	// Markup:
+	// <input type="file" id="file" name="file">
+	// <label for="file">Upload your file</label>
+	//
+	// Styleguide Forms.file
+	&[type=file] {
+		@extend %hidden;
+		+ label {
+			@extend .button;
+		}
+	}
+	// Give an opt-in using a class if pseudo is deactivated
+	@if($pseudo-checkbox == false) {
+		&[type=checkbox].pseudo-checkbox {
+			@include pseudo-checkbox();
+		}
+	}
+	@if($pseudo-radio == false) {
+		&[type=radio].pseudo-radio {
+			@include pseudo-radio();
+		}
+	}
+
+	&:disabled {
+		opacity: $disabled-opacity;
+	}
 }
 
 select {
-    // Select
-    //
-    // Handles multiple selection
-    //
-    // Markup:
-    // <select>
-    //   <option value="volvo">Volvo</option>
-    //   <option value="saab">Saab</option>
-    //   <option value="mercedes">Mercedes</option>
-    //   <option value="audi">Audi</option>
-    // </select>
-    // <select multiple>
-    //   <option value="volvo">Volvo</option>
-    //   <option value="saab">Saab</option>
-    //   <option value="mercedes">Mercedes</option>
-    //   <option value="audi">Audi</option>
-    // </select> 
-    //
-    // Styleguide Forms.select
-    @include form-reset-select();
+	// Select
+	//
+	// Handles multiple selection
+	// TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI
+	//
+	// Markup:
+	// <select>
+	//   <option value="volvo">Volvo</option>
+	//   <option value="saab">Saab</option>
+	//   <option value="mercedes">Mercedes</option>
+	//   <option value="audi">Audi</option>
+	// </select>
+	// <select multiple>
+	//   <option value="volvo">Volvo</option>
+	//   <option value="saab">Saab</option>
+	//   <option value="mercedes">Mercedes</option>
+	//   <option value="audi">Audi</option>
+	// </select> 
+	//
+	// Styleguide Forms.select
+	@include form-reset-select();
 }
 
 // Button
@@ -133,20 +160,20 @@ input[type=reset],
 input[type=button],
 button,
 .button {
-    @include form-reset-button();
-    cursor:pointer;
-    border: $button-border;
-    border-radius: $button-border-radius;
-    display: inline-block;
-    padding: 0 ritmo(2);
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    @include ritmo-font-size($h6-font-size, 5);
-    &:hover,
-    &:focus {
-        background:$button-border-color;
-        color: contrast-color($button-border-color);
-    }
+	@include form-reset-button();
+	cursor:pointer;
+	border: $button-border;
+	border-radius: $button-border-radius;
+	display: inline-block;
+	padding: 0 ritmo(2);
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	@include ritmo-font-size($h6-font-size, 5);
+	&:hover,
+	&:focus {
+		background:$button-border-color;
+		color: contrast-color($button-border-color);
+	}
 }
 
 input[type=submit][disabled],
@@ -154,53 +181,68 @@ input[type=reset][disabled],
 input[type=button][disabled],
 button[disabled],
 .button--disabled {
-    opacity: $disabled-opacity;
-    &:hover, 
-    &:focus {
-        background: inherit;
-        color: inherit;
-    }
+	opacity: $disabled-opacity;
+	&:hover, 
+	&:focus {
+		background: inherit;
+		color: inherit;
+	}
 }
 
 // Links as buttons
 a.button {
-    @include kill-link(get-color(text, primary));
-    @include kill-link-decoration();
-    &:hover,
-    &:focus {
-        border: $button-border;
-        background:$button-border-color;
-        color: contrast-color($button-border-color);
-    }
+	@include kill-link(get-color(text, primary));
+	@include kill-link-decoration();
+	&:hover,
+	&:focus {
+		border: $button-border;
+		background:$button-border-color;
+		color: contrast-color($button-border-color);
+	}
 }
 
 a.button--disabled {
-    &:hover, 
-    &:focus {
-        background: inherit;
-        color: inherit;
-    }
+	&:hover, 
+	&:focus {
+		background: inherit;
+		color: inherit;
+	}
 }
 
 textarea {
-    border: $input-border;
-    @include form-reset-textarea();
-    width:100%;
-    padding: 0 ($spacer / 4);
+	border: $input-border;
+	@include form-reset-textarea();
+	width:100%;
+	padding: 0 ($spacer / 4);
 }
 
 fieldset {
-    margin-right:0;
-    margin-left:0;
-    border: $input-border;
-    padding: $spacer;
+	margin-right:0;
+	margin-left:0;
+	border: $input-border;
+	padding: $spacer;
 }
 
 legend {
-    font-weight: $bold;
+	font-weight: $bold;
 }
 
 // General block-level wrapper for spacing between items
 .form-item {
-    margin-bottom : $gutter;
+	margin-bottom : $gutter;
+	display:flex;
+	label {
+		flex: 0 1 auto;
+	}
+	input {
+		flex: 1 0 auto;
+	}
+}
+
+// We can't add pseudo-elements to <input>, so...
+.form-item--required {
+	&::after {
+		content: "*";
+		color: get-color(state, error);
+	}
 }

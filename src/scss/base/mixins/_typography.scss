@@ -12,9 +12,9 @@
 //
 // Styleguide Functions.Typography.Bold
 @function bold($item: &) {
-    @if index($font-secondary-items, $item) == null {
-        @return $font-main-bold;
-    } @else {
-        @return $font-secondary-bold;
-    }
+	@if index($font-secondary-items, $item) == null {
+		@return $font-main-bold;
+	} @else {
+		@return $font-secondary-bold;
+	}
 }

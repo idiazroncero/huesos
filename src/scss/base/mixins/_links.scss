@@ -6,35 +6,35 @@
 
 
 @mixin get-link-decoration($strategy: $link-strategy) {
-    @if $strategy == underline {
-        text-decoration:underline;
-    } @else if $strategy == border {
-        text-decoration:none;
-        border-bottom: $link-border-width solid $link-border-color; 
-    } @else if $strategy == smart {
-        @include linkUnderlines($link-smart-background, $link-color);
-    } @else if $strategy == mark {
-        text-decoration:none;
-        background-color: $link-mark-color;
-        position:relative;
-        &:before,
-        &:after {
-            content:"";
-            position:absolute;
-            top:0;
-            bottom:0;
-            width:2px;
-            background-color: $link-mark-color;
-        }
-        &:before {
-            left:-2px;
-        }
-        &:after {
-            right:-2px;
-        }
-    } @else {
-        @error "No se ha definido un valor correcto para $link-strategy";
-    }
+	@if $strategy == underline {
+		text-decoration:underline;
+	} @else if $strategy == border {
+		text-decoration:none;
+		border-bottom: $link-border-width solid $link-border-color; 
+	} @else if $strategy == smart {
+		@include linkUnderlines($link-smart-background, $link-color);
+	} @else if $strategy == mark {
+		text-decoration:none;
+		background-color: $link-mark-color;
+		position:relative;
+		&:before,
+		&:after {
+			content:"";
+			position:absolute;
+			top:0;
+			bottom:0;
+			width:2px;
+			background-color: $link-mark-color;
+		}
+		&:before {
+			left:-2px;
+		}
+		&:after {
+			right:-2px;
+		}
+	} @else {
+		@error "No se ha definido un valor correcto para $link-strategy";
+	}
 }
 
 // set-link($base, $visited, $hover, $active)
@@ -49,90 +49,90 @@
 // Styleguide Mixins.links.setLink
 
 @mixin set-link(
-    $base: $link-color,
+	$base: $link-color,
     $visited: $link-visited,
     $hover: $link-hover,
     $active: $link-active
 ) {
-    &, 
-    &:link {
-        color: $base;
-        @if $link-highlight-on-hover {
-            text-decoration:none;
-        } @else {
-            @include get-link-decoration();
-        }
-    }
-    &:visited {
-        color: $visited;
-    }
-    &:focus,
-    &:hover { // Tratamos :hover y :focus siempre indistintamente
-        color: $hover;
-        @if $link-highlight-on-hover {
-            @include get-link-decoration();
-        } @else {
-            text-decoration:none;
-            border:none;
-            background:transparent;
-        }
-    }
-    &:active {
-        color: $active;
-    }
+	&, 
+	&:link {
+		color: $base;
+		@if $link-highlight-on-hover {
+			text-decoration:none;
+		} @else {
+			@include get-link-decoration();
+		}
+	}
+	&:visited {
+		color: $visited;
+	}
+	&:focus,
+	&:hover { // Tratamos :hover y :focus siempre indistintamente
+		color: $hover;
+		@if $link-highlight-on-hover {
+			@include get-link-decoration();
+		} @else {
+			text-decoration:none;
+			border:none;
+			background:transparent;
+		}
+	}
+	&:active {
+		color: $active;
+	}
 }
 
 @mixin kill-link($color) {
-    @include set-link($color, $color, $color, $color);
-    @include kill-link-decoration();
+	@include set-link($color, $color, $color, $color);
+	@include kill-link-decoration();
 }
 
 @mixin kill-link-decoration($strategy: $link-strategy) {
-    &, &:link {
-        @if $strategy == underline {
-            text-decoration:none;
-        } @else if $strategy == border {
-            border-bottom: none; 
-        } @else if $strategy == smart {
-            text-shadow: none;
-            background-image:none;
-            color: inherit;
-        } @else if $strategy == mark {
-            background-color:none;
-        } 
-    }   
+	&, &:link {
+		@if $strategy == underline {
+			text-decoration:none;
+		} @else if $strategy == border {
+			border-bottom: none; 
+		} @else if $strategy == smart {
+			text-shadow: none;
+			background-image:none;
+			color: inherit;
+		} @else if $strategy == mark {
+			background-color:none;
+		} 
+	}   
 }
 
 // Smart text-underline from https://eager.io/blog/smarter-link-underlines/
 
 @mixin textShadowToCropUnderline($color) {
-  text-shadow: .03em 0 $color, -.03em 0 $color, 0 .03em $color, 0 -.03em $color, .06em 0 $color, -.06em 0 $color, .09em 0 $color, -.09em 0 $color, .12em 0 $color, -.12em 0 $color, .15em 0 $color, -.15em 0 $color
+	text-shadow: .03em 0 $color, -.03em 0 $color, 0 .03em $color, 0 -.03em $color, .06em 0 $color, -.06em 0 $color, .09em 0 $color, -.09em 0 $color, .12em 0 $color, -.12em 0 $color, .15em 0 $color, -.15em 0 $color
 }
 
 @mixin linkUnderlines($backgroundColor, $color) {
-  color: $color;
-  text-decoration: none;
-  @include textShadowToCropUnderline($backgroundColor);
-  background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient($backgroundColor, $backgroundColor), linear-gradient($color, $color);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%;
+	color: $color;
+	text-decoration: none;
+	@include textShadowToCropUnderline($backgroundColor);
+	background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient($backgroundColor, $backgroundColor), linear-gradient($color, $color);
+	background-size: .05em 1px, .05em 1px, 1px 1px;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	background-position: 0% 90%, 100% 90%, 0% 90%;
 
-  &::selection {
-    @include textShadowToCropUnderline($backgroundColor)
-    background: $backgroundColor;
-  }
+	&::selection {
+		@include textShadowToCropUnderline($backgroundColor)
+			background: $backgroundColor;
+	}
 
-  &::-moz-selection {
-    @include textShadowToCropUnderline($backgroundColor)
-    background: $backgroundColor;
-  }
+	&::-moz-selection {
+		@include textShadowToCropUnderline($backgroundColor)
+			background: $backgroundColor;
+	}
 
-  &:before, &:after, *, *:before, *:after {
-    text-shadow: none
-  }
+	&:before, &:after, *, *:before, *:after {
+		text-shadow: none
+	}
 
-  &:visited {
-    color: $color
-  }
+	&:visited {
+		color: $color
+	}
 }
