@@ -40,7 +40,7 @@
     width:100%;
     height:100%;
     z-index:z-index('front-menu');
-    transition: left $transition-time * 4 cubic-bezier(.43,-0.33,.41,.92);
+    transition: left $transition-time * 3 cubic-bezier(.43,-0.15,.41,.92) $transition-time ;
     background-color: lighten(get-color(base, "primary"), 10%);
     &:before {
         content:"";
@@ -140,48 +140,55 @@
     top:$gutter;
     left:50%;
     transform: translateX(-50%);
+    padding:0;
+    overflow:hidden;
+    transition: border-radius $transition-time ease-out;
+    border-radius:0;
+}
+
+.front__burguer {
+    display:block;
+    width:$gutter;
+    margin-bottom:4.5px;
+    margin-top:4.5px;
+    height:3px;
+    background-color:get-color(gray, "white");
+    transition: all $transition-time ease-in-out;
+}
+
+.front__cross {
+    background-color:get-color(gray, "black");
+    position:absolute;
+    width:$gutter * 0.75;
+    top:50%;
+    left:50%;
+    margin:0;
+    margin-left: -$gutter * 0.375;
+    transition: all $transition-time ease-in-out;
+    transform-origin: center center;
+    border-radius:2px;
+    height:5px !important;
+    &:nth-child(4) {
+        transform: translateY(-50%) rotate(45deg) scale(0);
+    }
+    &:nth-child(5) {
+        transform: translateY(-50%) rotate(-45deg) scale(0);
+    }
 }
 
 .front__menu__open--open {
+    border-radius:50%;
     .front__burguer {
         height:9px;
-        margin-bottom:0;
+        margin:0;
     }
     .front__cross {
-        height:5px !important;
-        margin-bottom:0 !important;
+        margin-left: -$gutter * 0.375;
         &:nth-child(4) {
             transform: translateY(-50%) rotate(45deg) scale(1);
         }
         &:nth-child(5) {
             transform: translateY(-50%) rotate(-45deg) scale(1);
         }
-    }
-}
-
-.front__burguer {
-    display:block;
-    width:$gutter;
-    margin-bottom:6px;
-    height:3px;
-    background-color:get-color(gray, "white");
-    transition: all $transition-time ease-in-out;
-    &:nth-child(3) {
-        margin-bottom:0;
-    }
-}
-
-.front__cross {
-    background-color:get-color(gray, "black");
-    position:absolute;
-    top:50%;
-    margin:0;
-    transition: all $transition-time ease-in-out;
-    transform-origin: center center;
-    &:nth-child(4) {
-        transform: translateY(-50%) rotate(45deg) scale(0);
-    }
-    &:nth-child(5) {
-        transform: translateY(-50%) rotate(-45deg) scale(0);
     }
 }

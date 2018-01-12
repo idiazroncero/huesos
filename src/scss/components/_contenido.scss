@@ -21,7 +21,7 @@
     left: 0;
     bottom: 0;
     overflow:hidden;
-    transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all $transition-time cubic-bezier(0.86, 0, 0.07, 1);
     z-index:z-index(contenido-fit);
     img {
         display:block;
@@ -51,7 +51,7 @@
     background: get-color(gray,'white');
     z-index: z-index(contenido-title);
     flex-direction:column;
-    transition: opacity 0.25s ease-out;
+    transition: all $transition-time linear;
     h1 {
         font-weight: normal;
         max-width:250px;
@@ -150,8 +150,34 @@
     .contenido__fit {
         opacity:0;
     }
-}   
+}
 
-.contenido--dimmed {
-    opacity:0.5;
+.cuadricula .views-row {
+    .contenido--dimmed {
+        transform:scale(0.98);
+    }
+    &:nth-child(2n) {
+        .contenido--dimmed {
+            transform:scale(0.92);
+        }
+    }
+    &:nth-child(5n) {
+        .contenido--dimmed {
+            transform:scale(0.95);
+            transition-delay: $transition-delay / 4;
+        }
+    }
+    &:nth-child(7n) {
+        .contenido--dimmed {
+            transform:scale(0.85);
+            transition-delay: $transition-delay / 2;
+        }
+    }
+    &:nth-child(9n),
+    &:nth-child(2) {
+        .contenido--dimmed {
+            transform:scale(0.75);
+            transition-delay: $transition-delay;
+        }
+    }
 }
