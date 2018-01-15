@@ -1,0 +1,42 @@
+.searchbox {
+    label {
+        display:none;
+    }
+    input[type="text"] {
+        padding: 0 $gutter / 2;
+        border:none;
+        @include ritmo-font-size($h4-font-size);
+        background: get-color(gray, "white");
+        flex:1;
+    }
+    input[type="submit"] {
+        border-radius:0;
+        background-color: get-color(gray, "black");
+        color: get-color(gray,"white");
+        padding: 0 $gutter;
+        border:none;
+        &:hover {
+            background-color: get-color(base, "primary");
+        }
+    }
+    .form-item {
+        margin:0;
+        padding:0;
+        border:none;
+        flex:1;
+    }
+    .form-actions {
+        display:flex;
+    }
+    form {
+        display:flex;
+    }
+}
+
+.searchbox--page {
+    margin-bottom:$gutter;
+    input[type="text"] {
+        border: 1px solid  get-color(gray, "black");
+        border-right:none;
+    }
+}
