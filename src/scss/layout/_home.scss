@@ -1,8 +1,8 @@
 .home {
     #main-wrapper {
-        padding:$gutter $gutter * 2;
+        padding:$gutter;
         padding-left: 100px + ($base-line-height * 2);
-        padding-left: calc(100px + #{$gutter * 2});
+        padding-left: calc(100px + #{$gutter});
     }
     .header {
         position:absolute;

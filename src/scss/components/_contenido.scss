@@ -154,30 +154,30 @@
 
 .cuadricula .views-row {
     .contenido--dimmed {
-        transform:scale(0.98);
+        transform:rotate(2deg);
     }
-    &:nth-child(2n) {
-        .contenido--dimmed {
-            transform:scale(0.92);
-        }
-    }
-    &:nth-child(5n) {
-        .contenido--dimmed {
-            transform:scale(0.95);
-            transition-delay: $transition-delay / 4;
-        }
-    }
-    &:nth-child(7n) {
-        .contenido--dimmed {
-            transform:scale(0.85);
-            transition-delay: $transition-delay / 2;
-        }
-    }
-    &:nth-child(9n),
-    &:nth-child(2) {
-        .contenido--dimmed {
-            transform:scale(0.75);
-            transition-delay: $transition-delay;
-        }
-    }
+    // &:nth-child(2n) {
+    //     .contenido--dimmed {
+    //         transform:scale(0.92);
+    //     }
+    // }
+    // &:nth-child(5n) {
+    //     .contenido--dimmed {
+    //         transform:scale(0.95);
+    //         transition-delay: $transition-delay / 4;
+    //     }
+    // }
+    // &:nth-child(7n) {
+    //     .contenido--dimmed {
+    //         transform:scale(0.85);
+    //         transition-delay: $transition-delay / 2;
+    //     }
+    // }
+    // &:nth-child(9n),
+    // &:nth-child(2) {
+    //     .contenido--dimmed {
+    //         transform:scale(0.75);
+    //         transition-delay: $transition-delay;
+    //     }
+    // }
 }
