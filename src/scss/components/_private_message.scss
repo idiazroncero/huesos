@@ -1,3 +1,5 @@
+// FORMS
+
 .private-message__form {
     //display:none;
     margin: $gutter 0;
@@ -17,6 +19,61 @@
         width:100%;
         //border:none !important;
         margin-bottom:ritmo(4) !important;
+    }
+}
+
+#private-message-add-form {
+    .field--name-message {
+        label {display:none}
+        .js-text-format-wrapper {
+            padding:0;
+            margin:0;
+            border:none;
+            .form-item {
+                width:100%;
+                > div  {
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+
+#thread-members-display-container {
+    margin-bottom: $gutter;
+    display:flex;
+    align-items:center;
+    input {
+        flex:1;
+    }
+}
+
+#pm-members-autocomplete-results-wrapper {
+    position:absolute;
+}
+
+.private-message-member-display-item {
+    margin:0;
+    background-color: get-color('base', secondary);
+    color: get-color(gray, "white");
+    float:left;
+    order:-999;
+    border-radius:2px;
+    overflow: hidden;
+    margin-right: $gutter / 4;
+    @extend %peque;
+    .pm-username {
+        display:inline-block;
+        padding: 0 $gutter/4;
+    }
+    .pm-username-remove-link {
+        display:inline-block;
+        padding: 0 $gutter / 4;
+        border-left: 1px solid get-color(gray, "white");
+        background-color: lighten(get-color('base', secondary), 10%);
+        &:hover {
+            background-color: get-color('base', secondary);
+        }
     }
 }
 
