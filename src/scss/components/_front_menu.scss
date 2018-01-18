@@ -1,0 +1,104 @@
+.front__menu {
+    width:50%;
+    margin-top: calc(200px + #{ritmo(8)});
+    margin-bottom:0;
+    padding-left: ritmo(8);
+    margin-left:ritmo(8);
+    border-left: 1px solid get-color(gray, "white");
+    display:flex;
+    flex-direction:column;
+    a {
+        @include set-link(
+            get-color(gray, "white"), 
+            get-color(gray, "lighter"),
+            get-color(gray, "lighter"),
+            get-color(gray, "dark")
+        );
+    }
+    nav {
+        margin:auto 0 $gutter 0;
+    }
+    ul {
+        text-align:left;
+        li {
+            list-style-type:none;
+            display:block;
+            text-transform: uppercase;
+            margin-top: $gutter;
+            margin-bottom:0;
+        }
+        a {
+            @include ritmo-font-size($h4-font-size);
+        }
+    }
+}
+
+.front__menu__operations {
+    position:absolute;
+    top:$gutter;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.front__menu__open {
+    @include kill-button();
+    padding:0;
+    overflow:hidden;
+    transition: border-radius $transition-time ease-out;
+    border-radius:0;
+    margin-bottom: $gutter / 2;
+}
+
+
+.front__burguer {
+    display:block;
+    width:$gutter;
+    margin-bottom:4.5px;
+    margin-top:4.5px;
+    height:3px;
+    background-color:get-color(gray, "white");
+    transition: all $transition-time ease-in-out;
+}
+
+.front__user {
+    svg {
+        fill: get-color(gray,"white");
+    }
+}
+
+.front__cross {
+    background-color:get-color(gray, "black");
+    position:absolute;
+    width:$gutter * 0.75;
+    top:50%;
+    left:50%;
+    margin:0;
+    margin-left: -$gutter * 0.375;
+    transition: all $transition-time ease-in-out;
+    transform-origin: center center;
+    border-radius:2px;
+    height:5px !important;
+    &:nth-child(4) {
+        transform: translateY(-50%) rotate(45deg) scale(0);
+    }
+    &:nth-child(5) {
+        transform: translateY(-50%) rotate(-45deg) scale(0);
+    }
+}
+
+.front__menu__open--open {
+    border-radius:50%;
+    .front__burguer {
+        height:9px;
+        margin:0;
+    }
+    .front__cross {
+        margin-left: -$gutter * 0.375;
+        &:nth-child(4) {
+            transform: translateY(-50%) rotate(45deg) scale(1);
+        }
+        &:nth-child(5) {
+            transform: translateY(-50%) rotate(-45deg) scale(1);
+        }
+    }
+}

@@ -20,7 +20,97 @@ input {
         width:100%;
         padding:0;
     }
+    &[type=range] {
+        border:none;
+    }
 }
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 250px;
+    margin: 1px 0;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 7px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    background: #000000;
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    border: 0px solid #000000;
+    height: 5px;
+    width: 15px;
+    border-radius: 0px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0d0d0d;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 7px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    background: #000000;
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    border: 0px solid #000000;
+    height: 5px;
+    width: 15px;
+    border-radius: 0px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 7px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #000000;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #000000;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  }
+  input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    border: 0px solid #000000;
+    height: 5px;
+    width: 15px;
+    border-radius: 0px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 5px;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #000000;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #0d0d0d;
+  }
+
+  
 
 select {
     @include form-reset-select();
@@ -54,6 +144,38 @@ button,
     &:focus {
         background:$button-border-color;
         color: contrast-color($button-border-color);
+    }
+    &.button--good {
+        color: get-color(state, success);
+        border-color: get-color(state, success);
+        &:hover,
+        &:focus {
+            background: get-color(state, success);
+            color: contrast-color(get-color(state, success));
+            border-color: get-color(state, success);
+        } 
+    }
+    
+    &.button--warning {
+        color: get-color(state, warning);
+        border-color: get-color(state, warning);
+        &:hover,
+        &:focus {
+            background: get-color(state, warning);
+            color: contrast-color(get-color(state, warning));
+            border-color: get-color(state, warning);
+        } 
+    }
+    
+    &.button--bad {
+        color: get-color(state, error);
+        border-color: get-color(state, error);
+        &:hover,
+        &:focus {
+            background: get-color(state, error);
+            color: contrast-color(get-color(state, error));
+            border-color: get-color(state, error);
+        } 
     }
 }
 
