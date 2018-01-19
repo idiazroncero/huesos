@@ -10,3 +10,75 @@
         margin-left:$gutter;
     }
 }
+
+
+// In case is a teaser
+
+.media-audio.view-mode-teaser,
+.media-audio.view-mode-miniteaser {
+    margin-bottom:0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: get-color(gray, "lighter");
+    .waveform {
+        margin-bottom:0;
+        // Some serious hacking here...
+        > wave {
+            position:absolute !important;
+            height:100% !important;
+            width:150% !important;
+            margin: 0 0 auto -25% !important;
+            transform: rotate(5deg);
+            wave {
+                width:105% !important;
+                top: 5% !important;
+            }
+            canvas {
+                width:100% !important;
+            }
+        }
+    }
+    .audiofield {
+        .button,
+        .volume {display:none}
+    }
+}
+
+.media-audio.view-mode-miniteaser {
+    .waveform {
+        > wave {
+            width:100% !important;
+            margin: 0 !important;
+            transform: rotate(-5deg);
+        }
+    }
+}
+// .media-audio.view-mode-miniteaser {
+//     height:150px;
+//     width:
+//     background-color: get-color(gray, "lighter");
+//     .waveform {
+//         margin-bottom:0;
+//         // Some serious hacking here...
+//         > wave {
+//             position:absolute !important;
+//             height:100% !important;
+//             width:150% !important;
+//             margin: 0 0 auto -25% !important;
+//             transform: rotate(5deg);
+//             wave {
+//                 width:75% !important;
+//             }
+//             canvas {
+//                 width:100% !important;
+//             }
+//         }
+//     }
+//     .audiofield {
+//         .button,
+//         .volume {display:none}
+//     }
+// }
