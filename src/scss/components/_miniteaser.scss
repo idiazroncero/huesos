@@ -12,6 +12,8 @@
     width:150px;
     height:150px;
     margin-right:$gutter;
+    position:relative;
+    overflow:hidden;
     img {
         object-fit:cover;
         height:150px;

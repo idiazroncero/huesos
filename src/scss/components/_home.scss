@@ -4,5 +4,12 @@
         float:left;
         width:25%;
         position:relative;
+        &:first-child {
+            width:50%;
+            .contenido__title h1 {
+                @include ritmo-font-size($h1-font-size);
+                font-weight: $light;
+            }
+        }
     }   
 }

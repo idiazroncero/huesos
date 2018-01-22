@@ -12,7 +12,8 @@ const PATHS = {
 
 module.exports = {
 	entry: {
-		src : PATHS.src,
+		style : path.join(PATHS.src, 'style.js'),
+		slick : path.join(PATHS.src, 'slick.js')
 	},
 	output: {
 		filename: 'js/[name].[hash:6].js',

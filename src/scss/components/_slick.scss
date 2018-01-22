@@ -1,0 +1,12 @@
+// When there is more than one image displayed, 
+// we show a grid. On click a lightbox with a carousel appears.
+
+.slick {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: $gutter;
+    img {
+        cursor:pointer;
+    }
+}

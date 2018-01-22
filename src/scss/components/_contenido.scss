@@ -110,8 +110,8 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) rotate(15deg);
-    @include ritmo-font-size($h1-font-size);
-    font-weight: $light;
+    @include ritmo-font-size($h2-font-size);
+    //font-weight: $light;
     color: get-color(gray, "white");
     text-shadow: 1px 1px 0px get-color(gray, "white"), 3px 3px 3px get-color(gray, "lighter");
 }

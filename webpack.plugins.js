@@ -7,7 +7,7 @@ const KssWebpackPlugin = require('kss-webpack-plugin');
 
 // Exporta las configuraciones para su uso en webpack.config.js
 exports.extraeCSS = new ExtractTextPlugin({
-	filename: 'css/style.css',
+	filename: 'css/[name].css',
 });
 
 exports.generaHTML = new HtmlWebpackPlugin({

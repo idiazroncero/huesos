@@ -53,6 +53,8 @@
   ],
   "dependencies": {
     "file-loader": "^1.1.5",
+    "slick-carousel": "^1.8.1",
+    "slick-lightbox": "^0.2.10",
     "svg-loader": "^0.0.2",
     "tilt.js": "^1.2.1",
     "url-loader": "^0.6.2"
