@@ -14,7 +14,7 @@
         padding:0;
         border:none;
     }
-    .form-wrapper {
+    > .form-wrapper {
         margin-bottom: $gutter * 2;
         &:last-child {
             margin-bottom:0;
@@ -69,15 +69,19 @@
 .field--name-field-color {
     .js-form-type-textfield {
         .minicolors {
-            height:ritmo(4);
-            width:ritmo(4);
-            margin-left: $gutter;
+            // height:ritmo(4);
+            // width:ritmo(4);
+            margin-left: $gutter / 4;
         }
-        .mini-colors {@extend %escondido;}
+        //.mini-colors {@extend %escondido;}
         .minicolors-swatch {
             top:0;
-            width:100%;
+            right:0;
+            width:ritmo(8);
             height:100%;
+            cursor:pointer;
+            border:none;
+            border-radius:0;
         }
     }
 }
@@ -156,14 +160,15 @@ table[id^="field-imagen-values"] {
     }
     td {
         border:none;
-        border-bottom: 1px solid $separator-color;
-        padding: $gutter / 4 0;
+        //border-bottom: 1px solid $separator-color;
+        padding: $gutter / 2 0;
     }
     .field-multiple-drag {
         width:50px;
     }
     .tabledrag-handle {
         margin-left:0;
+        height:16px;
         .handle {
             background-position: 0 0;
             height:16px;
@@ -172,16 +177,28 @@ table[id^="field-imagen-values"] {
             margin:0;
         }
     }
+    // You don't know how much I hate Drupal forms
+    fieldset > .fieldset-wrapper > .form-wrapper {
+        padding: $gutter;
+        border: 2px solid get-color(gray, "light");
+        background: get-color(gray, "white");
+        .form-item {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+    }
+
     .fieldset-wrapper,
     .js-form-type-managed-file,
     .image-widget {
         flex:1;
     }
-    .form-item {
-        margin:0;
-        padding:0;
-        border:0;
+
+    .field--name-field-imagen {
+        margin-bottom:$gutter;
     }
+
     .description {
         display:none;
     }
@@ -220,5 +237,31 @@ table[id^="field-imagen-values"] {
 .field--name-field-mp3-reference {
     legend {
         @extend %escondido;
+    }
+}
+
+// INSTAGRAM
+
+#edit-field-instagram-wrapper {
+    .ief-entity-table{
+        thead,
+        th:first-child,
+        tr:first-child td:first-child {
+            display:none;
+        }
+        td {
+            padding:0;
+            border:none;
+        }
+        input[value="Editar"] {
+            @extend .button--good;
+        }
+        input[value="Eliminar"] {
+            @extend .button--bad;
+        }
+    }
+    .ief-entity-operations {
+        display:flex;
+        align-items:flex-end;
     }
 }

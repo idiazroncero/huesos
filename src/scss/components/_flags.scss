@@ -1,0 +1,27 @@
+.flag__leido {
+    font-size:0px;
+    color:transparent;
+    display:flex;
+    align-items:center;
+}
+
+.flag__leido--trick {
+    font-size:initial;
+    color: initial;
+    a {
+        margin-right:5px;
+        @include ritmo-font-size($h7-font-size);
+        line-height: ritmo(4);
+        @extend %peque;
+    }
+}
+
+.flag__leido--on {
+    &:before {
+        content: "⚑";
+        @include ritmo-font-size($h4-font-size);
+        line-height: ritmo(4);
+        color: red;
+        display:block;
+    }
+}

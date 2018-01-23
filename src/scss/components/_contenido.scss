@@ -2,6 +2,17 @@
     padding:ritmo(4);
 }
 
+.contenido--leido:before {
+    content:"●";
+    color: get-color("state", "error");
+    position:absolute;
+    top:$gutter/2;
+    right:$gutter/2;
+    @include ritmo-font-size($h4-font-size);
+    line-height:0.6;
+    z-index: z-index(dot-leido);
+}
+
 .contenido__autor {
     max-width:150px;
     @extend %peque;    
