@@ -4,11 +4,14 @@
     padding-bottom: $gutter;
 } 
 
-.node-form .step {
+.step {
     //border: 2px solid get-color(base, "primary");
     background-color: get-color(gray, "smoke");
     padding: $gutter;
     margin-bottom: $gutter;
+}
+
+.node-form {
     .form-item {
         margin:0;
         padding:0;

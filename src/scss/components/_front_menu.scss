@@ -43,10 +43,13 @@
 .front__menu__open {
     @include kill-button();
     padding:0;
+    margin-bottom: $gutter / 2;
+}
+
+.front__burguer__wrapper {
     overflow:hidden;
     transition: border-radius $transition-time ease-out;
     border-radius:0;
-    margin-bottom: $gutter / 2;
 }
 
 
@@ -87,7 +90,9 @@
 }
 
 .front__menu__open--open {
-    border-radius:50%;
+    .front__burguer__wrapper {
+        border-radius:50%;
+    }
     .front__burguer {
         height:9px;
         margin:0;

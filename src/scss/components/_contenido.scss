@@ -2,15 +2,24 @@
     padding:ritmo(4);
 }
 
-.contenido--leido:before {
-    content:"●";
-    color: get-color("state", "error");
-    position:absolute;
+.contenido__leido {
+    display:none;
     top:$gutter/2;
     right:$gutter/2;
+    z-index: z-index(dot-leido);
+    &.tooltip__parent {
+        position:absolute;
+    }
+}
+
+.contenido__leido__mark {
     @include ritmo-font-size($h4-font-size);
     line-height:0.6;
-    z-index: z-index(dot-leido);
+    color: get-color("state", "error");
+}
+
+.contenido--leido .contenido__leido {
+    display:block;
 }
 
 .contenido__autor {
