@@ -1,0 +1,225 @@
+ // Wrapper
+.comments { // Aside
+    margin-bottom: $gutter * 2;
+    padding-bottom:$gutter;
+    border-bottom: $separator-width solid $separator-color;
+}
+
+.comments__inner { // Section
+    a[id^="comment-"] { // Fokin anchors
+        @extend %escondido;
+    }
+    .indented {
+        margin-left:$gutter * 2;
+        position:relative;
+        &:before {
+            content:"";
+            position:absolute;
+            width: $gutter/2;
+            height: $gutter/2;
+            border-left: $gutter / 4 solid get-color(gray, "lighter"); 
+            border-bottom: $gutter / 4 solid get-color(gray, "lighter"); 
+            top: 0;
+            left: - $gutter;
+        }
+        &:after {
+            content:"";
+            position:absolute;
+            width: $gutter / 8;
+            background: get-color(gray, "smoke"); 
+            top: ($gutter / 2 + $gutter / 4);
+            bottom:0;
+            left: - $gutter;
+            opacity:0;
+            transition: opacity $transition-time ease-out $transition-delay;
+        }
+        &:hover:after {
+            opacity:1;
+        }
+    }
+}
+
+.comments__title {
+    @include ritmo-font-size($h5-font-size);
+    text-transform: uppercase;
+    font-weight: bold(h2);
+    letter-spacing: 0.05rem;;
+}
+
+// Comentario individual
+.comment {
+    padding: $gutter;
+    margin-left:$gutter;
+    border: 1px solid get-color(gray, "lighter");
+    border-left-width: $gutter / 4;
+    position: relative;
+    .links.inline {
+        @include inline-list;
+        margin-top: $gutter;
+        margin-bottom:0;
+        //font-weight: bold(a);
+        text-transform: uppercase;
+        li {
+            margin-right: $gutter / 4;
+            a {
+                padding-left: $gutter / 4;
+            }
+        }
+    }
+    .comment-delete a {
+        border-left: 3px solid get-color(state, 'error');
+    }
+    .comment-edit a {
+        border-left: 3px solid get-color(state, 'success');
+    }
+    .comment-reply a {
+        border-left: 3px solid get-color(base, 'primary');
+    }
+}
+
+.comment__autor {
+    margin-bottom:0;
+    .profile-mini {
+        float:left;
+        margin-left:calc(#{-$gutter}  - 40px); 
+        margin-right: $gutter;
+    }
+    .profile-mini__img {
+        width: $gutter * 3;
+        height: $gutter * 3;
+        position:relative;
+        &:before {
+            content:"";
+            position: absolute;
+            top: - ($gutter / 4);
+            left: - ($gutter / 4);
+            width: 50%;
+            height: 100%;
+            border-radius: ( ($gutter * 1.5) + ($gutter / 4) ) 0 0  ( ($gutter * 1.5) + ($gutter / 4) );
+            border: $gutter / 4 solid get-color(gray, "lighter");
+            border-right:0;
+            box-sizing:content-box;
+        }
+    }
+    .profile-mini__user {
+        @extend %escondido;
+    }
+}
+
+.content__meollo {
+    h3 {
+        @include ritmo-font-size($h5-font-size);
+        font-weight:bold;
+        text-transform: uppercase;
+    }
+    @include ritmo-font-size($h6-font-size);
+}
+
+.comment__submitted {
+    margin:0;
+    @include ritmo-font-size($h7-font-size);
+    text-transform: uppercase;
+    font-weight: bold(p);
+    p {
+        margin:0;
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+// Link de añadir comentario + nuevo comentario
+.comment-add {
+    @include ritmo-font-size($h5-font-size);
+    font-weight: bold(h2);
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items:center;
+    &:after {
+        content: '+';
+        color:get-color(gray, "white");
+        font-size:1rem;
+        height: 1rem;
+        width:1rem;
+        line-height: 1;
+        text-align:center;
+        background-color: get-color("base", "primary");
+        border-radius:50%;
+        display:inline-block;
+        margin-left: $gutter / 4;
+    }
+    &:hover:after {
+        background-color: get-color("base", "secondary");
+    }
+}
+
+.comment__new {
+    position:absolute;
+    top:-1px;
+    right:-1px;
+    mark {
+        background: get-color("state", "success");
+        @extend %peque;
+        color: get-color(gray, "white");
+        padding:0 $gutter/4;
+        display:block;
+    }
+}
+
+// Formulario de creación de comentario
+.comment-comment-form {
+    background-color: get-color(gray, "smoke");
+    padding:$gutter;
+    margin-bottom: $gutter;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-start;
+    transition: opacity $transition-time ease-out;
+    .form-item {
+        padding-bottom: ritmo(2);
+        margin-bottom:0;
+        border-bottom:0;
+        label {
+            @include ritmo-font-size($h6-font-size);
+            // font-weight:bold;
+        }
+        input {
+            @include ritmo-font-size($h6-font-size);
+        }
+        .description {
+            @include ritmo-font-size($h7-font-size);
+            margin-top:0;
+        }
+    }
+    > .form-item {
+        width:48%;
+    }
+    .form-wrapper {
+        width:100%;
+        .form-item {
+            width:100%;
+        }
+    }
+    .field--type-text-long {
+        label {
+            @extend %escondido;
+        }
+        .form-item {
+            .form-item {
+                padding-bottom:0;
+                > div {
+                    flex:1;
+                }
+            }
+        }
+    }
+    &.comment-form--active {
+        display:flex !important;
+    }
+}
+
+.comment-add + .comment-comment-form {
+    margin-bottom:0;
+}

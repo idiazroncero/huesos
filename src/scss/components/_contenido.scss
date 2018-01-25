@@ -15,7 +15,7 @@
 .contenido__leido__mark {
     @include ritmo-font-size($h4-font-size);
     line-height:0.6;
-    color: get-color("state", "error");
+    color: get-color("state", "success");
 }
 
 .contenido--leido .contenido__leido {
@@ -201,4 +201,10 @@
     //         transition-delay: $transition-delay;
     //     }
     // }
+}
+
+.contenido__desc {
+    p:last-child {
+        margin-bottom:0;
+    }
 }

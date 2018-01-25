@@ -45,20 +45,32 @@
     }
 }
 
-@supports (display: grid) {
-    .contenido__aside {
-        display:grid;
-        grid-template-columns: 150px 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: $gutter $gutter * 2;
-    }
-    .contenido__autor {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-    }
-    .contenido__desc {
-        grid-column: 2 / 3;
-        grid-row: 1 / 3 ;
-        //border-bottom: ritmo(1) solid get-color(gray,"black");
-    }
+
+.contenido__aside {
+    display:flex;
 }
+.contenido__autor {
+    width:150px;
+    margin-right: $gutter;
+}
+.contenido__desc {
+    flex:1;
+}
+
+// @supports (display: grid) {
+//     .contenido__aside {
+//         display:grid;
+//         grid-template-columns: 150px 1fr;
+//         grid-template-rows: 1fr;
+//         grid-gap: $gutter $gutter * 2;
+//     }
+//     .contenido__autor {
+//         grid-column: 1 / 2;
+//         grid-row: 1 / 2;
+//     }
+//     .contenido__desc {
+//         grid-column: 2 / 3;
+//         grid-row: 1 / 3 ;
+//         //border-bottom: ritmo(1) solid get-color(gray,"black");
+//     }
+// }
