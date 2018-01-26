@@ -72,13 +72,15 @@
 
 .contenido__leido {
     .tooltip {
-        background-color: get-color(state, 'error');
+        background-color: get-color(state, 'success');
         @include ritmo-font-size($h7-font-size, 2);
         border-radius: 5px;
         padding: $gutter/6 $gutter/4;
         color:get-color(gray, "white");
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
         &:before {
-            border-bottom-color: get-color(state, 'error');
+            border-bottom-color: get-color(state, 'success');
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
         }
     }
 }
