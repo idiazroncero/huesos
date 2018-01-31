@@ -4,7 +4,7 @@
     margin-bottom:0;
     padding-left: ritmo(8);
     margin-left:ritmo(8);
-    border-left: 1px solid get-color(gray, "white");
+    //border-left: 1px solid get-color(gray, "black");
     display:flex;
     flex-direction:column;
     a {
@@ -59,18 +59,19 @@
     margin-bottom:4.5px;
     margin-top:4.5px;
     height:3px;
-    background-color:get-color(gray, "white");
+    background-color:get-color(gray, "black");
     transition: all $transition-time ease-in-out;
 }
 
 .front__user {
     svg {
-        fill: get-color(gray,"white");
+        fill: get-color(gray,"black");
+        display:block;
     }
 }
 
 .front__cross {
-    background-color:get-color(gray, "black");
+    background-color:get-color(gray, "white");
     position:absolute;
     width:$gutter * 0.75;
     top:50%;

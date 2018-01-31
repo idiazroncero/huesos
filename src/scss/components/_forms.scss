@@ -5,8 +5,8 @@
 } 
 
 .step {
-    //border: 2px solid get-color(base, "primary");
-    background-color: get-color(gray, "smoke");
+    border: $gutter / 6 solid get-color(gray, "smoke");
+    //background-color: get-color(gray, "smoke");
     padding: $gutter;
     margin-bottom: $gutter;
 }
@@ -29,20 +29,27 @@
     }
 }
 
-// Reset all fieldsets
-.field--name-field-soundcloud,
-.field--name-field-imagen,
-.field--name-field-instagram,
-.field--name-field-video{
-    fieldset {
-        padding:0;
-        margin:0;
-        border:none;
-        legend {
-            @extend %escondido;
-        }
-    }
+
+// IMAGEN DE PORTADA
+
+#edit-field-imagen-portada-wrapper {
+    .js-form-type-managed-file > label {display:none};
 }
+
+// Reset all fieldsets
+// .field--name-field-soundcloud,
+// .field--name-field-imagen,
+// .field--name-field-instagram,
+// .field--name-field-video{
+//     fieldset {
+//         padding:0;
+//         margin:0;
+//         border:none;
+//         legend {
+//             @extend %escondido;
+//         }
+//     }
+// }
 
 // Hide all text indications.
 .filter-wrapper {
@@ -69,12 +76,17 @@
     }
 }
 
+// COLOR
 .field--name-field-color {
     .js-form-type-textfield {
         .minicolors {
             // height:ritmo(4);
             // width:ritmo(4);
             margin-left: $gutter / 4;
+            input {
+                outline:none !important;
+                box-shadow: 0px 0px 0px 0px transparent !important;
+            }
         }
         //.mini-colors {@extend %escondido;}
         .minicolors-swatch {
@@ -89,182 +101,195 @@
     }
 }
 
+// CONTENIDO
 
-#edit-body-0--description,
-#edit-field-iframe-0--description {
-    margin: $gutter 0 0 0 ;
-    @include ritmo-font-size($h6-font-size);
-}
-
-
-
-// IMAGEN / AUDIO
-// Put checkboxes side by side
-#edit-field-tipo-imagen--wrapper,
-#edit-field-tipo-audio--wrapper {
-    .fieldset-wrapper {
-        flex:1;
-    }
-    legend {
-        @extend %escondido;
-    }
-}
-
-#edit-field-tipo-imagen,
-#edit-field-tipo-audio {
-    display:flex;
-    .form-item {
-        flex:0 0 auto;
-        margin:0;
-        padding:0;
-        border:0;
-        input {
-            @extend %escondido;
-            &:checked + label {
-                @extend .button:hover;
-            }
-        }
-        label {
-            @extend .button;
-        }
-    }
-}
-
-// Add spacer to instagram field
-.field--name-field-instagram fieldset {
-    margin-bottom: $spacer;
-    padding-bottom: $spacer;
-    border-bottom: 1px dotted get-color(gray, "lighter");
-}
-
-.field--name-field-tipo-imagen {
-    fieldset {
-        flex:1;
-    }
-}
-
-// Hating those guys...
-.js-form-type-vertical-tabs,
-.tabledrag-toggle-weight-wrapper {
-    display:none;
-}
-
-// FOKIN DRUPAL TABLES
-#field-imagen-add-more-wrapper {
-    .description {
-        margin: 0 0 $gutter 0;
-    }
-}
-#field-imagen-values,
-table[id^="field-imagen-values"] {
-    table-layout: initial;
+.field--name-field-contenido {
+    > strong,
     thead {
-        display:none;
-    }
-    td {
-        border:none;
-        //border-bottom: 1px solid $separator-color;
-        padding: $gutter / 2 0;
-    }
-    .field-multiple-drag {
-        width:50px;
-    }
-    .tabledrag-handle {
-        margin-left:0;
-        height:16px;
-        .handle {
-            background-position: 0 0;
-            height:16px;
-            width:16px;
-            padding:0;
-            margin:0;
-        }
-    }
-    // You don't know how much I hate Drupal forms
-    fieldset > .fieldset-wrapper > .form-wrapper {
-        padding: $gutter;
-        border: 2px solid get-color(gray, "light");
-        background: get-color(gray, "white");
-        .form-item {
-            margin:0;
-            padding:0;
-            border:0;
-        }
-    }
-
-    .fieldset-wrapper,
-    .js-form-type-managed-file,
-    .image-widget {
-        flex:1;
-    }
-
-    .field--name-field-imagen {
-        margin-bottom:$gutter;
-    }
-
-    .description {
-        display:none;
-    }
-    .js-form-type-managed-file {
-        padding-left: $gutter;
-        flex-wrap:nowrap;
-        label {
-            white-space:nowrap;
-        }
-    }
-    .image-widget {
-        flex-wrap:wrap;
-        span {
-            padding:0;
-        }
-        .button {
-            @extend .button--bad;
-            margin-left:0;
-        }
-    }
-    .focal-point-wrapper {
-        margin-left: auto;
-        //text-align:center;
-        img {
-            margin:0;
-        }
-    }
-    .file,
-    .file-size {
         @extend %escondido;
     }
 }
 
-// AUDIO
-
-.field--name-field-mp3-reference {
-    legend {
-        @extend %escondido;
-    }
+.tabledrag-changed-warning {
+    width:100%;
 }
 
-// INSTAGRAM
 
-#edit-field-instagram-wrapper {
-    .ief-entity-table{
-        thead,
-        th:first-child,
-        tr:first-child td:first-child {
-            display:none;
-        }
-        td {
-            padding:0;
-            border:none;
-        }
-        input[value="Editar"] {
-            @extend .button--good;
-        }
-        input[value="Eliminar"] {
-            @extend .button--bad;
-        }
-    }
-    .ief-entity-operations {
-        display:flex;
-        align-items:flex-end;
-    }
-}
+// #edit-body-0--description,
+// #edit-field-iframe-0--description {
+//     margin: $gutter 0 0 0 ;
+//     @include ritmo-font-size($h6-font-size);
+// }
+
+
+
+// // IMAGEN / AUDIO
+// // Put checkboxes side by side
+// #edit-field-tipo-imagen--wrapper,
+// #edit-field-tipo-audio--wrapper {
+//     .fieldset-wrapper {
+//         flex:1;
+//     }
+//     legend {
+//         @extend %escondido;
+//     }
+// }
+
+// #edit-field-tipo-imagen,
+// #edit-field-tipo-audio {
+//     display:flex;
+//     .form-item {
+//         flex:0 0 auto;
+//         margin:0;
+//         padding:0;
+//         border:0;
+//         input {
+//             @extend %escondido;
+//             &:checked + label {
+//                 @extend .button:hover;
+//             }
+//         }
+//         label {
+//             @extend .button;
+//         }
+//     }
+// }
+
+// // Add spacer to instagram field
+// .field--name-field-instagram fieldset {
+//     margin-bottom: $spacer;
+//     padding-bottom: $spacer;
+//     border-bottom: 1px dotted get-color(gray, "lighter");
+// }
+
+// .field--name-field-tipo-imagen {
+//     fieldset {
+//         flex:1;
+//     }
+// }
+
+// // Hating those guys...
+// .js-form-type-vertical-tabs,
+// .tabledrag-toggle-weight-wrapper {
+//     display:none;
+// }
+
+// // FOKIN DRUPAL TABLES
+// #field-imagen-add-more-wrapper {
+//     .description {
+//         margin: 0 0 $gutter 0;
+//     }
+// }
+// #field-imagen-values,
+// table[id^="field-imagen-values"] {
+//     table-layout: initial;
+//     thead {
+//         display:none;
+//     }
+//     td {
+//         border:none;
+//         //border-bottom: 1px solid $separator-color;
+//         padding: $gutter / 2 0;
+//     }
+//     .field-multiple-drag {
+//         width:50px;
+//     }
+//     .tabledrag-handle {
+//         margin-left:0;
+//         height:16px;
+//         .handle {
+//             background-position: 0 0;
+//             height:16px;
+//             width:16px;
+//             padding:0;
+//             margin:0;
+//         }
+//     }
+//     // You don't know how much I hate Drupal forms
+//     fieldset > .fieldset-wrapper > .form-wrapper {
+//         padding: $gutter;
+//         border: 2px solid get-color(gray, "light");
+//         background: get-color(gray, "white");
+//         .form-item {
+//             margin:0;
+//             padding:0;
+//             border:0;
+//         }
+//     }
+
+//     .fieldset-wrapper,
+//     .js-form-type-managed-file,
+//     .image-widget {
+//         flex:1;
+//     }
+
+//     .field--name-field-imagen {
+//         margin-bottom:$gutter;
+//     }
+
+//     .description {
+//         display:none;
+//     }
+//     .js-form-type-managed-file {
+//         padding-left: $gutter;
+//         flex-wrap:nowrap;
+//         label {
+//             white-space:nowrap;
+//         }
+//     }
+//     .image-widget {
+//         flex-wrap:wrap;
+//         span {
+//             padding:0;
+//         }
+//         .button {
+//             @extend .button--bad;
+//             margin-left:0;
+//         }
+//     }
+//     .focal-point-wrapper {
+//         margin-left: auto;
+//         //text-align:center;
+//         img {
+//             margin:0;
+//         }
+//     }
+//     .file,
+//     .file-size {
+//         @extend %escondido;
+//     }
+// }
+
+// // AUDIO
+
+// .field--name-field-mp3-reference {
+//     legend {
+//         @extend %escondido;
+//     }
+// }
+
+// // INSTAGRAM
+
+// #edit-field-instagram-wrapper {
+//     .ief-entity-table{
+//         thead,
+//         th:first-child,
+//         tr:first-child td:first-child {
+//             display:none;
+//         }
+//         td {
+//             padding:0;
+//             border:none;
+//         }
+//         input[value="Editar"] {
+//             @extend .button--good;
+//         }
+//         input[value="Eliminar"] {
+//             @extend .button--bad;
+//         }
+//     }
+//     .ief-entity-operations {
+//         display:flex;
+//         align-items:flex-end;
+//     }
+// }

@@ -1,0 +1,125 @@
+.paragraphs-dropbutton-wrapper {
+    margin-top: $gutter;
+    input {
+        margin-right: $gutter / 2;
+    }
+}
+
+.paragraph-type-add-modal {
+    margin-top: $gutter;
+    input {
+        margin-right: $gutter / 2;
+        @extend .button--good;
+    }
+}
+
+.paragraph-type-top {
+    display:flex;
+    align-items:center;
+}
+
+.paragraphs-subform {
+    margin-top:$gutter / 2;
+    .fieldset-legend {
+        @extend %escondido;
+    }
+}
+
+.paragraph-type-title {
+    @extend %peque;
+}
+
+.paragraphs-actions {
+    margin-left: auto;
+    position:relative;
+    > .button {
+        margin:0;
+    }
+}
+
+.paragraphs-dropdown {
+    position:static;
+}
+
+.paragraphs-dropdown-toggle{
+    border:none;
+    &:hover,
+    &:focus {
+        border:none;
+        background-color:get-color(gray, "lighter");
+        border-radius:0;
+        box-shadow:none;
+    }
+}
+
+.paragraphs-dropdown-actions {
+    top: ritmo(6);
+    box-shadow:none;
+    background-color:get-color(gray, "smoke");
+    border-radius:0;
+    width:100%;
+    overflow:visible;
+    .button {
+        font-weight:normal;
+        line-height: ritmo(4);
+        display:block;
+    }
+    &:before,
+    &:after {
+        content:"";
+        width: 0;
+        height: 0;
+        border-width:$gutter / 8;
+        border-style:solid;
+        border-color: transparent;
+        right: $gutter / 3;
+        top: - $gutter / 4;
+        display:block;
+        position:absolute;
+    }
+    &:before {
+        border-bottom-color:get-color(gray, "light");
+    }
+    &:after {
+        top: calc(-#{$gutter / 4} + 1px);
+        border-bottom-color:get-color(gray, "smoke");
+    }
+}
+
+.paragraphs-icon {
+
+}
+
+.paragraphs-icon-changed {
+    position:relative;
+    display:block;
+    &:before {
+        content: "‼︎";
+        background-color: get-color(state, "warning");
+        border-radius: 50%;
+        display:block;
+        width:ritmo(3);
+        height:ritmo(3);
+        font-size: ritmo(2);
+        padding: ritmo(0.5) 0;
+        line-height:1;
+        text-align: center;
+        margin-left: $gutter / 4;
+        color: get-color(gray, "white");
+        font-weight: bold(p);
+        transform:rotate(2deg);
+    }
+    &:hover {
+        .paragraphs-icon__message {
+            position: absolute !important;
+            clip: initial;
+            height: auto;
+            width: auto;
+            @include ritmo-font-size($h7-font-size);
+            top:50%;
+            left:ritmo(5);
+            white-space: nowrap;
+            transform:translateY(-50%);
+        }
+    }
+}

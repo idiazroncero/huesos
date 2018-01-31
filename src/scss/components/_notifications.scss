@@ -32,9 +32,11 @@
 .message {
 }
 
-.message__text {
+.message__text,
+.messages {
     @extend %peque;
     color: get-color(gray, "white");
+    margin-bottom:$gutter / 2;
     a {
         @include set-link(
             get-color(gray, "lighter"), 
@@ -46,6 +48,11 @@
     ul  {
         @include inline-list();
     }
+}
+
+.messages--warning {
+    padding: ritmo(2);
+    background: get-color(state, "warning");
 }
 
 .message--error {

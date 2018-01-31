@@ -1,0 +1,41 @@
+.ui-widget.ui-widget-content {
+    border:none;
+    border-radius:0;
+    padding:0;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: $gutter / 2 $gutter;
+    border-radius:0;
+    background-color: transparent;
+    border:none;
+    color: get-color(text, "primary");
+    background-color: get-color(gray, "smoke");
+}
+
+.ui-dialog .ui-dialog-title {
+    margin:0;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    border:none;
+    border-radius:0;
+    background-color: transparent;
+    right:$gutter;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: $gutter / 2 $gutter;
+}
+
+.paragraphs-add-dialog-list {
+
+}
+
+.paragraphs-add-dialog-row {
+    padding-bottom: $gutter / 2;
+}
+
+ul.paragraphs-add-dialog-list input.field-add-more-submit {
+    text-align: right;
+}

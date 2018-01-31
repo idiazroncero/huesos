@@ -135,7 +135,7 @@ A couple of things to watch out for:
   
   
 @mixin form-reset-button {
-    background: none;
+    background-color: none;
     outline: none;
     padding: $button-padding;
     border-radius: $button-border-radius;
@@ -173,8 +173,10 @@ A couple of things to watch out for:
 @mixin kill-button {
   border:none;
   background:transparent;
+  padding:0;
   &:hover, &:focus {
     border:none;
-    background:transparent;  
+    background:transparent; 
+    color: initial; 
   }
 }

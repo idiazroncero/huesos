@@ -1,23 +1,23 @@
 .page__aside {
-    p {
-        color: get-color(gray,"white");
-    }
-    a {
-        @include set-link(
-            get-color(gray, "white"), 
-            get-color(gray, "white"),
-            get-color(gray, "light"),
-            get-color(gray, "dark")
-        );
-    }
+    // p {
+    //     color: get-color(gray,"white");
+    // }
+    // a {
+    //     @include set-link(
+    //         get-color(gray, "white"), 
+    //         get-color(gray, "white"),
+    //         get-color(gray, "light"),
+    //         get-color(gray, "dark")
+    //     );
+    // }
 }
 
 .nav-block {
     @extend %clearfix;
     @extend nav;
     h2 {
-        background: get-color(base, "secondary");
-        color: get-color(gray,"white");
+        background: get-color(gray, "white");
+        color: get-color(base,"primary");
         padding: 0 $gutter / 2 0 $gutter;
         @include ritmo-font-size($h5-font-size);
         font-weight:bold;

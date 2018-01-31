@@ -32,37 +32,47 @@
 
 .js-form-type-managed-file {
     label {
-        @extend .button;
-        color:get-color(gray, "black");
+        // @extend .button;
+        // color:get-color(gray, "black");
         cursor:pointer;
     }
     .image-widget {
         width:100%;
         display:flex;
         align-items:center;
-        img {
-            margin: $spacer 0 0 0;
-        }
-        span {
-            flex:0 1 auto;
-            padding: 0 0 0 $spacer;
-            margin: $spacer 0;
-        }
-        .form-submit {
-            flex: 0 1 auto;
-            margin-left:auto;
+        // img {
+        //     margin: $spacer 0 0 0;
+        // }
+        // span {
+        //     flex:0 1 auto;
+        //     padding: 0 0 0 $spacer;
+        //     margin: $spacer 0;
+        // }
+        // .form-submit {
+        //     flex: 0 1 auto;
+        //     margin-left:auto;
+        // }
+    }
+    .image-widget__preview {
+        margin-right: auto;
+        max-width:80%;
+        .focal-point-wrapper + .form-item {
+            margin-top:$gutter/2;
         }
     }
+    .image-widget__delete input {
+        @extend .button--bad;
+    } 
 }
 
-.form-file {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
+// .form-file {
+// 	width: 0.1px;
+// 	height: 0.1px;
+// 	opacity: 0;
+// 	overflow: hidden;
+// 	position: absolute;
+// 	z-index: -1;
+// }
 
 .description,
 .password-confirm {
@@ -74,4 +84,43 @@
 
 .g-recaptcha {
     margin-bottom: $spacer;
+}
+
+
+.field-multiple-table {
+    table-layout: initial;
+    th,td { // delegate the border on inner content
+        border:none;
+        padding:0 0 $gutter 0;
+    }
+    td:nth-child(2) > div {
+        //border: 2px solid get-color(gray, "base");
+        background-color: get-color(gray, "smoke");
+        padding: $gutter / 2 $gutter;
+        // background-color: get-color(gray, "white");
+        margin-bottom: 0;
+    }
+    .field-multiple-drag {
+        width:50px;
+        vertical-align:middle;
+    }
+    a.tabledrag-handle {
+        margin-left:0;
+        height:16px;
+        .handle {
+            background-position: 0 0;
+            height:16px;
+            width:16px;
+            padding:0;
+            margin:0;
+        }
+    }
+}
+
+.tabledrag-toggle-weight-wrapper {
+    margin-left:auto;
+}
+
+.tabledrag-toggle-weight {
+    @include kill-button();
 }

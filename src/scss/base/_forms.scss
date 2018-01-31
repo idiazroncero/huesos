@@ -142,7 +142,7 @@ button,
     @include ritmo-font-size($h6-font-size, 5);
     &:hover,
     &:focus {
-        background:$button-border-color;
+        background-color:$button-border-color;
         color: contrast-color($button-border-color);
     }
     &.button--good {
@@ -150,7 +150,7 @@ button,
         border-color: get-color(state, success);
         &:hover,
         &:focus {
-            background: get-color(state, success);
+            background-color: get-color(state, success);
             color: contrast-color(get-color(state, success));
             border-color: get-color(state, success);
         } 
@@ -161,7 +161,7 @@ button,
         border-color: get-color(state, warning);
         &:hover,
         &:focus {
-            background: get-color(state, warning);
+            background-color: get-color(state, warning);
             color: contrast-color(get-color(state, warning));
             border-color: get-color(state, warning);
         } 
@@ -172,7 +172,7 @@ button,
         border-color: get-color(state, error);
         &:hover,
         &:focus {
-            background: get-color(state, error);
+            background-color: get-color(state, error);
             color: contrast-color(get-color(state, error));
             border-color: get-color(state, error);
         } 
