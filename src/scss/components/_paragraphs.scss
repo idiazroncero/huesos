@@ -23,10 +23,55 @@
     .fieldset-legend {
         @extend %escondido;
     }
+    .fieldset-wrapper {
+        flex:1;
+    }
+    .ief-form,
+    > .field--type-entity-reference {
+        background-color: get-color(gray, "white");
+        padding: $gutter / 2;
+        .form-wrapper {
+            margin-bottom: $gutter;
+            &:last-child {
+                margin-bottom:0;
+            }
+        }
+    }
+}
+
+.ief-entity-table {
+    table-layout: initial;
+    tr:first-child:last-child {
+        td {
+            padding:0;
+        }
+    }
+    .inline-entity-form-media-thumbnail {
+        width:100%;
+        padding-left:$gutter;
+    }
+    .ief-entity-operations {
+        display:flex;
+        input {
+            margin-left: $gutter / 2;
+            &[value="Editar"] {
+                @extend .button--good;
+            }
+            &[value="Eliminar"] {
+                @extend .button--bad;
+            }
+        }
+    }
 }
 
 .paragraph-type-title {
     @extend %peque;
+}
+
+.paragraphs-collapsed-description {
+    @include ritmo-font-size($h6-font-size);
+    line-height:1;
+    padding: 0 $gutter / 2;
 }
 
 .paragraphs-actions {
@@ -34,6 +79,10 @@
     position:relative;
     > .button {
         margin:0;
+        @include kill-button();
+        &:hover, &:focus {
+            text-decoration:underline;
+        }
     }
 }
 
@@ -55,9 +104,9 @@
 .paragraphs-dropdown-actions {
     top: ritmo(6);
     box-shadow:none;
-    background-color:get-color(gray, "smoke");
+    background-color:get-color(gray, "white");
     border-radius:0;
-    width:100%;
+    min-width:100%;
     overflow:visible;
     .button {
         font-weight:normal;
@@ -82,7 +131,7 @@
     }
     &:after {
         top: calc(-#{$gutter / 4} + 1px);
-        border-bottom-color:get-color(gray, "smoke");
+        border-bottom-color:get-color(gray, "white");
     }
 }
 

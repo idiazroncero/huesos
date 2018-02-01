@@ -103,7 +103,8 @@
 
 // CONTENIDO
 
-.field--name-field-contenido {
+#edit-field-contenido,
+#edit-field-contenido-wrapper {
     > strong,
     thead {
         @extend %escondido;
@@ -113,6 +114,52 @@
 .tabledrag-changed-warning {
     width:100%;
 }
+
+
+// MP3 SINGLE
+
+.field--name-field-archivo-mp3 {
+    .form-item {
+        display:flex;
+        align-items:center;
+        .form-managed-file {
+            margin-left:auto;
+            display:flex;
+            align-items:center;
+            .button {
+                @extend .button--bad;
+                margin-left: $gutter;
+            }
+        }
+    }
+}
+
+
+// MP3 MULTIPLE
+
+.field--name-field-playlist-mp3-files {
+    table {
+        table-layout: initial;
+        .draggable td:first-child {
+            a, .form-managed-file {
+                display:inline-block;
+                vertical-align: middle;
+            }
+            a {
+                float: none;
+                padding-right:$gutter;
+            }
+        }
+        td:last-child {
+            display:flex;
+            input {
+                @extend .button--bad;
+                margin-left:auto;
+            }
+        }
+    }
+}
+
 
 
 // #edit-body-0--description,
