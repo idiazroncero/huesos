@@ -27,7 +27,9 @@
         flex:1;
     }
     .ief-form,
-    > .field--type-entity-reference {
+    > .field--type-entity-reference,
+    > .form-wrapper
+     {
         background-color: get-color(gray, "white");
         padding: $gutter / 2;
         .form-wrapper {
