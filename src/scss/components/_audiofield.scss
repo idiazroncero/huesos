@@ -11,6 +11,52 @@
     }
 }
 
+.audiofield__controls {
+    display:flex;
+    align-items:center;
+}
+
+.audiofield__playing {
+    margin-left: auto;
+    @extend %peque;
+}
+
+.audiofield__playlist {
+    margin-top: $gutter / 2;
+    margin-left:0;
+    padding-left:0;
+}
+
+.audiofield--playlist {
+    .previous {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .playpause {
+        border-left:0;
+        border-right:0;
+        border-radius:0;
+    }
+    .next {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;        
+    }
+}
+
+.audiofield__track {
+    list-style-type: none;
+    padding: $gutter / 4 $gutter / 2;
+    cursor:pointer;
+    background-color: get-color(gray, "smoke");
+    &.playing {
+        background-color: get-color(gray, "lighter");     
+    }
+    &:hover {
+        background-color: get-color(gray, "black");
+        color: get-color(gray, "white");
+    }
+}
+
 
 // In case is a teaser
 

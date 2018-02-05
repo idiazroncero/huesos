@@ -1,3 +1,15 @@
+.media {
+    // Delegate all margin handling to .media containers.
+    margin-bottom: $gutter * 2;
+    figure,
+    iframe, 
+    section {
+        margin-bottom:0;
+    }
+
+}
+
+
 .media-imagen {
     img {
         margin:0 auto;
