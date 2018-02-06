@@ -12,7 +12,7 @@
 }
 
 .contenido__aside {
-    margin-bottom: ritmo(8);
+    margin-bottom: $gutter;
 }
 // .content__aside {
 //     flex:1;
@@ -30,7 +30,6 @@
 .contenido__tools {
     display:flex;
     align-items:flex-start;
-    margin-bottom: $gutter;
     .private_message_link_wrapper a {
         @include ritmo-font-size($h7-font-size,4);
         text-transform: uppercase;
@@ -50,11 +49,9 @@
     display:flex;
 }
 .contenido__autor {
-    width:150px;
     margin-right: $gutter;
 }
 .contenido__desc {
-    flex:1;
 }
 
 // @supports (display: grid) {

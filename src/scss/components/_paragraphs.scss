@@ -174,3 +174,18 @@
         }
     }
 }
+
+
+// TIPOS DE PARRAFO
+
+.paragraph--type--texto {
+    margin-bottom: $gutter * 2;
+}
+
+.paragraph--type--titulo-de-seccion {
+    margin-bottom: $gutter; // Se suma al ultimo <p> para dar dos
+}
+
+.paragraph--type--titulo-de-seccion {
+    margin-top: $gutter * 4;
+}

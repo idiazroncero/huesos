@@ -24,8 +24,8 @@
 }
 
 .contenido__autor {
-    max-width:150px;
-    @extend %peque;    
+    @extend %peque;
+    font-weight: normal;    
 }
 
 .contenido__link-layer {
@@ -103,6 +103,10 @@
     p {
         border-bottom-color: get-color(gray, "white");
     }
+}
+
+.contenido__heading {
+    font-weight: bold(h2);
 }
 
 .contenido--page {
@@ -205,6 +209,7 @@
 }
 
 .contenido__desc {
+    margin-left:auto;
     p:last-child {
         margin-bottom:0;
     }

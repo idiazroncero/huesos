@@ -2,11 +2,32 @@
 // we show a grid. On click a lightbox with a carousel appears.
 
 .slick {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: $gutter;
+    @extend %clearfix;
     img {
         cursor:pointer;
+    }
+}
+
+.slick__item {
+    float:left;
+    width:33.3332%;
+    margin-bottom:0;
+}
+
+@supports (display:grid) {
+    .slick {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: $gutter;
+        // reset cleafix
+        &:before, &:after {
+            display:none;
+        }
+    }
+
+    .slick__item {
+        float:none;
+        width:auto;
     }
 }

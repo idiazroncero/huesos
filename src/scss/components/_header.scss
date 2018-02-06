@@ -1,11 +1,11 @@
 .header {
     display:flex;
-    margin-bottom:ritmo(8);
+    margin-bottom:ritmo(2);
     align-items: baseline;
 }
 
 .logo {
-    @include ritmo-font-size($h3-font-size);
+    @include ritmo-font-size($h2-font-size);
     display:inline-block;
     letter-spacing: -0.03em;
     margin:0;

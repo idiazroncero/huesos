@@ -1,0 +1,46 @@
+.recientes__wrapper {
+    background: get-color(gray, "smoke");
+    padding: $gutter;
+    nav {
+        margin:0;
+    }
+}
+
+.recientes__title {
+    @extend %peque;
+}
+
+.recientes__list {
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0 $gutter;
+    margin-bottom: 3/4 * $gutter;
+}
+
+.recientes__item {
+    margin-bottom:$gutter / 4;
+    padding-bottom:$gutter / 4;
+    border-bottom: 1px solid get-color(gray, "light");
+}
+
+.js-pager__items {
+    @include ritmo-font-size($h6-font-size);
+    li {
+        background-color: get-color(gray, "dark");
+        color: get-color(gray, "white");
+        text-transform: uppercase;
+        padding: 0 $gutter / 4;
+        position:relative;
+        a {
+            display:block;
+            @include kill-link(get-color(gray, "white"));
+        }
+        &:hover {
+            background-color: get-color(gray, "black");
+        }
+    }
+}

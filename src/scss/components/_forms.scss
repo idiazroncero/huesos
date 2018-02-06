@@ -23,7 +23,7 @@
             margin-bottom:0;
         }
     }
-    h2 {
+    h2:not(.h3) {
         @include ritmo-font-size($h5-font-size);
         @extend %peque;
     }
@@ -121,15 +121,22 @@
 
 .field--name-field-archivo-mp3 {
     .form-item {
-        display:flex;
-        align-items:center;
+        .file {
+            width:100%;
+            font-weight:bold(p);
+            margin-bottom: $gutter / 2;
+       }
         .form-managed-file {
             margin-left:auto;
             display:flex;
+            flex-wrap:wrap;
             align-items:center;
             .button {
                 @extend .button--bad;
-                margin-left: $gutter;
+                margin-left: auto;
+            }
+            > .form-item {
+                flex: 0 1 75%;
             }
         }
     }
@@ -142,13 +149,18 @@
     table {
         table-layout: initial;
         .draggable td:first-child {
-            a, .form-managed-file {
-                display:inline-block;
-                vertical-align: middle;
+            position:relative;
+            padding-right: $gutter;
+            .form-managed-file {
+                padding-left: $gutter;
             }
-            a {
+            .tabledrag-handle {
                 float: none;
-                padding-right:$gutter;
+                position:absolute;
+                left:0;
+                top:50%;
+                margin-top: -($gutter / 2);
+                transform: translateY(-50%);
             }
         }
         td:last-child {
