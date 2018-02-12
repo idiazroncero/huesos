@@ -1,0 +1,36 @@
+.teaser-grande {
+    background-color: get-color(gray, "smoke");
+    border: ritmo(1) solid get-color(gray, "smoke");
+    padding: ritmo(3);
+    transition: background-color $transition-time ease-in-out;
+    display:flex;
+    position:relative;
+    &:hover {
+        background-color: get-color(gray, "white");
+    }
+}
+
+.teaser-grande__contenido {
+    display:flex;
+    flex-direction:column;
+}
+
+.teaser-grande__title {
+    @include ritmo-font-size($h3-font-size);
+    margin:0;
+}
+
+.teaser-grande__autor {
+    @extend %peque;
+    margin-bottom: $gutter;
+}
+
+.teaser-grande__img {
+    flex: 0 0 25%;
+    margin-right: $gutter;
+}
+
+.teaser-grande__texto {
+    margin-top:auto;
+    @include ritmo-font-size($h6-font-size);
+}
