@@ -74,7 +74,55 @@
 // 	z-index: -1;
 // }
 
-.description,
+.description {
+    display:flex;
+    margin:ritmo(2) 0 0 0;
+    &.description--open {
+        .description__content {
+            display:block;
+        }
+        .description__icon {
+            background-color: get-color(state, 'success');
+            color: get-color(gray, 'white');
+            &:hover {
+                background-color: transparent;
+                color: get-color(state, 'success');
+                border:2px solid get-color(state, 'success');          
+            }
+        }
+    }
+}
+
+.description__icon {
+    @include kill-button();
+    width:1rem;
+    height:1rem;
+    margin-right: $gutter / 2;
+    font-size:0.75rem;
+    font-weight:bold;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: get-color(state, 'success');
+    border:2px solid get-color(state, 'success');
+    border-radius:50%;
+    cursor:pointer;
+    &:hover {
+        background-color: get-color(state, 'success');
+        color: get-color(gray, 'white');
+    }
+}
+
+.description__content {
+    display:none;
+    border-left: 1px solid get-color(state, 'success');
+    padding-left: $gutter / 2;
+    @include ritmo-font-size($h6-font-size);
+    color: get-color(state, "success");
+    br {height:0; width:0};
+}
+
 .password-confirm {
     margin:ritmo(2) 0 0 0;
     @include ritmo-font-size($h6-font-size);
@@ -91,14 +139,20 @@
     table-layout: initial;
     th,td { // delegate the border on inner content
         border:none;
-        padding:0 0 $gutter 0;
+        padding:0;
     }
     td:nth-child(2) > div {
         //border: 2px solid get-color(gray, "base");
         background-color: get-color(gray, "smoke");
-        padding: $gutter / 2 $gutter;
+        padding: $gutter / 2 0;
         // background-color: get-color(gray, "white");
+        transition: all $transition-time ease-out;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
         margin-bottom: 0;
+        border-bottom: 1px dashed get-color(gray, "light");
+    }
+    tr:last-child td:nth-child(2) > div {
+        border-bottom: none;
     }
     .field-multiple-drag {
         width:50px;
@@ -114,6 +168,14 @@
             padding:0;
             margin:0;
         }
+    }
+    .drag td:nth-child(2) > div  {
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+        padding: $gutter / 2;
+        position:relative;
+        z-index: z-index(drag);
+        transform-origin: center;
+        transform:scale(1.015);
     }
 }
 

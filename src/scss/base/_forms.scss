@@ -135,6 +135,7 @@ button,
     @include form-reset-button();
     cursor:pointer;
     border: $button-border;
+    background-color: get-color(gray, "white");
     display: inline-block;
     padding: 0 ritmo(2);
     text-transform: uppercase;
@@ -144,6 +145,13 @@ button,
     &:focus {
         background-color:$button-border-color;
         color: contrast-color($button-border-color);
+        box-shadow: 3px 3px 0px 0px rgba($button-border-color,0.2);
+    }
+    &:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+        box-shadow: 1px 1px 0px 0px rgba($button-border-color,0.2) !important;
     }
     &.button--good {
         color: get-color(state, success);
@@ -153,7 +161,11 @@ button,
             background-color: get-color(state, success);
             color: contrast-color(get-color(state, success));
             border-color: get-color(state, success);
+            box-shadow: 3px 3px 0px 0px rgba(get-color(state, success),0.2);
         } 
+        &:active {
+            box-shadow: 1px 1px 0px 0px get-color(state, success) !important;
+        }
     }
     
     &.button--warning {
@@ -164,7 +176,11 @@ button,
             background-color: get-color(state, warning);
             color: contrast-color(get-color(state, warning));
             border-color: get-color(state, warning);
+            box-shadow: 3px 3px 0px 0px rgba(get-color(state, warning),0.2);
         } 
+        &:active {
+            box-shadow: 1px 1px 0px 0px get-color(state, warning) !important;
+        }
     }
     
     &.button--bad {
@@ -175,7 +191,11 @@ button,
             background-color: get-color(state, error);
             color: contrast-color(get-color(state, error));
             border-color: get-color(state, error);
+            box-shadow: 3px 3px 0px 0px rgba(get-color(state, error),0.2);
         } 
+        &:active {
+            box-shadow: 1px 1px 0px 0px get-color(state, error) !important;
+        }
     }
 }
 

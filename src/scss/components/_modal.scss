@@ -28,12 +28,25 @@
     padding: $gutter / 2 $gutter;
 }
 
-.paragraphs-add-dialog-list {
+.paragraphs-add-dialog {
+    width:480px !important;
+}
 
+.paragraphs-add-dialog-list {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
 }
 
 .paragraphs-add-dialog-row {
-    padding-bottom: $gutter / 2;
+    padding:0 0  $gutter / 2 0;
+    width:48%;
+    input {
+        &:hover, &:focus {
+            background-color: get-color(gray, "lighter");
+            color: get-color(gray, "black");
+        }
+    }
 }
 
 ul.paragraphs-add-dialog-list input.field-add-more-submit {

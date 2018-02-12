@@ -178,5 +178,10 @@ A couple of things to watch out for:
     border:none;
     background:transparent; 
     color: initial; 
+    box-shadow:none;
+  }
+  &:active {
+    position:static;
+    box-shadow:none !important;
   }
 }

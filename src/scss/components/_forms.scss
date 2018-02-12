@@ -5,8 +5,8 @@
 } 
 
 .step {
-    border: $gutter / 6 solid get-color(gray, "smoke");
-    //background-color: get-color(gray, "smoke");
+    //border: $gutter / 6 solid get-color(gray, "smoke");
+    background-color: get-color(gray, "smoke");
     padding: $gutter;
     margin-bottom: $gutter;
 }
@@ -63,7 +63,6 @@
 .field--name-field-iframe,
 .field--name-field-texto {
     .form-item {
-        flex-direction:column;
         width:100%;
         label {
             display:none;

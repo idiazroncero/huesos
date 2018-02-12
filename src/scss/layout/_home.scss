@@ -20,6 +20,7 @@
         right:-50px;
         transform: rotate(-90deg);
         transform-origin: center center;
+        @include ritmo-font-size($h3-font-size);
         a {
             @include kill-link(get-color(gray, 'black'));
         }

@@ -1,0 +1,26 @@
+.joyride-tip-guide {
+    width:600px;
+    border: 2px solid get-color(gray, "black");
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    .tour-tip-label {
+        @include ritmo-font-size($h4-font-size);
+    }
+    @include ritmo-font-size($h6-font-size);
+    .tour-progress {
+        font-weight:bold();
+    }
+}
+
+.joyride-nub {
+    width:0;
+    height:0;
+    border-width: $gutter / 2;
+    border-style:solid;
+    border-color: transparent;
+    &.top {
+        border-bottom-color: get-color(gray, "black");
+    }
+    &.bottom {
+        border-top-color: get-color(gray, "black");
+    }
+}

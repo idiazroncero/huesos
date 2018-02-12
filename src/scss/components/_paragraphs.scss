@@ -110,6 +110,7 @@
     border-radius:0;
     min-width:100%;
     overflow:visible;
+    z-index: z-index(paragraph-actions);
     .button {
         font-weight:normal;
         line-height: ritmo(4);
