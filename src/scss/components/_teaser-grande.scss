@@ -1,13 +1,21 @@
 .teaser-grande {
-    background-color: get-color(gray, "smoke");
-    border: ritmo(1) solid get-color(gray, "smoke");
+    //background-color: get-color(gray, "smoke");
     padding: ritmo(3);
-    transition: background-color $transition-time ease-in-out;
     display:flex;
     position:relative;
     &:hover {
-        background-color: get-color(gray, "white");
+        //background-color: get-color(gray, "white");
+        .teaser-grande__bg {
+            opacity:0.8;
+        }
     }
+}
+
+.teaser-grande__bg {
+    @include layer();
+    opacity:1;
+    z-index:-1;
+    transition: opacity $transition-time ease-in-out;
 }
 
 .teaser-grande__contenido {

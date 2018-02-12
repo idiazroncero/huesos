@@ -1,0 +1,53 @@
+.teaser-estandar {
+    padding: ritmo(3);
+    display:flex;
+    position:relative;
+    &:hover {
+        .teaser-estandar__bg {
+            opacity:0.8;
+        }
+    }
+}
+
+.teaser-estandar__bg {
+    @include layer();
+    opacity:1;
+    z-index:-1;
+    transition: opacity $transition-time ease-in-out;
+}
+
+.teaser-estandar__contenido {
+    display:flex;
+    flex-direction:column;
+}
+
+.teaser-estandar__title {
+    @include ritmo-font-size($h3-font-size);
+}
+
+.teaser-estandar__autor {
+    @extend %peque;
+    margin-top:auto;
+}
+
+.teaser-estandar__img {
+    height:100px;
+    margin-right: $gutter;
+    img {
+        height:100%;
+        width: auto;
+    }
+}
+
+.teaser--inverse {
+    .teaser-estandar__title,
+    .teaser-estandar__autor,
+    .teaser-grande__title,
+    .teaser-grande__autor,
+    .teaser-grande__texto {
+        color: get-color(gray, "white");
+        a {
+            @include kill-link(get-color(gray, "white"));
+        }
+    }
+}
