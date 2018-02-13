@@ -13,6 +13,8 @@
 
 .contenido__aside {
     margin-bottom: $gutter;
+    display:flex;
+    align-items: flex-end;
 }
 // .content__aside {
 //     flex:1;
@@ -42,11 +44,6 @@
         display:inline-block;
         vertical-align:top;
     }
-}
-
-
-.contenido__aside {
-    display:flex;
 }
 .contenido__autor {
     margin-right: $gutter;

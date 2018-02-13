@@ -61,7 +61,7 @@
 .front__layer {
     .tooltip {
         border-left:$gutter solid get-color(gray, "white");
-        height:100%;
+        height:1.5rem;
         &:before {
             content:"";
             position:absolute;
@@ -80,6 +80,21 @@
         align-items:center;
         justify-content:center;
     }
+}
+
+.front__layer--open {
+    .tooltip--right {
+        left:auto;
+        right:100%;
+        transform: translateY(-50%);
+        border-left:none;
+        border-right:$gutter solid get-color(gray, "white");
+        &:before {
+            right:auto;
+            left:100%;
+            border-color: transparent transparent transparent get-color(base, "primary");
+        }
+    } 
 }
 
 .contenido__leido {

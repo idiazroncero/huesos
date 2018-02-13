@@ -1,19 +1,21 @@
 .front__menu {
     width:50%;
-    margin-top: calc(200px + #{ritmo(8)});
-    margin-bottom:0;
+    margin:0;
+    padding-top: calc(200px + #{ritmo(8)});
+    padding-bottom:ritmo(8);
     padding-left: ritmo(8);
-    margin-left:ritmo(8);
+    padding-right: ritmo(8);
+    background-color: get-color(base, "secondary");
     //border-left: 1px solid get-color(gray, "black");
     display:flex;
     flex-direction:column;
     a {
-        @include set-link(
-            get-color(gray, "white"), 
-            get-color(gray, "lighter"),
-            get-color(gray, "lighter"),
-            get-color(gray, "dark")
-        );
+        @include kill-link(get-color(gray, "black"));
+        font-weight:bold;
+        &:hover, &:focus {
+            font-weight:$light;
+            text-decoration: none;
+        }
     }
     nav {
         margin:auto 0 $gutter 0;
@@ -44,6 +46,11 @@
     @include kill-button();
     padding:0;
     margin-bottom: $gutter / 2;
+    &:active {
+        .tooltip {
+            display:none !important; // for the firefox bug
+        }
+    }
 }
 
 .front__burguer__wrapper {

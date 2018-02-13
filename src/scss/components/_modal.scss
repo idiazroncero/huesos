@@ -22,6 +22,9 @@
     border-radius:0;
     background-color: transparent;
     right:$gutter;
+    &:active {
+        left:auto;
+    }
 }
 
 .ui-dialog .ui-dialog-content {
@@ -29,18 +32,14 @@
 }
 
 .paragraphs-add-dialog {
-    width:480px !important;
+    width:350px !important;
 }
 
 .paragraphs-add-dialog-list {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
 }
 
 .paragraphs-add-dialog-row {
     padding:0 0  $gutter / 2 0;
-    width:48%;
     input {
         &:hover, &:focus {
             background-color: get-color(gray, "lighter");

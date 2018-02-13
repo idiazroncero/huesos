@@ -249,3 +249,14 @@ fieldset {
 legend {
     font-weight: $bold;
 }
+
+
+// Indicator of typing
+
+input[type="text"],
+input[type="password"] {
+    &:focus {
+        border-bottom-width:2px;
+        margin-bottom: -1px;
+    }
+}

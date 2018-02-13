@@ -35,8 +35,11 @@
                 padding-right:$gutter;
                 display:block;
                 @include ritmo-font-size($h6-font-size);
+                @include kill-link(get-color(gray, "black"));
             }
             &:hover a {
+                text-decoration:none;
+                font-weight:bold(a);
                 &:before {
                     content:"";
                     width: 1em;

@@ -8,7 +8,7 @@
     height:100%;
     z-index:z-index('front-menu');
     transition: left $transition-time * 3 cubic-bezier(.43,-0.15,.41,.92) $transition-time ;
-    background-color: lighten(get-color(base, "primary"), 10%);
+    background-color: get-color(base, "primary");
     &:before {
         content:"";
         position:absolute;
@@ -16,7 +16,7 @@
         left:-100px;
         width:100px;
         height:100%;
-        background-color: lighten(get-color(base, "primary"), 10%);
+        background-color: get-color(base, "primary"), 10%;
     } 
 }
 
@@ -27,16 +27,17 @@
 
 .front__layer__inner {
     position: absolute;
-    top:ritmo(8);
-    left:ritmo(8);
-    bottom: ritmo(8);
-    right: calc(100px + #{ritmo(8)});
-    border: ritmo(2) solid get-color(gray, "white");
-    padding: ritmo(10);
+    top:0; //ritmo(8);
+    left:0; //ritmo(8);
+    bottom: 0; // ritmo(8);
+    right: 100px;
+    //border: ritmo(2) solid get-color(gray, "white");
+    //padding: ritmo(10);
     display:flex;
 }
 
 .front__layer__ms {
+    margin: ritmo(8) 0 0 ritmo(8);
     width:200px;
     height:200px;
     background-color: get-color(gray, "white");

@@ -4,6 +4,10 @@ body {
     position:relative; // Absolute scope for aside
 }
 
+main {
+    margin-bottom: $gutter;
+}
+
 #main-wrapper {
     // Don't allow for pages less tall than the viewport
     min-height:100vh;
@@ -29,7 +33,7 @@ body {
 .page__aside {
     width:25%;
     width:25vw;
-    background-color: get-color(gray, "smoke");
+    background-color: get-color(base, "secondary");
     position:fixed;
     top:0;
     right:0;
@@ -38,4 +42,7 @@ body {
     // min-height: 100%;
     // min-height: 100vh;
     padding: ritmo(4 * 6) $spacer $spacer $spacer;
+    ul {
+        text-transform: uppercase;
+    }
 }

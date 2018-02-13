@@ -23,7 +23,23 @@
     display:block;
 }
 
+.contenido__meta {
+
+    // a {
+    //     @include kill-link(get-color(gray, "base"));
+    // }
+}
+
 .contenido__autor {
+    text-transform: uppercase;
+    //@include ritmo-font-size($h4-font-size);
+}
+.contenido__autor__por {
+    font-weight: $light;
+}
+
+.contenido__fecha {
+    color: get-color(gray, "base");
     @extend %peque;
     font-weight: normal;    
 }

@@ -16,13 +16,29 @@
     }
     .logo {
         position:absolute;
-        bottom: calc(80px + #{ritmo(8)});
-        right:-50px;
+        bottom: $gutter / 2;
+        left: 50%;
         transform: rotate(-90deg);
-        transform-origin: center center;
+        display:flex;
+        align-items:center;
+        transform-origin: 0 50%;
+    }
+    .logo__ms {
+        display:block;
         @include ritmo-font-size($h3-font-size);
         a {
             @include kill-link(get-color(gray, 'black'));
+        }
+    }
+    .logo__eem {
+        display:block;
+        transform-origin: center center;
+        transform: rotate(90deg);
+        width:32px;
+        height:32px;
+        margin-right:$gutter / 2;
+        img {
+            display:block;
         }
     }
     .cuadricula {
