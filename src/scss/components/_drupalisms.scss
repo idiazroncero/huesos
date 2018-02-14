@@ -144,7 +144,7 @@
     td:nth-child(2) > div {
         //border: 2px solid get-color(gray, "base");
         background-color: get-color(gray, "smoke");
-        padding: $gutter / 2 0;
+        padding: $gutter / 2;
         // background-color: get-color(gray, "white");
         transition: all $transition-time ease-out;
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
@@ -155,7 +155,7 @@
         border-bottom: none;
     }
     .field-multiple-drag {
-        width:50px;
+        width:30px;
         vertical-align:middle;
     }
     a.tabledrag-handle {
@@ -171,11 +171,11 @@
     }
     .drag td:nth-child(2) > div  {
         box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
-        padding: $gutter / 2;
+        //padding: $gutter / 2;
         position:relative;
         z-index: z-index(drag);
         transform-origin: center;
-        transform:scale(1.015);
+        transform:scale(1.02);
     }
 }
 

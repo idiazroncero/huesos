@@ -7,8 +7,36 @@
 .step {
     //border: $gutter / 6 solid get-color(gray, "smoke");
     background-color: get-color(gray, "smoke");
-    padding: $gutter;
-    margin-bottom: $gutter;
+    padding: $gutter $gutter 0 $gutter;
+    margin-bottom: $gutter * 2;
+    h2 {
+        @include ritmo-font-size($h4-font-size);
+        @extend %peque;
+    }
+    h3 {
+        @include ritmo-font-size($h5-font-size);
+        @extend %peque; 
+        margin-bottom: $gutter / 2;
+    }
+    > .form-wrapper {
+        margin-bottom: $gutter;
+        background: darken(get-color(gray, "smoke"), 3%);
+        padding: $gutter;
+        margin-right: -$gutter;
+        margin-left: -$gutter;
+        box-shadow: 0px 6px 3px -3px rgba(0,0,0,0.07) inset;
+        &:last-child {
+            margin-bottom:0;
+        }
+    }
+}
+
+.preview {
+    padding-bottom: $gutter;
+}
+
+.step__info--small {
+    @include ritmo-font-size($h6-font-size);
 }
 
 .node-form {
@@ -23,10 +51,7 @@
             margin-bottom:0;
         }
     }
-    h2:not(.h3) {
-        @include ritmo-font-size($h5-font-size);
-        @extend %peque;
-    }
+
 }
 
 
