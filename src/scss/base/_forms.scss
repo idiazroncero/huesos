@@ -148,9 +148,6 @@ button,
         box-shadow: 3px 3px 0px 0px rgba($button-border-color,0.2);
     }
     &:active {
-        position: relative;
-        top: 2px;
-        left: 2px;
         box-shadow: 1px 1px 0px 0px rgba($button-border-color,0.2) !important;
     }
     &.button--good {

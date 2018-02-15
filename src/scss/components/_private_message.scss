@@ -181,3 +181,12 @@
         width:48%;
     }
 }
+
+// SEND MESSAGE
+
+.user .private_message_link_wrapper {
+    margin-bottom: $gutter;
+    a {
+        @extend .button;
+    }
+}

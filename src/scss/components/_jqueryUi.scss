@@ -1,0 +1,75 @@
+// COMMON
+
+.ui-corner-all {
+    border-radius:0;
+}
+
+.ui-widget-header {
+    border:none;
+    background:none;
+    color: get-color(text, "primary");
+}
+
+.ui-widget {
+    font-family: inherit;
+    &.ui-widget-content {
+        border:none;
+        border-radius:0;
+        padding:0;
+    }
+}
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active, 
+a.ui-button:active, 
+.ui-button:active, 
+.ui-button.ui-state-active:hover {
+    border-color: get-color(base, "primary");
+    background-color: lighten(get-color(base, "primary"), 15%);
+}
+
+
+// TABS
+
+.ui-tabs .ui-tabs-nav {
+    padding:0;
+    border-bottom: 1px solid get-color(gray, "lighter");
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding: $gutter / 4 $gutter / 2;
+    @extend %peque;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: $gutter 0;
+}
+
+// DIALOG
+.ui-dialog .ui-dialog-titlebar {
+    padding: $gutter / 2 $gutter;
+    border-radius:0;
+    background-color: transparent;
+    border:none;
+    color: get-color(text, "primary");
+    background-color: get-color(gray, "smoke");
+}
+
+.ui-dialog .ui-dialog-title {
+    margin:0;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    border:none;
+    border-radius:0;
+    background-color: transparent;
+    right:$gutter;
+    &:active {
+        left:auto;
+    }
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: $gutter / 2 $gutter;
+}

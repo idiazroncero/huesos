@@ -23,7 +23,3 @@
 .rrss__whatsapp {
     background-color: get-color(social, whatsapp);
 }
-
-.flag__favorito {
-    @extend .private_message_link_wrapper;
-}

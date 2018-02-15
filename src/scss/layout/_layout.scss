@@ -33,7 +33,7 @@ main {
 .page__aside {
     width:25%;
     width:25vw;
-    background-color: get-color(base, "secondary");
+    background-color: lighten(get-color(base, "secondary"), 35%);
     position:fixed;
     top:0;
     right:0;
@@ -41,7 +41,7 @@ main {
     height:100%;
     // min-height: 100%;
     // min-height: 100vh;
-    padding: ritmo(4 * 6) $spacer $spacer $spacer;
+    padding: $gutter * 2 $gutter $gutter $gutter;
     ul {
         text-transform: uppercase;
     }

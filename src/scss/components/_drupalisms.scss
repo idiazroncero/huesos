@@ -186,3 +186,23 @@
 .tabledrag-toggle-weight {
     @include kill-button();
 }
+
+
+.js-pager__items {
+    @include ritmo-font-size($h6-font-size);
+    @include inline-list();
+    li {
+        text-transform: uppercase;
+        position:relative;
+        a:not(.button) {
+            margin: 0 $gutter / 4;
+            padding: 0 $gutter / 4;
+            background-color: get-color(gray, "dark");
+            display:block;
+            @include kill-link(get-color(gray, "white"));
+            &:hover {
+                background-color: get-color(gray, "black");
+            }
+        }
+    }
+}

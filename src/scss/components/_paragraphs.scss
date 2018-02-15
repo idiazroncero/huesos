@@ -179,7 +179,9 @@
 
 // TIPOS DE PARRAFO
 
-.paragraph--type--texto {
+.paragraph--type--texto,
+.paragraph--type--video,
+.video-embed-field-responsive-video {
     margin-bottom: $gutter * 2;
 }
 
@@ -189,4 +191,7 @@
 
 .paragraph--type--titulo-de-seccion {
     margin-top: $gutter * 4;
+    .contenido__main > & {
+        margin-top:0;
+    }
 }

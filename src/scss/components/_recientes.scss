@@ -26,21 +26,3 @@
     padding-bottom:$gutter / 4;
     border-bottom: 1px solid get-color(gray, "light");
 }
-
-.js-pager__items {
-    @include ritmo-font-size($h6-font-size);
-    li {
-        text-transform: uppercase;
-        position:relative;
-        a {
-            margin: 0 $gutter / 4;
-            padding: 0 $gutter / 4;
-            background-color: get-color(gray, "dark");
-            display:block;
-            @include kill-link(get-color(gray, "white"));
-            &:hover {
-                background-color: get-color(gray, "black");
-            }
-        }
-    }
-}
