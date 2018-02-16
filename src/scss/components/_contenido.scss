@@ -58,7 +58,7 @@
     left: 0;
     bottom: 0;
     overflow:hidden;
-    transition: all $transition-time cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all $transition-time / 2 linear;
     z-index:z-index(contenido-fit);
     img {
         display:block;
@@ -164,7 +164,7 @@
     &:hover {
         .contenido__fit {
             opacity:1; 
-            transform: scale(1.06);
+            transform: scale(1.01);
         }
         .contenido__title {
             opacity:0;
