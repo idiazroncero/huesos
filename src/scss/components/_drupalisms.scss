@@ -84,6 +84,9 @@
         .description__icon {
             background-color: get-color(state, 'success');
             color: get-color(gray, 'white');
+            flex: 0 0 1rem;
+            height:1rem;
+            text-align:center;
             &:hover {
                 background-color: transparent;
                 color: get-color(state, 'success');

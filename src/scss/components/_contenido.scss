@@ -170,7 +170,8 @@
             opacity:0;
         }
     }
-    &.js-hover {
+    &.js-hover,
+    &.auto-hover {
         .contenido__fit {
             opacity:1;
         }

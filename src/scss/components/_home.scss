@@ -1,15 +1,64 @@
 .cuadricula {
     @extend %clearfix;
     .views-row {
-        float:left;
-        width:25%;
+        width:100%;
         position:relative;
         &:first-child {
-            width:50%;
-            .contenido__title h1 {
-                @include ritmo-font-size($h1-font-size);
-                font-weight: $light;
+            .contenido--teaser {
+                margin-bottom:105%;
+                margin-bottom: calc(100% + #{$gutter});
+            }  
+            .contenido__fit {
+                top:100%;
+                bottom:-100%;
+                opacity:1;
             }
+            .contenido__title {
+                opacity:1;
+            }
+        }
+        @include breakpoint($small) {
+            float:left;
+            width:50%;
+            &:first-child {
+                width:100%;
+                .contenido--teaser {
+                    margin-bottom:0;
+                    &:hover,
+                    &.js-hover {
+                        .contenido__fit {
+                            opacity:1; 
+                            transform: scale(1.01);
+                        }
+                        .contenido__title {
+                            opacity:0;
+                        }
+                    } 
+                }  
+                .contenido__fit {
+                    top:0;
+                    bottom:0;
+                    opacity:0;
+                }
+            }   
+        }
+        @include breakpoint($medium) {
+            width:33.33%;
+            &:first-child {
+                width:66.66%;
+            }   
+        }
+        @include breakpoint($large) {
+            width:25%;
+            &:first-child {
+                width:50%;
+            }   
+        }
+
+        // Destacado
+        &:first-child .contenido__title h1 {
+            @include ritmo-font-size($h1-font-size);
+            font-weight: $light;
         }
     }   
 }

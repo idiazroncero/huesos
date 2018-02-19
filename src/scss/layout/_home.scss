@@ -1,27 +1,35 @@
 .home {
     #main-wrapper {
-        padding:$gutter;
-        padding-left: 100px
+        padding:$gutter / 2;
+        @include breakpoint($small) {
+            padding:$gutter;
+            padding-left: 100px;
+        }
     }
     .header {
-        position:absolute;
-        height:100%;
-        width:100px;
-        top:0;
-        right:0;
-        bottom:0;
-        margin:0;
+        @include breakpoint($small) {
+            position:absolute;
+            height:100%;
+            width:100px;
+            top:0;
+            right:0;
+            bottom:0;
+            margin:0;
+            z-index: z-index(front-header);
+        }
         background:get-color(gray, "white");
-        z-index: z-index(front-header);
+
     }
     .logo {
-        position:absolute;
-        bottom: $gutter / 2;
-        left: 50%;
-        transform: rotate(-90deg);
+        @include breakpoint($small) {
+            position:absolute;
+            bottom: $gutter / 2;
+            left: 50%;
+            transform: rotate(-90deg);
+            transform-origin: 0 50%;
+        } 
         display:flex;
         align-items:center;
-        transform-origin: 0 50%;
     }
     .logo__ms {
         display:block;
@@ -31,9 +39,11 @@
         }
     }
     .logo__eem {
+        @include breakpoint($small) {
+            transform: rotate(90deg);
+        }
         display:block;
         transform-origin: center center;
-        transform: rotate(90deg);
         width:32px;
         height:32px;
         margin-right:$gutter / 2;

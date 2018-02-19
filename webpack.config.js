@@ -13,7 +13,7 @@ const PATHS = {
 module.exports = {
 	entry: {
 		style : path.join(PATHS.src, 'style.js'),
-		slick : path.join(PATHS.src, 'slick.js')
+		slick : path.join(PATHS.src, 'slick.js'),
 	},
 	output: {
 		filename: 'js/[name].[hash:6].js',
@@ -52,12 +52,23 @@ module.exports = {
 				test: /\.scss$/,
 				use: plugins.extraeCSS.extract({
 					use: [
-						'css-loader', // translates CSS into CommonJS
-						'postcss-loader',
+						{
+							loader : 'css-loader', // translates CSS into CommonJS
+							options : {
+								sourceMap : true,
+							},
+						},
+						{
+							loader : 'postcss-loader', // translates CSS into CommonJS
+							options : {
+								sourceMap : true,
+							},
+						},
 						{
 							loader : 'sass-loader', // compiles Sass to CSS
 							options : {
 								includePaths : ['node_modules'],
+								sourceMap : true,
 							},
 						},
 					],
@@ -70,9 +81,9 @@ module.exports = {
 				loader : 'file-loader',
 				options : {
 					name : 'fonts/[name].[ext]',
-					publicPath : '../'
-				}
-			}
+					publicPath : '../',
+				},
+			},
 		],
 	},
 	plugins: [

@@ -60,41 +60,49 @@
 
 .front__layer {
     .tooltip {
-        border-left:$gutter solid get-color(gray, "white");
-        height:1.5rem;
-        &:before {
-            content:"";
-            position:absolute;
-            top:0;
-            right:100%;
-            width: 0;
-            height: 0;
-            border-width: $gutter / 2;
-            border-style: solid;
-            border-color: transparent get-color(base, "primary") transparent transparent;
+        display:none !important;
+        @include breakpoint($small) {
+            border-left:$gutter solid get-color(gray, "white");
+            height:1.5rem;
+            &:before {
+                content:"";
+                position:absolute;
+                top:0;
+                right:100%;
+                width: 0;
+                height: 0;
+                border-width: $gutter / 2;
+                border-style: solid;
+                border-color: transparent get-color(base, "primary") transparent transparent;
+            }
         }
     }
-    .tooltip__parent:hover .tooltip {
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
+    @include breakpoint($small) {
+        .tooltip__parent:hover .tooltip,
+        .tooltip__parent.js-hover .tooltip {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+        }
     }
 }
 
 .front__layer--open {
-    .tooltip--right {
-        left:auto;
-        right:100%;
-        transform: translateY(-50%);
-        border-left:none;
-        border-right:$gutter solid get-color(gray, "white");
-        &:before {
-            right:auto;
-            left:100%;
-            border-color: transparent transparent transparent get-color(base, "primary");
-        }
-    } 
+    @include breakpoint($small) {
+        .tooltip--right {
+            left:auto;
+            right:100%;
+            transform: translateY(-50%);
+            border-left:none;
+            border-right:$gutter solid get-color(gray, "white");
+            &:before {
+                right:auto;
+                left:100%;
+                border-color: transparent transparent transparent get-color(base, "primary");
+            }
+        } 
+    }   
 }
 
 .contenido__leido {

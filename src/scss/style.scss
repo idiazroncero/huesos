@@ -98,3 +98,32 @@ nav,
         background-repeat: repeat;
     }
 }
+
+
+body {
+    &:before {
+        position:fixed;
+        top:5px;
+        left:5px;
+        font-size:10px;
+        line-height:1;
+        background: yellowgreen;
+        padding:3px 6px;
+        z-index:999999;
+        @include breakpoint($mini) {
+          content: "mini"
+        }
+        @include breakpoint($small) {
+            content: "small"
+        }
+        @include breakpoint($medium) {
+            content: "medium"
+        }
+        @include breakpoint($large) {
+            content: "large"
+        }
+        @include breakpoint($huge) {
+            content: "huge"
+        }
+    }
+}

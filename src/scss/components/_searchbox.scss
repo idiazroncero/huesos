@@ -7,7 +7,8 @@
         border:none;
         @include ritmo-font-size($h4-font-size);
         background: get-color(gray, "white");
-        flex:1;
+        flex:0 0 auto;
+        width:100%;
     }
     input[type="submit"] {
         border-radius:0;

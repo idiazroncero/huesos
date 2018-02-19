@@ -349,7 +349,9 @@ $z-index : (
   notifications : 9,
   notifications-form : 10,
   dot-leido: 11,
-  tooltip: 12,
+  front-layer: 11,
+  menu-open-mobile: 12,
+  tooltip: 13,
   front-menu: 14,
   front-header: 15,
   drag: 16,
@@ -364,9 +366,11 @@ $z-index : (
 // BREAKPOINTS
 // ------
 
+$mini: 320px;
 $small: 640px;
 $medium: 960px;
 $large: 1120px;
+$huge: 1300px;
 
 
 
