@@ -14,7 +14,16 @@
     align-items:flex-start;
     justify-content:flex-start;
     margin:0;
+    padding: $gutter;
     .button {
         margin-top:auto;
+    }
+}
+
+.social-login {
+    margin: $gutter 0;
+    h2 {
+        @extend %peque;
+        margin-bottom: $gutter / 2;
     }
 }

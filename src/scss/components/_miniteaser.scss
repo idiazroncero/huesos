@@ -9,15 +9,23 @@
 }
 
 .miniteaser__thumb {
-    width:150px;
-    height:150px;
     margin-right:$gutter;
     position:relative;
     overflow:hidden;
+    width:100px;
+    height:100px;
     img {
         object-fit:cover;
-        height:150px;
+        height:100px;
+        width:100px;
+    }
+    @include breakpoint($small) {
         width:150px;
+        height:150px;
+        img {
+            height:150px;
+            width:150px;
+        }      
     }
 }
 
@@ -37,7 +45,10 @@
 }
 
 .miniteaser__title {
-    @include ritmo-font-size($h4-font-size);
+    @include ritmo-font-size($h5-font-size);
+    @include breakpoint($small) {
+        @include ritmo-font-size($h4-font-size);
+    }
     line-height:1;
     font-weight:normal;
     margin:0;

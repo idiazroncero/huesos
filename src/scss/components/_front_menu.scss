@@ -6,7 +6,7 @@
     @include breakpoint($small) {
         width:50%;
         height:auto;
-        margin:0;
+        margin:0 100px 0 auto;
         padding-top: calc(200px + #{ritmo(8)});
         padding-bottom:ritmo(8);
         padding-left: ritmo(8);

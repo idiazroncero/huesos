@@ -64,9 +64,12 @@
 .profile__img {
     width:200px;
     height:200px;
-    float:left;
-    margin: $spacer $spacer $spacer 0;
-    shape-outside:circle();
+    margin: 0 auto $gutter auto;
+    @include breakpoint($small) {
+        float:left;
+        margin: $spacer $spacer $spacer 0;
+        shape-outside:circle();
+    }
     img {
         border-radius: 50%;
         display:block;
@@ -93,8 +96,11 @@
 }
 
 .contentlist__item {
-    width:48%;
-    width: calc(50% - #{$gutter});
+    width:100%;
+    @include breakpoint($small) {
+        width:48%;
+        width: calc(50% - #{$gutter});
+    }
     margin-bottom: $gutter;
     position:relative;
     &:nth-child(odd) {

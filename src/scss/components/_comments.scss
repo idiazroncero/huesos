@@ -184,17 +184,25 @@
         label {
             @include ritmo-font-size($h6-font-size);
             // font-weight:bold;
+            width:100%;
+            @include breakpoint($small) {
+                width:auto;
+            }
         }
         input {
             @include ritmo-font-size($h6-font-size);
-        }
-        .description {
-            @include ritmo-font-size($h7-font-size);
-            margin-top:0;
+            width:100%;
+            max-width:100%;
+            @include breakpoint($small) {
+                width:auto;
+            }
         }
     }
     > .form-item {
-        width:48%;
+        width:100%;
+        @include breakpoint($small) {
+            width:48%;
+        }
     }
     .form-wrapper {
         width:100%;
