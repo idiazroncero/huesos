@@ -7,14 +7,27 @@
 .step {
     //border: $gutter / 6 solid get-color(gray, "smoke");
     background-color: get-color(gray, "smoke");
+    width:100vw;
+    margin-left: -$gutter / 2;
+    margin-bottom:0;
     padding: $gutter $gutter 0 $gutter;
-    margin-bottom: $gutter * 2;
+    @include breakpoint($small) {
+        width:100%;
+        margin-left: 0;
+        margin-bottom: $gutter * 2;
+    }
     h2 {
-        @include ritmo-font-size($h4-font-size);
+        @include ritmo-font-size($h5-font-size);
+        @include breakpoint($small) {
+            @include ritmo-font-size($h4-font-size);
+        }
         @extend %peque;
     }
     h3 {
-        @include ritmo-font-size($h5-font-size);
+        @include ritmo-font-size($h6-font-size);
+        @include breakpoint($small) {
+            @include ritmo-font-size($h5-font-size);
+        }
         @extend %peque; 
         margin-bottom: $gutter / 2;
     }

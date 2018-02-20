@@ -4,6 +4,7 @@ select,
 button,
 textarea {
     @include form-reset-general();
+    max-width:100%;
 }
 
 input:-webkit-autofill, 

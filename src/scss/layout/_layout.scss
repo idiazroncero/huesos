@@ -37,8 +37,14 @@ main {
 }
 
 .page__aside {
-    background-color: lighten(get-color(base, "secondary"), 35%);
+    background-color: lighten(get-color(base, "primary"), 60%);
     padding: $gutter * 2 $gutter $gutter $gutter;
+    width:100vw;
+    margin-left: -$gutter / 2;
+    @include breakpoint($small) {
+        margin-left:0;
+        width:100%;    
+    }
     @include breakpoint($medium) {
         width:25%;
         width:25vw;

@@ -43,6 +43,9 @@
 
 .ief-entity-table {
     table-layout: initial;
+    td {
+        padding-bottom: $gutter;
+    }
     tr:first-child:last-child {
         td {
             padding:0;
@@ -50,12 +53,28 @@
     }
     .inline-entity-form-media-thumbnail {
         width:100%;
-        padding-left:$gutter;
+        img {
+            display:block;
+            padding: 0 $gutter / 2;
+            @include breakpoint($small) {
+                padding: 0 0 0 $gutter;
+            }
+        }        
     }
     .ief-entity-operations {
         display:flex;
+        flex-direction:column;
+        align-items:baseline;
+        @include breakpoint($small) {
+            flex-direction: row;
+        }
         input {
-            margin-left: $gutter / 2;
+            &:first-child {margin-bottom: $gutter / 2;}
+            
+            @include breakpoint($small) {
+                margin-bottom:0;
+                margin-left: $gutter / 2;
+            }
             &[value="Editar"] {
                 @extend .button--good;
             }

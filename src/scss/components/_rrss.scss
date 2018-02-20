@@ -23,3 +23,23 @@
 .rrss__whatsapp {
     background-color: get-color(social, whatsapp);
 }
+
+// Social login block
+
+.social-login {
+    margin-bottom: $gutter;
+    padding: $gutter / 2;
+    border: 1px solid get-color(gray, "base");
+    h2 {
+        @extend %peque;
+        margin-bottom: $gutter / 2;
+    }
+    .auth-link {
+        a, img {
+            display:inline-block;
+        }
+    }
+    .social-auth.auth-icon {
+        width: 1.5rem;
+    }
+}

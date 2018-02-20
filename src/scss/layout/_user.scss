@@ -1,11 +1,18 @@
-.user__login__page .layout-content {
-    display:flex;
-    justify-content: space-between;
+.user__login{
+    margin-bottom: $gutter;
 }
 
-.user__login,
-.user__goregister {
-    width:47%;
+@include breakpoint($small) {
+    .user__login__page .layout-content {
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .user__login,
+    .user__goregister {
+        margin-bottom:0;
+        width:47%;
+    }
 }
 
 .step.user__goregister {
@@ -17,13 +24,5 @@
     padding: $gutter;
     .button {
         margin-top:auto;
-    }
-}
-
-.social-login {
-    margin: $gutter 0;
-    h2 {
-        @extend %peque;
-        margin-bottom: $gutter / 2;
     }
 }

@@ -37,6 +37,14 @@ a.ui-button:active,
     border-bottom: 1px solid get-color(gray, "lighter");
 }
 
+.ui-tabs .ui-tabs-nav li {
+    width:100%;
+    border-radius:0;
+    @include breakpoint($small) {
+        width:auto;
+    }
+}
+
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
     padding: $gutter / 4 $gutter / 2;
     @extend %peque;

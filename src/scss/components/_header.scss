@@ -14,18 +14,26 @@
     display:flex;
     flex-wrap:wrap;
     align-items:baseline;
+    justify-content:center;
     margin-bottom: $gutter * 2;
+    @include breakpoint($small) {
+        justify-content:flex-start;
+    }
     a {
         @include kill-link(get-color(text, primary));
-        margin-right: ritmo(2);
+        @include breakpoint($small) {
+            margin-right: ritmo(2);
+        }
     }
     .main-title {
         h1 {
             @include ritmo-font-size($h3-font-size);
             font-weight:normal;
-            &:before {
-                content: "/";
-                margin-right: ritmo(2);
+            @include breakpoint($small) {
+                &:before {
+                    content: "/";
+                    margin-right: ritmo(2);
+                }
             }
             color: get-color(gray, base);
             margin:0;

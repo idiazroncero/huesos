@@ -38,8 +38,10 @@
     }
     .image-widget {
         width:100%;
-        display:flex;
-        align-items:center;
+        @include breakpoint($small) {
+            display:flex;
+            align-items:center;
+        }            
         // img {
         //     margin: $spacer 0 0 0;
         // }
@@ -55,7 +57,13 @@
     }
     .image-widget__preview {
         margin-right: auto;
-        max-width:80%;
+        width:100%;
+        margin-bottom: $gutter;
+        @include breakpoint($small) {
+            width:auto;
+            max-width:80%;
+            margin-bottom:0;
+        }
         .focal-point-wrapper + .form-item {
             margin-top:$gutter/2;
         }
@@ -140,6 +148,19 @@
 
 .field-multiple-table {
     table-layout: initial;
+    width:100vw;
+    margin-left: -$gutter;
+    @include breakpoint($small) {
+        width:100%;
+        margin-left: 0;
+    }
+    input,
+    textarea {
+        width:100%;
+    }
+    tr {
+        position:relative;
+    }
     th,td { // delegate the border on inner content
         border:none;
         padding:0;
@@ -147,7 +168,10 @@
     td:nth-child(2) > div {
         //border: 2px solid get-color(gray, "base");
         background-color: get-color(gray, "smoke");
-        padding: $gutter / 2;
+        padding: $gutter $gutter / 4;
+        @include breakpoint($small) {
+            padding: $gutter / 2;
+        }
         // background-color: get-color(gray, "white");
         transition: all $transition-time ease-out;
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
@@ -160,6 +184,9 @@
     .field-multiple-drag {
         width:30px;
         vertical-align:middle;
+        position:absolute;
+        top: $gutter / 4;
+        left: $gutter / 4;
     }
     a.tabledrag-handle {
         margin-left:0;
@@ -184,6 +211,7 @@
 
 .tabledrag-toggle-weight-wrapper {
     margin-left:auto;
+    display:none; // Hasta los uefs
 }
 
 .tabledrag-toggle-weight {
