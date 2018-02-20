@@ -2,6 +2,11 @@
 .node-form {
     margin-bottom: $gutter;
     padding-bottom: $gutter;
+    .js-form-type-vertical-tabs {display:none;}
+    #edit-actions {
+        background-color: lighten(get-color(state, "success"), 25%);
+        padding: $gutter;
+    }
 } 
 
 .step {
