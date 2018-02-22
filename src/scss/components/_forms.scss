@@ -4,7 +4,7 @@
     padding-bottom: $gutter;
     .js-form-type-vertical-tabs {display:none;}
     #edit-actions {
-        background-color: lighten(get-color(state, "success"), 25%);
+        background-color: lighten(get-color(state, "success"), 60%);
         padding: $gutter;
     }
 } 

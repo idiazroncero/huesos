@@ -19,7 +19,7 @@
         left:-100px;
         width:100px;
         height:100%;
-        background-color: get-color(base, "primary"), 10%;
+        background-color: get-color(base, "primary");
     } 
 }
 
@@ -48,13 +48,16 @@
     background-color: get-color(base, "primary");
     z-index:z-index(front-layer);
     @include breakpoint($small) {
+        width:auto;
         position:absolute;
         top:0; //ritmo(8);
         left:0; //ritmo(8);
         bottom: 0; // ritmo(8);
         right: 100px;
-        flex-direction:row;
-    }
+    };
+    @include breakpoint($medium) {
+        flex-direction:row;      
+    };
     //border: ritmo(2) solid get-color(gray, "white");
     //padding: ritmo(10);
 }

@@ -1,8 +1,6 @@
  // Wrapper
 .comments { // Aside
-    margin-bottom: $gutter * 2;
-    padding-bottom:$gutter;
-    border-bottom: $separator-width solid $separator-color;
+    margin-top: $gutter * 2;
 }
 
 .comments__inner { // Section

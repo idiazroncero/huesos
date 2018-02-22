@@ -3,10 +3,11 @@
     height:50%;
     width:100%;
     padding: $gutter;
-    @include breakpoint($small) {
+
+    @include breakpoint($medium) {
         width:50%;
         height:auto;
-        margin:0 100px 0 auto;
+        margin:0 0 0 auto;
         padding-top: calc(200px + #{ritmo(8)});
         padding-bottom:ritmo(8);
         padding-left: ritmo(8);
@@ -125,6 +126,14 @@
         }
         &:nth-child(5) {
             transform: translateY(-50%) rotate(-45deg) scale(1);
+        }
+    }
+    @include breakpoint(max-width $small) {
+        .front__burguer {
+            background-color: get-color(base, "secondary");
+            &.front__cross {
+                background-color: get-color(base, "primary");
+            }
         }
     }
 }

@@ -9,6 +9,10 @@
         background: get-color(gray, "white");
         flex:0 0 auto;
         width:100%;
+        &:hover, 
+        &:focus {
+            margin-bottom:0;
+        }
     }
     input[type="submit"] {
         border-radius:0;

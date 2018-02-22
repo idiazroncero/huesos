@@ -77,7 +77,31 @@
 }
 
 .profile__desc {
+    p:last-child  {
+        margin-bottom:0;
+    }
+}
 
+.profile--mini {
+    background-color: get-color(gray, 'smoke');
+    border-bottom: 1px dashed get-color(gray, "lighter");
+    padding:$gutter;
+    margin-bottom:0;
+    .profile__img {
+        width:100px;
+        height:100px;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    .profile__desc {
+        @include ritmo-font-size($h6-font-size);
+    }
+}
+
+.profile__name {
+    @include ritmo-font-size($h4-font-size);
+    font-weight:normal;
+    font-weight:bold(h2);
 }
 
 .contentlist {

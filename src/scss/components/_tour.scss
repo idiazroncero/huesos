@@ -1,5 +1,8 @@
 .joyride-tip-guide {
-    width:600px;
+    width:96%;
+    @include breakpoint($small) {
+        width:600px;
+    }
     border: 2px solid get-color(gray, "black");
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
     .tour-tip-label {
@@ -9,6 +12,10 @@
     .tour-progress {
         font-weight:bold();
     }
+}
+
+.joyride-modal-bg {
+    background-color: rgba(get-color(base, "primary"), 0.25);
 }
 
 .joyride-nub {

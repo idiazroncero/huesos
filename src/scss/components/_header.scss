@@ -13,10 +13,12 @@
     margin:0;
     display:flex;
     flex-wrap:wrap;
+    flex-direction:column;
     align-items:baseline;
     justify-content:center;
     margin-bottom: $gutter * 2;
     @include breakpoint($small) {
+        flex-direction:row;
         justify-content:flex-start;
     }
     a {

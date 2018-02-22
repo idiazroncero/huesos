@@ -48,6 +48,9 @@
     ul  {
         @include inline-list();
     }
+    p {
+        margin:0;
+    }
 }
 
 .messages--warning {
