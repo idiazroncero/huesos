@@ -17,7 +17,9 @@
     align-items:baseline;
     justify-content:center;
     margin-bottom: $gutter * 2;
+    text-align:center;
     @include breakpoint($small) {
+        text-align:left;
         flex-direction:row;
         justify-content:flex-start;
     }
@@ -50,10 +52,17 @@
 }
 
 .ms__back {
+    text-align:right;
+    width:50%;
+    margin-left:50%;
     display:block;
-    @include ritmo-font-size($h6-font-size);
-
-        @include kill-link(get-color(gray, "base"));
+    @include ritmo-font-size($h6-font-size, 4);
+    @include kill-link(get-color(gray, "light"));
+    @include breakpoint($medium){
+        text-align:left;
+        width:auto;
+        margin:0;
+    }
 }
 
 .main-title {

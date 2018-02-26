@@ -1,19 +1,49 @@
 .page__aside {
+    margin-bottom:0;
+    .menu__open {
+        display:block;
+        position:fixed;
+        top: $gutter / 2;
+        left: $gutter / 2;
+        @include breakpoint($small) {
+            top: $gutter;
+            left: $gutter;
+        }
+        @include breakpoint($medium) {
+            display:none;
+        }
+    }
+}
 
+.page__aside--open {
+    .menu__open {
+        z-index:999;
+    }  
 }
 
 .nav-block {
     @extend %clearfix;
     @extend nav;
+    padding: $gutter;
+    margin:0;
+    text-align:center;
+    @include breakpoint($medium){
+        text-align:left;
+    }
     h2 {
-        background: get-color(gray, "white");
-        color: get-color(base,"primary");
-        padding: 0 $gutter / 2 0 $gutter;
-        @include ritmo-font-size($h5-font-size);
+        background: get-color(base, "primary");
+        color: get-color(gray,"white");
+        padding: 0 $gutter / 2;
+        @include ritmo-font-size($h4-font-size);
+        @include breakpoint($medium){
+            @include ritmo-font-size($h5-font-size);
+            padding: 0 $gutter / 2 0 $gutter;
+            left: - $gutter;
+        }
         font-weight:bold;
         display:inline-block;
         position:relative;
-        left: - $gutter;
+        margin-bottom: $gutter / 2;
         //border-bottom: 2px solid get-color(gray, "light");
     };
     ul {
@@ -22,23 +52,29 @@
             width:100%;
             a {
                 position:relative;
-                padding-right:$gutter;
                 display:block;
-                @include ritmo-font-size($h6-font-size);
+                @include ritmo-font-size($h5-font-size);
+                @include breakpoint($medium){
+                    @include ritmo-font-size($h6-font-size);
+                    padding-right:$gutter;
+                }
                 @include kill-link(get-color(gray, "black"));
+                font-weight:normal;
             }
             &:hover a {
                 text-decoration:none;
-                font-weight:bold(a);
-                &:before {
-                    content:"";
-                    width: 1em;
-                    height:1em;
-                    background-color:get-color(gray,"white");
-                    position:absolute;
-                    top:ritmo(0.5);
-                    left: -$gutter;
-                }
+                font-weight:bold();
+                @include breakpoint($medium){
+                    &:before {
+                        content:"";
+                        width: 1em;
+                        height:1em;
+                        background-color:get-color(base,"primary");
+                        position:absolute;
+                        top:ritmo(0.5);
+                        left: -$gutter;
+                    }
+                } 
             }
         } 
     }

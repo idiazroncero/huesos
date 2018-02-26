@@ -190,3 +190,27 @@
         @extend .button;
     }
 }
+
+
+// NOTIFICACIONES
+
+.block-private-message-notification-block {
+    height:auto;
+    width:auto;
+    @include ritmo-font-size($h6-font-size);
+    text-transform: uppercase;
+    .private-message-page-link {
+        height:auto;
+        width:auto;
+        line-height:ritmo(3);
+        width:ritmo(3);
+        height:ritmo(3);
+        border-radius:50%;
+        vertical-align:baseline;
+        display:inline-block;
+        text-align:center;
+        background-color: get-color(state, success);
+        position:static;
+        @include kill-link(get-color(gray, "white"));
+    }
+}

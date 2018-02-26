@@ -55,10 +55,11 @@
     }
 }
 
-.front__menu__open {
+.menu__open {
     @include kill-button();
     padding:0;
     margin-bottom: $gutter / 2;
+    width:$gutter;
     &:active {
         .tooltip {
             display:none !important; // for the firefox bug
@@ -66,7 +67,7 @@
     }
 }
 
-.front__burguer__wrapper {
+.burguer__wrapper {
     overflow:hidden;
     transition: border-radius $transition-time ease-out;
     border-radius:0;
@@ -74,7 +75,7 @@
 }
 
 
-.front__burguer {
+.burguer {
     display:block;
     width:$gutter;
     margin-bottom:4.5px;
@@ -91,7 +92,7 @@
     }
 }
 
-.front__cross {
+.cross {
     background-color:get-color(gray, "white");
     position:absolute;
     width:$gutter * 0.75;
@@ -111,15 +112,15 @@
     }
 }
 
-.front__menu__open--open {
-    .front__burguer__wrapper {
+.menu__open--open {
+    .burguer__wrapper {
         border-radius:50%;
     }
-    .front__burguer {
+    .burguer {
         height:9px;
         margin:0;
     }
-    .front__cross {
+    .cross {
         margin-left: -$gutter * 0.375;
         &:nth-child(4) {
             transform: translateY(-50%) rotate(45deg) scale(1);
@@ -129,9 +130,9 @@
         }
     }
     @include breakpoint(max-width $small) {
-        .front__burguer {
+        .burguer {
             background-color: get-color(base, "secondary");
-            &.front__cross {
+            &.cross {
                 background-color: get-color(base, "primary");
             }
         }

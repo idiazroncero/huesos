@@ -91,10 +91,17 @@
         width:100px;
         height:100px;
         margin-top:0;
-        margin-bottom:0;
+        margin-bottom: $gutter;
+        @include breakpoint($small) {
+            margin-bottom:0;
+        }
     }
     .profile__desc {
         @include ritmo-font-size($h6-font-size);
+        text-align:center;
+        @include breakpoint($small) {
+            text-align:left;
+        }
     }
 }
 

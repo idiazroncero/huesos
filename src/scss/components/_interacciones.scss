@@ -1,16 +1,26 @@
+.interacciones__wrapper {
+    margin-top:auto;
+    @include breakpoint($medium) {
+        margin-top:0;
+    }
+}
+
 .interacciones {
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    width:100%;
-    padding: $gutter;
-    background-color: lighten(get-color(base, "secondary"), 25%);
+    // position:absolute;
+    // bottom:0;
+    // left:0;
+    // right:0;
+    // width:100%;
+    padding: $gutter / 2;
+    @include breakpoint($small) {
+        padding: $gutter;
+    }
+    background-color: get-color(base, "secondary");
     display:flex;
     flex-wrap:wrap;
     margin-bottom:0;
-    .private_message_link_wrapper {
 
+    .private_message_link_wrapper {
         margin-top:$gutter / 4;
     }
     .private_message_link_wrapper a,

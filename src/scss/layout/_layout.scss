@@ -43,24 +43,41 @@ main {
 }
 
 .page__aside {
-    background-color: lighten(get-color(base, "primary"), 60%);
-    padding: $gutter * 2 $gutter $gutter $gutter;
+    background-color: get-color(gray, "white");
     width:100vw;
-    margin-left: -$gutter / 2;
-    @include breakpoint($small) {
-        margin-left:0;
-        width:100%;    
-    }
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+    top:0;
+    right:auto;
+    bottom:0;
+    left:-100%;
+    width:100%;
+    transition: left $transition-time ease-in-out;
+    padding-top:$gutter * 2;
+    
     @include breakpoint($medium) {
+        padding-top:0;
+        box-shadow: $gutter 0 ($gutter / 2) (- $gutter / 2) rgba(0,0,0,0.05) inset;
+        border-left:1px solid get-color(gray, "lighter");
         width:25%;
         width:25vw;
-        position:fixed;
         top:0;
         right:0;
         bottom:0;
+        left:auto;
         height:100%;
+        justify-content:flex-end;
     }  
     ul {
         text-transform: uppercase;
+
+    }
+}
+
+.page__aside--open {
+    left:0;
+    @include breakpoint($medium) {
+        left:auto;
     }
 }
