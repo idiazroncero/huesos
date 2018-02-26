@@ -39,7 +39,8 @@
 .front__layer__inner {
     position: fixed;
     width:100%;
-    top:0; //ritmo(8);
+    height:100%;
+    height:100vh;
     left:-100%; //ritmo(8);
     bottom: 0; // ritmo(8);
     transition: left $transition-time ease-out;
@@ -48,6 +49,7 @@
     background-color: get-color(base, "primary");
     z-index:z-index(front-layer);
     @include breakpoint($small) {
+        height:auto;
         width:auto;
         position:absolute;
         top:0; //ritmo(8);

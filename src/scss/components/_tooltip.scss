@@ -60,7 +60,9 @@
 
 .front__layer {
     .tooltip {
-        display:none !important;
+        @include breakpoint(max-width $small) {
+            display:none !important;
+        }
         @include breakpoint($small) {
             border-left:$gutter solid get-color(gray, "white");
             height:1.5rem;

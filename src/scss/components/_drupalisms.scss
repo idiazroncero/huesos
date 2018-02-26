@@ -160,6 +160,16 @@
     }
     tr {
         position:relative;
+        @include breakpoint(max-width $small) {
+            display: block; // It seems mandatery for chrome on adnroid
+            width:100%;
+            padding: 0 10px;
+        }
+    }
+    td {
+        @include breakpoint(max-width $small) {
+            display: block; // It seems mandatery for chrome on adnroid
+        }       
     }
     th,td { // delegate the border on inner content
         border:none;
@@ -168,7 +178,7 @@
     td:nth-child(2) > div {
         //border: 2px solid get-color(gray, "base");
         background-color: get-color(gray, "smoke");
-        padding: $gutter $gutter / 4;
+        padding: $gutter $gutter / 2;
         @include breakpoint($small) {
             padding: $gutter / 2;
         }
@@ -186,7 +196,10 @@
         vertical-align:middle;
         position:absolute;
         top: $gutter / 4;
-        left: $gutter / 4;
+        left: $gutter / 2;
+        @include breakpoint($small) {
+            position:static;
+        }
     }
     a.tabledrag-handle {
         margin-left:0;

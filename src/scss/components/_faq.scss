@@ -1,0 +1,24 @@
+
+.faq-description {
+    margin-bottom: $gutter;
+    font-weight:bold();
+}
+
+.faq-question-answer {
+    margin-bottom: $gutter;
+    padding-bottom: $gutter;
+    border-bottom: 1px solid get-color(gray, "lighter");
+}
+
+.faq-question {
+    @include ritmo-font-size($h4-font-size);
+    font-weight:normal;
+    a {
+        @include kill-link-decoration();
+    }
+}
+
+.faq-question,
+.faq-answer  {
+    padding:0;
+}

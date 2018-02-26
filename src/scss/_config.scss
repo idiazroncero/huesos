@@ -265,7 +265,7 @@ $blockquote-font: $font-secondary;
 // ------
 
 $link-strategy: underline; // Alternatives: underline, border, smart, mark
-$link-highlight-on-hover: true; // "false" highlights the link before :hover
+$link-highlight-on-hover: false; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
 $link-border-color: get-color(blue, base);
@@ -278,9 +278,9 @@ $link-mark-color: get-color(green, lighter);
 $link-smart-background: get-color(gray, "white");
 
 // Link colors
-$link-color: get-color(text, "primary");
-$link-visited: get-color(text, "primary");
-$link-hover: get-color(gray, light);
+$link-color: lighten(get-color(base, "primary"), 15%);
+$link-visited: lighten(get-color(base, "primary"), 5%);
+$link-hover: lighten(get-color(base, "primary"), 25%);
 $link-active: get-color(text, "primary");
 
 

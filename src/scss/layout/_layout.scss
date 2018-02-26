@@ -2,6 +2,12 @@ body {
     max-width: $max-width;
     @include block-align($layout-align);
     position:relative; // Absolute scope for aside
+    &.prevent-scroll {
+        position:fixed;
+        width:100%;
+        height: 100%;
+        overflow:hidden;
+    }
 }
 
 main {
