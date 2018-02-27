@@ -1,6 +1,6 @@
 body {
     max-width: $max-width;
-    @include block-align($layout-align);
+    margin: 0 auto 0 0;
     position:relative; // Absolute scope for aside
     &.prevent-scroll {
         position:fixed;

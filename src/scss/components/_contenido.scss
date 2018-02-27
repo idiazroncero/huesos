@@ -113,7 +113,7 @@
 }
 
 .contenido__title--inverse {
-    h1 a, p a {
+    h1, p {
         @include kill-link(get-color(gray,'white'));
     }
     p {
