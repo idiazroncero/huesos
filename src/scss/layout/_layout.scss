@@ -57,9 +57,10 @@ main {
     padding-top:$gutter * 2;
     
     @include breakpoint($medium) {
+        background-color: rgba(get-color(base, "primary"), 0.01);
         padding-top:0;
-        box-shadow: $gutter 0 ($gutter / 2) (- $gutter / 2) rgba(0,0,0,0.05) inset;
-        border-left:1px solid get-color(gray, "lighter");
+        box-shadow: $gutter 0 ($gutter / 2) (- $gutter / 1.99) rgba(get-color(base, "primary"),0.04) inset;
+        //border-left:1px solid get-color(gray, "lighter");
         width:25%;
         width:25vw;
         top:0;

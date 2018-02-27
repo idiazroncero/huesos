@@ -31,14 +31,15 @@
         text-align:left;
     }
     h2 {
-        background: get-color(base, "primary");
-        color: get-color(gray,"white");
+        //background: get-color(base, "primary");
+        //color: get-color(gray,"white");
         padding: 0 $gutter / 2;
         @include ritmo-font-size($h4-font-size);
         @include breakpoint($medium){
             @include ritmo-font-size($h5-font-size);
-            padding: 0 $gutter / 2 0 $gutter;
-            left: - $gutter;
+            padding:0;
+            //padding: 0 $gutter / 2 0 $gutter;
+            //left: - $gutter;
         }
         font-weight:bold;
         display:inline-block;
@@ -77,5 +78,20 @@
                 } 
             }
         } 
+    }
+    &:nth-child(1) {
+        background-color: rgba(get-color(base, "primary"), 0.02);
+    }
+    &:nth-child(2) {
+        background-color: rgba(get-color(base, "primary"), 0.04);
+    }
+    &:nth-child(3) {
+        background-color: rgba(get-color(base, "primary"), 0.06);
+    }
+    &:nth-child(4) {
+        background-color: rgba(get-color(base, "primary"), 0.08);
+    }
+    &:nth-child(5) {
+        background-color: rgba(get-color(base, "primary"), 0.1);
     }
 }
