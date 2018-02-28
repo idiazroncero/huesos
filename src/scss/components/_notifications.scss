@@ -77,9 +77,11 @@
     border:none;
     padding:0;
     margin:0;
+    background:transparent;
     &:hover, &:focus, &:active {
         background:none;
         color: get-color(gray, "black");
+        box-shadow:none;
     }
     &:before {
         display:block;
