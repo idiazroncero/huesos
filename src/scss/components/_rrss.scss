@@ -21,7 +21,14 @@
     background-color: get-color(social, facebook);
 }
 .rrss__whatsapp {
+    display:none !important;
     background-color: get-color(social, whatsapp);
+}
+
+.touchevents {
+    .rrss__whatsapp {
+        display:block !important;
+    }
 }
 
 // Social login block

@@ -23,17 +23,22 @@
         }
         .form-item-pass {
             order:3;
-            align-items:stretch;
+            align-items:flex-start;
             justify-content:space-between;
-            margin:0;
-            padding:0;
-            border:none;
+            // margin:0;
+            // padding:0;
+            // border:none;
             .form-item {
-                align-items: flex-start;
-                width:45%;
-                margin:0;
-                padding:0;
-                border:none;
+                @include breakpoint($small) {
+                    align-items: flex-start;
+                    width:45%;
+                    margin:0;
+                    padding:0;
+                    border:none;
+                }
+                input {
+                    width:100%;
+                }
             }
         }
         #password-policy-status {
@@ -50,6 +55,14 @@
                 border:none;
                 padding: $gutter / 6 $gutter $gutter / 4 0;
             }
+            // table,
+            // thead, 
+            // tr,
+            // td,
+            // th,
+            // tbody {
+            //     display:block;
+            // }
         }
     }
 

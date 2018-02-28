@@ -32,6 +32,9 @@
 
 .contenido__autor {
     text-transform: uppercase;
+    a {
+        @include kill-link-decoration();
+    }
     //@include ritmo-font-size($h4-font-size);
 }
 .contenido__autor__por {

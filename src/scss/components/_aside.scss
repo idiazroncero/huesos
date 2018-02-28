@@ -79,19 +79,20 @@
             }
         } 
     }
-    &:nth-child(1) {
+    // First child is .button
+    &:nth-child(2) {
         background-color: rgba(get-color(base, "primary"), 0.02);
     }
-    &:nth-child(2) {
+    &:nth-child(3) {
         background-color: rgba(get-color(base, "primary"), 0.04);
     }
-    &:nth-child(3) {
+    &:nth-child(4) {
         background-color: rgba(get-color(base, "primary"), 0.06);
     }
-    &:nth-child(4) {
+    &:nth-child(5) {
         background-color: rgba(get-color(base, "primary"), 0.08);
     }
-    &:nth-child(5) {
+    &:nth-child(6) {
         background-color: rgba(get-color(base, "primary"), 0.1);
     }
 }

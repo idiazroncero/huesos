@@ -6,10 +6,14 @@
     margin-bottom: $spacer;
     padding-bottom: $spacer;
     border-bottom: 1px dotted get-color(gray, "lighter");
+    width:100%;
     label {
+        width:100%;
         margin-right: $gutter / 2;
     }
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]  {
         flex:1;
         opacity: 0.5;
         transition: opacity $transition-time ease-in-out;
@@ -134,11 +138,22 @@
     br {height:0; width:0};
 }
 
-.password-confirm {
+div.password-confirm { // para diferenciar de input
     margin:ritmo(2) 0 0 0;
     @include ritmo-font-size($h6-font-size);
     color: get-color(gray, "dark");
     br {height:0; width:0};
+    .error,.ok {
+        padding: 0 4px;
+        color: get-color(gray, "white");
+        font-weight:bold,
+    }
+    .error {
+        background-color: get-color(state, "warning");
+    }
+    .ok {
+        background-color: get-color(state, "success");
+    }
 }
 
 .g-recaptcha {

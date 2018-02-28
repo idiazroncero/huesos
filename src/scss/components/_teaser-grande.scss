@@ -1,7 +1,9 @@
 .teaser-grande {
     //background-color: get-color(gray, "smoke");
     padding: ritmo(3);
-    display:flex;
+    @include breakpoint($small) {
+        display:flex;
+    }
     position:relative;
     &:hover {
         //background-color: get-color(gray, "white");
@@ -14,8 +16,14 @@
 .teaser-grande__bg {
     @include layer();
     opacity:1;
-    z-index:-1;
+    z-index:0;
     transition: opacity $transition-time ease-in-out;
+}
+
+.teaser-grande__img,
+.teaser-grande__contenido {
+    position:relative;
+    z-index:1;
 }
 
 .teaser-grande__contenido {
@@ -25,7 +33,7 @@
 
 .teaser-grande__title {
     @include ritmo-font-size($h3-font-size);
-    margin:0;
+    margin:0 0 $gutter / 4 0;
 }
 
 .teaser-grande__autor {
@@ -34,8 +42,15 @@
 }
 
 .teaser-grande__img {
-    flex: 0 0 25%;
-    margin-right: $gutter;
+    margin-bottom: $gutter / 2;
+    @include breakpoint($small) {
+        margin-bottom:0;
+        flex: 0 0 25%;
+        margin-right: $gutter;
+    }
+    img {
+        width:100%;
+    }
 }
 
 .teaser-grande__texto {

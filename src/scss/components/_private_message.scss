@@ -212,5 +212,9 @@
         background-color: get-color(state, success);
         position:static;
         @include kill-link(get-color(gray, "white"));
+        @include kill-link-decoration();
+        &:hover {
+            background-color: get-color(gray, "black");
+        }
     }
 }

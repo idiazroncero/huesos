@@ -1,6 +1,8 @@
 .teaser-estandar {
     padding: ritmo(3);
-    display:flex;
+    @include breakpoint($small) {
+        display:flex;
+    }
     position:relative;
     &:hover {
         .teaser-estandar__bg {
@@ -12,8 +14,14 @@
 .teaser-estandar__bg {
     @include layer();
     opacity:1;
-    z-index:-1;
+    z-index:0;
     transition: opacity $transition-time ease-in-out;
+}
+
+.teaser-estandar__img,
+.teaser-estandar__contenido {
+    position:relative;
+    z-index:1;
 }
 
 .teaser-estandar__contenido {
@@ -31,8 +39,12 @@
 }
 
 .teaser-estandar__img {
-    height:100px;
-    margin-right: $gutter;
+    margin-bottom: $gutter / 2;
+    @include breakpoint($small) {
+        margin-bottom:0;
+        height:100px;
+        margin-right: $gutter;
+    }
     img {
         height:100%;
         width: auto;

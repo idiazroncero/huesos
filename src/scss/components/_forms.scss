@@ -409,3 +409,10 @@
         height: 100%;
     }
 }
+
+.js-form-type-radio {
+    .form-radio {
+        width:auto;
+        margin-right:$gutter / 2;
+    }
+}

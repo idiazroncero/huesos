@@ -9,9 +9,11 @@
 }
 
 .slick__item {
-    float:left;
-    width:33.3332%;
-    margin-bottom:0;
+    @include breakpoint($small) {
+        float:left;
+        width:33.3332%;
+        margin-bottom:0;
+    }
 }
 
 .slick-prev, .slick-next {
@@ -20,10 +22,12 @@
 
 @supports (display:grid) {
     .slick {
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: $gutter;
+        @include breakpoint($small) {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: $gutter;
+        } 
         // reset cleafix
         &:before, &:after {
             display:none;
