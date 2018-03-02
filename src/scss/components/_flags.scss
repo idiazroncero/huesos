@@ -25,3 +25,47 @@
         display:block;
     }
 }
+
+.flag__favorito {
+    padding: 0 $gutter / 4;
+    margin-right:5px;
+    a {
+        height: $base-line-height;
+        display:flex;
+        align-items:center;
+    }
+    svg {
+        height: $base-line-height * 0.85;
+        width:auto;
+        display:block;
+        fill: get-color(state, "action");
+    }
+}
+
+.flag__favorito--off {
+    .flag__star--on {
+        display:none;
+    }
+    &:hover {
+        .flag__star--on {
+            display:block;
+        }
+        .flag__star--off {
+            display:none;
+        }       
+    }
+}
+
+.flag__favorito--on {
+    .flag__star--off {
+        display:none;
+    }
+    &:hover {
+        .flag__star--off {
+            display:block;
+        }
+        .flag__star--on {
+            display:none;
+        }       
+    }
+}

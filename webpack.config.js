@@ -84,6 +84,14 @@ module.exports = {
 					publicPath : '../',
 				},
 			},
+			{
+				test: /\.(png)$/,
+				loader : 'file-loader',
+				options : {
+					name : 'images/[name].[ext]',
+					publicPath : '../',
+				},
+			},
 		],
 	},
 	plugins: [

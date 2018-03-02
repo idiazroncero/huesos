@@ -13,27 +13,34 @@
     // width:100%;
     padding: $gutter / 2;
     @include breakpoint($small) {
-        padding: $gutter;
+        padding: $gutter / 2 $gutter;
     }
     background-color: get-color(base, "secondary");
     display:flex;
+    justify-content:center;
     flex-wrap:wrap;
     margin-bottom:0;
 
     .private_message_link_wrapper {
-        margin-top:$gutter / 4;
+        margin-top:$gutter / 2;
     }
-    .private_message_link_wrapper a,
-    .flag__favorito a {
-        @include ritmo-font-size($h7-font-size,4);
+    .private_message_link_wrapper a {
+        background-image: url('../../../images/chat.png');
+        background-repeat:no-repeat;
+        background-position: 0 50%;
+        background-size: $gutter / 2;
+        @include ritmo-font-size($h7-font-size,2);
         text-transform: uppercase;
         font-weight: bold(a);
-        @include kill-link(get-color(gray, "white"));
-        padding: 0 ritmo(2);
+        @include kill-link(get-color(gray, "black"));
+        padding: 0 $gutter / 2 0  $gutter / 1.25;
         //height:25px;
-        margin-right:5px;
-        background-color: #000;
-        display:inline-block;
-        vertical-align:top;
+        display:block;
+        &:hover {
+            background-image: url('../../../images/chat.png');
+            background-size: $gutter / 1.6;
+            background-repeat:no-repeat;
+            background-position: 0 50%;
+        }
     }
 }

@@ -15,19 +15,8 @@
     right:0;
     transform: translateY(-100%);
     animation: pop 1s ease-in-out 0.75s 1 normal forwards ;
+    z-index: z-index(notifications);
 }
-
-// .notifications__toggler {
-//     @include kill-button();
-//     position:absolute;
-//     top:0;
-//     left:100%;
-//     padding:0 $gutter / 4;
-//     background-color: get-color(green, dark);
-//     &:hover, &:focus {
-//         background-color: get-color(green, darker);
-//     }
-// }
 
 .message {
 }

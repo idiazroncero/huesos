@@ -11,13 +11,16 @@
     position:absolute;
     display:none;
     padding: 0 $gutter/2;
+    border-radius:3px;
     background: get-color(base, "primary");
     color: get-color(gray, "white");
-    @include ritmo-font-size($h6-font-size);
+    @include ritmo-font-size($h7-font-size, 3);
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+    font-weight: bold();
     white-space: nowrap;
     z-index: z-index(tooltip);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
 }
 
 .tooltip--right {
@@ -30,6 +33,18 @@
     top:50%;
     transform: translateY(-50%);
     right:100%;
+    &:before {
+        content: '';
+        width:0;
+        height:0;
+        border-width: 5px;
+        border-style:solid;
+        border-color: transparent transparent transparent get-color(base, "primary");
+        position:absolute;
+        top:50%;
+        left:100%;
+        transform:translateY(-50%);
+    }
 }
 
 .tooltip--bottom {
@@ -64,8 +79,9 @@
             display:none !important;
         }
         @include breakpoint($small) {
-            border-left:$gutter solid get-color(gray, "white");
+            margin-left:$gutter;
             height:1.5rem;
+            border-radius: 0 3px 3px 0;
             &:before {
                 content:"";
                 position:absolute;
@@ -111,7 +127,6 @@
     .tooltip {
         background-color: get-color(state, 'success');
         @include ritmo-font-size($h7-font-size, 2);
-        border-radius: 5px;
         padding: $gutter/6 $gutter/4;
         color:get-color(gray, "white");
         box-shadow: 0px 0px 4px rgba(0,0,0,0.2);

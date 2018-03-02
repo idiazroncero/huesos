@@ -33,10 +33,12 @@
 .contenido__autor {
     text-transform: uppercase;
     a {
+        @include kill-link(get-color(gray,'black'));
         @include kill-link-decoration();
     }
     //@include ritmo-font-size($h4-font-size);
 }
+
 .contenido__autor__por {
     font-weight: $light;
 }
@@ -100,9 +102,6 @@
         margin:0;
         @include ritmo-font-size($h3-font-size);
         line-height:1;
-        a { 
-            //@include kill-link(get-color(gray,'white'));
-        }
     }
     p {
         margin:auto 0 0 0;
@@ -116,11 +115,12 @@
 }
 
 .contenido__title--inverse {
-    h1, p {
-        @include kill-link(get-color(gray,'white'));
+    h1 {
+        color: get-color(gray,'white');
     }
-    p {
-        border-bottom-color: get-color(gray, "white");
+    .contenido__autor a { 
+        @include kill-link(get-color(gray,'white'));
+        @include kill-link-decoration();
     }
 }
 
@@ -211,6 +211,7 @@
             font-weight:$light;
             text-transform: uppercase;
             color: get-color(gray, "white");
+            hyphens: auto;
         }
     } 
     &:hover,
