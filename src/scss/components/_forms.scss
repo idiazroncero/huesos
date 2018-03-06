@@ -3,26 +3,26 @@
     margin-bottom: $gutter;
     padding-bottom: $gutter;
     .js-form-type-vertical-tabs {display:none;}
-    #edit-actions {
-        border-top: $gutter / 4 solid get-color(base, "primary");
-        padding: $gutter 0;
-    }
+    // #edit-actions {
+    //     border-top: $gutter / 4 solid get-color(base, "primary");
+    //     padding: $gutter 0;
+    // }
 } 
 
 .step {
     background-color: get-color(gray, "smoke");
     margin-left: -$gutter / 2;
     margin-bottom:0;
-    padding: $gutter $gutter 0 $gutter;
+    padding: $gutter;
     @include breakpoint($small) {
         margin-left: $gutter;
         margin-right:$gutter;
-        margin-bottom: $gutter * 4;
+        margin-bottom: $gutter * 2;
     }
     h2 {
         @include ritmo-font-size($h5-font-size);
         @include breakpoint($small) {
-            @include ritmo-font-size($h4-font-size);
+            @include ritmo-font-size($h5-font-size);
         }
         @extend %peque;
     }

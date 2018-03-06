@@ -6,6 +6,10 @@
     margin-bottom: ritmo(4);
 }
 
+.contenido__main__portada {
+    margin-bottom: $gutter * 2;
+}
+
 .contenido__aside {
     margin-bottom: $gutter;
     display:flex;
