@@ -6,12 +6,16 @@
         position:fixed;
         top:0;
         bottom:0;
-        left:calc(-100% + 100px);
+        left:calc(-50% + 100px);
+        width:50%;
+        box-shadow: 0px 0px 0px 0px rgba(get-color(gray, "black"), 0);
     }
     width:100%;
     height:100%;
     z-index:z-index('front-menu');
-    transition: left $transition-time * 3 cubic-bezier(.43,-0.15,.41,.92) $transition-time ;
+    transition: left $transition-time * 3 cubic-bezier(.43,-0.15,.41,.92) $transition-time,
+                box-shadow $transition-time * 3 linear
+    ;
     &:before {
         content:"";
         position:absolute;
@@ -25,7 +29,8 @@
 
 .front__layer--open {
     @include breakpoint($small) {
-        left:0;
+        box-shadow: 0px 0px 15px 0px rgba(get-color(gray, "black"), 0.2);
+        left: 0;
     }
     .front__layer__inner {
         left:0;
@@ -46,7 +51,7 @@
     transition: left $transition-time ease-out;
     display:flex;
     flex-direction:column;
-    background-color: get-color(base, "primary");
+    background-color: get-color(gray, "white");
     z-index:z-index(front-layer);
     @include breakpoint($small) {
         height:auto;

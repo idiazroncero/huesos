@@ -9,6 +9,8 @@
         background: get-color(gray, "white");
         flex:0 0 auto;
         width:100%;
+        border: 1px solid  get-color(gray, "black");
+        border-right:none;
         &:hover, 
         &:focus {
             margin-bottom:0;
@@ -40,8 +42,4 @@
 
 .searchbox--page {
     margin-bottom:$gutter;
-    input[type="text"] {
-        border: 1px solid  get-color(gray, "black");
-        border-right:none;
-    }
 }

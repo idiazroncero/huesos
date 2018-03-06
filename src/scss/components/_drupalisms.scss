@@ -10,6 +10,10 @@
     label {
         width:100%;
         margin-right: $gutter / 2;
+        &.option {
+            width:auto;
+            margin-right:0;
+        }
     }
     input[type="text"],
     input[type="email"],

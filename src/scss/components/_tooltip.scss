@@ -106,22 +106,22 @@
     }
 }
 
-.front__layer--open {
-    @include breakpoint($small) {
-        .tooltip--right {
-            left:auto;
-            right:100%;
-            transform: translateY(-50%);
-            border-left:none;
-            border-right:$gutter solid get-color(gray, "white");
-            &:before {
-                right:auto;
-                left:100%;
-                border-color: transparent transparent transparent get-color(base, "primary");
-            }
-        } 
-    }   
-}
+// .front__layer--open {
+//     @include breakpoint($small) {
+//         .tooltip--right {
+//             left:auto;
+//             right:100%;
+//             transform: translateY(-50%);
+//             border-left:none;
+//             border-right:$gutter solid get-color(gray, "white");
+//             &:before {
+//                 right:auto;
+//                 left:100%;
+//                 border-color: transparent transparent transparent get-color(base, "primary");
+//             }
+//         } 
+//     }   
+// }
 
 .contenido__leido {
     .tooltip {
