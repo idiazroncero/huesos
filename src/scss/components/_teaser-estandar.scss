@@ -31,6 +31,11 @@
 
 .teaser-estandar__title {
     @include ritmo-font-size($h3-font-size);
+    margin-bottom:0;
+}
+
+.teaser-grande__subtitulo {
+    // text-transform: uppercase;
 }
 
 .teaser-estandar__autor {
@@ -53,8 +58,10 @@
 
 .teaser--inverse {
     .teaser-estandar__title,
+    .teaser-estandar__subtitulo,
     .teaser-estandar__autor,
     .teaser-grande__title,
+    .teaser-grande__subtitulo,
     .teaser-grande__autor,
     .teaser-grande__texto {
         color: get-color(gray, "white");

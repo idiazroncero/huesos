@@ -99,14 +99,23 @@
         font-weight: normal;
         max-width:250px;
         font-family: $font-main;
-        margin:0;
+        margin-bottom: $gutter / 2;
         @include ritmo-font-size($h3-font-size);
         line-height:1;
+        color: get-color(text, "primary");
     }
-    p {
-        margin:auto 0 0 0;
+    .contenido__subtitulo {
+        margin:0;
         font-family:$font-secondary;
         @include ritmo-font-size($h6-font-size);
+        font-weight:bold(p);
+        text-transform: uppercase;
+    }
+    
+    .contenido__autor {
+        margin:auto 0 0 0;
+        font-family:$font-secondary;
+        @include ritmo-font-size($h7-font-size);
         font-weight:bold(p);
         text-transform: uppercase;
         letter-spacing: 0.3em;
@@ -115,7 +124,8 @@
 }
 
 .contenido__title--inverse {
-    h1 {
+    h1,
+    .contenido__subtitulo {
         color: get-color(gray,'white');
     }
     .contenido__autor a { 
@@ -212,6 +222,7 @@
             text-transform: uppercase;
             color: get-color(gray, "white");
             hyphens: auto;
+            margin-bottom:0;
         }
     } 
     &:hover,

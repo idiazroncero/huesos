@@ -26,8 +26,8 @@
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 18px;
-$vertical-rhythm: 1.5;
+$base-font-size: 17px;
+$vertical-rhythm: 1.4;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -164,7 +164,7 @@ $colors: (
     "primary":   #2b2b2b,
     "heading":   #3b3b3b,
     "active": #383837,
-    "mark" : #FCEE35,
+    "mark" : rgb(138, 137, 134),
   ),
 
   background: (

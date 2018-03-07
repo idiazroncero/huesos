@@ -33,7 +33,11 @@
 
 .teaser-grande__title {
     @include ritmo-font-size($h3-font-size);
-    margin:0 0 $gutter / 4 0;
+    margin:0;
+}
+
+.teaser-grande__subtitulo {
+    text-transform: uppercase;
 }
 
 .teaser-grande__autor {
