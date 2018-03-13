@@ -24,10 +24,12 @@
 }
 
 .contenido__meta {
+    width:100%;
+}
 
-    // a {
-    //     @include kill-link(get-color(gray, "base"));
-    // }
+.contenido__estado {
+    font-weight:bold();
+    margin-left: auto;
 }
 
 .contenido__autor {
@@ -46,7 +48,8 @@
 .contenido__fecha {
     color: get-color(gray, "base");
     @extend %peque;
-    font-weight: normal;    
+    font-weight: normal;  
+    display:flex;  
 }
 
 .contenido__link-layer {

@@ -121,3 +121,7 @@ blockquote {
 .escondido {
     @extend %escondido;
 }
+
+mark {
+    padding: 0 3px;
+}

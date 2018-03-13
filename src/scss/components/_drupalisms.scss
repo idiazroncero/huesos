@@ -274,3 +274,9 @@ div.password-confirm { // para diferenciar de input
 .login-title {
     display:none;
 }
+
+
+// TODO: Better solution using custom modules
+.field--name-revision-log-message {
+    display:none !important;
+}
