@@ -177,7 +177,8 @@
 
 .contenido--teaser {
     margin:0;
-    &:hover {
+    &:hover,
+    &.js-hover {
         .contenido__fit {
             opacity:1; 
             transform: scale(1.01);
@@ -186,7 +187,6 @@
             opacity:0;
         }
     }
-    &.js-hover,
     &.auto-hover {
         .contenido__fit {
             opacity:1;
