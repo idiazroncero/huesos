@@ -50,18 +50,6 @@
             display:flex;
             align-items:center;
         }            
-        // img {
-        //     margin: $spacer 0 0 0;
-        // }
-        // span {
-        //     flex:0 1 auto;
-        //     padding: 0 0 0 $spacer;
-        //     margin: $spacer 0;
-        // }
-        // .form-submit {
-        //     flex: 0 1 auto;
-        //     margin-left:auto;
-        // }
     }
     .image-widget__preview {
         margin-right: auto;
@@ -81,14 +69,14 @@
     } 
 }
 
-// .form-file {
-// 	width: 0.1px;
-// 	height: 0.1px;
-// 	opacity: 0;
-// 	overflow: hidden;
-// 	position: absolute;
-// 	z-index: -1;
-// }
+.form-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
 
 .description {
     display:flex;
@@ -177,6 +165,9 @@ div.password-confirm { // para diferenciar de input
     textarea {
         width:100%;
     }
+    input[type="submit"] {
+        width:auto;
+    }
     tr {
         position:relative;
         @include breakpoint(max-width $small) {
@@ -194,7 +185,8 @@ div.password-confirm { // para diferenciar de input
         border:none;
         padding:0;
     }
-    td:nth-child(2) > div {
+    td:nth-child(2) > div,
+    td:nth-child(2) > fieldset {
         //border: 2px solid get-color(gray, "base");
         background-color: get-color(gray, "smoke");
         padding: $gutter $gutter / 2;
@@ -279,4 +271,11 @@ div.password-confirm { // para diferenciar de input
 // TODO: Better solution using custom modules
 .field--name-revision-log-message {
     display:none !important;
+}
+
+.form-required {
+    *:after {
+        content:"*";
+        color: get-color(state, "warning");
+    }
 }
