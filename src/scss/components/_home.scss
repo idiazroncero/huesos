@@ -36,6 +36,9 @@
                 .contenido__title { 
                     position:absolute;
                     min-height: auto;
+                    h1 {
+                        max-width:75%;
+                    }
                 }
                 .contenido__inner {
                     padding:0 0 100% 0;

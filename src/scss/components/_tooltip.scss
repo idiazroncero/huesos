@@ -27,12 +27,26 @@
     top:50%;
     transform: translateY(-50%);
     left:100%;
+    left: calc(100% + #{$gutter / 2});
+    &:before {
+        content: '';
+        width:0;
+        height:0;
+        border-width: 5px;
+        border-style:solid;
+        border-color: transparent get-color(base, "primary") transparent transparent;
+        position:absolute;
+        top:50%;
+        right:100%;
+        transform:translateY(-50%);
+    }
 }
 
 .tooltip--left {
     top:50%;
     transform: translateY(-50%);
     right:100%;
+    right: calc(100% + #{$gutter / 2});
     &:before {
         content: '';
         width:0;
@@ -49,6 +63,7 @@
 
 .tooltip--bottom {
    top:100%;
+   top: calc(100% + #{$gutter / 2});
    left:50%;
    transform: translateX(-50%);
    &:before {
@@ -67,8 +82,21 @@
 
 .tooltip--top {
     bottom:100%;
+    bottom: calc(100% + #{$gutter / 2});
     left:50%;
     transform: translateX(-50%);
+    &:before {
+        content: '';
+        width:0;
+        height:0;
+        border-width: 5px;
+        border-style:solid;
+        border-color: get-color(base, "primary") transparent transparent transparent;
+        position:absolute;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+    }
  }
 
 // In the front menu
@@ -80,7 +108,7 @@
         }
         @include breakpoint($small) {
             margin-left:$gutter;
-            height:1.5rem;
+            height:$gutter;
             border-radius: 0 3px 3px 0;
             &:before {
                 content:"";

@@ -81,8 +81,14 @@
     iframe {
         width:100%;
         height:100%;
+    }  
+}
+
+@supports (object-fit:cover) {
+    .contenido__fit img {
+        height:100%;
+        object-fit:cover;
     }
-    
 }
 
 .contenido__title {
@@ -100,7 +106,6 @@
     transition: all $transition-time linear;
     h1 {
         font-weight: normal;
-        max-width:250px;
         font-family: $font-main;
         margin-bottom: $gutter / 2;
         @include ritmo-font-size($h3-font-size);
@@ -225,7 +230,7 @@
             font-weight:$light;
             text-transform: uppercase;
             color: get-color(gray, "white");
-            hyphens: auto;
+            // hyphens: auto;
             margin-bottom:0;
         }
     } 
@@ -276,7 +281,8 @@
     background-color: get-color(base, "secondary");
     z-index:9;
     opacity:0;
-    transition: all $transition-time ease-out;
+    transition: right $transition-time / 2 ease-in-out,
+                opacity $transition-time ease-in-out;
     display:flex;
     flex-direction:column;
     padding: $gutter; 
