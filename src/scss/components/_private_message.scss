@@ -218,3 +218,13 @@
         }
     }
 }
+
+// Load prev
+
+#load-previous-messages-button-wrapper {
+    position:absolute;
+    top:$gutter;
+    right:$gutter;
+    font-weight:bold();
+    @include ritmo-font-size($h6-font-size);
+}

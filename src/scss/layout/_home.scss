@@ -4,6 +4,7 @@
         @include breakpoint($small) {
             padding:$gutter;
             padding-left: 100px;
+            max-width: $max-width;
         }
     }
     .header {
