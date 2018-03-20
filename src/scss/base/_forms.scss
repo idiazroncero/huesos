@@ -187,7 +187,7 @@ button,
         &:hover,
         &:focus {
             background-color: get-color(state, error);
-            color: contrast-color(get-color(state, error));
+            color: get-color(gray, "white");
             border-color: get-color(state, error);
             box-shadow: 3px 3px 0px 0px rgba(get-color(state, error),0.2);
         } 

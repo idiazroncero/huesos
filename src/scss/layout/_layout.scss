@@ -25,11 +25,18 @@ main {
         display:flex;
         flex-direction:column;
         // Make room for aside.
+        margin-left:0;
         margin-right:25%;
         margin-right:25vw;
         padding: $spacer * 2;
+        // transition: all $transition-time ease-in-out $transition-time;
+        max-width: $content-max-width;
         &.page--noaside {
             margin-right:0;
+        }
+        &.noaside {
+            margin-left:auto;
+            margin-right:auto;
         }
     }
 }

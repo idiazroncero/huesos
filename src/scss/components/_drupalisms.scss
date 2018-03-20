@@ -274,7 +274,7 @@ div.password-confirm { // para diferenciar de input
 }
 
 .form-required {
-    *:after {
+    &:after {
         content:"*";
         color: get-color(state, "warning");
     }

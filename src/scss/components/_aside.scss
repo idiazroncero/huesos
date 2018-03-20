@@ -13,8 +13,35 @@
             display:none;
         }
     }
+    .sidebar__hide {
+        display:none;
+        @include kill-button();
+        @include breakpoint($medium) {
+            display:block;
+            position:fixed;
+            top: $gutter;
+            right: $gutter;
+            font-weight:bold(p);
+            line-height: $gutter;
+            width:$gutter;
+            height:$gutter;
+            text-align:center;
+            &:hover {
+                background-color: get-color(base, "secondary");
+                color: get-color(gray, "white");
+            }
+        }      
+    }
 }
 
+// For fullscreen hiddin'
+.page__aside--hidden {
+    right: -25%;
+    right: -25vw;
+    box-shadow:none;
+}
+
+// For smallscreen showin'
 .page__aside--open {
     .menu__open {
         z-index:999;
@@ -79,20 +106,20 @@
             }
         } 
     }
-    // First child is .button
-    &:nth-child(2) {
+    // First and second child are .button
+    &:nth-child(3) {
         background-color: rgba(get-color(base, "primary"), 0.02);
     }
-    &:nth-child(3) {
+    &:nth-child(4) {
         background-color: rgba(get-color(base, "primary"), 0.04);
     }
-    &:nth-child(4) {
+    &:nth-child(5) {
         background-color: rgba(get-color(base, "primary"), 0.06);
     }
-    &:nth-child(5) {
+    &:nth-child(6) {
         background-color: rgba(get-color(base, "primary"), 0.08);
     }
-    &:nth-child(6) {
+    &:nth-child(7) {
         background-color: rgba(get-color(base, "primary"), 0.1);
     }
 }
