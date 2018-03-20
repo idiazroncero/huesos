@@ -43,6 +43,10 @@ a.ui-button:active,
     @include breakpoint($small) {
         width:auto;
     }
+    a {
+        display:block;
+        width:100%;
+    }
 }
 
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {

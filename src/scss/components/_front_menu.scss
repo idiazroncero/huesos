@@ -2,6 +2,7 @@
     height:auto;
     width:100%;
     padding: $gutter;
+    margin-top:auto;
 
     @include breakpoint($medium) {
         width:100%;
@@ -71,8 +72,8 @@
 .burguer {
     display:block;
     width:$gutter;
-    margin-bottom:4.5px;
-    margin-top:4.5px;
+    margin-bottom:4px;
+    margin-top:4px;
     height:3px;
     background-color:get-color(gray, "black");
     transition: all $transition-time ease-in-out;
@@ -110,7 +111,7 @@
         border-radius:50%;
     }
     .burguer {
-        height:9px;
+        height:8px;
         margin:0;
     }
     .cross {

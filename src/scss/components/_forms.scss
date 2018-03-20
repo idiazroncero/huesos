@@ -10,11 +10,10 @@
 } 
 
 .step {
-    background-color: get-color(gray, "smoke");
-    margin-left: -$gutter / 2;
     margin-bottom:0;
-    padding: $gutter;
+    padding: $gutter / 2 0;
     @include breakpoint($small) {
+        background-color: get-color(gray, "smoke");
         margin-left: $gutter;
         margin-right:$gutter;
         margin-bottom: $gutter * 2;
@@ -37,23 +36,23 @@
     > .form-wrapper {
         margin-bottom: $gutter;
         background: get-color(gray, "white");
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-        transition: box-shadow 0.5s linear;
-        padding: $gutter / 2;
-        margin-right: -$gutter / 2;
-        margin-left: -$gutter / 2;
+
         @include breakpoint($small) {
+            padding: $gutter / 2;
+            margin-right: -$gutter / 2;
+            margin-left: -$gutter / 2;
             padding: $gutter;
             margin-right: -$gutter * 2;
             margin-left: -$gutter * 2;
-        }
-        //box-shadow: 0px 6px 3px -3px rgba(0,0,0,0.07) inset;
-        &:last-child {
-            margin-bottom:0;
-        }
-        &:hover,
-        &:focus-within {
-            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+            transition: box-shadow 0.5s linear;
+            &:last-child {
+                margin-bottom:0;
+            }
+            &:hover,
+            &:focus-within {
+                box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+            }
         }
     }
 }

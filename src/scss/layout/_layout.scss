@@ -53,20 +53,19 @@ main {
     background-color: get-color(gray, "white");
     width:100vw;
     position:fixed;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
     top:0;
     right:auto;
     bottom:0;
     left:-100%;
     width:100%;
     transition: left $transition-time ease-in-out;
-    padding-top:$gutter * 2;
+    overflow:scroll;
     
     @include breakpoint($medium) {
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
         background-color: rgba(get-color(base, "primary"), 0.01);
-        padding-top:0;
         box-shadow: $gutter 0 ($gutter / 2) (- $gutter / 1.99) rgba(get-color(base, "primary"),0.04) inset;
         //border-left:1px solid get-color(gray, "lighter");
         width:25%;
