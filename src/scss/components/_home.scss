@@ -45,16 +45,18 @@
                 }
                 .contenido--teaser {
                     margin-bottom:0;
-                    &:hover,
-                    &.js-hover {
-                        .contenido__fit {
-                            opacity:1; 
-                            transform: scale(1.01);
-                        }
-                        .contenido__title {
-                            opacity:0;
-                        }
-                    } 
+                    &:not(.contenido--noimg) {
+                        &:hover,
+                        &.js-hover {
+                            .contenido__fit {
+                                opacity:1; 
+                                transform: scale(1.01);
+                            }
+                            .contenido__title {
+                                opacity:0;
+                            }
+                        } 
+                    }                    
                 }  
                 .contenido__fit {
                     position:absolute;

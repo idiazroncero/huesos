@@ -17,6 +17,7 @@
         margin-left: $gutter;
         margin-right:$gutter;
         margin-bottom: $gutter * 2;
+        padding: $gutter;
     }
     h2 {
         @include ritmo-font-size($h5-font-size);

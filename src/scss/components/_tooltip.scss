@@ -120,6 +120,7 @@
                 border-width: $gutter / 2;
                 border-style: solid;
                 border-color: transparent get-color(base, "primary") transparent transparent;
+                transform:none;
             }
         }
     }
