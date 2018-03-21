@@ -96,3 +96,17 @@ a.ui-button:active,
 .ui-dialog .ui-dialog-content {
     padding: $gutter / 2 $gutter;
 }
+
+#dialog {
+    .button {
+        margin-bottom: $gutter / 2;
+        width:100%;
+        text-align:center;
+    }
+    p {
+        text-align:center;
+        &:last-child {
+            margin:0;
+        }
+    }
+}

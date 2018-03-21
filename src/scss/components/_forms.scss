@@ -274,3 +274,16 @@
         margin-right:$gutter / 2;
     }
 }
+
+.mode-switcher {
+    margin: 0 auto $gutter 0;
+    display: block;
+    text-align: center;
+    max-width: 360px;
+    @include breakpoint($medium) {
+        margin:0;
+        position: absolute;
+        top: - ($gutter * 3.5);
+        right:0;
+    }
+}

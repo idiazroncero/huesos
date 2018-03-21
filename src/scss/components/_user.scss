@@ -157,9 +157,7 @@
         @include kill-link(
             get-color(state, "success")
         )
-    }
-    &:hover {
-        a {
+        &:hover {
             color: get-color(gray, "black");
             text-decoration: underline;
         }

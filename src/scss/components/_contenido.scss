@@ -254,19 +254,27 @@
         padding: 0 0 100% 0;
     }
     &:hover,
+    &.js-hover,
     &:focus {
-        .contenido__link-layer {
-            width:200%;
-            left:-100%;
+        .contenido__mensaje {
+            opacity:1;
+        }
+        @include breakpoint($medium) {
+            .contenido__link-layer {
+                width:200%;
+                left:-100%;
+            }
         }
     }
     .contenido__link-layer {
         &:hover,
+        &.js-hover,
         &:focus {
-            ~ .contenido__mensaje {
-                opacity:1;
-                right:100%;
-                left:auto;
+            @include breakpoint($medium) {
+                ~ .contenido__mensaje {
+                    right:100%;
+                    left:auto;
+                }
             }
         }
     }    
@@ -297,9 +305,11 @@
     }
     &:hover,
     &:focus {
-        opacity:1;
-        right:100%;
-        left:auto;
+        @include breakpoint($medium) {
+            opacity:1;
+            right:100%;
+            left:auto;
+        }
     }
 }
 
