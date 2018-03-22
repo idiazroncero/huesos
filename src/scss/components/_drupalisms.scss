@@ -154,10 +154,14 @@ div.password-confirm { // para diferenciar de input
 
 .field-multiple-table {
     table-layout: initial;
-    width:100vw;
-    @include breakpoint($small) {
-        width:100%;
-        margin-left: 0;
+    width:100%;
+    #edit-field-contenido-wrapper & {
+        width:100vw;
+        margin-left:- ($gutter / 2);
+        @include breakpoint($small) {
+            width:100%;
+            margin-left:0;
+        }
     }
     input,
     textarea {

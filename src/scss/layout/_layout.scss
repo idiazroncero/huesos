@@ -60,10 +60,10 @@ main {
     width:100%;
     transition: left $transition-time ease-in-out;
     overflow:scroll;
+    display:flex;
+    flex-direction:column;
     
     @include breakpoint($medium) {
-        display:flex;
-        flex-direction:column;
         justify-content:flex-end;
         background-color: rgba(get-color(base, "primary"), 0.01);
         box-shadow: $gutter 0 ($gutter / 2) (- $gutter / 1.99) rgba(get-color(base, "primary"),0.04) inset;

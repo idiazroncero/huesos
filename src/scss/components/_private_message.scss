@@ -175,10 +175,12 @@
 // BLOCK
 
 .block-private-message .content {
-    display:flex;
-    justify-content: space-between;
-    .private-message-thread {
-        width:48%;
+        @include breakpoint($medium) {
+        display:flex;
+        justify-content: space-between;
+        .private-message-thread {
+            width:48%;
+        }
     }
 }
 

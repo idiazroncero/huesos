@@ -35,9 +35,7 @@
     .logo__ms {
         display:block;
         @include ritmo-font-size($h3-font-size);
-        a {
-            @include kill-link(get-color(gray, 'black'));
-        }
+        @include kill-link(get-color(gray, 'black'));
     }
     .logo__eem {
         @include breakpoint($small) {

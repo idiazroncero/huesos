@@ -54,7 +54,9 @@
     padding: $gutter;
     margin:0;
     text-align:center;
+    flex:1;
     @include breakpoint($medium){
+        flex:0 0 auto;
         text-align:left;
     }
     h2 {

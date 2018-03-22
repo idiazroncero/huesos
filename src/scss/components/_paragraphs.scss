@@ -130,11 +130,6 @@
     min-width:100%;
     overflow:visible;
     z-index: z-index(paragraph-actions);
-    .button {
-        font-weight:normal;
-        line-height: ritmo(4);
-        display:block;
-    }
     &:before,
     &:after {
         content:"";
@@ -154,6 +149,18 @@
     &:after {
         top: calc(-#{$gutter / 4} + 1px);
         border-bottom-color:get-color(gray, "white");
+    }
+}
+
+.paragraphs-dropdown-action.button {
+    font-weight:normal;
+    line-height: ritmo(4);
+    display:block;
+    width:100% !important;
+    text-align:right;
+    &:hover, 
+    &:focus {
+        box-shadow:none;
     }
 }
 
