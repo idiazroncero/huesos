@@ -91,6 +91,13 @@
     }
 }
 
+.contenido__subtitulo {
+    @include ritmo-font-size($h4-font-size);   
+    @include breakpoint($medium) {
+        @include ritmo-font-size($h3-font-size);   
+    }
+}
+
 .contenido__title {
     position: absolute;
     top: 0;
@@ -115,9 +122,9 @@
     .contenido__subtitulo {
         margin:0;
         font-family:$font-secondary;
-        @include ritmo-font-size($h6-font-size);
-        font-weight:bold(p);
-        text-transform: uppercase;
+        @include ritmo-font-size($h5-font-size);
+        // font-weight:bold(p);
+        // text-transform: uppercase;
     }
     
     .contenido__autor {
