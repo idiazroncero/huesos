@@ -64,7 +64,7 @@
     @extend %peque;
     .pm-username {
         display:inline-block;
-        padding: 0 $gutter/4;
+        padding: 0 $gutter / 4;
     }
     .pm-username-remove-link {
         display:inline-block;
@@ -82,43 +82,71 @@
 // }
 
 .private-message-recipients {
-    padding-bottom:ritmo(2);
-    margin-bottom: ritmo(2);
+    margin-bottom: $gutter !important;
+    margin:0;
+    display:block;
+    span {
+        padding: 0 5px 5px 0;
+        border-bottom: $gutter / 4 solid get-color(base, "secondary");
+    }
+    a {
+        padding: 0 0 5px 0;
+        border-bottom: $gutter / 4 solid get-color(base, "secondary");       
+    }
 }
 
 .private-message__inner {
     display:flex;
+    align-items:flex-start;
     margin-bottom:ritmo(4);
 }
 
 .private-message__meta {
-    // width:60px;
-    // height:60px;
-    // border-radius:50%;
     margin-right: $gutter;
-    // padding-right: $gutter / 2;
-    // border-right: 1px solid get-color(gray, "dark");
-    //background-color: get-color(red, 'light');
-    // display: flex;
-    // flex-direction:column;
-    // align-items:center;
-    // justify-content:center;
-    // text-align:center;
-    > * {
+    p {
         // max-width:66%;
-        word-break: break-all;
+        white-space: nowrap
     }
 }
 
 .private-message__content {
-    flex:1;
+    flex:0 1 auto;
+    padding: $gutter;
+    border: 1px solid get-color(gray, "lighter");
+    border-radius: $gutter;
     // font-weight:bold(p);
+    position:relative;
     p:last-child {
         margin:0;
+    }
+    &:before {
+        content:"";
+        width:0;
+        height:0;
+        border-width: $gutter / 2;
+        border-style:solid;
+        border-color: transparent get-color(gray, "lighter") transparent transparent;
+        position:absolute;
+        top:$gutter;
+        left: - $gutter;
+        display:block;
+    }
+    &:after {
+        content:"";
+        width:0;
+        height:0;
+        border-width: $gutter / 2;
+        border-style:solid;
+        border-color: transparent get-color(gray, "white") transparent transparent;
+        position:absolute;
+        top:$gutter;
+        left: - $gutter * 0.95;
+        display:block;
     }
 }
 
 .private-message__who {
+    margin-top: $gutter / 2;
     .profile-mini__img {
         width:50px;
         height:50px;
@@ -134,11 +162,10 @@
 }
 
 .private-message-thread {
-    padding: $gutter;
+    // padding: $gutter;
     margin-bottom: $gutter;
-    padding: $gutter;
-    border: 1px solid get-color(gray, "lighter");
-    border-left-width: $gutter / 4;
+    // border: 1px solid get-color(gray, "lighter");
+    // border-left-width: $gutter / 4;
 }
 
 .private-message__inner--odd {
@@ -153,9 +180,22 @@
     }
     .private-message__content {
         text-align:right;
+        margin-left: auto;
     }
     .private-message__content {
         font-weight:normal;
+        &:before {
+            border-color: transparent transparent transparent get-color(gray, "lighter");
+            top:$gutter;
+            right: - $gutter;
+            left:auto;
+        }
+        &:after {
+            border-color: transparent transparent transparent get-color(gray, "white");
+            top:$gutter;
+            right: - $gutter * 0.95;
+            left:auto;
+        }
     }
 }
 
@@ -225,8 +265,8 @@
 
 #load-previous-messages-button-wrapper {
     position:absolute;
-    top:$gutter;
-    right:$gutter;
+    top:$gutter / 4;
+    right:0;
     font-weight:bold();
     @include ritmo-font-size($h6-font-size);
 }

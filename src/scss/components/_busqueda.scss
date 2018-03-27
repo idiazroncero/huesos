@@ -5,6 +5,7 @@
 
 .busqueda {
     position:relative;
+    @extend %clearfix;
 }
 
 .busqueda__tipo {
@@ -12,23 +13,38 @@
 }
 
 .busqueda__resumen {
-    display:flex;
+    @include breakpoint($medium) {
+        display:flex;
+    }
 }
 
 .busqueda__thumb {
-    margin-right:$gutter;
-    flex: 0 0 auto;
+    width: 75px;
+    float: right;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 0 $gutter / 2 $gutter / 2;
     img {
-        width:150px;
         height:auto;
         display:block;
+    }
+    @include breakpoint($medium) {
+        margin:0 $gutter 0 0;
+        flex: 0 0 auto;
+        float:none;
+        border-radius:0;
+        img {
+            width:150px;
+        }
     }
 }
 
 .busqueda__text {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    @include breakpoint($medium) {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
 }
 
 .busqueda__desc {
@@ -38,12 +54,16 @@
 
 
 .busqueda--resultados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include breakpoint($medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .views-row {
+            min-width: 32%;
+            max-width: 49%;
+        }
+    }
     .views-row {
-        min-width: 32%;
-        max-width: 49%;
         margin-bottom: $gutter;
         border-bottom: 1px solid get-color(gray, "light");
     }

@@ -17,7 +17,6 @@
     align-items:baseline;
     justify-content:center;
     margin-bottom: $gutter * 2;
-    text-align:center;
     @include breakpoint($small) {
         text-align:left;
         flex-direction:row;
