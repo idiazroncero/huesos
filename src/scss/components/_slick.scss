@@ -17,7 +17,8 @@
         margin-bottom:0;
     }
 
-    &:hover {
+    &:hover,
+    &.js-hover {
         .slick__magnify {
             opacity:1;
         }
