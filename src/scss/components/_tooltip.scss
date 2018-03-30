@@ -10,15 +10,14 @@
 .tooltip {
     position:absolute;
     display:none;
-    padding: 0 $gutter/2;
+    padding: $gutter/4 $gutter/2;
     border-radius:3px;
     background: get-color(base, "primary");
     color: get-color(gray, "white");
-    @include ritmo-font-size($h7-font-size, 3);
+    @include ritmo-font-size($h7-font-size, 1.5);
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     font-weight: bold();
-    white-space: nowrap;
     z-index: z-index(tooltip);
     box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
 }
@@ -59,6 +58,12 @@
         left:100%;
         transform:translateY(-50%);
     }
+}
+
+.tooltip--top,
+.tooltip--bottom {
+    max-width:150px;
+    text-align:center;
 }
 
 .tooltip--bottom {

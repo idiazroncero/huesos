@@ -134,3 +134,30 @@
         }
     }
 }
+
+// Language switcher (frontpage)
+
+.front-lang {
+    margin-bottom:auto;
+    h2 {
+        @extend %peque;
+        margin:0;
+    }
+    .links {
+        margin:0;
+        padding:0;
+        li {
+            margin-right: $gutter / 2;
+            margin-top:0;
+            display:inline-block;
+        } 
+        a {
+            @include ritmo-font-size($h6-font-size);
+            font-weight: $light;
+            &:focus,
+            &:hover {
+                text-decoration:underline;
+            }
+        }
+    }
+}

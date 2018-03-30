@@ -236,6 +236,30 @@
 
 // NOTIFICACIONES
 
+// Animate.scss
+$countDefault: 1 !default;
+$durationDefault: 1s !default;
+$delayDefault: 0s !default;
+$functionDefault: ease !default;
+$fillDefault: both;
+$visibilityDefault: hidden !default;
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% {@include transform(translateY(0));}
+	40% {@include transform(translateY(-15px));}
+	60% {@include transform(translateY(-7px));}
+}
+
+@mixin bounce($count: infinite, $duration: 2s, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+	@include animation-name(bounce);
+	@include count($count);
+	@include duration($duration);
+	@include delay($delay);
+	@include function($function);
+	@include fill-mode($fill);
+	@include visibility($visibility);
+}
+
 .block-private-message-notification-block {
     height:auto;
     width:auto;
@@ -258,6 +282,10 @@
         &:hover {
             background-color: get-color(gray, "black");
         }
+    }
+    .unread-threads .private-message-page-link {
+        background-color: get-color(state, warning);
+        @include bounce();
     }
 }
 

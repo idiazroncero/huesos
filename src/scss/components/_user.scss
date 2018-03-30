@@ -131,6 +131,17 @@
     }
 }
 
+.favoritos {
+    .contentlist__item {
+        position:relative;
+    }
+    .flag {
+        position:absolute;
+        top:5px;
+        z-index: z-index(tooltip);
+    }
+}
+
 .contentlist__list {
     @include inline-list();
     display:flex;
