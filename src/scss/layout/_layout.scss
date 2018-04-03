@@ -62,6 +62,7 @@ main {
     overflow:scroll;
     display:flex;
     flex-direction:column;
+    overflow:hidden;
     
     @include breakpoint($medium) {
         justify-content:flex-end;

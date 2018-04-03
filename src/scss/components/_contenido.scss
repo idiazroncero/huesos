@@ -344,3 +344,18 @@
         margin-bottom:0;
     }
 }
+
+.contenido__click {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    text-align: center;
+    transform: translate(-50%, -50%);
+    @include ritmo-font-size($h4-font-size);
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.75);
+    line-height: 1;
+    max-width: 75%;
+    padding: $gutter / 2;
+    z-index:7; // TODO: recuperar z-index
+}

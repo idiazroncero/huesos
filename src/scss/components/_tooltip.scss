@@ -108,6 +108,7 @@
 
 .front__layer {
     .tooltip {
+        white-space:nowrap;
         @include breakpoint(max-width $small) {
             display:none !important;
         }
@@ -168,4 +169,8 @@
             border-bottom-color: get-color(state, 'success');
         }
     }
+}
+
+.quick-add .tooltip {
+    white-space:nowrap;
 }
