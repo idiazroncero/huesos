@@ -214,13 +214,18 @@
 
 // BLOCK
 
-.block-private-message .content {
+.block-private-message {
+    h2 {
+        @extend %peque;
+    }
+    .content {
         @include breakpoint($medium) {
-        display:flex;
-        justify-content: space-between;
-        .private-message-thread {
-            width:48%;
-        }
+            display:flex;
+            justify-content: space-between;
+            .private-message-thread {
+                width:48%;
+            }
+        } 
     }
 }
 
