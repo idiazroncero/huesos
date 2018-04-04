@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run build
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run styleguide
 
 PATH: 
-  /Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/usr/local/Cellar/node/9.8.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin
+  /Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/huesos/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/huesos/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/usr/local/Cellar/node/9.8.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/node_modules/.bin:/Users/idiazroncero/.config/yarn/link/node_modules/.bin:/usr/local/Cellar/node/9.8.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/Cellar/node/9.8.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin
 
 Yarn version: 
   1.5.1
@@ -4922,9 +4922,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 1
   Command: sh
-  Arguments: -c yarn run styleguide; webpack --config webpack.config.js
+  Arguments: -c cd src/kss-src; npm run sass
   Directory: /Users/idiazroncero/Localdev/sites/eemental/web/themes/custom/mentalstones/huesos
   Output:
   
