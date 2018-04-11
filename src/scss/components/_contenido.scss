@@ -236,7 +236,7 @@
         background-color:get-color(base, "primary");
         h1 {
             text-align:center;
-            font-weight:$light;
+            font-weight:normal;
             text-transform: uppercase;
             color: get-color(gray, "white");
             // hyphens: auto;
@@ -358,4 +358,44 @@
     max-width: 75%;
     padding: $gutter / 2;
     z-index:7; // TODO: recuperar z-index
+}
+
+
+.contenido--mensaje--even {
+    .contenido__title {
+        background-color:get-color(base, "secondary");
+        h1 {
+            color: get-color(gray, "darker");
+        }
+    }
+    &:hover,
+    &.js-hover {
+        .contenido__title {
+            h1 {
+                background-color: get-color(base, "primary");
+                color: get-color(gray, "white");
+            }
+        }
+    }
+    .contenido__mensaje {
+        background-color: get-color(base, "primary");
+        p {
+            color: get-color(gray, "white");
+        }
+    }
+    .contenido__botones{
+        a.button {
+            border-color: get-color(base, "secondary");
+            background-color: get-color(base, "secondary");
+            box-shadow: 3px 3px 0px 0px rgba(get-color(base, "secondary"),0.2);
+            &:hover,
+            &:focus {
+                background-color: get-color(base, "primary");
+                box-shadow: 1px 1px 0px 0px rgba(get-color(base, "secondary"),0.2);
+            } 
+            &:active {
+                box-shadow: 1px 1px 0px 0px get-color(state, warning) !important;
+            }
+        }
+    }
 }
