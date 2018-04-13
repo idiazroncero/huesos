@@ -22,10 +22,6 @@
                 opacity:1;
                 position:static;
                 min-height: 100vw;
-                h1 {
-                    @include ritmo-font-size($h3-font-size);
-                    font-weight:bold(h1);
-                }
             }
         }
         @include breakpoint($small) {
@@ -67,12 +63,6 @@
                     top:0;
                     bottom:0;
                     opacity:0;
-                }
-                .contenido__title {
-                    h1 {
-                        @include ritmo-font-size($h1-font-size);
-                        font-weight:normal;
-                    }
                 }
             }   
         }

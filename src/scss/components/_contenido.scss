@@ -140,7 +140,8 @@
 
 .contenido__title--inverse {
     h1,
-    .contenido__subtitulo {
+    .contenido__subtitulo,
+    .contenido--first__ms {
         color: get-color(gray,'white');
     }
     .contenido__autor a { 
@@ -397,5 +398,28 @@
                 box-shadow: 1px 1px 0px 0px get-color(state, warning) !important;
             }
         }
+    }
+}
+
+
+.contenido--first {
+    h1 {
+        margin-top:auto;
+        @include ritmo-font-size($h1-font-size);
+        font-weight:bold(h1);
+    }
+}
+
+.contenido--first__ms {
+    @include ritmo-font-size($h2-font-size);
+    line-height:0.9;
+    span,strong {
+        display:block;
+    }
+    // strong {
+    //     @include ritmo-font-size($h3-font-size);
+    // }
+    span:last-child {
+        @include ritmo-font-size($h4-font-size);
     }
 }
