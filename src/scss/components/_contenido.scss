@@ -405,13 +405,19 @@
 .contenido--first {
     h1 {
         margin-top:auto;
-        @include ritmo-font-size($h1-font-size);
+        @include ritmo-font-size($h2-font-size);
+        @include breakpoint($medium) {
+            @include ritmo-font-size($h1-font-size);
+        }
         font-weight:bold(h1);
     }
 }
 
 .contenido--first__ms {
-    @include ritmo-font-size($h2-font-size);
+    @include ritmo-font-size($h3-font-size);
+    @include breakpoint($medium) {
+        @include ritmo-font-size($h2-font-size);
+    }
     line-height:0.9;
     span,strong {
         display:block;
@@ -420,6 +426,9 @@
     //     @include ritmo-font-size($h3-font-size);
     // }
     span:last-child {
-        @include ritmo-font-size($h4-font-size);
+        @include ritmo-font-size($h5-font-size);
+        @include breakpoint($medium) {
+            @include ritmo-font-size($h4-font-size);
+        }
     }
 }
