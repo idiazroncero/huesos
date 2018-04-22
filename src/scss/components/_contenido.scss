@@ -28,8 +28,12 @@
 }
 
 .contenido__estado {
-    font-weight:bold();
-    margin-left: auto;
+    mark {
+        @extend %peque;
+        font-weight:bold();
+        padding: ritmo(0.5) ritmo(2);
+        border-radius: ritmo(0.5);
+    } 
 }
 
 .contenido__autor {
@@ -364,7 +368,7 @@
 }
 
 .contenido--first__ms {
-    @include ritmo-font-size($h4-font-size);
+    @include ritmo-font-size($h3-font-size);
     @include breakpoint($medium) {
         @include ritmo-font-size($h3-font-size);
     }
@@ -372,9 +376,12 @@
     span {
         display:block;
     }
-    // strong {
-    //     @include ritmo-font-size($h3-font-size);
-    // }
+    strong {
+        display:block;
+        @include breakpoint($medium) {
+            display:inline;
+        }
+    }
 }
 
 .contenido--first__presenta {

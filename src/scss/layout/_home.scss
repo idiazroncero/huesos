@@ -29,6 +29,7 @@
             transform: rotate(-90deg);
             transform-origin: 0 50%;
         } 
+        margin-bottom:0;
         display:flex;
         align-items:center;
     }
@@ -36,6 +37,11 @@
         display:block;
         @include ritmo-font-size($h3-font-size);
         @include kill-link(get-color(gray, 'black'));
+    }
+    .logo__ms--hide {
+        @include breakpoint($landscape) {
+            display:none;
+        }
     }
     .logo__eem {
         @include breakpoint($small) {

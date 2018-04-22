@@ -21,7 +21,6 @@
             .contenido__title {
                 opacity:1;
                 position:static;
-                min-height: 100vw;
             }
         }
         @include breakpoint($small) {
