@@ -68,13 +68,19 @@
         @include breakpoint($medium) {
             width:33.33%;
             &:first-child {
-                width:66.66%;
+                width:100%;
+                .contenido__inner {
+                    padding-bottom: 33%;
+                }
             }   
         }
         @include breakpoint($large) {
             width:25%;
             &:first-child {
                 width:50%;
+                .contenido__inner {
+                    padding-bottom: 50%;
+                }
             }   
         }
     }   

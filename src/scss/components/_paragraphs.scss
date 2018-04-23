@@ -107,6 +107,17 @@
     }
 }
 
+.paragraph-top {
+    display:flex;
+}
+
+tr.paragraphs-features__add-in-between__row {
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
 .paragraphs-dropdown {
     position:static;
 }

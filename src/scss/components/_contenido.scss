@@ -275,7 +275,17 @@
         .contenido__mensaje {
             opacity:1;
         }
-    }   
+    } 
+}
+
+.cuadricula .views-row.contenido--mensaje--odd,
+.cuadricula .views-row.contenido--mensaje--even {
+    @include breakpoint($medium $large) {
+        width:50%; 
+        .contenido__inner {
+            padding-bottom:50%;
+        } 
+    }
 }
 
 .contenido__mensaje {
@@ -389,4 +399,9 @@
     @include breakpoint($medium) {
         @include ritmo-font-size($h5-font-size);
     }
+}
+.contenido--spacer {
+    width:100%;
+    float:left;
+    height:ritmo(4);
 }
