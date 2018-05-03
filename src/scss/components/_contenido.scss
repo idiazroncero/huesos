@@ -402,6 +402,8 @@
 }
 .contenido--spacer {
     width:100%;
-    float:left;
+    @include breakpoint($small) {
+        float:left;
+    }
     height:ritmo(4);
 }
