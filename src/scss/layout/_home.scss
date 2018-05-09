@@ -1,4 +1,5 @@
-.home {
+.home,
+.iframe {
     #main-wrapper {
         padding:$gutter / 2;
         @include breakpoint($small) {
