@@ -62,7 +62,14 @@
             // }
         }
     }
-
+    .back-to-login {
+        display:inline-block;
+        margin: ritmo(0.5) 0 0 0;
+        a {
+            @extend .button;
+            @extend .button--warning;
+        }
+    }
 }
 
 // PROFILE
