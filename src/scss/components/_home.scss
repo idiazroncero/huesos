@@ -3,85 +3,94 @@
     .views-row {
         width:100%;
         position:relative;
-        &:first-child {
-            .contenido--teaser {
-                margin-bottom:$gutter;
-            }  
-            .contenido__inner {
-                padding:0;
-            }
-            .contenido__fit {
-                position:static;
-                img {
-                    position:static;
-                    transform:none;
-                }
-                opacity:1;
-            }
-            .contenido__title {
-                opacity:1;
-                position:static;
-            }
-        }
         @include breakpoint($small) {
             float:left;
             width:50%;
-            &:first-child {
-                width:100%;
-                .contenido__title { 
-                    position:absolute;
-                    min-height: auto;
-                    h1 {
-                        max-width:75%;
-                    }
-                }
-                .contenido__inner {
-                    padding:0 0 50% 0;
-                }
-                .contenido--teaser {
-                    margin-bottom:0;
-                    &:not(.contenido--noimg) {
-                        &:hover,
-                        &.js-hover {
-                            .contenido__fit {
-                                opacity:1; 
-                                transform: scale(1.01);
-                            }
-                            .contenido__title {
-                                opacity:0;
-                            }
-                        } 
-                    }                    
-                }  
-                .contenido__fit {
-                    position:absolute;
-                    img {
-                        position:absolute;
-                        transform: translateY(-50%);
-                    }
-                    top:0;
-                    bottom:0;
-                    opacity:0;
-                }
-            }   
         }
         @include breakpoint($medium) {
-            width:33.33%;
-            &:first-child {
-                width:100%;
-                .contenido__inner {
-                    padding-bottom: 33%;
-                }
-            }   
+            width:33.33%;  
         }
         @include breakpoint($large) {
-            width:25%;
-            &:first-child {
-                width:50%;
-                .contenido__inner {
-                    padding-bottom: 50%;
-                }
-            }   
+            width:25%;  
         }
     }   
+}
+
+.cuadricula--destacada .views-row {
+    &:first-child {
+        .contenido--teaser {
+            margin-bottom:$gutter;
+        }  
+        .contenido__inner {
+            padding:0;
+        }
+        .contenido__fit {
+            position:static;
+            img {
+                position:static;
+                transform:none;
+            }
+            opacity:1;
+        }
+        .contenido__title {
+            opacity:1;
+            position:static;
+        }
+    }
+    @include breakpoint($small) {
+        &:first-child {
+            width:100%;
+            .contenido__title { 
+                position:absolute;
+                min-height: auto;
+                h1 {
+                    max-width:75%;
+                }
+            }
+            .contenido__inner {
+                padding:0 0 50% 0;
+            }
+            .contenido--teaser {
+                margin-bottom:0;
+                &:not(.contenido--noimg) {
+                    &:hover,
+                    &.js-hover {
+                        .contenido__fit {
+                            opacity:1; 
+                            transform: scale(1.01);
+                        }
+                        .contenido__title {
+                            opacity:0;
+                        }
+                    } 
+                }                    
+            }  
+            .contenido__fit {
+                position:absolute;
+                img {
+                    position:absolute;
+                    transform: translateY(-50%);
+                }
+                top:0;
+                bottom:0;
+                opacity:0;
+            }
+        }   
+    }
+    @include breakpoint($medium) {
+        &:first-child {
+            width:100%;
+            .contenido__inner {
+                padding-bottom: 33%;
+            }
+        }   
+    }
+    @include breakpoint($large) {
+        &:first-child {
+            width:50%;
+            .contenido__inner {
+                padding-bottom: 50%;
+            }
+        }   
+    }  
 }
