@@ -6,15 +6,21 @@ __Huesos__ is idiaz.roncero's front-end starterkit. It provides a basic SCSS-JS 
 
 idiaz.roncero is a Madrid-based front-end dev. He does not enjoy talking about himself in the third person but, hey, this is a Readme.md.
 
-## Install
+## Install (standalone)
 
 Clone, open `src/scss/_config.scss` and tweak the values to adapt to your needs.
+Use the assets generated on the `dist` folder on your project.
+
+## Install as a dependency
+
+Use `yarn` or `npm` to add the repo to your project's `package.json`.
+
 
 Run the build scripts (see [Build Process](#build-process)).
 
 ## Use as a submodule
 
-Usually it will be needed to include Huesos inside another Git repo. In that case, in order to keep tracking changes the best solution is to add as a submodule and create a local branch of the code.
+In that case, in order to keep tracking changes the best solution is to add as a submodule and create a local branch of the code.
 
 ## Toolkit
 
@@ -27,10 +33,6 @@ Grabs normalization, basic components, mixins, helpers , UI... from here and the
 #### Ritmo
 
 This is a proud Compass' vertical rhythm heir. We borrow their vertical rhythm mixins && functions. 
-
-#### Susy
-
-No one will ever beat susy.
 
 
 ## Build process

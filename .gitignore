@@ -8,7 +8,7 @@ node_modules
 .DS_Store
 
 # Dist folder is the result of the build process and needn't be commited
-dist/*
+dist
 
 # .eslintcache
 .eslintcache
