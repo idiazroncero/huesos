@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Huesos</title>
+  <title>KSS Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -12,12 +12,12 @@
   
 </head>
 <body id="kss-node" class="kss-fullscreen-mode">
+
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
-    <h1 class="kss-doc-title">Huesos</h1>
-    <h4 class="kss-doc-subtitle">Style Guide</h4>
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
   </header>
-  <nav class="kss-nav">
+  <nav class="kss-nav" aria-label="Style Guide">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="./">
@@ -42,55 +42,55 @@
             <ul class="kss-nav__menu-child">
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-definitionlists">
-                  <span class="kss-nav__ref">3.1</span
+                  <span class="kss-nav__ref ">3.1</span
                   ><span class="kss-nav__name">Definition lists</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-hr">
-                  <span class="kss-nav__ref">3.2</span
+                  <span class="kss-nav__ref ">3.2</span
                   ><span class="kss-nav__name">Horizontal rule</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-iframe">
-                  <span class="kss-nav__ref">3.3</span
+                  <span class="kss-nav__ref ">3.3</span
                   ><span class="kss-nav__name">Iframe</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-images">
-                  <span class="kss-nav__ref">3.4</span
+                  <span class="kss-nav__ref ">3.4</span
                   ><span class="kss-nav__name">Images</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link kss-nav__ref-child" href="section-base.html#kssref-base-images-figcaption">
-                  <span class="kss-nav__ref">3.4.1</span
+                <a class="kss-nav__menu-link" href="section-base.html#kssref-base-images-figcaption">
+                  <span class="kss-nav__ref kss-nav__ref-child">3.4.1</span
                   ><span class="kss-nav__name">Figcaption</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-img">
-                  <span class="kss-nav__ref">3.5</span
+                  <span class="kss-nav__ref ">3.5</span
                   ><span class="kss-nav__name">Img</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-lists">
-                  <span class="kss-nav__ref">3.6</span
+                  <span class="kss-nav__ref ">3.6</span
                   ><span class="kss-nav__name">Unordered and ordered lists</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-nav">
-                  <span class="kss-nav__ref">3.7</span
+                  <span class="kss-nav__ref ">3.7</span
                   ><span class="kss-nav__name">Navigation menus</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-base.html#kssref-base-tables">
-                  <span class="kss-nav__ref">3.8</span
+                  <span class="kss-nav__ref ">3.8</span
                   ><span class="kss-nav__name">Tables</span>
                 </a>
               </li>
@@ -124,9 +124,10 @@
     </ul>
   </nav>
 </div>
-<article role="main" class="kss-main">
+<main class="kss-main" aria-label="Content">
+  <article>
 
-    <div id="kssref-base" class="kss-section kss-section--depth-1 kss-section--empty is-fullscreen">
+    <div id="kssref-base" class="kss-section kss-section--depth-1 is-fullscreen">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
@@ -143,6 +144,7 @@
 
 
 
+
       </div>
 
 
@@ -152,17 +154,15 @@
 
     </div>
 </article>
+</main>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/kss-source.js"></script>
 <script>
-  prettyPrint();
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -178,10 +178,6 @@
   var kssMarkup = new KssMarkup({
     bodyClass: 'kss-markup-mode',
     detailsClass: 'kss-markup'
-  });
-  var kssSource = new KssSource({
-    bodyClass: 'kss-source-mode',
-    detailsClass: 'kss-source'
   });
 </script>
 

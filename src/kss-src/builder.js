@@ -16,6 +16,7 @@
  * @module kss/builder/handlebars
  */
 
+const path = require('path');
 
 // We want to extend kss-node's Handlebars builder so we can add options that
 // are used in our templates.
@@ -129,20 +130,16 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
         });
       }
 
-      this.Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-       
-        if (optionalValue) {
-          console.log("Value");
-          console.log("====================");
-          console.log(optionalValue);
-        }
-      });
-
       return Promise.resolve(styleGuide);
     });
   }
+
+  // add builder extend
+  prepareExtend(templateEngine) {
+    this.options.extend.push(path.resolve(__dirname, 'extend'));
+
+    return super.prepareExtend(templateEngine);
+  }
 }
+
 module.exports = KssBuilderHandlebars;

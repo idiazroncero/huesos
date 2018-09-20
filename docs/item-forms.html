@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Huesos</title>
+  <title>KSS Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -12,12 +12,12 @@
   
 </head>
 <body id="kss-node" class="kss-fullscreen-mode">
+
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
-    <h1 class="kss-doc-title">Huesos</h1>
-    <h4 class="kss-doc-subtitle">Style Guide</h4>
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
   </header>
-  <nav class="kss-nav">
+  <nav class="kss-nav" aria-label="Style Guide">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="./">
@@ -32,31 +32,31 @@
             <ul class="kss-nav__menu-child">
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-checkbox">
-                  <span class="kss-nav__ref">1.1</span
+                  <span class="kss-nav__ref ">1.1</span
                   ><span class="kss-nav__name">Checkboxes</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-file">
-                  <span class="kss-nav__ref">1.2</span
+                  <span class="kss-nav__ref ">1.2</span
                   ><span class="kss-nav__name">File Input</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-input">
-                  <span class="kss-nav__ref">1.3</span
+                  <span class="kss-nav__ref ">1.3</span
                   ><span class="kss-nav__name">Input</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-radio">
-                  <span class="kss-nav__ref">1.4</span
+                  <span class="kss-nav__ref ">1.4</span
                   ><span class="kss-nav__name">Radio buttons</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-select">
-                  <span class="kss-nav__ref">1.5</span
+                  <span class="kss-nav__ref ">1.5</span
                   ><span class="kss-nav__name">Select</span>
                 </a>
               </li>
@@ -100,9 +100,10 @@
     </ul>
   </nav>
 </div>
-<article role="main" class="kss-main">
+<main class="kss-main" aria-label="Content">
+  <article>
 
-    <div id="kssref-forms" class="kss-section kss-section--depth-1 kss-section--empty is-fullscreen">
+    <div id="kssref-forms" class="kss-section kss-section--depth-1 is-fullscreen">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
@@ -119,23 +120,22 @@
 
 
 
+
       </div>
 
 
 
     </div>
 </article>
+</main>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/kss-source.js"></script>
 <script>
-  prettyPrint();
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -151,10 +151,6 @@
   var kssMarkup = new KssMarkup({
     bodyClass: 'kss-markup-mode',
     detailsClass: 'kss-markup'
-  });
-  var kssSource = new KssSource({
-    bodyClass: 'kss-source-mode',
-    detailsClass: 'kss-source'
   });
 </script>
 

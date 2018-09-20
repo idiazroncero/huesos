@@ -2,10 +2,10 @@
 // TOOLS
 // Mixins and third-party libraries
 // --------------------
-@import "ritmo/ritmo"; // Source: https://ritmo.marzeelabs.org/
-@import "family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
-@import "animate-scss/animate.scss"; // Source: https://www.npmjs.com/package/animate-scss
-@import "breakpoint-sass/stylesheets/breakpoint";
+@import "../../node_modules/ritmo/ritmo"; // Source: https://ritmo.marzeelabs.org/
+@import "../../node_modules/family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
+@import "../../node_modules/animate-scss/animate.scss"; // Source: https://www.npmjs.com/package/animate-scss
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 @import "base/mixins/helpers";
 @import "base/mixins/pow";
@@ -106,7 +106,7 @@ $color-modify-ratio: 33%;
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 16px;
+$base-font-size: 24px;
 $vertical-rhythm: 1.5;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
