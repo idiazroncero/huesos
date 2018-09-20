@@ -13,48 +13,4 @@
 @import "layout/layout";
 
 @import "components/card";
-
-
-// Navigation menus
-//
-// Either `<nav>` HTML elements or enabled via the css class `.nav`.
-// The behavior is exactly the same as in `.list--inline`
-//
-// Markup:
-// <nav>
-//   <ul>
-//     <li>Home</li>
-//     <li>Section</li>
-//     <li>Works</li>
-//     <li>About us</li>
-//     <li>Contact</li>
-//     <li>Exit</li>
-//   </ul>
-// </nav>
-//
-//
-// Styleguide Base.nav
-
-nav,
-.nav {
-	ul {
-		@include inline-list();
-		ul {
-			margin-left: $spacer;
-		}
-	}
-}
-
-@if $show-grid == true {
-	h1, 
-	h2, 
-	h3, 
-	h4, 
-	h5, 
-	h6, 
-	p {
-		background-size: ritmo(4) ritmo(4);
-		background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 1px, transparent 1px);
-		background-repeat: repeat;
-	}
-}
+@import "components/nav";

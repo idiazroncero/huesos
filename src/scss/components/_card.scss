@@ -1,0 +1,8 @@
+.card {
+	padding: $gutter;
+	border: 1px solid $card-border-color;
+	border-radius: $card-border-radius;
+	@if $shadows == true {
+		box-shadow: $shadow-definition;
+	}
+}
