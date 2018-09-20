@@ -10,5 +10,8 @@ node_modules
 # .eslintcache
 .eslintcache
 
+# Docs are meant to be generated for every user
+docs
+
 
 
