@@ -10,7 +10,7 @@
     "css:watch": "yarn node-sass src/scss/style.scss dist/style.css -w",
     "css:sass": "yarn node-sass src/scss/style.scss dist/style.css --source-map=0",
     "css:cssnext": "yarn postcss dist/style.css -o dist/style.css -u postcss-cssnext --no-map",
-    "styleguide" : "yarn styleguide:style && yarn kss --source src/scss --builder src/kss-src  --destination docs",
+    "styleguide": "yarn styleguide:style && yarn kss --source src/scss --builder src/kss-src  --destination docs",
     "styleguide:style": "yarn styleguide:sass && yarn styleguide:cssnext",
     "styleguide:sass": "yarn node-sass src/kss-src/kss-assets/kss.scss src/kss-src/kss-assets/kss.css --output-style compressed --source-map=0",
     "styleguide:cssnext": "yarn postcss src/kss-src/kss-assets/kss.css -o src/kss-src/kss-assets/kss.css --use postcss-cssnext --no-map",
