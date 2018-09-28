@@ -1,22 +1,6 @@
-// --------------------
-// TOOLS
-// Mixins and third-party libraries
-// --------------------
-@import "node_modules/ritmo/ritmo"; // Source: https://ritmo.marzeelabs.org/
-@import "node_modules/family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
-@import "node_modules/animate-scss/animate.scss"; // Source: https://www.npmjs.com/package/animate-scss
-@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "dependencies"; 
 
-@import "src/scss/base/mixins/helpers";
-@import "src/scss/base/mixins/pow";
-@import "src/scss/base/mixins/type-scale";
-@import "src/scss/base/mixins/get-color";
-@import "src/scss/base/mixins/contrast-color";
-@import "src/scss/base/mixins/links";
-@import "src/scss/base/mixins/forms";
-@import "src/scss/base/mixins/lists";
-@import "src/scss/base/mixins/typography";
-
+// PLACE TO CONFIG
 
 @import "src/scss/base/fonts"; // Fonts are loaded first to optimize performance
 @import "src/scss/base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
