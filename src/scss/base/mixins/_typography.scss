@@ -1,16 +1,19 @@
-// Typography
-//
-// Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
-//
-// Styleguide Functions.Typography
+/*
+Typography
 
-// contrast-color($item)
-//
-// Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
-//
-// $item - [String] - an HTMl element (without opening and closing `< >` marks)
-//
-// Styleguide Functions.Typography.Bold
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Functions.Typography
+
+contrast-color($item)
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Functions.Typography.Bold
+*/
+
 @function bold($item: &) {
 	@if index($font-secondary-items, $item) == null {
 		@return $font-main-bold;

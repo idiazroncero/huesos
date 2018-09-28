@@ -1,12 +1,13 @@
+/*
+get-color($color, $value)
 
-// get-color($color, $value)
-//
-// Función que devuelve un color de un mapa determinado
-//
-// $color - Nombre del mapa
-// $value  - Nombre del color
-//
-// Styleguide Functions.Color.getColor
+Función que devuelve un color de un mapa determinado
+
+$color - Nombre del mapa
+$value  - Nombre del color
+
+Styleguide Functions.Color.getColor
+*/
 
 @function get-color($color, $value) {
 	$curmap : map-get($colors, $color);

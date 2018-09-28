@@ -1,22 +1,24 @@
-// Navigation menus
-//
-// Either `<nav>` HTML elements or enabled via the css class `.nav`.
-// The behavior is exactly the same as in `.list--inline`
-//
-// Markup:
-// <nav>
-//   <ul>
-//     <li>Home</li>
-//     <li>Section</li>
-//     <li>Works</li>
-//     <li>About us</li>
-//     <li>Contact</li>
-//     <li>Exit</li>
-//   </ul>
-// </nav>
-//
-//
-// Styleguide Base.nav
+/*
+Navigation menus
+
+Either `<nav>` HTML elements or enabled via the css class `.nav`.
+The behavior is exactly the same as in `.list--inline`
+
+Markup:
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>Section</li>
+    <li>Works</li>
+    <li>About us</li>
+    <li>Contact</li>
+    <li>Exit</li>
+  </ul>
+</nav>
+
+
+Styleguide Base.nav
+*/
 
 nav,
 .nav {

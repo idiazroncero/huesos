@@ -1,17 +1,19 @@
-// Headings
-//
-// The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
-//
-// Markup:
-// <h1>Main titles use heading one</h1>
-// <h2>Subtitules and main sections use h2</h2>
-// <h3>H3 is mainly for nested sections</h3>
-// <h4>In case you need furher sectioning, use an h4</h4>
-// <h5>Rarely you will need a heading five</h5>
-// <h6>Heading six is rather unexpected</h6>
-//
-//
-// Styleguide Typography.headings
+/*
+Headings
+
+The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
+
+Markup:
+<h1>Main titles use heading one</h1>
+<h2>Subtitules and main sections use h2</h2>
+<h3>H3 is mainly for nested sections</h3>
+<h4>In case you need furher sectioning, use an h4</h4>
+<h5>Rarely you will need a heading five</h5>
+<h6>Heading six is rather unexpected</h6>
+
+
+Styleguide Typography.headings
+*/
 
 h1, .h1 { @include ritmo-font-size($h1-font-size); }
 h2, .h2 { @include ritmo-font-size($h2-font-size); }
@@ -30,17 +32,19 @@ h1, h2, h3, h4, h5, h6
 	}
 }
 
-// Secondary font
-//
-// Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
-//
-// Markup:
-// <p class="font-secondary">This paragraph has been set to use the secondary font.
-// It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
-// to achive the same effect</p>
-//
-//
-// Styleguide Helpers.secondary-font
+/*
+Secondary font
+
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
+
+Markup:
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
 
 .font-secondary,
 %font-secondary {
@@ -57,32 +61,36 @@ h1, h2, h3, h4, h5, h6
 	}
 }
 
-// Quotes
-//
-// Tipographic quotes can be explicitly defined using the variable `$quotes`
-//
-// Markup:
-// <q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
-//
-// Styleguide Typography.quotes
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
 q {
 	quotes: $quotes;
 }
 
-// Blockquotes
-//
-// Blockquotes receive a padding based on '$gutter`
-//
-// Markup:
-// <blockquote class="myclass {{modifier_class}}">
-//   <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-//   <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-//   <cite><a href="#!">Said no one, ever.</a></cite>
-// </blockquote>
-//
-// .blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-//
-// Styleguide Typography.blockquote
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
 
 blockquote {
 	margin: 0 0 $spacer $blockquote-whitespace;

@@ -1,18 +1,20 @@
-// Color
-//
-// Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
-//
-// Styleguide Functions.Color
+/*
+Color
 
-// contrast-color($color, $dark, $light)
-//
-// Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
-//
-// $color - Color de fondo
-// $dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
-// $light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
-//
-// Styleguide Functions.Color.ContrastColor
+Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+
+Styleguide Functions.Color
+
+contrast-color($color, $dark, $light)
+
+Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+
+$color - Color de fondo
+$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+
+Styleguide Functions.Color.ContrastColor
+*/
 
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {

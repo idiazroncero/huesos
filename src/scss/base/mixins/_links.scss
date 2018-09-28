@@ -1,8 +1,10 @@
-// Links
-//
-// Functions that set and modify link strategies and values
-//
-// Styleguide Mixins.links
+/*
+Links
+
+Functions that set and modify link strategies and values
+
+Styleguide Mixins.links
+*/
 
 
 @mixin get-link-decoration($strategy: $link-strategy) {
@@ -37,16 +39,18 @@
 	}
 }
 
-// set-link($base, $visited, $hover, $active)
-//
-// Sets all link values according to global config.
-//
-// $base - Base color
-// $visited  - Color when visited
-// $hover   - Color when hovered and focused
-// $hover   - Color when active
-//
-// Styleguide Mixins.links.setLink
+/*
+set-link($base, $visited, $hover, $active)
+
+Sets all link values according to global config.
+
+$base - Base color
+$visited  - Color when visited
+$hover   - Color when hovered and focused
+$hover   - Color when active
+
+Styleguide Mixins.links.setLink
+*/
 
 @mixin set-link(
 	$base: $link-color,
