@@ -1,739 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Martel:700,900|Quicksand:400,700");
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0); }
-  40% {
-    transform: translateY(-30px); }
-  60% {
-    transform: translateY(-15px); } }
-
-@keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1; }
-  25%, 75% {
-    opacity: 0; } }
-
-@keyframes jello {
-  11.1% {
-    transform: none; }
-  22.2% {
-    transform: skewX(-12.5deg) skewY(-12.5deg); }
-  33.3% {
-    transform: skewX(6.25deg) skewY(6.25deg); }
-  44.4% {
-    transform: skewX(-3.125deg) skewY(-3.125deg); }
-  55.5% {
-    transform: skewX(1.5625deg) skewY(1.5625deg); }
-  66.6% {
-    transform: skewX(-0.78125deg) skewY(-0.78125deg); }
-  77.7% {
-    transform: skewX(0.39062deg) skewY(0.39062deg); }
-  88.8% {
-    transform: skewX(-0.19531deg) skewY(-0.19531deg); }
-  100% {
-    transform: none; } }
-
-@keyframes pulse {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
-
-@keyframes rubberBand {
-  0% {
-    transform: scale3d(1, 1, 1); }
-  30% {
-    transform: scale3d(1.25, 0.75, 1); }
-  40% {
-    transform: scale3d(0.75, 1.25, 1); }
-  50% {
-    transform: scale3d(1.15, 0.85, 1); }
-  65% {
-    transform: scale3d(0.95, 1.05, 1); }
-  75% {
-    transform: scale3d(1.05, 0.95, 1); }
-  100% {
-    transform: scale3d(1, 1, 1); } }
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px); }
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px); } }
-
-@keyframes swing {
-  20%, 40%, 60%, 80%, 100% {
-    transform-origin: top center; }
-  20% {
-    transform: rotate(15deg); }
-  40% {
-    transform: rotate(-10deg); }
-  60% {
-    transform: rotate(5deg); }
-  80% {
-    transform: rotate(-5deg); }
-  100% {
-    transform: rotate(0deg); } }
-
-@keyframes tada {
-  0% {
-    transform: scale(1); }
-  10%, 20% {
-    transform: scale(0.9) rotate(-3deg); }
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1) rotate(3deg); }
-  40%, 60%, 80% {
-    transform: scale(1.1) rotate(-3deg); }
-  100% {
-    transform: scale(1) rotate(0); } }
-
-@keyframes wobble {
-  0% {
-    transform: translateX(0%); }
-  15% {
-    transform: translateX(-25%) rotate(-5deg); }
-  30% {
-    transform: translateX(20%) rotate(3deg); }
-  45% {
-    transform: translateX(-15%) rotate(-3deg); }
-  60% {
-    transform: translateX(10%) rotate(2deg); }
-  75% {
-    transform: translateX(-5%) rotate(-1deg); }
-  100% {
-    transform: translateX(0%); } }
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3); }
-  50% {
-    opacity: 1;
-    transform: scale(1.05); }
-  70% {
-    transform: scale(0.9); }
-  100% {
-    transform: scale(1); } }
-
-@keyframes bounceInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-2000px); }
-  60% {
-    opacity: 1;
-    transform: translateY(30px); }
-  80% {
-    transform: translateY(-10px); }
-  100% {
-    transform: translateY(0); } }
-
-@keyframes bounceInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-2000px); }
-  60% {
-    opacity: 1;
-    transform: translateX(30px); }
-  80% {
-    transform: translateX(-10px); }
-  100% {
-    transform: translateX(0); } }
-
-@keyframes bounceInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(2000px); }
-  60% {
-    opacity: 1;
-    transform: translateX(-30px); }
-  80% {
-    transform: translateX(10px); }
-  100% {
-    transform: translateX(0); } }
-
-@keyframes bounceInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(2000px); }
-  60% {
-    opacity: 1;
-    transform: translateY(-30px); }
-  80% {
-    transform: translateY(10px); }
-  100% {
-    transform: translateY(0); } }
-
-@keyframes bounceOut {
-  0% {
-    transform: scale(1); }
-  25% {
-    transform: scale(0.95); }
-  50% {
-    opacity: 1;
-    transform: scale(1.1); }
-  100% {
-    opacity: 0;
-    transform: scale(0.3); } }
-
-@keyframes bounceOutDown {
-  0% {
-    transform: translateY(0); }
-  20% {
-    opacity: 1;
-    transform: translateY(-20px); }
-  100% {
-    opacity: 0;
-    transform: translateY(2000px); } }
-
-@keyframes bounceOutLeft {
-  0% {
-    transform: translateX(0); }
-  20% {
-    opacity: 1;
-    transform: translateX(20px); }
-  100% {
-    opacity: 0;
-    transform: translateX(-2000px); } }
-
-@keyframes bounceOutRight {
-  0% {
-    transform: translateX(0); }
-  20% {
-    opacity: 1;
-    transform: translateX(-20px); }
-  100% {
-    opacity: 0;
-    transform: translateX(2000px); } }
-
-@keyframes bounceOutUp {
-  0% {
-    transform: translateY(0); }
-  20% {
-    opacity: 1;
-    transform: translateY(20px); }
-  100% {
-    opacity: 0;
-    transform: translateY(-2000px); } }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes fadeInDownBig {
-  0% {
-    opacity: 0;
-    transform: translateY(-2000px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes fadeInLeftBig {
-  0% {
-    opacity: 0;
-    transform: translateX(-2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(20px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes fadeInRightBig {
-  0% {
-    opacity: 0;
-    transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes fadeInUpBig {
-  0% {
-    opacity: 0;
-    transform: translateY(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOutDown {
-  0% {
-    opacity: 1;
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(20px); } }
-
-@keyframes fadeOutDownBig {
-  0% {
-    opacity: 1;
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(2000px); } }
-
-@keyframes fadeOutLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(-20px); } }
-
-@keyframes fadeOutLeftBig {
-  0% {
-    opacity: 1;
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(-2000px); } }
-
-@keyframes fadeOutRight {
-  0% {
-    opacity: 1;
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(20px); } }
-
-@keyframes fadeOutRightBig {
-  0% {
-    opacity: 1;
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(2000px); } }
-
-@keyframes fadeOutUp {
-  0% {
-    opacity: 1;
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px); } }
-
-@keyframes fadeOutUpBig {
-  0% {
-    opacity: 1;
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(-2000px); } }
-
-@keyframes flip {
-  0% {
-    transform: perspective(400px) rotateY(0);
-    animation-timing-function: ease-out; }
-  40% {
-    transform: perspective(400px) translateZ(150px) rotateY(170deg);
-    animation-timing-function: ease-out; }
-  50% {
-    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
-    animation-timing-function: ease-in; }
-  80% {
-    transform: perspective(400px) rotateY(360deg) scale(0.95);
-    animation-timing-function: ease-in; }
-  100% {
-    transform: perspective(400px) scale(1);
-    animation-timing-function: ease-in; } }
-
-@keyframes flipInX {
-  0% {
-    opacity: 0;
-    transform: perspective(400px) rotateX(90deg); }
-  40% {
-    transform: perspective(400px) rotateX(-10deg); }
-  70% {
-    transform: perspective(400px) rotateX(10deg); }
-  100% {
-    opacity: 1;
-    transform: perspective(400px) rotateX(0deg); } }
-
-@keyframes flipInY {
-  0% {
-    opacity: 0;
-    transform: perspective(400px) rotateY(90deg); }
-  40% {
-    transform: perspective(400px) rotateY(-10deg); }
-  70% {
-    transform: perspective(400px) rotateY(10deg); }
-  100% {
-    opacity: 1;
-    transform: perspective(400px) rotateY(0deg); } }
-
-@keyframes flipOutX {
-  0% {
-    opacity: 1;
-    transform: perspective(400px) rotateX(0deg); }
-  100% {
-    opacity: 0;
-    transform: perspective(400px) rotateX(90deg); } }
-
-@keyframes flipOutY {
-  0% {
-    opacity: 1;
-    transform: perspective(400px) rotateY(0deg); }
-  100% {
-    opacity: 0;
-    transform: perspective(400px) rotateY(90deg); } }
-
-@keyframes lightSpeedIn {
-  0% {
-    opacity: 0;
-    transform: translateX(100%) skewX(-30deg); }
-  60% {
-    opacity: 1;
-    transform: translateX(-20%) skewX(30deg); }
-  80% {
-    opacity: 1;
-    transform: translateX(0%) skewX(-15deg); }
-  100% {
-    opacity: 1;
-    transform: translateX(0%) skewX(0deg); } }
-
-@keyframes lightSpeedOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0%) skewX(0deg); }
-  100% {
-    opacity: 0;
-    transform: translateX(100%) skewX(-30deg); } }
-
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotate(-200deg);
-    transform-origin: center center; }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: center center; } }
-
-@keyframes rotateInDownLeft {
-  0% {
-    opacity: 0;
-    transform: rotate(-90deg);
-    transform-origin: left bottom; }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: left bottom; } }
-
-@keyframes rotateInDownRight {
-  0% {
-    opacity: 0;
-    transform: rotate(90deg);
-    transform-origin: right bottom; }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: right bottom; } }
-
-@keyframes rotateInUpLeft {
-  0% {
-    opacity: 0;
-    transform: rotate(90deg);
-    transform-origin: left bottom; }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: left bottom; } }
-
-@keyframes rotateInUpRight {
-  0% {
-    opacity: 0;
-    transform: rotate(-90deg);
-    transform-origin: right bottom; }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: right bottom; } }
-
-@keyframes rotateOut {
-  0% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: center center; }
-  100% {
-    opacity: 0;
-    transform: rotate(200deg);
-    transform-origin: center center; } }
-
-@keyframes rotateOutDownLeft {
-  0% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: left bottom; }
-  100% {
-    opacity: 0;
-    transform: rotate(90deg);
-    transform-origin: left bottom; } }
-
-@keyframes rotateOutDownRight {
-  0% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: right bottom; }
-  100% {
-    opacity: 0;
-    transform: rotate(-90deg);
-    transform-origin: right bottom; } }
-
-@keyframes rotateOutUpLeft {
-  0% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: left bottom; }
-  100% {
-    opacity: 0;
-    transform: rotate(-90deg);
-    transform-origin: left bottom; } }
-
-@keyframes rotateOutUpRight {
-  0% {
-    opacity: 1;
-    transform: rotate(0);
-    transform-origin: right bottom; }
-  100% {
-    opacity: 0;
-    transform: rotate(90deg);
-    transform-origin: right bottom; } }
-
-@keyframes slideInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-2000px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes slideInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes slideOutDown {
-  0% {
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(2000px); } }
-
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(-2000px); } }
-
-@keyframes slideOutRight {
-  0% {
-    transform: translateX(0); }
-  100% {
-    opacity: 0;
-    transform: translateX(2000px); } }
-
-@keyframes slideOutUp {
-  0% {
-    transform: translateY(0); }
-  100% {
-    opacity: 0;
-    transform: translateY(-2000px); } }
-
-@keyframes hinge {
-  0% {
-    animation-timing-function: ease-in-out;
-    transform: rotate(0);
-    transform-origin: top left; }
-  20%, 60% {
-    animation-timing-function: ease-in-out;
-    transform: rotate(80deg);
-    transform-origin: top left; }
-  40% {
-    animation-timing-function: ease-in-out;
-    transform: rotate(60deg);
-    transform-origin: top left; }
-  80% {
-    opacity: 1;
-    animation-timing-function: ease-in-out;
-    transform: rotate(60deg) translateY(0);
-    transform-origin: top left; }
-  100% {
-    opacity: 0;
-    transform: translateY(700px); } }
-
-@keyframes rollIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%) rotate(-120deg); }
-  100% {
-    opacity: 1;
-    transform: translateX(0px) rotate(0deg); } }
-
-@keyframes rollOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0px) rotate(0deg); }
-  100% {
-    opacity: 0;
-    transform: translateX(100%) rotate(120deg); } }
-
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale3d(0.3, 0.3, 0.3); }
-  50% {
-    opacity: 1; } }
-
-@keyframes zoomInDown {
-  0% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0); }
-  60% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0); } }
-
-@keyframes zoomInLeft {
-  0% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0); }
-  60% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0); } }
-
-@keyframes zoomInRight {
-  0% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0); }
-  60% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0); } }
-
-@keyframes zoomInUp {
-  0% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0); }
-  60% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0); } }
-
-@keyframes zoomOut {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0;
-    transform: scale3d(0.3, 0.3, 0.3); }
-  100% {
-    opacity: 0; } }
-
-@keyframes zoomOutDown {
-  40% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0); }
-  100% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
-    transform-origin: center bottom; } }
-
-@keyframes zoomOutLeft {
-  40% {
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0); }
-  100% {
-    opacity: 0;
-    transform: scale(0.1) translate3d(-2000px, 0, 0);
-    transform-origin: left center; } }
-
-@keyframes zoomOutRight {
-  40% {
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0); }
-  100% {
-    opacity: 0;
-    transform: scale(0.1) translate3d(2000px, 0, 0);
-    transform-origin: right center; } }
-
-@keyframes zoomOutUp {
-  40% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0); }
-  100% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    transform-origin: center bottom; } }
-
 input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -742,6 +8,136 @@ input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=
   height: 1px;
   overflow: hidden; }
 
+/*
+get-color($color, $value)
+
+Función que devuelve un color de un mapa determinado
+
+$color - Nombre del mapa
+$value  - Nombre del color
+
+Styleguide Functions.Color.getColor
+*/
+/*
+Color
+
+Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+
+Styleguide Functions.Color
+
+contrast-color($color, $dark, $light)
+
+Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+
+$color - Color de fondo
+$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+
+Styleguide Functions.Color.ContrastColor
+*/
+/*
+Links
+
+Functions that set and modify link strategies and values
+
+Styleguide Mixins.links
+*/
+/*
+set-link($base, $visited, $hover, $active)
+
+Sets all link values according to global config.
+
+$base - Base color
+$visited  - Color when visited
+$hover   - Color when hovered and focused
+$hover   - Color when active
+
+Styleguide Mixins.links.setLink
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Functions.Typography
+
+contrast-color($item)
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Functions.Typography.Bold
+*/
+input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+/*
+get-color($color, $value)
+
+Función que devuelve un color de un mapa determinado
+
+$color - Nombre del mapa
+$value  - Nombre del color
+
+Styleguide Functions.Color.getColor
+*/
+/*
+Color
+
+Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+
+Styleguide Functions.Color
+
+contrast-color($color, $dark, $light)
+
+Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+
+$color - Color de fondo
+$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+
+Styleguide Functions.Color.ContrastColor
+*/
+/*
+Links
+
+Functions that set and modify link strategies and values
+
+Styleguide Mixins.links
+*/
+/*
+set-link($base, $visited, $hover, $active)
+
+Sets all link values according to global config.
+
+$base - Base color
+$visited  - Color when visited
+$hover   - Color when hovered and focused
+$hover   - Color when active
+
+Styleguide Mixins.links.setLink
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Functions.Typography
+
+contrast-color($item)
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Functions.Typography.Bold
+*/
 *,
 ::before,
 ::after {
@@ -781,9 +177,43 @@ table, caption, figcaption,
 fieldset {
   margin: 0 0 1.5rem 0; }
 
+/*
+Definition lists
+
+By default, all `<dd>` items are spaced with a `$spacer`
+
+Markup:
+<dl>
+  <dt>Definition List Title</dt>
+  <dd>This is a definition list division.</dd>
+</dl>
+
+Styleguide Base.definitionLists
+*/
 dd {
   margin: 0 0 0 1.5rem; }
 
+/*
+Unordered and ordered lists
+
+By default, `$gutter` is applied as margin.
+
+Markup:
+<ol class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ol>
+<ul class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+.list--inline	-  Inlines list items and removes decoration 
+
+Styleguide Base.lists
+*/
 ol, ul {
   padding-left: 1.5rem; }
 
@@ -832,6 +262,16 @@ main {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
+/*
+Horizontal rule
+
+Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
+
+Markup:
+<hr/>
+
+Styleguide Base.hr
+*/
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -853,6 +293,16 @@ nav ul {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+/*
+Pre-formatted text
+
+Applies selected monospace and `$base-font-size`
+
+Markup:
+<pre>Hey there! I am a pre-formatted text</pre>
+
+Styleguide Typography.pre
+*/
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -878,6 +328,16 @@ a {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
+/*
+Abbreviation
+
+Normalizes styling (underline)
+
+Markup:
+<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
+
+Styleguide Typography.abbr
+*/
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -890,6 +350,16 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
+/*
+Bold
+
+Applies bolding weight defined on `_config.scss` using `bold()` mixin.
+
+Markup:
+<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
+
+Styleguide Typography.bold
+*/
 b,
 strong {
   font-weight: 700; }
@@ -898,6 +368,16 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+/*
+Code, Keyboard, Samp, Var
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
+
+Styleguide Typography.code
+*/
 code,
 kbd,
 samp,
@@ -913,12 +393,32 @@ var {
 /**
  * Add the correct font style in Android 4.3-.
  */
+/*
+Definition
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p><dfn>Definition</dfn> is a tag used for defining terms</p>
+
+Styleguide Typography.dfn
+*/
 dfn {
   font-style: italic; }
 
 /**
  * Add the correct background and color in IE 9-.
  */
+/*
+Mark
+
+Uses color defined on the palette `text`, key `mark`.
+
+Markup:
+<p><mark>Really important</mark> and thus, marked text</p>
+
+Styleguide Typography.mark
+*/
 mark {
   background-color: #FCEE35;
   color: #1A1A19; }
@@ -926,6 +426,19 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
+/*
+Small
+
+Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
+
+Markup:
+<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
+<h1>A big heading with <small>an small portion of text</small></h1>
+<h2>A second-level title <small>featuring a minor text</small></h2>
+<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+
+Styleguide Typography.small
+*/
 small {
   font-size: 14px;
   font-size: 0.75019rem;
@@ -954,6 +467,16 @@ h3 small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
+/*
+Sub, Sup
+
+Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+
+Markup:
+<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+
+Styleguide Typography.sub
+*/
 sub,
 sup {
   font-size: 14px;
@@ -975,6 +498,16 @@ sup {
  * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
+/*
+Selection
+
+Uses the same color as in `<mark>` for text highlighting.
+
+Markup:
+<p>Try selecting a part of this text for <code>::selection</code> testing</p>
+
+Styleguide Pseudo-elements.selection
+*/
 ::-moz-selection {
   background-color: #FCEE35;
   /* 1 */
@@ -1005,6 +538,16 @@ video {
 /*
  * Deletes ugly iframe border and makes it fill its parent by default
  */
+/*
+Iframe
+
+Deletes border, displays iframes as a block element that fills its parent width.
+
+Markup:
+<iframe src="http://idiazroncero.com"></iframe>
+
+Styleguide Base.iframe
+*/
 iframe {
   border: none;
   width: 100%;
@@ -1028,6 +571,16 @@ audio:not([controls]) {
  * Remove the border on images inside links in IE 10-.
  * Make all images responsive by default
  */
+/*
+Img
+
+All images are responsive by default.
+
+Markup:
+<img src="http://placehold.it/300x300" />"
+
+Styleguide Base.img
+*/
 img {
   border-style: none;
   max-width: 100%; }
@@ -1281,6 +834,32 @@ textarea,
 [aria-disabled] {
   cursor: default; }
 
+/*
+Checkboxes
+
+Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
+
+Markup:
+<input type="checkbox" id="check" name="check">
+<label for="check">Checkbox normal</label>
+<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
+<label for="check2">Pseudo Checkbox</label>
+
+Styleguide Forms.checkbox
+*/
+/*
+Radio buttons
+
+Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
+
+Markup:
+<input type="radio" id="radio" name="radio">
+<label for="radio">Radio normal</label>
+<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+<label for="radio2">Pseudo Radio</label>
+
+Styleguide Forms.radio
+*/
 input,
 label,
 select,
@@ -1310,26 +889,65 @@ select:-webkit-autofill {
   color: #1A1A19; }
 
 input {
-  border-bottom: 1px solid #666666;
-  padding: 0;
-  /* Make webkit render the search input like a normal text field */
-  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  /* Fix IE7 display bug */ }
-  input:hover, input:focus {
-    border-color: #121212; }
-  input:focus {
-    outline: 0; }
-  input[type=checkbox], input[type=radio] {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle; }
-  input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box; }
-  ::-webkit-search-decoration {
-    display: none; }
-  input[type="reset"], input[type="button"], input[type="submit"] {
-    overflow: visible; }
+  /*
+	Input
+	
+	General text input.<br>
+	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
+	and apply a vertical-rhythm based margin.<br>
+	This wrapper also applies a flexbox in order to take the full width of the parent.
+	Without this wrapper and class, all the form elements would behave as inline-block elements.
+	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
+	
+	Markup:
+	<div class="form-item">
+	  <label for="text">Text</label>
+	  <input type="text" id="text" name="text">
+	</div>
+	<div class="form-item form-item--required">
+	  <label for="text">Text Required</label>
+	  <input required type="text" id="text" name="text">
+	</div>
+	<div class="form-item">
+	  <label for="text">Text Disabled</label>
+	  <input disabled type="text" id="text" name="text">
+	</div>
+	<div class="form-item">
+	  <label for="password">Password</label>
+	  <input type="password" id="password" name="password">
+	</div>
+	<div class="form-item">
+	  <label for="email">Email</label>
+	  <input type="email" id="email" name="email">
+	</div>
+	<div class="form-item">
+	  <label for="url">Web Address</label>
+	  <input id="url" type="url" placeholder="http://yoursite.com">
+	</div>
+	<div class="form-item">
+	  <label for="input__phone">Phone Number</label>
+	  <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+	</div>
+	<div class="form-item">
+	  <label for="input__search">Search</label>
+	  <input id="input__search" type="search" placeholder="Enter Search Term">
+	</div>
+	
+	Styleguide Forms.input
+	@include form-reset-input();
+	*/
+  /*
+	File Input
+	
+	Uses the label for handling click and hides the actual input element.
+	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	
+	Markup:
+	<input type="file" id="file" name="file">
+	<label for="file">Upload your file</label>
+	
+	Styleguide Forms.file
+	*/ }
   input[type=checkbox].pseudo-checkbox:checked + label:before {
     background-color: #666666; }
   input[type=checkbox].pseudo-checkbox + label {
@@ -1363,6 +981,28 @@ input {
     opacity: 0.33; }
 
 select {
+  /*
+	Select
+	
+	Handles multiple selection
+	TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI
+	
+	Markup:
+	<select>
+	  <option value="volvo">Volvo</option>
+	  <option value="saab">Saab</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="audi">Audi</option>
+	</select>
+	<select multiple>
+	  <option value="volvo">Volvo</option>
+	  <option value="saab">Saab</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="audi">Audi</option>
+	</select> 
+	
+	Styleguide Forms.select
+	*/
   border: 1px solid #666666;
   padding: 0 0.75rem;
   -webkit-appearance: none;
@@ -1374,6 +1014,18 @@ select {
   select[multiple] {
     vertical-align: top; }
 
+/*
+Button
+
+Either `<input>`, `<button>` or `<a class="button">`
+
+Markup:
+<button class="button {{modifier_class}}">Click!</button>
+
+.button--disabled          - Dims color and deactivates hover to indicate disability.
+
+Styleguide Components.buttons
+*/
 input[type=submit],
 input[type=reset],
 input[type=button],
@@ -1515,6 +1167,22 @@ legend {
   content: "*";
   color: #DA3C3C; }
 
+/*
+Headings
+
+The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
+
+Markup:
+<h1>Main titles use heading one</h1>
+<h2>Subtitules and main sections use h2</h2>
+<h3>H3 is mainly for nested sections</h3>
+<h4>In case you need furher sectioning, use an h4</h4>
+<h5>Rarely you will need a heading five</h5>
+<h6>Heading six is rather unexpected</h6>
+
+
+Styleguide Typography.headings
+*/
 h1, .h1 {
   font-size: 57px;
   font-size: 3.15733rem;
@@ -1558,6 +1226,19 @@ h1, h2, h3, h4, h5, h6 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: inherit;
     vertical-align: 0; }
 
+/*
+Secondary font
+
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
+
+Markup:
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
 .font-secondary,
 h1,
 h2,
@@ -1589,9 +1270,35 @@ dt a, dt a:link {
 #your-ids a, #your-ids a:link {
   text-decoration: none; }
 
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
 q {
   quotes: "“" "”" "‘" "’"; }
 
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
 blockquote {
   margin: 0 0 1.5rem 3rem; }
 
@@ -1616,6 +1323,68 @@ var {
   padding: 0 0.375rem;
   border-radius: 3px; }
 
+/*
+Tables
+
+Tables span across all available space evenly distributed.
+Borders are collapsed by default
+
+Markup:
+<table>
+<caption>Table Caption</caption>
+<thead>
+  <tr>
+    <th>Table Heading 1</th>
+    <th>Table Heading 2</th>
+    <th>Table Heading 3</th>
+    <th>Table Heading 4</th>
+    <th>Table Heading 5</th>
+  </tr>
+</thead>
+<tfoot>
+  <tr>
+    <th>Table Footer 1</th>
+    <th>Table Footer 2</th>
+    <th>Table Footer 3</th>
+    <th>Table Footer 4</th>
+    <th>Table Footer 5</th>
+  </tr>
+</tfoot>
+<tbody>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+</tbody>
+</table>
+
+
+Styleguide Base.tables
+*/
 table {
   table-layout: fixed;
   width: 100%; }
@@ -1627,6 +1396,24 @@ th, td {
 th {
   text-align: left; }
 
+/*
+Images
+
+Styleguide Base.images
+*/
+/*
+Figcaption
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+Markup:
+<figure>
+  <img src="http://placehold.it/400x200" />
+  <figcaption>Well documented code is always a bliss</figcaption>
+</figure>
+
+Styleguide Base.images.figcaption
+*/
 figcaption {
   font-size: 14px;
   font-size: 0.75019rem;
@@ -1634,6 +1421,19 @@ figcaption {
   line-height: 1.125rem;
   text-align: left; }
 
+/*
+Links.
+
+All links are formatted throught `set-link()` mixin.
+
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
+
+.link--inactive         - Makes link appear as normal
+.link--disabled         - Dims the link to mark it as disabled
+
+Styleguide Typography.links
+*/
 a, a:link {
   color: #2B90D9;
   text-decoration: none; }
@@ -1682,6 +1482,27 @@ body {
   border-radius: 2px;
   box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
 
+/*
+Navigation menus
+
+Either `<nav>` HTML elements or enabled via the css class `.nav`.
+The behavior is exactly the same as in `.list--inline`
+
+Markup:
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>Section</li>
+    <li>Works</li>
+    <li>About us</li>
+    <li>Contact</li>
+    <li>Exit</li>
+  </ul>
+</nav>
+
+
+Styleguide Base.nav
+*/
 nav ul,
 .nav ul {
   margin: 0;

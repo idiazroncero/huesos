@@ -2,10 +2,7 @@
 // TOOLS
 // Mixins and third-party libraries
 // --------------------
-@import "../../node_modules/ritmo/ritmo"; // Source: https://ritmo.marzeelabs.org/
-@import "../../node_modules/family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
-@import "../../node_modules/animate-scss/animate.scss"; // Source: https://www.npmjs.com/package/animate-scss
-@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../../dependencies";
 
 @import "base/mixins/helpers";
 @import "base/mixins/pow";

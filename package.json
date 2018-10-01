@@ -4,7 +4,6 @@
   "description": "Huesos is a front-end starterkit. It provides a basic CSS osamenta by combining some preferred and battle-tested tools.",
   "scripts": {
     "build": "yarn run styleguide; yarn css",
-    "watch": "yarn run styleguide:style; webpack --watch --config webpack.config.js",
     "huesos": "yarn run build",
     "css": "yarn css:sass && yarn css:cssnext",
     "css:watch": "yarn node-sass src/scss/style.scss dist/style.css -w",
