@@ -11,7 +11,8 @@ node_modules
 .eslintcache
 
 # Docs are meant to be generated for every user
-docs
+# but in this branch they are added for GitHub Pages to generate
+# docs
 
 
 
