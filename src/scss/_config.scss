@@ -132,17 +132,20 @@ $georgia: Georgia, serif;
 $krub: 'Krub', $helvetica;
 $merriweather: 'Merriweather', $georgia;
 
+$fira-sans: 'Fira Sans', $helvetica;
+$lato: 'Lato', $helvetica;
+
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $krub;
-$font-secondary: $merriweather;
+$font-main: $lato;
+$font-secondary: $fira-sans;
 
 // Custom values for bold and light allow for more precise mapping
-$bold: 600;
-$font-main-bold: 600;
-$font-secondary-bold: 900;
+$bold: 700;
+$font-main-bold: 700;
+$font-secondary-bold: 800;
 $light: light;
-$normal: normal;
+$normal: 300;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:

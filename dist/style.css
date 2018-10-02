@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
 input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -200,7 +201,7 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  font-family: "Krub", Helvetica, Arial sans-serif; }
+  font-family: "Lato", Helvetica, Arial sans-serif; }
 
 html {
   font-size: 100%;
@@ -388,7 +389,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -406,7 +408,7 @@ Styleguide Typography.bold
 */
 b,
 strong {
-  font-weight: 600; }
+  font-weight: 700; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -852,7 +854,6 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -1117,7 +1118,9 @@ select {
 	*/
   border: 1px solid #333333;
   padding: 0 0.65rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
     border-color: black; }
@@ -1174,7 +1177,7 @@ fieldset {
     font-size: 1rem;
     line-height: 21px;
     line-height: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1189,7 +1192,7 @@ fieldset.fieldset--disabled {
     font-size: 1.333rem;
     line-height: 26px;
     line-height: 1.625rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1203,7 +1206,7 @@ fieldset.fieldset--disabled {
     font-size: 0.75019rem;
     line-height: 21px;
     line-height: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
   .form-item input[type="text"],
@@ -1374,6 +1377,7 @@ a.disabled:link,
 input.disabled {
   opacity: 0.33;
   color: inherit;
+  cursor: auto;
   cursor: initial; }
   input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
   input[type=reset][disabled]:hover,
@@ -1390,6 +1394,7 @@ input.disabled {
   input.disabled:focus {
     background: none;
     color: inherit;
+    cursor: auto;
     cursor: initial; }
   input[type=submit][disabled].button--error,
   input[type=reset][disabled].button--error,
@@ -1496,7 +1501,7 @@ h4,
 dt,
 .your-classes,
 #your-ids {
-  font-family: "Merriweather", Georgia, serif; }
+  font-family: "Fira Sans", Helvetica, Arial sans-serif; }
 
 h1 a, h1 a:link {
   text-decoration: none; }
@@ -1559,7 +1564,7 @@ blockquote {
     font-size: 2.36859rem;
     line-height: 47px;
     line-height: 2.925rem;
-    font-family: "Merriweather", Georgia, serif;
+    font-family: "Fira Sans", Helvetica, Arial sans-serif;
     position: absolute;
     top: 0.325rem;
     left: -2.6rem; }
@@ -1570,7 +1575,8 @@ samp,
 var {
   display: inline-block;
   vertical-align: baseline;
-  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
   background-color: #1A1A19;
   color: #FFFFFF;
   padding: 0 0.325rem;
@@ -1770,7 +1776,7 @@ body {
   padding: 1.3rem;
   border: 1px solid #CCCCCC;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, 0.1); }
+  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
 
 /*
 Navigation menus
@@ -1927,6 +1933,7 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
+  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
