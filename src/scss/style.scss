@@ -21,6 +21,7 @@
 @import "base/fonts"; // Fonts are loaded first to optimize performance
 @import "base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
 @import "base/forms";
+@import "base/buttons";
 @import "base/typography";
 @import "base/table";
 @import "base/images";

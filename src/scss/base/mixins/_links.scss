@@ -86,7 +86,7 @@ Styleguide Mixins.links.setLink
 	}
 }
 
-@mixin kill-link($color) {
+@mixin kill-link($color: get-color(text, primary)) {
 	@include set-link($color, $color, $color, $color);
 	@include kill-link-decoration();
 }

@@ -228,12 +228,11 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     margin-top: ($kss-vertical-rhythm/2);
     margin-bottom: ($kss-vertical-rhythm/2);
     padding: 0;
-    list-style-type: none;
   }
 
   .kss-nav__menu-item {
     display: inline-block;
-    padding-right: $kss-vertical-rhythm;
+    //padding-right: $kss-vertical-rhythm;
 
     @media screen and (min-width: 769px) {
       display: list-item;
@@ -269,14 +268,13 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     @media screen and (min-width: 769px) {
       display: block;
       list-style-type: none;
-      margin: ritmo(2) 0;
-      padding: 0 0 0 $gutter;
     }
   }
 
   .kss-nav__ref {
     color: #333;
     font-weight: bold;
+    @extend .visually-hidden;
 
     &:after {
       content: ' ';
@@ -337,6 +335,27 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     &.kss-section--empty {
       margin-bottom: $gutter;
     }
+  }
+
+  .kss-section--depth-2 + .kss-section--depth-3 {
+    margin-top: -($gutter * 5);
+  }
+
+  .kss-section--depth-3 {
+    @extend .card;
+    margin-bottom: 0;
+    background-color: $white;
+    border-top:none;
+    border-bottom:none;
+    border-left:$gutter solid get-color(gray, "lighter");
+    padding-left: $gutter;
+    &.kss-section--empty {
+      margin-bottom: $gutter;
+    }
+  }
+
+  .kss-section--depth-3 + .kss-section--depth-2 {
+    margin-top:$gutter * 4;
   }
 
   .kss-title {
@@ -540,7 +559,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
   .kss-modifier__default-name {
     font-weight: bold;
-    margin-bottom: ($kss-vertical-rhythm / 2);
+    margin-bottom:ritmo(2);
   }
   .is-fullscreen .kss-modifier__default-name {
     margin-left: 20px;
@@ -550,12 +569,13 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     float: left;
     padding-right: 10px;
     font-weight: bold;
+    margin-bottom:ritmo(2);
   }
   .is-fullscreen .kss-modifier__name {
     margin-left: 20px;
   }
   .kss-modifier__description {
-    margin-bottom: ($kss-vertical-rhythm / 2);
+    // margin-bottom: ($kss-vertical-rhythm / 2);
   }
   .is-fullscreen .kss-modifier__description {
     margin-right: 20px;
@@ -564,7 +584,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     clear: left;
     position: relative; // Contain the example's absolute positioning.
     z-index: 0; // Establishes a local stacking context.
-
+    margin-bottom: ritmo(4);
     &:last-child {
       margin-bottom: 0;
     }

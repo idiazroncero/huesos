@@ -15,7 +15,7 @@ Styleguide Typography.links
 a {
 	@include set-link();
 	&.link--inactive {
-		@include kill-link(get-color(text, primary))
+		@include kill-link()
 	}
 	&.link--disabled {
 		opacity: $disabled-opacity;

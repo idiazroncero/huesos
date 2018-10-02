@@ -17,7 +17,7 @@
   <header class="kss-header">
     <h1 class="kss-doc-title">{{options.title}}</h1>
   </header>
-  <nav class="kss-nav" aria-label="Style Guide">
+  <nav class="kss-nav toc" aria-label="Style Guide">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="./">
@@ -66,6 +66,7 @@
     the "#if @first" block as seen below.
   }}
   {{#each sections}}
+
     <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
       <div class="kss-style">

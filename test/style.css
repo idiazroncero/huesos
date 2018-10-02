@@ -1,0 +1,1652 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
+input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+/*
+get-color($color, $value)
+
+Función que devuelve un color de un mapa determinado
+
+$color - Nombre del mapa
+$value  - Nombre del color
+
+Styleguide Functions.Color.getColor
+*/
+/*
+Color
+
+Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+
+Styleguide Functions.Color
+
+contrast-color($color, $dark, $light)
+
+Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+
+$color - Color de fondo
+$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+
+Styleguide Functions.Color.ContrastColor
+*/
+/*
+Links
+
+Functions that set and modify link strategies and values
+
+Styleguide Mixins.links
+*/
+/*
+set-link($base, $visited, $hover, $active)
+
+Sets all link values according to global config.
+
+$base - Base color
+$visited  - Color when visited
+$hover   - Color when hovered and focused
+$hover   - Color when active
+
+Styleguide Mixins.links.setLink
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Functions.Typography
+
+contrast-color($item)
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Functions.Typography.Bold
+*/
+input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+/*
+get-color($color, $value)
+
+Función que devuelve un color de un mapa determinado
+
+$color - Nombre del mapa
+$value  - Nombre del color
+
+Styleguide Functions.Color.getColor
+*/
+/*
+Color
+
+Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+
+Styleguide Functions.Color
+
+contrast-color($color, $dark, $light)
+
+Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+
+$color - Color de fondo
+$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+
+Styleguide Functions.Color.ContrastColor
+*/
+/*
+Links
+
+Functions that set and modify link strategies and values
+
+Styleguide Mixins.links
+*/
+/*
+set-link($base, $visited, $hover, $active)
+
+Sets all link values according to global config.
+
+$base - Base color
+$visited  - Color when visited
+$hover   - Color when hovered and focused
+$hover   - Color when active
+
+Styleguide Mixins.links.setLink
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Functions.Typography
+
+contrast-color($item)
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Functions.Typography.Bold
+*/
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  /* 1 */
+  box-sizing: inherit;
+  /* 2 */ }
+
+::before,
+::after {
+  text-decoration: inherit;
+  /* 1 */
+  vertical-align: inherit;
+  /* 2 */ }
+
+html {
+  box-sizing: border-box;
+  /* 1 */
+  cursor: default;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  font-family: "Krub", Helvetica, Arial sans-serif; }
+
+html {
+  font-size: 100%;
+  line-height: 1.3em; }
+
+p, h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+article, aside, footer, header, nav, section,
+figure, audio, video,
+hr,
+table, caption, figcaption,
+fieldset {
+  margin: 0 0 1.3rem 0; }
+
+/*
+Definition lists
+
+By default, all `<dd>` items are spaced with a `$spacer`
+
+Markup:
+<dl>
+  <dt>Definition List Title</dt>
+  <dd>This is a definition list division.</dd>
+</dl>
+
+Styleguide Base.definitionLists
+*/
+dd {
+  margin: 0 0 0 1.3rem; }
+
+/*
+Unordered and ordered lists
+
+By default, `$gutter` is applied as margin.
+
+Markup:
+<ol class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ol>
+<ul class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+.list--inline	-  Inlines list items and removes decoration 
+
+Styleguide Base.lists
+*/
+ol, ul {
+  padding-left: 1.3rem; }
+
+.list--inline {
+  margin: 0;
+  padding: 0; }
+  .list--inline li {
+    list-style-type: none;
+    display: inline-block; }
+
+caption {
+  text-align: left; }
+
+/* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/* Grouping content (https://html.spec.whatwg.org/multipage/semantics.html#grouping-content)
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/*
+Horizontal rule
+
+Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
+
+Markup:
+<hr/>
+
+Styleguide Base.hr
+*/
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+  border: none;
+  border-bottom: 1px solid #CCCCCC; }
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+nav ol,
+nav ul {
+  list-style: none; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/*
+Pre-formatted text
+
+Applies selected monospace and `$base-font-size`
+
+Markup:
+<pre>Hey there! I am a pre-formatted text</pre>
+
+Styleguide Typography.pre
+*/
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  /* 2 */ }
+
+/* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/*
+Abbreviation
+
+Normalizes styling (underline)
+
+Markup:
+<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
+
+Styleguide Typography.abbr
+*/
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/*
+Bold
+
+Applies bolding weight defined on `_config.scss` using `bold()` mixin.
+
+Markup:
+<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
+
+Styleguide Typography.bold
+*/
+b,
+strong {
+  font-weight: 600; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/*
+Code, Keyboard, Samp, Var
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
+
+Styleguide Typography.code
+*/
+code,
+kbd,
+samp,
+var {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/*
+Definition
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p><dfn>Definition</dfn> is a tag used for defining terms</p>
+
+Styleguide Typography.dfn
+*/
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/*
+Mark
+
+Uses color defined on the palette `text`, key `mark`.
+
+Markup:
+<p><mark>Really important</mark> and thus, marked text</p>
+
+Styleguide Typography.mark
+*/
+mark {
+  background-color: #FCEE35;
+  color: #FFFFFF;
+  padding: 0 0.325rem; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/*
+Small
+
+Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
+
+Markup:
+<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
+<h1>A big heading with <small>an small portion of text</small></h1>
+<h2>A second-level title <small>featuring a minor text</small></h2>
+<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+
+Styleguide Typography.small
+*/
+small {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+
+h1 small {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 36px;
+  line-height: 2.275rem; }
+
+h2 small {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 26px;
+  line-height: 1.625rem; }
+
+h3 small {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/*
+Sub, Sup
+
+Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+
+Markup:
+<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+
+Styleguide Typography.sub
+*/
+sub,
+sup {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+/*
+ * Remove the text shadow on text selections (opinionated).
+ * HUESOS: Use the same as <mark> elements
+ * 1. Restore the coloring undone by defining the text shadow (opinionated).
+ */
+/*
+Selection
+
+Uses the same color as in `<mark>` for text highlighting.
+
+Markup:
+<p>Try selecting a part of this text for <code>::selection</code> testing</p>
+
+Styleguide Pseudo-elements.selection
+*/
+::-moz-selection {
+  background-color: #FCEE35;
+  /* 1 */
+  color: #FFFFFF;
+  /* 1 */
+  text-shadow: none; }
+
+::selection {
+  background-color: #FCEE35;
+  /* 1 */
+  color: #FFFFFF;
+  /* 1 */
+  text-shadow: none; }
+
+/* Embedded content (https://html.spec.whatwg.org/multipage/embedded-content.html#embedded-content)
+   ========================================================================== */
+/*
+ * Change the alignment on media elements in all browers (opinionated).
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Deletes ugly iframe border and makes it fill its parent by default
+ */
+/*
+Iframe
+
+Deletes border, displays iframes as a block element that fills its parent width.
+
+Markup:
+<iframe src="http://idiazroncero.com"></iframe>
+
+Styleguide Base.iframe
+*/
+iframe {
+  border: none;
+  width: 100%;
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ * Make all images responsive by default
+ */
+/*
+Img
+
+All images are responsive by default.
+
+Markup:
+<img src="http://placehold.it/300x300" />"
+
+Styleguide Base.img
+*/
+img {
+  border-style: none;
+  max-width: 100%; }
+
+/**
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
+svg {
+  fill: currentColor; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Tabular data (https://html.spec.whatwg.org/multipage/tables.html#tables)
+   ========================================================================== */
+/**
+ * Collapse border spacing
+ */
+table {
+  border-collapse: collapse; }
+
+/* Forms (https://html.spec.whatwg.org/multipage/forms.html#forms)
+   ========================================================================== */
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * 1. Remove the default vertical scrollbar in IE.
+ * 2. Change the resize direction on textareas in all browsers (opinionated).
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  resize: vertical;
+  /* 2 */ }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive elements (https://html.spec.whatwg.org/multipage/forms.html#interactive-elements)
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting (https://html.spec.whatwg.org/multipage/scripting.html#scripting-3)
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* User interaction (https://html.spec.whatwg.org/multipage/interaction.html#editing)
+   ========================================================================== */
+/*
+ * Remove the tapping delay on clickable elements (opinionated).
+ * 1. Remove the tapping delay in IE 10.
+ */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  /* 1 */
+  touch-action: manipulation; }
+
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+/* ARIA (https://w3c.github.io/html-aria/)
+   ========================================================================== */
+/**
+ * Change the cursor on busy elements (opinionated).
+ */
+[aria-busy="true"] {
+  cursor: progress; }
+
+/*
+ * Change the cursor on control elements (opinionated).
+ */
+[aria-controls] {
+  cursor: pointer; }
+
+/*
+ * Change the display on visually hidden accessible elements (opinionated).
+ */
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute; }
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements (opinionated).
+ */
+[aria-disabled] {
+  cursor: default; }
+
+/*
+Checkboxes
+
+Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
+
+Markup:
+<div class="form-item">
+	<input type="checkbox" id="check" name="check">
+	<label for="check">Checkbox normal</label>
+</div>
+<div class="form-item">
+	<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
+	<label for="check2">Pseudo Checkbox</label>
+</div>
+
+Styleguide Forms.checkbox
+*/
+/*
+Radio buttons
+
+Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
+
+Markup:
+<input type="radio" id="radio" name="radio">
+<label for="radio">Radio normal</label>
+<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+<label for="radio2">Pseudo Radio</label>
+
+Styleguide Forms.radio
+*/
+input,
+label,
+select,
+button,
+textarea {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  width: auto;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  border-radius: 0;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit; }
+
+label {
+  margin-right: 0.65rem; }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #888888 inset;
+  color: #FFFFFF; }
+
+input {
+  /*
+	Input
+	
+	General text input.
+
+	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
+	and apply a vertical-rhythm based margin.
+
+	This wrapper also applies a flexbox in order to take the full width of the parent.
+
+	Without this wrapper and class, all the form elements would behave as inline-block elements.
+
+	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
+	
+	Markup:
+	<div class="form-item">
+	  <label for="text">Text</label>
+	  <input type="text" id="text" name="text">
+	</div>
+	<div class="form-item form-item--required">
+	  <label for="text">Text Required</label>
+	  <input required type="text" id="text" name="text">
+	</div>
+	<div class="form-item">
+	  <label for="text">Text Disabled</label>
+	  <input disabled type="text" id="text" name="text">
+	</div>
+	<div class="form-item">
+	  <label for="password">Password</label>
+	  <input type="password" id="password" name="password">
+	</div>
+	<div class="form-item">
+	  <label for="email">Email</label>
+	  <input type="email" id="email" name="email">
+	</div>
+	<div class="form-item">
+	  <label for="url">Web Address</label>
+	  <input id="url" type="url" placeholder="http://yoursite.com">
+	</div>
+	<div class="form-item">
+	  <label for="input__phone">Phone Number</label>
+	  <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+	</div>
+	<div class="form-item">
+	  <label for="input__search">Search</label>
+	  <input id="input__search" type="search" placeholder="Enter Search Term">
+	</div>
+	
+	Styleguide Forms.input
+	*/
+  border-bottom: 1px solid #333333;
+  padding: 0;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /*
+	File Input
+	
+	Uses the label for handling click and hides the actual input element.
+	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	
+	Markup:
+	<input type="file" id="file" name="file">
+	<label for="file">Upload your file</label>
+	
+	Styleguide Forms.file
+	*/ }
+  input:hover, input:focus {
+    border-color: black; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 0.65rem; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=checkbox].pseudo-checkbox:checked + label {
+    position: relative; }
+    input[type=checkbox].pseudo-checkbox:checked + label:after {
+      content: "";
+      display: inline-block;
+      width: 0.5em;
+      height: 0.5em;
+      position: absolute;
+      top: 50%;
+      left: 0.25em;
+      transform: translateY(-50%);
+      background-color: #333333; }
+  input[type=checkbox].pseudo-checkbox + label {
+    cursor: pointer; }
+    input[type=checkbox].pseudo-checkbox + label:before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin: 2.4px 0.65rem 2.4px 0;
+      border: 1px solid #333333;
+      background-color: #FFFFFF;
+      vertical-align: top;
+      cursor: pointer; }
+  input[type=radio].pseudo-radio:checked + label {
+    position: relative; }
+    input[type=radio].pseudo-radio:checked + label:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 0.25em;
+      width: 0.5em;
+      height: 0.5em;
+      transform: translateY(-50%);
+      background-color: #333333;
+      border-radius: 50%;
+      cursor: pointer; }
+  input[type=radio].pseudo-radio + label {
+    cursor: pointer; }
+    input[type=radio].pseudo-radio + label:before {
+      content: "";
+      display: inline-block;
+      margin: 2.4px 2.4px 2.4px 0;
+      width: 1em;
+      height: 1em;
+      border: 1px solid #333333;
+      background-color: #FFFFFF;
+      vertical-align: top;
+      border-radius: 50%;
+      cursor: pointer; }
+  input:disabled {
+    opacity: 0.33; }
+
+select {
+  /*
+	Select
+	
+	Handles multiple selection
+	TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI
+	
+	Markup:
+	<select>
+	  <option value="volvo">Volvo</option>
+	  <option value="saab">Saab</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="audi">Audi</option>
+	</select>
+	<select multiple>
+	  <option value="volvo">Volvo</option>
+	  <option value="saab">Saab</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="audi">Audi</option>
+	</select> 
+	
+	Styleguide Forms.select
+	*/
+  border: 1px solid #333333;
+  padding: 0 0.65rem;
+  appearance: none;
+  /* Move the label to the top */ }
+  select:hover, select:focus {
+    border-color: black; }
+  select[multiple] {
+    vertical-align: top; }
+
+textarea {
+  border: 1px solid #333333;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+  width: 100%;
+  padding: 0 0.325rem; }
+
+fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  border: 1px solid #333333;
+  padding: 1.3rem; }
+
+legend {
+  font-weight: 600; }
+
+.form-item {
+  margin-bottom: 1.3rem;
+  display: flex;
+  align-items: center; }
+  .form-item label {
+    flex: 0 1 auto; }
+  .form-item input[type="text"],
+  .form-item input[type="email"],
+  .form-item input[type="password"],
+  .form-item input[type="url"],
+  .form-item input[type="tel"],
+  .form-item input[type="search"] {
+    flex: 1 0 auto; }
+
+.form-item--required label::after {
+  content: "*";
+  color: #DA3C3C; }
+
+/*
+Button
+
+Either `<input type="submit / ">`, `<button>` or `<a class="button">`
+
+Markup:
+<button class="{{modifier_class}}">Click me please!</button>
+<a href="#" class="button {{modifier_class}}">I'm a link!</a>
+<input type="submit" class="{{modifier_class}}" value="Submit input" />
+
+.button--success           - Uses success color to indicate a positive action (OK, login, continue...)
+.button--warning           - Uses warning color to indicate a potentially negative action
+.button--error             - Uses error color to indicate a negative action (delete, cancel, no...)
+.button--disabled          - Dims color and deactivates hover to indicate disability.
+.button--error.button--disabled             - --disabled and the rest of the modifiers can be applied at the same time
+
+
+Styleguide Components.buttons
+*/
+input[type=submit],
+input[type=reset],
+input[type=button],
+button,
+.button,
+input[type=file] + label {
+  background: none;
+  outline: none;
+  padding: 0 0.65rem;
+  /* IE8 and FF freak out if this rule is within another selector */
+  cursor: pointer;
+  border: 2px solid #333333;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 26px;
+  line-height: 1.625rem; }
+  input[type=submit]::-moz-focus-inner,
+  input[type=reset]::-moz-focus-inner,
+  input[type=button]::-moz-focus-inner,
+  button::-moz-focus-inner,
+  .button::-moz-focus-inner,
+  input[type=file] + label::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus,
+  input[type=reset]:hover,
+  input[type=reset]:active,
+  input[type=reset]:focus,
+  input[type=button]:hover,
+  input[type=button]:active,
+  input[type=button]:focus,
+  button:hover,
+  button:active,
+  button:focus,
+  .button:hover,
+  input[type=file] + label:hover,
+  .button:active,
+  input[type=file] + label:active,
+  .button:focus,
+  input[type=file] + label:focus {
+    outline: 0; }
+  ::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none; }
+  input[type=submit]:hover, input[type=submit]:focus,
+  input[type=reset]:hover,
+  input[type=reset]:focus,
+  input[type=button]:hover,
+  input[type=button]:focus,
+  button:hover,
+  button:focus,
+  .button:hover,
+  input[type=file] + label:hover,
+  .button:focus,
+  input[type=file] + label:focus {
+    background: #333333;
+    color: #FFFFFF; }
+
+a.button, a.button:link {
+  color: #1A1A19;
+  text-decoration: none; }
+
+a.button:visited {
+  color: #1A1A19; }
+
+a.button:focus, a.button:hover {
+  color: #1A1A19;
+  text-decoration: underline; }
+
+a.button:active {
+  color: #1A1A19; }
+
+a.button, a.button:link {
+  text-decoration: none; }
+
+a.button, a.button:link {
+  text-decoration: none; }
+
+a.button:hover, a.button:focus {
+  color: #FFFFFF; }
+
+.button--success,
+a.button--success:link,
+input.button--success {
+  border-color: #10A887;
+  color: #10A887; }
+  .button--success:hover, .button--success:focus,
+  a.button--success:link:hover,
+  a.button--success:link:focus,
+  input.button--success:hover,
+  input.button--success:focus {
+    background: #10A887;
+    color: #FFFFFF; }
+
+.button--warning,
+a.button--warning:link,
+input.button--warning {
+  border-color: #F17F42;
+  color: #F17F42; }
+  .button--warning:hover, .button--warning:focus,
+  a.button--warning:link:hover,
+  a.button--warning:link:focus,
+  input.button--warning:hover,
+  input.button--warning:focus {
+    background: #F17F42;
+    color: #1A1A19; }
+
+.button--error,
+a.button--error:link,
+input.button--error {
+  border-color: #DA3C3C;
+  color: #DA3C3C; }
+  .button--error:hover, .button--error:focus,
+  a.button--error:link:hover,
+  a.button--error:link:focus,
+  input.button--error:hover,
+  input.button--error:focus {
+    background: #DA3C3C;
+    color: #FFFFFF; }
+
+input[type=submit][disabled],
+input[type=reset][disabled],
+input[type=button][disabled],
+button[disabled],
+.button--disabled,
+a.button--disabled:link,
+input.button--disabled {
+  opacity: 0.33;
+  color: inherit;
+  cursor: initial; }
+  input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
+  input[type=reset][disabled]:hover,
+  input[type=reset][disabled]:focus,
+  input[type=button][disabled]:hover,
+  input[type=button][disabled]:focus,
+  button[disabled]:hover,
+  button[disabled]:focus,
+  .button--disabled:hover,
+  .button--disabled:focus,
+  a.button--disabled:link:hover,
+  a.button--disabled:link:focus,
+  input.button--disabled:hover,
+  input.button--disabled:focus {
+    background: none;
+    color: inherit;
+    cursor: initial; }
+  input[type=submit][disabled].button--error,
+  input[type=reset][disabled].button--error,
+  input[type=button][disabled].button--error,
+  button[disabled].button--error,
+  .button--disabled.button--error,
+  a.button--disabled:link.button--error,
+  input.button--disabled.button--error {
+    color: #DA3C3C; }
+  input[type=submit][disabled].button--warning,
+  input[type=reset][disabled].button--warning,
+  input[type=button][disabled].button--warning,
+  button[disabled].button--warning,
+  .button--disabled.button--warning,
+  a.button--disabled:link.button--warning,
+  input.button--disabled.button--warning {
+    color: #F17F42; }
+  input[type=submit][disabled].button--success,
+  input[type=reset][disabled].button--success,
+  input[type=button][disabled].button--success,
+  button[disabled].button--success,
+  .button--disabled.button--success,
+  a.button--disabled:link.button--success,
+  input.button--disabled.button--success {
+    color: #10A887; }
+
+a.button--disabled:hover, a.button--disabled:focus {
+  background: inherit;
+  color: inherit; }
+
+/*
+Headings
+
+The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
+
+Markup:
+<h1>Main titles use heading one</h1>
+<h2>Subtitules and main sections use h2</h2>
+<h3>H3 is mainly for nested sections</h3>
+<h4>In case you need furher sectioning, use an h4</h4>
+<h5>Rarely you will need a heading five</h5>
+<h6>Heading six is rather unexpected</h6>
+
+
+Styleguide Typography.headings
+*/
+h1, .h1 {
+  font-size: 51px;
+  font-size: 3.15733rem;
+  line-height: 57px;
+  line-height: 3.575rem; }
+
+h2, .h2 {
+  font-size: 38px;
+  font-size: 2.36859rem;
+  line-height: 47px;
+  line-height: 2.925rem; }
+
+h3, .h3 {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 36px;
+  line-height: 2.275rem; }
+
+h4, .h4 {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 26px;
+  line-height: 1.625rem; }
+
+h5, .h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+
+h6, .h6 {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+
+h1, h2, h3, h4, h5, h6 .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #1A1A19;
+  font-weight: normal; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+    color: inherit;
+    vertical-align: 0; }
+
+/*
+Secondary font
+
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
+
+Markup:
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
+.font-secondary,
+h1,
+h2,
+h3,
+h4,
+dt,
+.your-classes,
+#your-ids {
+  font-family: "Merriweather", Georgia, serif; }
+
+h1 a, h1 a:link {
+  text-decoration: none; }
+
+h2 a, h2 a:link {
+  text-decoration: none; }
+
+h3 a, h3 a:link {
+  text-decoration: none; }
+
+h4 a, h4 a:link {
+  text-decoration: none; }
+
+dt a, dt a:link {
+  text-decoration: none; }
+
+.your-classes a, .your-classes a:link {
+  text-decoration: none; }
+
+#your-ids a, #your-ids a:link {
+  text-decoration: none; }
+
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
+q {
+  quotes: "“" "”" "‘" "’"; }
+
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
+blockquote {
+  margin: 0 0 1.3rem 2.6rem; }
+
+.blockquote--decorated {
+  position: relative; }
+  .blockquote--decorated:before {
+    content: "*";
+    font-size: 38px;
+    font-size: 2.36859rem;
+    line-height: 47px;
+    line-height: 2.925rem;
+    font-family: "Merriweather", Georgia, serif;
+    position: absolute;
+    top: 0.325rem;
+    left: -2.6rem; }
+
+code,
+kbd,
+samp,
+var {
+  display: inline-block;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  background-color: #1A1A19;
+  color: #FFFFFF;
+  padding: 0 0.325rem;
+  border-radius: 3px; }
+
+/*
+Tables
+
+Tables span across all available space evenly distributed.
+Borders are collapsed by default
+
+Markup:
+<table>
+<caption>Table Caption</caption>
+<thead>
+  <tr>
+    <th>Table Heading 1</th>
+    <th>Table Heading 2</th>
+    <th>Table Heading 3</th>
+    <th>Table Heading 4</th>
+    <th>Table Heading 5</th>
+  </tr>
+</thead>
+<tfoot>
+  <tr>
+    <th>Table Footer 1</th>
+    <th>Table Footer 2</th>
+    <th>Table Footer 3</th>
+    <th>Table Footer 4</th>
+    <th>Table Footer 5</th>
+  </tr>
+</tfoot>
+<tbody>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+  <tr>
+    <td>Table Cell 1</td>
+    <td>Table Cell 2</td>
+    <td>Table Cell 3</td>
+    <td>Table Cell 4</td>
+    <td>Table Cell 5</td>
+  </tr>
+</tbody>
+</table>
+
+
+Styleguide Base.tables
+*/
+table {
+  table-layout: fixed;
+  width: 100%; }
+
+th, td {
+  border: 1px solid #CCCCCC;
+  padding: 0.65rem; }
+
+th {
+  text-align: left; }
+
+/*
+Images
+
+Styleguide Base.images
+*/
+/*
+Figcaption
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+Markup:
+<figure>
+  <img src="http://placehold.it/400x200" />
+  <figcaption>Well documented code is always a bliss</figcaption>
+</figure>
+
+Styleguide Base.images.figcaption
+*/
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  text-align: left; }
+
+/*
+Links.
+
+All links are formatted throught `set-link()` mixin.
+
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
+
+.link--inactive         - Makes link appear as normal
+.link--disabled         - Dims the link to mark it as disabled
+
+Styleguide Typography.links
+*/
+a, a:link {
+  color: #2B90D9;
+  text-decoration: none; }
+
+a:visited {
+  color: #1573B6; }
+
+a:focus, a:hover {
+  color: #3FA2E9;
+  text-decoration: underline; }
+
+a:active {
+  color: #1573B6; }
+
+a.link--inactive, a.link--inactive:link {
+  color: #1A1A19;
+  text-decoration: none; }
+
+a.link--inactive:visited {
+  color: #1A1A19; }
+
+a.link--inactive:focus, a.link--inactive:hover {
+  color: #1A1A19;
+  text-decoration: underline; }
+
+a.link--inactive:active {
+  color: #1A1A19; }
+
+a.link--inactive, a.link--inactive:link {
+  text-decoration: none; }
+
+a.link--disabled {
+  opacity: 0.33; }
+
+body {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#main-wrapper {
+  padding: 1.3rem; }
+
+.card {
+  padding: 1.3rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, 0.1); }
+
+/*
+Navigation menus
+
+Either `<nav>` HTML elements or enabled via the css class `.nav`.
+The behavior is exactly the same as in `.list--inline`
+
+Markup:
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>Section</li>
+    <li>Works</li>
+    <li>About us</li>
+    <li>Contact</li>
+    <li>Exit</li>
+  </ul>
+</nav>
+
+
+Styleguide Base.nav
+*/
+nav ul,
+.nav ul {
+  margin: 0;
+  padding: 0; }
+  nav ul li,
+  .nav ul li {
+    list-style-type: none;
+    display: inline-block; }
+  nav ul ul,
+  .nav ul ul {
+    margin-left: 1.3rem; }

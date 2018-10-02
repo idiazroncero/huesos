@@ -112,8 +112,12 @@ code,
 kbd,
 samp,
 var {
+	display:inline-block;
+	vertical-align:baseline;
+	box-decoration-break: clone;
 	@if $code-background != false {
 		background-color: $code-background;
+		color: contrast-color($code-background);
 		padding: 0 ritmo(1);
 	}
 	@if $code-border-radius != false {

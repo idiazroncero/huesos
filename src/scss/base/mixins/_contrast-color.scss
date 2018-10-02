@@ -18,7 +18,7 @@ Styleguide Functions.Color.ContrastColor
 
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
-	@if (lightness($color) > 50) {
+	@if (lightness($color) > 60) { // 50 is too low
 		@return $dark; // Lighter backgorund, return dark color
 	} @else {
 		@return $light; // Darker background, return light color

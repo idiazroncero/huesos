@@ -16,3 +16,53 @@
 		background-repeat: repeat;
 	}
 }
+
+
+/*
+Disabled
+
+Class and placeholder used to dim the element and indicate that is not usable anymore.
+
+It also disables user interactions on buttons, links, etc... (see on their respective sections)
+
+Markup:
+<p class="disabled">I'm no longer active</p>
+<mark class="disabled"> I'm no longer working</mark>
+
+
+Styleguide Helpers.disabled
+*/
+
+%disabled,
+.disabled {
+	opacity: $disabled-opacity;
+}
+
+
+
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+	text-align:left;
+}
+
+.center {
+	text-align:center;
+}
+
+.right {
+	text-align:right;
+}

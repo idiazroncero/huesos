@@ -2,20 +2,27 @@
 Navigation menus
 
 Either `<nav>` HTML elements or enabled via the css class `.nav`.
-The behavior is exactly the same as in `.list--inline`
+
+We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
+
+Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
+
+It's supposed to hold links (try "section"), but it can also have empty elements.
+
 
 Markup:
-<nav>
-  <ul>
-    <li>Home</li>
-    <li>Section</li>
-    <li>Works</li>
-    <li>About us</li>
-    <li>Contact</li>
-    <li>Exit</li>
-  </ul>
-</nav>
-
+<section>
+  <nav class="{{ modifier_class}}">
+    <ul>
+      <li>Home</li>
+      <li><a href="#">Section</a></li>
+      <li>Works</li>
+      <li>About us</li>
+      <li>Contact</li>
+      <li>Exit</li>
+    </ul>
+  </nav>
+</section>
 
 Styleguide Base.nav
 */
@@ -23,9 +30,144 @@ Styleguide Base.nav
 nav,
 .nav {
 	ul {
-		@include inline-list();
-		ul {
-			margin-left: $spacer;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+		li {
+      margin: 0 $spacer 0 0;
+      font-weight: $nav-font-weight;
+      @if $nav-uppercase {
+        text-transform: uppercase;
+      }
+      @include ritmo-font-size($nav-font-size);
+      letter-spacing:$nav-spacing;
+      a {
+        @include kill-link();
+      }
 		}
-	}
+  }
+}
+
+/*
+Menu
+
+An horizontal menu is a component based on an extended `<nav>` or `.nav`.
+
+Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
+
+It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
+
+Submenus are handled up to the 4th level
+
+Alignment of items can be controlled via helper classes. Defaults to "left"
+
+.center        - Aligns the nav to the center (margin on both sides of items)
+.right         - Aligns the nav to the right (margin on the right)
+
+Markup:
+<section>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li><a href="#">Works</a></li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.menus
+*/
+
+.menu {
+  @include inline-list();
+  li {
+    margin:0;
+    a {
+      padding:$spacer / 2;
+      &:hover,
+      &:focus {
+        background-color: get-color(grey, "base");
+      }
+    }
+    span {
+      padding:$spacer / 2;
+    }
+  }
+}
+
+/*
+TOC (Table of contents)
+
+A toc or table of contents is a vertical menu based off a `<nav>` item.
+
+The first level can be configured on `_config.scss`.
+
+This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
+
+Markup:
+<section>
+  <nav class="toc">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Works</a>
+        <ul>
+          <li>
+            <a href="#">Home</a></li>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Section</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Section</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">About us</a></li>
+          <li><span>Contact</span></li>
+          <li><span class="disabled">Exit</span></li>
+        </ul>
+      </li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.toc
+*/
+
+.toc {
+	ul {
+		li {
+      margin: 0;
+      font-weight: $toc-font-weight;
+      @if $toc-uppercase {
+        text-transform: uppercase;
+      } @else {
+        text-transform: initial;
+      }
+      @include ritmo-font-size($toc-font-size);
+      a {
+        @include kill-link();
+      }
+      ul {
+        li{
+          // Don't let "bold" pass through here
+          font-weight: normal;
+          @include ritmo-font-size(0.95 * $toc-font-size);
+        }
+        margin: $gutter / 4 0 $gutter / 2 $gutter;
+        ul {
+          li {
+            @include ritmo-font-size(0.7 * $toc-font-size);
+            text-transform: uppercase;
+          }
+        }
+      }
+		}
+  }
 }

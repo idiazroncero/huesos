@@ -43,6 +43,7 @@
 		width:  $base-font-size;
 		height:  $base-font-size;
 		vertical-align: middle;
+		margin-right: ritmo(2);
 	}
 
 	@if($pseudo-checkbox == true) {
@@ -136,20 +137,35 @@
 
 @mixin pseudo-checkbox() {
 	@extend %hidden;
-	&:checked + label:before {
-		background-color: $input-border-color;
+	&:checked + label {
+		position:relative;
+		// &:before {
+		// 	background-color: $input-border-color;
+		// }
+		&:after {
+			content:"";
+			display:inline-block;
+			width: $base-font-size / 2; // Same as the label
+			height: $base-font-size / 2;
+			position:absolute;
+			top:50%;
+			left:$base-font-size / 4;
+			transform:translateY(-50%);
+			background-color: $input-border-color; // We need to hide the real checkbox
+		}
 	}
 	+ label {
 		cursor:pointer;
+		display: flex;
+		align-items: center;
 		&:before {
 			content:"";
 			display:inline-block;
-			width: 1em; // Same as the label
-			height: 1em;
-			margin: ($base-line-height - $base-font-size) / 2;
+			width: $base-font-size;
+			height: $base-font-size;
+			margin: 0 ritmo(2) 0 0;
 			border: $input-border;
 			background-color: get-color(background, light); // We need to hide the real checkbox
-			vertical-align:top;
 			cursor: pointer;
 		}
 	}
@@ -157,17 +173,32 @@
 
 @mixin pseudo-radio() {
 	@extend %hidden;
-	&:checked + label:before {
-		background-color: $input-border-color;
+	&:checked + label {
+		position:relative;
+		&:after {
+			content:"";
+			position:absolute;
+			display:inline-block;
+			top:50%;
+			left:$base-font-size / 4;
+			width:$base-font-size / 2;
+			height:$base-font-size / 2;
+			transform:translateY(-50%);
+			background-color: $input-border-color;
+			border-radius: 50%;
+			cursor: pointer;
+		}
 	}
 	+ label {
 		cursor:pointer;
+		display:flex;
+		align-items:center;
 		&:before {
 			content:"";
 			display:inline-block;
-			margin: ($base-line-height - $base-font-size) / 2;
-			width:1em;
-			height:1em;
+			margin: 0 ritmo(2) 0 0;
+			width: $base-font-size;
+			height: $base-font-size;
 			border: $input-border;
 			background-color: get-color(background, light); // We need to hide the real checkbox
 			vertical-align:top;

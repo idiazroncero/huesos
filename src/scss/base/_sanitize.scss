@@ -59,12 +59,19 @@ Markup:
 <dl>
   <dt>Definition List Title</dt>
   <dd>This is a definition list division.</dd>
+  <dt>Lorem ipsum</dt>
+  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
+  <dt>Huesos</dt>
+  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
 </dl>
 
 Styleguide Base.definitionLists
 */
+dt {
+	margin: 0 0 $spacer / 2 0;
+}
 dd {
-	margin: 0 0 0 $spacer;
+	margin: 0 0 $spacer $spacer;
 }
 
 /*
@@ -309,6 +316,7 @@ Styleguide Typography.mark
 mark {
 	background-color: get-color(text, mark);
 	color: contrast-color(get-color(text, mark));
+	padding: 0 ritmo(1);
 }
 
 /**
@@ -429,10 +437,15 @@ video {
 /*
 Iframe
 
-Deletes border, displays iframes as a block element that fills its parent width.
+Deletes border, displays iframe as a block element that always fills its parent's size.
 
 Markup:
-<iframe src="http://idiazroncero.com"></iframe>
+<section>
+	<iframe src="https://mentalstones.com"></iframe>
+</section>
+<section style="width:50%; height: 300px">
+	<iframe src="https://domingocaceres.com"></iframe>
+</section>
 
 Styleguide Base.iframe
 */
@@ -440,6 +453,7 @@ Styleguide Base.iframe
 iframe {
 	border:none;
 	width:100%;
+	height:100%;
 	display:block;
 }
 
@@ -467,14 +481,19 @@ audio:not([controls]) {
  */
 
 /*
-Img
+Images
 
 All images are responsive by default.
 
 Markup:
-<img src="http://placehold.it/300x300" />"
+<section>
+	<img src="http://placehold.it/300x300" />
+</section>
+<section>
+	img src="http://placehold.it/2500x750" />
+</section>
 
-Styleguide Base.img
+Styleguide Base.images
 */
 
 img {

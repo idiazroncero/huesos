@@ -68,6 +68,10 @@ $colors: (
 	)
 ) !default;
 
+// Quick access to black and white
+$black: get-color(gray, "black");
+$white: get-color(gray, "white");
+
 // CONTRAST BLACK AND WHITE / Do not remove
 // This values are used as return values for contrast-color()
 $contrast-dark: #1A1A19;
@@ -83,8 +87,8 @@ $color-modify-ratio: 33%;
 // Using Ritmo.scss
 // --------------------
 
-$base-font-size: 18px;
-$vertical-rhythm: 1.5;
+$base-font-size: 16px;
+$vertical-rhythm: 1.3;
 $base-line-height: $base-font-size * $vertical-rhythm;
 $base-line-multi: 4;
 $base-line-unit: $base-line-height / $base-line-multi;
@@ -104,7 +108,7 @@ $spacer: ritmo(4);
 
 
 // ------
-// TIPOGRAPHY
+// TYPOGRAPHY
 // ------
 
 // Web-safe fonts library
@@ -125,16 +129,17 @@ $times: "Times New Roman", Times, Georgia, serif;
 $georgia: Georgia, serif;
 
 // Custom fonts
-$martel: Martel, $georgia;
-$quicksand: Quicksand, $helvetica;
+$krub: 'Krub', $helvetica;
+$merriweather: 'Merriweather', $georgia;
+
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
-$font-main: $quicksand;
-$font-secondary: $martel;
+$font-main: $krub;
+$font-secondary: $merriweather;
 
 // Custom values for bold and light allow for more precise mapping
-$bold: 700;
-$font-main-bold: 700;
+$bold: 600;
+$font-main-bold: 600;
 $font-secondary-bold: 900;
 $light: light;
 $normal: normal;
@@ -157,8 +162,11 @@ $figcaption-align:left;
 $quotes: "“" "”" "‘" "’";
 
 // Code-like items
-$code-background: get-color(background, dim);
+$code-background: get-color(background, dark);
 $code-border-radius: 3px;
+
+// Letter-spacing (always EM units to keep it relative to the element scope)
+$letter-spacing: 0.05em; 
 
 
 
@@ -264,12 +272,12 @@ $form-border-radius: 0;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
-$input-border-color: get-color(gray, dark);
+$input-border-color: get-color(gray, darker);
 $input-border: 1px solid $input-border-color;
 $input-padding: 0;
 
 // Buttons
-$button-border-color: get-color(gray, dark);
+$button-border-color: get-color(gray, darker);
 $button-border: 2px solid $button-border-color;
 $button-padding: 0 ($spacer / 2);
 $button-border-radius: 3px;
@@ -287,8 +295,23 @@ $select-padding: 0 ($spacer / 2);
 // Browser quirks
 $webkit-autofill-color: get-color(gray, base); // When webkit fills the fields whith your stored data.
 
+// Fieldsets
+$disable-fieldset: false;
 
 
+// ------
+// NAVIGATION
+// Default menu appearance
+// ------
+
+$nav-font-weight: bold;
+$nav-uppercase: true;
+$nav-font-size: $base-font-size;
+$nav-spacing: $letter-spacing;
+
+$toc-font-weight: bold;
+$toc-uppercase: false;
+$toc-font-size: $h5-font-size;
 
 
 // ------
@@ -411,4 +434,10 @@ $card-border-radius: 2px;
 // Weight: 6
 //
 // Styleguide Functions
+
+// Pseudo-elements
+//
+// Weight: 7
+//
+// Styleguide Pseudo-elements
 

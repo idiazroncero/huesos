@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Martel:700,900|Quicksand:400,700");
+@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
 input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -61,6 +61,8 @@ Functions that return values used on typography – other than vertical rhythm -
 
 Styleguide Functions.Typography
 
+*/
+/*
 contrast-color($item)
 
 Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
@@ -68,6 +70,23 @@ Checks a given HTML item against `$font-secondary-items` map in order to get the
 $item - [String] - an HTMl element (without opening and closing `< >` marks)
 
 Styleguide Functions.Typography.Bold
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Mixins.Typography
+
+*/
+/*
+minititle()
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Mixins.Typography.Minititle
 */
 input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
   position: absolute;
@@ -130,6 +149,8 @@ Functions that return values used on typography – other than vertical rhythm -
 
 Styleguide Functions.Typography
 
+*/
+/*
 contrast-color($item)
 
 Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
@@ -137,6 +158,23 @@ Checks a given HTML item against `$font-secondary-items` map in order to get the
 $item - [String] - an HTMl element (without opening and closing `< >` marks)
 
 Styleguide Functions.Typography.Bold
+*/
+/*
+Typography
+
+Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+
+Styleguide Mixins.Typography
+
+*/
+/*
+minititle()
+
+Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+
+$item - [String] - an HTMl element (without opening and closing `< >` marks)
+
+Styleguide Mixins.Typography.Minititle
 */
 *,
 ::before,
@@ -162,11 +200,11 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  font-family: Quicksand, Helvetica, Arial sans-serif; }
+  font-family: "Krub", Helvetica, Arial sans-serif; }
 
 html {
-  font-size: 112.5%;
-  line-height: 1.5em; }
+  font-size: 100%;
+  line-height: 1.3em; }
 
 p, h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
@@ -175,7 +213,7 @@ figure, audio, video,
 hr,
 table, caption, figcaption,
 fieldset {
-  margin: 0 0 1.5rem 0; }
+  margin: 0 0 1.3rem 0; }
 
 /*
 Definition lists
@@ -186,12 +224,19 @@ Markup:
 <dl>
   <dt>Definition List Title</dt>
   <dd>This is a definition list division.</dd>
+  <dt>Lorem ipsum</dt>
+  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
+  <dt>Huesos</dt>
+  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
 </dl>
 
 Styleguide Base.definitionLists
 */
+dt {
+  margin: 0 0 0.65rem 0; }
+
 dd {
-  margin: 0 0 0 1.5rem; }
+  margin: 0 0 1.3rem 1.3rem; }
 
 /*
 Unordered and ordered lists
@@ -215,7 +260,7 @@ Markup:
 Styleguide Base.lists
 */
 ol, ul {
-  padding-left: 1.5rem; }
+  padding-left: 1.3rem; }
 
 .list--inline {
   margin: 0;
@@ -306,10 +351,10 @@ Styleguide Typography.pre
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.5rem;
+  line-height: 21px;
+  line-height: 1.3rem;
   /* 2 */ }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
@@ -343,8 +388,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -362,7 +406,7 @@ Styleguide Typography.bold
 */
 b,
 strong {
-  font-weight: 700; }
+  font-weight: 600; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -384,10 +428,10 @@ samp,
 var {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.5rem;
+  line-height: 21px;
+  line-height: 1.3rem;
   /* 2 */ }
 
 /**
@@ -421,7 +465,8 @@ Styleguide Typography.mark
 */
 mark {
   background-color: #FCEE35;
-  color: #1A1A19; }
+  color: #FFFFFF;
+  padding: 0 0.325rem; }
 
 /**
  * Add the correct font size in all browsers.
@@ -440,28 +485,28 @@ Markup:
 Styleguide Typography.small
 */
 small {
-  font-size: 14px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 20px;
-  line-height: 1.125rem; }
+  line-height: 21px;
+  line-height: 1.3rem; }
 
 h1 small {
-  font-size: 32px;
+  font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 41px;
-  line-height: 2.25rem; }
+  line-height: 36px;
+  line-height: 2.275rem; }
 
 h2 small {
-  font-size: 24px;
+  font-size: 21px;
   font-size: 1.333rem;
-  line-height: 34px;
-  line-height: 1.875rem; }
+  line-height: 26px;
+  line-height: 1.625rem; }
 
 h3 small {
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.5rem; }
+  line-height: 21px;
+  line-height: 1.3rem; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -479,10 +524,10 @@ Styleguide Typography.sub
 */
 sub,
 sup {
-  font-size: 14px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 20px;
-  line-height: 1.125rem;
+  line-height: 21px;
+  line-height: 1.3rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -511,14 +556,14 @@ Styleguide Pseudo-elements.selection
 ::-moz-selection {
   background-color: #FCEE35;
   /* 1 */
-  color: #1A1A19;
+  color: #FFFFFF;
   /* 1 */
   text-shadow: none; }
 
 ::selection {
   background-color: #FCEE35;
   /* 1 */
-  color: #1A1A19;
+  color: #FFFFFF;
   /* 1 */
   text-shadow: none; }
 
@@ -541,16 +586,22 @@ video {
 /*
 Iframe
 
-Deletes border, displays iframes as a block element that fills its parent width.
+Deletes border, displays iframe as a block element that always fills its parent's size.
 
 Markup:
-<iframe src="http://idiazroncero.com"></iframe>
+<section>
+	<iframe src="https://mentalstones.com"></iframe>
+</section>
+<section style="width:50%; height: 300px">
+	<iframe src="https://domingocaceres.com"></iframe>
+</section>
 
 Styleguide Base.iframe
 */
 iframe {
   border: none;
   width: 100%;
+  height: 100%;
   display: block; }
 
 /**
@@ -572,14 +623,19 @@ audio:not([controls]) {
  * Make all images responsive by default
  */
 /*
-Img
+Images
 
 All images are responsive by default.
 
 Markup:
-<img src="http://placehold.it/300x300" />"
+<section>
+	<img src="http://placehold.it/300x300" />
+</section>
+<section>
+	img src="http://placehold.it/2500x750" />
+</section>
 
-Styleguide Base.img
+Styleguide Base.images
 */
 img {
   border-style: none;
@@ -796,6 +852,7 @@ select,
 summary,
 textarea,
 [tabindex] {
+  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -840,10 +897,14 @@ Checkboxes
 Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
 
 Markup:
-<input type="checkbox" id="check" name="check">
-<label for="check">Checkbox normal</label>
-<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
-<label for="check2">Pseudo Checkbox</label>
+<div class="form-item">
+	<input type="checkbox" id="check" name="check">
+	<label for="check">Checkbox normal</label>
+</div>
+<div class="form-item">
+	<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
+	<label for="check2">Pseudo Checkbox</label>
+</div>
 
 Styleguide Forms.checkbox
 */
@@ -853,10 +914,14 @@ Radio buttons
 Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
 
 Markup:
-<input type="radio" id="radio" name="radio">
-<label for="radio">Radio normal</label>
-<input type="radio" id="radio2" class="pseudo-radio" name="radio">
-<label for="radio2">Pseudo Radio</label>
+<div class="form-item">
+	<input type="radio" id="radio" name="radio">
+	<label for="radio">Radio normal</label>
+</div>
+<div class="form-item">
+	<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+	<label for="radio2">Pseudo Radio</label>
+</div>
 
 Styleguide Forms.radio
 */
@@ -880,23 +945,27 @@ textarea {
   font-family: inherit; }
 
 label {
-  margin-right: 0.75rem; }
+  margin-right: 0.65rem; }
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #888888 inset;
-  color: #1A1A19; }
+  color: #FFFFFF; }
 
 input {
   /*
 	Input
 	
-	General text input.<br>
+	General text input.
+
 	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
-	and apply a vertical-rhythm based margin.<br>
+	and apply a vertical-rhythm based margin.
+
 	This wrapper also applies a flexbox in order to take the full width of the parent.
+
 	Without this wrapper and class, all the form elements would behave as inline-block elements.
+
 	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
 	
 	Markup:
@@ -934,8 +1003,12 @@ input {
 	</div>
 	
 	Styleguide Forms.input
-	@include form-reset-input();
 	*/
+  border-bottom: 1px solid #333333;
+  padding: 0;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
   /*
 	File Input
 	
@@ -948,37 +1021,76 @@ input {
 	
 	Styleguide Forms.file
 	*/ }
-  input[type=checkbox].pseudo-checkbox:checked + label:before {
-    background-color: #666666; }
+  input:hover, input:focus {
+    border-color: black; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 0.65rem; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=checkbox].pseudo-checkbox:checked + label {
+    position: relative; }
+    input[type=checkbox].pseudo-checkbox:checked + label:after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      background-color: #333333; }
   input[type=checkbox].pseudo-checkbox + label {
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
     input[type=checkbox].pseudo-checkbox + label:before {
       content: "";
       display: inline-block;
-      width: 1em;
-      height: 1em;
-      margin: 4.5px;
-      border: 1px solid #666666;
+      width: 16px;
+      height: 16px;
+      margin: 0 0.65rem 0 0;
+      border: 1px solid #333333;
       background-color: #FFFFFF;
-      vertical-align: top;
       cursor: pointer; }
-  input[type=radio].pseudo-radio:checked + label:before {
-    background-color: #666666; }
+  input[type=radio].pseudo-radio:checked + label {
+    position: relative; }
+    input[type=radio].pseudo-radio:checked + label:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%);
+      background-color: #333333;
+      border-radius: 50%;
+      cursor: pointer; }
   input[type=radio].pseudo-radio + label {
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
     input[type=radio].pseudo-radio + label:before {
       content: "";
       display: inline-block;
-      margin: 4.5px;
-      width: 1em;
-      height: 1em;
-      border: 1px solid #666666;
+      margin: 0 0.65rem 0 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #333333;
       background-color: #FFFFFF;
       vertical-align: top;
       border-radius: 50%;
       cursor: pointer; }
-  input:disabled {
-    opacity: 0.33; }
 
 select {
   /*
@@ -1003,26 +1115,127 @@ select {
 	
 	Styleguide Forms.select
 	*/
-  border: 1px solid #666666;
-  padding: 0 0.75rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  border: 1px solid #333333;
+  padding: 0 0.65rem;
+  appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
-    border-color: #121212; }
+    border-color: black; }
   select[multiple] {
     vertical-align: top; }
+
+textarea {
+  border: 1px solid #333333;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+  width: 100%;
+  padding: 0 0.325rem; }
+
+/*
+Fieldsets
+
+If either `$disable-fieldset` boolean is set to true or `.fieldset--disabled` class is added, visually hides the fielset box and converts the `<legend>` into a pseudo-heading.
+
+Markup:
+<fieldset>
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
+<fieldset class="fieldset--disabled">
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
+
+Styleguide Forms.fieldset
+*/
+fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  border: 1px solid #333333;
+  padding: 1.3rem; }
+  fieldset legend {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 21px;
+    line-height: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+
+fieldset.fieldset--disabled {
+  margin-right: 0;
+  margin-left: 0;
+  border: none;
+  padding: 0; }
+  fieldset.fieldset--disabled legend {
+    margin-bottom: 1.3rem;
+    font-size: 21px;
+    font-size: 1.333rem;
+    line-height: 26px;
+    line-height: 1.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+
+.form-item {
+  margin-bottom: 1.3rem;
+  display: flex;
+  align-items: center; }
+  .form-item label {
+    flex: 0 1 auto;
+    font-size: 12px;
+    font-size: 0.75019rem;
+    line-height: 21px;
+    line-height: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+  .form-item input[type="text"],
+  .form-item input[type="email"],
+  .form-item input[type="password"],
+  .form-item input[type="url"],
+  .form-item input[type="tel"],
+  .form-item input[type="search"] {
+    flex: 1 0 auto; }
+  .form-item:last-child, .form-item:last-of-type {
+    margin-bottom: 0; }
+
+.form-item--required label::after {
+  content: "*";
+  color: #DA3C3C; }
 
 /*
 Button
 
-Either `<input>`, `<button>` or `<a class="button">`
+Either `<input type="submit / ">`, `<button>` or `<a class="button">`
 
 Markup:
-<button class="button {{modifier_class}}">Click!</button>
+<button class="{{modifier_class}}">Click me please!</button>
+<a href="#" class="button {{modifier_class}}">I'm a link!</a>
+<input type="submit" class="{{modifier_class}}" value="Submit input" />
 
-.button--disabled          - Dims color and deactivates hover to indicate disability.
+.button--success           - Uses success color to indicate a positive action (OK, login, continue...)
+.button--warning           - Uses warning color to indicate a potentially negative action
+.button--error             - Uses error color to indicate a negative action (delete, cancel, no...)
+.disabled          		   - The helper class `.disabled` knows how to erase user interaction on buttons
+.button--error.disabled             - .disabled and the rest of the modifiers can be safely applied at the same time
+
 
 Styleguide Components.buttons
 */
@@ -1034,19 +1247,19 @@ button,
 input[type=file] + label {
   background: none;
   outline: none;
-  padding: 0 0.75rem;
+  padding: 0 0.65rem;
   /* IE8 and FF freak out if this rule is within another selector */
   cursor: pointer;
-  border: 2px solid #666666;
+  border: 2px solid #333333;
   border-radius: 3px;
   display: inline-block;
-  padding: 0 0.75rem;
+  padding: 0 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  font-size: 14px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 34px;
-  line-height: 1.875rem; }
+  line-height: 26px;
+  line-height: 1.625rem; }
   input[type=submit]::-moz-focus-inner,
   input[type=reset]::-moz-focus-inner,
   input[type=button]::-moz-focus-inner,
@@ -1087,26 +1300,8 @@ input[type=file] + label {
   input[type=file] + label:hover,
   .button:focus,
   input[type=file] + label:focus {
-    background: #666666;
+    background: #333333;
     color: #FFFFFF; }
-
-input[type=submit][disabled],
-input[type=reset][disabled],
-input[type=button][disabled],
-button[disabled],
-.button--disabled {
-  opacity: 0.33; }
-  input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
-  input[type=reset][disabled]:hover,
-  input[type=reset][disabled]:focus,
-  input[type=button][disabled]:hover,
-  input[type=button][disabled]:focus,
-  button[disabled]:hover,
-  button[disabled]:focus,
-  .button--disabled:hover,
-  .button--disabled:focus {
-    background: inherit;
-    color: inherit; }
 
 a.button, a.button:link {
   color: #1A1A19;
@@ -1129,43 +1324,97 @@ a.button, a.button:link {
   text-decoration: none; }
 
 a.button:hover, a.button:focus {
-  border: 2px solid #666666;
-  background: #666666;
   color: #FFFFFF; }
 
-a.button--disabled:hover, a.button--disabled:focus {
-  background: inherit;
-  color: inherit; }
+.button--success,
+a.button--success:link,
+input.button--success {
+  border-color: #10A887;
+  color: #10A887; }
+  .button--success:hover, .button--success:focus,
+  a.button--success:link:hover,
+  a.button--success:link:focus,
+  input.button--success:hover,
+  input.button--success:focus {
+    background: #10A887;
+    color: #FFFFFF; }
 
-textarea {
-  border: 1px solid #666666;
-  /* Move the label to the top */
-  vertical-align: top;
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto;
-  width: 100%;
-  padding: 0 0.375rem; }
+.button--warning,
+a.button--warning:link,
+input.button--warning {
+  border-color: #F17F42;
+  color: #F17F42; }
+  .button--warning:hover, .button--warning:focus,
+  a.button--warning:link:hover,
+  a.button--warning:link:focus,
+  input.button--warning:hover,
+  input.button--warning:focus {
+    background: #F17F42;
+    color: #1A1A19; }
 
-fieldset {
-  margin-right: 0;
-  margin-left: 0;
-  border: 1px solid #666666;
-  padding: 1.5rem; }
-
-legend {
-  font-weight: 700; }
-
-.form-item {
-  margin-bottom: 1.5rem;
-  display: flex; }
-  .form-item label {
-    flex: 0 1 auto; }
-  .form-item input {
-    flex: 1 0 auto; }
-
-.form-item--required::after {
-  content: "*";
+.button--error,
+a.button--error:link,
+input.button--error {
+  border-color: #DA3C3C;
   color: #DA3C3C; }
+  .button--error:hover, .button--error:focus,
+  a.button--error:link:hover,
+  a.button--error:link:focus,
+  input.button--error:hover,
+  input.button--error:focus {
+    background: #DA3C3C;
+    color: #FFFFFF; }
+
+input[type=submit][disabled],
+input[type=reset][disabled],
+input[type=button][disabled],
+button[disabled],
+button.disabled,
+a.disabled:link,
+input.disabled {
+  opacity: 0.33;
+  color: inherit;
+  cursor: initial; }
+  input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
+  input[type=reset][disabled]:hover,
+  input[type=reset][disabled]:focus,
+  input[type=button][disabled]:hover,
+  input[type=button][disabled]:focus,
+  button[disabled]:hover,
+  button[disabled]:focus,
+  button.disabled:hover,
+  button.disabled:focus,
+  a.disabled:link:hover,
+  a.disabled:link:focus,
+  input.disabled:hover,
+  input.disabled:focus {
+    background: none;
+    color: inherit;
+    cursor: initial; }
+  input[type=submit][disabled].button--error,
+  input[type=reset][disabled].button--error,
+  input[type=button][disabled].button--error,
+  button[disabled].button--error,
+  button.disabled.button--error,
+  a.disabled:link.button--error,
+  input.disabled.button--error {
+    color: #DA3C3C; }
+  input[type=submit][disabled].button--warning,
+  input[type=reset][disabled].button--warning,
+  input[type=button][disabled].button--warning,
+  button[disabled].button--warning,
+  button.disabled.button--warning,
+  a.disabled:link.button--warning,
+  input.disabled.button--warning {
+    color: #F17F42; }
+  input[type=submit][disabled].button--success,
+  input[type=reset][disabled].button--success,
+  input[type=button][disabled].button--success,
+  button[disabled].button--success,
+  button.disabled.button--success,
+  a.disabled:link.button--success,
+  input.disabled.button--success {
+    color: #10A887; }
 
 /*
 Headings
@@ -1184,40 +1433,40 @@ Markup:
 Styleguide Typography.headings
 */
 h1, .h1 {
-  font-size: 57px;
+  font-size: 51px;
   font-size: 3.15733rem;
-  line-height: 68px;
-  line-height: 3.75rem; }
+  line-height: 57px;
+  line-height: 3.575rem; }
 
 h2, .h2 {
-  font-size: 43px;
+  font-size: 38px;
   font-size: 2.36859rem;
   line-height: 47px;
-  line-height: 2.625rem; }
+  line-height: 2.925rem; }
 
 h3, .h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 41px;
-  line-height: 2.25rem; }
+  line-height: 36px;
+  line-height: 2.275rem; }
 
 h4, .h4 {
-  font-size: 24px;
+  font-size: 21px;
   font-size: 1.333rem;
-  line-height: 34px;
-  line-height: 1.875rem; }
+  line-height: 26px;
+  line-height: 1.625rem; }
 
 h5, .h5 {
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.5rem; }
+  line-height: 21px;
+  line-height: 1.3rem; }
 
 h6, .h6 {
-  font-size: 14px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 20px;
-  line-height: 1.125rem; }
+  line-height: 21px;
+  line-height: 1.3rem; }
 
 h1, h2, h3, h4, h5, h6 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #1A1A19;
@@ -1247,7 +1496,7 @@ h4,
 dt,
 .your-classes,
 #your-ids {
-  font-family: Martel, Georgia, serif; }
+  font-family: "Merriweather", Georgia, serif; }
 
 h1 a, h1 a:link {
   text-decoration: none; }
@@ -1300,27 +1549,31 @@ Markup:
 Styleguide Typography.blockquote
 */
 blockquote {
-  margin: 0 0 1.5rem 3rem; }
+  margin: 0 0 1.3rem 2.6rem; }
 
 .blockquote--decorated {
   position: relative; }
   .blockquote--decorated:before {
     content: "*";
-    font-size: 43px;
+    font-size: 38px;
     font-size: 2.36859rem;
     line-height: 47px;
-    line-height: 2.625rem;
-    font-family: Martel, Georgia, serif;
+    line-height: 2.925rem;
+    font-family: "Merriweather", Georgia, serif;
     position: absolute;
-    top: 0.375rem;
-    left: -3rem; }
+    top: 0.325rem;
+    left: -2.6rem; }
 
 code,
 kbd,
 samp,
 var {
-  background-color: #EEEEEE;
-  padding: 0 0.375rem;
+  display: inline-block;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  background-color: #1A1A19;
+  color: #FFFFFF;
+  padding: 0 0.325rem;
   border-radius: 3px; }
 
 /*
@@ -1391,16 +1644,11 @@ table {
 
 th, td {
   border: 1px solid #CCCCCC;
-  padding: 0.75rem; }
+  padding: 0.65rem; }
 
 th {
   text-align: left; }
 
-/*
-Images
-
-Styleguide Base.images
-*/
 /*
 Figcaption
 
@@ -1415,10 +1663,10 @@ Markup:
 Styleguide Base.images.figcaption
 */
 figcaption {
-  font-size: 14px;
+  font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 20px;
-  line-height: 1.125rem;
+  line-height: 21px;
+  line-height: 1.3rem;
   text-align: left; }
 
 /*
@@ -1468,49 +1716,245 @@ a.link--inactive, a.link--inactive:link {
 a.link--disabled {
   opacity: 0.33; }
 
+/*
+Disabled
+
+Class and placeholder used to dim the element and indicate that is not usable anymore.
+
+It also disables user interactions on buttons, links, etc... (see on their respective sections)
+
+Markup:
+<p class="disabled">I'm no longer active</p>
+<mark class="disabled"> I'm no longer working</mark>
+
+
+Styleguide Helpers.disabled
+*/
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+  text-align: left; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
 body {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto; }
 
 #main-wrapper {
-  padding: 1.5rem; }
+  padding: 1.3rem; }
 
 .card {
-  padding: 1.5rem;
+  padding: 1.3rem;
   border: 1px solid #CCCCCC;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
+  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, 0.1); }
 
 /*
 Navigation menus
 
 Either `<nav>` HTML elements or enabled via the css class `.nav`.
-The behavior is exactly the same as in `.list--inline`
+
+We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
+
+Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
+
+It's supposed to hold links (try "section"), but it can also have empty elements.
+
 
 Markup:
-<nav>
-  <ul>
-    <li>Home</li>
-    <li>Section</li>
-    <li>Works</li>
-    <li>About us</li>
-    <li>Contact</li>
-    <li>Exit</li>
-  </ul>
-</nav>
-
+<section>
+  <nav class="{{ modifier_class}}">
+    <ul>
+      <li>Home</li>
+      <li><a href="#">Section</a></li>
+      <li>Works</li>
+      <li>About us</li>
+      <li>Contact</li>
+      <li>Exit</li>
+    </ul>
+  </nav>
+</section>
 
 Styleguide Base.nav
 */
 nav ul,
 .nav ul {
+  padding: 0;
   margin: 0;
-  padding: 0; }
+  list-style-type: none; }
   nav ul li,
   .nav ul li {
+    margin: 0 1.3rem 0 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 21px;
+    line-height: 1.3rem;
+    letter-spacing: 0.05em; }
+    nav ul li a, nav ul li a:link,
+    .nav ul li a,
+    .nav ul li a:link {
+      color: #1A1A19;
+      text-decoration: none; }
+    nav ul li a:visited,
+    .nav ul li a:visited {
+      color: #1A1A19; }
+    nav ul li a:focus, nav ul li a:hover,
+    .nav ul li a:focus,
+    .nav ul li a:hover {
+      color: #1A1A19;
+      text-decoration: underline; }
+    nav ul li a:active,
+    .nav ul li a:active {
+      color: #1A1A19; }
+    nav ul li a, nav ul li a:link,
+    .nav ul li a,
+    .nav ul li a:link {
+      text-decoration: none; }
+
+/*
+Menu
+
+An horizontal menu is a component based on an extended `<nav>` or `.nav`.
+
+Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
+
+It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
+
+Submenus are handled up to the 4th level
+
+Alignment of items can be controlled via helper classes. Defaults to "left"
+
+.center        - Aligns the nav to the center (margin on both sides of items)
+.right         - Aligns the nav to the right (margin on the right)
+
+Markup:
+<section>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li><a href="#">Works</a></li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.menus
+*/
+.menu {
+  margin: 0;
+  padding: 0; }
+  .menu li {
     list-style-type: none;
     display: inline-block; }
-  nav ul ul,
-  .nav ul ul {
-    margin-left: 1.5rem; }
+  .menu li {
+    margin: 0; }
+    .menu li a {
+      padding: 0.65rem; }
+      .menu li a:hover, .menu li a:focus {
+        background-color: #888888; }
+    .menu li span {
+      padding: 0.65rem; }
+
+/*
+TOC (Table of contents)
+
+A toc or table of contents is a vertical menu based off a `<nav>` item.
+
+The first level can be configured on `_config.scss`.
+
+This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
+
+Markup:
+<section>
+  <nav class="toc">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Works</a>
+        <ul>
+          <li>
+            <a href="#">Home</a></li>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Section</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Section</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">About us</a></li>
+          <li><span>Contact</span></li>
+          <li><span class="disabled">Exit</span></li>
+        </ul>
+      </li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.toc
+*/
+.toc ul li {
+  margin: 0;
+  font-weight: bold;
+  text-transform: initial;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+  .toc ul li a, .toc ul li a:link {
+    color: #1A1A19;
+    text-decoration: none; }
+  .toc ul li a:visited {
+    color: #1A1A19; }
+  .toc ul li a:focus, .toc ul li a:hover {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .toc ul li a:active {
+    color: #1A1A19; }
+  .toc ul li a, .toc ul li a:link {
+    text-decoration: none; }
+  .toc ul li ul {
+    margin: 0.325rem 0 0.65rem 1.3rem; }
+    .toc ul li ul li {
+      font-weight: normal;
+      font-size: 15px;
+      font-size: 0.95rem;
+      line-height: 21px;
+      line-height: 1.3rem; }
+    .toc ul li ul ul li {
+      font-size: 11px;
+      font-size: 0.7rem;
+      line-height: 16px;
+      line-height: 0.975rem;
+      text-transform: uppercase; }

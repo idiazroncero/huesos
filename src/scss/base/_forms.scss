@@ -4,10 +4,14 @@ Checkboxes
 Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
 
 Markup:
-<input type="checkbox" id="check" name="check">
-<label for="check">Checkbox normal</label>
-<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
-<label for="check2">Pseudo Checkbox</label>
+<div class="form-item">
+	<input type="checkbox" id="check" name="check">
+	<label for="check">Checkbox normal</label>
+</div>
+<div class="form-item">
+	<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
+	<label for="check2">Pseudo Checkbox</label>
+</div>
 
 Styleguide Forms.checkbox
 */
@@ -18,10 +22,14 @@ Radio buttons
 Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
 
 Markup:
-<input type="radio" id="radio" name="radio">
-<label for="radio">Radio normal</label>
-<input type="radio" id="radio2" class="pseudo-radio" name="radio">
-<label for="radio2">Pseudo Radio</label>
+<div class="form-item">
+	<input type="radio" id="radio" name="radio">
+	<label for="radio">Radio normal</label>
+</div>
+<div class="form-item">
+	<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+	<label for="radio2">Pseudo Radio</label>
+</div>
 
 Styleguide Forms.radio
 */
@@ -49,11 +57,15 @@ input {
 	/*
 	Input
 	
-	General text input.<br>
+	General text input.
+
 	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
-	and apply a vertical-rhythm based margin.<br>
+	and apply a vertical-rhythm based margin.
+
 	This wrapper also applies a flexbox in order to take the full width of the parent.
+
 	Without this wrapper and class, all the form elements would behave as inline-block elements.
+
 	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
 	
 	Markup:
@@ -91,8 +103,9 @@ input {
 	</div>
 	
 	Styleguide Forms.input
-	@include form-reset-input();
 	*/
+
+	@include form-reset-input();
 
 	/*
 	File Input
@@ -123,10 +136,6 @@ input {
 			@include pseudo-radio();
 		}
 	}
-
-	&:disabled {
-		opacity: $disabled-opacity;
-	}
 }
 
 select {
@@ -155,73 +164,6 @@ select {
 	@include form-reset-select();
 }
 
-/*
-Button
-
-Either `<input>`, `<button>` or `<a class="button">`
-
-Markup:
-<button class="button {{modifier_class}}">Click!</button>
-
-.button--disabled          - Dims color and deactivates hover to indicate disability.
-
-Styleguide Components.buttons
-*/
-
-input[type=submit],
-input[type=reset],
-input[type=button],
-button,
-.button {
-	@include form-reset-button();
-	cursor:pointer;
-	border: $button-border;
-	border-radius: $button-border-radius;
-	display: inline-block;
-	padding: 0 ritmo(2);
-	text-transform: uppercase;
-	letter-spacing: 0.05rem;
-	@include ritmo-font-size($h6-font-size, 5);
-	&:hover,
-	&:focus {
-		background:$button-border-color;
-		color: contrast-color($button-border-color);
-	}
-}
-
-input[type=submit][disabled],
-input[type=reset][disabled],
-input[type=button][disabled],
-button[disabled],
-.button--disabled {
-	opacity: $disabled-opacity;
-	&:hover, 
-	&:focus {
-		background: inherit;
-		color: inherit;
-	}
-}
-
-// Links as buttons
-a.button {
-	@include kill-link(get-color(text, primary));
-	@include kill-link-decoration();
-	&:hover,
-	&:focus {
-		border: $button-border;
-		background:$button-border-color;
-		color: contrast-color($button-border-color);
-	}
-}
-
-a.button--disabled {
-	&:hover, 
-	&:focus {
-		background: inherit;
-		color: inherit;
-	}
-}
-
 textarea {
 	border: $input-border;
 	@include form-reset-textarea();
@@ -229,32 +171,98 @@ textarea {
 	padding: 0 ($spacer / 4);
 }
 
-fieldset {
-	margin-right:0;
-	margin-left:0;
-	border: $input-border;
-	padding: $spacer;
-}
+/*
+Fieldsets
 
-legend {
-	font-weight: $bold;
+If either `$disable-fieldset` boolean is set to true or `.fieldset--disabled` class is added, visually hides the fielset box and converts the `<legend>` into a pseudo-heading.
+
+Markup:
+<fieldset>
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
+<fieldset class="fieldset--disabled">
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
+
+Styleguide Forms.fieldset
+*/
+
+@if $disable-fieldset {
+	fieldset {
+		margin-right:0;
+		margin-left:0;
+		border: none;
+		padding: 0;
+		legend {
+			margin-bottom: $spacer;
+			@include minititle($h4-font-size);
+		}
+	}
+} @else {
+	fieldset {
+		margin-right:0;
+		margin-left:0;
+		border: $input-border;
+		padding: $spacer;
+		legend {
+			@include minititle($h5-font-size);
+		}
+	}
+	fieldset.fieldset--disabled {
+		margin-right:0;
+		margin-left:0;
+		border: none;
+		padding: 0;
+		legend {
+			margin-bottom: $spacer;
+			@include minititle($h4-font-size);
+		}
+	}
 }
 
 // General block-level wrapper for spacing between items
 .form-item {
 	margin-bottom : $gutter;
 	display:flex;
+	align-items:center;
 	label {
 		flex: 0 1 auto;
+		@include minititle();
 	}
-	input {
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="search"] {
 		flex: 1 0 auto;
+	}
+
+	&:last-child,
+	&:last-of-type {
+		margin-bottom:0;
 	}
 }
 
 // We can't add pseudo-elements to <input>, so...
 .form-item--required {
-	&::after {
+	label::after {
 		content: "*";
 		color: get-color(state, error);
 	}

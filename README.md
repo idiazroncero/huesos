@@ -12,6 +12,8 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 
 [Animate.scss](https://github.com/geoffgraham/animate.scss) has been dropped but is still a recomendation for handling UX animations.
 
+It is "somehow opinionated", meaning that is neither a Bootstrap-like complete set of closed and almost zero-config components nor a bare-bones css-reset and starterkit.
+
 ## NPM scripts
 
 `yarn build` - Compiles the styleguide and css production assets.

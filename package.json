@@ -13,6 +13,7 @@
     "styleguide:style": "yarn styleguide:sass && yarn styleguide:cssnext",
     "styleguide:sass": "yarn node-sass src/kss-src/kss-assets/kss.scss src/kss-src/kss-assets/kss.css --output-style compressed --source-map=0",
     "styleguide:cssnext": "yarn postcss src/kss-src/kss-assets/kss.css -o src/kss-src/kss-assets/kss.css --use postcss-cssnext --no-map",
+    "test-page" : "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
     "lint:js": "eslint src/js webpack.*.js --cache --debug",
     "lint:css": "stylelint dist/css/*.css"
   },
