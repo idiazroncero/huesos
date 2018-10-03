@@ -17,7 +17,7 @@ $colors: (
 		"primary":   #1A1A19,
 		"heading":   #1A1A19,
 		"active": #383837,
-		"mark" : #FCEE35,
+		"mark" : goldenRod,
 	),
 
 	background: (
@@ -166,7 +166,7 @@ $quotes: "“" "”" "‘" "’";
 
 // Code-like items
 $code-background: get-color(background, dark);
-$code-border-radius: 3px;
+$code-border-radius: 4px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.05em; 
@@ -216,6 +216,8 @@ $figcaption-font-size: $h6-font-size;
 // ------
 // Some common patterns
 // ------
+
+$border-radius: 3px;
 
 $separators: true;
 $separator-width: 1px;
@@ -271,7 +273,7 @@ $link-active: get-color(blue, darker);
 // ------
 
 // General reset
-$form-border-radius: 0;
+$form-border-radius: $border-radius;
 
 // Inputs
 $input-border-strategy: bottom; // Options: full, bottom, none;
@@ -283,7 +285,7 @@ $input-padding: 0;
 $button-border-color: get-color(gray, darker);
 $button-border: 2px solid $button-border-color;
 $button-padding: 0 ($spacer / 2);
-$button-border-radius: 3px;
+$button-border-radius: $border-radius;
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;
@@ -386,7 +388,7 @@ $gutter: $spacer;
 // ------
 
 $card-border-color: $separator-color;
-$card-border-radius: 2px;
+$card-border-radius: $border-radius;
 
 
 

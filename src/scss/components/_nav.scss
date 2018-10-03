@@ -145,6 +145,7 @@ Styleguide Components.toc
 		li {
       margin: 0;
       font-weight: $toc-font-weight;
+      letter-spacing: initial;
       @if $toc-uppercase {
         text-transform: uppercase;
       } @else {
@@ -155,12 +156,12 @@ Styleguide Components.toc
         @include kill-link();
       }
       ul {
+        margin: $gutter / 4 0 $gutter / 2 $gutter;
         li{
           // Don't let "bold" pass through here
           font-weight: normal;
           @include ritmo-font-size(0.95 * $toc-font-size);
         }
-        margin: $gutter / 4 0 $gutter / 2 $gutter;
         ul {
           li {
             @include ritmo-font-size(0.7 * $toc-font-size);

@@ -1,17 +1,41 @@
 /*
-Figcaption
+Figure + Figcaption
 
 The variable `$figcaption-font-size` defines the sizing of image captions.
 
-Markup:
-<figure>
-  <img src="http://placehold.it/400x200" />
-  <figcaption>Well documented code is always a bliss</figcaption>
-</figure>
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
 
-Styleguide Base.images.figcaption
+Markup:
+<section>
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</section>
+<section class="center">
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+<section class="right">
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+
+
+Styleguide Base.images.figure-figcaption
 */
+
 figcaption {
 	@include ritmo-font-size($figcaption-font-size);
 	text-align: $figcaption-align;
+}
+
+figure {
+  .right & {
+
+  }
 }

@@ -37,7 +37,7 @@
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
                   <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
-                  ><span class="kss-nav__name">{{header}}</span>
+                  ><span class="kss-nav__name {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{header}}</span>
                 </a>
               </li>
             {{/each}}
@@ -221,7 +221,7 @@
         </div>
 
         {{#if markup}}
-          <details class="kss-markup kss-style">
+          <details class="kss-markup kss-style card">
             <summary>
               {{#if markupFile }}
                 Markup: <code>{{markupFile}}</code>

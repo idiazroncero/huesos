@@ -193,9 +193,9 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     margin: 0 auto;
 
     @media screen and (min-width: 769px) {
-      width: 70%;
-      margin-left: 30%;
-      padding: $gutter $gutter * 2;
+      width: 75%;
+      margin-left: 25%;
+      padding: $gutter $gutter * 1 $gutter $gutter * 5;
     }
   }
 
@@ -204,7 +204,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
     @media screen and (min-width: 769px) {
       position: fixed;
-      width: 30%;
+      width: 25%;
       height: 100%;
       overflow: auto;
       padding: $gutter $gutter $gutter $gutter * 2;
@@ -222,6 +222,10 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
   .kss-doc-title {
     margin: 0;
+    max-width:50%;
+    line-height:1;
+    font-weight:bold;
+    margin-bottom: $kss-vertical-rhythm * 2;
   }
 
   .kss-nav__menu {
@@ -320,8 +324,8 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
   .kss-section--depth-1 {
     background: get-color(gray, 'black');
-    padding:$gutter $gutter * 2;
-    margin: -$gutter (-$gutter * 2) $gutter (-$gutter * 2);
+    padding:$gutter $gutter * 1 $gutter $gutter * 5;
+    margin: -$gutter (-$gutter * 1) $gutter (-$gutter * 5);
     .kss-title__permalink,
     .kss-title__ref,
     .kss-title__permalink-hash {
@@ -345,7 +349,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     @extend .card;
     margin-bottom: 0;
     background-color: $white;
-    border-top:none;
+    border-top:1px solid get-color(gray, "lighter");
     border-bottom:none;
     border-left:$gutter solid get-color(gray, "lighter");
     padding-left: $gutter;
@@ -658,19 +662,17 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
 
   .kss-markup {
     margin: $kss-vertical-rhythm 0;
-    border: 1px solid #ccc;
 
     &[open] summary {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 3px;
-    }
-
-    summary {
-      padding-left: 10px;
     }
 
     pre {
       margin: 0;
+      display:block;
+      code {
+        padding: 10px;
+        display:block;
+      }
     }
   }
 

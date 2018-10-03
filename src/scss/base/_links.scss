@@ -3,11 +3,17 @@ Links.
 
 All links are formatted throught `set-link()` mixin.
 
-Markup:
-<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
+The `.link-strategy` is honored but you can override it anytime by using helper classes.
 
-.link--inactive         - Makes link appear as normal
-.link--disabled         - Dims the link to mark it as disabled
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
+
+.link--inactive         	- Makes link appear as normal text but retain functionality
+.disabled         			- The helper class dims the link and deletes visual feedback
+.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
+.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
+.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
+.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
 
 Styleguide Typography.links
 */
@@ -17,7 +23,19 @@ a {
 	&.link--inactive {
 		@include kill-link()
 	}
-	&.link--disabled {
-		opacity: $disabled-opacity;
+	&.disabled {
+		@include kill-link-decoration();
+	}
+	&.link-strategy-underline {
+		@include set-link($strategy: 'underline');
+	}
+	&.link-strategy-border {
+		@include set-link($strategy: 'border');
+	}
+	&.link-strategy-mark {
+		@include set-link($strategy: 'mark');
+	}
+	&.link-strategy-smart {
+		@include set-link($strategy: 'smart');
 	}
 }

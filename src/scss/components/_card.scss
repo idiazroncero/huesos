@@ -5,4 +5,8 @@
 	@if $shadows == true {
 		box-shadow: $shadow-definition;
 	}
+	// Nested cards are applied a padding reduction
+	.card {
+		padding: $gutter / 2;
+	}
 }

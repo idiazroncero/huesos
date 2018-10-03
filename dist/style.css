@@ -213,7 +213,8 @@ article, aside, footer, header, nav, section,
 figure, audio, video,
 hr,
 table, caption, figcaption,
-fieldset {
+fieldset,
+details, details[open] summary {
   margin: 0 0 1.3rem 0; }
 
 /*
@@ -298,8 +299,6 @@ body {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
  */
-figcaption,
-figure,
 main {
   /* 1 */
   display: block; }
@@ -466,7 +465,7 @@ Markup:
 Styleguide Typography.mark
 */
 mark {
-  background-color: #FCEE35;
+  background-color: goldenRod;
   color: #FFFFFF;
   padding: 0 0.325rem; }
 
@@ -556,14 +555,14 @@ Markup:
 Styleguide Pseudo-elements.selection
 */
 ::-moz-selection {
-  background-color: #FCEE35;
+  background-color: goldenRod;
   /* 1 */
   color: #FFFFFF;
   /* 1 */
   text-shadow: none; }
 
 ::selection {
-  background-color: #FCEE35;
+  background-color: goldenRod;
   /* 1 */
   color: #FFFFFF;
   /* 1 */
@@ -642,6 +641,12 @@ Styleguide Base.images
 img {
   border-style: none;
   max-width: 100%; }
+
+figure {
+  display: inline-block; }
+
+figcaption {
+  display: block; }
 
 /**
  * Change the fill color to match the text color in all browsers (opinionated).
@@ -893,6 +898,33 @@ textarea,
   cursor: default; }
 
 /*
+Details
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+
+Markup:
+<details>
+	<summary>Pure HTML5 accordion</summary>
+	<p>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.</p>
+	<p>It's neat and simple. Love it.</p>
+</details>
+
+
+Styleguide Base.details
+*/
+summary {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer; }
+
+/*
 Checkboxes
 
 Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
@@ -939,7 +971,7 @@ textarea {
   white-space: normal;
   line-height: inherit;
   background: none;
-  border-radius: 0;
+  border-radius: 3px;
   /* Browsers have different default form fonts */
   color: inherit;
   font-size: inherit;
@@ -1473,10 +1505,12 @@ h6, .h6 {
   line-height: 21px;
   line-height: 1.3rem; }
 
-h1, h2, h3, h4, h5, h6 .h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   color: #1A1A19;
   font-weight: normal; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     color: inherit;
     vertical-align: 0; }
 
@@ -1580,7 +1614,7 @@ var {
   background-color: #1A1A19;
   color: #FFFFFF;
   padding: 0 0.325rem;
-  border-radius: 3px; }
+  border-radius: 4px; }
 
 /*
 Tables
@@ -1656,17 +1690,34 @@ th {
   text-align: left; }
 
 /*
-Figcaption
+Figure + Figcaption
 
 The variable `$figcaption-font-size` defines the sizing of image captions.
 
-Markup:
-<figure>
-  <img src="http://placehold.it/400x200" />
-  <figcaption>Well documented code is always a bliss</figcaption>
-</figure>
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
 
-Styleguide Base.images.figcaption
+Markup:
+<section>
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</section>
+<section class="center">
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+<section class="right">
+  <figure>
+    <img src="http://placehold.it/400x200" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+
+
+Styleguide Base.images.figure-figcaption
 */
 figcaption {
   font-size: 12px;
@@ -1680,11 +1731,17 @@ Links.
 
 All links are formatted throught `set-link()` mixin.
 
-Markup:
-<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click!</a>
+The `.link-strategy` is honored but you can override it anytime by using helper classes.
 
-.link--inactive         - Makes link appear as normal
-.link--disabled         - Dims the link to mark it as disabled
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
+
+.link--inactive         	- Makes link appear as normal text but retain functionality
+.disabled         			- The helper class dims the link and deletes visual feedback
+.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
+.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
+.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
+.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
 
 Styleguide Typography.links
 */
@@ -1719,8 +1776,97 @@ a.link--inactive:active {
 a.link--inactive, a.link--inactive:link {
   text-decoration: none; }
 
-a.link--disabled {
-  opacity: 0.33; }
+a.disabled, a.disabled:link {
+  text-decoration: none; }
+
+a.link-strategy-underline, a.link-strategy-underline:link {
+  color: #2B90D9;
+  text-decoration: none; }
+
+a.link-strategy-underline:visited {
+  color: #1573B6; }
+
+a.link-strategy-underline:focus, a.link-strategy-underline:hover {
+  color: #3FA2E9;
+  text-decoration: underline; }
+
+a.link-strategy-underline:active {
+  color: #1573B6; }
+
+a.link-strategy-border, a.link-strategy-border:link {
+  color: #2B90D9;
+  text-decoration: none; }
+
+a.link-strategy-border:visited {
+  color: #1573B6; }
+
+a.link-strategy-border:focus, a.link-strategy-border:hover {
+  color: #3FA2E9;
+  text-decoration: none;
+  border-bottom: 0.325rem solid #2B90D9; }
+
+a.link-strategy-border:active {
+  color: #1573B6; }
+
+a.link-strategy-mark, a.link-strategy-mark:link {
+  color: #2B90D9;
+  text-decoration: none; }
+
+a.link-strategy-mark:visited {
+  color: #1573B6; }
+
+a.link-strategy-mark:focus, a.link-strategy-mark:hover {
+  color: #3FA2E9;
+  text-decoration: none;
+  background-color: #28CEAA;
+  position: relative; }
+  a.link-strategy-mark:focus:before, a.link-strategy-mark:focus:after, a.link-strategy-mark:hover:before, a.link-strategy-mark:hover:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #28CEAA; }
+  a.link-strategy-mark:focus:before, a.link-strategy-mark:hover:before {
+    left: -2px; }
+  a.link-strategy-mark:focus:after, a.link-strategy-mark:hover:after {
+    right: -2px; }
+
+a.link-strategy-mark:active {
+  color: #1573B6; }
+
+a.link-strategy-smart, a.link-strategy-smart:link {
+  color: #2B90D9;
+  text-decoration: none; }
+
+a.link-strategy-smart:visited {
+  color: #1573B6; }
+
+a.link-strategy-smart:focus, a.link-strategy-smart:hover {
+  color: #3FA2E9;
+  color: #2B90D9;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
+  background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2B90D9, #2B90D9);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a.link-strategy-smart:focus::-moz-selection, a.link-strategy-smart:hover::-moz-selection {
+    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
+    background: #FFFFFF; }
+  a.link-strategy-smart:focus::selection, a.link-strategy-smart:hover::selection {
+    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
+    background: #FFFFFF; }
+  a.link-strategy-smart:focus::-moz-selection, a.link-strategy-smart:hover::-moz-selection {
+    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
+    background: #FFFFFF; }
+  a.link-strategy-smart:focus:before, a.link-strategy-smart:focus:after, a.link-strategy-smart:focus *, a.link-strategy-smart:focus *:before, a.link-strategy-smart:focus *:after, a.link-strategy-smart:hover:before, a.link-strategy-smart:hover:after, a.link-strategy-smart:hover *, a.link-strategy-smart:hover *:before, a.link-strategy-smart:hover *:after {
+    text-shadow: none; }
+  a.link-strategy-smart:focus:visited, a.link-strategy-smart:hover:visited {
+    color: #2B90D9; }
+
+a.link-strategy-smart:active {
+  color: #1573B6; }
 
 /*
 Disabled
@@ -1775,8 +1921,10 @@ body {
 .card {
   padding: 1.3rem;
   border: 1px solid #CCCCCC;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
+  .card .card {
+    padding: 0.65rem; }
 
 /*
 Navigation menus
@@ -1933,6 +2081,8 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
+  letter-spacing: normal;
+  letter-spacing: initial;
   text-transform: none;
   text-transform: initial;
   font-size: 16px;
