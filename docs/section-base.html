@@ -121,6 +121,11 @@
           <span class="kss-nav__ref">8</span><span class="kss-nav__name">Pseudo-elements</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-huesitos.html">
+          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Huesitos</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -150,7 +155,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>_config.scss</code>, line 407
+          Source: <code>_config.scss</code>, line 412
         </div>
 
     </div>
@@ -335,11 +340,6 @@
             </a>
           </p>
 
-          <div class="kss-description">
-            <p>The variable <code>$figcaption-font-size</code> defines the sizing of image captions.</p>
-<p>In order to align the whole block while keeping the textalignment of the figcaption defined on <code>$figcaption-align</code>, you need to wrap the entire <code>&lt;figure&gt;</code> on an html block element containing the <code>.right</code>, <code>.left</code> or <code>.center</code> class.</p>
-
-          </div>
 
 
       </div>
@@ -373,7 +373,7 @@
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_sanitize.scss</code>, line 801
+          Source: <code>base/_sanitize.scss</code>, line 808
         </div>
 
     </section>
@@ -473,7 +473,7 @@
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_sanitize.scss</code>, line 152
+          Source: <code>base/_sanitize.scss</code>, line 153
         </div>
 
     </section>
@@ -559,11 +559,8 @@
 
 
           <div class="kss-modifier__example">
-            <section>
+            <section style="width:50%; height: 600px">
 	<iframe src="https://mentalstones.com"></iframe>
-</section>
-<section style="width:50%; height: 300px">
-	<iframe src="https://domingocaceres.com"></iframe>
 </section>
             <div class="kss-modifier__example-footer"></div>
           </div>
@@ -574,16 +571,13 @@
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:50%; height: 600px"</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mentalstones.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:50%; height: 300px"</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://domingocaceres.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_sanitize.scss</code>, line 436
+          Source: <code>base/_sanitize.scss</code>, line 446
         </div>
 
     </section>
@@ -670,10 +664,10 @@
 
           <div class="kss-modifier__example">
             <section>
-	<img src="http://placehold.it/300x300" />
+	<img src="https://placeimg.com/300/300/nature" />
 </section>
 <section>
-	img src="http://placehold.it/2500x750" />
+	<img src="https://placeimg.com/2500/750/nature" />
 </section>
             <div class="kss-modifier__example-footer"></div>
           </div>
@@ -685,15 +679,15 @@
                 Markup
             </summary>
             <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placehold.it/300x300"</span> /&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/300/300/nature"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-	img src="http://placehold.it/2500x750" /&gt;
+	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/2500/750/nature"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_sanitize.scss</code>, line 482
+          Source: <code>base/_sanitize.scss</code>, line 489
         </div>
 
     </section>
@@ -782,19 +776,19 @@
           <div class="kss-modifier__example">
             <section>
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </section>
 <section class="center">
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </div>
 <section class="right">
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </div>
@@ -809,19 +803,19 @@
             </summary>
             <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placehold.it/400x200"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/400/200/nature"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Well documented code is always a bliss<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placehold.it/400x200"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/400/200/nature"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Well documented code is always a bliss<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placehold.it/400x200"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/400/200/nature"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Well documented code is always a bliss<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
@@ -930,7 +924,7 @@
             <div class="kss-modifier__example-footer"></div>
           </div>
 
-            <div class="kss-modifier__name kss-style">
+            <div class="kss-modifier__name kss-style tag">
               .list--inline
             </div>
             <div class="kss-modifier__description kss-style">
@@ -1165,8 +1159,9 @@
           </p>
 
           <div class="kss-description">
-            <p>Tables span across all available space evenly distributed.
-Borders are collapsed by default</p>
+            <p>Tables span across all available space evenly distributed.</p>
+<p>Borders are collapsed by default</p>
+<p><code>&lt;caption&gt;</code> receives a <code>.minititle</code> styling</p>
 
           </div>
 

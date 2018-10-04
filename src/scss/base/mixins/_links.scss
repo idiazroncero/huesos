@@ -93,7 +93,12 @@ Styleguide Mixins.links.setLink
 }
 
 @mixin kill-link-decoration($strategy: $link-strategy) {
-	&, &:link {
+	&, 
+	&:link,
+	&:visited,
+	&:focus,
+	&:hover,
+	&:active {
 		@if $strategy == underline {
 			text-decoration:none;
 		} @else if $strategy == border {

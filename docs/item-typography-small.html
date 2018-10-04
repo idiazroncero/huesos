@@ -65,6 +65,11 @@
           <span class="kss-nav__ref">8</span><span class="kss-nav__name">Pseudo-elements</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-huesitos.html">
+          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Huesitos</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -78,7 +83,7 @@
         <h2 class="kss-title kss-title--level-2">
           <a class="kss-title__permalink" href="#kssref-typography-small">
             <span class="kss-title__ref">
-              3.11
+              3.12
               <span class="kss-title__permalink-hash">
                   #Typography.small
               </span>
@@ -120,6 +125,7 @@
 
           <div class="kss-description">
             <p>Applies <code>$h6-font-size</code> to small texts, applies a three-step reduction if inside a <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> tag.</p>
+<p>The helper class <code>.small</code> can be used to fake the element.</p>
 
           </div>
 
@@ -137,6 +143,7 @@
 <h1>A big heading with <small>an small portion of text</small></h1>
 <h2>A second-level title <small>featuring a minor text</small></h2>
 <h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+<p class="small">I'm a <code>.small</code> text!<p/>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -149,11 +156,12 @@
             <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Whenever I found a <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>not so important text,<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span> i use the small tag<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>A big heading with <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>an small portion of text<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>A second-level title <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>featuring a minor text<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Any h3 will also feature a <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>reduction on its smaller parts<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Any h3 will also feature a <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>reduction on its smaller parts<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>I'm a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>.small<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> text!<span class="hljs-tag">&lt;<span class="hljs-name">p</span>/&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_sanitize.scss</code>, line 325
+          Source: <code>base/_sanitize.scss</code>, line 326
         </div>
 
     </div>

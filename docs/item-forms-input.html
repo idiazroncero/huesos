@@ -65,6 +65,11 @@
           <span class="kss-nav__ref">8</span><span class="kss-nav__name">Pseudo-elements</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-huesitos.html">
+          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Huesitos</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -78,7 +83,7 @@
         <h2 class="kss-title kss-title--level-2">
           <a class="kss-title__permalink" href="#kssref-forms-input">
             <span class="kss-title__ref">
-              1.4
+              1.5
               <span class="kss-title__permalink-hash">
                   #Forms.input
               </span>
@@ -125,6 +130,7 @@ and apply a vertical-rhythm based margin.</p>
 <p>This wrapper also applies a flexbox in order to take the full width of the parent.</p>
 <p>Without this wrapper and class, all the form elements would behave as inline-block elements.</p>
 <p>A wrapper <code>.form-item--required</code> adds a marker to let users know the field is mandatory.</p>
+<p>For items with an <code>input[disabled]</code>, the recommendation is to mark the whole <code>.form-item</code> as <code>.disabled</code></p>
 
           </div>
 
@@ -146,8 +152,8 @@ and apply a vertical-rhythm based margin.</p>
   <label for="text">Text Required</label>
   <input required type="text" id="text" name="text">
 </div>
-<div class="form-item">
-  <label for="text">Text Disabled</label>
+<div class="form-item disabled">
+  <label for="text">Form item disabled</label>
   <input disabled type="text" id="text" name="text">
 </div>
 <div class="form-item">
@@ -187,8 +193,8 @@ and apply a vertical-rhythm based margin.</p>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Text Required<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">required</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"text"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Text Disabled<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item disabled"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Form item disabled<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"text"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>

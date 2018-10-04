@@ -1,0 +1,110 @@
+/*
+Margins
+
+`$gutter` is applied as margin.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have som margin applied</p>
+
+.m              - Applies all margins
+.mt             - Applies a margin-top
+.mr             - Applies a margin-right
+.mb             - Applies a margin-bottom
+.ml             - Applies a margin-left
+
+Styleguide Huesitos.margins
+*/
+
+.m {
+    margin: $gutter;
+}
+
+.mt {
+    margin-top: $gutter;
+}
+
+.mr {
+    margin-right: $gutter;
+}
+
+.mb {
+    margin-bottom: $gutter;
+}
+
+.ml {
+    margin-left: $gutter;
+}
+
+/*
+Paddings
+
+`$gutter` is applied as padding.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have a padding applied</p>
+
+.p              - Applies all paddings
+.pt             - Applies a padding-top
+.pr             - Applies a padding-right
+.pb             - Applies a padding-bottom
+.pl             - Applies a padding-left
+
+Styleguide Huesitos.paddings
+*/
+
+.p {
+    padding: $gutter;
+}
+
+.pt {
+    padding-top: $gutter;
+}
+
+.pr {
+    padding-right: $gutter;
+}
+
+.pb {
+    padding-bottom: $gutter;
+}
+
+.pl {
+    padding-left: $gutter;
+}
+
+/*
+Borders
+
+Uses `$separator-color` by default.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have some border applied</p>
+
+.b              - Applies all borders
+.bt             - Applies a border-top
+.br             - Applies a border-right
+.bb             - Applies a border-bottom
+.bl             - Applies a border-left
+
+Styleguide Huesitos.borders
+*/
+
+.b {
+    border: $separator-width solid $separator-color;
+}
+
+.bt {
+    border-top: $separator-width solid $separator-color;
+}
+
+.br {
+    border-right: $separator-width solid $separator-color;
+}
+
+.bb {
+    border-bottom: $separator-width solid $separator-color;
+}
+
+.bl {
+    border-left: $separator-width solid $separator-color;
+}

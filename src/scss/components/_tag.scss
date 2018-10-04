@@ -1,0 +1,95 @@
+/*
+Tag
+
+Used for tag-like elements. They can be keywords, but also small elements that need some visual highlighting.
+
+They need to be set on inline or inline-block elements.
+
+If a link, it changes the link decoration for a background-color modification.
+
+A small margin is applied in order to allow for lists of tags.
+
+Wrappers `.right` and `.center` know how to switch margins.
+
+.tag--success       - Applies the success color
+.tag--warning       - Applies the warning color
+.tag--error         - Applies the error color
+.tag--primary       - Applies the primary color
+.tag--secondary     - Applies the secondary color
+
+Markup:
+<p><span class="tag {{ modifier_class }}">This is a tag-like element</span><a class="tag {{ modifier_class }}">Another one!</a></p>
+
+Styleguide Components.tag
+*/
+
+.tag {
+    display:inline-block;
+    @include minititle($uppercase:false, $letter-spacing:0);
+    padding: 0 $gutter / 3;
+    @include background-contrast(get-color(gray, lighter));
+    border-radius: $border-radius;
+    margin-right: $gutter / 3;
+    &.tag--success {
+        @include background-contrast(get-color(state, success)); 
+    }
+    &.tag--warning{
+        @include background-contrast(get-color(state, warning)); 
+    }
+    &.tag--error {
+        @include background-contrast(get-color(state, error)); 
+    }
+    &.tag--primary {
+        @include background-contrast(get-color(base, primary)); 
+    }
+    &.tag--secondary {
+        @include background-contrast(get-color(base, secondary)); 
+    }
+    .right & {
+        margin-right:0;
+        margin-left: $gutter / 3;
+    }
+    .center & {
+        margin-right: $gutter / 6;
+        margin-left: $gutter / 6;
+    }
+}
+
+a.tag {
+    @include kill-link-decoration();
+    cursor:pointer;
+    &:hover,
+    &:focus {
+        @include background-contrast(darken(get-color(gray, lighter), $color-modify-ratio));
+    }
+    &.tag--success {
+        &:hover,
+        &:focus {
+            @include background-contrast(darken(get-color(state, success), $color-modify-ratio)); 
+        }
+    }
+    &.tag--warning{
+        &:hover,
+        &:focus {
+            @include background-contrast(darken(get-color(state, warning), $color-modify-ratio)); 
+        }
+    }
+    &.tag--error {
+        &:hover,
+        &:focus {
+            @include background-contrast(darken(get-color(state, error), $color-modify-ratio)); 
+        }
+    }
+    &.tag--primary {
+        &:hover,
+        &:focus {
+            @include background-contrast(darken(get-color(base, primary), $color-modify-ratio)); 
+        }
+    }
+    &.tag--secondary {
+        &:hover,
+        &:focus {
+            @include background-contrast(darken(get-color(base, secondary), $color-modify-ratio)); 
+        }
+    }
+}

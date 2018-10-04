@@ -276,10 +276,10 @@ $link-active: get-color(blue, darker);
 $form-border-radius: $border-radius;
 
 // Inputs
-$input-border-strategy: bottom; // Options: full, bottom, none;
-$input-border-color: get-color(gray, darker);
+$input-border-strategy: full; // Options: full, bottom, none;
+$input-border-color: get-color(gray, lighter);
 $input-border: 1px solid $input-border-color;
-$input-padding: 0;
+$input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-border-color: get-color(gray, darker);
@@ -290,6 +290,8 @@ $button-border-radius: $border-radius;
 // Checkboxes / Selects
 $pseudo-checkbox : false;
 $pseudo-radio: false;
+$pseudo-border-color: get-color(text, primary);
+$pseudo-border: 1px solid $pseudo-border-color;
 
 // Selects
 $select-border-strategy: full; // Options: full, bottom, none;
@@ -317,6 +319,9 @@ $nav-spacing: $letter-spacing;
 $toc-font-weight: bold;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
+
+$menu-padding: $spacer / 2;
+$menu-background-color: get-color(base, primary);
 
 
 // ------
@@ -445,4 +450,13 @@ $card-border-radius: $border-radius;
 // Weight: 7
 //
 // Styleguide Pseudo-elements
+
+
+// Huesitos
+//
+// Provide quick helper classes for common cases (like adding margin, padding or borders)
+//
+// Weight: 8
+//
+// Styleguide Huesitos
 

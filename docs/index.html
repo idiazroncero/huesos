@@ -65,14 +65,43 @@
           <span class="kss-nav__ref">8</span><span class="kss-nav__name">Pseudo-elements</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-huesitos.html">
+          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Huesitos</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
 <main class="kss-main" aria-label="Content">
   <article>
       <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        <h1>Introducción</h1>
-<h2>Hola heading</h2>
+        <h2>A basic osamenta <br/> for your web proyects</h2>
+<hr/>
+<section>
+<h3>What is this?</h3>
+<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
+<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
+<ul>
+<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
+<li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
+<li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
+</ul>
+<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX animations. You can easily add it to your project using <code>npm install animate.scss</code></p>
+</section>
+<section>
+<h3>Opinionated stuff</h3>
+<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are heavily opinionated and thus not exposed on the <code>_config.scss</code> file.</p>
+<p>The Huesos' &quot;decalogue&quot; is as follows:</p>
+<ul>
+<li>
+<p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;section&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
+</li>
+<li>
+<p><strong>All separator borders are solid.</strong> Borders that indicate boundaries are always set to <code>solid</code> and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don't agree with this or don't need separator borders, you can set <code>$separator-width</code> to <code>0</code>.</p>
+</li>
+</ul>
+</section>
 
       </div>
 </article>

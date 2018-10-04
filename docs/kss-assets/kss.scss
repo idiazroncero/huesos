@@ -570,16 +570,16 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     margin-right: 20px;
   }
   .kss-modifier__name {
-    float: left;
-    padding-right: 10px;
     font-weight: bold;
-    margin-bottom:ritmo(2);
   }
   .is-fullscreen .kss-modifier__name {
-    margin-left: 20px;
+    margin-left: ritmo(2);
+    margin-bottom:ritmo(2);
   }
   .kss-modifier__description {
-    // margin-bottom: ($kss-vertical-rhythm / 2);
+    @extend .small;
+    display:inline-block;
+    margin-bottom:ritmo(2);
   }
   .is-fullscreen .kss-modifier__description {
     margin-right: 20px;
@@ -672,6 +672,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
       code {
         padding: 10px;
         display:block;
+        overflow:scroll;
       }
     }
   }
@@ -715,7 +716,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   .lit { color: #066 }  /* a literal value */
   /* punctuation, lisp open bracket, lisp close bracket */
   .pun, .opn, .clo { color: #660 }
-  .tag { color: #008 }  /* a markup tag name */
+  // .tag { color: #008 }  /* a markup tag name */
   .atn { color: #606 }  /* a markup attribute name */
   .atv { color: #080 }  /* a markup attribute value */
   .dec, .var { color: #606 }  /* a declaration; a variable name */

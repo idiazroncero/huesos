@@ -24,3 +24,8 @@ Styleguide Functions.Color.ContrastColor
 		@return $light; // Darker background, return light color
 	}
 }
+
+@mixin background-contrast($color) {
+	background-color: $color;
+	color: contrast-color($color);
+}

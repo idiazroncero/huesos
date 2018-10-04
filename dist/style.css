@@ -272,7 +272,14 @@ ol, ul {
     display: inline-block; }
 
 caption {
-  text-align: left; }
+  text-align: left;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -388,8 +395,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -477,15 +483,25 @@ Small
 
 Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
 
+The helper class `.small` can be used to fake the element.
+
 Markup:
 <p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
 <h1>A big heading with <small>an small portion of text</small></h1>
 <h2>A second-level title <small>featuring a minor text</small></h2>
 <h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+<p class="small">I'm a <code>.small</code> text!<p/>
 
 Styleguide Typography.small
 */
-small {
+small,
+.small {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem; }
+
+.small * {
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 21px;
@@ -590,11 +606,8 @@ Iframe
 Deletes border, displays iframe as a block element that always fills its parent's size.
 
 Markup:
-<section>
+<section style="width:50%; height: 600px">
 	<iframe src="https://mentalstones.com"></iframe>
-</section>
-<section style="width:50%; height: 300px">
-	<iframe src="https://domingocaceres.com"></iframe>
 </section>
 
 Styleguide Base.iframe
@@ -630,10 +643,10 @@ All images are responsive by default.
 
 Markup:
 <section>
-	<img src="http://placehold.it/300x300" />
+	<img src="https://placeimg.com/300/300/nature" />
 </section>
 <section>
-	img src="http://placehold.it/2500x750" />
+	<img src="https://placeimg.com/2500/750/nature" />
 </section>
 
 Styleguide Base.images
@@ -859,6 +872,7 @@ select,
 summary,
 textarea,
 [tabindex] {
+  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -899,10 +913,6 @@ textarea,
 
 /*
 Details
-
-The variable `$figcaption-font-size` defines the sizing of image captions.
-
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
 
 Markup:
 <details>
@@ -1000,6 +1010,8 @@ input {
 	Without this wrapper and class, all the form elements would behave as inline-block elements.
 
 	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
+
+	For items with an `input[disabled]`, the recommendation is to mark the whole `.form-item` as `.disabled`
 	
 	Markup:
 	<div class="form-item">
@@ -1010,8 +1022,8 @@ input {
 	  <label for="text">Text Required</label>
 	  <input required type="text" id="text" name="text">
 	</div>
-	<div class="form-item">
-	  <label for="text">Text Disabled</label>
+	<div class="form-item disabled">
+	  <label for="text">Form item disabled</label>
 	  <input disabled type="text" id="text" name="text">
 	</div>
 	<div class="form-item">
@@ -1037,8 +1049,8 @@ input {
 	
 	Styleguide Forms.input
 	*/
-  border-bottom: 1px solid #333333;
-  padding: 0;
+  border: 1px solid #DDDDDD;
+  padding: 0.325rem 0.65rem;
   /* Make webkit render the search input like a normal text field */
   /* Turn off the recent search for webkit. It adds about 15px padding on the left */
   /* Fix IE7 display bug */
@@ -1055,7 +1067,7 @@ input {
 	Styleguide Forms.file
 	*/ }
   input:hover, input:focus {
-    border-color: black; }
+    border-color: #898989; }
   input:focus {
     outline: 0; }
   input[type=checkbox], input[type=radio] {
@@ -1081,7 +1093,7 @@ input {
       top: 50%;
       left: 4px;
       transform: translateY(-50%);
-      background-color: #333333; }
+      background-color: #1A1A19; }
   input[type=checkbox].pseudo-checkbox + label {
     cursor: pointer;
     display: flex;
@@ -1092,7 +1104,7 @@ input {
       width: 16px;
       height: 16px;
       margin: 0 0.65rem 0 0;
-      border: 1px solid #333333;
+      border: 1px solid #1A1A19;
       background-color: #FFFFFF;
       cursor: pointer; }
   input[type=radio].pseudo-radio:checked + label {
@@ -1106,7 +1118,7 @@ input {
       width: 8px;
       height: 8px;
       transform: translateY(-50%);
-      background-color: #333333;
+      background-color: #1A1A19;
       border-radius: 50%;
       cursor: pointer; }
   input[type=radio].pseudo-radio + label {
@@ -1119,7 +1131,7 @@ input {
       margin: 0 0.65rem 0 0;
       width: 16px;
       height: 16px;
-      border: 1px solid #333333;
+      border: 1px solid #1A1A19;
       background-color: #FFFFFF;
       vertical-align: top;
       border-radius: 50%;
@@ -1148,25 +1160,48 @@ select {
 	
 	Styleguide Forms.select
 	*/
-  border: 1px solid #333333;
+  border: 1px solid #DDDDDD;
   padding: 0 0.65rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
-    border-color: black; }
+    border-color: #898989; }
   select[multiple] {
     vertical-align: top; }
 
+/*
+Textarea
+
+Use in conjunction with `.form-item` and its modifiers (see its own section)
+
+It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+
+
+Markup:
+<div class="form-item">
+	<label for="area1">Textarea</label>
+	<textarea rows="5" id="area1"></textarea>
+</div>
+<div class="form-item form-item--label-inside">
+	<label for="area2">Textarea</label>
+	<textarea rows="5" id="area2"></textarea>
+</div>
+<div class="form-item form-item--label-inside form-item--col">
+	<label for="area3">Textarea</label>
+	<textarea id="area3"></textarea>
+</div>
+
+Styleguide Forms.textarea
+*/
 textarea {
-  border: 1px solid #333333;
+  border: 1px solid #DDDDDD;
   /* Move the label to the top */
   vertical-align: top;
   /* Turn off scroll bars in IE unless needed */
   overflow: auto;
   width: 100%;
-  padding: 0 0.325rem; }
+  padding: 0.325rem 0.65rem;
+  min-height: 2.6rem; }
 
 /*
 Fieldsets
@@ -1202,7 +1237,8 @@ Styleguide Forms.fieldset
 fieldset {
   margin-right: 0;
   margin-left: 0;
-  border: 1px solid #333333;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
   padding: 1.3rem; }
   fieldset legend {
     font-size: 16px;
@@ -1228,10 +1264,31 @@ fieldset.fieldset--disabled {
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
+/*
+Form item wrapper
+
+General block-level wrapper for spacing between items.
+
+It also provides several variations for different styling of items.
+
+.form-item--required		- Marks the label with a red asterisk
+.form-item--col				- Stacks elements instead of displaying them side by side
+.form-item--label-inside	- Visually puts the label inside of the input. Only makes sense if the border strategy is full
+.form-item--label-inside.form-item--required	- `.form-item--required` can be combinated with the other modifiers
+.form-item--label-inside.form-item--col	- You can sum `col`and `required` to get this commonly seen pattern
+
+Markup:
+<div class="form-item {{modifier_class}}">
+	<label for="text">A form item</label>
+	<input type="text" id="text" name="text">
+</div>
+
+Styleguide Forms.form-item
+*/
 .form-item {
   margin-bottom: 1.3rem;
   display: flex;
-  align-items: center; }
+  align-items: baseline; }
   .form-item label {
     flex: 0 1 auto;
     font-size: 12px;
@@ -1251,9 +1308,29 @@ fieldset.fieldset--disabled {
   .form-item:last-child, .form-item:last-of-type {
     margin-bottom: 0; }
 
+.form-item--col {
+  display: block; }
+  .form-item--col label,
+  .form-item--col input,
+  .form-item--col textarea {
+    display: block;
+    width: 100%; }
+
 .form-item--required label::after {
   content: "*";
   color: #DA3C3C; }
+
+.form-item--label-inside {
+  border-radius: 3px;
+  border: 1px solid #DDDDDD;
+  padding: 0.325rem 0.65rem; }
+  .form-item--label-inside:hover, .form-item--label-inside:focus {
+    border-color: #898989; }
+  .form-item--label-inside input,
+  .form-item--label-inside textarea {
+    border: none;
+    border-radius: 0;
+    padding: 0; }
 
 /*
 Button
@@ -1352,10 +1429,10 @@ a.button:focus, a.button:hover {
 a.button:active {
   color: #1A1A19; }
 
-a.button, a.button:link {
+a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
   text-decoration: none; }
 
-a.button, a.button:link {
+a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
   text-decoration: none; }
 
 a.button:hover, a.button:focus {
@@ -1409,7 +1486,6 @@ a.disabled:link,
 input.disabled {
   opacity: 0.33;
   color: inherit;
-  cursor: auto;
   cursor: initial; }
   input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
   input[type=reset][disabled]:hover,
@@ -1426,7 +1502,6 @@ input.disabled {
   input.disabled:focus {
     background: none;
     color: inherit;
-    cursor: auto;
     cursor: initial; }
   input[type=submit][disabled].button--error,
   input[type=reset][disabled].button--error,
@@ -1537,25 +1612,25 @@ dt,
 #your-ids {
   font-family: "Fira Sans", Helvetica, Arial sans-serif; }
 
-h1 a, h1 a:link {
+h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
   text-decoration: none; }
 
-h2 a, h2 a:link {
+h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
   text-decoration: none; }
 
-h3 a, h3 a:link {
+h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
   text-decoration: none; }
 
-h4 a, h4 a:link {
+h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
   text-decoration: none; }
 
-dt a, dt a:link {
+dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
   text-decoration: none; }
 
-.your-classes a, .your-classes a:link {
+.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
   text-decoration: none; }
 
-#your-ids a, #your-ids a:link {
+#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
   text-decoration: none; }
 
 /*
@@ -1609,18 +1684,49 @@ samp,
 var {
   display: inline-block;
   vertical-align: baseline;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-decoration-break: clone;
   background-color: #1A1A19;
   color: #FFFFFF;
   padding: 0 0.325rem;
   border-radius: 4px; }
 
 /*
+Minititle
+
+The concept of "minititle" makes reference to a small heading, normally used for sectioning.
+
+It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
+
+Markup:
+<section>
+	<p class="minititle">This is the minititle of this section</p>
+	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
+</section>
+<section class="card" style="width:250px">
+	<h3 class="minititle">An h3 reduced!</h3>
+	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
+</section>
+
+
+Styleguide Typography.minititle
+*/
+.minititle {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+/*
 Tables
 
 Tables span across all available space evenly distributed.
+
 Borders are collapsed by default
+
+`<caption>` receives a `.minititle` styling
 
 Markup:
 <table>
@@ -1699,19 +1805,19 @@ In order to align the whole block while keeping the textalignment of the figcapt
 Markup:
 <section>
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </section>
 <section class="center">
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </div>
 <section class="right">
   <figure>
-    <img src="http://placehold.it/400x200" />
+    <img src="https://placeimg.com/400/200/nature" />
     <figcaption>Well documented code is always a bliss</figcaption>
   </figure>
 </div>
@@ -1727,7 +1833,7 @@ figcaption {
   text-align: left; }
 
 /*
-Links.
+Links
 
 All links are formatted throught `set-link()` mixin.
 
@@ -1773,10 +1879,10 @@ a.link--inactive:focus, a.link--inactive:hover {
 a.link--inactive:active {
   color: #1A1A19; }
 
-a.link--inactive, a.link--inactive:link {
+a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
   text-decoration: none; }
 
-a.disabled, a.disabled:link {
+a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
   text-decoration: none; }
 
 a.link-strategy-underline, a.link-strategy-underline:link {
@@ -1851,9 +1957,6 @@ a.link-strategy-smart:focus, a.link-strategy-smart:hover {
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart:focus::-moz-selection, a.link-strategy-smart:hover::-moz-selection {
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background: #FFFFFF; }
   a.link-strategy-smart:focus::selection, a.link-strategy-smart:hover::selection {
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
     background: #FFFFFF; }
@@ -1918,13 +2021,69 @@ body {
 #main-wrapper {
   padding: 1.3rem; }
 
+/*
+Card
+
+The `.card` is a common pattern on UX design.
+
+Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid.
+
+A set of settings are available under its own section on `_config.scss`
+
+A `.card` inside a `.card` has its padding reduced to 1/2
+
+Markup:
+<article class="card" style="width:400px; padding: 1.3rem">
+	<h3>Title of a card</h3>
+	<p>A card can have any content. Their appearance will be honored no matter what.</p>
+	<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
+	<div class="card right">
+		<a href="#" class="button button--error">Cancel</a>
+		<a href="#" class="button button--success">OK</a>
+	</div>
+</article>
+
+Styleguide Components.card
+*/
 .card {
   padding: 1.3rem;
   border: 1px solid #CCCCCC;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
+  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, 0.1); }
   .card .card {
     padding: 0.65rem; }
+
+/*
+Card with Featured Image
+
+A special kind of card that features a full-bleed image.
+
+It requires a slightly different markup than the original `.card` item
+
+Markup:
+<!-- Style attributes are only set to avoid style overrides on this style guide! -->
+<article class="card card--image" style="width:400px; padding:0;">
+	<div class="card__image">
+		<img src="https://placeimg.com/400/200/nature" />
+	</div>
+	<div class="card__contents">
+		<h3>Title of a card</h3>
+		<p>A card can have any content. Their appearance will be honored no matter what.</p>
+		<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
+		<div class="card right">
+			<a href="#" class="button button--error">Cancel</a>
+			<a href="#" class="button button--success">OK</a>
+		</div>
+	</div>
+</article>
+
+Styleguide Components.card.card-image
+*/
+.card--image {
+  padding: 0; }
+
+.card__contents {
+  padding: 1.3rem; }
 
 /*
 Navigation menus
@@ -1985,9 +2144,13 @@ nav ul,
     nav ul li a:active,
     .nav ul li a:active {
       color: #1A1A19; }
-    nav ul li a, nav ul li a:link,
+    nav ul li a, nav ul li a:link, nav ul li a:visited, nav ul li a:focus, nav ul li a:hover, nav ul li a:active,
     .nav ul li a,
-    .nav ul li a:link {
+    .nav ul li a:link,
+    .nav ul li a:visited,
+    .nav ul li a:focus,
+    .nav ul li a:hover,
+    .nav ul li a:active {
       text-decoration: none; }
 
 /*
@@ -2008,10 +2171,18 @@ Alignment of items can be controlled via helper classes. Defaults to "left"
 
 Markup:
 <section>
-  <nav class="menu">
+  <nav class="menu {{ modifier_class }}">
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Section</a>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Section</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+      </li>
       <li><a href="#">Works</a></li>
       <li><a href="#">About us</a></li>
       <li><span>Contact</span></li>
@@ -2033,9 +2204,12 @@ Styleguide Components.menus
     .menu li a {
       padding: 0.65rem; }
       .menu li a:hover, .menu li a:focus {
-        background-color: #888888; }
+        background-color: #C65146;
+        color: #FFFFFF; }
     .menu li span {
       padding: 0.65rem; }
+  .menu ul {
+    display: none; }
 
 /*
 TOC (Table of contents)
@@ -2081,9 +2255,7 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
-  letter-spacing: normal;
   letter-spacing: initial;
-  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
@@ -2099,7 +2271,7 @@ Styleguide Components.toc
     text-decoration: underline; }
   .toc ul li a:active {
     color: #1A1A19; }
-  .toc ul li a, .toc ul li a:link {
+  .toc ul li a, .toc ul li a:link, .toc ul li a:visited, .toc ul li a:focus, .toc ul li a:hover, .toc ul li a:active {
     text-decoration: none; }
   .toc ul li ul {
     margin: 0.325rem 0 0.65rem 1.3rem; }
@@ -2115,3 +2287,178 @@ Styleguide Components.toc
       line-height: 16px;
       line-height: 0.975rem;
       text-transform: uppercase; }
+
+/*
+Tag
+
+Used for tag-like elements. They can be keywords, but also small elements that need some visual highlighting.
+
+They need to be set on inline or inline-block elements.
+
+If a link, it changes the link decoration for a background-color modification.
+
+A small margin is applied in order to allow for lists of tags.
+
+Wrappers `.right` and `.center` know how to switch margins.
+
+.tag--success       - Applies the success color
+.tag--warning       - Applies the warning color
+.tag--error         - Applies the error color
+.tag--primary       - Applies the primary color
+.tag--secondary     - Applies the secondary color
+
+Markup:
+<p><span class="tag {{ modifier_class }}">This is a tag-like element</span><a class="tag {{ modifier_class }}">Another one!</a></p>
+
+Styleguide Components.tag
+*/
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 0 0.43333rem;
+  background-color: #DDDDDD;
+  color: #1A1A19;
+  border-radius: 3px;
+  margin-right: 0.43333rem; }
+  .tag.tag--success {
+    background-color: #10A887;
+    color: #FFFFFF; }
+  .tag.tag--warning {
+    background-color: #F17F42;
+    color: #1A1A19; }
+  .tag.tag--error {
+    background-color: #DA3C3C;
+    color: #FFFFFF; }
+  .tag.tag--primary {
+    background-color: #C65146;
+    color: #FFFFFF; }
+  .tag.tag--secondary {
+    background-color: #C65146;
+    color: #FFFFFF; }
+  .right .tag {
+    margin-right: 0;
+    margin-left: 0.43333rem; }
+  .center .tag {
+    margin-right: 0.21667rem;
+    margin-left: 0.21667rem; }
+
+a.tag {
+  cursor: pointer; }
+  a.tag, a.tag:link, a.tag:visited, a.tag:focus, a.tag:hover, a.tag:active {
+    text-decoration: none; }
+  a.tag:hover, a.tag:focus {
+    background-color: #898989;
+    color: #FFFFFF; }
+  a.tag.tag--success:hover, a.tag.tag--success:focus {
+    background-color: #010e0c;
+    color: #FFFFFF; }
+  a.tag.tag--warning:hover, a.tag.tag--warning:focus {
+    background-color: #81330a;
+    color: #FFFFFF; }
+  a.tag.tag--error:hover, a.tag.tag--error:focus {
+    background-color: #5c1111;
+    color: #FFFFFF; }
+  a.tag.tag--primary:hover, a.tag.tag--primary:focus {
+    background-color: #4c1c17;
+    color: #FFFFFF; }
+  a.tag.tag--secondary:hover, a.tag.tag--secondary:focus {
+    background-color: #4c1c17;
+    color: #FFFFFF; }
+
+/*
+Margins
+
+`$gutter` is applied as margin.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have som margin applied</p>
+
+.m              - Applies all margins
+.mt             - Applies a margin-top
+.mr             - Applies a margin-right
+.mb             - Applies a margin-bottom
+.ml             - Applies a margin-left
+
+Styleguide Huesitos.margins
+*/
+.m {
+  margin: 1.3rem; }
+
+.mt {
+  margin-top: 1.3rem; }
+
+.mr {
+  margin-right: 1.3rem; }
+
+.mb {
+  margin-bottom: 1.3rem; }
+
+.ml {
+  margin-left: 1.3rem; }
+
+/*
+Paddings
+
+`$gutter` is applied as padding.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have a padding applied</p>
+
+.p              - Applies all paddings
+.pt             - Applies a padding-top
+.pr             - Applies a padding-right
+.pb             - Applies a padding-bottom
+.pl             - Applies a padding-left
+
+Styleguide Huesitos.paddings
+*/
+.p {
+  padding: 1.3rem; }
+
+.pt {
+  padding-top: 1.3rem; }
+
+.pr {
+  padding-right: 1.3rem; }
+
+.pb {
+  padding-bottom: 1.3rem; }
+
+.pl {
+  padding-left: 1.3rem; }
+
+/*
+Borders
+
+Uses `$separator-color` by default.
+
+Markup:
+<p class="{{modifier_class}}">Hello, i have some border applied</p>
+
+.b              - Applies all borders
+.bt             - Applies a border-top
+.br             - Applies a border-right
+.bb             - Applies a border-bottom
+.bl             - Applies a border-left
+
+Styleguide Huesitos.borders
+*/
+.b {
+  border: 1px solid #CCCCCC; }
+
+.bt {
+  border-top: 1px solid #CCCCCC; }
+
+.br {
+  border-right: 1px solid #CCCCCC; }
+
+.bb {
+  border-bottom: 1px solid #CCCCCC; }
+
+.bl {
+  border-left: 1px solid #CCCCCC; }

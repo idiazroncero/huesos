@@ -67,6 +67,8 @@ input {
 	Without this wrapper and class, all the form elements would behave as inline-block elements.
 
 	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
+
+	For items with an `input[disabled]`, the recommendation is to mark the whole `.form-item` as `.disabled`
 	
 	Markup:
 	<div class="form-item">
@@ -77,8 +79,8 @@ input {
 	  <label for="text">Text Required</label>
 	  <input required type="text" id="text" name="text">
 	</div>
-	<div class="form-item">
-	  <label for="text">Text Disabled</label>
+	<div class="form-item disabled">
+	  <label for="text">Form item disabled</label>
 	  <input disabled type="text" id="text" name="text">
 	</div>
 	<div class="form-item">
@@ -164,11 +166,36 @@ select {
 	@include form-reset-select();
 }
 
+/*
+Textarea
+
+Use in conjunction with `.form-item` and its modifiers (see its own section)
+
+It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+
+
+Markup:
+<div class="form-item">
+	<label for="area1">Textarea</label>
+	<textarea rows="5" id="area1"></textarea>
+</div>
+<div class="form-item form-item--label-inside">
+	<label for="area2">Textarea</label>
+	<textarea rows="5" id="area2"></textarea>
+</div>
+<div class="form-item form-item--label-inside form-item--col">
+	<label for="area3">Textarea</label>
+	<textarea id="area3"></textarea>
+</div>
+
+Styleguide Forms.textarea
+*/
 textarea {
 	border: $input-border;
 	@include form-reset-textarea();
 	width:100%;
-	padding: 0 ($spacer / 4);
+	padding: $input-padding;
+	min-height: $spacer * 2;
 }
 
 /*
@@ -219,6 +246,7 @@ Styleguide Forms.fieldset
 		margin-right:0;
 		margin-left:0;
 		border: $input-border;
+		border-radius: $form-border-radius;
 		padding: $spacer;
 		legend {
 			@include minititle($h5-font-size);
@@ -236,11 +264,32 @@ Styleguide Forms.fieldset
 	}
 }
 
-// General block-level wrapper for spacing between items
+/*
+Form item wrapper
+
+General block-level wrapper for spacing between items.
+
+It also provides several variations for different styling of items.
+
+.form-item--required		- Marks the label with a red asterisk
+.form-item--col				- Stacks elements instead of displaying them side by side
+.form-item--label-inside	- Visually puts the label inside of the input. Only makes sense if the border strategy is full
+.form-item--label-inside.form-item--required	- `.form-item--required` can be combinated with the other modifiers
+.form-item--label-inside.form-item--col	- You can sum `col`and `required` to get this commonly seen pattern
+
+Markup:
+<div class="form-item {{modifier_class}}">
+	<label for="text">A form item</label>
+	<input type="text" id="text" name="text">
+</div>
+
+Styleguide Forms.form-item
+*/
+
 .form-item {
 	margin-bottom : $gutter;
 	display:flex;
-	align-items:center;
+	align-items:baseline;
 	label {
 		flex: 0 1 auto;
 		@include minititle();
@@ -260,10 +309,33 @@ Styleguide Forms.fieldset
 	}
 }
 
-// We can't add pseudo-elements to <input>, so...
+.form-item--col {
+	display:block;
+	label, 
+	input,
+	textarea {
+		display:block;
+		width:100%;
+	}
+}
+
 .form-item--required {
 	label::after {
 		content: "*";
 		color: get-color(state, error);
 	}
 }
+
+.form-item--label-inside {
+	border-radius: $form-border-radius;
+	@include form-border($input-border-strategy);
+	padding: $input-padding;
+	input,
+	textarea {
+		border:none;
+		border-radius:0;
+		padding:0;
+	}
+}
+
+

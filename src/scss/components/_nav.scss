@@ -66,10 +66,18 @@ Alignment of items can be controlled via helper classes. Defaults to "left"
 
 Markup:
 <section>
-  <nav class="menu">
+  <nav class="menu {{ modifier_class }}">
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Section</a>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Section</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+      </li>
       <li><a href="#">Works</a></li>
       <li><a href="#">About us</a></li>
       <li><span>Contact</span></li>
@@ -86,15 +94,18 @@ Styleguide Components.menus
   li {
     margin:0;
     a {
-      padding:$spacer / 2;
+      padding:$menu-padding;
       &:hover,
       &:focus {
-        background-color: get-color(grey, "base");
+        @include background-contrast($menu-background-color);
       }
     }
     span {
-      padding:$spacer / 2;
+      padding:$menu-padding;
     }
+  }
+  ul {
+    display:none;
   }
 }
 

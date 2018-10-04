@@ -106,6 +106,7 @@ ol,ul {
 
 caption {
 	text-align: $caption-align;
+	@include minititle();
 }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
@@ -327,16 +328,25 @@ Small
 
 Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
 
+The helper class `.small` can be used to fake the element.
+
 Markup:
 <p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
 <h1>A big heading with <small>an small portion of text</small></h1>
 <h2>A second-level title <small>featuring a minor text</small></h2>
 <h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+<p class="small">I'm a <code>.small</code> text!<p/>
 
 Styleguide Typography.small
 */
 
-small {
+small,
+.small {
+	@include ritmo-font-size($h6-font-size);
+}
+
+// Every child of a '.small' fake element needs to have the same size!!
+.small * {
 	@include ritmo-font-size($h6-font-size);
 }
 
@@ -439,11 +449,8 @@ Iframe
 Deletes border, displays iframe as a block element that always fills its parent's size.
 
 Markup:
-<section>
+<section style="width:50%; height: 600px">
 	<iframe src="https://mentalstones.com"></iframe>
-</section>
-<section style="width:50%; height: 300px">
-	<iframe src="https://domingocaceres.com"></iframe>
 </section>
 
 Styleguide Base.iframe
@@ -486,10 +493,10 @@ All images are responsive by default.
 
 Markup:
 <section>
-	<img src="http://placehold.it/300x300" />
+	<img src="https://placeimg.com/300/300/nature" />
 </section>
 <section>
-	img src="http://placehold.it/2500x750" />
+	<img src="https://placeimg.com/2500/750/nature" />
 </section>
 
 Styleguide Base.images
@@ -800,10 +807,6 @@ textarea,
 
 /*
 Details
-
-The variable `$figcaption-font-size` defines the sizing of image captions.
-
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
 
 Markup:
 <details>
