@@ -1162,6 +1162,18 @@ Markup:
 		<option value="audi">Audi</option>
 	</select> 
 </div>
+<div class="form-item">
+	<select class="js--selectr">
+		<optgroup label= "Expensive cars">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+		</optgroup>
+		<optgroup label= "Unaffordable cars">
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</optgroup>
+	</select> 
+</div>
 
 Styleguide Forms.select
 */
@@ -3675,7 +3687,6 @@ Styleguide Huesitos.gutter-modifier
   z-index: 1;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 0.65rem;
   cursor: pointer;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
@@ -3710,7 +3721,8 @@ Styleguide Huesitos.gutter-modifier
   text-overflow: ellipsis; }
 
 .selectr-placeholder {
-  color: #6c7a86; }
+  color: #DDDDDD;
+  padding: 0.325rem 0.65rem; }
 
 .selectr-tags {
   margin: 0;
@@ -3755,15 +3767,58 @@ Styleguide Huesitos.gutter-modifier
 .selectr-tag-remove {
   position: absolute;
   top: 50%;
-  right: 22px;
-  width: 20px;
-  height: 20px;
+  right: 2px;
+  width: 0.86667rem;
+  height: 0.86667rem;
   padding: 0;
   cursor: pointer;
   transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
   z-index: 11; }
+  .selectr-clear:hover, .selectr-clear:focus,
+  .selectr-input-clear:hover,
+  .selectr-input-clear:focus,
+  .selectr-tag-remove:hover,
+  .selectr-tag-remove:focus {
+    background-color: #DA3C3C;
+    color: #FFFFFF; }
+    .selectr-clear:hover a, .selectr-clear:hover a:link, .selectr-clear:focus a, .selectr-clear:focus a:link,
+    .selectr-input-clear:hover a,
+    .selectr-input-clear:hover a:link,
+    .selectr-input-clear:focus a,
+    .selectr-input-clear:focus a:link,
+    .selectr-tag-remove:hover a,
+    .selectr-tag-remove:hover a:link,
+    .selectr-tag-remove:focus a,
+    .selectr-tag-remove:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    .selectr-clear:hover a:visited, .selectr-clear:focus a:visited,
+    .selectr-input-clear:hover a:visited,
+    .selectr-input-clear:focus a:visited,
+    .selectr-tag-remove:hover a:visited,
+    .selectr-tag-remove:focus a:visited {
+      color: #FFFFFF; }
+    .selectr-clear:hover a:focus, .selectr-clear:hover a:hover, .selectr-clear:focus a:focus, .selectr-clear:focus a:hover,
+    .selectr-input-clear:hover a:focus,
+    .selectr-input-clear:hover a:hover,
+    .selectr-input-clear:focus a:focus,
+    .selectr-input-clear:focus a:hover,
+    .selectr-tag-remove:hover a:focus,
+    .selectr-tag-remove:hover a:hover,
+    .selectr-tag-remove:focus a:focus,
+    .selectr-tag-remove:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .selectr-clear:hover a:active, .selectr-clear:focus a:active,
+    .selectr-input-clear:hover a:active,
+    .selectr-input-clear:focus a:active,
+    .selectr-tag-remove:hover a:active,
+    .selectr-tag-remove:focus a:active {
+      color: #FFFFFF; }
 
 .selectr-clear,
 .selectr-input-clear {
@@ -3792,9 +3847,11 @@ Styleguide Huesitos.gutter-modifier
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-  top: 4px;
-  width: 3px;
-  height: 12px;
+  top: 0.10833rem;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  height: 0.65rem;
   background-color: #fff; }
 
 .selectr-clear:before,
@@ -3814,7 +3871,7 @@ Styleguide Huesitos.gutter-modifier
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - 0.65rem);
+  width: calc(100% - 1.3rem);
   margin: 0.65rem; }
 
 .selectr-notice {
@@ -3822,7 +3879,7 @@ input.selectr-input {
   box-sizing: border-box;
   width: 100%;
   padding: 8px 16px;
-  border-top: 1px solid #999;
+  border-top: 1px solid #DDDDDD;
   border-radius: 0 0 3px 3px;
   background-color: #fff; }
 
@@ -3839,7 +3896,7 @@ input.selectr-input {
   overflow-x: auto;
   overflow-y: scroll;
   max-height: 200px;
-  margin: 0;
+  margin: 0 0.65rem 0.65rem 0.65rem;
   padding: 0; }
 
 .selectr-container.open .selectr-options,
@@ -3851,7 +3908,7 @@ input.selectr-input {
   position: relative;
   display: block;
   padding: 0.325rem 0.65rem;
-  margin: 0 0.65rem;
+  margin: 0;
   list-style: outside none none;
   cursor: pointer;
   font-weight: normal; }
@@ -3861,12 +3918,19 @@ input.selectr-input {
 
 .selectr-optgroup {
   font-weight: bold;
-  padding: 0; }
+  padding: 0;
+  margin-bottom: 0.65rem; }
 
 .selectr-optgroup--label {
   font-weight: bold;
-  margin-top: 10px;
-  padding: 5px 15px; }
+  padding: 0.325rem 0.65rem;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 21px;
+  line-height: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
 
 .selectr-match {
   text-decoration: underline; }
@@ -3980,18 +4044,18 @@ input.selectr-input {
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
-  border-color: transparent #999 #999;
+  border-color: #e8e8e8 #DDDDDD #DDDDDD;
   border-radius: 0 0 3px 3px; }
 
 .selectr-container.inverted .selectr-options-container {
   border-width: 1px 1px 0;
-  border-color: #999 #999 transparent;
+  border-color: #DDDDDD #DDDDDD transparent;
   border-radius: 3px 3px 0 0;
   background-color: #fff; }
 
 .selectr-container.inverted .selectr-options-container {
   top: auto;
-  bottom: calc(100% - 1px); }
+  bottom: 100%; }
 
 .selectr-container :-ms-input-placeholder {
   color: #6c7a86;

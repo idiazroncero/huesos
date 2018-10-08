@@ -47,7 +47,6 @@
 	z-index: 1;
 	box-sizing: border-box;
 	width: 100%;
-	padding: 0 $gutter / 2;
 	cursor: pointer;
 	border: $input-border;
 	border-radius: $form-border-radius;
@@ -91,7 +90,8 @@
 }
 
 .selectr-placeholder {
-	color: #6c7a86;
+	color: $input-border-color;
+	padding: $input-padding;
 }
 
 .selectr-tags {
@@ -146,9 +146,9 @@
 .selectr-tag-remove {
 	position: absolute;
 	top: 50%;
-	right: 22px;
-	width: 20px;
-	height: 20px;
+	right: 2px;
+	width: $gutter / 1.5;
+	height: $gutter / 1.5;
 	padding: 0;
 	cursor: pointer;
 	-o-transform: translate3d(0px, -50%, 0px);
@@ -159,6 +159,10 @@
 	border: medium none;
 	background-color: transparent;
 	z-index: 11;
+	&:hover,
+	&:focus {
+		@include background-contrast(get-color(state, "error"));
+	}
 }
 
 .selectr-clear,
@@ -192,9 +196,11 @@
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-	top: 4px;
-	width: 3px;
-	height: 12px;
+	top: $gutter / 12;
+	left: 50%;
+	width: 2px;
+	margin-left:-1px;
+	height: $gutter / 2;
 	background-color: #fff;
 }
 
@@ -226,7 +232,7 @@
 input.selectr-input {
 	box-sizing: border-box;
 	width: 100%;
-	width: calc(100% - (#{$gutter} / 2) );
+	width: calc(100% - (#{$gutter}) );
 	margin: $gutter / 2;
 }
 
@@ -235,7 +241,7 @@ input.selectr-input {
 	box-sizing: border-box;
 	width: 100%;
 	padding: 8px 16px;
-	border-top: 1px solid #999;
+	border-top: 1px solid $input-border-color;
 	border-radius: 0 0 3px 3px;
 	background-color: #fff;
 }
@@ -255,7 +261,7 @@ input.selectr-input {
 	overflow-x: auto;
 	overflow-y: scroll;
 	max-height: 200px;
-	margin: 0;
+	margin: 0 $gutter/ 2 $gutter/ 2 $gutter/ 2;
 	padding: 0;
 }
 
@@ -269,7 +275,7 @@ input.selectr-input {
 	position: relative;
 	display: block;
 	padding: $input-padding;
-	margin: 0 $gutter / 2;
+	margin: 0;
 	list-style: outside none none;
 	cursor: pointer;
 	font-weight: normal;
@@ -282,12 +288,13 @@ input.selectr-input {
 .selectr-optgroup {
 	font-weight: bold;
 	padding: 0;
+	margin-bottom: $gutter / 2;
 }
 
 .selectr-optgroup--label {
 	font-weight: bold;
-	margin-top: 10px;
-	padding: 5px 15px;
+	padding: $input-padding;
+	@include minititle();
 }
 
 .selectr-match {
@@ -424,20 +431,20 @@ input.selectr-input {
 	}
 }
 .selectr-container.open.inverted .selectr-selected {
-	border-color: transparent #999 #999;
-	border-radius: 0 0 3px 3px;
+	border-color: lighten-color($input-border-color) $input-border-color $input-border-color;
+	border-radius: 0 0 $form-border-radius $form-border-radius;
 }
 
 .selectr-container.inverted .selectr-options-container {
 	border-width: 1px 1px 0;
-	border-color: #999 #999 transparent;
-	border-radius: 3px 3px 0 0;
+	border-color: $input-border-color $input-border-color transparent;
+	border-radius: $form-border-radius $form-border-radius 0 0;
 	background-color: #fff;
 }
 
 .selectr-container.inverted .selectr-options-container {
 	top: auto;
-	bottom: calc(100% - 1px);
+	bottom: 100%;
 }
 
 .selectr-container ::-webkit-input-placeholder {
