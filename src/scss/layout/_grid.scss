@@ -1,0 +1,79 @@
+/*
+Grid
+
+Establishes a grid. Uses a float fallback for less capable browsers.
+
+By default, it establishes a 4-col grid. Modifier classes can change this.
+
+No row height is set: it depends on the content.
+
+.grid--2col        - Establishes a 2col grid
+.grid--3col        - Establishes a 3col grid
+.grid--5col        - Establishes a 5col grid
+.grid--6col        - Establishes a 6col grid
+.grid--7col        - Establishes a 7col grid
+.grid--8col        - Establishes a 8col grid
+.grid--9col        - Establishes a 9col grid
+.grid--10col       - Establishes a 10col grid
+.grid--11col       - Establishes a 11col grid
+.grid--12col       - Establishes a 12col grid
+
+Markup:
+<div class="grid {{ modifier_class }}">
+    <div class="item" style="width:100%; height:50px; background-color: red"></div>
+    <div class="item" style="width:100%; height:50px; background-color: yellow"></div>
+    <div class="item" style="width:100%; height:50px; background-color: blue"></div>
+    <div class="item" style="width:100%; height:50px; background-color: green"></div>
+    <div class="item" style="width:100%; height:50px; background-color: limegreen"></div>
+    <div class="item" style="width:100%; height:50px; background-color: gold"></div>
+    <div class="item" style="width:100%; height:50px; background-color: purple"></div>
+</div>
+
+Styleguide Layout.grid
+*/
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $spacer;
+}
+
+.grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--5col {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--6col {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid--7col {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid--8col {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.grid--9col {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.grid--10col {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.grid--11col {
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.grid--12col {
+    grid-template-columns: repeat(12, 1fr);
+}

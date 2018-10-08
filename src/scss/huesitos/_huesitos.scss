@@ -108,3 +108,145 @@ Styleguide Huesitos.borders
 .bl {
     border-left: $separator-width solid $separator-color;
 }
+
+/*
+Background Color
+
+A set of helper classes that map to common colors from the palette.
+
+The text color is contrasted correctly.
+
+Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
+
+We showcase some examples here, but the list of classes could be much bigger or smaller than these:
+
+Markup:
+<p class="minititle">Base</p>
+<section class="grid grid--5col">
+    <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
+    <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
+</section>
+<p class="minititle">State</p>
+<section class="grid grid--5col">
+    <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
+    <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
+    <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
+    <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
+</section>
+<p class="minititle">Blue palette</p>
+<section class="grid grid--5col">
+    <div class="bg-blue-darker p strong half-gutter" style="height:90px">Darker</div>
+    <div class="bg-blue-dark p strong half-gutter" style="height:90px">Dark</div>
+    <div class="bg-blue-base p strong half-gutter" style="height:90px">Base</div>
+    <div class="bg-blue-light p strong half-gutter" style="height:90px">Light</div>
+    <div class="bg-blue-lighter p strong half-gutter" style="height:90px">Lighter</div>
+</section>
+
+Styleguide Huesitos.Color
+*/
+
+@each $palette, $value in $colors {
+    @each $name, $hex in $value {
+        .bg-#{$palette}-#{$name} {
+            @include background-contrast($hex);
+        }
+    }
+}
+
+// .bg-primary {
+//     @include background-contrast(get-color(base, primary));
+// }
+
+// .bg-secondary {
+//     @include background-contrast(get-color(base, secondary));
+// }
+
+// .bg-mark {
+//     @include background-contrast(get-color(text, mark));
+// }
+
+// .bg-success {
+//     @include background-contrast(get-color(state, success));
+// }
+
+/*
+Gutter modifiers
+
+The presence of this class cuts the `$gutter` by half or quarter.
+
+Applies to `.m` and `.p` classes.
+
+Markup:
+<p class="{{modifier_class}} pl bl ml">My gutter variable is smaller</p>
+
+.half-gutter        - Sets gutter to a half
+.quarter-gutter     - Sets gutter to a quarter
+
+Styleguide Huesitos.gutter-modifier
+*/
+
+.half-gutter {
+    &.m {
+        margin: $gutter / 2;
+    }
+    &.mt {
+        margin-top: $gutter / 2;
+    }
+    &.mr {
+        margin-right: $gutter / 2;
+    }
+    &.mb {
+        margin-bottom: $gutter / 2;
+    }
+    &.ml {
+        margin-left: $gutter / 2;
+    } 
+    &.p {
+        padding: $gutter / 2;
+    }
+    &.pt {
+        padding-top: $gutter / 2;
+    }
+    &.pr {
+        padding-right: $gutter / 2;
+    }
+    &.pb {
+        padding-bottom: $gutter / 2;
+    }
+    &.pl {
+        padding-left: $gutter / 2;
+    }
+}
+
+.quarter-gutter {
+    &.m {
+        margin: $gutter / 4;
+    }
+    &.mt {
+        margin-top: $gutter / 4;
+    }
+    &.mr {
+        margin-right: $gutter / 4;
+    }
+    &.mb {
+        margin-bottom: $gutter / 4;
+    }
+    &.ml {
+        margin-left: $gutter / 4;
+    } 
+    &.p {
+        padding: $gutter / 4;
+    }
+    &.pt {
+        padding-top: $gutter / 4;
+    }
+    &.pr {
+        padding-right: $gutter / 4;
+    }
+    &.pb {
+        padding-bottom: $gutter / 4;
+    }
+    &.pl {
+        padding-left: $gutter / 4;
+    }
+}

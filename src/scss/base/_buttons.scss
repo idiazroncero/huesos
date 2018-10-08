@@ -31,11 +31,21 @@ button,
 	padding: 0 ritmo(2);
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
+	vertical-align:middle;
 	@include ritmo-font-size($h6-font-size, 5);
 	&:hover,
 	&:focus {
 		background:$button-border-color;
 		color: contrast-color($button-border-color);
+	}
+	// We need to take icons into consideration!
+	.icon {
+		@include ritmo-font-size($h6-font-size);
+		height: $h6-font-size;
+		line-height:1;
+		svg {
+			fill:currentColor;
+		}
 	}
 }
 
@@ -45,6 +55,8 @@ a.button {
 	@include kill-link-decoration();
 	&:hover,
 	&:focus {
+		border: $button-border; // Need to repeat in order to avoid overrides from normal link behavior
+		background:$button-border-color;
 		color: contrast-color($button-border-color);
 	}
 }

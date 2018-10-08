@@ -140,29 +140,35 @@ input {
 	}
 }
 
-select {
-	/*
-	Select
-	
-	Handles multiple selection
-	TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI
-	
-	Markup:
-	<select>
-	  <option value="volvo">Volvo</option>
-	  <option value="saab">Saab</option>
-	  <option value="mercedes">Mercedes</option>
-	  <option value="audi">Audi</option>
+/*
+Select
+
+<span class="tag tag--warning">JS</span> Handles multiple selection using [Selectr](https://github.com/Mobius1/Selectr)
+
+It is applied automatically to all `.js--selectr` inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common `huesos.js`
+
+Markup:
+<div class="form-item">
+	<select class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
 	</select>
-	<select multiple>
-	  <option value="volvo">Volvo</option>
-	  <option value="saab">Saab</option>
-	  <option value="mercedes">Mercedes</option>
-	  <option value="audi">Audi</option>
+</div>
+<div class="form-item">
+	<select multiple class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
 	</select> 
-	
-	Styleguide Forms.select
-	*/
+</div>
+
+Styleguide Forms.select
+*/
+
+select {
 	@include form-reset-select();
 }
 

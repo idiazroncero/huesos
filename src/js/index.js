@@ -1,15 +1,9 @@
-// We use webpack tutorial to bootstrap things and check it's all up and running
+const Selectr = require('mobius1-selectr');
 
-import _ from 'lodash';
-import '../scss/style.scss';
-
-function component() {
-	var element = document.createElement('div');
-
-	// Lodash, currently included via a script, is required for this line to work
-	element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-	return element;
+// If selects, Initialize selectr on all fields
+var selects = document.getElementsByClassName('js--selectr');
+if(selects.length) {
+	Array.prototype.forEach.call(selects, function(el, i){
+		new Selectr(el);
+	})
 }
-
-document.body.appendChild(component());

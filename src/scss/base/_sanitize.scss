@@ -250,7 +250,8 @@ Styleguide Typography.bold
 */
 
 b,
-strong {
+strong,
+.strong {
 	font-weight: bold(strong);
 }
 

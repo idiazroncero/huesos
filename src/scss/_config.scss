@@ -6,6 +6,7 @@
 // Use contrast-color($color) to get your black || white color against a background
 // ------
 
+
 $colors: (
 	base: (
 		"primary":   #C65146,
@@ -153,8 +154,11 @@ $font-secondary-items:
 	'.your-classes',
 	'#your-ids';
 
-// Select a font weight for your headings
+// Heading overrides
+// Select a font weight and an alternate line height for your headings
 $heading-font-weight: normal;
+$heading-vertical-rhythm:1; // We might want a slower VR for headings. Set to false if not.
+
 
 // Text alignment for some elements
 $caption-align: left;
@@ -246,7 +250,7 @@ $shadow-definition: 2px 2px 2px 0px rgba(get-color(gray, "black"), 0.1);
 // ------
 
 $link-strategy: underline; // Alternatives: underline, border, smart, mark
-$link-highlight-on-hover: true; // "false" highlights the link before :hover
+$link-highlight-on-hover: false; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
 $link-border-color: get-color(blue, base);
@@ -295,7 +299,7 @@ $pseudo-border: 1px solid $pseudo-border-color;
 
 // Selects
 $select-border-strategy: full; // Options: full, bottom, none;
-$select-border-color: darken(get-color(gray,base), 25%);
+$select-border-color: shade(get-color(gray,base), 25%);
 $select-border: 1px solid $input-border-color;
 $select-padding: 0 ($spacer / 2);
 

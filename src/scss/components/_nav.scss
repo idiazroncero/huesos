@@ -91,21 +91,60 @@ Styleguide Components.menus
 
 .menu {
   @include inline-list();
-  li {
+  ul > li {
     margin:0;
-    a {
+    position:relative;
+    z-index:1;
+    > a {
+      text-align:left; // Override any .right class
+      display:block;
       padding:$menu-padding;
+      white-space:nowrap;
       &:hover,
       &:focus {
         @include background-contrast($menu-background-color);
       }
     }
-    span {
+    &:hover,
+    &:focus {
+      > a {
+        @include background-contrast($menu-background-color);
+      }
+    }
+    > span {
       padding:$menu-padding;
     }
-  }
-  ul {
-    display:none;
+    // Second-level
+    > ul {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      z-index:2;
+      min-width:120%;
+      > li {
+        display:block;
+        > a {
+          display:block;
+          padding:$menu-padding / 4 $menu-padding;
+          white-space:nowrap;
+          @include background-contrast($menu-background-color);
+          @include ritmo-font-size(0.9 * $nav-font-size);
+          &:hover,
+          &:focus {
+            @include background-contrast(shade($menu-background-color, $color-modify-ratio));
+          }
+        }
+      }
+    }
+    &:hover {
+      > ul {
+        display:block;
+        > li {
+          display:block;
+        }
+      }
+    }
   }
 }
 

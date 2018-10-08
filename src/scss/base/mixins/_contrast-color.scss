@@ -16,6 +16,26 @@ $light   - Color claro para contrastar sobre oscuros (por defecto, la variable $
 Styleguide Functions.Color.ContrastColor
 */
 
+@function tint($color, $dilution: 50) {
+	$white: rgba(255, 255, 255, 1);
+	@if $color == "transparent" {
+	  $color: rgba(0, 0, 0, 0); }
+	@if $dilution < 0 or $dilution > 100 {
+	  @warn "Dilution #{$dilution} must be between 0 and 100"; }
+	$tint-color: mix($color, $white, 100 - $dilution);
+	@return $tint-color; 
+}
+  
+@function shade($color, $dilution: 50) {
+	$black: rgba(0, 0, 0, 1);
+	@if $color == "transparent" {
+		$color: rgba(0, 0, 0, 0); }
+	@if $dilution < 0 or $dilution > 100 {
+		@warn "Dilution #{$dilution} must be between 0 and 100"; }
+	$shade-color: mix($color, $black, 100 - $dilution);
+	@return $shade-color; 
+}
+
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
 	@if (lightness($color) > 55) { // 50 is too low
@@ -28,4 +48,33 @@ Styleguide Functions.Color.ContrastColor
 @mixin background-contrast($color) {
 	background-color: $color;
 	color: contrast-color($color);
+	a {
+		@include set-link(
+			contrast-color($color),
+			contrast-color($color),
+			darken-color(contrast-color($color)),
+			contrast-color($color)
+		)
+	} 
+}
+
+@mixin background-split-color($color) {
+	background-color: lighten-color($color, 70%);
+	color: darken-color($color, 50%);
+	a {
+		@include set-link(
+			darken-color($color, 50%),
+			darken-color($color, 50%),
+			$color,
+			darken-color($color, 50%)
+		)
+	} 
+}
+
+@function darken-color($color, $color-modify-ratio: $color-modify-ratio) {
+	@return shade($color, $color-modify-ratio);
+}
+
+@function lighten-color($color, $color-modify-ratio: $color-modify-ratio) {
+	@return tint($color, $color-modify-ratio);
 }

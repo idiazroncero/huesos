@@ -31,43 +31,48 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-layout.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Layout</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-base.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Base</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-typography.html">
-          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Typography</span>
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Typography</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-components.html">
-          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Components</span>
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-helpers.html">
-          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helpers</span>
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Helpers</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-mixins.html">
-          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Mixins</span>
+          <span class="kss-nav__ref">7</span><span class="kss-nav__name">Mixins</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-functions.html">
-          <span class="kss-nav__ref">7</span><span class="kss-nav__name">Functions</span>
+          <span class="kss-nav__ref">8</span><span class="kss-nav__name">Functions</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-pseudo-elements.html">
-          <span class="kss-nav__ref">8</span><span class="kss-nav__name">Pseudo-elements</span>
+          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Pseudo-elements</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-huesitos.html">
-          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Huesitos</span>
+          <span class="kss-nav__ref">10</span><span class="kss-nav__name">Huesitos</span>
         </a>
       </li>
     </ul>
@@ -124,8 +129,8 @@
           </p>
 
           <div class="kss-description">
-            <p>Handles multiple selection
-TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI</p>
+            <p><span class="tag tag--warning">JS</span> Handles multiple selection using <a href="https://github.com/Mobius1/Selectr">Selectr</a></p>
+<p>It is applied automatically to all <code>.js--selectr</code> inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common <code>huesos.js</code></p>
 
           </div>
 
@@ -139,18 +144,22 @@ TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI</p>
 
 
           <div class="kss-modifier__example">
-            <select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-<select multiple>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+            <div class="form-item">
+	<select class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
+	</select>
+</div>
+<div class="form-item">
+	<select multiple class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
+	</select>
+</div>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -160,22 +169,26 @@ TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI</p>
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></span></code></pre>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"js--selectr"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"js--selectr"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_forms.scss</code>, line 144
+          Source: <code>base/_forms.scss</code>, line 143
         </div>
 
     </div>
@@ -206,6 +219,7 @@ TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI</p>
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/huesos.js"></script>
 
 
 

@@ -30,6 +30,26 @@ The Huesos' "decalogue" is as follows:
 
 - __All separator borders are solid.__ Borders that indicate boundaries are always set to `solid` and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don't agree with this or don't need separator borders, you can set `$separator-width` to `0`.
 
+- __Always use SVG__ No icon fonts, no images. For iconography, the use of SVG is always preferred.
+
+- __Vertical rhythm is important, but not mandatory__ We use ritmo.scss and its own functions and mixins (mainly ritmo()) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings or anytime the eye dictates. Vertical rhythm is to be used as a tool rather than a constraint.
+
 </section>
 
+<section>
+
+### Third-parties are the best parties
+
+Some nasty HTML stuff (lixe the infamous `<select>` inputs or responsive HTML tables) need to be "normalized" and tamed. We use JS for this.
+
+Javascript libraries are bundled into Huesos following this criteria:
+
+- Zero overweight. Small, concise, single-purpose libraries
+- Vanilla javascript. jQuery shouldn't be a dependency right from the start.
+
+These are the winners:
+
+- [Selectr](https://github.com/Mobius1/Selectr) for vanilla-JS, Chosen-like `<select>` fields.
+
+</section>
 

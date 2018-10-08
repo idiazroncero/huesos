@@ -3,19 +3,22 @@
   "version": "1.0.5",
   "description": "Huesos is a front-end starterkit. It provides a basic CSS osamenta by combining some preferred and battle-tested tools.",
   "scripts": {
-    "build": "yarn run styleguide; yarn css",
+    "build": "yarn run styleguide:build; yarn css",
     "huesos": "yarn run build",
+    "serve": "browser-sync start --server --files dist/style.css",
     "css": "yarn css:sass && yarn css:cssnext",
     "css:watch": "yarn node-sass src/scss/style.scss dist/style.css -w",
     "css:sass": "yarn node-sass src/scss/style.scss dist/style.css --source-map=0",
     "css:cssnext": "yarn postcss dist/style.css -o dist/style.css -u postcss-cssnext --no-map",
-    "styleguide": "yarn styleguide:style && yarn kss --source src/scss --builder src/kss-src  --destination docs --config src/kss-src/options.json",
-    "styleguide:style": "yarn styleguide:sass && yarn styleguide:cssnext",
+    "styleguide:build": "yarn js:build && yarn styleguide:sass && yarn styleguide:cssnext && yarn kss --source src/scss --builder src/kss-src  --destination docs --config src/kss-src/options.json --js kss-assets/huesos.js",
     "styleguide:sass": "yarn node-sass src/kss-src/kss-assets/kss.scss src/kss-src/kss-assets/kss.css --output-style compressed --source-map=0",
+    "styleguide:sass:watch": "yarn node-sass src/kss-src/kss-assets/kss.scss docs/kss-assets/kss.css --output-style nested --source-map=true -w",
     "styleguide:cssnext": "yarn postcss src/kss-src/kss-assets/kss.css -o src/kss-src/kss-assets/kss.css --use postcss-cssnext --no-map",
+    "styleguide:serve": "browser-sync start --s 'docs' --f 'docs/kss-assets/kss.css'",
     "test-page": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
     "lint:js": "eslint src/js webpack.*.js --cache --debug",
-    "lint:css": "stylelint dist/css/*.css"
+    "lint:css": "stylelint dist/css/*.css",
+    "js:build": "webpack"
   },
   "author": "Nacho Diaz",
   "license": "MIT",
@@ -24,6 +27,7 @@
     "animate-scss": "^3.2.1",
     "autoprefixer": "^7.1.1",
     "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.26.0",
     "concise.css": "^4.1.2",
     "family.scss": "^1.0.8",
     "global": "^4.3.2",
@@ -31,6 +35,7 @@
     "handlebars-loader": "^1.5.0",
     "kss": "^3.0.0-beta.23",
     "kss-webpack-plugin": "^1.2.0",
+    "mobius1-selectr": "^2.4.4",
     "node-sass": "^4.9.3",
     "node-sass-import": "^2.0.1",
     "postcss": "^7.0.2",
@@ -44,9 +49,12 @@
     "stylelint": "^7.12.0",
     "susy": "^2.2.12",
     "waypoints": "^4.0.1",
-    "webpack": "^3.0.0"
+    "webpack": "^4.20.2"
   },
   "browserslist": [
     "> 1%"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
 }

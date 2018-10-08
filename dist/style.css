@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
-input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
+input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden, .selectr-hidden {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -89,7 +89,7 @@ $item - [String] - an HTMl element (without opening and closing `< >` marks)
 
 Styleguide Mixins.Typography.Minititle
 */
-input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden {
+input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden, .selectr-hidden {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -395,7 +395,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -412,7 +413,8 @@ Markup:
 Styleguide Typography.bold
 */
 b,
-strong {
+strong,
+.strong {
   font-weight: 700; }
 
 /**
@@ -872,7 +874,6 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -1067,7 +1068,7 @@ input {
 	Styleguide Forms.file
 	*/ }
   input:hover, input:focus {
-    border-color: #898989; }
+    border-color: #949494; }
   input:focus {
     outline: 0; }
   input[type=checkbox], input[type=radio] {
@@ -1137,35 +1138,42 @@ input {
       border-radius: 50%;
       cursor: pointer; }
 
-select {
-  /*
-	Select
-	
-	Handles multiple selection
-	TODO: USE JAVASCRIPT TO IMPROVE THE BROKEN HTML UI
-	
-	Markup:
-	<select>
-	  <option value="volvo">Volvo</option>
-	  <option value="saab">Saab</option>
-	  <option value="mercedes">Mercedes</option>
-	  <option value="audi">Audi</option>
+/*
+Select
+
+<span class="tag tag--warning">JS</span> Handles multiple selection using [Selectr](https://github.com/Mobius1/Selectr)
+
+It is applied automatically to all `.js--selectr` inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common `huesos.js`
+
+Markup:
+<div class="form-item">
+	<select class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
 	</select>
-	<select multiple>
-	  <option value="volvo">Volvo</option>
-	  <option value="saab">Saab</option>
-	  <option value="mercedes">Mercedes</option>
-	  <option value="audi">Audi</option>
+</div>
+<div class="form-item">
+	<select multiple class="js--selectr">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
 	</select> 
-	
-	Styleguide Forms.select
-	*/
+</div>
+
+Styleguide Forms.select
+*/
+select {
   border: 1px solid #DDDDDD;
   padding: 0 0.65rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
-    border-color: #898989; }
+    border-color: #949494; }
   select[multiple] {
     vertical-align: top; }
 
@@ -1325,7 +1333,7 @@ Styleguide Forms.form-item
   border: 1px solid #DDDDDD;
   padding: 0.325rem 0.65rem; }
   .form-item--label-inside:hover, .form-item--label-inside:focus {
-    border-color: #898989; }
+    border-color: #949494; }
   .form-item--label-inside input,
   .form-item--label-inside textarea {
     border: none;
@@ -1368,6 +1376,7 @@ input[type=file] + label {
   padding: 0 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
+  vertical-align: middle;
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 26px;
@@ -1414,17 +1423,38 @@ input[type=file] + label {
   input[type=file] + label:focus {
     background: #333333;
     color: #FFFFFF; }
+  input[type=submit] .icon,
+  input[type=reset] .icon,
+  input[type=button] .icon,
+  button .icon,
+  .button .icon,
+  input[type=file] + label .icon {
+    font-size: 12px;
+    font-size: 0.75019rem;
+    line-height: 21px;
+    line-height: 1.3rem;
+    height: 0.75019rem;
+    line-height: 1; }
+    input[type=submit] .icon svg,
+    input[type=reset] .icon svg,
+    input[type=button] .icon svg,
+    button .icon svg,
+    .button .icon svg,
+    input[type=file] + label .icon svg {
+      fill: currentColor; }
 
 a.button, a.button:link {
   color: #1A1A19;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 a.button:visited {
   color: #1A1A19; }
 
 a.button:focus, a.button:hover {
   color: #1A1A19;
-  text-decoration: underline; }
+  text-decoration: none;
+  border: none;
+  background: transparent; }
 
 a.button:active {
   color: #1A1A19; }
@@ -1436,6 +1466,8 @@ a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.but
   text-decoration: none; }
 
 a.button:hover, a.button:focus {
+  border: 2px solid #333333;
+  background: #333333;
   color: #FFFFFF; }
 
 .button--success,
@@ -1486,6 +1518,7 @@ a.disabled:link,
 input.disabled {
   opacity: 0.33;
   color: inherit;
+  cursor: auto;
   cursor: initial; }
   input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
   input[type=reset][disabled]:hover,
@@ -1502,6 +1535,7 @@ input.disabled {
   input.disabled:focus {
     background: none;
     color: inherit;
+    cursor: auto;
     cursor: initial; }
   input[type=submit][disabled].button--error,
   input[type=reset][disabled].button--error,
@@ -1579,6 +1613,11 @@ h6, .h6 {
   font-size: 0.75019rem;
   line-height: 21px;
   line-height: 1.3rem; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  line-height: 1; }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1684,7 +1723,8 @@ samp,
 var {
   display: inline-block;
   vertical-align: baseline;
-  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
   background-color: #1A1A19;
   color: #FFFFFF;
   padding: 0 0.325rem;
@@ -1718,6 +1758,54 @@ Styleguide Typography.minititle
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
+
+/*
+Icons
+
+The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
+
+Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
+
+A set of icons is __not__ provided. You are supposed to provide your own choices.
+
+Markup:
+<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
+<p><i class="icon">☝︎</i> Drag & Drop me</p>
+<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
+
+
+Styleguide Typography.icons
+*/
+.icon {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.325rem; }
+  .icon svg {
+    height: 100%;
+    width: auto;
+    vertical-align: bottom; }
+
+/*
+Paragraph Text
+
+Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
+
+This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
+
+Markup:
+<section class="text card p">
+	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
+	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
+	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
+</section>
+
+Styleguide Typography.paragraph
+*/
+.text p:last-child, .alert p:last-child {
+  margin-bottom: 0; }
 
 /*
 Tables
@@ -1853,28 +1941,32 @@ Styleguide Typography.links
 */
 a, a:link {
   color: #2B90D9;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 a:visited {
   color: #1573B6; }
 
 a:focus, a:hover {
   color: #3FA2E9;
-  text-decoration: underline; }
+  text-decoration: none;
+  border: none;
+  background: transparent; }
 
 a:active {
   color: #1573B6; }
 
 a.link--inactive, a.link--inactive:link {
   color: #1A1A19;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 a.link--inactive:visited {
   color: #1A1A19; }
 
 a.link--inactive:focus, a.link--inactive:hover {
   color: #1A1A19;
-  text-decoration: underline; }
+  text-decoration: none;
+  border: none;
+  background: transparent; }
 
 a.link--inactive:active {
   color: #1A1A19; }
@@ -1887,21 +1979,24 @@ a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:ho
 
 a.link-strategy-underline, a.link-strategy-underline:link {
   color: #2B90D9;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 a.link-strategy-underline:visited {
   color: #1573B6; }
 
 a.link-strategy-underline:focus, a.link-strategy-underline:hover {
   color: #3FA2E9;
-  text-decoration: underline; }
+  text-decoration: none;
+  border: none;
+  background: transparent; }
 
 a.link-strategy-underline:active {
   color: #1573B6; }
 
 a.link-strategy-border, a.link-strategy-border:link {
   color: #2B90D9;
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: 0.325rem solid #2B90D9; }
 
 a.link-strategy-border:visited {
   color: #1573B6; }
@@ -1909,14 +2004,28 @@ a.link-strategy-border:visited {
 a.link-strategy-border:focus, a.link-strategy-border:hover {
   color: #3FA2E9;
   text-decoration: none;
-  border-bottom: 0.325rem solid #2B90D9; }
+  border: none;
+  background: transparent; }
 
 a.link-strategy-border:active {
   color: #1573B6; }
 
 a.link-strategy-mark, a.link-strategy-mark:link {
   color: #2B90D9;
-  text-decoration: none; }
+  text-decoration: none;
+  background-color: #28CEAA;
+  position: relative; }
+  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #28CEAA; }
+  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
+    left: -2px; }
+  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
+    right: -2px; }
 
 a.link-strategy-mark:visited {
   color: #1573B6; }
@@ -1924,32 +2033,14 @@ a.link-strategy-mark:visited {
 a.link-strategy-mark:focus, a.link-strategy-mark:hover {
   color: #3FA2E9;
   text-decoration: none;
-  background-color: #28CEAA;
-  position: relative; }
-  a.link-strategy-mark:focus:before, a.link-strategy-mark:focus:after, a.link-strategy-mark:hover:before, a.link-strategy-mark:hover:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #28CEAA; }
-  a.link-strategy-mark:focus:before, a.link-strategy-mark:hover:before {
-    left: -2px; }
-  a.link-strategy-mark:focus:after, a.link-strategy-mark:hover:after {
-    right: -2px; }
+  border: none;
+  background: transparent; }
 
 a.link-strategy-mark:active {
   color: #1573B6; }
 
 a.link-strategy-smart, a.link-strategy-smart:link {
   color: #2B90D9;
-  text-decoration: none; }
-
-a.link-strategy-smart:visited {
-  color: #1573B6; }
-
-a.link-strategy-smart:focus, a.link-strategy-smart:hover {
-  color: #3FA2E9;
   color: #2B90D9;
   text-decoration: none;
   text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -1957,16 +2048,28 @@ a.link-strategy-smart:focus, a.link-strategy-smart:hover {
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart:focus::selection, a.link-strategy-smart:hover::selection {
+  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
     background: #FFFFFF; }
-  a.link-strategy-smart:focus::-moz-selection, a.link-strategy-smart:hover::-moz-selection {
+  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
     background: #FFFFFF; }
-  a.link-strategy-smart:focus:before, a.link-strategy-smart:focus:after, a.link-strategy-smart:focus *, a.link-strategy-smart:focus *:before, a.link-strategy-smart:focus *:after, a.link-strategy-smart:hover:before, a.link-strategy-smart:hover:after, a.link-strategy-smart:hover *, a.link-strategy-smart:hover *:before, a.link-strategy-smart:hover *:after {
+  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
+    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
+    background: #FFFFFF; }
+  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
     text-shadow: none; }
-  a.link-strategy-smart:focus:visited, a.link-strategy-smart:hover:visited {
+  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
     color: #2B90D9; }
+
+a.link-strategy-smart:visited {
+  color: #1573B6; }
+
+a.link-strategy-smart:focus, a.link-strategy-smart:hover {
+  color: #3FA2E9;
+  text-decoration: none;
+  border: none;
+  background: transparent; }
 
 a.link-strategy-smart:active {
   color: #1573B6; }
@@ -2022,6 +2125,74 @@ body {
   padding: 1.3rem; }
 
 /*
+Grid
+
+Establishes a grid. Uses a float fallback for less capable browsers.
+
+By default, it establishes a 4-col grid. Modifier classes can change this.
+
+No row height is set: it depends on the content.
+
+.grid--2col        - Establishes a 2col grid
+.grid--3col        - Establishes a 3col grid
+.grid--5col        - Establishes a 5col grid
+.grid--6col        - Establishes a 6col grid
+.grid--7col        - Establishes a 7col grid
+.grid--8col        - Establishes a 8col grid
+.grid--9col        - Establishes a 9col grid
+.grid--10col       - Establishes a 10col grid
+.grid--11col       - Establishes a 11col grid
+.grid--12col       - Establishes a 12col grid
+
+Markup:
+<div class="grid {{ modifier_class }}">
+    <div class="item" style="width:100%; height:50px; background-color: red"></div>
+    <div class="item" style="width:100%; height:50px; background-color: yellow"></div>
+    <div class="item" style="width:100%; height:50px; background-color: blue"></div>
+    <div class="item" style="width:100%; height:50px; background-color: green"></div>
+    <div class="item" style="width:100%; height:50px; background-color: limegreen"></div>
+    <div class="item" style="width:100%; height:50px; background-color: gold"></div>
+    <div class="item" style="width:100%; height:50px; background-color: purple"></div>
+</div>
+
+Styleguide Layout.grid
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.3rem; }
+
+.grid--2col {
+  grid-template-columns: repeat(2, 1fr); }
+
+.grid--3col {
+  grid-template-columns: repeat(3, 1fr); }
+
+.grid--5col {
+  grid-template-columns: repeat(5, 1fr); }
+
+.grid--6col {
+  grid-template-columns: repeat(6, 1fr); }
+
+.grid--7col {
+  grid-template-columns: repeat(7, 1fr); }
+
+.grid--8col {
+  grid-template-columns: repeat(8, 1fr); }
+
+.grid--9col {
+  grid-template-columns: repeat(9, 1fr); }
+
+.grid--10col {
+  grid-template-columns: repeat(10, 1fr); }
+
+.grid--11col {
+  grid-template-columns: repeat(11, 1fr); }
+
+.grid--12col {
+  grid-template-columns: repeat(12, 1fr); }
+
+/*
 Card
 
 The `.card` is a common pattern on UX design.
@@ -2049,7 +2220,7 @@ Styleguide Components.card
   padding: 1.3rem;
   border: 1px solid #CCCCCC;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, 0.1); }
+  box-shadow: 2px 2px 2px 0px rgba(27, 27, 27, .1); }
   .card .card {
     padding: 0.65rem; }
 
@@ -2132,7 +2303,7 @@ nav ul,
     .nav ul li a,
     .nav ul li a:link {
       color: #1A1A19;
-      text-decoration: none; }
+      text-decoration: underline; }
     nav ul li a:visited,
     .nav ul li a:visited {
       color: #1A1A19; }
@@ -2140,7 +2311,9 @@ nav ul,
     .nav ul li a:focus,
     .nav ul li a:hover {
       color: #1A1A19;
-      text-decoration: underline; }
+      text-decoration: none;
+      border: none;
+      background: transparent; }
     nav ul li a:active,
     .nav ul li a:active {
       color: #1A1A19; }
@@ -2199,17 +2372,97 @@ Styleguide Components.menus
   .menu li {
     list-style-type: none;
     display: inline-block; }
-  .menu li {
-    margin: 0; }
-    .menu li a {
-      padding: 0.65rem; }
-      .menu li a:hover, .menu li a:focus {
+  .menu ul > li {
+    margin: 0;
+    position: relative;
+    z-index: 1; }
+    .menu ul > li > a {
+      text-align: left;
+      display: block;
+      padding: 0.65rem;
+      white-space: nowrap; }
+      .menu ul > li > a:hover, .menu ul > li > a:focus {
         background-color: #C65146;
         color: #FFFFFF; }
-    .menu li span {
+        .menu ul > li > a:hover a, .menu ul > li > a:hover a:link, .menu ul > li > a:focus a, .menu ul > li > a:focus a:link {
+          color: #FFFFFF;
+          text-decoration: underline; }
+        .menu ul > li > a:hover a:visited, .menu ul > li > a:focus a:visited {
+          color: #FFFFFF; }
+        .menu ul > li > a:hover a:focus, .menu ul > li > a:hover a:hover, .menu ul > li > a:focus a:focus, .menu ul > li > a:focus a:hover {
+          color: #ababab;
+          text-decoration: none;
+          border: none;
+          background: transparent; }
+        .menu ul > li > a:hover a:active, .menu ul > li > a:focus a:active {
+          color: #FFFFFF; }
+    .menu ul > li:hover > a, .menu ul > li:focus > a {
+      background-color: #C65146;
+      color: #FFFFFF; }
+      .menu ul > li:hover > a a, .menu ul > li:hover > a a:link, .menu ul > li:focus > a a, .menu ul > li:focus > a a:link {
+        color: #FFFFFF;
+        text-decoration: underline; }
+      .menu ul > li:hover > a a:visited, .menu ul > li:focus > a a:visited {
+        color: #FFFFFF; }
+      .menu ul > li:hover > a a:focus, .menu ul > li:hover > a a:hover, .menu ul > li:focus > a a:focus, .menu ul > li:focus > a a:hover {
+        color: #ababab;
+        text-decoration: none;
+        border: none;
+        background: transparent; }
+      .menu ul > li:hover > a a:active, .menu ul > li:focus > a a:active {
+        color: #FFFFFF; }
+    .menu ul > li > span {
       padding: 0.65rem; }
-  .menu ul {
-    display: none; }
+    .menu ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+      min-width: 120%; }
+      .menu ul > li > ul > li {
+        display: block; }
+        .menu ul > li > ul > li > a {
+          display: block;
+          padding: 0.1625rem 0.65rem;
+          white-space: nowrap;
+          background-color: #C65146;
+          color: #FFFFFF;
+          font-size: 14px;
+          font-size: 0.9rem;
+          line-height: 21px;
+          line-height: 1.3rem; }
+          .menu ul > li > ul > li > a a, .menu ul > li > ul > li > a a:link {
+            color: #FFFFFF;
+            text-decoration: underline; }
+          .menu ul > li > ul > li > a a:visited {
+            color: #FFFFFF; }
+          .menu ul > li > ul > li > a a:focus, .menu ul > li > ul > li > a a:hover {
+            color: #ababab;
+            text-decoration: none;
+            border: none;
+            background: transparent; }
+          .menu ul > li > ul > li > a a:active {
+            color: #FFFFFF; }
+          .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
+            background-color: #85362f;
+            color: #FFFFFF; }
+            .menu ul > li > ul > li > a:hover a, .menu ul > li > ul > li > a:hover a:link, .menu ul > li > ul > li > a:focus a, .menu ul > li > ul > li > a:focus a:link {
+              color: #FFFFFF;
+              text-decoration: underline; }
+            .menu ul > li > ul > li > a:hover a:visited, .menu ul > li > ul > li > a:focus a:visited {
+              color: #FFFFFF; }
+            .menu ul > li > ul > li > a:hover a:focus, .menu ul > li > ul > li > a:hover a:hover, .menu ul > li > ul > li > a:focus a:focus, .menu ul > li > ul > li > a:focus a:hover {
+              color: #ababab;
+              text-decoration: none;
+              border: none;
+              background: transparent; }
+            .menu ul > li > ul > li > a:hover a:active, .menu ul > li > ul > li > a:focus a:active {
+              color: #FFFFFF; }
+    .menu ul > li:hover > ul {
+      display: block; }
+      .menu ul > li:hover > ul > li {
+        display: block; }
 
 /*
 TOC (Table of contents)
@@ -2255,7 +2508,9 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
+  letter-spacing: normal;
   letter-spacing: initial;
+  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
@@ -2263,12 +2518,14 @@ Styleguide Components.toc
   line-height: 1.3rem; }
   .toc ul li a, .toc ul li a:link {
     color: #1A1A19;
-    text-decoration: none; }
+    text-decoration: underline; }
   .toc ul li a:visited {
     color: #1A1A19; }
   .toc ul li a:focus, .toc ul li a:hover {
     color: #1A1A19;
-    text-decoration: underline; }
+    text-decoration: none;
+    border: none;
+    background: transparent; }
   .toc ul li a:active {
     color: #1A1A19; }
   .toc ul li a, .toc ul li a:link, .toc ul li a:visited, .toc ul li a:focus, .toc ul li a:hover, .toc ul li a:active {
@@ -2312,7 +2569,7 @@ Markup:
 
 Styleguide Components.tag
 */
-.tag {
+.tag, .selectr-tag {
   display: inline-block;
   font-size: 12px;
   font-size: 0.75019rem;
@@ -2325,50 +2582,280 @@ Styleguide Components.tag
   color: #1A1A19;
   border-radius: 3px;
   margin-right: 0.43333rem; }
-  .tag.tag--success {
+  .tag a, .selectr-tag a, .tag a:link, .selectr-tag a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .tag a:visited, .selectr-tag a:visited {
+    color: #1A1A19; }
+  .tag a:focus, .selectr-tag a:focus, .tag a:hover, .selectr-tag a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .tag a:active, .selectr-tag a:active {
+    color: #1A1A19; }
+  .tag.tag--success, .tag--success.selectr-tag {
     background-color: #10A887;
     color: #FFFFFF; }
-  .tag.tag--warning {
+    .tag.tag--success a, .tag--success.selectr-tag a, .tag.tag--success a:link, .tag--success.selectr-tag a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    .tag.tag--success a:visited, .tag--success.selectr-tag a:visited {
+      color: #FFFFFF; }
+    .tag.tag--success a:focus, .tag--success.selectr-tag a:focus, .tag.tag--success a:hover, .tag--success.selectr-tag a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--success a:active, .tag--success.selectr-tag a:active {
+      color: #FFFFFF; }
+  .tag.tag--warning, .tag--warning.selectr-tag {
     background-color: #F17F42;
     color: #1A1A19; }
-  .tag.tag--error {
+    .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
+      color: #1A1A19;
+      text-decoration: underline; }
+    .tag.tag--warning a:visited, .tag--warning.selectr-tag a:visited {
+      color: #1A1A19; }
+    .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus, .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover {
+      color: #111111;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--warning a:active, .tag--warning.selectr-tag a:active {
+      color: #1A1A19; }
+  .tag.tag--error, .tag--error.selectr-tag {
     background-color: #DA3C3C;
     color: #FFFFFF; }
-  .tag.tag--primary {
+    .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    .tag.tag--error a:visited, .tag--error.selectr-tag a:visited {
+      color: #FFFFFF; }
+    .tag.tag--error a:focus, .tag--error.selectr-tag a:focus, .tag.tag--error a:hover, .tag--error.selectr-tag a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--error a:active, .tag--error.selectr-tag a:active {
+      color: #FFFFFF; }
+  .tag.tag--primary, .tag--primary.selectr-tag {
     background-color: #C65146;
     color: #FFFFFF; }
-  .tag.tag--secondary {
+    .tag.tag--primary a, .tag--primary.selectr-tag a, .tag.tag--primary a:link, .tag--primary.selectr-tag a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    .tag.tag--primary a:visited, .tag--primary.selectr-tag a:visited {
+      color: #FFFFFF; }
+    .tag.tag--primary a:focus, .tag--primary.selectr-tag a:focus, .tag.tag--primary a:hover, .tag--primary.selectr-tag a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--primary a:active, .tag--primary.selectr-tag a:active {
+      color: #FFFFFF; }
+  .tag.tag--secondary, .tag--secondary.selectr-tag {
     background-color: #C65146;
     color: #FFFFFF; }
-  .right .tag {
+    .tag.tag--secondary a, .tag--secondary.selectr-tag a, .tag.tag--secondary a:link, .tag--secondary.selectr-tag a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    .tag.tag--secondary a:visited, .tag--secondary.selectr-tag a:visited {
+      color: #FFFFFF; }
+    .tag.tag--secondary a:focus, .tag--secondary.selectr-tag a:focus, .tag.tag--secondary a:hover, .tag--secondary.selectr-tag a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--secondary a:active, .tag--secondary.selectr-tag a:active {
+      color: #FFFFFF; }
+  .right .tag, .right .selectr-tag {
     margin-right: 0;
     margin-left: 0.43333rem; }
-  .center .tag {
+  .center .tag, .center .selectr-tag {
     margin-right: 0.21667rem;
     margin-left: 0.21667rem; }
 
-a.tag {
+a.tag, a.selectr-tag {
   cursor: pointer; }
-  a.tag, a.tag:link, a.tag:visited, a.tag:focus, a.tag:hover, a.tag:active {
+  a.tag, a.selectr-tag, a.tag:link, a.selectr-tag:link, a.tag:visited, a.selectr-tag:visited, a.tag:focus, a.selectr-tag:focus, a.tag:hover, a.selectr-tag:hover, a.tag:active, a.selectr-tag:active {
     text-decoration: none; }
-  a.tag:hover, a.tag:focus {
-    background-color: #898989;
+  a.tag:hover, a.selectr-tag:hover, a.tag:focus, a.selectr-tag:focus {
+    background-color: #949494;
+    color: #1A1A19; }
+    a.tag:hover a, a.selectr-tag:hover a, a.tag:hover a:link, a.selectr-tag:hover a:link, a.tag:focus a, a.selectr-tag:focus a, a.tag:focus a:link, a.selectr-tag:focus a:link {
+      color: #1A1A19;
+      text-decoration: underline; }
+    a.tag:hover a:visited, a.selectr-tag:hover a:visited, a.tag:focus a:visited, a.selectr-tag:focus a:visited {
+      color: #1A1A19; }
+    a.tag:hover a:focus, a.selectr-tag:hover a:focus, a.tag:hover a:hover, a.selectr-tag:hover a:hover, a.tag:focus a:focus, a.selectr-tag:focus a:focus, a.tag:focus a:hover, a.selectr-tag:focus a:hover {
+      color: #111111;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag:hover a:active, a.selectr-tag:hover a:active, a.tag:focus a:active, a.selectr-tag:focus a:active {
+      color: #1A1A19; }
+  a.tag.tag--success:hover, a.tag--success.selectr-tag:hover, a.tag.tag--success:focus, a.tag--success.selectr-tag:focus {
+    background-color: #0b715a;
     color: #FFFFFF; }
-  a.tag.tag--success:hover, a.tag.tag--success:focus {
-    background-color: #010e0c;
+    a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    a.tag.tag--success:hover a:visited, a.tag--success.selectr-tag:hover a:visited, a.tag.tag--success:focus a:visited, a.tag--success.selectr-tag:focus a:visited {
+      color: #FFFFFF; }
+    a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--success:hover a:active, a.tag--success.selectr-tag:hover a:active, a.tag.tag--success:focus a:active, a.tag--success.selectr-tag:focus a:active {
+      color: #FFFFFF; }
+  a.tag.tag--warning:hover, a.tag--warning.selectr-tag:hover, a.tag.tag--warning:focus, a.tag--warning.selectr-tag:focus {
+    background-color: #a1552c;
     color: #FFFFFF; }
-  a.tag.tag--warning:hover, a.tag.tag--warning:focus {
-    background-color: #81330a;
+    a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    a.tag.tag--warning:hover a:visited, a.tag--warning.selectr-tag:hover a:visited, a.tag.tag--warning:focus a:visited, a.tag--warning.selectr-tag:focus a:visited {
+      color: #FFFFFF; }
+    a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--warning:hover a:active, a.tag--warning.selectr-tag:hover a:active, a.tag.tag--warning:focus a:active, a.tag--warning.selectr-tag:focus a:active {
+      color: #FFFFFF; }
+  a.tag.tag--error:hover, a.tag--error.selectr-tag:hover, a.tag.tag--error:focus, a.tag--error.selectr-tag:focus {
+    background-color: #922828;
     color: #FFFFFF; }
-  a.tag.tag--error:hover, a.tag.tag--error:focus {
-    background-color: #5c1111;
+    a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    a.tag.tag--error:hover a:visited, a.tag--error.selectr-tag:hover a:visited, a.tag.tag--error:focus a:visited, a.tag--error.selectr-tag:focus a:visited {
+      color: #FFFFFF; }
+    a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--error:hover a:active, a.tag--error.selectr-tag:hover a:active, a.tag.tag--error:focus a:active, a.tag--error.selectr-tag:focus a:active {
+      color: #FFFFFF; }
+  a.tag.tag--primary:hover, a.tag--primary.selectr-tag:hover, a.tag.tag--primary:focus, a.tag--primary.selectr-tag:focus {
+    background-color: #85362f;
     color: #FFFFFF; }
-  a.tag.tag--primary:hover, a.tag.tag--primary:focus {
-    background-color: #4c1c17;
+    a.tag.tag--primary:hover a, a.tag--primary.selectr-tag:hover a, a.tag.tag--primary:hover a:link, a.tag--primary.selectr-tag:hover a:link, a.tag.tag--primary:focus a, a.tag--primary.selectr-tag:focus a, a.tag.tag--primary:focus a:link, a.tag--primary.selectr-tag:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    a.tag.tag--primary:hover a:visited, a.tag--primary.selectr-tag:hover a:visited, a.tag.tag--primary:focus a:visited, a.tag--primary.selectr-tag:focus a:visited {
+      color: #FFFFFF; }
+    a.tag.tag--primary:hover a:focus, a.tag--primary.selectr-tag:hover a:focus, a.tag.tag--primary:hover a:hover, a.tag--primary.selectr-tag:hover a:hover, a.tag.tag--primary:focus a:focus, a.tag--primary.selectr-tag:focus a:focus, a.tag.tag--primary:focus a:hover, a.tag--primary.selectr-tag:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--primary:hover a:active, a.tag--primary.selectr-tag:hover a:active, a.tag.tag--primary:focus a:active, a.tag--primary.selectr-tag:focus a:active {
+      color: #FFFFFF; }
+  a.tag.tag--secondary:hover, a.tag--secondary.selectr-tag:hover, a.tag.tag--secondary:focus, a.tag--secondary.selectr-tag:focus {
+    background-color: #85362f;
     color: #FFFFFF; }
-  a.tag.tag--secondary:hover, a.tag.tag--secondary:focus {
-    background-color: #4c1c17;
-    color: #FFFFFF; }
+    a.tag.tag--secondary:hover a, a.tag--secondary.selectr-tag:hover a, a.tag.tag--secondary:hover a:link, a.tag--secondary.selectr-tag:hover a:link, a.tag.tag--secondary:focus a, a.tag--secondary.selectr-tag:focus a, a.tag.tag--secondary:focus a:link, a.tag--secondary.selectr-tag:focus a:link {
+      color: #FFFFFF;
+      text-decoration: underline; }
+    a.tag.tag--secondary:hover a:visited, a.tag--secondary.selectr-tag:hover a:visited, a.tag.tag--secondary:focus a:visited, a.tag--secondary.selectr-tag:focus a:visited {
+      color: #FFFFFF; }
+    a.tag.tag--secondary:hover a:focus, a.tag--secondary.selectr-tag:hover a:focus, a.tag.tag--secondary:hover a:hover, a.tag--secondary.selectr-tag:hover a:hover, a.tag.tag--secondary:focus a:focus, a.tag--secondary.selectr-tag:focus a:focus, a.tag.tag--secondary:focus a:hover, a.tag--secondary.selectr-tag:focus a:hover {
+      color: #ababab;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
+      color: #FFFFFF; }
+
+/*
+Alerts
+
+Boxes with background-colors to draw the user's attention towards specific messages.
+
+Any alert is automatically set as a `.text` to prevent paragraphs for setting an extra space.
+
+.alert--success     - Sets the color to indicate a positive action or message
+.alert--warning     - Sets the color to indicate a warning
+.alert--error       - Sets the color to indicate a negative action or message
+
+Markup:
+<section class="alert {{ modifier_class}}">
+	<p class="minititle">Hey ho, let's go</p>
+	<p>Dear user, you are required to <a href="#">read this very specific message</a> and take some action</p>
+</section>
+
+
+Styleguide Components.alert
+*/
+.alert {
+  padding: 1.3rem;
+  border-radius: 3px;
+  background-color: #dbdbdb;
+  color: #444444; }
+  .alert a, .alert a:link {
+    color: #444444;
+    text-decoration: underline; }
+  .alert a:visited {
+    color: #444444; }
+  .alert a:focus, .alert a:hover {
+    color: #888888;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .alert a:active {
+    color: #444444; }
+
+.alert--success {
+  background-color: #b7e5db;
+  color: #085444; }
+  .alert--success a, .alert--success a:link {
+    color: #085444;
+    text-decoration: underline; }
+  .alert--success a:visited {
+    color: #085444; }
+  .alert--success a:focus, .alert--success a:hover {
+    color: #10A887;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .alert--success a:active {
+    color: #085444; }
+
+.alert--warning {
+  background-color: #fbd9c6;
+  color: #794021; }
+  .alert--warning a, .alert--warning a:link {
+    color: #794021;
+    text-decoration: underline; }
+  .alert--warning a:visited {
+    color: #794021; }
+  .alert--warning a:focus, .alert--warning a:hover {
+    color: #F17F42;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .alert--warning a:active {
+    color: #794021; }
+
+.alert--error {
+  background-color: #f4c5c5;
+  color: #6d1e1e; }
+  .alert--error a, .alert--error a:link {
+    color: #6d1e1e;
+    text-decoration: underline; }
+  .alert--error a:visited {
+    color: #6d1e1e; }
+  .alert--error a:focus, .alert--error a:hover {
+    color: #DA3C3C;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .alert--error a:active {
+    color: #6d1e1e; }
 
 /*
 Margins
@@ -2423,7 +2910,7 @@ Styleguide Huesitos.paddings
 .pt {
   padding-top: 1.3rem; }
 
-.pr {
+.pr, .selectr-tag {
   padding-right: 1.3rem; }
 
 .pb {
@@ -2462,3 +2949,1058 @@ Styleguide Huesitos.borders
 
 .bl {
   border-left: 1px solid #CCCCCC; }
+
+/*
+Background Color
+
+A set of helper classes that map to common colors from the palette.
+
+The text color is contrasted correctly.
+
+Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
+
+We showcase some examples here, but the list of classes could be much bigger or smaller than these:
+
+Markup:
+<p class="minititle">Base</p>
+<section class="grid grid--5col">
+    <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
+    <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
+</section>
+<p class="minititle">State</p>
+<section class="grid grid--5col">
+    <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
+    <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
+    <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
+    <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
+</section>
+<p class="minititle">Blue palette</p>
+<section class="grid grid--5col">
+    <div class="bg-blue-darker p strong half-gutter" style="height:90px">Darker</div>
+    <div class="bg-blue-dark p strong half-gutter" style="height:90px">Dark</div>
+    <div class="bg-blue-base p strong half-gutter" style="height:90px">Base</div>
+    <div class="bg-blue-light p strong half-gutter" style="height:90px">Light</div>
+    <div class="bg-blue-lighter p strong half-gutter" style="height:90px">Lighter</div>
+</section>
+
+Styleguide Huesitos.Color
+*/
+.bg-base-primary {
+  background-color: #C65146;
+  color: #FFFFFF; }
+  .bg-base-primary a, .bg-base-primary a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-base-primary a:visited {
+    color: #FFFFFF; }
+  .bg-base-primary a:focus, .bg-base-primary a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-base-primary a:active {
+    color: #FFFFFF; }
+
+.bg-base-secondary {
+  background-color: #C65146;
+  color: #FFFFFF; }
+  .bg-base-secondary a, .bg-base-secondary a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-base-secondary a:visited {
+    color: #FFFFFF; }
+  .bg-base-secondary a:focus, .bg-base-secondary a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-base-secondary a:active {
+    color: #FFFFFF; }
+
+.bg-base-lines {
+  background-color: #DCDCDC;
+  color: #1A1A19; }
+  .bg-base-lines a, .bg-base-lines a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-base-lines a:visited {
+    color: #1A1A19; }
+  .bg-base-lines a:focus, .bg-base-lines a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-base-lines a:active {
+    color: #1A1A19; }
+
+.bg-text-primary {
+  background-color: #1A1A19;
+  color: #FFFFFF; }
+  .bg-text-primary a, .bg-text-primary a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-text-primary a:visited {
+    color: #FFFFFF; }
+  .bg-text-primary a:focus, .bg-text-primary a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-text-primary a:active {
+    color: #FFFFFF; }
+
+.bg-text-heading {
+  background-color: #1A1A19;
+  color: #FFFFFF; }
+  .bg-text-heading a, .bg-text-heading a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-text-heading a:visited {
+    color: #FFFFFF; }
+  .bg-text-heading a:focus, .bg-text-heading a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-text-heading a:active {
+    color: #FFFFFF; }
+
+.bg-text-active {
+  background-color: #383837;
+  color: #FFFFFF; }
+  .bg-text-active a, .bg-text-active a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-text-active a:visited {
+    color: #FFFFFF; }
+  .bg-text-active a:focus, .bg-text-active a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-text-active a:active {
+    color: #FFFFFF; }
+
+.bg-text-mark {
+  background-color: goldenRod;
+  color: #FFFFFF; }
+  .bg-text-mark a, .bg-text-mark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-text-mark a:visited {
+    color: #FFFFFF; }
+  .bg-text-mark a:focus, .bg-text-mark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-text-mark a:active {
+    color: #FFFFFF; }
+
+.bg-background-dark {
+  background-color: #1A1A19;
+  color: #FFFFFF; }
+  .bg-background-dark a, .bg-background-dark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-background-dark a:visited {
+    color: #FFFFFF; }
+  .bg-background-dark a:focus, .bg-background-dark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-background-dark a:active {
+    color: #FFFFFF; }
+
+.bg-background-dim {
+  background-color: #EEEEEE;
+  color: #1A1A19; }
+  .bg-background-dim a, .bg-background-dim a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-background-dim a:visited {
+    color: #1A1A19; }
+  .bg-background-dim a:focus, .bg-background-dim a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-background-dim a:active {
+    color: #1A1A19; }
+
+.bg-background-light {
+  background-color: #FFFFFF;
+  color: #1A1A19; }
+  .bg-background-light a, .bg-background-light a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-background-light a:visited {
+    color: #1A1A19; }
+  .bg-background-light a:focus, .bg-background-light a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-background-light a:active {
+    color: #1A1A19; }
+
+.bg-state-muted {
+  background-color: #EEE;
+  color: #1A1A19; }
+  .bg-state-muted a, .bg-state-muted a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-state-muted a:visited {
+    color: #1A1A19; }
+  .bg-state-muted a:focus, .bg-state-muted a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-muted a:active {
+    color: #1A1A19; }
+
+.bg-state-success {
+  background-color: #10A887;
+  color: #FFFFFF; }
+  .bg-state-success a, .bg-state-success a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-state-success a:visited {
+    color: #FFFFFF; }
+  .bg-state-success a:focus, .bg-state-success a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-success a:active {
+    color: #FFFFFF; }
+
+.bg-state-warning {
+  background-color: #F17F42;
+  color: #1A1A19; }
+  .bg-state-warning a, .bg-state-warning a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-state-warning a:visited {
+    color: #1A1A19; }
+  .bg-state-warning a:focus, .bg-state-warning a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-warning a:active {
+    color: #1A1A19; }
+
+.bg-state-error {
+  background-color: #DA3C3C;
+  color: #FFFFFF; }
+  .bg-state-error a, .bg-state-error a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-state-error a:visited {
+    color: #FFFFFF; }
+  .bg-state-error a:focus, .bg-state-error a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-error a:active {
+    color: #FFFFFF; }
+
+.bg-blue-darker {
+  background-color: #1573B6;
+  color: #FFFFFF; }
+  .bg-blue-darker a, .bg-blue-darker a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-blue-darker a:visited {
+    color: #FFFFFF; }
+  .bg-blue-darker a:focus, .bg-blue-darker a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-darker a:active {
+    color: #FFFFFF; }
+
+.bg-blue-dark {
+  background-color: #1E80C6;
+  color: #FFFFFF; }
+  .bg-blue-dark a, .bg-blue-dark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-blue-dark a:visited {
+    color: #FFFFFF; }
+  .bg-blue-dark a:focus, .bg-blue-dark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-dark a:active {
+    color: #FFFFFF; }
+
+.bg-blue-base {
+  background-color: #2B90D9;
+  color: #FFFFFF; }
+  .bg-blue-base a, .bg-blue-base a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-blue-base a:visited {
+    color: #FFFFFF; }
+  .bg-blue-base a:focus, .bg-blue-base a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-base a:active {
+    color: #FFFFFF; }
+
+.bg-blue-light {
+  background-color: #3FA2E9;
+  color: #1A1A19; }
+  .bg-blue-light a, .bg-blue-light a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-blue-light a:visited {
+    color: #1A1A19; }
+  .bg-blue-light a:focus, .bg-blue-light a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-light a:active {
+    color: #1A1A19; }
+
+.bg-blue-lighter {
+  background-color: #4EB1F9;
+  color: #1A1A19; }
+  .bg-blue-lighter a, .bg-blue-lighter a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-blue-lighter a:visited {
+    color: #1A1A19; }
+  .bg-blue-lighter a:focus, .bg-blue-lighter a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-lighter a:active {
+    color: #1A1A19; }
+
+.bg-green-darker {
+  background-color: #089073;
+  color: #FFFFFF; }
+  .bg-green-darker a, .bg-green-darker a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-green-darker a:visited {
+    color: #FFFFFF; }
+  .bg-green-darker a:focus, .bg-green-darker a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-darker a:active {
+    color: #FFFFFF; }
+
+.bg-green-dark {
+  background-color: #0B9D7D;
+  color: #FFFFFF; }
+  .bg-green-dark a, .bg-green-dark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-green-dark a:visited {
+    color: #FFFFFF; }
+  .bg-green-dark a:focus, .bg-green-dark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-dark a:active {
+    color: #FFFFFF; }
+
+.bg-green-base {
+  background-color: #10A887;
+  color: #FFFFFF; }
+  .bg-green-base a, .bg-green-base a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-green-base a:visited {
+    color: #FFFFFF; }
+  .bg-green-base a:focus, .bg-green-base a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-base a:active {
+    color: #FFFFFF; }
+
+.bg-green-light {
+  background-color: #1EB896;
+  color: #FFFFFF; }
+  .bg-green-light a, .bg-green-light a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-green-light a:visited {
+    color: #FFFFFF; }
+  .bg-green-light a:focus, .bg-green-light a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-light a:active {
+    color: #FFFFFF; }
+
+.bg-green-lighter {
+  background-color: #28CEAA;
+  color: #FFFFFF; }
+  .bg-green-lighter a, .bg-green-lighter a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-green-lighter a:visited {
+    color: #FFFFFF; }
+  .bg-green-lighter a:focus, .bg-green-lighter a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-lighter a:active {
+    color: #FFFFFF; }
+
+.bg-red-darker {
+  background-color: #653131;
+  color: #FFFFFF; }
+  .bg-red-darker a, .bg-red-darker a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-red-darker a:visited {
+    color: #FFFFFF; }
+  .bg-red-darker a:focus, .bg-red-darker a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-darker a:active {
+    color: #FFFFFF; }
+
+.bg-red-dark {
+  background-color: #B73333;
+  color: #FFFFFF; }
+  .bg-red-dark a, .bg-red-dark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-red-dark a:visited {
+    color: #FFFFFF; }
+  .bg-red-dark a:focus, .bg-red-dark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-dark a:active {
+    color: #FFFFFF; }
+
+.bg-red-base {
+  background-color: #DA3C3C;
+  color: #FFFFFF; }
+  .bg-red-base a, .bg-red-base a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-red-base a:visited {
+    color: #FFFFFF; }
+  .bg-red-base a:focus, .bg-red-base a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-base a:active {
+    color: #FFFFFF; }
+
+.bg-red-light {
+  background-color: #F25A5A;
+  color: #1A1A19; }
+  .bg-red-light a, .bg-red-light a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-red-light a:visited {
+    color: #1A1A19; }
+  .bg-red-light a:focus, .bg-red-light a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-light a:active {
+    color: #1A1A19; }
+
+.bg-red-lighter {
+  background-color: #FA8181;
+  color: #1A1A19; }
+  .bg-red-lighter a, .bg-red-lighter a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-red-lighter a:visited {
+    color: #1A1A19; }
+  .bg-red-lighter a:focus, .bg-red-lighter a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-lighter a:active {
+    color: #1A1A19; }
+
+.bg-gray-black {
+  background-color: #1B1B1B;
+  color: #FFFFFF; }
+  .bg-gray-black a, .bg-gray-black a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-gray-black a:visited {
+    color: #FFFFFF; }
+  .bg-gray-black a:focus, .bg-gray-black a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-black a:active {
+    color: #FFFFFF; }
+
+.bg-gray-darker {
+  background-color: #333333;
+  color: #FFFFFF; }
+  .bg-gray-darker a, .bg-gray-darker a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-gray-darker a:visited {
+    color: #FFFFFF; }
+  .bg-gray-darker a:focus, .bg-gray-darker a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-darker a:active {
+    color: #FFFFFF; }
+
+.bg-gray-dark {
+  background-color: #666666;
+  color: #FFFFFF; }
+  .bg-gray-dark a, .bg-gray-dark a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-gray-dark a:visited {
+    color: #FFFFFF; }
+  .bg-gray-dark a:focus, .bg-gray-dark a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-dark a:active {
+    color: #FFFFFF; }
+
+.bg-gray-base {
+  background-color: #888888;
+  color: #FFFFFF; }
+  .bg-gray-base a, .bg-gray-base a:link {
+    color: #FFFFFF;
+    text-decoration: underline; }
+  .bg-gray-base a:visited {
+    color: #FFFFFF; }
+  .bg-gray-base a:focus, .bg-gray-base a:hover {
+    color: #ababab;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-base a:active {
+    color: #FFFFFF; }
+
+.bg-gray-light {
+  background-color: #CCCCCC;
+  color: #1A1A19; }
+  .bg-gray-light a, .bg-gray-light a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-gray-light a:visited {
+    color: #1A1A19; }
+  .bg-gray-light a:focus, .bg-gray-light a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-light a:active {
+    color: #1A1A19; }
+
+.bg-gray-lighter {
+  background-color: #DDDDDD;
+  color: #1A1A19; }
+  .bg-gray-lighter a, .bg-gray-lighter a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-gray-lighter a:visited {
+    color: #1A1A19; }
+  .bg-gray-lighter a:focus, .bg-gray-lighter a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-lighter a:active {
+    color: #1A1A19; }
+
+.bg-gray-white {
+  background-color: #FFFFFF;
+  color: #1A1A19; }
+  .bg-gray-white a, .bg-gray-white a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .bg-gray-white a:visited {
+    color: #1A1A19; }
+  .bg-gray-white a:focus, .bg-gray-white a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-gray-white a:active {
+    color: #1A1A19; }
+
+/*
+Gutter modifiers
+
+The presence of this class cuts the `$gutter` by half or quarter.
+
+Applies to `.m` and `.p` classes.
+
+Markup:
+<p class="{{modifier_class}} pl bl ml">My gutter variable is smaller</p>
+
+.half-gutter        - Sets gutter to a half
+.quarter-gutter     - Sets gutter to a quarter
+
+Styleguide Huesitos.gutter-modifier
+*/
+.half-gutter.m {
+  margin: 0.65rem; }
+
+.half-gutter.mt {
+  margin-top: 0.65rem; }
+
+.half-gutter.mr {
+  margin-right: 0.65rem; }
+
+.half-gutter.mb {
+  margin-bottom: 0.65rem; }
+
+.half-gutter.ml {
+  margin-left: 0.65rem; }
+
+.half-gutter.p {
+  padding: 0.65rem; }
+
+.half-gutter.pt {
+  padding-top: 0.65rem; }
+
+.half-gutter.pr, .half-gutter.selectr-tag {
+  padding-right: 0.65rem; }
+
+.half-gutter.pb {
+  padding-bottom: 0.65rem; }
+
+.half-gutter.pl {
+  padding-left: 0.65rem; }
+
+.quarter-gutter.m {
+  margin: 0.325rem; }
+
+.quarter-gutter.mt {
+  margin-top: 0.325rem; }
+
+.quarter-gutter.mr {
+  margin-right: 0.325rem; }
+
+.quarter-gutter.mb {
+  margin-bottom: 0.325rem; }
+
+.quarter-gutter.ml {
+  margin-left: 0.325rem; }
+
+.quarter-gutter.p {
+  padding: 0.325rem; }
+
+.quarter-gutter.pt {
+  padding-top: 0.325rem; }
+
+.quarter-gutter.pr, .quarter-gutter.selectr-tag {
+  padding-right: 0.325rem; }
+
+.quarter-gutter.pb {
+  padding-bottom: 0.325rem; }
+
+.quarter-gutter.pl {
+  padding-left: 0.325rem; }
+
+/*!
+ * Selectr 2.4.4
+ * http://mobius.ovh/docs/selectr
+ *
+ * Released under the MIT license
+ */
+.selectr-container {
+  position: relative; }
+
+.selectr-container li {
+  list-style: none; }
+
+.selectr-visible {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 11; }
+
+.selectr-desktop.multiple .selectr-visible {
+  display: none; }
+
+.selectr-desktop.multiple.native-open .selectr-visible {
+  top: 100%;
+  min-height: 200px !important;
+  height: auto;
+  opacity: 1;
+  display: block; }
+
+.selectr-container.multiple.selectr-mobile .selectr-selected {
+  z-index: 0; }
+
+.selectr-selected {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0.65rem;
+  cursor: pointer;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  background-color: #fff; }
+
+.selectr-selected .selectr-label {
+  padding: 0.325rem 0.65rem; }
+
+.selectr-selected::before {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  content: '';
+  transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  border-width: 4px 4px 0 4px;
+  border-style: solid;
+  border-color: #DDDDDD transparent transparent; }
+
+.selectr-container.open .selectr-selected::before,
+.selectr-container.native-open .selectr-selected::before {
+  border-width: 0 4px 4px 4px;
+  border-style: solid;
+  border-color: transparent transparent #6c7a86; }
+
+.selectr-label {
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.selectr-placeholder {
+  color: #6c7a86; }
+
+.selectr-tags {
+  margin: 0;
+  padding: 0;
+  white-space: normal; }
+
+.has-selected .selectr-tags {
+  margin: 0 0 -2px; }
+
+.selectr-tag {
+  list-style: none;
+  position: relative;
+  float: left;
+  cursor: default; }
+
+.selectr-container.multiple.has-selected .selectr-selected {
+  padding: 5px 28px 5px 5px; }
+
+.selectr-options-container {
+  position: absolute;
+  z-index: 10000;
+  top: calc(100% - 1px);
+  left: 0;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: transparent #DDDDDD #DDDDDD;
+  border-radius: 3px;
+  background-color: #FFFFFF; }
+
+.selectr-container.open .selectr-options-container {
+  display: block; }
+
+.selectr-input-container {
+  position: relative;
+  display: none; }
+
+.selectr-clear,
+.selectr-input-clear,
+.selectr-tag-remove {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  transform: translate3d(0px, -50%, 0px);
+  border: medium none;
+  background-color: transparent;
+  z-index: 11; }
+
+.selectr-clear,
+.selectr-input-clear {
+  display: none; }
+
+.selectr-container.has-selected .selectr-clear,
+.selectr-input-container.active .selectr-input-clear {
+  display: block; }
+
+.selectr-selected .selectr-tag-remove {
+  right: 2px; }
+
+.selectr-clear::before,
+.selectr-clear::after,
+.selectr-input-clear::before,
+.selectr-input-clear::after,
+.selectr-tag-remove::before,
+.selectr-tag-remove::after {
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  content: ' ';
+  background-color: #6c7a86; }
+
+.selectr-tag-remove::before,
+.selectr-tag-remove::after {
+  top: 4px;
+  width: 3px;
+  height: 12px;
+  background-color: #fff; }
+
+.selectr-clear:before,
+.selectr-input-clear::before,
+.selectr-tag-remove::before {
+  transform: rotate(45deg); }
+
+.selectr-clear:after,
+.selectr-input-clear::after,
+.selectr-tag-remove::after {
+  transform: rotate(-45deg); }
+
+.selectr-input-container.active,
+.selectr-input-container.active .selectr-clear {
+  display: block; }
+
+input.selectr-input {
+  box-sizing: border-box;
+  width: 100%;
+  width: calc(100% - 0.65rem);
+  margin: 0.65rem; }
+
+.selectr-notice {
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+  border-top: 1px solid #999;
+  border-radius: 0 0 3px 3px;
+  background-color: #fff; }
+
+.selectr-container.notice .selectr-notice {
+  display: block; }
+
+.selectr-container.notice .selectr-selected {
+  border-radius: 3px 3px 0 0; }
+
+.selectr-options {
+  position: relative;
+  top: calc(100% + 2px);
+  display: none;
+  overflow-x: auto;
+  overflow-y: scroll;
+  max-height: 200px;
+  margin: 0;
+  padding: 0; }
+
+.selectr-container.open .selectr-options,
+.selectr-container.open .selectr-input-container,
+.selectr-container.notice .selectr-options-container {
+  display: block; }
+
+.selectr-option {
+  position: relative;
+  display: block;
+  padding: 0.325rem 0.65rem;
+  margin: 0 0.65rem;
+  list-style: outside none none;
+  cursor: pointer;
+  font-weight: normal; }
+
+.selectr-options.optgroups > .selectr-option {
+  padding-left: 25px; }
+
+.selectr-optgroup {
+  font-weight: bold;
+  padding: 0; }
+
+.selectr-optgroup--label {
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 15px; }
+
+.selectr-match {
+  text-decoration: underline; }
+
+.selectr-option.selected {
+  background-color: #DDDDDD;
+  color: #1A1A19; }
+  .selectr-option.selected a, .selectr-option.selected a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .selectr-option.selected a:visited {
+    color: #1A1A19; }
+  .selectr-option.selected a:focus, .selectr-option.selected a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .selectr-option.selected a:active {
+    color: #1A1A19; }
+
+.selectr-option.active {
+  background-color: #DDDDDD;
+  color: #1A1A19; }
+  .selectr-option.active a, .selectr-option.active a:link {
+    color: #1A1A19;
+    text-decoration: underline; }
+  .selectr-option.active a:visited {
+    color: #1A1A19; }
+  .selectr-option.active a:focus, .selectr-option.active a:hover {
+    color: #111111;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .selectr-option.active a:active {
+    color: #1A1A19; }
+
+.selectr-option.disabled {
+  opacity: 0.4; }
+
+.selectr-option.excluded {
+  display: none; }
+
+.selectr-container.open .selectr-selected {
+  border-color: #DDDDDD #DDDDDD transparent #DDDDDD;
+  border-radius: 3px 3px 0 0; }
+
+.selectr-container.open .selectr-selected::after {
+  transform: rotate(180deg) translate3d(0px, 50%, 0px); }
+
+.selectr-disabled {
+  opacity: .6; }
+
+.selectr-empty,
+.has-selected .selectr-placeholder {
+  display: none; }
+
+.has-selected .selectr-label {
+  display: block; }
+
+/* TAGGABLE */
+.taggable .selectr-selected {
+  padding: 4px 28px 4px 4px; }
+
+.taggable .selectr-selected::after {
+  display: table;
+  content: " ";
+  clear: both; }
+
+.taggable .selectr-label {
+  width: auto; }
+
+.taggable .selectr-tags {
+  float: left;
+  display: block; }
+
+.taggable .selectr-placeholder {
+  display: none; }
+
+.input-tag {
+  float: left;
+  min-width: 90px;
+  width: auto; }
+
+.selectr-tag-input {
+  border: medium none;
+  padding: 3px 10px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit; }
+
+.selectr-input-container.loading::after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  content: '';
+  transform: translate3d(0px, -50%, 0px);
+  transform-origin: 50% 0 0;
+  animation: 500ms linear 0s normal forwards infinite running spin;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #aaa #ddd #ddd;
+  border-radius: 50%; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translate3d(0px, -50%, 0px); }
+  100% {
+    transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
+
+.selectr-container.open.inverted .selectr-selected {
+  border-color: transparent #999 #999;
+  border-radius: 0 0 3px 3px; }
+
+.selectr-container.inverted .selectr-options-container {
+  border-width: 1px 1px 0;
+  border-color: #999 #999 transparent;
+  border-radius: 3px 3px 0 0;
+  background-color: #fff; }
+
+.selectr-container.inverted .selectr-options-container {
+  top: auto;
+  bottom: calc(100% - 1px); }
+
+.selectr-container :-ms-input-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container ::-ms-input-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container ::placeholder {
+  color: #6c7a86;
+  opacity: 1; }

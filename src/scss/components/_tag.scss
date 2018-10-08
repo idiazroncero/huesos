@@ -60,36 +60,36 @@ a.tag {
     cursor:pointer;
     &:hover,
     &:focus {
-        @include background-contrast(darken(get-color(gray, lighter), $color-modify-ratio));
+        @include background-contrast(shade(get-color(gray, lighter), $color-modify-ratio));
     }
     &.tag--success {
         &:hover,
         &:focus {
-            @include background-contrast(darken(get-color(state, success), $color-modify-ratio)); 
+            @include background-contrast(shade(get-color(state, success), $color-modify-ratio)); 
         }
     }
     &.tag--warning{
         &:hover,
         &:focus {
-            @include background-contrast(darken(get-color(state, warning), $color-modify-ratio)); 
+            @include background-contrast(shade(get-color(state, warning), $color-modify-ratio)); 
         }
     }
     &.tag--error {
         &:hover,
         &:focus {
-            @include background-contrast(darken(get-color(state, error), $color-modify-ratio)); 
+            @include background-contrast(shade(get-color(state, error), $color-modify-ratio)); 
         }
     }
     &.tag--primary {
         &:hover,
         &:focus {
-            @include background-contrast(darken(get-color(base, primary), $color-modify-ratio)); 
+            @include background-contrast(shade(get-color(base, primary), $color-modify-ratio)); 
         }
     }
     &.tag--secondary {
         &:hover,
         &:focus {
-            @include background-contrast(darken(get-color(base, secondary), $color-modify-ratio)); 
+            @include background-contrast(shade(get-color(base, secondary), $color-modify-ratio)); 
         }
     }
 }
