@@ -1389,6 +1389,7 @@
 
           <div class="kss-description">
             <p>Paragraph items wrapped on any element marked as <code>.text</code> will have its last <code>p</code> child set marginless.</p>
+<p>They also feature an extra spacing on headings.</p>
 <p>This used to be global behavior, but there are moments on which a standalone <code>p</code> needs to have its <code>margin-bottom</code> untouched.</p>
 
           </div>
@@ -1403,9 +1404,11 @@
 
 
           <div class="kss-modifier__example">
-            <section class="text card p">
+            <section class="text">
+	<h2>First heading has no margin-top</h2>
 	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
 	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
+	<h3>But the rest of headings have!</h3>
 	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
 </section>
             <div class="kss-modifier__example-footer"></div>
@@ -1417,9 +1420,11 @@
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text card p"</span>&gt;</span>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>First heading has no margin-top<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello there! i'm the first pararagph inside a card marked as text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>But the rest of headings have!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></code></pre>
           </details>

@@ -1,8 +1,10 @@
+<article class="text">
+
 ## A basic osamenta <br/> for your web proyects
 
 <hr/>
 
-<section>
+<section class="text">
 
 ### What is this?
 
@@ -18,7 +20,7 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 
 </section>
 
-<section>
+<section class="text">
 
 ### Opinionated stuff
 
@@ -36,7 +38,7 @@ The Huesos' "decalogue" is as follows:
 
 </section>
 
-<section>
+<section class="text">
 
 ### Third-parties are the best parties
 
@@ -52,4 +54,6 @@ These are the winners:
 - [Selectr](https://github.com/Mobius1/Selectr) for vanilla-JS, Chosen-like `<select>` fields.
 
 </section>
+
+</article>
 

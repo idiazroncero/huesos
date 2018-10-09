@@ -283,7 +283,7 @@ $form-border-radius: $border-radius;
 $input-border-strategy: full; // Options: full, bottom, none;
 $input-border-color: get-color(gray, lighter);
 $input-border: 1px solid $input-border-color;
-$input-padding: $spacer / 4 $spacer / 2;
+$input-padding: 0; //$spacer / 4 $spacer / 2;
 
 // Buttons
 $button-border-color: get-color(gray, darker);
