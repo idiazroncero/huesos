@@ -4,6 +4,7 @@
 
 @import "src/scss/base/fonts"; // Fonts are loaded first to optimize performance
 @import "src/scss/base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
+@import "src/scss/base/buttons";
 @import "src/scss/base/forms";
 @import "src/scss/base/typography";
 @import "src/scss/base/table";
@@ -12,6 +13,13 @@
 @import "src/scss/base/helpers";
 
 @import "src/scss/layout/layout";
+@import "src/scss/layout/grid";
 
 @import "src/scss/components/card";
 @import "src/scss/components/nav";
+@import "src/scss/components/tag";
+@import "src/scss/components/alert";
+
+@import "src/scss/huesitos/huesitos";
+
+@import "src/scss/external/selectr";
