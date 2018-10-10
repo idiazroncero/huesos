@@ -55,7 +55,15 @@ Styleguide Functions.Color.ContrastColor
 			darken-color(contrast-color($color)),
 			contrast-color($color)
 		)
-	} 
+	}
+	h1,.h1,
+	h2,.h2,
+	h3,.h3,
+	h4,.h4,
+	h5,.h5
+	h6,.h6 {
+		color:inherit;
+	}
 }
 
 @mixin background-split-color($color) {

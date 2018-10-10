@@ -209,7 +209,6 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
       overflow: auto;
       padding: $gutter $gutter $gutter $gutter * 2;
       border-bottom: 0;
-      background-color:#f7f7f7;
     }
   }
 }
@@ -260,7 +259,7 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
     }
 
     &.is-in-viewport:before {
-      background-color: #000;
+      background-color: get-color(base, "primary");
       width: ritmo(1);
       transition: background-color .4s, width .6s;
     }
@@ -323,13 +322,16 @@ $kss-vertical-rhythm      : $base-font-size * $vertical-rhythm;
   }
 
   .kss-section--depth-1 {
-    background: get-color(gray, 'black');
+    @extend .bg-base-primary;
+    a {
+      @include kill-link($white);
+    }
     padding:$gutter $gutter * 1 $gutter $gutter * 5;
     margin: -$gutter (-$gutter * 1) $gutter (-$gutter * 5);
     .kss-title__permalink,
     .kss-title__ref,
     .kss-title__permalink-hash {
-      color: contrast-color(get-color(gray,'black'));
+      color: $white;
     }
   }
 

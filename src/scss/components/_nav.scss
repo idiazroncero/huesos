@@ -9,10 +9,12 @@ Instead, we only style the text and delete the bullets. The nav items' style can
 
 It's supposed to hold links (try "section"), but it can also have empty elements.
 
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
 
 Markup:
 <section>
-  <nav class="{{ modifier_class}}">
+  <nav class="{{ modifier_class}} kill-link-decoration">
     <ul>
       <li>Home</li>
       <li><a href="#">Section</a></li>
@@ -41,9 +43,9 @@ nav,
       }
       @include ritmo-font-size($nav-font-size);
       letter-spacing:$nav-spacing;
-      a {
-        @include kill-link();
-      }
+      // a {
+      //   @include kill-link();
+      // }
 		}
   }
 }
@@ -66,7 +68,7 @@ Alignment of items can be controlled via helper classes. Defaults to "left"
 
 Markup:
 <section>
-  <nav class="menu {{ modifier_class }}">
+  <nav class="menu {{ modifier_class }}" style="margin-bottom: 200px">
     <ul>
       <li><a href="#">Home</a></li>
       <li>
@@ -74,7 +76,15 @@ Markup:
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Section</a></li>
-            <li><a href="#">Works</a></li>
+            <li>
+              <a href="#">Works</a>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Section</a></li>
+                  <li><a href="#">Works</a></li>
+                  <li><a href="#">About us</a></li>
+                </ul>
+            </li>
             <li><a href="#">About us</a></li>
           </ul>
       </li>
@@ -91,6 +101,11 @@ Styleguide Components.menus
 
 .menu {
   @include inline-list();
+  @if $menu-kill-links {
+    a {
+      @include kill-link-decoration();
+    }
+  }
   ul > li {
     margin:0;
     position:relative;
@@ -100,15 +115,21 @@ Styleguide Components.menus
       display:block;
       padding:$menu-padding;
       white-space:nowrap;
-      &:hover,
-      &:focus {
-        @include background-contrast($menu-background-color);
+      @if $menu-kill-links {
+        @include set-link(
+          get-color(text, primary),
+          get-color(text, primary),
+          contrast-color($menu-background-color),
+          get-color(text, primary),
+          false // Flag to avoid setting the link-decoration
+        )
       }
     }
     &:hover,
     &:focus {
       > a {
-        @include background-contrast($menu-background-color);
+          color: contrast-color($menu-background-color);
+          background-color: $menu-background-color;
       }
     }
     > span {
@@ -124,16 +145,52 @@ Styleguide Components.menus
       min-width:120%;
       > li {
         display:block;
+        position:relative;
         > a {
           display:block;
-          padding:$menu-padding / 4 $menu-padding;
+          padding:$menu-padding / 2 $menu-padding;
           white-space:nowrap;
-          @include background-contrast($menu-background-color);
-          @include ritmo-font-size(0.9 * $nav-font-size);
+          //color: contrast-color($menu-background-color);
+          background-color: lighten($menu-background-color, 5%);
+          @if $menu-kill-links {
+            @include kill-link(contrast-color(lighten($menu-background-color, 5%)));
+          }
+          @include ritmo-font-size(0.8 * $nav-font-size);
           &:hover,
           &:focus {
-            @include background-contrast(shade($menu-background-color, $color-modify-ratio));
+            color: contrast-color(shade($menu-background-color, $color-modify-ratio));
+            background-color: shade($menu-background-color, $color-modify-ratio);
           }
+        }
+      }
+    }
+    // Third-level
+    > ul > li {
+      > ul {
+        display:none;
+        position:absolute;
+        top:0;
+        left:100%;
+        min-width:100%;
+        z-index:3;
+        li {
+          a {
+            background-color: lighten($menu-background-color, 10%);
+            @if $menu-kill-links {
+              @include kill-link(contrast-color(lighten($menu-background-color, 10%)));
+            }
+            @include ritmo-font-size(0.7 * $nav-font-size);
+            &:hover,
+            &:focus {
+              color: contrast-color(shade($menu-background-color));
+              background-color: shade($menu-background-color);
+            }
+          }
+        }
+      }
+      &:hover {
+        > ul {
+          display:block;
         }
       }
     }
@@ -157,9 +214,11 @@ The first level can be configured on `_config.scss`.
 
 This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
 
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
 Markup:
 <section>
-  <nav class="toc">
+  <nav class="toc kill-link">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Section</a></li>
@@ -202,9 +261,9 @@ Styleguide Components.toc
         text-transform: initial;
       }
       @include ritmo-font-size($toc-font-size);
-      a {
-        @include kill-link();
-      }
+      // a {
+      //   @include kill-link();
+      // }
       ul {
         margin: $gutter / 4 0 $gutter / 2 $gutter;
         li{

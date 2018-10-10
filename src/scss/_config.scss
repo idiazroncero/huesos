@@ -9,9 +9,9 @@
 
 $colors: (
 	base: (
-		"primary":   #C65146,
-		"secondary":   #C65146,
-		"lines":     #DCDCDC
+		"primary": #233142,
+		"secondary": #455d7a,
+		"lines": #f4f7f7 
 	),
 
 	text: (
@@ -249,7 +249,7 @@ $shadow-definition: 2px 2px 2px 0px rgba(get-color(gray, "black"), 0.1);
 // There are four link strategies available.
 // ------
 
-$link-strategy: underline; // Alternatives: underline, border, smart, mark
+$link-strategy: underline; // Alternatives: underline, border, smart, mark, false
 $link-highlight-on-hover: false; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
@@ -283,7 +283,7 @@ $form-border-radius: $border-radius;
 $input-border-strategy: full; // Options: full, bottom, none;
 $input-border-color: get-color(gray, lighter);
 $input-border: 1px solid $input-border-color;
-$input-padding: 0; //$spacer / 4 $spacer / 2;
+$input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-border-color: get-color(gray, darker);
@@ -325,7 +325,8 @@ $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
 
 $menu-padding: $spacer / 2;
-$menu-background-color: get-color(base, primary);
+$menu-kill-links: true;
+$menu-background-color: get-color(base, secondary);
 
 
 // ------

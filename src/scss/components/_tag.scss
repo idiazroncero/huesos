@@ -30,6 +30,7 @@ Styleguide Components.tag
     @include background-contrast(get-color(gray, lighter));
     border-radius: $border-radius;
     margin-right: $gutter / 3;
+    font-weight:normal;
     &.tag--success {
         @include background-contrast(get-color(state, success)); 
     }

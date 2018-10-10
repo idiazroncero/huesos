@@ -11,6 +11,7 @@ Markup:
 .mr             - Applies a margin-right
 .mb             - Applies a margin-bottom
 .ml             - Applies a margin-left
+.m0             - Deletes all margins
 
 Styleguide Huesitos.margins
 */
@@ -35,6 +36,10 @@ Styleguide Huesitos.margins
     margin-left: $gutter;
 }
 
+.m0 {
+    margin:0;
+}
+
 /*
 Paddings
 
@@ -48,6 +53,7 @@ Markup:
 .pr             - Applies a padding-right
 .pb             - Applies a padding-bottom
 .pl             - Applies a padding-left
+.p0             - Deletes all paddings
 
 Styleguide Huesitos.paddings
 */
@@ -72,6 +78,10 @@ Styleguide Huesitos.paddings
     padding-left: $gutter;
 }
 
+.p0 {
+    padding:0;
+}
+
 /*
 Borders
 
@@ -85,6 +95,7 @@ Markup:
 .br             - Applies a border-right
 .bb             - Applies a border-bottom
 .bl             - Applies a border-left
+.b0             - Deletes all borders
 
 Styleguide Huesitos.borders
 */
@@ -107,6 +118,10 @@ Styleguide Huesitos.borders
 
 .bl {
     border-left: $separator-width solid $separator-color;
+}
+
+.b0 {
+    border:none;
 }
 
 /*
@@ -152,22 +167,6 @@ Styleguide Huesitos.Color
         }
     }
 }
-
-// .bg-primary {
-//     @include background-contrast(get-color(base, primary));
-// }
-
-// .bg-secondary {
-//     @include background-contrast(get-color(base, secondary));
-// }
-
-// .bg-mark {
-//     @include background-contrast(get-color(text, mark));
-// }
-
-// .bg-success {
-//     @include background-contrast(get-color(state, success));
-// }
 
 /*
 Gutter modifiers

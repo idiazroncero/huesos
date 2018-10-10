@@ -227,7 +227,7 @@ Styleguide Typography.paragraph
 */
 
 .text {
-	h1, h2, h3 {
+	h1, h2, h3, h4 {
 		margin-top: $gutter * 2;
 	}
 	section,
@@ -235,7 +235,10 @@ Styleguide Typography.paragraph
 		margin-bottom: $gutter * 2;
 	}
 	// Except if it is the first child of the text...
-	h1:first-child, h2:first-child, h3:first-child {
+	h1:first-child, 
+	h2:first-child, 
+	h3:first-child, 
+	h4:first-child {
 		margin-top:0;
 	}
 	p:last-child {

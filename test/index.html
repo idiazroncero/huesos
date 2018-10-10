@@ -4,17 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Huesecillos</title>
 <link href="style.css" rel="stylesheet"></head>
+<link href="test.css" rel="stylesheet"></head>
 <body>
-	<div id="main-wrapper" class="page" role="document">
-	  <header role="banner">
-		<h1>HTML5 Huesos Test Page</h1>
-		<p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
-	  </header>
-	  <nav role="navigation">
+	<nav id="nav" class="nav toc bg-base-primary p" role="navigation">
 
-	
+		<h1 class="strong">HTML5<br> Test<br> Page</h1>
 
-		<ul>
+		<ul class="kill-link-decoration">
 		  <li>
 			<a href="#text">Text</a>
 			<ul>
@@ -54,11 +50,15 @@
 			</ul>
 		  </li>
 		</ul>
-		</nav>
+	</nav>
+	<div id="main-wrapper" class="page" role="document">
+	  <header role="banner">
+		<p class="h3">This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
+	  </header>
 	  <main role="main">
 		<section id="text">
-		  <header><h1>Text</h1></header>
-		  <article id="text__headings">
+		  <header><h2 class="tag tag--success m0">Text</h2></header>
+		  <article class="card" id="text__headings">
 			<header>
 			  <h1>Headings</h1>
 			</header>
@@ -70,17 +70,17 @@
 			  <h5>Heading 5</h5>
 			  <h6>Heading 6</h6>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__paragraphs">
-			<header><h1>Paragraphs</h1></header>
+		  <article class="card" id="text__paragraphs">
+			<header><h2 class="tag tag--success m0">Paragraphs</h2></header>
 			<div>
 			  <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__blockquotes">
-			<header><h1>Blockquotes</h1></header>
+		  <article class="card" id="text__blockquotes">
+			<header><h2 class="tag tag--success m0">Blockquotes</h2></header>
 			<div>
 			  <blockquote>
 				<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
@@ -88,10 +88,10 @@
 				<cite><a href="#!">Said no one, ever.</a></cite>
 			  </blockquote>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__lists">
-			<header><h1>Lists</h1></header>
+		  <article class="card" id="text__lists">
+			<header><h2 class="tag tag--success m0">Lists</h2></header>
 			<div>
 			  <h3>Definition list</h3>
 			  <dl>
@@ -111,17 +111,17 @@
 				<li>List Item 3</li>
 			  </ul>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__hr">
-			<header><h1>Horizontal rules</h1></header>
+		  <article class="card" id="text__hr">
+			<header><h2 class="tag tag--success m0">Horizontal rules</h2></header>
 			<div>
 			  <hr>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__tables">
-			<header><h1>Tabular data</h1></header>
+		  <article class="card" id="text__tables">
+			<header><h2 class="tag tag--success m0">Tabular data</h2></header>
 			<table>
 			  <caption>Table Caption</caption>
 			  <thead>
@@ -173,10 +173,10 @@
 				</tr>
 			  </tbody>
 			</table>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__code">
-			<header><h1>Code</h1></header>
+		  <article class="card" id="text__code">
+			<header><h2 class="tag tag--success m0">Code</h2></header>
 			<div>
 			  <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
 			  <p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
@@ -190,10 +190,10 @@
   ` a b c d e f g h i j k l m n o
   p q r s t u v w x y z { | } ~ </pre>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="text__inline">
-			<header><h1>Inline elements</h1></header>
+		  <article class="card" id="text__inline">
+			<header><h2 class="tag tag--success m0">Inline elements</h2></header>
 			<div>
 			  <p><a href="#!">This is a text link</a>.</p>
 			  <p><strong>Strong is used to indicate strong importance.</strong></p>
@@ -214,13 +214,13 @@
 			  <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
 			  <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
 		</section>
 
 		<section id="embedded">
-		  <header><h1>Embedded content</h1></header>
-		  <article id="embedded__images">
+		  <header><h2 class="tag tag--success m0">Embedded content</h2></header>
+		  <article class="card" id="embedded__images">
 			<header><h2>Images</h2></header>
 			<div>
 			  <h3>No <code>&lt;figure&gt;</code> element</h3>
@@ -233,92 +233,92 @@
 				<figcaption>Here is a caption for this image.</figcaption>
 			  </figure>
 			</div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__audio">
+		  <article class="card" id="embedded__audio">
 			<header><h2>Audio</h2></header>
 			<div><audio controls="">audio</audio></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__video">
+		  <article class="card" id="embedded__video">
 			<header><h2>Video</h2></header>
 			<div><video controls="">video</video></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__canvas">
+		  <article class="card" id="embedded__canvas">
 			<header><h2>Canvas</h2></header>
 			<div><canvas>canvas</canvas></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__meter">
+		  <article class="card" id="embedded__meter">
 			<header><h2>Meter</h2></header>
 			<div><meter value="2" min="0" max="10">2 out of 10</meter></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__progress">
+		  <article class="card" id="embedded__progress">
 			<header><h2>Progress</h2></header>
 			<div><progress>progress</progress></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__svg">
+		  <article class="card" id="embedded__svg">
 			<header><h2>Inline SVG</h2></header>
 			<div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article id="embedded__iframe">
+		  <article class="card" id="embedded__iframe">
 			<header><h2>IFrame</h2></header>
 			<div><iframe src="index.html" height="300"></iframe></div>
-			<footer><p><a href="#top">[Top]</a></p></footer>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
 		</section>
 		<section id="forms">
-		  <header><h1>Form elements</h1></header>
+		  <header><h2 class="tag tag--success m0">Form elements</h2></header>
 		  <form>
 			<fieldset id="forms__input">
 			  <legend>Input fields</legend>
-			  <p>
+			  <div class="form-item">
 				<label for="input__text">Text Input</label>
 				<input id="input__text" type="text" placeholder="Text Input">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__password">Password</label>
 				<input id="input__password" type="password" placeholder="Type your Password">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__webaddress">Web Address</label>
 				<input id="input__webaddress" type="url" placeholder="http://yoursite.com">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__emailaddress">Email Address</label>
 				<input id="input__emailaddress" type="email" placeholder="name@email.com">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__phone">Phone Number</label>
 				<input id="input__phone" type="tel" placeholder="(999) 999-9999">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__search">Search</label>
 				<input id="input__search" type="search" placeholder="Enter Search Term">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__text2">Number Input</label>
 				<input id="input__text2" type="number" placeholder="Enter a Number">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__text3" class="error">Error</label>
 				<input id="input__text3" class="is-error" type="text" placeholder="Text Input">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="input__text4" class="valid">Valid</label>
 				<input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
-			  </p>
+			  </div>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__select">
 			  <legend>Select menus</legend>
 			  <p>
 				<label for="select">Select</label>
-				<select id="select">
+				<select id="select" class="js--selectr">
 				  <optgroup label="Option Group">
 					<option>Option One</option>
 					<option>Option Two</option>
@@ -327,7 +327,7 @@
 				</select>
 			  </p>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__checkbox">
 			  <legend>Checkboxes</legend>
 			  <ul class="list list--bare">
@@ -336,7 +336,7 @@
 				<li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
 			  </ul>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__radio">
 			  <legend>Radio buttons</legend>
 			  <ul class="list list--bare">
@@ -345,51 +345,51 @@
 				<li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
 			  </ul>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__textareas">
 			  <legend>Textareas</legend>
-			  <p>
+			  <div class="form-item">
 				<label for="textarea">Textarea</label>
 				<textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-			  </p>
+			  </div>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__html5">
 			  <legend>HTML5 inputs</legend>
-			  <p>
+			  <div class="form-item">
 				<label for="ic">Color input</label>
 				<input type="color" id="ic" value="#000000">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="in">Number input</label>
 				<input type="number" id="in" min="0" max="10" value="5">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="ir">Range input</label>
 				<input type="range" id="ir" value="10">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="idd">Date input</label>
 				<input type="date" id="idd" value="1970-01-01">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="idm">Month input</label>
 				<input type="month" id="idm" value="1970-01">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="idw">Week input</label>
 				<input type="week" id="idw" value="1970-W01">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="idt">Datetime input</label>
 				<input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
-			  </p>
-			  <p>
+			  </div>
+			  <div class="form-item">
 				<label for="idtl">Datetime-local input</label>
 				<input type="datetime-local" id="idtl" value="1970-01-01T00:00">
-			  </p>
+			  </div>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 			<fieldset id="forms__action">
 			  <legend>Action buttons</legend>
 			  <p>
@@ -409,7 +409,7 @@
 				<a class="button button--disabled">&lt;a class="button--disabled"&gt;</a>
 			  </p>
 			</fieldset>
-			<p><a href="#top">[Top]</a></p>
+			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 		  </form>
 		</section>
 	  </main>
@@ -417,5 +417,5 @@
 		<p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
 	  </footer>
 	</div>
-<script type="text/javascript" src="js/src.a069fc.js"></script></body>
+<script type="text/javascript" src="../dist/huesos.js"></script></body>
 </html>

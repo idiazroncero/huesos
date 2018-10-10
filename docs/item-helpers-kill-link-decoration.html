@@ -82,23 +82,23 @@
   <article>
 
 
-    <div id="kssref-forms-file" class="kss-section kss-section--depth-2 is-fullscreen">
+    <div id="kssref-helpers-kill-link-decoration" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
         <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-forms-file">
+          <a class="kss-title__permalink" href="#kssref-helpers-kill-link-decoration">
             <span class="kss-title__ref">
-              1.3
+              6.4
               <span class="kss-title__permalink-hash">
-                  #Forms.file
+                  #Helpers.kill-link-decoration
               </span>
             </span>
-            File Input
+            Kill Link Decoration
           </a>
         </h2>
 
           <p class="kss-toolbar">
-            <a href="#kssref-forms-file" data-kss-guides="true">
+            <a href="#kssref-helpers-kill-link-decoration" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -119,7 +119,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-forms-file" data-kss-markup="true">
+            <a href="#kssref-helpers-kill-link-decoration" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -129,8 +129,8 @@
           </p>
 
           <div class="kss-description">
-            <p>Uses the label for handling click and hides the actual input element.
-Important! Requires the <code>&lt;label&gt;</code> to be an inmediate sibling of the <code>&lt;input&gt;</code></p>
+            <p>Helper class that kills al link decoration on a given block</p>
+<p>Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.</p>
 
           </div>
 
@@ -144,8 +144,9 @@ Important! Requires the <code>&lt;label&gt;</code> to be an inmediate sibling of
 
 
           <div class="kss-modifier__example">
-            <input type="file" id="file" name="file">
-<label for="file">Upload your file</label>
+            <section class="kill-link-decoration">
+	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
+</section>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -155,12 +156,13 @@ Important! Requires the <code>&lt;label&gt;</code> to be an inmediate sibling of
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"file"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"file"</span>&gt;</span>Upload your file<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span></code></pre>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-link-decoration"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>links<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> within this text are <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>not decorated<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> (underlines, border-bottom etc..)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>base/_forms.scss</code>, line 112
+          Source: <code>base/_links.scss</code>, line 44
         </div>
 
     </div>

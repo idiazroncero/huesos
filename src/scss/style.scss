@@ -15,7 +15,6 @@
 @import "base/typography";
 @import "base/table";
 @import "base/images";
-@import "base/links";
 @import "base/helpers";
 
 @import "layout/layout";
@@ -29,6 +28,9 @@
 @import "huesitos/huesitos";
 
 @import "external/selectr";
+
+// We need to keep base/links on the end to allow for the overrides to take precedence
+@import "base/links";
 
 
 // TODO

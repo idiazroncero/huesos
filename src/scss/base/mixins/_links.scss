@@ -62,10 +62,12 @@ Styleguide Mixins.links.setLink
 	&, 
 	&:link {
 		color: $base;
-		@if $link-highlight-on-hover {
-			text-decoration:none;
-		} @else {
-			@include get-link-decoration($strategy);
+		@if $strategy {
+			@if $link-highlight-on-hover {
+				text-decoration:none;
+			} @else {
+				@include get-link-decoration($strategy);
+			}
 		}
 	}
 	&:visited {
@@ -74,12 +76,14 @@ Styleguide Mixins.links.setLink
 	&:focus,
 	&:hover { // Tratamos :hover y :focus siempre indistintamente
 		color: $hover;
-		@if $link-highlight-on-hover {
-			@include get-link-decoration($strategy);
-		} @else {
-			text-decoration:none;
-			border:none;
-			background:transparent;
+		@if $strategy {
+			@if $link-highlight-on-hover {
+				@include get-link-decoration($strategy);
+			} @else {
+				text-decoration:none;
+				border:none;
+				background:transparent;
+			}
 		}
 	}
 	&:active {
