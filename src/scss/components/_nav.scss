@@ -274,7 +274,6 @@ Styleguide Components.toc
         ul {
           li {
             @include ritmo-font-size(0.7 * $toc-font-size);
-            text-transform: uppercase;
           }
         }
       }
