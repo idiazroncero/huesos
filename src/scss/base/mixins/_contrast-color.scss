@@ -1,19 +1,20 @@
 /*
 Color
 
-Funciones que permiten escoger y manipular colores desde las paletas definidas en `_config.scss`
+SASS functions that allow to extract colors from the palette and manipulate them.
 
 Styleguide Functions.Color
+*/
 
-contrast-color($color, $dark, $light)
+/*
+tint($color, $dilution)
 
-Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo
+Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
 
-$color - Color de fondo
-$dark  - Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
-$light   - Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+$color - Color to modify
+$dilution - % of white to mix
 
-Styleguide Functions.Color.ContrastColor
+Styleguide Functions.Color.Tint
 */
 
 @function tint($color, $dilution: 50) {
@@ -25,6 +26,17 @@ Styleguide Functions.Color.ContrastColor
 	$tint-color: mix($color, $white, 100 - $dilution);
 	@return $tint-color; 
 }
+
+/*
+shade($color, $dilution)
+
+Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.
+
+$color - Color to modify
+$dilution - % of black to mix
+
+Styleguide Functions.Color.Shade
+*/
   
 @function shade($color, $dilution: 50) {
 	$black: rgba(0, 0, 0, 1);
@@ -36,6 +48,17 @@ Styleguide Functions.Color.ContrastColor
 	@return $shade-color; 
 }
 
+/*
+contrast-color($color, $dark, $light)
+
+Returns a $dark or $light color value according to the background-color provided as $color.
+
+$color - Background-color to check
+$dark  - Dark color to return, defaults to $contrast-dark
+$light   - Light color to return, defaults to $contrast-light
+
+Styleguide Functions.Color.ContrastColor
+*/
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
 	@if (lightness($color) > 55) { // 50 is too low
@@ -45,24 +68,63 @@ Styleguide Functions.Color.ContrastColor
 	}
 }
 
-@mixin background-contrast($color) {
+/*
+contrast-link($color)
+
+Returns a link formatted using `$inverse-link-` values from `_config.scss` if needed against the provided background-color.
+
+$color - Background-color to check
+
+Styleguide Mixins.Color.ContrastColor
+*/
+
+@mixin contrast-links($color) {
+	@if (lightness($color) < 55) { // 50 is too low
+		a {
+			@include set-link(
+				$inverse-link-color,
+				$inverse-link-visited,
+				$inverse-link-hover,
+				$inverse-link-active
+			)
+		}
+	}
+}
+
+
+/*
+Color
+
+Mixins that perform color complex operations (contrasts, etc...)
+
+Styleguide Mixins.Color
+*/
+
+/*
+background-contrast($color)
+
+Given a $color, ensures that all text elements and links are correctly contrasted against that background.
+
+Uses contrast-color($color) SASS function to perform the lightness calculation.
+
+$color - Background-color
+
+Styleguide Mixins.Color.ContrastColor
+*/
+
+@mixin background-contrast($color, $include-typography: false) {
 	background-color: $color;
 	color: contrast-color($color);
-	a {
-		@include set-link(
-			contrast-color($color),
-			contrast-color($color),
-			darken-color(contrast-color($color)),
-			contrast-color($color)
-		)
-	}
-	h1,.h1,
-	h2,.h2,
-	h3,.h3,
-	h4,.h4,
-	h5,.h5
-	h6,.h6 {
-		color:inherit;
+	@include contrast-links($color);
+	@if $include-typography {
+		h1,.h1,
+		h2,.h2,
+		h3,.h3,
+		h4,.h4,
+		h5,.h5
+		h6,.h6 {
+			color:inherit;
+		}
 	}
 }
 

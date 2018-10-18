@@ -29,18 +29,22 @@ Styleguide Functions.Typography.Bold
 /*
 Typography
 
-Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
+Mixins that perform typography variations and calculations.
 
 Styleguide Mixins.Typography
-
 */
 
 /*
-minititle()
+minititle($size, $weight, $uppercase, $letter-spacing)
 
-Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
+Formats a text to apply the <span class="minititle">minititle</span> styling, used for small headings and higly contrasted small texts.
 
-$item - [String] - an HTMl element (without opening and closing `< >` marks)
+By overriding the defaults, minititle() becomes a full-fledged tool capable of handling many of the usual modificacions of text.
+
+$size - A valid font-size. Defaults to $h6-font-size
+$weight - Font weight. Defaults to $bold
+$uppercase - [Boolean] - Wether to apply `text-transform: uppercase`. Defaults to true.
+$letter-spacing - A valid value for `letter-spacing`. Defaults to global `$letter-spacing`
 
 Styleguide Mixins.Typography.Minititle
 */

@@ -93,15 +93,13 @@
                   #Functions.Color.ContrastColor
               </span>
             </span>
-            Color
+            contrast-color($color, $dark, $light)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Funciones que permiten escoger y manipular colores desde las paletas definidas en <code>_config.scss</code></p>
-<p>contrast-color($color, $dark, $light)</p>
-<p>Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo</p>
+            <p>Returns a $dark or $light color value according to the background-color provided as $color.</p>
 
           </div>
 
@@ -111,19 +109,19 @@
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$color</code></div>
               <div class="kss-parameters__description">
-                Color de fondo
+                Background-color to check
               </div>
             </li>
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$dark</code></div>
               <div class="kss-parameters__description">
-                Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+                Dark color to return, defaults to $contrast-dark
               </div>
             </li>
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$light</code></div>
               <div class="kss-parameters__description">
-                Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+                Light color to return, defaults to $contrast-light
               </div>
             </li>
           </ul>
@@ -131,7 +129,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_contrast-color.scss</code>, line 1
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 51
         </div>
 
     </div>

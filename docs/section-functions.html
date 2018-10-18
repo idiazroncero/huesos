@@ -68,19 +68,31 @@
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-functions.html#kssref-functions-color">
                   <span class="kss-nav__ref ">8.1</span
-                  ><span class="kss-nav__name ">Functions.Color</span>
+                  ><span class="kss-nav__name ">Color</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-functions.html#kssref-functions-color-contrastcolor">
                   <span class="kss-nav__ref kss-nav__ref-child">8.1.1</span
-                  ><span class="kss-nav__name kss-nav__ref-child">Color</span>
+                  ><span class="kss-nav__name kss-nav__ref-child">contrast-color($color, $dark, $light)</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-functions.html#kssref-functions-color-getcolor">
                   <span class="kss-nav__ref kss-nav__ref-child">8.1.2</span
                   ><span class="kss-nav__name kss-nav__ref-child">get-color($color, $value)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-functions.html#kssref-functions-color-shade">
+                  <span class="kss-nav__ref kss-nav__ref-child">8.1.3</span
+                  ><span class="kss-nav__name kss-nav__ref-child">shade($color, $dilution)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-functions.html#kssref-functions-color-tint">
+                  <span class="kss-nav__ref kss-nav__ref-child">8.1.4</span
+                  ><span class="kss-nav__name kss-nav__ref-child">tint($color, $dilution)</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
@@ -136,7 +148,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>_config.scss</code>, line 447
+          Source: <code>_config.scss</code>, line 456
         </div>
 
     </div>
@@ -152,16 +164,23 @@
                   #Functions.Color
               </span>
             </span>
-            Functions.Color
+            Color
           </a>
         </h2>
 
 
+          <div class="kss-description">
+            <p>SASS functions that allow to extract colors from the palette and manipulate them.</p>
+
+          </div>
 
 
       </div>
 
 
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 1
+        </div>
 
     </section>
 
@@ -176,15 +195,13 @@
                   #Functions.Color.ContrastColor
               </span>
             </span>
-            Color
+            contrast-color($color, $dark, $light)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Funciones que permiten escoger y manipular colores desde las paletas definidas en <code>_config.scss</code></p>
-<p>contrast-color($color, $dark, $light)</p>
-<p>Función que devuelve un color claro o oscuro según el valor de lightness del color de fondo</p>
+            <p>Returns a $dark or $light color value according to the background-color provided as $color.</p>
 
           </div>
 
@@ -194,19 +211,19 @@
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$color</code></div>
               <div class="kss-parameters__description">
-                Color de fondo
+                Background-color to check
               </div>
             </li>
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$dark</code></div>
               <div class="kss-parameters__description">
-                Color oscuro para contrastar sobre claros (por defecto, la variable $contrast-dark)
+                Dark color to return, defaults to $contrast-dark
               </div>
             </li>
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$light</code></div>
               <div class="kss-parameters__description">
-                Color claro para contrastar sobre oscuros (por defecto, la variable $contrast-light)
+                Light color to return, defaults to $contrast-light
               </div>
             </li>
           </ul>
@@ -214,7 +231,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_contrast-color.scss</code>, line 1
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 51
         </div>
 
     </section>
@@ -261,6 +278,98 @@
 
         <div class="kss-source kss-style">
           Source: <code>base/mixins/_get-color.scss</code>, line 1
+        </div>
+
+    </section>
+
+    <section id="kssref-functions-color-shade" class="kss-section kss-section--depth-3 ">
+
+      <div class="kss-style">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-functions-color-shade">
+            <span class="kss-title__ref">
+              8.1.3
+              <span class="kss-title__permalink-hash">
+                  #Functions.Color.Shade
+              </span>
+            </span>
+            shade($color, $dilution)
+          </a>
+        </h3>
+
+
+          <div class="kss-description">
+            <p>Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.</p>
+
+          </div>
+
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Color to modify
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$dilution</code></div>
+              <div class="kss-parameters__description">
+                % of black to mix
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 30
+        </div>
+
+    </section>
+
+    <section id="kssref-functions-color-tint" class="kss-section kss-section--depth-3 ">
+
+      <div class="kss-style">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-functions-color-tint">
+            <span class="kss-title__ref">
+              8.1.4
+              <span class="kss-title__permalink-hash">
+                  #Functions.Color.Tint
+              </span>
+            </span>
+            tint($color, $dilution)
+          </a>
+        </h3>
+
+
+          <div class="kss-description">
+            <p>Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.</p>
+
+          </div>
+
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Color to modify
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$dilution</code></div>
+              <div class="kss-parameters__description">
+                % of white to mix
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 9
         </div>
 
     </section>

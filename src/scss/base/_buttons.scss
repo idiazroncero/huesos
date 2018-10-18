@@ -1,7 +1,9 @@
 /*
 Button
 
-Either `<input type="submit / ">`, `<button>` or `<a class="button">`
+Either `<input type="submit / ">`, `<button>` or `<a class="button">`.
+
+There are three general strategies available. `border`, `background` and `mixed`
 
 Markup:
 <button class="{{modifier_class}}">Click me please!</button>
@@ -18,6 +20,59 @@ Markup:
 Styleguide Components.buttons
 */
 
+
+// Specific overrides for links
+a.button {
+	@include kill-link-decoration();
+	@if $button-strategy == 'border' {
+		@if $button-strategy-border == 'fill' {
+			border: $button-border;
+			&:link,
+			&:visited {
+				color: $button-color;
+			}		
+			&:hover,
+			&:focus {
+				border: $button-border;
+				background:$button-color;
+				color: contrast-color($button-color);
+			}			
+		} @else if $button-strategy-border == 'highlight' {
+			&:link,
+			&:visited {
+				color: lighten-color($button-color);
+			}
+			&:hover,
+			&:focus {
+				color: darken-color($button-color);
+				border: $button-border-width solid darken-color($button-color);
+			}
+		}
+	} @else if $button-strategy == 'background' {
+		border:none;
+		@if $button-invert-color {
+			@include set-link(
+				contrast-color($button-color),
+				contrast-color($button-color),
+				contrast-color(lighten-color($button-color)),
+				contrast-color($button-color),
+			)
+		} @else {
+			@include set-link(
+				contrast-color($button-color),
+				contrast-color($button-color),
+				contrast-color($button-color),
+				contrast-color($button-color),
+			)			
+		}
+		&:hover,
+		&:focus {
+			background-color: lighten-color($button-color);
+		}
+	}
+}
+
+
 input[type=submit],
 input[type=reset],
 input[type=button],
@@ -25,18 +80,44 @@ button,
 .button {
 	@include form-reset-button();
 	cursor:pointer;
-	border: $button-border;
-	border-radius: $button-border-radius;
+	@include ritmo-font-size($h6-font-size, 5);
 	display: inline-block;
 	padding: 0 ritmo(2);
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
 	vertical-align:middle;
-	@include ritmo-font-size($h6-font-size, 5);
-	&:hover,
-	&:focus {
-		background:$button-border-color;
-		color: contrast-color($button-border-color);
+	font-weight: $button-weight;
+	@if $button-strategy == 'border' {
+		border-radius: $button-border-radius;
+		@if $button-strategy-border == 'fill' {
+			border: $button-border;
+			color: $button-color;
+			&:hover,
+			&:focus {
+				background:$button-color;
+				color: contrast-color($button-color);
+			}				
+		} @else if $button-strategy-border == 'highlight' {
+			border: $button-border-width solid lighten-color($button-color);
+			color: lighten-color($button-color);
+			&:hover,
+			&:focus {
+				border-color: darken-color($button-color);
+				color: darken-color($button-color);
+			}
+		}
+	} @else if $button-strategy == 'background' {
+		border:none;
+		line-height:ritmo(6);
+		background-color:$button-color;
+		color: contrast-color($button-color);
+		&:hover,
+		&:focus {
+			background-color: lighten-color($button-color);
+			@if $button-invert-color {
+				color: contrast-color(lighten-color($button-color));
+			}
+		}
 	}
 	// We need to take icons into consideration!
 	.icon {
@@ -49,77 +130,107 @@ button,
 	}
 }
 
-// Links as buttons
-a.button {
-	@include kill-link();
-	@include kill-link-decoration();
-	&:hover,
-	&:focus {
-		border: $button-border; // Need to repeat in order to avoid overrides from normal link behavior
-		background:$button-border-color;
-		color: contrast-color($button-border-color);
+// Loop through the states and apply rules:
+
+$states: map-get($colors, state);
+
+@each $state, $value in $states {
+	.button--#{$state},
+	input.button--#{$state} {
+		// For links
+		@if $button-strategy == 'border' {
+			@if $button-strategy-border == 'fill' {
+				border-color: get-color(state, #{$state});
+				color: get-color(state, #{$state});
+				&:hover,
+				&:focus {
+					background:get-color(state, #{$state});
+					color: contrast-color(get-color(state, #{$state}));
+				}				
+			} @else if $button-strategy-border == 'highlight' {
+				border: $button-border-width solid lighten-color(get-color(state, #{$state}));
+				color: lighten-color(get-color(state, #{$state}));
+				&:hover,
+				&:focus {
+					border-color: darken-color(get-color(state, #{$state}));
+					color: darken-color(get-color(state, #{$state}));
+				}
+			}
+		} @else if $button-strategy == 'background' {
+			background-color:get-color(state, #{$state});
+			color: contrast-color(get-color(state, #{$state}));
+			&:hover,
+			&:focus {
+				background-color: lighten-color(get-color(state, #{$state}));
+				@if $button-invert-color {
+					color: contrast-color(lighten-color(get-color(state, #{$state})));
+				}
+			}
+		}
+	}
+
+	a.button--#{$state} {
+		@if $button-strategy == 'border' {
+			@if $button-strategy-border == 'fill' {
+				border-color: get-color(state, #{$state});
+				&:link,
+				&:visited {
+					color: get-color(state, #{$state});
+				}	
+				&:hover,
+				&:focus {
+					border-color: get-color(state, #{$state});
+					background:get-color(state, #{$state});
+					color: contrast-color(get-color(state, #{$state}));
+				}		
+			} @else if $button-strategy-border == 'highlight' {
+				&:link,
+				&:visited {
+					color: lighten-color(get-color(state, #{$state}));
+				}
+				&:hover,
+				&:focus {
+					border-color: darken-color(get-color(state, #{$state}));
+					color: darken-color(get-color(state, #{$state}));
+				}
+			}
+		} @else if $button-strategy == 'background' {
+			@if $button-invert-color {
+				@include set-link(
+					contrast-color(get-color(state, #{$state})),
+					contrast-color(get-color(state, #{$state})),
+					contrast-color(lighten-color(get-color(state, #{$state}))),
+					contrast-color(get-color(state, #{$state})),
+				)
+			} @else {
+				@include set-link(
+					contrast-color(get-color(state, #{$state})),
+					contrast-color(get-color(state, #{$state})),
+					contrast-color(get-color(state, #{$state})),
+					contrast-color(get-color(state, #{$state})),
+				)
+			}
+			&:hover,
+			&:focus {
+				background-color: lighten-color(get-color(state, #{$state}));
+			}
+		}	
 	}
 }
 
-.button--success,
-a.button--success:link,
-input.button--success {
-	border-color: get-color(state, success);
-	color: get-color(state, success);
-	&:hover,
-	&:focus {
-		background:get-color(state, success);
-		color: contrast-color(get-color(state, success));
-	}	
-}
-
-.button--warning,
-a.button--warning:link,
-input.button--warning {
-	border-color: get-color(state, warning);
-	color: get-color(state, warning);
-	&:hover,
-	&:focus {
-		background:get-color(state, warning);
-		color: contrast-color(get-color(state, warning));
-	}	
-}
-
-.button--error,
-a.button--error:link,
-input.button--error {
-	border-color: get-color(state, error);
-	color: get-color(state, error);
-	&:hover,
-	&:focus {
-		background:get-color(state, error);
-		color: contrast-color(get-color(state, error));
-	}	
-}
 
 input[type=submit][disabled],
 input[type=reset][disabled],
 input[type=button][disabled],
 button[disabled],
 button.disabled,
-a.disabled:link,
+a.button.disabled,
 input.disabled {
 	opacity: $disabled-opacity;
-    color:inherit;
-    cursor: initial;
+	cursor: arrow;
+	pointer-events:none;
 	&:hover, 
 	&:focus {
-        background: none;
-        color:inherit;
-        cursor: initial;
-	}
-	&.button--error {
-		color: get-color(state, error);
-	}
-	&.button--warning {
-		color: get-color(state, warning);
-	}
-	&.button--success {
-		color: get-color(state, success);
+        cursor: arrow;
 	}
 }

@@ -82,25 +82,24 @@
   <article>
 
 
-    <div id="kssref-mixins-typography-minititle" class="kss-section kss-section--depth-3 is-fullscreen">
+    <div id="kssref-functions-color-shade" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-mixins-typography-minititle">
+          <a class="kss-title__permalink" href="#kssref-functions-color-shade">
             <span class="kss-title__ref">
-              7.3.1
+              8.1.3
               <span class="kss-title__permalink-hash">
-                  #Mixins.Typography.Minititle
+                  #Functions.Color.Shade
               </span>
             </span>
-            minititle($size, $weight, $uppercase, $letter-spacing)
+            shade($color, $dilution)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Formats a text to apply the <span class="minititle">minititle</span> styling, used for small headings and higly contrasted small texts.</p>
-<p>By overriding the defaults, minititle() becomes a full-fledged tool capable of handling many of the usual modificacions of text.</p>
+            <p>Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.</p>
 
           </div>
 
@@ -108,27 +107,15 @@
           <div class="kss-parameters__title">Parameters:</div>
           <ul class="kss-parameters">
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$size</code></div>
+              <div class="kss-parameters__name"><code>$color</code></div>
               <div class="kss-parameters__description">
-                A valid font-size. Defaults to $h6-font-size
+                Color to modify
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$weight</code></div>
+              <div class="kss-parameters__name"><code>$dilution</code></div>
               <div class="kss-parameters__description">
-                Font weight. Defaults to $bold
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$uppercase</code></div>
-              <div class="kss-parameters__description">
-                [Boolean] - Wether to apply <code>text-transform: uppercase</code>. Defaults to true.
-              </div>
-            </li>
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$letter-spacing</code></div>
-              <div class="kss-parameters__description">
-                A valid value for <code>letter-spacing</code>. Defaults to global <code>$letter-spacing</code>
+                % of black to mix
               </div>
             </li>
           </ul>
@@ -136,7 +123,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_typography.scss</code>, line 37
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 30
         </div>
 
     </div>

@@ -59,7 +59,7 @@ Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of 
 
 It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
 
-Submenus are handled up to the 4th level
+Submenus are handled up to the 3rd level. If you need more, you might want to rethink your menu.
 
 Alignment of items can be controlled via helper classes. Defaults to "left"
 

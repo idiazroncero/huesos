@@ -61,27 +61,45 @@
         </a>
             <ul class="kss-nav__menu-child">
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-links">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-color">
                   <span class="kss-nav__ref ">7.1</span
+                  ><span class="kss-nav__name ">Color</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-color-contrastcolor">
+                  <span class="kss-nav__ref kss-nav__ref-child">7.1.1</span
+                  ><span class="kss-nav__name kss-nav__ref-child">contrast-link($color)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-color-contrastcolor">
+                  <span class="kss-nav__ref kss-nav__ref-child">7.1.1</span
+                  ><span class="kss-nav__name kss-nav__ref-child">background-contrast($color)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-links">
+                  <span class="kss-nav__ref ">7.2</span
                   ><span class="kss-nav__name ">Links</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-links-setlink">
-                  <span class="kss-nav__ref kss-nav__ref-child">7.1.1</span
+                  <span class="kss-nav__ref kss-nav__ref-child">7.2.1</span
                   ><span class="kss-nav__name kss-nav__ref-child">set-link($base, $visited, $hover, $active)</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-typography">
-                  <span class="kss-nav__ref ">7.2</span
+                  <span class="kss-nav__ref ">7.3</span
                   ><span class="kss-nav__name ">Typography</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-typography-minititle">
-                  <span class="kss-nav__ref kss-nav__ref-child">7.2.1</span
-                  ><span class="kss-nav__name kss-nav__ref-child">minititle()</span>
+                  <span class="kss-nav__ref kss-nav__ref-child">7.3.1</span
+                  ><span class="kss-nav__name kss-nav__ref-child">minititle($size, $weight, $uppercase, $letter-spacing)</span>
                 </a>
               </li>
             </ul>
@@ -130,10 +148,122 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>_config.scss</code>, line 441
+          Source: <code>_config.scss</code>, line 450
         </div>
 
     </div>
+
+    <section id="kssref-mixins-color" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-color">
+            <span class="kss-title__ref">
+              7.1
+              <span class="kss-title__permalink-hash">
+                  #Mixins.Color
+              </span>
+            </span>
+            Color
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixins that perform color complex operations (contrasts, etc...)</p>
+
+          </div>
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 95
+        </div>
+
+    </section>
+
+    <section id="kssref-mixins-color-contrastcolor" class="kss-section kss-section--depth-3 ">
+
+      <div class="kss-style">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-mixins-color-contrastcolor">
+            <span class="kss-title__ref">
+              7.1.1
+              <span class="kss-title__permalink-hash">
+                  #Mixins.Color.ContrastColor
+              </span>
+            </span>
+            contrast-link($color)
+          </a>
+        </h3>
+
+
+          <div class="kss-description">
+            <p>Returns a link formatted using <code>$inverse-link-</code> values from <code>_config.scss</code> if needed against the provided background-color.</p>
+
+          </div>
+
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Background-color to check
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 71
+        </div>
+
+    </section>
+
+    <section id="kssref-mixins-color-contrastcolor" class="kss-section kss-section--depth-3 ">
+
+      <div class="kss-style">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-mixins-color-contrastcolor">
+            <span class="kss-title__ref">
+              7.1.1
+              <span class="kss-title__permalink-hash">
+                  #Mixins.Color.ContrastColor
+              </span>
+            </span>
+            background-contrast($color)
+          </a>
+        </h3>
+
+
+          <div class="kss-description">
+            <p>Given a $color, ensures that all text elements and links are correctly contrasted against that background.</p>
+<p>Uses contrast-color($color) SASS function to perform the lightness calculation.</p>
+
+          </div>
+
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$color</code></div>
+              <div class="kss-parameters__description">
+                Background-color
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 103
+        </div>
+
+    </section>
 
     <section id="kssref-mixins-links" class="kss-section kss-section--depth-2 ">
 
@@ -141,7 +271,7 @@
         <h2 class="kss-title kss-title--level-2">
           <a class="kss-title__permalink" href="#kssref-mixins-links">
             <span class="kss-title__ref">
-              7.1
+              7.2
               <span class="kss-title__permalink-hash">
                   #Mixins.links
               </span>
@@ -172,7 +302,7 @@
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-mixins-links-setlink">
             <span class="kss-title__ref">
-              7.1.1
+              7.2.1
               <span class="kss-title__permalink-hash">
                   #Mixins.links.setLink
               </span>
@@ -230,7 +360,7 @@
         <h2 class="kss-title kss-title--level-2">
           <a class="kss-title__permalink" href="#kssref-mixins-typography">
             <span class="kss-title__ref">
-              7.2
+              7.3
               <span class="kss-title__permalink-hash">
                   #Mixins.Typography
               </span>
@@ -240,17 +370,12 @@
         </h2>
 
 
+          <div class="kss-description">
+            <p>Mixins that perform typography variations and calculations.</p>
+
+          </div>
 
 
-          <div class="kss-parameters__title">Parameters:</div>
-          <ul class="kss-parameters">
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>Functions that return values used on typography – other than vertical rhythm</code></div>
-              <div class="kss-parameters__description">
-                like font-weight, letter-spacing, etc...
-              </div>
-            </li>
-          </ul>
       </div>
 
 
@@ -266,18 +391,19 @@
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-mixins-typography-minititle">
             <span class="kss-title__ref">
-              7.2.1
+              7.3.1
               <span class="kss-title__permalink-hash">
                   #Mixins.Typography.Minititle
               </span>
             </span>
-            minititle()
+            minititle($size, $weight, $uppercase, $letter-spacing)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Checks a given HTML item against <code>$font-secondary-items</code> map in order to get the font specific font-weight.</p>
+            <p>Formats a text to apply the <span class="minititle">minititle</span> styling, used for small headings and higly contrasted small texts.</p>
+<p>By overriding the defaults, minititle() becomes a full-fledged tool capable of handling many of the usual modificacions of text.</p>
 
           </div>
 
@@ -285,9 +411,27 @@
           <div class="kss-parameters__title">Parameters:</div>
           <ul class="kss-parameters">
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$item</code></div>
+              <div class="kss-parameters__name"><code>$size</code></div>
               <div class="kss-parameters__description">
-                [String] - an HTMl element (without opening and closing <code>&lt; &gt;</code> marks)
+                A valid font-size. Defaults to $h6-font-size
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$weight</code></div>
+              <div class="kss-parameters__description">
+                Font weight. Defaults to $bold
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$uppercase</code></div>
+              <div class="kss-parameters__description">
+                [Boolean] - Wether to apply <code>text-transform: uppercase</code>. Defaults to true.
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$letter-spacing</code></div>
+              <div class="kss-parameters__description">
+                A valid value for <code>letter-spacing</code>. Defaults to global <code>$letter-spacing</code>
               </div>
             </li>
           </ul>
@@ -295,7 +439,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_typography.scss</code>, line 38
+          Source: <code>base/mixins/_typography.scss</code>, line 37
         </div>
 
     </section>

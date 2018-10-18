@@ -76,9 +76,11 @@ dd {
 }
 
 /*
-Unordered and ordered lists
+Lists
 
-By default, `$gutter` is applied as margin.
+By default, `$gutter` is applied as margin. Square list-style-type is preferred.
+
+Lists are left-aligned.
 
 Markup:
 <ol class="class {{ modifier_class }}">
@@ -97,7 +99,11 @@ Markup:
 Styleguide Base.lists
 */
 ol,ul {
-	padding-left:$spacer;
+	padding-left: 1em;
+}
+
+ul {
+	list-style-type: square;
 }
 
 .list--inline {

@@ -95,7 +95,6 @@
 @mixin form-reset-button {
 	background: none;
 	outline: none;
-	padding: $button-padding;
   
 	&::-moz-focus-inner {
 		border: 0;

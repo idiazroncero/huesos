@@ -1,0 +1,43 @@
+/*
+Helpers
+
+Some helper classes for easier layout setup.
+
+Styleguide Layout.helpers
+*/
+
+/*
+Breakpoint togglers
+
+A set of classes that toggle visibility on certain viewport widths: `.small-visible`, `.medium-visible`, `.large-visible`
+
+Markup:
+<section>
+    <h3 class="small-visible">I'm visible</h3>
+    <h3 class="medium-visible">I'm visible</h3>
+    <h3 class="large-visible">I'm visible</h3>
+</section>
+
+Styleguide Layout.helpers.breakpoint-toggle
+*/
+
+.small-visible {
+    display:none;
+    @include breakpoint($small) {
+        display:inherit;
+    }
+}
+
+.medium-visible {
+    display:none;
+    @include breakpoint($medium) {
+        display:inherit;
+    }
+}
+
+.large-visible {
+    display:none;
+    @include breakpoint($large) {
+        display:inherit;
+    }
+}

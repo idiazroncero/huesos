@@ -163,7 +163,7 @@ Styleguide Huesitos.Color
 @each $palette, $value in $colors {
     @each $name, $hex in $value {
         .bg-#{$palette}-#{$name} {
-            @include background-contrast($hex);
+            @include background-contrast($hex, true);
         }
     }
 }

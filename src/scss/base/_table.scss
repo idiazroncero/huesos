@@ -3,62 +3,66 @@ Tables
 
 Tables span across all available space evenly distributed.
 
+A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
+
 Borders are collapsed by default
 
 `<caption>` receives a `.minititle` styling
 
 Markup:
-<table>
-<caption>Table Caption</caption>
-<thead>
-  <tr>
-    <th>Table Heading 1</th>
-    <th>Table Heading 2</th>
-    <th>Table Heading 3</th>
-    <th>Table Heading 4</th>
-    <th>Table Heading 5</th>
-  </tr>
-</thead>
-<tfoot>
-  <tr>
-    <th>Table Footer 1</th>
-    <th>Table Footer 2</th>
-    <th>Table Footer 3</th>
-    <th>Table Footer 4</th>
-    <th>Table Footer 5</th>
-  </tr>
-</tfoot>
-<tbody>
-  <tr>
-    <td>Table Cell 1</td>
-    <td>Table Cell 2</td>
-    <td>Table Cell 3</td>
-    <td>Table Cell 4</td>
-    <td>Table Cell 5</td>
-  </tr>
-  <tr>
-    <td>Table Cell 1</td>
-    <td>Table Cell 2</td>
-    <td>Table Cell 3</td>
-    <td>Table Cell 4</td>
-    <td>Table Cell 5</td>
-  </tr>
-  <tr>
-    <td>Table Cell 1</td>
-    <td>Table Cell 2</td>
-    <td>Table Cell 3</td>
-    <td>Table Cell 4</td>
-    <td>Table Cell 5</td>
-  </tr>
-  <tr>
-    <td>Table Cell 1</td>
-    <td>Table Cell 2</td>
-    <td>Table Cell 3</td>
-    <td>Table Cell 4</td>
-    <td>Table Cell 5</td>
-  </tr>
-</tbody>
-</table>
+<section class="table">
+  <table>
+    <caption>Table Caption</caption>
+    <thead>
+      <tr>
+        <th>Table Heading 1</th>
+        <th>Table Heading 2</th>
+        <th>Table Heading 3</th>
+        <th>Table Heading 4</th>
+        <th>Table Heading 5</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Table Footer 1</th>
+        <th>Table Footer 2</th>
+        <th>Table Footer 3</th>
+        <th>Table Footer 4</th>
+        <th>Table Footer 5</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 
 Styleguide Base.tables
@@ -66,7 +70,7 @@ Styleguide Base.tables
 
 table {
 	table-layout: fixed;
-	width:100%;
+	min-width:100%;
 }
 
 th, td {
@@ -76,4 +80,11 @@ th, td {
 
 th {
 	text-align: $table-th-align;
+}
+
+.table {
+  overflow:auto;
+  th,td {
+    min-width:120px;
+  }
 }

@@ -20,60 +20,64 @@ No row height is set: it depends on the content.
 
 Markup:
 <div class="grid {{ modifier_class }}">
-    <div class="item" style="width:100%; height:50px; background-color: red"></div>
-    <div class="item" style="width:100%; height:50px; background-color: yellow"></div>
-    <div class="item" style="width:100%; height:50px; background-color: blue"></div>
-    <div class="item" style="width:100%; height:50px; background-color: green"></div>
-    <div class="item" style="width:100%; height:50px; background-color: limegreen"></div>
-    <div class="item" style="width:100%; height:50px; background-color: gold"></div>
-    <div class="item" style="width:100%; height:50px; background-color: purple"></div>
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+    <div class="grid-item bg-state-success" style="height:50px""></div>
+    <div class="grid-item bg-state-warning" style="height:50px""></div>
+    <div class="grid-item bg-state-error" style="height:50px""></div>
+    <div class="grid-item bg-blue-base" style="height:50px""></div>
+    <div class="grid-item bg-red-base" style="height:50px""></div>
+    <div class="grid-item bg-green-base" style="height:50px""></div>
 </div>
 
 Styleguide Layout.grid
 */
 
 .grid {
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: $spacer;
+    @extend %clearfix;
+    .grid-item {
+        float:left;
+        margin-bottom: $spacer;
+    }
 }
 
-.grid--2col {
-    grid-template-columns: repeat(2, 1fr);
+@for $i from 2 through 12 {
+    .grid--#{$i}col {
+        .grid-item {
+            width: (100% / #{$i});
+            width: calc( (100% / #{$i}) -  ( ( #{$spacer} * ( #{$i} - 1 ) / #{$i} ) + 0.001rem ) );
+            margin-right:$spacer;
+            &:nth-child(#{$i}n) {
+                margin-right:0;
+            }
+        }
+    }
 }
 
-.grid--3col {
-    grid-template-columns: repeat(3, 1fr);
-}
 
-.grid--5col {
-    grid-template-columns: repeat(5, 1fr);
-}
+@supports(display:grid) {
+    .grid {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: $spacer;
+        &:before,
+        &:after {
+            display:none;
+        }
+        .grid-item {
+            float:none;
+            margin:0;
+            width:auto;
+        }
+    }
 
-.grid--6col {
-    grid-template-columns: repeat(6, 1fr);
-}
-
-.grid--7col {
-    grid-template-columns: repeat(7, 1fr);
-}
-
-.grid--8col {
-    grid-template-columns: repeat(8, 1fr);
-}
-
-.grid--9col {
-    grid-template-columns: repeat(9, 1fr);
-}
-
-.grid--10col {
-    grid-template-columns: repeat(10, 1fr);
-}
-
-.grid--11col {
-    grid-template-columns: repeat(11, 1fr);
-}
-
-.grid--12col {
-    grid-template-columns: repeat(12, 1fr);
+    @for $i from 2 through 12 {
+        .grid--#{$i}col {
+            grid-template-columns: repeat( #{$i} , 1fr);
+        }
+    }
 }

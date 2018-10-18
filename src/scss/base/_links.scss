@@ -14,6 +14,7 @@ Markup:
 .link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
 .link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
 .link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
+.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
 
 Styleguide Typography.links
 */
@@ -37,6 +38,14 @@ a {
 	}
 	&.link-strategy-smart {
 		@include set-link($strategy: 'smart');
+	}
+	&.link-inverted {
+		@include set-link(
+			$inverse-link-color,
+			$inverse-link-visited, 
+			$inverse-link-hover,
+			$inverse-link-active
+		);
 	}
 }
 

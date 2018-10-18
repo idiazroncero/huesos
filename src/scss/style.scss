@@ -9,7 +9,7 @@
 @import "config";
 
 @import "base/fonts"; // Fonts are loaded first to optimize performance
-@import "base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
+@import "base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 @import "base/forms";
 @import "base/buttons";
 @import "base/typography";
@@ -19,6 +19,7 @@
 
 @import "layout/layout";
 @import "layout/grid";
+@import "layout/helpers";
 
 @import "components/card";
 @import "components/nav";

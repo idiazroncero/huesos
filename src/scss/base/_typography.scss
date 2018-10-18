@@ -30,6 +30,13 @@ h6, .h6 { @include ritmo-font-size($h6-font-size); }
 	}
 }
 
+@if $heading-letter-spacing {
+	h1,.h1,
+	h2,.h2 {
+		letter-spacing: $heading-letter-spacing;
+	}	
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6  {
 	color: get-color(text, heading);

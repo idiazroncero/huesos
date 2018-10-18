@@ -158,11 +158,11 @@ $font-secondary-items:
 // Select a font weight and an alternate line height for your headings
 $heading-font-weight: normal;
 $heading-vertical-rhythm:1; // We might want a slower VR for headings. Set to false if not.
-
+$heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing 
 
 // Text alignment for some elements
 $caption-align: left;
-$figcaption-align:left;
+$figcaption-align: left;
 
 // Quotes
 // Here are some common quotes: “ ” ‘ ’ ‛ ‟ ‚ „ ' " ‹ › « »
@@ -221,7 +221,7 @@ $figcaption-font-size: $h6-font-size;
 // Some common patterns
 // ------
 
-$border-radius: 3px;
+$border-radius: 0px;
 
 $separators: true;
 $separator-width: 1px;
@@ -268,6 +268,11 @@ $link-visited: get-color(blue, darker);
 $link-hover: get-color(blue,light);
 $link-active: get-color(blue, darker);
 
+// Inverse link colors (for contrasted backgrounds)
+$inverse-link-color: get-color(gray, 'white');
+$inverse-link-visited: get-color(gray, 'white');
+$inverse-link-hover: get-color(gray, light);
+$inverse-link-active: get-color(gray, light);
 
 
 
@@ -286,10 +291,15 @@ $input-border: 1px solid $input-border-color;
 $input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
-$button-border-color: get-color(gray, darker);
-$button-border: 2px solid $button-border-color;
+$button-strategy: 'border'; // Options: border, background
+$button-strategy-border: 'fill'; // Only if $button-strategy = border. Options: fill, highlight
+$button-color: get-color(gray, base);
+$button-border-width: 2px;
+$button-border: $button-border-width solid $button-color;
 $button-padding: 0 ($spacer / 2);
-$button-border-radius: $border-radius;
+$button-border-radius: 2px; // $border-radius;
+$button-weight: $bold;
+$button-invert-color: false; // ONly valid on border:fill and background
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;
