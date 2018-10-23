@@ -93,12 +93,11 @@
 <li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
 <li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
 </ul>
-<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX animations. You can easily add it to your project using <code>npm install animate.scss</code></p>
+<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using <code>yarn add animate.scss</code></p>
 </section>
 <section class="text">
 <h3>Opinionated stuff</h3>
-<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are heavily opinionated and thus not exposed on the <code>_config.scss</code> file.</p>
-<p>The Huesos' &quot;decalogue&quot; is as follows:</p>
+<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file:)</p>
 <ul>
 <li>
 <p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;section&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
@@ -110,17 +109,20 @@
 <p><strong>Always use SVG</strong> No icon fonts, no images. For iconography, the use of SVG is always preferred.</p>
 </li>
 <li>
-<p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly ritmo()) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings or anytime the eye dictates. Vertical rhythm is to be used as a tool rather than a constraint.</p>
+<p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings. Vertical rhythm is to be used as a tool rather than a constraint.</p>
+</li>
+<li>
+<p><strong>Mobile-First</strong> We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don't have a <code>max-width</code>). Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
 </li>
 </ul>
 </section>
 <section class="text">
 <h3>Third-parties are the best parties</h3>
-<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code> inputs or responsive HTML tables) need to be &quot;normalized&quot; and tamed. We use JS for this.</p>
+<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code>) need to be tamed. We use JS for this.</p>
 <p>Javascript libraries are bundled into Huesos following this criteria:</p>
 <ul>
 <li>Zero overweight. Small, concise, single-purpose libraries</li>
-<li>Vanilla javascript. jQuery shouldn't be a dependency right from the start.</li>
+<li>Vanilla javascript. jQuery shouldn't be a dependency.</li>
 </ul>
 <p>These are the winners:</p>
 <ul>

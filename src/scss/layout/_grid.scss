@@ -81,3 +81,37 @@ Styleguide Layout.grid
         }
     }
 }
+
+/*
+Responsive Grid
+
+Inestad of setting a grid, you can use a set of helper classes to define the specific number of
+columns on every breakpoint.
+
+The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col`.
+
+We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
+no `max-width` constraint is set and every breakpoint will be active until a larger breakpoint weighs in.
+
+Markup:
+<div class="grid grid--small--2col grid--medium--6col grid--large--3col">
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+</div>
+
+Styleguide Layout.grid.responsive
+*/
+
+@each $point, $value in $breakpoints {
+    @for $i from 2 through 11 {
+        .grid--#{$point}--#{$i}col {
+            @include breakpoint($value) {
+                grid-template-columns: repeat( #{$i} , 1fr);
+            }
+        }
+    }
+}

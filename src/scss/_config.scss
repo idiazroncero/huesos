@@ -175,8 +175,8 @@ $figcaption-align: left;
 $quotes: "“" "”" "‘" "’";
 
 // Code-like items
-$code-background: get-color(background, dark);
-$code-border-radius: 4px;
+$code-background: get-color(gray, lighter);
+$code-border-radius: 2px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.05em; 
@@ -375,9 +375,17 @@ $z-index : (
 // BREAKPOINTS
 // ------
 
-$small: 640px;
-$medium: 960px;
-$large: 1120px;
+// Map for iterations
+$breakpoints: (
+	small : 640px,
+	medium : 960px,
+	large : 1120px
+);
+
+// Helpers for a simpler use on breakpoint() mixin
+$small: map-get($breakpoints, small);
+$medium: map-get($breakpoints, medium);
+$large: map-get($breakpoints, large);
 
 
 
