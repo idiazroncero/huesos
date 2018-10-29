@@ -635,7 +635,8 @@ Styleguide Base.images
 */
 img {
   border-style: none;
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 figure {
   display: inline-block; }
