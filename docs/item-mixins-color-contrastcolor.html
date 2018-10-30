@@ -93,14 +93,13 @@
                   #Mixins.Color.ContrastColor
               </span>
             </span>
-            background-contrast($color)
+            contrast-links($color)
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p>Given a $color, ensures that all text elements and links are correctly contrasted against that background.</p>
-<p>Uses contrast-color($color) SASS function to perform the lightness calculation.</p>
+            <p>Returns a link formatted using <code>$inverse-link-</code> values from <code>_config.scss</code> if needed against the provided background-color.</p>
 
           </div>
 
@@ -110,7 +109,7 @@
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$color</code></div>
               <div class="kss-parameters__description">
-                Background-color
+                Background-color to check
               </div>
             </li>
           </ul>
@@ -118,7 +117,7 @@
 
 
         <div class="kss-source kss-style">
-          Source: <code>base/mixins/_contrast-color.scss</code>, line 103
+          Source: <code>base/mixins/_contrast-color.scss</code>, line 71
         </div>
 
     </div>
@@ -154,5 +153,8 @@
 
 
 <!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
+/kss-node">kss-node</a>. -->
 </body>
 </html>

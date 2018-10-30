@@ -42,6 +42,10 @@ Then, the recommended way of work is to create your own scss folder and add the 
 
 __Important:__ you need to `@import` dependencies before config. This is because many mixins of the third-party libraries (like Ritmo) are used for calculations on `_config.scss`.
 
+## Still todo__
+
+- Breadcrumb-like nav system
+- Configurable menus
 
 
 

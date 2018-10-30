@@ -115,3 +115,26 @@ Styleguide Layout.grid.responsive
         }
     }
 }
+
+
+/*
+Gutterless Grid
+
+Add `.grid--gutterless` to remove all gutters
+
+Markup:
+<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+</div>
+
+Styleguide Layout.grid.gutterless
+*/
+
+.grid--gutterless {
+    grid-gap: 0;
+}

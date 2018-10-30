@@ -82,23 +82,23 @@
   <article>
 
 
-    <div id="kssref-layout-grid-responsive" class="kss-section kss-section--depth-3 is-fullscreen">
+    <div id="kssref-layout-grid-gutterless" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-layout-grid-responsive">
+          <a class="kss-title__permalink" href="#kssref-layout-grid-gutterless">
             <span class="kss-title__ref">
-              2.1.2
+              2.1.1
               <span class="kss-title__permalink-hash">
-                  #Layout.grid.responsive
+                  #Layout.grid.gutterless
               </span>
             </span>
-            Responsive Grid
+            Gutterless Grid
           </a>
         </h3>
 
           <p class="kss-toolbar">
-            <a href="#kssref-layout-grid-responsive" data-kss-guides="true">
+            <a href="#kssref-layout-grid-gutterless" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -119,7 +119,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-layout-grid-responsive" data-kss-markup="true">
+            <a href="#kssref-layout-grid-gutterless" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -129,11 +129,7 @@
           </p>
 
           <div class="kss-description">
-            <p>Inestad of setting a grid, you can use a set of helper classes to define the specific number of
-columns on every breakpoint.</p>
-<p>The pattern is as follows: <code>.grid--[breakpoint]--[number]col</code>. So, a 11-col grid from <code>$medium</code> breakpoint up would be <code>$grid--medium--11col</code>.</p>
-<p>We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
-no <code>max-width</code> constraint is set and every breakpoint will be active until a larger breakpoint weighs in.</p>
+            <p>Add <code>.grid--gutterless</code> to remove all gutters</p>
 
           </div>
 
@@ -147,7 +143,7 @@ no <code>max-width</code> constraint is set and every breakpoint will be active 
 
 
           <div class="kss-modifier__example">
-            <div class="grid grid--small--2col grid--medium--6col grid--large--3col">
+            <div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
     <div class="grid-item bg-base-primary" style="height:50px"></div>
     <div class="grid-item bg-base-secondary" style="height:50px""></div>
     <div class="grid-item bg-base-lines" style="height:50px""></div>
@@ -164,7 +160,7 @@ no <code>max-width</code> constraint is set and every breakpoint will be active 
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--small--2col grid--medium--6col grid--large--3col"</span>&gt;</span>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-primary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-secondary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-lines"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -175,7 +171,7 @@ no <code>max-width</code> constraint is set and every breakpoint will be active 
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>layout/_grid.scss</code>, line 85
+          Source: <code>layout/_grid.scss</code>, line 120
         </div>
 
     </div>
