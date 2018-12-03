@@ -46,6 +46,7 @@ __Important:__ you need to `@import` dependencies before config. This is because
 
 - Breadcrumb-like nav system
 - Configurable menus
+- Couple palettes with https://palx.jxnblk.com/e4bb97#yellow
 
 
 

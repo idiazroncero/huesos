@@ -8,7 +8,7 @@
 // Mixins and variables
 @import "config";
 
-@import "base/fonts"; // Fonts are loaded first to optimize performance
+@import "base/fonts"; // Fonts are loaded first to optimize performance. DON'T LOAD FONTS ON PRODUCTION BUILD
 @import "base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 @import "base/forms";
 @import "base/buttons";
