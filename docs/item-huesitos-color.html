@@ -16,6 +16,9 @@
 <div class="kss-sidebar bg-base-secondary kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos Style Guide</h1>
+    <small class="kss-version kill-link-decoration">
+      <a target="_blank" href="https://github.com/idiazroncero/huesos/tree/master">v1.2.0</a>
+    </small>
   </header>
   <nav class="kss-nav toc kill-link-decoration" aria-label="Style Guide">
     <ul class="kss-nav__menu">
@@ -90,18 +93,19 @@
     <div id="kssref-huesitos-color" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
-        <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-huesitos-color">
-            <span class="kss-title__ref">
-              11.2
-              <span class="kss-title__permalink-hash">
-                  #Huesitos.Color
-              </span>
+        <div class="kss-title__wrapper">
+          <span class="kss-title__ref">
+            11.2
+            <span class="kss-title__permalink-hash">
+                #Huesitos.Color
             </span>
-            Background Color
-          </a>
-        </h2>
-
+          </span>
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-huesitos-color">
+              Background Color
+            </a>
+          </h2>
+        </div>
           <p class="kss-toolbar">
             <a href="#kssref-huesitos-color" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
@@ -137,7 +141,8 @@
             <p>A set of helper classes that map to common colors from the palette.</p>
 <p>The text color is contrasted correctly.</p>
 <p>Classes are auto-generated based on the sass <code>$colors</code> map and follow the schema <code>$bg-$palette-$name</code>.</p>
-<p>We showcase some examples here, but the list of classes could be much bigger or smaller than these:</p>
+<p>We showcase some examples here, but the list of classes could be much bigger or smaller, depending on your color palette.</p>
+<p>You can avoid bloating your css with these helper classes by setting <code>$generate-color-classes: false</code>.</p>
 
           </div>
 
@@ -291,7 +296,7 @@
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>huesitos/_huesitos.scss</code>, line 127
+          Source: <code>huesitos/_huesitos.scss</code>, line 128
         </div>
 
     </div>

@@ -165,14 +165,33 @@ This `$colors` map can store as many maps as needed, but the following are manda
 Following palx.jxnblk.com nomenclature, the colors are numbered from 0 to 9 (lightest to darkest).
 
 Markup:
-<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
+<section>
+	<p class="minititle">Base</p>
+	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+		<div class="grid-item p bg-base-primary">Primary</div>
+		<div class="grid-item p bg-base-secondary" >Secondary</div>
+		<div class="grid-item p bg-base-separator" >Separator</div>
+		<div class="grid-item p bg-base-black" >Black</div>
+		<div class="grid-item p bg-base-white" >White</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">Text</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
+		<div class="grid-item p bg-text-primary">Primary</div>
+		<div class="grid-item p bg-text-heading" >Heading</div>
+		<div class="grid-item p bg-text-mark" >Mark</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">State</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
+		<div class="grid-item p bg-state-muted">Muted</div>
+		<div class="grid-item p bg-state-success" >Success</div>
+		<div class="grid-item p bg-state-warning" >Warning</div>
+		<div class="grid-item p bg-state-error" >Error</div>
+	</div>
+</section>
 
 Styleguide Color.palette
 */
@@ -201,7 +220,7 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 3 */
   font-family: "Lato", Helvetica, Arial sans-serif;
-  color: #3d3f3d; }
+  color: #384048; }
 
 html {
   font-size: 100%;
@@ -263,9 +282,11 @@ Markup:
 
 Styleguide Base.lists
 */
-ol, ul {
-  padding-left: 1em; }
-  ol li, ul li {
+ol,
+ul {
+  padding-left: 0; }
+  ol li,
+  ul li {
     margin-bottom: 0.675rem; }
 
 ul {
@@ -339,7 +360,7 @@ hr {
   overflow: visible;
   /* 2 */
   border: none;
-  border-bottom: 1px solid #dbe2db; }
+  border-bottom: 1px solid #dee0e4; }
 
 /**
  * Remove the list style on navigation lists in all browsers (opinionated).
@@ -480,8 +501,8 @@ Markup:
 Styleguide Typography.mark
 */
 mark {
-  background-color: #fffbc4;
-  color: #1A1A19;
+  background-color: #ac7030;
+  color: #FFFFFF;
   padding: 0 0.3375rem; }
 
 /**
@@ -580,16 +601,16 @@ Markup:
 Styleguide Pseudo-elements.selection
 */
 ::-moz-selection {
-  background-color: #fffbc4;
+  background-color: #ac7030;
   /* 1 */
-  color: #1A1A19;
+  color: #FFFFFF;
   /* 1 */
   text-shadow: none; }
 
 ::selection {
-  background-color: #fffbc4;
+  background-color: #ac7030;
   /* 1 */
-  color: #1A1A19;
+  color: #FFFFFF;
   /* 1 */
   text-shadow: none; }
 
@@ -1002,7 +1023,7 @@ label {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #aeb4ae inset;
+  box-shadow: 0 0 0px 1000px #acb3bb inset;
   color: #1A1A19; }
 
 input {
@@ -1058,7 +1079,7 @@ input {
 	
 	Styleguide Forms.input
 	*/
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   padding: 0.3375rem 0.675rem;
   /* Make webkit render the search input like a normal text field */
   /* Turn off the recent search for webkit. It adds about 15px padding on the left */
@@ -1082,7 +1103,7 @@ input {
 	Styleguide Forms.file
 	*/ }
   input:hover, input:focus {
-    border-color: #939793; }
+    border-color: #959699; }
   input:focus {
     outline: 0; }
   input[type=checkbox], input[type=radio] {
@@ -1108,7 +1129,7 @@ input {
       top: 50%;
       left: 4px;
       transform: translateY(-50%);
-      background-color: #3d3f3d; }
+      background-color: #384048; }
   input[type=checkbox].pseudo-checkbox + label {
     cursor: pointer;
     display: flex;
@@ -1119,8 +1140,8 @@ input {
       width: 16px;
       height: 16px;
       margin: 0 0.675rem 0 0;
-      border: 1px solid #3d3f3d;
-      background-color: #f8f9f8;
+      border: 1px solid #384048;
+      background-color: #f8f9f9;
       cursor: pointer; }
   input[type=radio].pseudo-radio:checked + label {
     position: relative; }
@@ -1133,7 +1154,7 @@ input {
       width: 8px;
       height: 8px;
       transform: translateY(-50%);
-      background-color: #3d3f3d;
+      background-color: #384048;
       border-radius: 50%;
       cursor: pointer; }
   input[type=radio].pseudo-radio + label {
@@ -1146,8 +1167,8 @@ input {
       margin: 0 0.675rem 0 0;
       width: 16px;
       height: 16px;
-      border: 1px solid #3d3f3d;
-      background-color: #f8f9f8;
+      border: 1px solid #384048;
+      background-color: #f8f9f9;
       vertical-align: top;
       border-radius: 50%;
       cursor: pointer; }
@@ -1192,14 +1213,14 @@ Markup:
 Styleguide Forms.select
 */
 select {
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   padding: 0 0.675rem;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
-    border-color: #939793; }
+    border-color: #959699; }
   select[multiple] {
     vertical-align: top; }
 
@@ -1228,7 +1249,7 @@ Markup:
 Styleguide Forms.textarea
 */
 textarea {
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   /* Move the label to the top */
   vertical-align: top;
   /* Turn off scroll bars in IE unless needed */
@@ -1271,7 +1292,7 @@ Styleguide Forms.fieldset
 fieldset {
   margin-right: 0;
   margin-left: 0;
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   border-radius: 0px;
   padding: 1.35rem; }
   fieldset legend {
@@ -1355,14 +1376,14 @@ Styleguide Forms.form-item
 
 .form-item--required label::after {
   content: "*";
-  color: #e6b1b5; }
+  color: #ac3230; }
 
 .form-item--label-inside {
   border-radius: 0px;
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   padding: 0.3375rem 0.675rem; }
   .form-item--label-inside:hover, .form-item--label-inside:focus {
-    border-color: #939793; }
+    border-color: #959699; }
   .form-item--label-inside input,
   .form-item--label-inside textarea {
     border: none;
@@ -1391,15 +1412,15 @@ Markup:
 Styleguide Components.buttons
 */
 a.button {
-  border: 2px solid #aeb4ae; }
+  border: 2px solid #606d7c; }
   a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
     text-decoration: none; }
   a.button:link, a.button:visited {
-    color: #aeb4ae; }
+    color: #606d7c; }
   a.button:hover, a.button:focus {
-    border: 2px solid #aeb4ae;
-    background: #aeb4ae;
-    color: #1A1A19; }
+    border: 2px solid #606d7c;
+    background: #606d7c;
+    color: #FFFFFF; }
 
 input[type=submit],
 input[type=reset],
@@ -1423,8 +1444,8 @@ input[type=file] + label {
   font-weight: 700;
   font-family: "Lato", Helvetica, Arial sans-serif;
   border-radius: 2px;
-  border: 2px solid #aeb4ae;
-  color: #aeb4ae; }
+  border: 2px solid #606d7c;
+  color: #606d7c; }
   input[type=submit]::-moz-focus-inner,
   input[type=reset]::-moz-focus-inner,
   input[type=button]::-moz-focus-inner,
@@ -1465,8 +1486,8 @@ input[type=file] + label {
   input[type=file] + label:hover,
   .button:focus,
   input[type=file] + label:focus {
-    background: #aeb4ae;
-    color: #1A1A19; }
+    background: #606d7c;
+    color: #FFFFFF; }
   input[type=submit] .icon,
   input[type=reset] .icon,
   input[type=button] .icon,
@@ -1564,79 +1585,79 @@ button + .button {
 
 .button--muted,
 input.button--muted {
-  border-color: #eaeeea;
-  color: #eaeeea; }
+  border-color: #ecedef;
+  color: #ecedef; }
   .button--muted:hover, .button--muted:focus,
   input.button--muted:hover,
   input.button--muted:focus {
-    background: #eaeeea;
+    background: #ecedef;
     color: #1A1A19; }
 
 a.button--muted {
-  border-color: #eaeeea; }
+  border-color: #ecedef; }
   a.button--muted:link, a.button--muted:visited {
-    color: #eaeeea; }
+    color: #ecedef; }
   a.button--muted:hover, a.button--muted:focus {
-    border-color: #eaeeea;
-    background: #eaeeea;
+    border-color: #ecedef;
+    background: #ecedef;
     color: #1A1A19; }
 
 .button--success,
 input.button--success {
-  border-color: #b1e7c9;
-  color: #b1e7c9; }
+  border-color: #63c093;
+  color: #63c093; }
   .button--success:hover, .button--success:focus,
   input.button--success:hover,
   input.button--success:focus {
-    background: #b1e7c9;
+    background: #63c093;
     color: #1A1A19; }
 
 a.button--success {
-  border-color: #b1e7c9; }
+  border-color: #63c093; }
   a.button--success:link, a.button--success:visited {
-    color: #b1e7c9; }
+    color: #63c093; }
   a.button--success:hover, a.button--success:focus {
-    border-color: #b1e7c9;
-    background: #b1e7c9;
+    border-color: #63c093;
+    background: #63c093;
     color: #1A1A19; }
 
 .button--warning,
 input.button--warning {
-  border-color: #e6c9b1;
-  color: #e6c9b1; }
+  border-color: #aaac30;
+  color: #aaac30; }
   .button--warning:hover, .button--warning:focus,
   input.button--warning:hover,
   input.button--warning:focus {
-    background: #e6c9b1;
-    color: #1A1A19; }
+    background: #aaac30;
+    color: #FFFFFF; }
 
 a.button--warning {
-  border-color: #e6c9b1; }
+  border-color: #aaac30; }
   a.button--warning:link, a.button--warning:visited {
-    color: #e6c9b1; }
+    color: #aaac30; }
   a.button--warning:hover, a.button--warning:focus {
-    border-color: #e6c9b1;
-    background: #e6c9b1;
-    color: #1A1A19; }
+    border-color: #aaac30;
+    background: #aaac30;
+    color: #FFFFFF; }
 
 .button--error,
 input.button--error {
-  border-color: #e6b1b5;
-  color: #e6b1b5; }
+  border-color: #ac3230;
+  color: #ac3230; }
   .button--error:hover, .button--error:focus,
   input.button--error:hover,
   input.button--error:focus {
-    background: #e6b1b5;
-    color: #1A1A19; }
+    background: #ac3230;
+    color: #FFFFFF; }
 
 a.button--error {
-  border-color: #e6b1b5; }
+  border-color: #ac3230; }
   a.button--error:link, a.button--error:visited {
-    color: #e6b1b5; }
+    color: #ac3230; }
   a.button--error:hover, a.button--error:focus {
-    border-color: #e6b1b5;
-    background: #e6b1b5;
-    color: #1A1A19; }
+    border-color: #ac3230;
+    background: #ac3230;
+    color: #FFFFFF; }
 
 input[type=submit][disabled],
 input[type=reset][disabled],
@@ -1726,7 +1747,7 @@ h2, .h2 {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #8184a8;
+  color: #151448;
   font-weight: normal; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -1830,7 +1851,7 @@ var {
   vertical-align: baseline;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19;
   padding: 0 0.3375rem;
   border-radius: 2px; }
@@ -2007,7 +2028,7 @@ table {
   min-width: 100%; }
 
 th, td {
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   padding: 0.675rem; }
 
 th {
@@ -2127,7 +2148,7 @@ Markup:
 <div class="grid {{ modifier_class }}">
     <div class="grid-item bg-base-primary" style="height:50px"></div>
     <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
     <div class="grid-item bg-text-primary" style="height:50px""></div>
     <div class="grid-item bg-text-mark" style="height:50px""></div>
     <div class="grid-item bg-state-muted" style="height:50px""></div>
@@ -2271,7 +2292,7 @@ Markup:
 <div class="grid grid--small--2col grid--medium--6col grid--large--3col">
     <div class="grid-item bg-base-primary" style="height:50px"></div>
     <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
     <div class="grid-item bg-text-primary" style="height:50px""></div>
     <div class="grid-item bg-text-mark" style="height:50px""></div>
     <div class="grid-item bg-state-muted" style="height:50px""></div>
@@ -2408,7 +2429,7 @@ Markup:
 <div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
     <div class="grid-item bg-base-primary" style="height:50px"></div>
     <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
     <div class="grid-item bg-text-primary" style="height:50px""></div>
     <div class="grid-item bg-text-mark" style="height:50px""></div>
     <div class="grid-item bg-state-muted" style="height:50px""></div>
@@ -2483,11 +2504,11 @@ Markup:
 Styleguide Components.card
 */
 .card {
-  padding: 1.35rem;
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   background: #fff;
   border-radius: 0px;
-  box-shadow: 2px 2px 2px 0px rgba(61, 63, 61, .1); }
+  padding: 2.7rem;
+  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, .1); }
   .card .card {
     padding: 0.675rem; }
 
@@ -2635,16 +2656,16 @@ Styleguide Components.menus
       padding: 0.675rem;
       white-space: nowrap; }
       .menu ul > li > a, .menu ul > li > a:link {
-        color: #3d3f3d; }
+        color: #384048; }
       .menu ul > li > a:visited {
-        color: #3d3f3d; }
+        color: #384048; }
       .menu ul > li > a:focus, .menu ul > li > a:hover {
-        color: #1A1A19; }
+        color: #FFFFFF; }
       .menu ul > li > a:active {
-        color: #3d3f3d; }
+        color: #384048; }
     .menu ul > li:hover > a, .menu ul > li:focus > a {
-      color: #1A1A19;
-      background-color: #8184a8; }
+      color: #FFFFFF;
+      background-color: #1e456e; }
     .menu ul > li > span {
       padding: 0.675rem; }
     .menu ul > li > ul {
@@ -2661,28 +2682,28 @@ Styleguide Components.menus
           display: block;
           padding: 0.3375rem 0.675rem;
           white-space: nowrap;
-          background-color: #9093b2;
+          background-color: #235282;
           font-size: 13px;
           font-size: 0.8rem;
           line-height: 22px;
           line-height: 1.35rem; }
           .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
-            color: #1A1A19;
+            color: #FFFFFF;
             text-decoration: underline; }
           .menu ul > li > ul > li > a:visited {
-            color: #1A1A19; }
+            color: #FFFFFF; }
           .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
-            color: #1A1A19;
+            color: #FFFFFF;
             text-decoration: none;
             border: none;
             background: transparent; }
           .menu ul > li > ul > li > a:active {
-            color: #1A1A19; }
+            color: #FFFFFF; }
           .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link, .menu ul > li > ul > li > a:visited, .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:active {
             text-decoration: none; }
           .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
             color: #FFFFFF;
-            background-color: #565871; }
+            background-color: #142e4a; }
     .menu ul > li > ul > li > ul {
       display: none;
       position: absolute;
@@ -2691,28 +2712,28 @@ Styleguide Components.menus
       min-width: 100%;
       z-index: 3; }
       .menu ul > li > ul > li > ul li a {
-        background-color: #9fa1bd;
+        background-color: #295e96;
         font-size: 11px;
         font-size: 0.7rem;
         line-height: 16px;
         line-height: 1.0125rem; }
         .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
-          color: #1A1A19;
+          color: #FFFFFF;
           text-decoration: underline; }
         .menu ul > li > ul > li > ul li a:visited {
-          color: #1A1A19; }
+          color: #FFFFFF; }
         .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
-          color: #1A1A19;
+          color: #FFFFFF;
           text-decoration: none;
           border: none;
           background: transparent; }
         .menu ul > li > ul > li > ul li a:active {
-          color: #1A1A19; }
+          color: #FFFFFF; }
         .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link, .menu ul > li > ul > li > ul li a:visited, .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:active {
           text-decoration: none; }
         .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
           color: #FFFFFF;
-          background-color: #414254; }
+          background-color: #0f2337; }
     .menu ul > li > ul > li:hover > ul {
       display: block; }
     .menu ul > li:hover > ul {
@@ -2821,26 +2842,74 @@ Styleguide Components.tag
   font-weight: 700;
   letter-spacing: 0;
   padding: 0 0.45rem;
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19;
   border-radius: 0px;
   margin-right: 0.45rem;
   font-weight: normal; }
   .tag.tag--success, .tag--success.selectr-tag {
-    background-color: #b1e7c9;
+    background-color: #63c093;
     color: #1A1A19; }
   .tag.tag--warning, .tag--warning.selectr-tag {
-    background-color: #e6c9b1;
-    color: #1A1A19; }
+    background-color: #aaac30;
+    color: #FFFFFF; }
+    .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--warning a:visited, .tag--warning.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus, .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--warning a:active, .tag--warning.selectr-tag a:active {
+      color: #b3c9e0; }
   .tag.tag--error, .tag--error.selectr-tag {
-    background-color: #e6b1b5;
-    color: #1A1A19; }
+    background-color: #ac3230;
+    color: #FFFFFF; }
+    .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--error a:visited, .tag--error.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--error a:focus, .tag--error.selectr-tag a:focus, .tag.tag--error a:hover, .tag--error.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--error a:active, .tag--error.selectr-tag a:active {
+      color: #b3c9e0; }
   .tag.tag--primary, .tag--primary.selectr-tag {
-    background-color: #c4c8ff;
-    color: #1A1A19; }
+    background-color: #2b619a;
+    color: #FFFFFF; }
+    .tag.tag--primary a, .tag--primary.selectr-tag a, .tag.tag--primary a:link, .tag--primary.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--primary a:visited, .tag--primary.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--primary a:focus, .tag--primary.selectr-tag a:focus, .tag.tag--primary a:hover, .tag--primary.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--primary a:active, .tag--primary.selectr-tag a:active {
+      color: #b3c9e0; }
   .tag.tag--secondary, .tag--secondary.selectr-tag {
-    background-color: #8184a8;
-    color: #1A1A19; }
+    background-color: #1e456e;
+    color: #FFFFFF; }
+    .tag.tag--secondary a, .tag--secondary.selectr-tag a, .tag.tag--secondary a:link, .tag--secondary.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--secondary a:visited, .tag--secondary.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--secondary a:focus, .tag--secondary.selectr-tag a:focus, .tag.tag--secondary a:hover, .tag--secondary.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--secondary a:active, .tag--secondary.selectr-tag a:active {
+      color: #b3c9e0; }
   .right .tag, .right .selectr-tag {
     margin-right: 0;
     margin-left: 0.45rem; }
@@ -2853,10 +2922,10 @@ a.tag, a.selectr-tag {
   a.tag, a.selectr-tag, a.tag:link, a.selectr-tag:link, a.tag:visited, a.selectr-tag:visited, a.tag:focus, a.selectr-tag:focus, a.tag:hover, a.selectr-tag:hover, a.tag:active, a.selectr-tag:active {
     text-decoration: none; }
   a.tag:hover, a.selectr-tag:hover, a.tag:focus, a.selectr-tag:focus {
-    background-color: #939793;
+    background-color: #959699;
     color: #1A1A19; }
   a.tag.tag--success:hover, a.tag--success.selectr-tag:hover, a.tag.tag--success:focus, a.tag--success.selectr-tag:focus {
-    background-color: #779b87;
+    background-color: #428162;
     color: #FFFFFF; }
     a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
       color: #fff;
@@ -2864,14 +2933,14 @@ a.tag, a.selectr-tag {
     a.tag.tag--success:hover a:visited, a.tag--success.selectr-tag:hover a:visited, a.tag.tag--success:focus a:visited, a.tag--success.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover {
-      color: #dbe2db;
+      color: #b3c9e0;
       text-decoration: none;
       border: none;
       background: transparent; }
     a.tag.tag--success:hover a:active, a.tag--success.selectr-tag:hover a:active, a.tag.tag--success:focus a:active, a.tag--success.selectr-tag:focus a:active {
-      color: #dbe2db; }
+      color: #b3c9e0; }
   a.tag.tag--warning:hover, a.tag--warning.selectr-tag:hover, a.tag.tag--warning:focus, a.tag--warning.selectr-tag:focus {
-    background-color: #9a8777;
+    background-color: #727320;
     color: #FFFFFF; }
     a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
       color: #fff;
@@ -2879,14 +2948,14 @@ a.tag, a.selectr-tag {
     a.tag.tag--warning:hover a:visited, a.tag--warning.selectr-tag:hover a:visited, a.tag.tag--warning:focus a:visited, a.tag--warning.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover {
-      color: #dbe2db;
+      color: #b3c9e0;
       text-decoration: none;
       border: none;
       background: transparent; }
     a.tag.tag--warning:hover a:active, a.tag--warning.selectr-tag:hover a:active, a.tag.tag--warning:focus a:active, a.tag--warning.selectr-tag:focus a:active {
-      color: #dbe2db; }
+      color: #b3c9e0; }
   a.tag.tag--error:hover, a.tag--error.selectr-tag:hover, a.tag.tag--error:focus, a.tag--error.selectr-tag:focus {
-    background-color: #9a7779;
+    background-color: #732220;
     color: #FFFFFF; }
     a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
       color: #fff;
@@ -2894,17 +2963,29 @@ a.tag, a.selectr-tag {
     a.tag.tag--error:hover a:visited, a.tag--error.selectr-tag:hover a:visited, a.tag.tag--error:focus a:visited, a.tag--error.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover {
-      color: #dbe2db;
+      color: #b3c9e0;
       text-decoration: none;
       border: none;
       background: transparent; }
     a.tag.tag--error:hover a:active, a.tag--error.selectr-tag:hover a:active, a.tag.tag--error:focus a:active, a.tag--error.selectr-tag:focus a:active {
-      color: #dbe2db; }
+      color: #b3c9e0; }
   a.tag.tag--primary:hover, a.tag--primary.selectr-tag:hover, a.tag.tag--primary:focus, a.tag--primary.selectr-tag:focus {
-    background-color: #8386ab;
-    color: #1A1A19; }
+    background-color: #1d4167;
+    color: #FFFFFF; }
+    a.tag.tag--primary:hover a, a.tag--primary.selectr-tag:hover a, a.tag.tag--primary:hover a:link, a.tag--primary.selectr-tag:hover a:link, a.tag.tag--primary:focus a, a.tag--primary.selectr-tag:focus a, a.tag.tag--primary:focus a:link, a.tag--primary.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--primary:hover a:visited, a.tag--primary.selectr-tag:hover a:visited, a.tag.tag--primary:focus a:visited, a.tag--primary.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--primary:hover a:focus, a.tag--primary.selectr-tag:hover a:focus, a.tag.tag--primary:hover a:hover, a.tag--primary.selectr-tag:hover a:hover, a.tag.tag--primary:focus a:focus, a.tag--primary.selectr-tag:focus a:focus, a.tag.tag--primary:focus a:hover, a.tag--primary.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--primary:hover a:active, a.tag--primary.selectr-tag:hover a:active, a.tag.tag--primary:focus a:active, a.tag--primary.selectr-tag:focus a:active {
+      color: #b3c9e0; }
   a.tag.tag--secondary:hover, a.tag--secondary.selectr-tag:hover, a.tag.tag--secondary:focus, a.tag--secondary.selectr-tag:focus {
-    background-color: #565871;
+    background-color: #142e4a;
     color: #FFFFFF; }
     a.tag.tag--secondary:hover a, a.tag--secondary.selectr-tag:hover a, a.tag.tag--secondary:hover a:link, a.tag--secondary.selectr-tag:hover a:link, a.tag.tag--secondary:focus a, a.tag--secondary.selectr-tag:focus a, a.tag.tag--secondary:focus a:link, a.tag--secondary.selectr-tag:focus a:link {
       color: #fff;
@@ -2912,12 +2993,12 @@ a.tag, a.selectr-tag {
     a.tag.tag--secondary:hover a:visited, a.tag--secondary.selectr-tag:hover a:visited, a.tag.tag--secondary:focus a:visited, a.tag--secondary.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--secondary:hover a:focus, a.tag--secondary.selectr-tag:hover a:focus, a.tag.tag--secondary:hover a:hover, a.tag--secondary.selectr-tag:hover a:hover, a.tag.tag--secondary:focus a:focus, a.tag--secondary.selectr-tag:focus a:focus, a.tag.tag--secondary:focus a:hover, a.tag--secondary.selectr-tag:focus a:hover {
-      color: #dbe2db;
+      color: #b3c9e0;
       text-decoration: none;
       border: none;
       background: transparent; }
     a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
-      color: #dbe2db; }
+      color: #b3c9e0; }
 
 /*
 Alerts
@@ -2942,68 +3023,68 @@ Styleguide Components.alert
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
-  background-color: #e7e9e7;
-  color: #575a57; }
+  background-color: #e6e8eb;
+  color: #565a5e; }
   .alert a, .alert a:link {
-    color: #575a57;
+    color: #565a5e;
     text-decoration: underline; }
   .alert a:visited {
-    color: #575a57; }
+    color: #565a5e; }
   .alert a:focus, .alert a:hover {
-    color: #aeb4ae;
+    color: #acb3bb;
     text-decoration: none;
     border: none;
     background: transparent; }
   .alert a:active {
-    color: #575a57; }
+    color: #565a5e; }
 
 .alert--success {
-  background-color: #e8f8ef;
-  color: #597465; }
+  background-color: #d0ecdf;
+  color: #32604a; }
   .alert--success a, .alert--success a:link {
-    color: #597465;
+    color: #32604a;
     text-decoration: underline; }
   .alert--success a:visited {
-    color: #597465; }
+    color: #32604a; }
   .alert--success a:focus, .alert--success a:hover {
-    color: #b1e7c9;
+    color: #63c093;
     text-decoration: none;
     border: none;
     background: transparent; }
   .alert--success a:active {
-    color: #597465; }
+    color: #32604a; }
 
 .alert--warning {
-  background-color: #f8efe8;
-  color: #736559; }
+  background-color: #e6e6c1;
+  color: #555618; }
   .alert--warning a, .alert--warning a:link {
-    color: #736559;
+    color: #555618;
     text-decoration: underline; }
   .alert--warning a:visited {
-    color: #736559; }
+    color: #555618; }
   .alert--warning a:focus, .alert--warning a:hover {
-    color: #e6c9b1;
+    color: #aaac30;
     text-decoration: none;
     border: none;
     background: transparent; }
   .alert--warning a:active {
-    color: #736559; }
+    color: #555618; }
 
 .alert--error {
-  background-color: #f8e8e9;
-  color: #73595b; }
+  background-color: #e6c2c1;
+  color: #561918; }
   .alert--error a, .alert--error a:link {
-    color: #73595b;
+    color: #561918;
     text-decoration: underline; }
   .alert--error a:visited {
-    color: #73595b; }
+    color: #561918; }
   .alert--error a:focus, .alert--error a:hover {
-    color: #e6b1b5;
+    color: #ac3230;
     text-decoration: none;
     border: none;
     background: transparent; }
   .alert--error a:active {
-    color: #73595b; }
+    color: #561918; }
 
 /*
 Margins
@@ -3093,105 +3174,119 @@ Markup:
 Styleguide Huesitos.borders
 */
 .b {
-  border: 1px solid #dbe2db; }
+  border: 1px solid #dee0e4; }
 
 .bt {
-  border-top: 1px solid #dbe2db; }
+  border-top: 1px solid #dee0e4; }
 
 .br {
-  border-right: 1px solid #dbe2db; }
+  border-right: 1px solid #dee0e4; }
 
 .bb {
-  border-bottom: 1px solid #dbe2db; }
+  border-bottom: 1px solid #dee0e4; }
 
 .bl {
-  border-left: 1px solid #dbe2db; }
+  border-left: 1px solid #dee0e4; }
 
 .b0 {
   border: none; }
 
 /*
-Background Color
+    Background Color
 
-A set of helper classes that map to common colors from the palette.
+    A set of helper classes that map to common colors from the palette.
 
-The text color is contrasted correctly.
+    The text color is contrasted correctly.
 
-Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
+    Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
 
-We showcase some examples here, but the list of classes could be much bigger or smaller than these:
+    We showcase some examples here, but the list of classes could be much bigger or smaller, depending on your color palette.
 
-Markup:
-<p class="minititle">Base</p>
-<section class="grid grid--5col">
-    <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
-    <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
-</section>
-<p class="minititle">State</p>
-<section class="grid grid--5col">
-    <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
-    <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
-    <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
-    <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
-</section>
-<p class="minititle">Blue palette</p>
-<section class="grid grid--5col">
-    <div class="bg-blue-0 p strong half-gutter" style="height:90px">Shade #0</div>
-    <div class="bg-blue-1 p strong half-gutter" style="height:90px">Shade #1</div>
-    <div class="bg-blue-2 p strong half-gutter" style="height:90px">Shade #2</div>
-    <div class="bg-blue-3 p strong half-gutter" style="height:90px">Shade #3</div>
-    <div class="bg-blue-4 p strong half-gutter" style="height:90px">Shade #4</div>
-    <div class="bg-blue-5 p strong half-gutter" style="height:90px">Shade #5</div>
-    <div class="bg-blue-6 p strong half-gutter" style="height:90px">Shade #6</div>
-    <div class="bg-blue-7 p strong half-gutter" style="height:90px">Shade #7</div>
-    <div class="bg-blue-8 p strong half-gutter" style="height:90px">Shade #8</div>
-    <div class="bg-blue-9 p strong half-gutter" style="height:90px">Shade #9</div>
-</section>
-<p class="minititle">Red palette</p>
-<section class="grid grid--5col">
-    <div class="bg-red-0 p strong half-gutter" style="height:90px">Shade #0</div>
-    <div class="bg-red-1 p strong half-gutter" style="height:90px">Shade #1</div>
-    <div class="bg-red-2 p strong half-gutter" style="height:90px">Shade #2</div>
-    <div class="bg-red-3 p strong half-gutter" style="height:90px">Shade #3</div>
-    <div class="bg-red-4 p strong half-gutter" style="height:90px">Shade #4</div>
-    <div class="bg-red-5 p strong half-gutter" style="height:90px">Shade #5</div>
-    <div class="bg-red-6 p strong half-gutter" style="height:90px">Shade #6</div>
-    <div class="bg-red-7 p strong half-gutter" style="height:90px">Shade #7</div>
-    <div class="bg-red-8 p strong half-gutter" style="height:90px">Shade #8</div>
-    <div class="bg-red-9 p strong half-gutter" style="height:90px">Shade #9</div>
-</section>
-<p class="minititle">Green palette</p>
-<section class="grid grid--5col">
-    <div class="bg-green-0 p strong half-gutter" style="height:90px">Shade #0</div>
-    <div class="bg-green-1 p strong half-gutter" style="height:90px">Shade #1</div>
-    <div class="bg-green-2 p strong half-gutter" style="height:90px">Shade #2</div>
-    <div class="bg-green-3 p strong half-gutter" style="height:90px">Shade #3</div>
-    <div class="bg-green-4 p strong half-gutter" style="height:90px">Shade #4</div>
-    <div class="bg-green-5 p strong half-gutter" style="height:90px">Shade #5</div>
-    <div class="bg-green-6 p strong half-gutter" style="height:90px">Shade #6</div>
-    <div class="bg-green-7 p strong half-gutter" style="height:90px">Shade #7</div>
-    <div class="bg-green-8 p strong half-gutter" style="height:90px">Shade #8</div>
-    <div class="bg-green-9 p strong half-gutter" style="height:90px">Shade #9</div>
-</section>
-<p class="minititle">Gray palette</p>
-<section class="grid grid--5col">
-    <div class="bg-gray-0 p strong half-gutter" style="height:90px">Shade #0</div>
-    <div class="bg-gray-1 p strong half-gutter" style="height:90px">Shade #1</div>
-    <div class="bg-gray-2 p strong half-gutter" style="height:90px">Shade #2</div>
-    <div class="bg-gray-3 p strong half-gutter" style="height:90px">Shade #3</div>
-    <div class="bg-gray-4 p strong half-gutter" style="height:90px">Shade #4</div>
-    <div class="bg-gray-5 p strong half-gutter" style="height:90px">Shade #5</div>
-    <div class="bg-gray-6 p strong half-gutter" style="height:90px">Shade #6</div>
-    <div class="bg-gray-7 p strong half-gutter" style="height:90px">Shade #7</div>
-    <div class="bg-gray-8 p strong half-gutter" style="height:90px">Shade #8</div>
-    <div class="bg-gray-9 p strong half-gutter" style="height:90px">Shade #9</div>
-</section>
+    You can avoid bloating your css with these helper classes by setting `$generate-color-classes: false`.
 
-Styleguide Huesitos.Color
-*/
+    Markup:
+    <p class="minititle">Base</p>
+    <section class="grid grid--5col">
+        <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
+        <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
+    </section>
+    <p class="minititle">State</p>
+    <section class="grid grid--5col">
+        <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
+        <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
+        <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
+        <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
+    </section>
+    <p class="minititle">Blue palette</p>
+    <section class="grid grid--5col">
+        <div class="bg-blue-0 p strong half-gutter" style="height:90px">Shade #0</div>
+        <div class="bg-blue-1 p strong half-gutter" style="height:90px">Shade #1</div>
+        <div class="bg-blue-2 p strong half-gutter" style="height:90px">Shade #2</div>
+        <div class="bg-blue-3 p strong half-gutter" style="height:90px">Shade #3</div>
+        <div class="bg-blue-4 p strong half-gutter" style="height:90px">Shade #4</div>
+        <div class="bg-blue-5 p strong half-gutter" style="height:90px">Shade #5</div>
+        <div class="bg-blue-6 p strong half-gutter" style="height:90px">Shade #6</div>
+        <div class="bg-blue-7 p strong half-gutter" style="height:90px">Shade #7</div>
+        <div class="bg-blue-8 p strong half-gutter" style="height:90px">Shade #8</div>
+        <div class="bg-blue-9 p strong half-gutter" style="height:90px">Shade #9</div>
+    </section>
+    <p class="minititle">Red palette</p>
+    <section class="grid grid--5col">
+        <div class="bg-red-0 p strong half-gutter" style="height:90px">Shade #0</div>
+        <div class="bg-red-1 p strong half-gutter" style="height:90px">Shade #1</div>
+        <div class="bg-red-2 p strong half-gutter" style="height:90px">Shade #2</div>
+        <div class="bg-red-3 p strong half-gutter" style="height:90px">Shade #3</div>
+        <div class="bg-red-4 p strong half-gutter" style="height:90px">Shade #4</div>
+        <div class="bg-red-5 p strong half-gutter" style="height:90px">Shade #5</div>
+        <div class="bg-red-6 p strong half-gutter" style="height:90px">Shade #6</div>
+        <div class="bg-red-7 p strong half-gutter" style="height:90px">Shade #7</div>
+        <div class="bg-red-8 p strong half-gutter" style="height:90px">Shade #8</div>
+        <div class="bg-red-9 p strong half-gutter" style="height:90px">Shade #9</div>
+    </section>
+    <p class="minititle">Green palette</p>
+    <section class="grid grid--5col">
+        <div class="bg-green-0 p strong half-gutter" style="height:90px">Shade #0</div>
+        <div class="bg-green-1 p strong half-gutter" style="height:90px">Shade #1</div>
+        <div class="bg-green-2 p strong half-gutter" style="height:90px">Shade #2</div>
+        <div class="bg-green-3 p strong half-gutter" style="height:90px">Shade #3</div>
+        <div class="bg-green-4 p strong half-gutter" style="height:90px">Shade #4</div>
+        <div class="bg-green-5 p strong half-gutter" style="height:90px">Shade #5</div>
+        <div class="bg-green-6 p strong half-gutter" style="height:90px">Shade #6</div>
+        <div class="bg-green-7 p strong half-gutter" style="height:90px">Shade #7</div>
+        <div class="bg-green-8 p strong half-gutter" style="height:90px">Shade #8</div>
+        <div class="bg-green-9 p strong half-gutter" style="height:90px">Shade #9</div>
+    </section>
+    <p class="minititle">Gray palette</p>
+    <section class="grid grid--5col">
+        <div class="bg-gray-0 p strong half-gutter" style="height:90px">Shade #0</div>
+        <div class="bg-gray-1 p strong half-gutter" style="height:90px">Shade #1</div>
+        <div class="bg-gray-2 p strong half-gutter" style="height:90px">Shade #2</div>
+        <div class="bg-gray-3 p strong half-gutter" style="height:90px">Shade #3</div>
+        <div class="bg-gray-4 p strong half-gutter" style="height:90px">Shade #4</div>
+        <div class="bg-gray-5 p strong half-gutter" style="height:90px">Shade #5</div>
+        <div class="bg-gray-6 p strong half-gutter" style="height:90px">Shade #6</div>
+        <div class="bg-gray-7 p strong half-gutter" style="height:90px">Shade #7</div>
+        <div class="bg-gray-8 p strong half-gutter" style="height:90px">Shade #8</div>
+        <div class="bg-gray-9 p strong half-gutter" style="height:90px">Shade #9</div>
+    </section>
+
+    Styleguide Huesitos.Color
+    */
 .bg-base-primary {
-  background-color: #c4c8ff;
-  color: #1A1A19; }
+  background-color: #2b619a;
+  color: #FFFFFF; }
+  .bg-base-primary a, .bg-base-primary a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-base-primary a:visited {
+    color: #fff; }
+  .bg-base-primary a:focus, .bg-base-primary a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-base-primary a:active {
+    color: #b3c9e0; }
   .bg-base-primary h1, .bg-base-primary .h1,
   .bg-base-primary h2, .bg-base-primary .h2,
   .bg-base-primary h3, .bg-base-primary .h3,
@@ -3200,8 +3295,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-base-secondary {
-  background-color: #8184a8;
-  color: #1A1A19; }
+  background-color: #1e456e;
+  color: #FFFFFF; }
+  .bg-base-secondary a, .bg-base-secondary a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-base-secondary a:visited {
+    color: #fff; }
+  .bg-base-secondary a:focus, .bg-base-secondary a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-base-secondary a:active {
+    color: #b3c9e0; }
   .bg-base-secondary h1, .bg-base-secondary .h1,
   .bg-base-secondary h2, .bg-base-secondary .h2,
   .bg-base-secondary h3, .bg-base-secondary .h3,
@@ -3210,7 +3317,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-base-separator {
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19; }
   .bg-base-separator h1, .bg-base-separator .h1,
   .bg-base-separator h2, .bg-base-separator .h2,
@@ -3220,7 +3327,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-base-black {
-  background-color: #3d3f3d;
+  background-color: #384048;
   color: #FFFFFF; }
   .bg-base-black a, .bg-base-black a:link {
     color: #fff;
@@ -3228,12 +3335,12 @@ Styleguide Huesitos.Color
   .bg-base-black a:visited {
     color: #fff; }
   .bg-base-black a:focus, .bg-base-black a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-base-black a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-base-black h1, .bg-base-black .h1,
   .bg-base-black h2, .bg-base-black .h2,
   .bg-base-black h3, .bg-base-black .h3,
@@ -3252,7 +3359,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-text-primary {
-  background-color: #3d3f3d;
+  background-color: #384048;
   color: #FFFFFF; }
   .bg-text-primary a, .bg-text-primary a:link {
     color: #fff;
@@ -3260,12 +3367,12 @@ Styleguide Huesitos.Color
   .bg-text-primary a:visited {
     color: #fff; }
   .bg-text-primary a:focus, .bg-text-primary a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-text-primary a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-text-primary h1, .bg-text-primary .h1,
   .bg-text-primary h2, .bg-text-primary .h2,
   .bg-text-primary h3, .bg-text-primary .h3,
@@ -3274,8 +3381,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-text-heading {
-  background-color: #8184a8;
-  color: #1A1A19; }
+  background-color: #151448;
+  color: #FFFFFF; }
+  .bg-text-heading a, .bg-text-heading a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-text-heading a:visited {
+    color: #fff; }
+  .bg-text-heading a:focus, .bg-text-heading a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-text-heading a:active {
+    color: #b3c9e0; }
   .bg-text-heading h1, .bg-text-heading .h1,
   .bg-text-heading h2, .bg-text-heading .h2,
   .bg-text-heading h3, .bg-text-heading .h3,
@@ -3283,31 +3402,21 @@ Styleguide Huesitos.Color
   .bg-text-heading h5, .bg-text-heading .h5 h6, .bg-text-heading .h6 {
     color: inherit; }
 
-.bg-text-active {
-  background-color: #383837;
+.bg-text-mark {
+  background-color: #ac7030;
   color: #FFFFFF; }
-  .bg-text-active a, .bg-text-active a:link {
+  .bg-text-mark a, .bg-text-mark a:link {
     color: #fff;
     text-decoration: underline; }
-  .bg-text-active a:visited {
+  .bg-text-mark a:visited {
     color: #fff; }
-  .bg-text-active a:focus, .bg-text-active a:hover {
-    color: #dbe2db;
+  .bg-text-mark a:focus, .bg-text-mark a:hover {
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
-  .bg-text-active a:active {
-    color: #dbe2db; }
-  .bg-text-active h1, .bg-text-active .h1,
-  .bg-text-active h2, .bg-text-active .h2,
-  .bg-text-active h3, .bg-text-active .h3,
-  .bg-text-active h4, .bg-text-active .h4,
-  .bg-text-active h5, .bg-text-active .h5 h6, .bg-text-active .h6 {
-    color: inherit; }
-
-.bg-text-mark {
-  background-color: #fffbc4;
-  color: #1A1A19; }
+  .bg-text-mark a:active {
+    color: #b3c9e0; }
   .bg-text-mark h1, .bg-text-mark .h1,
   .bg-text-mark h2, .bg-text-mark .h2,
   .bg-text-mark h3, .bg-text-mark .h3,
@@ -3316,7 +3425,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-background-dark {
-  background-color: #696c69;
+  background-color: #606d7c;
   color: #FFFFFF; }
   .bg-background-dark a, .bg-background-dark a:link {
     color: #fff;
@@ -3324,12 +3433,12 @@ Styleguide Huesitos.Color
   .bg-background-dark a:visited {
     color: #fff; }
   .bg-background-dark a:focus, .bg-background-dark a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-background-dark a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-background-dark h1, .bg-background-dark .h1,
   .bg-background-dark h2, .bg-background-dark .h2,
   .bg-background-dark h3, .bg-background-dark .h3,
@@ -3338,7 +3447,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-background-dim {
-  background-color: #eaeeea;
+  background-color: #ecedef;
   color: #1A1A19; }
   .bg-background-dim h1, .bg-background-dim .h1,
   .bg-background-dim h2, .bg-background-dim .h2,
@@ -3348,7 +3457,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-background-light {
-  background-color: #f8f9f8;
+  background-color: #f8f9f9;
   color: #1A1A19; }
   .bg-background-light h1, .bg-background-light .h1,
   .bg-background-light h2, .bg-background-light .h2,
@@ -3358,7 +3467,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-state-muted {
-  background-color: #eaeeea;
+  background-color: #ecedef;
   color: #1A1A19; }
   .bg-state-muted h1, .bg-state-muted .h1,
   .bg-state-muted h2, .bg-state-muted .h2,
@@ -3368,7 +3477,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-state-success {
-  background-color: #b1e7c9;
+  background-color: #63c093;
   color: #1A1A19; }
   .bg-state-success h1, .bg-state-success .h1,
   .bg-state-success h2, .bg-state-success .h2,
@@ -3378,8 +3487,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-state-warning {
-  background-color: #e6c9b1;
-  color: #1A1A19; }
+  background-color: #aaac30;
+  color: #FFFFFF; }
+  .bg-state-warning a, .bg-state-warning a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-state-warning a:visited {
+    color: #fff; }
+  .bg-state-warning a:focus, .bg-state-warning a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-warning a:active {
+    color: #b3c9e0; }
   .bg-state-warning h1, .bg-state-warning .h1,
   .bg-state-warning h2, .bg-state-warning .h2,
   .bg-state-warning h3, .bg-state-warning .h3,
@@ -3388,8 +3509,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-state-error {
-  background-color: #e6b1b5;
-  color: #1A1A19; }
+  background-color: #ac3230;
+  color: #FFFFFF; }
+  .bg-state-error a, .bg-state-error a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-state-error a:visited {
+    color: #fff; }
+  .bg-state-error a:focus, .bg-state-error a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-state-error a:active {
+    color: #b3c9e0; }
   .bg-state-error h1, .bg-state-error .h1,
   .bg-state-error h2, .bg-state-error .h2,
   .bg-state-error h3, .bg-state-error .h3,
@@ -3398,7 +3531,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-0 {
-  background-color: #f6fbff;
+  background-color: #e8eff6;
   color: #1A1A19; }
   .bg-blue-0 h1, .bg-blue-0 .h1,
   .bg-blue-0 h2, .bg-blue-0 .h2,
@@ -3408,7 +3541,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-1 {
-  background-color: #ecf6ff;
+  background-color: #cfddec;
   color: #1A1A19; }
   .bg-blue-1 h1, .bg-blue-1 .h1,
   .bg-blue-1 h2, .bg-blue-1 .h2,
@@ -3418,7 +3551,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-2 {
-  background-color: #e3f2ff;
+  background-color: #b3c9e0;
   color: #1A1A19; }
   .bg-blue-2 h1, .bg-blue-2 .h1,
   .bg-blue-2 h2, .bg-blue-2 .h2,
@@ -3428,7 +3561,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-3 {
-  background-color: #d9eeff;
+  background-color: #92b2d3;
   color: #1A1A19; }
   .bg-blue-3 h1, .bg-blue-3 .h1,
   .bg-blue-3 h2, .bg-blue-3 .h2,
@@ -3438,7 +3571,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-4 {
-  background-color: #cee9ff;
+  background-color: #6a95c3;
   color: #1A1A19; }
   .bg-blue-4 h1, .bg-blue-4 .h1,
   .bg-blue-4 h2, .bg-blue-4 .h2,
@@ -3448,8 +3581,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-5 {
-  background-color: #c4e5ff;
-  color: #1A1A19; }
+  background-color: #306cac;
+  color: #FFFFFF; }
+  .bg-blue-5 a, .bg-blue-5 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-blue-5 a:visited {
+    color: #fff; }
+  .bg-blue-5 a:focus, .bg-blue-5 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-5 a:active {
+    color: #b3c9e0; }
   .bg-blue-5 h1, .bg-blue-5 .h1,
   .bg-blue-5 h2, .bg-blue-5 .h2,
   .bg-blue-5 h3, .bg-blue-5 .h3,
@@ -3458,8 +3603,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-6 {
-  background-color: #b1cfe6;
-  color: #1A1A19; }
+  background-color: #2b619a;
+  color: #FFFFFF; }
+  .bg-blue-6 a, .bg-blue-6 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-blue-6 a:visited {
+    color: #fff; }
+  .bg-blue-6 a:focus, .bg-blue-6 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-6 a:active {
+    color: #b3c9e0; }
   .bg-blue-6 h1, .bg-blue-6 .h1,
   .bg-blue-6 h2, .bg-blue-6 .h2,
   .bg-blue-6 h3, .bg-blue-6 .h3,
@@ -3468,8 +3625,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-7 {
-  background-color: #9cb6cb;
-  color: #1A1A19; }
+  background-color: #255486;
+  color: #FFFFFF; }
+  .bg-blue-7 a, .bg-blue-7 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-blue-7 a:visited {
+    color: #fff; }
+  .bg-blue-7 a:focus, .bg-blue-7 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-7 a:active {
+    color: #b3c9e0; }
   .bg-blue-7 h1, .bg-blue-7 .h1,
   .bg-blue-7 h2, .bg-blue-7 .h2,
   .bg-blue-7 h3, .bg-blue-7 .h3,
@@ -3478,8 +3647,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-8 {
-  background-color: #8197a9;
-  color: #1A1A19; }
+  background-color: #1e456e;
+  color: #FFFFFF; }
+  .bg-blue-8 a, .bg-blue-8 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-blue-8 a:visited {
+    color: #fff; }
+  .bg-blue-8 a:focus, .bg-blue-8 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-blue-8 a:active {
+    color: #b3c9e0; }
   .bg-blue-8 h1, .bg-blue-8 .h1,
   .bg-blue-8 h2, .bg-blue-8 .h2,
   .bg-blue-8 h3, .bg-blue-8 .h3,
@@ -3488,7 +3669,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-blue-9 {
-  background-color: #5e6e7a;
+  background-color: #15304d;
   color: #FFFFFF; }
   .bg-blue-9 a, .bg-blue-9 a:link {
     color: #fff;
@@ -3496,12 +3677,12 @@ Styleguide Huesitos.Color
   .bg-blue-9 a:visited {
     color: #fff; }
   .bg-blue-9 a:focus, .bg-blue-9 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-blue-9 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-blue-9 h1, .bg-blue-9 .h1,
   .bg-blue-9 h2, .bg-blue-9 .h2,
   .bg-blue-9 h3, .bg-blue-9 .h3,
@@ -3510,7 +3691,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-0 {
-  background-color: #f6fffa;
+  background-color: #e6f5ee;
   color: #1A1A19; }
   .bg-green-0 h1, .bg-green-0 .h1,
   .bg-green-0 h2, .bg-green-0 .h2,
@@ -3520,7 +3701,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-1 {
-  background-color: #edfff5;
+  background-color: #cbeadb;
   color: #1A1A19; }
   .bg-green-1 h1, .bg-green-1 .h1,
   .bg-green-1 h2, .bg-green-1 .h2,
@@ -3530,7 +3711,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-2 {
-  background-color: #e3ffef;
+  background-color: #aedec7;
   color: #1A1A19; }
   .bg-green-2 h1, .bg-green-2 .h1,
   .bg-green-2 h2, .bg-green-2 .h2,
@@ -3540,7 +3721,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-3 {
-  background-color: #d9ffea;
+  background-color: #8bd0af;
   color: #1A1A19; }
   .bg-green-3 h1, .bg-green-3 .h1,
   .bg-green-3 h2, .bg-green-3 .h2,
@@ -3550,7 +3731,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-4 {
-  background-color: #cfffe4;
+  background-color: #63c093;
   color: #1A1A19; }
   .bg-green-4 h1, .bg-green-4 .h1,
   .bg-green-4 h2, .bg-green-4 .h2,
@@ -3560,8 +3741,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-5 {
-  background-color: #c4ffde;
-  color: #1A1A19; }
+  background-color: #30ac70;
+  color: #FFFFFF; }
+  .bg-green-5 a, .bg-green-5 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-green-5 a:visited {
+    color: #fff; }
+  .bg-green-5 a:focus, .bg-green-5 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-5 a:active {
+    color: #b3c9e0; }
   .bg-green-5 h1, .bg-green-5 .h1,
   .bg-green-5 h2, .bg-green-5 .h2,
   .bg-green-5 h3, .bg-green-5 .h3,
@@ -3570,8 +3763,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-6 {
-  background-color: #b1e7c9;
-  color: #1A1A19; }
+  background-color: #2b9b65;
+  color: #FFFFFF; }
+  .bg-green-6 a, .bg-green-6 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-green-6 a:visited {
+    color: #fff; }
+  .bg-green-6 a:focus, .bg-green-6 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-6 a:active {
+    color: #b3c9e0; }
   .bg-green-6 h1, .bg-green-6 .h1,
   .bg-green-6 h2, .bg-green-6 .h2,
   .bg-green-6 h3, .bg-green-6 .h3,
@@ -3580,8 +3785,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-7 {
-  background-color: #9ccbb0;
-  color: #1A1A19; }
+  background-color: #258858;
+  color: #FFFFFF; }
+  .bg-green-7 a, .bg-green-7 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-green-7 a:visited {
+    color: #fff; }
+  .bg-green-7 a:focus, .bg-green-7 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-7 a:active {
+    color: #b3c9e0; }
   .bg-green-7 h1, .bg-green-7 .h1,
   .bg-green-7 h2, .bg-green-7 .h2,
   .bg-green-7 h3, .bg-green-7 .h3,
@@ -3590,8 +3807,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-8 {
-  background-color: #82a993;
-  color: #1A1A19; }
+  background-color: #1f7049;
+  color: #FFFFFF; }
+  .bg-green-8 a, .bg-green-8 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-green-8 a:visited {
+    color: #fff; }
+  .bg-green-8 a:focus, .bg-green-8 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-green-8 a:active {
+    color: #b3c9e0; }
   .bg-green-8 h1, .bg-green-8 .h1,
   .bg-green-8 h2, .bg-green-8 .h2,
   .bg-green-8 h3, .bg-green-8 .h3,
@@ -3600,7 +3829,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-green-9 {
-  background-color: #5e7b6b;
+  background-color: #165034;
   color: #FFFFFF; }
   .bg-green-9 a, .bg-green-9 a:link {
     color: #fff;
@@ -3608,12 +3837,12 @@ Styleguide Huesitos.Color
   .bg-green-9 a:visited {
     color: #fff; }
   .bg-green-9 a:focus, .bg-green-9 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-green-9 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-green-9 h1, .bg-green-9 .h1,
   .bg-green-9 h2, .bg-green-9 .h2,
   .bg-green-9 h3, .bg-green-9 .h3,
@@ -3622,7 +3851,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-0 {
-  background-color: #fff6f7;
+  background-color: #f6ebea;
   color: #1A1A19; }
   .bg-red-0 h1, .bg-red-0 .h1,
   .bg-red-0 h2, .bg-red-0 .h2,
@@ -3632,7 +3861,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-1 {
-  background-color: #ffedee;
+  background-color: #edd4d4;
   color: #1A1A19; }
   .bg-red-1 h1, .bg-red-1 .h1,
   .bg-red-1 h2, .bg-red-1 .h2,
@@ -3642,7 +3871,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-2 {
-  background-color: #ffe4e5;
+  background-color: #e3bbba;
   color: #1A1A19; }
   .bg-red-2 h1, .bg-red-2 .h1,
   .bg-red-2 h2, .bg-red-2 .h2,
@@ -3652,7 +3881,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-3 {
-  background-color: #ffdadc;
+  background-color: #d79c9b;
   color: #1A1A19; }
   .bg-red-3 h1, .bg-red-3 .h1,
   .bg-red-3 h2, .bg-red-3 .h2,
@@ -3662,7 +3891,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-4 {
-  background-color: #ffcfd2;
+  background-color: #c77473;
   color: #1A1A19; }
   .bg-red-4 h1, .bg-red-4 .h1,
   .bg-red-4 h2, .bg-red-4 .h2,
@@ -3672,8 +3901,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-5 {
-  background-color: #ffc4c8;
-  color: #1A1A19; }
+  background-color: #ac3230;
+  color: #FFFFFF; }
+  .bg-red-5 a, .bg-red-5 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-red-5 a:visited {
+    color: #fff; }
+  .bg-red-5 a:focus, .bg-red-5 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-5 a:active {
+    color: #b3c9e0; }
   .bg-red-5 h1, .bg-red-5 .h1,
   .bg-red-5 h2, .bg-red-5 .h2,
   .bg-red-5 h3, .bg-red-5 .h3,
@@ -3682,8 +3923,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-6 {
-  background-color: #e6b1b5;
-  color: #1A1A19; }
+  background-color: #9a2d2b;
+  color: #FFFFFF; }
+  .bg-red-6 a, .bg-red-6 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-red-6 a:visited {
+    color: #fff; }
+  .bg-red-6 a:focus, .bg-red-6 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-6 a:active {
+    color: #b3c9e0; }
   .bg-red-6 h1, .bg-red-6 .h1,
   .bg-red-6 h2, .bg-red-6 .h2,
   .bg-red-6 h3, .bg-red-6 .h3,
@@ -3692,8 +3945,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-7 {
-  background-color: #ca9b9f;
-  color: #1A1A19; }
+  background-color: #872725;
+  color: #FFFFFF; }
+  .bg-red-7 a, .bg-red-7 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-red-7 a:visited {
+    color: #fff; }
+  .bg-red-7 a:focus, .bg-red-7 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-7 a:active {
+    color: #b3c9e0; }
   .bg-red-7 h1, .bg-red-7 .h1,
   .bg-red-7 h2, .bg-red-7 .h2,
   .bg-red-7 h3, .bg-red-7 .h3,
@@ -3702,8 +3967,20 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-8 {
-  background-color: #a88184;
-  color: #1A1A19; }
+  background-color: #6e201e;
+  color: #FFFFFF; }
+  .bg-red-8 a, .bg-red-8 a:link {
+    color: #fff;
+    text-decoration: underline; }
+  .bg-red-8 a:visited {
+    color: #fff; }
+  .bg-red-8 a:focus, .bg-red-8 a:hover {
+    color: #b3c9e0;
+    text-decoration: none;
+    border: none;
+    background: transparent; }
+  .bg-red-8 a:active {
+    color: #b3c9e0; }
   .bg-red-8 h1, .bg-red-8 .h1,
   .bg-red-8 h2, .bg-red-8 .h2,
   .bg-red-8 h3, .bg-red-8 .h3,
@@ -3712,7 +3989,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-red-9 {
-  background-color: #7a5d5f;
+  background-color: #4d1615;
   color: #FFFFFF; }
   .bg-red-9 a, .bg-red-9 a:link {
     color: #fff;
@@ -3720,12 +3997,12 @@ Styleguide Huesitos.Color
   .bg-red-9 a:visited {
     color: #fff; }
   .bg-red-9 a:focus, .bg-red-9 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-red-9 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-red-9 h1, .bg-red-9 .h1,
   .bg-red-9 h2, .bg-red-9 .h2,
   .bg-red-9 h3, .bg-red-9 .h3,
@@ -3734,7 +4011,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-0 {
-  background-color: #f8f9f8;
+  background-color: #f8f9f9;
   color: #1A1A19; }
   .bg-gray-0 h1, .bg-gray-0 .h1,
   .bg-gray-0 h2, .bg-gray-0 .h2,
@@ -3744,7 +4021,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-1 {
-  background-color: #eaeeea;
+  background-color: #ecedef;
   color: #1A1A19; }
   .bg-gray-1 h1, .bg-gray-1 .h1,
   .bg-gray-1 h2, .bg-gray-1 .h2,
@@ -3754,7 +4031,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-2 {
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19; }
   .bg-gray-2 h1, .bg-gray-2 .h1,
   .bg-gray-2 h2, .bg-gray-2 .h2,
@@ -3764,7 +4041,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-3 {
-  background-color: #ced4ce;
+  background-color: #cfd3d7;
   color: #1A1A19; }
   .bg-gray-3 h1, .bg-gray-3 .h1,
   .bg-gray-3 h2, .bg-gray-3 .h2,
@@ -3774,7 +4051,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-4 {
-  background-color: #bfc5bf;
+  background-color: #bfc4ca;
   color: #1A1A19; }
   .bg-gray-4 h1, .bg-gray-4 .h1,
   .bg-gray-4 h2, .bg-gray-4 .h2,
@@ -3784,7 +4061,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-5 {
-  background-color: #aeb4ae;
+  background-color: #acb3bb;
   color: #1A1A19; }
   .bg-gray-5 h1, .bg-gray-5 .h1,
   .bg-gray-5 h2, .bg-gray-5 .h2,
@@ -3794,7 +4071,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-6 {
-  background-color: #9ca19c;
+  background-color: #98a0aa;
   color: #1A1A19; }
   .bg-gray-6 h1, .bg-gray-6 .h1,
   .bg-gray-6 h2, .bg-gray-6 .h2,
@@ -3804,7 +4081,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-7 {
-  background-color: #858a85;
+  background-color: #7f8a96;
   color: #FFFFFF; }
   .bg-gray-7 a, .bg-gray-7 a:link {
     color: #fff;
@@ -3812,12 +4089,12 @@ Styleguide Huesitos.Color
   .bg-gray-7 a:visited {
     color: #fff; }
   .bg-gray-7 a:focus, .bg-gray-7 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-gray-7 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-gray-7 h1, .bg-gray-7 .h1,
   .bg-gray-7 h2, .bg-gray-7 .h2,
   .bg-gray-7 h3, .bg-gray-7 .h3,
@@ -3826,7 +4103,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-8 {
-  background-color: #696c69;
+  background-color: #606d7c;
   color: #FFFFFF; }
   .bg-gray-8 a, .bg-gray-8 a:link {
     color: #fff;
@@ -3834,12 +4111,12 @@ Styleguide Huesitos.Color
   .bg-gray-8 a:visited {
     color: #fff; }
   .bg-gray-8 a:focus, .bg-gray-8 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-gray-8 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-gray-8 h1, .bg-gray-8 .h1,
   .bg-gray-8 h2, .bg-gray-8 .h2,
   .bg-gray-8 h3, .bg-gray-8 .h3,
@@ -3848,7 +4125,7 @@ Styleguide Huesitos.Color
     color: inherit; }
 
 .bg-gray-9 {
-  background-color: #3d3f3d;
+  background-color: #384048;
   color: #FFFFFF; }
   .bg-gray-9 a, .bg-gray-9 a:link {
     color: #fff;
@@ -3856,12 +4133,12 @@ Styleguide Huesitos.Color
   .bg-gray-9 a:visited {
     color: #fff; }
   .bg-gray-9 a:focus, .bg-gray-9 a:hover {
-    color: #dbe2db;
+    color: #b3c9e0;
     text-decoration: none;
     border: none;
     background: transparent; }
   .bg-gray-9 a:active {
-    color: #dbe2db; }
+    color: #b3c9e0; }
   .bg-gray-9 h1, .bg-gray-9 .h1,
   .bg-gray-9 h2, .bg-gray-9 .h2,
   .bg-gray-9 h3, .bg-gray-9 .h3,
@@ -3984,7 +4261,7 @@ Styleguide Huesitos.gutter-modifier
   box-sizing: border-box;
   width: 100%;
   cursor: pointer;
-  border: 1px solid #dbe2db;
+  border: 1px solid #dee0e4;
   border-radius: 0px;
   background-color: #fff; }
 
@@ -4001,7 +4278,7 @@ Styleguide Huesitos.gutter-modifier
   transform: rotate(0deg) translate3d(0px, -50%, 0px);
   border-width: 4px 4px 0 4px;
   border-style: solid;
-  border-color: #dbe2db transparent transparent; }
+  border-color: #dee0e4 transparent transparent; }
 
 .selectr-container.open .selectr-selected::before,
 .selectr-container.native-open .selectr-selected::before {
@@ -4017,7 +4294,7 @@ Styleguide Huesitos.gutter-modifier
   text-overflow: ellipsis; }
 
 .selectr-placeholder {
-  color: #dbe2db;
+  color: #dee0e4;
   padding: 0.3375rem 0.675rem; }
 
 .selectr-tags {
@@ -4047,7 +4324,7 @@ Styleguide Huesitos.gutter-modifier
   width: 100%;
   border-width: 0 1px 1px;
   border-style: solid;
-  border-color: transparent #dbe2db #dbe2db;
+  border-color: transparent #dee0e4 #dee0e4;
   border-radius: 0px;
   background-color: #fff; }
 
@@ -4077,8 +4354,44 @@ Styleguide Huesitos.gutter-modifier
   .selectr-input-clear:focus,
   .selectr-tag-remove:hover,
   .selectr-tag-remove:focus {
-    background-color: #e6b1b5;
-    color: #1A1A19; }
+    background-color: #ac3230;
+    color: #FFFFFF; }
+    .selectr-clear:hover a, .selectr-clear:hover a:link, .selectr-clear:focus a, .selectr-clear:focus a:link,
+    .selectr-input-clear:hover a,
+    .selectr-input-clear:hover a:link,
+    .selectr-input-clear:focus a,
+    .selectr-input-clear:focus a:link,
+    .selectr-tag-remove:hover a,
+    .selectr-tag-remove:hover a:link,
+    .selectr-tag-remove:focus a,
+    .selectr-tag-remove:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .selectr-clear:hover a:visited, .selectr-clear:focus a:visited,
+    .selectr-input-clear:hover a:visited,
+    .selectr-input-clear:focus a:visited,
+    .selectr-tag-remove:hover a:visited,
+    .selectr-tag-remove:focus a:visited {
+      color: #fff; }
+    .selectr-clear:hover a:focus, .selectr-clear:hover a:hover, .selectr-clear:focus a:focus, .selectr-clear:focus a:hover,
+    .selectr-input-clear:hover a:focus,
+    .selectr-input-clear:hover a:hover,
+    .selectr-input-clear:focus a:focus,
+    .selectr-input-clear:focus a:hover,
+    .selectr-tag-remove:hover a:focus,
+    .selectr-tag-remove:hover a:hover,
+    .selectr-tag-remove:focus a:focus,
+    .selectr-tag-remove:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .selectr-clear:hover a:active, .selectr-clear:focus a:active,
+    .selectr-input-clear:hover a:active,
+    .selectr-input-clear:focus a:active,
+    .selectr-tag-remove:hover a:active,
+    .selectr-tag-remove:focus a:active {
+      color: #b3c9e0; }
 
 .selectr-clear,
 .selectr-input-clear {
@@ -4139,7 +4452,7 @@ input.selectr-input {
   box-sizing: border-box;
   width: 100%;
   padding: 8px 16px;
-  border-top: 1px solid #dbe2db;
+  border-top: 1px solid #dee0e4;
   border-radius: 0 0 3px 3px;
   background-color: #fff; }
 
@@ -4196,11 +4509,11 @@ input.selectr-input {
   text-decoration: underline; }
 
 .selectr-option.selected {
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19; }
 
 .selectr-option.active {
-  background-color: #dbe2db;
+  background-color: #dee0e4;
   color: #1A1A19; }
 
 .selectr-option.disabled {
@@ -4210,7 +4523,7 @@ input.selectr-input {
   display: none; }
 
 .selectr-container.open .selectr-selected {
-  border-color: #dbe2db #dbe2db transparent #dbe2db;
+  border-color: #dee0e4 #dee0e4 transparent #dee0e4;
   border-radius: 0px 0px 0 0; }
 
 .selectr-container.open .selectr-selected::after {
@@ -4280,12 +4593,12 @@ input.selectr-input {
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
-  border-color: #e7ece7 #dbe2db #dbe2db;
+  border-color: #e9eaed #dee0e4 #dee0e4;
   border-radius: 0 0 0px 0px; }
 
 .selectr-container.inverted .selectr-options-container {
   border-width: 1px 1px 0;
-  border-color: #dbe2db #dbe2db transparent;
+  border-color: #dee0e4 #dee0e4 transparent;
   border-radius: 0px 0px 0 0;
   background-color: #fff; }
 
@@ -4326,36 +4639,36 @@ Markup:
 Styleguide Typography.links
 */
 a, a:link {
-  color: #c79bca;
+  color: #572586;
   text-decoration: underline; }
 
 a:visited {
-  color: #9cb6cb; }
+  color: #572586; }
 
 a:focus, a:hover {
-  color: #8197a9;
+  color: #7030ac;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a:active {
-  color: #9cb6cb; }
+  color: #7030ac; }
 
 a.link--inactive, a.link--inactive:link {
-  color: #3d3f3d;
+  color: #384048;
   text-decoration: underline; }
 
 a.link--inactive:visited {
-  color: #3d3f3d; }
+  color: #384048; }
 
 a.link--inactive:focus, a.link--inactive:hover {
-  color: #3d3f3d;
+  color: #384048;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link--inactive:active {
-  color: #3d3f3d; }
+  color: #384048; }
 
 a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
   text-decoration: none; }
@@ -4364,42 +4677,42 @@ a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:ho
   text-decoration: none; }
 
 a.link-strategy-underline, a.link-strategy-underline:link {
-  color: #c79bca;
+  color: #572586;
   text-decoration: underline; }
 
 a.link-strategy-underline:visited {
-  color: #9cb6cb; }
+  color: #572586; }
 
 a.link-strategy-underline:focus, a.link-strategy-underline:hover {
-  color: #8197a9;
+  color: #7030ac;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link-strategy-underline:active {
-  color: #9cb6cb; }
+  color: #7030ac; }
 
 a.link-strategy-border, a.link-strategy-border:link {
-  color: #c79bca;
+  color: #572586;
   text-decoration: none;
-  border-bottom: 0.3375rem solid #c4e5ff; }
+  border-bottom: 0.16875rem solid #cfbae3; }
 
 a.link-strategy-border:visited {
-  color: #9cb6cb; }
+  color: #572586; }
 
 a.link-strategy-border:focus, a.link-strategy-border:hover {
-  color: #8197a9;
+  color: #7030ac;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link-strategy-border:active {
-  color: #9cb6cb; }
+  color: #7030ac; }
 
 a.link-strategy-mark, a.link-strategy-mark:link {
-  color: #c79bca;
+  color: #572586;
   text-decoration: none;
-  background-color: #e3ffef;
+  background-color: #cfbae3;
   position: relative; }
   a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
     content: "";
@@ -4407,58 +4720,58 @@ a.link-strategy-mark, a.link-strategy-mark:link {
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #e3ffef; }
+    background-color: #cfbae3; }
   a.link-strategy-mark:before, a.link-strategy-mark:link:before {
     left: -2px; }
   a.link-strategy-mark:after, a.link-strategy-mark:link:after {
     right: -2px; }
 
 a.link-strategy-mark:visited {
-  color: #9cb6cb; }
+  color: #572586; }
 
 a.link-strategy-mark:focus, a.link-strategy-mark:hover {
-  color: #8197a9;
+  color: #7030ac;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link-strategy-mark:active {
-  color: #9cb6cb; }
+  color: #7030ac; }
 
 a.link-strategy-smart, a.link-strategy-smart:link {
-  color: #c79bca;
-  color: #c79bca;
+  color: #572586;
+  color: #572586;
   text-decoration: none;
-  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(#c79bca, #c79bca);
+  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
   a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-    background: #fff; }
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
   a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
-    text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-    background: #fff; }
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
   a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-    background: #fff; }
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
   a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
     text-shadow: none; }
   a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
-    color: #c79bca; }
+    color: #572586; }
 
 a.link-strategy-smart:visited {
-  color: #9cb6cb; }
+  color: #572586; }
 
 a.link-strategy-smart:focus, a.link-strategy-smart:hover {
-  color: #8197a9;
+  color: #7030ac;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link-strategy-smart:active {
-  color: #9cb6cb; }
+  color: #7030ac; }
 
 a.link-inverted, a.link-inverted:link {
   color: #fff;
@@ -4468,13 +4781,13 @@ a.link-inverted:visited {
   color: #fff; }
 
 a.link-inverted:focus, a.link-inverted:hover {
-  color: #dbe2db;
+  color: #b3c9e0;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 a.link-inverted:active {
-  color: #dbe2db; }
+  color: #b3c9e0; }
 
 /*
 Kill Link Decoration
@@ -4508,20 +4821,20 @@ Markup:
 Styleguide Helpers.kill-link
 */
 .kill-link a, .kill-link a:link {
-  color: #3d3f3d;
+  color: #384048;
   text-decoration: underline; }
 
 .kill-link a:visited {
-  color: #3d3f3d; }
+  color: #384048; }
 
 .kill-link a:focus, .kill-link a:hover {
-  color: #3d3f3d;
+  color: #384048;
   text-decoration: none;
   border: none;
   background: transparent; }
 
 .kill-link a:active {
-  color: #3d3f3d; }
+  color: #384048; }
 
 .kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
   text-decoration: none; }

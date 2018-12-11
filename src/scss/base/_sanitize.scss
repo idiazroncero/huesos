@@ -99,8 +99,9 @@ Markup:
 
 Styleguide Base.lists
 */
-ol,ul {
-	padding-left: 1em;
+ol,
+ul {
+	padding-left: $list-padding;
 	li {
 		margin-bottom: $gutter / 2;
 	}

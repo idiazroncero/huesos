@@ -16,6 +16,9 @@
 <div class="kss-sidebar bg-base-secondary kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">{{options.title}}</h1>
+    <small class="kss-version kill-link-decoration">
+      <a target="_blank" href="https://github.com/idiazroncero/huesos/tree/master">v1.2.0</a>
+    </small>
   </header>
   <nav class="kss-nav toc kill-link-decoration" aria-label="Style Guide">
     <ul class="kss-nav__menu">
@@ -70,22 +73,23 @@
     <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
       <div class="kss-style">
-        <h{{depth}} class="kss-title kss-title--level-{{depth}}">
-          <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-            <span class="kss-title__ref">
-              {{referenceNumber}}
-              <span class="kss-title__permalink-hash">
-                {{#if @root.hasNumericReferences}}
-                  #permalink
-                {{else}}
-                  #{{reference}}
-                {{/if}}
-              </span>
+        <div class="kss-title__wrapper">
+          <span class="kss-title__ref">
+            {{referenceNumber}}
+            <span class="kss-title__permalink-hash">
+              {{#if @root.hasNumericReferences}}
+                #permalink
+              {{else}}
+                #{{reference}}
+              {{/if}}
             </span>
-            {{header}}
-          </a>
-        </h{{depth}}>
-
+          </span>
+          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+            <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
+              {{header}}
+            </a>
+          </h{{depth}}>
+        </div>
         {{#if example}}
           <p class="kss-toolbar">
             {{#unless @root.template.isItem}}

@@ -25,12 +25,12 @@ Styleguide Components.card
 
 
 .card {
-	padding: $gutter;
 	@if $card-border {
 		border: $card-border;
 	}
 	background: $card-background;
 	border-radius: $card-border-radius;
+	padding: $card-padding;
 	@if $shadows == true {
 		box-shadow: $shadow-definition;
 	}

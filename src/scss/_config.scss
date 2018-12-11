@@ -21,24 +21,43 @@ This `$colors` map can store as many maps as needed, but the following are manda
 Following palx.jxnblk.com nomenclature, the colors are numbered from 0 to 9 (lightest to darkest).
 
 Markup:
-<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
+<section>
+	<p class="minititle">Base</p>
+	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+		<div class="grid-item p bg-base-primary">Primary</div>
+		<div class="grid-item p bg-base-secondary" >Secondary</div>
+		<div class="grid-item p bg-base-separator" >Separator</div>
+		<div class="grid-item p bg-base-black" >Black</div>
+		<div class="grid-item p bg-base-white" >White</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">Text</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
+		<div class="grid-item p bg-text-primary">Primary</div>
+		<div class="grid-item p bg-text-heading" >Heading</div>
+		<div class="grid-item p bg-text-mark" >Mark</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">State</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
+		<div class="grid-item p bg-state-muted">Muted</div>
+		<div class="grid-item p bg-state-success" >Success</div>
+		<div class="grid-item p bg-state-warning" >Warning</div>
+		<div class="grid-item p bg-state-error" >Error</div>
+	</div>
+</section>
 
 Styleguide Color.palette
 */
 
-@import "base/palettes/C7FFC4";
+@import "base/palettes/306BAC";
 
 $colors: (
 	base: (
-		"primary": $indigo5,
-		"secondary": $indigo8,
+		"primary": $blue6,
+		"secondary": $blue8,
 		"separator": $gray2,
 		"black": $gray9,
 		"white": #fff,
@@ -46,9 +65,8 @@ $colors: (
 
 	text: (
 		"primary":   $gray9,
-		"heading":   $indigo8,
-		"active": #383837,
-		"mark" : $yellow5,
+		"heading":   $indigo9,
+		"mark" : $orange5,
 	),
 
 	background: (
@@ -59,9 +77,9 @@ $colors: (
 
 	state: (
 		"muted":   $gray1,
-		"success": $teal6,
-		"warning": $orange6,
-		"error":   $red6
+		"success": $teal4,
+		"warning": $yellow5,
+		"error":   $red5
 	),
 
 	blue: (
@@ -128,6 +146,10 @@ $contrast-light: #FFFFFF;
 
 // Global % to apply to darken and lighten operations
 $color-modify-ratio: 33%;
+
+// Wether to generate helper classes or not.
+// Set this to false to avoid bloating your css
+$generate-color-classes: true;
 
 
 
@@ -229,6 +251,9 @@ $code-border-radius: 2px;
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.05em; 
 
+// List paddings. We recommend either 1em or 0.
+$list-padding: 0;
+
 
 
 
@@ -307,26 +332,26 @@ $link-strategy: underline; // Alternatives: underline, border, smart, mark, fals
 $link-highlight-on-hover: false; // "false" highlights the link before :hover
 
 // Only for $link-strategy:border
-$link-border-color: get-color(blue, "5");
-$link-border-width: ritmo(1);
+$link-border-color: $violet2;
+$link-border-width: ritmo(0.5);
 
 // Only for $link-strategy:mark
-$link-mark-color: get-color(green, "2");
+$link-mark-color: $violet2;
 
 // Only for $link-strategy:smart
-$link-smart-background: $white;
+$link-smart-background: $violet2;
 
 // Link colors
-$link-color: $fuschia7; // get-color(blue, "8");
-$link-visited: get-color(blue, "7");
-$link-hover: get-color(blue,"8");
-$link-active: get-color(blue, "7");
+$link-color: $violet7;
+$link-visited: $violet7;
+$link-hover: $violet5;
+$link-active: $violet5;
 
 // Inverse link colors (for contrasted backgrounds)
 $inverse-link-color: $white;
 $inverse-link-visited: $white;
-$inverse-link-hover: get-color(gray, "2");
-$inverse-link-active: get-color(gray, "2");
+$inverse-link-hover: $blue2;
+$inverse-link-active: $blue2;
 
 
 
@@ -348,7 +373,7 @@ $input-padding: $spacer / 4 $spacer / 2;
 $button-font-family: $font-main;
 $button-strategy: 'border'; // Options: border, background
 $button-strategy-border: 'fill'; // Only if $button-strategy = border. Options: fill, highlight
-$button-color: get-color(gray, "5");
+$button-color: $gray8;
 $button-border-width: 2px;
 $button-border: $button-border-width solid $button-color;
 $button-padding: 0 ($spacer / 2);
@@ -473,6 +498,7 @@ $gutter: $spacer;
 $card-border: 1px solid $separator-color;// Can be false or a full border value, like 2px solid $separator-color;
 $card-background: $white;
 $card-border-radius: $border-radius;
+$card-padding: $gutter * 2;
 
 
 

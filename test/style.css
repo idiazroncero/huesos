@@ -2994,26 +2994,26 @@ Styleguide Huesitos.Color
   .bg-base-secondary h5, .bg-base-secondary .h5 h6, .bg-base-secondary .h6 {
     color: inherit; }
 
-.bg-base-lines {
+.bg-base-separator {
   background-color: #f4f7f7;
   color: #1A1A19; }
-  .bg-base-lines a, .bg-base-lines a:link {
+  .bg-base-separator a, .bg-base-separator a:link {
     color: #1A1A19;
     text-decoration: underline; }
-  .bg-base-lines a:visited {
+  .bg-base-separator a:visited {
     color: #1A1A19; }
-  .bg-base-lines a:focus, .bg-base-lines a:hover {
+  .bg-base-separator a:focus, .bg-base-separator a:hover {
     color: #111111;
     text-decoration: none;
     border: none;
     background: transparent; }
-  .bg-base-lines a:active {
+  .bg-base-separator a:active {
     color: #1A1A19; }
-  .bg-base-lines h1, .bg-base-lines .h1,
-  .bg-base-lines h2, .bg-base-lines .h2,
-  .bg-base-lines h3, .bg-base-lines .h3,
-  .bg-base-lines h4, .bg-base-lines .h4,
-  .bg-base-lines h5, .bg-base-lines .h5 h6, .bg-base-lines .h6 {
+  .bg-base-separator h1, .bg-base-separator .h1,
+  .bg-base-separator h2, .bg-base-separator .h2,
+  .bg-base-separator h3, .bg-base-separator .h3,
+  .bg-base-separator h4, .bg-base-separator .h4,
+  .bg-base-separator h5, .bg-base-separator .h5 h6, .bg-base-separator .h6 {
     color: inherit; }
 
 .bg-text-primary {

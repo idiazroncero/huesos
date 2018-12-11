@@ -16,6 +16,9 @@
 <div class="kss-sidebar bg-base-secondary kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos Style Guide</h1>
+    <small class="kss-version kill-link-decoration">
+      <a target="_blank" href="https://github.com/idiazroncero/huesos/tree/master">v1.2.0</a>
+    </small>
   </header>
   <nav class="kss-nav toc kill-link-decoration" aria-label="Style Guide">
     <ul class="kss-nav__menu">
@@ -90,18 +93,19 @@
     <div id="kssref-layout-grid-responsive" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
-        <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-layout-grid-responsive">
-            <span class="kss-title__ref">
-              5.1.2
-              <span class="kss-title__permalink-hash">
-                  #Layout.grid.responsive
-              </span>
+        <div class="kss-title__wrapper">
+          <span class="kss-title__ref">
+            5.1.2
+            <span class="kss-title__permalink-hash">
+                #Layout.grid.responsive
             </span>
-            Responsive Grid
-          </a>
-        </h3>
-
+          </span>
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-layout-grid-responsive">
+              Responsive Grid
+            </a>
+          </h3>
+        </div>
           <p class="kss-toolbar">
             <a href="#kssref-layout-grid-responsive" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
@@ -155,7 +159,7 @@ no <code>max-width</code> constraint is set and every breakpoint will be active 
             <div class="grid grid--small--2col grid--medium--6col grid--large--3col">
     <div class="grid-item bg-base-primary" style="height:50px"></div>
     <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
     <div class="grid-item bg-text-primary" style="height:50px""></div>
     <div class="grid-item bg-text-mark" style="height:50px""></div>
     <div class="grid-item bg-state-muted" style="height:50px""></div>
@@ -172,7 +176,7 @@ no <code>max-width</code> constraint is set and every breakpoint will be active 
             <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--small--2col grid--medium--6col grid--large--3col"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-primary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-secondary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-lines"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-separator"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-text-primary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-text-mark"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-muted"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

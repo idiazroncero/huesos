@@ -16,6 +16,9 @@
 <div class="kss-sidebar bg-base-secondary kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">Huesos Style Guide</h1>
+    <small class="kss-version kill-link-decoration">
+      <a target="_blank" href="https://github.com/idiazroncero/huesos/tree/master">v1.2.0</a>
+    </small>
   </header>
   <nav class="kss-nav toc kill-link-decoration" aria-label="Style Guide">
     <ul class="kss-nav__menu">
@@ -90,18 +93,19 @@
     <div id="kssref-color-palette" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
-        <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-color-palette">
-            <span class="kss-title__ref">
-              1.1
-              <span class="kss-title__permalink-hash">
-                  #Color.palette
-              </span>
+        <div class="kss-title__wrapper">
+          <span class="kss-title__ref">
+            1.1
+            <span class="kss-title__permalink-hash">
+                #Color.palette
             </span>
-            Color Palette
-          </a>
-        </h2>
-
+          </span>
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-color-palette">
+              Color Palette
+            </a>
+          </h2>
+        </div>
           <p class="kss-toolbar">
             <a href="#kssref-color-palette" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
@@ -156,14 +160,33 @@
 
 
           <div class="kss-modifier__example">
-            <div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-lines" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
+            <section>
+	<p class="minititle">Base</p>
+	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+		<div class="grid-item p bg-base-primary">Primary</div>
+		<div class="grid-item p bg-base-secondary" >Secondary</div>
+		<div class="grid-item p bg-base-separator" >Separator</div>
+		<div class="grid-item p bg-base-black" >Black</div>
+		<div class="grid-item p bg-base-white" >White</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">Text</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
+		<div class="grid-item p bg-text-primary">Primary</div>
+		<div class="grid-item p bg-text-heading" >Heading</div>
+		<div class="grid-item p bg-text-mark" >Mark</div>
+	</div>
+</section>
+<section>
+	<p class="minititle">State</p>
+	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
+		<div class="grid-item p bg-state-muted">Muted</div>
+		<div class="grid-item p bg-state-success" >Success</div>
+		<div class="grid-item p bg-state-warning" >Warning</div>
+		<div class="grid-item p bg-state-error" >Error</div>
+	</div>
+</section>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -173,14 +196,33 @@
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-primary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-secondary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-lines"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-text-primary"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-text-mark"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-muted"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:50px"</span>"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>Base<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-base-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-base-secondary"</span> &gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-base-separator"</span> &gt;</span>Separator<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-base-black"</span> &gt;</span>Black<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-base-white"</span> &gt;</span>White<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--gutterless grid--small--2col grid--large--3col"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-text-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-text-heading"</span> &gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-text-mark"</span> &gt;</span>Mark<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>State<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--gutterless grid--small--2col grid--large--4col"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-state-muted"</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-state-success"</span> &gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-state-warning"</span> &gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item p bg-state-error"</span> &gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
