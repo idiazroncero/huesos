@@ -1,35 +1,35 @@
 Arguments: 
-  /usr/local/Cellar/node/10.7.0/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js publish
+  /Users/idiazroncero/.nvm/versions/node/v8.11.4/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js publish
 
 PATH: 
-  /usr/local/opt/mysql@5.7/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/opt/mysql@5.7/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin
+  /Users/idiazroncero/.nvm/versions/node/v8.11.4/bin:/usr/local/opt/mysql@5.7/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/opt/mysql@5.7/bin:/Users/idiazroncero/.platformsh/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3/bin:/Users/idiazroncero/.rvm/gems/ruby-2.3.3@global/bin:/Users/idiazroncero/.rvm/rubies/ruby-2.3.3/bin:/Users/idiazroncero/.composer/vendor/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/idiazroncero/pear/bin:/opt/local/bin:/opt/local/sbin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin:/Users/idiazroncero/bin:/Users/idiazroncero/.rvm/bin
 
 Yarn version: 
-  1.7.0
+  1.12.3
 
 Node version: 
-  10.7.0
+  8.11.4
 
 Platform: 
   darwin x64
 
 Trace: 
   Error: canceled
-      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:131036:13)
-      at Interface.emit (events.js:182:13)
-      at Interface._ttyWrite (readline.js:783:16)
-      at ReadStream.onkeypress (readline.js:168:10)
-      at ReadStream.emit (events.js:182:13)
-      at emitKeys (internal/readline.js:422:14)
+      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:125278:13)
+      at emitNone (events.js:106:13)
+      at Interface.emit (events.js:208:7)
+      at Interface._ttyWrite (readline.js:774:16)
+      at ReadStream.onkeypress (readline.js:158:10)
+      at emitTwo (events.js:126:13)
+      at ReadStream.emit (events.js:214:7)
+      at emitKeys (internal/readline.js:420:14)
       at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1022:36)
-      at ReadStream.emit (events.js:182:13)
-      at addChunk (_stream_readable.js:283:12)
+      at ReadStream.onData (readline.js:1010:36)
 
 npm manifest: 
   {
     "name": "huesos",
-    "version": "1.0.81",
+    "version": "1.0.11",
     "description": "Huesos is a front-end starterkit. It provides a basic CSS osamenta by combining some preferred and battle-tested tools.",
     "scripts": {
       "build": "yarn run styleguide:build; yarn css",
