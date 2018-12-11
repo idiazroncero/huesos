@@ -15,6 +15,7 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 - [Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm.
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
+- [Palx](https://palx.jxnblk.com/) for creating a palette based on a single color and its shades.
 
 [Animate.scss](https://github.com/geoffgraham/animate.scss) has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using `yarn add animate.scss`
 

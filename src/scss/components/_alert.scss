@@ -22,7 +22,7 @@ Styleguide Components.alert
 .alert {
     padding: $gutter;
     border-radius: $border-radius;
-    @include background-split-color(get-color(gray, "base"));
+    @include background-split-color(get-color(gray, "5"));
     @extend .text;
 }
 

@@ -87,6 +87,7 @@ button,
 	letter-spacing: 0.05rem;
 	vertical-align:middle;
 	font-weight: $button-weight;
+	font-family: $button-font-family;
 	@if $button-strategy == 'border' {
 		border-radius: $button-border-radius;
 		@if $button-strategy-border == 'fill' {
@@ -126,6 +127,27 @@ button,
 		line-height:1;
 		svg {
 			fill:currentColor;
+		}
+	}
+}
+
+// Adjacent buttons! All combinations
+// TODO: enforce use of .button to avoid having to bloat css with all the possible combinations
+
+$buttons: (
+	"submit" : "input[type=submit]",
+	"reset" : "input[type=reset]",
+	"button" : "input[type=button]",
+	"button2" : "button",
+	".button" : ".button"
+);
+
+@each $type, $element in $buttons {
+	#{$element} {
+		@each $type, $element in $buttons {
+			& + #{$element} {
+				margin-left:$gutter / 4;
+			}
 		}
 	}
 }

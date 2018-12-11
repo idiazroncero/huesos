@@ -341,6 +341,11 @@ Styleguide Forms.form-item
 		display:block;
 		width:100%;
 	}
+	// Except radios and checkboxes!
+	input[type="checkbox"],
+	input[type="radio"] {
+        width:auto;
+    }
 }
 
 .form-item--required {
