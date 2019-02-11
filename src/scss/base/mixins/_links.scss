@@ -133,12 +133,12 @@ Styleguide Mixins.links.setLink
 	background-position: 0% 90%, 100% 90%, 0% 90%;
 
 	&::selection {
-		@include textShadowToCropUnderline($backgroundColor)
+		@include textShadowToCropUnderline($backgroundColor);
 			background: $backgroundColor;
 	}
 
 	&::-moz-selection {
-		@include textShadowToCropUnderline($backgroundColor)
+		@include textShadowToCropUnderline($backgroundColor);
 			background: $backgroundColor;
 	}
 

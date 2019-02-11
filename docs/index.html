@@ -1,177 +1,217 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en" dir="ltr" class="no-js">
 <head>
-  <meta charset="utf-8">
-  <title>Huesos Style Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
 
-  <meta name="description" content="">
-  <meta name="generator" content="kss-node">
-  <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="themes/mandelbrot/css/default.css?cachebust=1.2.0" type="text/css">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
-  
+
+<title>Huesos' | Huesos @ Fractal</title>
+
 </head>
-<body id="kss-node" >
+<body>
 
-<div class="kss-sidebar bg-base-secondary kss-style">
-  <header class="kss-header">
-    <h1 class="kss-doc-title">Huesos Style Guide</h1>
-    <small class="kss-version kill-link-decoration">
-      <a target="_blank" href="https://github.com/idiazroncero/huesos/tree/master">v1.2.0</a>
-    </small>
-  </header>
-  <nav class="kss-nav toc kill-link-decoration" aria-label="Style Guide">
-    <ul class="kss-nav__menu">
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="./">
-          <span class="kss-nav__ref">0</span
-          ><span class="kss-nav__name">Overview</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-color.html">
-          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Color</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-base.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-typography.html">
-          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Typography</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-components.html">
-          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Components</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-layout.html">
-          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Layout</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-forms.html">
-          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Forms</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-helpers.html">
-          <span class="kss-nav__ref">7</span><span class="kss-nav__name">Helpers</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-mixins.html">
-          <span class="kss-nav__ref">8</span><span class="kss-nav__name">Mixins</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-functions.html">
-          <span class="kss-nav__ref">9</span><span class="kss-nav__name">Functions</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-pseudo-elements.html">
-          <span class="kss-nav__ref">10</span><span class="kss-nav__name">Pseudo-elements</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-huesitos.html">
-          <span class="kss-nav__ref">11</span><span class="kss-nav__name">Huesitos</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="" class="Header-title" data-pjax>Huesos @ Fractal</a>
 </div>
-<main class="kss-main" aria-label="Content">
-  <article>
-      <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        <article class="text">
-<h2>A basic osamenta <br/> for your web proyects</h2>
-<hr/>
-<section class="text">
-<h3>What is this?</h3>
-<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
-<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
-<ul>
-<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
-<li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
-<li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
-<li><a href="https://palx.jxnblk.com/">Palx</a> for creating a palette based on a single color and its shades.</li>
-</ul>
-<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using <code>yarn add animate.scss</code></p>
-</section>
-<section class="text">
-<h3>Opinionated stuff</h3>
-<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file:)</p>
-<ul>
-<li>
-<p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;section&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
-</li>
-<li>
-<p><strong>All separator borders are solid.</strong> Borders that indicate boundaries are always set to <code>solid</code> and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don't agree with this or don't need separator borders, you can set <code>$separator-width</code> to <code>0</code>.</p>
-</li>
-<li>
-<p><strong>Always use SVG</strong> No icon fonts, no images. For iconography, the use of SVG is always preferred.</p>
-</li>
-<li>
-<p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings. Vertical rhythm is to be used as a tool rather than a constraint.</p>
-</li>
-<li>
-<p><strong>Mobile-First</strong> We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don't have a <code>max-width</code>). Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
-</li>
-</ul>
-</section>
-<section class="text">
-<h3>Third-parties are the best parties</h3>
-<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code>) need to be tamed. We use JS for this.</p>
-<p>Javascript libraries are bundled into Huesos following this criteria:</p>
-<ul>
-<li>Zero overweight. Small, concise, single-purpose libraries</li>
-<li>Vanilla javascript. jQuery shouldn't be a dependency.</li>
-</ul>
-<p>These are the winners:</p>
-<ul>
-<li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
-</ul>
-</section>
-</article>
 
-      </div>
-</article>
-</main>
+    </div>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/kss-fullscreen.js"></script>
-<script src="kss-assets/kss-guides.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
-<script>
-  var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
-    className: 'is-in-viewport'
-  });
-  var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-<script src="kss-assets/huesos.js"></script>
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Huesos'</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+    
+    
+    <p>Esta es la versión de Huesos para Fractal</p>
+
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-alert">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Alert</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/alert--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/alert--error.html" data-pjax>
+                <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+
+
+
 </body>
 </html>

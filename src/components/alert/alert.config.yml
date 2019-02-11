@@ -1,0 +1,5 @@
+title: "Una alerta"
+status: ready
+context:
+  message: "Durga es biutiful"
+  title: "Esto es un título"
