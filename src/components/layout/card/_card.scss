@@ -1,0 +1,23 @@
+.card {
+	@if $card-border {
+		border: $card-border;
+	}
+	background: $card-background;
+	border-radius: $card-border-radius;
+	padding: $card-padding;
+	@if $shadows == true {
+		box-shadow: $shadow-definition;
+	}
+	// Nested cards are applied a padding reduction
+	.card {
+		padding: $gutter / 2;
+	}
+}
+
+.card--image {
+	padding: 0;
+}
+
+.card__contents {
+	padding: $gutter;
+}

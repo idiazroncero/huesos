@@ -21,10 +21,10 @@
 @import "layout/grid";
 @import "layout/helpers";
 
-@import "components/card";
+@import "../components/layout/card/card";
 @import "components/nav";
 @import "components/tag";
-@import "components/alert";
+@import "../components/user_interaction/alert/alert";
 
 @import "huesitos/huesitos";
 

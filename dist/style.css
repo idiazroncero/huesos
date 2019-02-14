@@ -29,21 +29,12 @@ $value  - Nombre del color
 Styleguide Functions.Color.getColor
 */
 /*
-Color
-
-SASS functions that allow to extract colors from the palette and manipulate them.
-
-Styleguide Functions.Color
-*/
-/*
 tint($color, $dilution)
 
 Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
 
 $color - Color to modify
 $dilution - % of white to mix
-
-Styleguide Functions.Color.Tint
 */
 /*
 shade($color, $dilution)
@@ -52,8 +43,6 @@ Sass Function extracted from compass. Darkens the $color by mixing it with black
 
 $color - Color to modify
 $dilution - % of black to mix
-
-Styleguide Functions.Color.Shade
 */
 /*
 contrast-color($color, $dark, $light)
@@ -74,13 +63,6 @@ Returns a link formatted using `$inverse-link-` values from `_config.scss` if ne
 $color - Background-color to check
 
 Styleguide Mixins.Color.ContrastColor
-*/
-/*
-Color
-
-Mixins that perform color complex operations (contrasts, etc...)
-
-Styleguide Mixins.Color
 */
 /*
 background-contrast($color)
@@ -423,8 +405,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -903,6 +884,7 @@ select,
 summary,
 textarea,
 [tabindex] {
+  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -1215,9 +1197,7 @@ Styleguide Forms.select
 select {
   border: 1px solid #dee0e4;
   padding: 0 0.675rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
     border-color: #959699; }
@@ -1849,8 +1829,7 @@ samp,
 var {
   display: inline-block;
   vertical-align: baseline;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-decoration-break: clone;
   background-color: #dee0e4;
   color: #1A1A19;
   padding: 0 0.3375rem;
@@ -2168,77 +2147,77 @@ Styleguide Layout.grid
 
 .grid--2col .grid-item {
   width: 50%;
-  width: calc(50% - 0.676rem);
+  width: calc( (100% / 2) -  ( ( 1.35rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--2col .grid-item:nth-child(2n) {
     margin-right: 0; }
 
 .grid--3col .grid-item {
   width: 33.33333%;
-  width: calc(33.33333% - 0.901rem);
+  width: calc( (100% / 3) -  ( ( 1.35rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--3col .grid-item:nth-child(3n) {
     margin-right: 0; }
 
 .grid--4col .grid-item {
   width: 25%;
-  width: calc(25% - 1.0135rem);
+  width: calc( (100% / 4) -  ( ( 1.35rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--4col .grid-item:nth-child(4n) {
     margin-right: 0; }
 
 .grid--5col .grid-item {
   width: 20%;
-  width: calc(20% - 1.081rem);
+  width: calc( (100% / 5) -  ( ( 1.35rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--5col .grid-item:nth-child(5n) {
     margin-right: 0; }
 
 .grid--6col .grid-item {
   width: 16.66667%;
-  width: calc(16.66667% - 1.126rem);
+  width: calc( (100% / 6) -  ( ( 1.35rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--6col .grid-item:nth-child(6n) {
     margin-right: 0; }
 
 .grid--7col .grid-item {
   width: 14.28571%;
-  width: calc(14.28571% - 1.15814rem);
+  width: calc( (100% / 7) -  ( ( 1.35rem * ( 7 - 1 ) / 7 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--7col .grid-item:nth-child(7n) {
     margin-right: 0; }
 
 .grid--8col .grid-item {
   width: 12.5%;
-  width: calc(12.5% - 1.18225rem);
+  width: calc( (100% / 8) -  ( ( 1.35rem * ( 8 - 1 ) / 8 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--8col .grid-item:nth-child(8n) {
     margin-right: 0; }
 
 .grid--9col .grid-item {
   width: 11.11111%;
-  width: calc(11.11111% - 1.201rem);
+  width: calc( (100% / 9) -  ( ( 1.35rem * ( 9 - 1 ) / 9 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--9col .grid-item:nth-child(9n) {
     margin-right: 0; }
 
 .grid--10col .grid-item {
   width: 10%;
-  width: calc(10% - 1.216rem);
+  width: calc( (100% / 10) -  ( ( 1.35rem * ( 10 - 1 ) / 10 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--10col .grid-item:nth-child(10n) {
     margin-right: 0; }
 
 .grid--11col .grid-item {
   width: 9.09091%;
-  width: calc(9.09091% - 1.22827rem);
+  width: calc( (100% / 11) -  ( ( 1.35rem * ( 11 - 1 ) / 11 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--11col .grid-item:nth-child(11n) {
     margin-right: 0; }
 
 .grid--12col .grid-item {
   width: 8.33333%;
-  width: calc(8.33333% - 1.2385rem);
+  width: calc( (100% / 12) -  ( ( 1.35rem * ( 12 - 1 ) / 12 ) + 0.001rem ));
   margin-right: 1.35rem; }
   .grid--12col .grid-item:nth-child(12n) {
     margin-right: 0; }
@@ -2479,65 +2458,15 @@ Styleguide Layout.helpers.breakpoint-toggle
     .large-visible {
       display: inherit; } }
 
-/*
-Card
-
-The `.card` is a common pattern on UX design.
-
-Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid.
-
-A set of settings are available under its own section on `_config.scss`
-
-A `.card` inside a `.card` has its padding reduced to 1/2
-
-Markup:
-<article class="card" style="width:400px; padding: 1.3rem">
-	<h3>Title of a card</h3>
-	<p>A card can have any content. Their appearance will be honored no matter what.</p>
-	<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
-	<div class="card right">
-		<a href="#" class="button button--error">Cancel</a>
-		<a href="#" class="button button--success">OK</a>
-	</div>
-</article>
-
-Styleguide Components.card
-*/
 .card {
   border: 1px solid #dee0e4;
   background: #fff;
   border-radius: 0px;
   padding: 2.7rem;
-  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, .1); }
+  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
   .card .card {
     padding: 0.675rem; }
 
-/*
-Card with Featured Image
-
-A special kind of card that features a full-bleed image.
-
-It requires a slightly different markup than the original `.card` item
-
-Markup:
-<!-- Style attributes are only set to avoid style overrides on this style guide! -->
-<article class="card card--image" style="width:400px; padding:0;">
-	<div class="card__image">
-		<img src="https://placeimg.com/400/200/nature" />
-	</div>
-	<div class="card__contents">
-		<h3>Title of a card</h3>
-		<p>A card can have any content. Their appearance will be honored no matter what.</p>
-		<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
-		<div class="card right">
-			<a href="#" class="button button--error">Cancel</a>
-			<a href="#" class="button button--success">OK</a>
-		</div>
-	</div>
-</article>
-
-Styleguide Components.card.card-image
-*/
 .card--image {
   padding: 0; }
 
@@ -2787,9 +2716,7 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
-  letter-spacing: normal;
   letter-spacing: initial;
-  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
@@ -3000,26 +2927,6 @@ a.tag, a.selectr-tag {
     a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
       color: #b3c9e0; }
 
-/*
-Alerts
-
-Boxes with background-colors to draw the user's attention towards specific messages.
-
-Any alert is automatically set as a `.text` to prevent paragraphs for setting an extra space.
-
-.alert--success     - Sets the color to indicate a positive action or message
-.alert--warning     - Sets the color to indicate a warning
-.alert--error       - Sets the color to indicate a negative action or message
-
-Markup:
-<section class="alert {{ modifier_class}}">
-	<p class="minititle">Hey ho, let's go</p>
-	<p>Dear user, you are required to <a href="#">read this very specific message</a> and take some action</p>
-</section>
-
-
-Styleguide Components.alert
-*/
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
@@ -4275,6 +4182,10 @@ Styleguide Huesitos.gutter-modifier
   width: 0;
   height: 0;
   content: '';
+  -o-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -ms-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -moz-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
   transform: rotate(0deg) translate3d(0px, -50%, 0px);
   border-width: 4px 4px 0 4px;
   border-style: solid;
@@ -4345,6 +4256,10 @@ Styleguide Huesitos.gutter-modifier
   height: 0.9rem;
   padding: 0;
   cursor: pointer;
+  -o-transform: translate3d(0px, -50%, 0px);
+  -ms-transform: translate3d(0px, -50%, 0px);
+  -moz-transform: translate3d(0px, -50%, 0px);
+  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
@@ -4430,11 +4345,19 @@ Styleguide Huesitos.gutter-modifier
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 .selectr-input-container.active,
@@ -4444,7 +4367,7 @@ Styleguide Huesitos.gutter-modifier
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - 1.35rem);
+  width: calc(100% - (1.35rem));
   margin: 0.675rem; }
 
 .selectr-notice {
@@ -4527,6 +4450,10 @@ input.selectr-input {
   border-radius: 0px 0px 0 0; }
 
 .selectr-container.open .selectr-selected::after {
+  -o-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -ms-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -moz-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -webkit-transform: rotate(180deg) translate3d(0px, 50%, 0px);
   transform: rotate(180deg) translate3d(0px, 50%, 0px); }
 
 .selectr-disabled {
@@ -4578,18 +4505,38 @@ input.selectr-input {
   width: 20px;
   height: 20px;
   content: '';
+  -o-transform: translate3d(0px, -50%, 0px);
+  -ms-transform: translate3d(0px, -50%, 0px);
+  -moz-transform: translate3d(0px, -50%, 0px);
+  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
+  -o-transform-origin: 50% 0 0;
+  -ms-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
+  -moz-animation: 500ms linear 0s normal forwards infinite running spin;
+  -webkit-animation: 500ms linear 0s normal forwards infinite running spin;
   animation: 500ms linear 0s normal forwards infinite running spin;
   border-width: 3px;
   border-style: solid;
   border-color: #aaa #ddd #ddd;
   border-radius: 50%; }
 
-@keyframes spin {
+@-webkit-keyframes spin {
   0% {
+    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
     transform: rotate(0deg) translate3d(0px, -50%, 0px); }
   100% {
+    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
+    transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+    transform: rotate(0deg) translate3d(0px, -50%, 0px); }
+  100% {
+    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
@@ -4606,11 +4553,15 @@ input.selectr-input {
   top: auto;
   bottom: 100%; }
 
-.selectr-container :-ms-input-placeholder {
+.selectr-container ::-webkit-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 
-.selectr-container ::-ms-input-placeholder {
+.selectr-container ::-moz-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container :-ms-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 
@@ -4747,9 +4698,6 @@ a.link-strategy-smart, a.link-strategy-smart:link {
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
   a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
     text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
     background: #cfbae3; }

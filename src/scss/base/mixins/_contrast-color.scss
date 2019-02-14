@@ -1,20 +1,10 @@
 /*
-Color
-
-SASS functions that allow to extract colors from the palette and manipulate them.
-
-Styleguide Functions.Color
-*/
-
-/*
 tint($color, $dilution)
 
 Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
 
 $color - Color to modify
 $dilution - % of white to mix
-
-Styleguide Functions.Color.Tint
 */
 
 @function tint($color, $dilution: 50) {
@@ -34,8 +24,6 @@ Sass Function extracted from compass. Darkens the $color by mixing it with black
 
 $color - Color to modify
 $dilution - % of black to mix
-
-Styleguide Functions.Color.Shade
 */
   
 @function shade($color, $dilution: 50) {
@@ -90,15 +78,6 @@ Styleguide Mixins.Color.ContrastColor
 		}
 	}
 }
-
-
-/*
-Color
-
-Mixins that perform color complex operations (contrasts, etc...)
-
-Styleguide Mixins.Color
-*/
 
 /*
 background-contrast($color)
