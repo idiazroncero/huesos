@@ -23,4 +23,4 @@ fractal.web.set('builder.dest', __dirname + '/docs');
 // Static (compiled) assets needed by components
 fractal.web.set('static.path', __dirname + '/dist');
 
-fractal.web.theme(huesosTheme);
+// fractal.web.theme(huesosTheme);

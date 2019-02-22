@@ -1,0 +1,42 @@
+{
+  "context" : {
+    "text" : "This is a normal tag!"
+  },
+  "variants" : [
+      { 
+        "name" : 'Success',
+        "context": {
+          "modifier": "tag--success",
+          "text": "This is a success tag!"
+        }
+      },
+      { 
+        "name" : 'Warning',
+        "context": {
+          "modifier": "tag--warning",
+          "text": "This is a warning tag!"
+        }
+      },
+      { 
+        "name" : 'Error',
+        "context": {
+          "modifier": "tag--error",
+          "text": "This is a error tag!"
+        }
+      },
+      { 
+        "name" : 'Primary',
+        "context": {
+          "modifier": "tag--primary",
+          "text": "This is a primary tag!"
+        }
+      },
+      { 
+        "name" : 'Secondary',
+        "context": {
+          "modifier": "tag--secondary",
+          "text": "This is a secondary tag!"
+        }
+      }
+  ]
+}
