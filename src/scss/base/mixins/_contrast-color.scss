@@ -1,12 +1,3 @@
-/*
-tint($color, $dilution)
-
-Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of white to mix
-*/
-
 @function tint($color, $dilution: 50) {
 	$white: rgba(255, 255, 255, 1);
 	@if $color == "transparent" {
@@ -16,15 +7,6 @@ $dilution - % of white to mix
 	$tint-color: mix($color, $white, 100 - $dilution);
 	@return $tint-color; 
 }
-
-/*
-shade($color, $dilution)
-
-Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of black to mix
-*/
   
 @function shade($color, $dilution: 50) {
 	$black: rgba(0, 0, 0, 1);
@@ -36,18 +18,6 @@ $dilution - % of black to mix
 	@return $shade-color; 
 }
 
-/*
-contrast-color($color, $dark, $light)
-
-Returns a $dark or $light color value according to the background-color provided as $color.
-
-$color - Background-color to check
-$dark  - Dark color to return, defaults to $contrast-dark
-$light   - Light color to return, defaults to $contrast-light
-
-Styleguide Functions.Color.ContrastColor
-*/
-
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
 	@if (lightness($color) > 55) { // 50 is too low
 		@return $dark; // Lighter backgorund, return dark color
@@ -55,16 +25,6 @@ Styleguide Functions.Color.ContrastColor
 		@return $light; // Darker background, return light color
 	}
 }
-
-/*
-contrast-links($color)
-
-Returns a link formatted using `$inverse-link-` values from `_config.scss` if needed against the provided background-color.
-
-$color - Background-color to check
-
-Styleguide Mixins.Color.ContrastColor
-*/
 
 @mixin contrast-links($color) {
 	@if (lightness($color) < 55) { // 50 is too low
@@ -78,18 +38,6 @@ Styleguide Mixins.Color.ContrastColor
 		}
 	}
 }
-
-/*
-background-contrast($color)
-
-Given a $color, ensures that all text elements and links are correctly contrasted against that background.
-
-Uses contrast-color($color) SASS function to perform the lightness calculation.
-
-$color - Background-color
-
-Styleguide Mixins.Color.ContrastColor
-*/
 
 @mixin background-contrast($color, $include-typography: false) {
 	background-color: $color;
@@ -107,15 +55,15 @@ Styleguide Mixins.Color.ContrastColor
 	}
 }
 
-@mixin background-split-color($color) {
-	background-color: lighten-color($color, 70%);
-	color: darken-color($color, 50%);
+@mixin background-split-color($color, $lighten-amount: $lighten-split-ratio, $darken-amount: $darken-split-ratio) {
+	background-color: lighten-color($color, $lighten-amount);
+	color: darken-color($color, $darken-amount);
 	a {
 		@include set-link(
-			darken-color($color, 50%),
-			darken-color($color, 50%),
+			darken-color($color, $darken-amount),
+			darken-color($color, $darken-amount),
 			$color,
-			darken-color($color, 50%)
+			darken-color($color, $darken-amount)
 		)
 	} 
 }

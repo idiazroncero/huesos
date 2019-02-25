@@ -147,6 +147,10 @@ $contrast-light: #FFFFFF;
 // Global % to apply to darken and lighten operations
 $color-modify-ratio: 33%;
 
+// Darken and lighten % to apply to split-color operations
+$darken-split-ratio: 50%;
+$lighten-split-ratio: 70%;
+
 // Wether to generate helper classes or not.
 // Set this to false to avoid bloating your css
 $generate-color-classes: true;

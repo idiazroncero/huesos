@@ -8,3 +8,11 @@ Sass Function extracted from compass.  Lightens the `$color` by mixing it with w
 
 - `$color` - Color to modify
 - `$dilution` - % of white to mix
+
+### Example
+
+```sass
+.element {
+    color: tint($grey1, 25%);
+}
+```

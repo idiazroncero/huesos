@@ -2,7 +2,7 @@
 
 /* Create a new Fractal instance and export it for use elsewhere if required */
 const fractal = module.exports = require('@frctl/fractal').create();
-const huesosTheme = require('fractal-huesos');
+
 
 /* Set the title of the project */
 fractal.set('project.title', 'Huesos @ Fractal');
@@ -23,4 +23,20 @@ fractal.web.set('builder.dest', __dirname + '/docs');
 // Static (compiled) assets needed by components
 fractal.web.set('static.path', __dirname + '/dist');
 
+
+
+// THEME
+
+const mandelbrot = require('@frctl/mandelbrot');
+const huesosTheme = require('fractal-huesos');
+
+const myCustomisedTheme = mandelbrot({
+    skin: "fuchsia",
+    styles: [
+        "/huesos.css"
+    ]
+});
+
+// Hasta que tengamos tema propio, cargamos el css directamente
+fractal.web.theme(myCustomisedTheme); 
 // fractal.web.theme(huesosTheme);
