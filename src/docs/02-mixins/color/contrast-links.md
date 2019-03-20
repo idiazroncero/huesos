@@ -2,7 +2,7 @@
 title: contrast-links($color)
 ---
 
-Overrides all `<a>` elements against the provided background `$color`, only if necessary.
+Overrides all `<a>` elements against the provided background `$color`, only if necessary as defined by `$lightness-threshold` config.
 
 Uses `$inverse-link-` values from `_config.scss`.
 

@@ -47,7 +47,9 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Breadcrumb-like nav system
 - Configurable menus
 - Couple palettes with https://palx.jxnblk.com/e4bb97#yellow
-- Hide-scrollbar
-- separar uppercase de h3
+- Menu right should right-align items
+- Has any logic to have color palettes repeated on the sassmap?
+- Add poĺyfluid-sizing https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/
+- Allow to deactivate grid on responsive grid on smaller viewports
 
 

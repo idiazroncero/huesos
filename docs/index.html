@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="themes/mandelbrot/css/default.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="huesos.css?cachebust=1.2.0" type="text/css">
 
 
 <title>Huesos' | Huesos @ Fractal</title>
@@ -69,7 +69,42 @@
 
     
     
-    <p>Esta es la versión de Huesos para Fractal</p>
+    <h2 id="a-basic-osamenta-br-for-your-web-proyects">A basic osamenta <br/> for your web proyects</h2>
+<h3 id="what-is-this-">What is this?</h3>
+<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
+<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
+<ul>
+<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
+<li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
+<li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
+<li><a href="https://palx.jxnblk.com/">Palx</a> for creating a palette based on a single color and its shades.</li>
+</ul>
+<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using <code>yarn add animate.scss</code></p>
+<h3 id="opinionated-stuff">Opinionated stuff</h3>
+<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file:)</p>
+<ul>
+<li><p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;div&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
+</li>
+<li><p><strong>All separator borders are solid.</strong> Borders that indicate boundaries are always set to <code>solid</code> and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don’t agree with this or don’t need separator borders, you can set <code>$separator-width</code> to <code>0</code>.</p>
+</li>
+<li><p><strong>Always use SVG</strong> No icon fonts, no images. For iconography, the use of SVG is always preferred.</p>
+</li>
+<li><p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings. Vertical rhythm is to be used as a tool rather than a constraint.</p>
+</li>
+<li><p><strong>Mobile-First</strong> We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don’t have a <code>max-width</code>). Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
+</li>
+</ul>
+<h3 id="third-parties-are-the-best-parties">Third-parties are the best parties</h3>
+<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code>) need to be tamed. We use JS for this.</p>
+<p>Javascript libraries are bundled into Huesos following this criteria:</p>
+<ul>
+<li>Zero overweight. Small, concise, single-purpose libraries</li>
+<li>Vanilla javascript. jQuery shouldn’t be a dependency.</li>
+</ul>
+<p>These are the winners:</p>
+<ul>
+<li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
+</ul>
 
     
 
@@ -100,9 +135,20 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-alert">
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
             <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Alert</span>
+                <span>Elements</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-tag">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Tag</span>
             </h4>
             <ul class="Tree-collectionItems" data-role="items">
             
@@ -113,7 +159,7 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="components/detail/alert--default.html" data-pjax>
+            <a class="Tree-entityLink" href="components/detail/tag--default.html" data-pjax>
                 <span>Default</span>
                 
 
@@ -122,7 +168,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
 
 
 </div>
@@ -137,8 +183,229 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="components/detail/alert--error.html" data-pjax>
+            <a class="Tree-entityLink" href="components/detail/tag--success.html" data-pjax>
+                <span>Success</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/tag--warning.html" data-pjax>
+                <span>Warning</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/tag--error.html" data-pjax>
                 <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/tag--primary.html" data-pjax>
+                <span>Primary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/tag--secondary.html" data-pjax>
+                <span>Secondary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Layout</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Card</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/card--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/card--image.html" data-pjax>
+                <span>Image</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-user_interaction">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>User Interaction</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/alert.html" data-pjax>
+                <span>Alert</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -177,6 +444,150 @@
 <div class="Tree" data-behaviour="tree" id="tree-docs">
     <h3 class="Tree-title">documentation</h3>
     <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Functions</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Color</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/color/shade.html" data-pjax>
+                <span>Shade</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/color/darken-color.html" data-pjax>
+                <span>Darken Color</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/color/tint.html" data-pjax>
+                <span>Tint</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/color/lighten-color.html" data-pjax>
+                <span>Lighten Color</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/color/contrast-color.html" data-pjax>
+                <span>Contrast Color</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Mixins</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Color</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/mixins/color/background-contrast.html" data-pjax>
+                <span>Background Contrast</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/mixins/color/background-split-color.html" data-pjax>
+                <span>Background Split Color</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/mixins/color/contrast-links.html" data-pjax>
+                <span>Contrast Links</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
         
     
         

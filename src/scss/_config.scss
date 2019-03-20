@@ -151,6 +151,9 @@ $color-modify-ratio: 33%;
 $darken-split-ratio: 50%;
 $lighten-split-ratio: 70%;
 
+// Lightness threshold for color invertion. A value between 0-100.
+$lightness-threshold: 55;
+
 // Wether to generate helper classes or not.
 // Set this to false to avoid bloating your css
 $generate-color-classes: true;

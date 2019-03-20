@@ -26,8 +26,30 @@
 	}
 }
 
+@function darken-color($color) {
+	@return shade($color, $color-modify-ratio);
+}
+
+@function lighten-color($color) {
+	@return tint($color, $color-modify-ratio);
+}
+
+@function get-color($color, $value) {
+	$curmap : map-get($colors, $color);
+	@if type-of($curmap) == map {
+		$map-exists: map-has-key($curmap, $value);
+		@if $map-exists == true {
+			@return map-get($curmap, $value);
+		} @else  {
+			@error 'Parece que el color no existe. Revisa tu get-color()';
+		}
+	} @else {
+		@error 'Parece que el mapa de color no existe. Revisa tu get-color()';
+	}
+}
+
 @mixin contrast-links($color) {
-	@if (lightness($color) < 55) { // 50 is too low
+	@if (lightness($color) < $lightness-threshold) { // 50 is too low
 		a {
 			@include set-link(
 				$inverse-link-color,
@@ -56,22 +78,14 @@
 }
 
 @mixin background-split-color($color, $lighten-amount: $lighten-split-ratio, $darken-amount: $darken-split-ratio) {
-	background-color: lighten-color($color, $lighten-amount);
-	color: darken-color($color, $darken-amount);
+	background-color: tint($color, $lighten-amount);
+	color: shade($color, $darken-amount);
 	a {
 		@include set-link(
-			darken-color($color, $darken-amount),
-			darken-color($color, $darken-amount),
+			shade($color, $darken-amount),
+			shade($color, $darken-amount),
 			$color,
-			darken-color($color, $darken-amount)
+			shade($color, $darken-amount)
 		)
 	} 
-}
-
-@function darken-color($color, $color-modify-ratio: $color-modify-ratio) {
-	@return shade($color, $color-modify-ratio);
-}
-
-@function lighten-color($color, $color-modify-ratio: $color-modify-ratio) {
-	@return tint($color, $color-modify-ratio);
 }

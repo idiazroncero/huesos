@@ -1,33 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
-.grid {
-  *zoom: 1; }
-  .grid:before, .grid:after {
-    content: " ";
-    display: table; }
-  .grid:after {
-    clear: both; }
-
-input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden, .selectr-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden; }
-
-/*
-get-color($color, $value)
-
-Función que devuelve un color de un mapa determinado
-
-$color - Nombre del mapa
-$value  - Nombre del color
-
-Styleguide Functions.Color.getColor
-*/
 /*
 Links
 
@@ -130,6 +101,9 @@ Markup:
 
 Styleguide Color.palette
 */
+@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
 *,
 ::before,
 ::after {
@@ -1053,60 +1027,84 @@ input {
     display: none; }
   input[type="reset"], input[type="button"], input[type="submit"] {
     overflow: visible; }
-  input[type=checkbox].pseudo-checkbox:checked + label {
-    position: relative; }
-    input[type=checkbox].pseudo-checkbox:checked + label:after {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      position: absolute;
-      top: 50%;
-      left: 4px;
-      transform: translateY(-50%);
-      background-color: #384048; }
-  input[type=checkbox].pseudo-checkbox + label {
-    cursor: pointer;
-    display: flex;
-    align-items: center; }
-    input[type=checkbox].pseudo-checkbox + label:before {
-      content: "";
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin: 0 0.675rem 0 0;
-      border: 1px solid #384048;
-      background-color: #f8f9f9;
-      cursor: pointer; }
-  input[type=radio].pseudo-radio:checked + label {
-    position: relative; }
-    input[type=radio].pseudo-radio:checked + label:after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      top: 50%;
-      left: 4px;
-      width: 8px;
-      height: 8px;
-      transform: translateY(-50%);
-      background-color: #384048;
-      border-radius: 50%;
-      cursor: pointer; }
-  input[type=radio].pseudo-radio + label {
-    cursor: pointer;
-    display: flex;
-    align-items: center; }
-    input[type=radio].pseudo-radio + label:before {
-      content: "";
-      display: inline-block;
-      margin: 0 0.675rem 0 0;
-      width: 16px;
-      height: 16px;
-      border: 1px solid #384048;
-      background-color: #f8f9f9;
-      vertical-align: top;
-      border-radius: 50%;
-      cursor: pointer; }
+  input[type=file] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+  input[type=checkbox].pseudo-checkbox {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+    input[type=checkbox].pseudo-checkbox:checked + label {
+      position: relative; }
+      input[type=checkbox].pseudo-checkbox:checked + label:after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+        background-color: #384048; }
+    input[type=checkbox].pseudo-checkbox + label {
+      cursor: pointer;
+      display: flex;
+      align-items: center; }
+      input[type=checkbox].pseudo-checkbox + label:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 0.675rem 0 0;
+        border: 1px solid #384048;
+        background-color: #f8f9f9;
+        cursor: pointer; }
+  input[type=radio].pseudo-radio {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+    input[type=radio].pseudo-radio:checked + label {
+      position: relative; }
+      input[type=radio].pseudo-radio:checked + label:after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        transform: translateY(-50%);
+        background-color: #384048;
+        border-radius: 50%;
+        cursor: pointer; }
+    input[type=radio].pseudo-radio + label {
+      cursor: pointer;
+      display: flex;
+      align-items: center; }
+      input[type=radio].pseudo-radio + label:before {
+        content: "";
+        display: inline-block;
+        margin: 0 0.675rem 0 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #384048;
+        background-color: #f8f9f9;
+        vertical-align: top;
+        border-radius: 50%;
+        cursor: pointer; }
 
 /*
 Select
@@ -2008,6 +2006,23 @@ figcaption {
   line-height: 1.0125rem;
   text-align: left; }
 
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
 /*
 Disabled
 
@@ -2094,9 +2109,16 @@ Markup:
 
 Styleguide Layout.grid
 */
-.grid .grid-item {
-  float: left;
-  margin-bottom: 1.35rem; }
+.grid {
+  *zoom: 1; }
+  .grid:before, .grid:after {
+    content: " ";
+    display: table; }
+  .grid:after {
+    clear: both; }
+  .grid .grid-item {
+    float: left;
+    margin-bottom: 1.35rem; }
 
 .grid--2col .grid-item {
   width: 50%;

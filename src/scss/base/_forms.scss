@@ -128,7 +128,7 @@ input {
 	Styleguide Forms.file
 	*/
 	&[type=file] {
-		@extend %hidden;
+		@include hidden();
 		+ label {
 			@extend .button;
 		}

@@ -38,7 +38,7 @@ Styleguide Layout.grid
 */
 
 .grid {
-    @extend %clearfix;
+    @include clearfix();
     .grid-item {
         float:left;
         margin-bottom: $spacer;
