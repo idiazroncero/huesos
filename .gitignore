@@ -10,5 +10,7 @@ node_modules
 # .eslintcache
 .eslintcache
 
+src/fractal-huesos
+
 
 
