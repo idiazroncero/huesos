@@ -1,0 +1,8 @@
+input {
+    // Give an opt-in using a class if pseudo is deactivated
+	@if($pseudo-checkbox == false) {
+		&[type=checkbox].pseudo-checkbox {
+			@include pseudo-checkbox();
+		}
+    }
+}

@@ -11,12 +11,15 @@
 // Base
 @import "base/fonts"; // Fonts are loaded first to optimize performance. DON'T LOAD FONTS ON PRODUCTION BUILD
 @import "base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
-@import "base/forms";
-@import "base/buttons";
 @import "base/typography";
-@import "base/table";
-@import "base/images";
 @import "base/helpers";
+
+// HTML
+@import "../components/html/figure/figure";
+@import "../components/html/table/table";
+
+// Forms
+@import "../components/forms/forms";
 
 // Layout and positioning
 @import "../components/layout/position/position";
@@ -31,6 +34,7 @@
 // Components
 @import "../components/elements/tag/tag";
 @import "../components/elements/card/card";
+@import "../components/elements/button/button";
 
 // User interaction
 @import "../components/user_interaction/alert/alert";

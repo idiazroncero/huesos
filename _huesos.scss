@@ -1,12 +1,15 @@
 // CONFIG FILE GOES BEFORE THIS
 
 @import "src/scss/base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
-@import "src/scss/base/forms";
-@import "src/scss/base/buttons";
 @import "src/scss/base/typography";
-@import "src/scss/base/table";
-@import "src/scss/base/images";
 @import "src/scss/base/helpers";
+
+// HTML
+@import "src/components/html/figure/figure";
+@import "src/components/html/table/table";
+
+// Forms
+@import "src/components/forms/forms";
 
 // Layout and positioning
 @import "src/components/layout/position/position";
@@ -21,6 +24,7 @@
 // Components
 @import "src/components/elements/tag/tag";
 @import "src/components/elements/card/card";
+@import "../components/elements/button/button";
 
 // User interaction
 @import "src/components/user_interaction/alert/alert";

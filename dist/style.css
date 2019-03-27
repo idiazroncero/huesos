@@ -49,51 +49,6 @@ $letter-spacing - A valid value for `letter-spacing`. Defaults to global `$lette
 
 Styleguide Mixins.Typography.Minititle
 */
-/*
-Color Palette
-
-The palettes are based on palx.jxnblk.com (for example, https://palx.jxnblk.com/C7FFC4). Every single palette lives on a separate `.scss` file under 
-`base/palettes` and is `@import`ed on `_config.scss` for later use on the `$colors` map.
-
-This `$colors` map can store as many maps as needed, but the following are mandatory:
-
-- base / for primary, secondary and separator colors
-- text / for typography colors
-- state / for indicating states like: muted, error, warning, success
-
-Following palx.jxnblk.com nomenclature, the colors are numbered from 0 to 9 (lightest to darkest).
-
-Markup:
-<section>
-	<p class="minititle">Base</p>
-	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-		<div class="grid-item p bg-base-primary">Primary</div>
-		<div class="grid-item p bg-base-secondary" >Secondary</div>
-		<div class="grid-item p bg-base-separator" >Separator</div>
-		<div class="grid-item p bg-base-black" >Black</div>
-		<div class="grid-item p bg-base-white" >White</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">Text</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
-		<div class="grid-item p bg-text-primary">Primary</div>
-		<div class="grid-item p bg-text-heading" >Heading</div>
-		<div class="grid-item p bg-text-mark" >Mark</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">State</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
-		<div class="grid-item p bg-state-muted">Muted</div>
-		<div class="grid-item p bg-state-success" >Success</div>
-		<div class="grid-item p bg-state-warning" >Warning</div>
-		<div class="grid-item p bg-state-error" >Error</div>
-	</div>
-</section>
-
-Styleguide Color.palette
-*/
 @import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
@@ -867,748 +822,6 @@ summary {
   cursor: pointer; }
 
 /*
-Checkboxes
-
-Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
-
-Markup:
-<div class="form-item">
-	<input type="checkbox" id="check" name="check">
-	<label for="check">Checkbox normal</label>
-</div>
-<div class="form-item">
-	<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
-	<label for="check2">Pseudo Checkbox</label>
-</div>
-
-Styleguide Forms.checkbox
-*/
-/*
-Radio buttons
-
-Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
-
-Markup:
-<div class="form-item">
-	<input type="radio" id="radio" name="radio">
-	<label for="radio">Radio normal</label>
-</div>
-<div class="form-item">
-	<input type="radio" id="radio2" class="pseudo-radio" name="radio">
-	<label for="radio2">Pseudo Radio</label>
-</div>
-
-Styleguide Forms.radio
-*/
-input,
-label,
-select,
-button,
-textarea {
-  display: inline-block;
-  margin: 0;
-  border: 0;
-  width: auto;
-  vertical-align: middle;
-  white-space: normal;
-  line-height: inherit;
-  background: none;
-  border-radius: 0px;
-  /* Browsers have different default form fonts */
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit; }
-
-label {
-  margin-right: 0.675rem; }
-
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #acb3bb inset;
-  color: #1A1A19; }
-
-input {
-  /*
-	Input
-	
-	General text input.
-
-	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
-	and apply a vertical-rhythm based margin.
-
-	This wrapper also applies a flexbox in order to take the full width of the parent.
-
-	Without this wrapper and class, all the form elements would behave as inline-block elements.
-
-	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
-
-	For items with an `input[disabled]`, the recommendation is to mark the whole `.form-item` as `.disabled`
-	
-	Markup:
-	<div class="form-item">
-	  <label for="text">Text</label>
-	  <input type="text" id="text" name="text">
-	</div>
-	<div class="form-item form-item--required">
-	  <label for="text">Text Required</label>
-	  <input required type="text" id="text" name="text">
-	</div>
-	<div class="form-item disabled">
-	  <label for="text">Form item disabled</label>
-	  <input disabled type="text" id="text" name="text">
-	</div>
-	<div class="form-item">
-	  <label for="password">Password</label>
-	  <input type="password" id="password" name="password">
-	</div>
-	<div class="form-item">
-	  <label for="email">Email</label>
-	  <input type="email" id="email" name="email">
-	</div>
-	<div class="form-item">
-	  <label for="url">Web Address</label>
-	  <input id="url" type="url" placeholder="http://yoursite.com">
-	</div>
-	<div class="form-item">
-	  <label for="input__phone">Phone Number</label>
-	  <input id="input__phone" type="tel" placeholder="(999) 999-9999">
-	</div>
-	<div class="form-item">
-	  <label for="input__search">Search</label>
-	  <input id="input__search" type="search" placeholder="Enter Search Term">
-	</div>
-	
-	Styleguide Forms.input
-	*/
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem;
-  /* Make webkit render the search input like a normal text field */
-  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  /* Fix IE7 display bug */
-  /*
-	File Input
-	
-	Uses the label for handling click and hides the actual input element.
-	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
-	
-	Markup:
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file">Upload your file</label>
-	</div>
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
-	</div>
-	
-	Styleguide Forms.file
-	*/ }
-  input:hover, input:focus {
-    border-color: #959699; }
-  input:focus {
-    outline: 0; }
-  input[type=checkbox], input[type=radio] {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 0.675rem; }
-  input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box; }
-  ::-webkit-search-decoration {
-    display: none; }
-  input[type="reset"], input[type="button"], input[type="submit"] {
-    overflow: visible; }
-  input[type=file] {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px); }
-  input[type=checkbox].pseudo-checkbox {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px); }
-    input[type=checkbox].pseudo-checkbox:checked + label {
-      position: relative; }
-      input[type=checkbox].pseudo-checkbox:checked + label:after {
-        content: "";
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        top: 50%;
-        left: 4px;
-        transform: translateY(-50%);
-        background-color: #384048; }
-    input[type=checkbox].pseudo-checkbox + label {
-      cursor: pointer;
-      display: flex;
-      align-items: center; }
-      input[type=checkbox].pseudo-checkbox + label:before {
-        content: "";
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin: 0 0.675rem 0 0;
-        border: 1px solid #384048;
-        background-color: #f8f9f9;
-        cursor: pointer; }
-  input[type=radio].pseudo-radio {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px); }
-    input[type=radio].pseudo-radio:checked + label {
-      position: relative; }
-      input[type=radio].pseudo-radio:checked + label:after {
-        content: "";
-        position: absolute;
-        display: inline-block;
-        top: 50%;
-        left: 4px;
-        width: 8px;
-        height: 8px;
-        transform: translateY(-50%);
-        background-color: #384048;
-        border-radius: 50%;
-        cursor: pointer; }
-    input[type=radio].pseudo-radio + label {
-      cursor: pointer;
-      display: flex;
-      align-items: center; }
-      input[type=radio].pseudo-radio + label:before {
-        content: "";
-        display: inline-block;
-        margin: 0 0.675rem 0 0;
-        width: 16px;
-        height: 16px;
-        border: 1px solid #384048;
-        background-color: #f8f9f9;
-        vertical-align: top;
-        border-radius: 50%;
-        cursor: pointer; }
-
-/*
-Select
-
-<span class="tag tag--warning">JS</span> Handles multiple selection using [Selectr](https://github.com/Mobius1/Selectr)
-
-It is applied automatically to all `.js--selectr` inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common `huesos.js`
-
-Markup:
-<div class="form-item">
-	<select class="js--selectr">
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="mercedes">Mercedes</option>
-		<option value="audi">Audi</option>
-	</select>
-</div>
-<div class="form-item">
-	<select multiple class="js--selectr">
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="mercedes">Mercedes</option>
-		<option value="audi">Audi</option>
-	</select> 
-</div>
-<div class="form-item">
-	<select class="js--selectr">
-		<optgroup label= "Expensive cars">
-			<option value="volvo">Volvo</option>
-			<option value="saab">Saab</option>
-		</optgroup>
-		<optgroup label= "Unaffordable cars">
-			<option value="mercedes">Mercedes</option>
-			<option value="audi">Audi</option>
-		</optgroup>
-	</select> 
-</div>
-
-Styleguide Forms.select
-*/
-select {
-  border: 1px solid #dee0e4;
-  padding: 0 0.675rem;
-  appearance: none;
-  /* Move the label to the top */ }
-  select:hover, select:focus {
-    border-color: #959699; }
-  select[multiple] {
-    vertical-align: top; }
-
-/*
-Textarea
-
-Use in conjunction with `.form-item` and its modifiers (see its own section)
-
-It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
-
-
-Markup:
-<div class="form-item">
-	<label for="area1">Textarea</label>
-	<textarea rows="5" id="area1"></textarea>
-</div>
-<div class="form-item form-item--label-inside">
-	<label for="area2">Textarea</label>
-	<textarea rows="5" id="area2"></textarea>
-</div>
-<div class="form-item form-item--label-inside form-item--col">
-	<label for="area3">Textarea</label>
-	<textarea id="area3"></textarea>
-</div>
-
-Styleguide Forms.textarea
-*/
-textarea {
-  border: 1px solid #dee0e4;
-  /* Move the label to the top */
-  vertical-align: top;
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto;
-  width: 100%;
-  padding: 0.3375rem 0.675rem;
-  min-height: 2.7rem; }
-
-/*
-Fieldsets
-
-If either `$disable-fieldset` boolean is set to true or `.fieldset--disabled` class is added, visually hides the fielset box and converts the `<legend>` into a pseudo-heading.
-
-Markup:
-<fieldset>
-	<legend>Fieldset legend</legend>
-	<div class="form-item">
-		<label for="item">This is my label</label>
-		<input type="email" id="item" placeholder="Email" />
-	</div>
-	<div class="form-item">
-		<label for="item2">This is a second label</label>
-		<input type="text" id="item2" value="Text" />
-	</div>
-</fieldset>
-<fieldset class="fieldset--disabled">
-	<legend>Fieldset legend</legend>
-	<div class="form-item">
-		<label for="item">This is my label</label>
-		<input type="email" id="item" placeholder="Email" />
-	</div>
-	<div class="form-item">
-		<label for="item2">This is a second label</label>
-		<input type="text" id="item2" value="Text" />
-	</div>
-</fieldset>
-
-Styleguide Forms.fieldset
-*/
-fieldset {
-  margin-right: 0;
-  margin-left: 0;
-  border: 1px solid #dee0e4;
-  border-radius: 0px;
-  padding: 1.35rem; }
-  fieldset legend {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 22px;
-    line-height: 1.35rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-
-fieldset.fieldset--disabled {
-  margin-right: 0;
-  margin-left: 0;
-  border: none;
-  padding: 0; }
-  fieldset.fieldset--disabled legend {
-    margin-bottom: 1.35rem;
-    font-size: 21px;
-    font-size: 1.333rem;
-    line-height: 27px;
-    line-height: 1.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-
-/*
-Form item wrapper
-
-General block-level wrapper for spacing between items.
-
-It also provides several variations for different styling of items.
-
-.form-item--required		- Marks the label with a red asterisk
-.form-item--col				- Stacks elements instead of displaying them side by side
-.form-item--label-inside	- Visually puts the label inside of the input. Only makes sense if the border strategy is full
-.form-item--label-inside.form-item--required	- `.form-item--required` can be combinated with the other modifiers
-.form-item--label-inside.form-item--col	- You can sum `col`and `required` to get this commonly seen pattern
-
-Markup:
-<div class="form-item {{modifier_class}}">
-	<label for="text">A form item</label>
-	<input type="text" id="text" name="text">
-</div>
-
-Styleguide Forms.form-item
-*/
-.form-item {
-  margin-bottom: 1.35rem;
-  display: flex;
-  align-items: baseline; }
-  .form-item label {
-    flex: 0 1 auto;
-    font-size: 12px;
-    font-size: 0.75019rem;
-    line-height: 16px;
-    line-height: 1.0125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-  .form-item input[type="text"],
-  .form-item input[type="email"],
-  .form-item input[type="password"],
-  .form-item input[type="url"],
-  .form-item input[type="tel"],
-  .form-item input[type="search"] {
-    flex: 1 0 auto; }
-  .form-item:last-child, .form-item:last-of-type {
-    margin-bottom: 0; }
-
-.form-item--col {
-  display: block; }
-  .form-item--col label,
-  .form-item--col input,
-  .form-item--col textarea {
-    display: block;
-    width: 100%; }
-  .form-item--col input[type="checkbox"],
-  .form-item--col input[type="radio"] {
-    width: auto; }
-
-.form-item--required label::after {
-  content: "*";
-  color: #ac3230; }
-
-.form-item--label-inside {
-  border-radius: 0px;
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem; }
-  .form-item--label-inside:hover, .form-item--label-inside:focus {
-    border-color: #959699; }
-  .form-item--label-inside input,
-  .form-item--label-inside textarea {
-    border: none;
-    border-radius: 0;
-    padding: 0; }
-
-/*
-Button
-
-Either `<input type="submit / ">`, `<button>` or `<a class="button">`.
-
-There are three general strategies available. `border`, `background` and `mixed`
-
-Markup:
-<button class="{{modifier_class}}">Click me please!</button>
-<a href="#" class="button {{modifier_class}}">I'm a link!</a>
-<input type="submit" class="{{modifier_class}}" value="Submit input" />
-
-.button--success           - Uses success color to indicate a positive action (OK, login, continue...)
-.button--warning           - Uses warning color to indicate a potentially negative action
-.button--error             - Uses error color to indicate a negative action (delete, cancel, no...)
-.disabled          		   - The helper class `.disabled` knows how to erase user interaction on buttons
-.button--error.disabled             - .disabled and the rest of the modifiers can be safely applied at the same time
-
-
-Styleguide Components.buttons
-*/
-a.button {
-  border: 2px solid #606d7c; }
-  a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
-    text-decoration: none; }
-  a.button:link, a.button:visited {
-    color: #606d7c; }
-  a.button:hover, a.button:focus {
-    border: 2px solid #606d7c;
-    background: #606d7c;
-    color: #FFFFFF; }
-
-input[type=submit],
-input[type=reset],
-input[type=button],
-button,
-.button,
-input[type=file] + label {
-  background: none;
-  outline: none;
-  /* IE8 and FF freak out if this rule is within another selector */
-  cursor: pointer;
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 27px;
-  line-height: 1.6875rem;
-  display: inline-block;
-  padding: 0 0.675rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  vertical-align: middle;
-  font-weight: 700;
-  font-family: "Lato", Helvetica, Arial sans-serif;
-  border-radius: 2px;
-  border: 2px solid #606d7c;
-  color: #606d7c; }
-  input[type=submit]::-moz-focus-inner,
-  input[type=reset]::-moz-focus-inner,
-  input[type=button]::-moz-focus-inner,
-  button::-moz-focus-inner,
-  .button::-moz-focus-inner,
-  input[type=file] + label::-moz-focus-inner {
-    border: 0;
-    padding: 0; }
-  input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus,
-  input[type=reset]:hover,
-  input[type=reset]:active,
-  input[type=reset]:focus,
-  input[type=button]:hover,
-  input[type=button]:active,
-  input[type=button]:focus,
-  button:hover,
-  button:active,
-  button:focus,
-  .button:hover,
-  input[type=file] + label:hover,
-  .button:active,
-  input[type=file] + label:active,
-  .button:focus,
-  input[type=file] + label:focus {
-    outline: 0; }
-  ::-webkit-file-upload-button {
-    padding: 0;
-    border: 0;
-    background: none; }
-  input[type=submit]:hover, input[type=submit]:focus,
-  input[type=reset]:hover,
-  input[type=reset]:focus,
-  input[type=button]:hover,
-  input[type=button]:focus,
-  button:hover,
-  button:focus,
-  .button:hover,
-  input[type=file] + label:hover,
-  .button:focus,
-  input[type=file] + label:focus {
-    background: #606d7c;
-    color: #FFFFFF; }
-  input[type=submit] .icon,
-  input[type=reset] .icon,
-  input[type=button] .icon,
-  button .icon,
-  .button .icon,
-  input[type=file] + label .icon {
-    font-size: 12px;
-    font-size: 0.75019rem;
-    line-height: 16px;
-    line-height: 1.0125rem;
-    height: 0.75019rem;
-    line-height: 1; }
-    input[type=submit] .icon svg,
-    input[type=reset] .icon svg,
-    input[type=button] .icon svg,
-    button .icon svg,
-    .button .icon svg,
-    input[type=file] + label .icon svg {
-      fill: currentColor; }
-
-input[type=submit] + input[type=submit] {
-  margin-left: 0.3375rem; }
-
-input[type=submit] + input[type=reset] {
-  margin-left: 0.3375rem; }
-
-input[type=submit] + input[type=button] {
-  margin-left: 0.3375rem; }
-
-input[type=submit] + button {
-  margin-left: 0.3375rem; }
-
-input[type=submit] + .button, input[type=file][type=submit] + label {
-  margin-left: 0.3375rem; }
-
-input[type=reset] + input[type=submit] {
-  margin-left: 0.3375rem; }
-
-input[type=reset] + input[type=reset] {
-  margin-left: 0.3375rem; }
-
-input[type=reset] + input[type=button] {
-  margin-left: 0.3375rem; }
-
-input[type=reset] + button {
-  margin-left: 0.3375rem; }
-
-input[type=reset] + .button, input[type=file][type=reset] + label {
-  margin-left: 0.3375rem; }
-
-input[type=button] + input[type=submit] {
-  margin-left: 0.3375rem; }
-
-input[type=button] + input[type=reset] {
-  margin-left: 0.3375rem; }
-
-input[type=button] + input[type=button] {
-  margin-left: 0.3375rem; }
-
-input[type=button] + button {
-  margin-left: 0.3375rem; }
-
-input[type=button] + .button, input[type=file][type=button] + label {
-  margin-left: 0.3375rem; }
-
-button + input[type=submit] {
-  margin-left: 0.3375rem; }
-
-button + input[type=reset] {
-  margin-left: 0.3375rem; }
-
-button + input[type=button] {
-  margin-left: 0.3375rem; }
-
-button + button {
-  margin-left: 0.3375rem; }
-
-button + .button {
-  margin-left: 0.3375rem; }
-
-.button + input[type=submit], input[type=file] + label + input[type=submit] {
-  margin-left: 0.3375rem; }
-
-.button + input[type=reset], input[type=file] + label + input[type=reset] {
-  margin-left: 0.3375rem; }
-
-.button + input[type=button], input[type=file] + label + input[type=button] {
-  margin-left: 0.3375rem; }
-
-.button + button, input[type=file] + label + button {
-  margin-left: 0.3375rem; }
-
-.button + .button, input[type=file] + label + .button, input.button[type=file] + label {
-  margin-left: 0.3375rem; }
-
-.button--muted,
-input.button--muted {
-  border-color: #ecedef;
-  color: #ecedef; }
-  .button--muted:hover, .button--muted:focus,
-  input.button--muted:hover,
-  input.button--muted:focus {
-    background: #ecedef;
-    color: #1A1A19; }
-
-a.button--muted {
-  border-color: #ecedef; }
-  a.button--muted:link, a.button--muted:visited {
-    color: #ecedef; }
-  a.button--muted:hover, a.button--muted:focus {
-    border-color: #ecedef;
-    background: #ecedef;
-    color: #1A1A19; }
-
-.button--success,
-input.button--success {
-  border-color: #63c093;
-  color: #63c093; }
-  .button--success:hover, .button--success:focus,
-  input.button--success:hover,
-  input.button--success:focus {
-    background: #63c093;
-    color: #1A1A19; }
-
-a.button--success {
-  border-color: #63c093; }
-  a.button--success:link, a.button--success:visited {
-    color: #63c093; }
-  a.button--success:hover, a.button--success:focus {
-    border-color: #63c093;
-    background: #63c093;
-    color: #1A1A19; }
-
-.button--warning,
-input.button--warning {
-  border-color: #aaac30;
-  color: #aaac30; }
-  .button--warning:hover, .button--warning:focus,
-  input.button--warning:hover,
-  input.button--warning:focus {
-    background: #aaac30;
-    color: #FFFFFF; }
-
-a.button--warning {
-  border-color: #aaac30; }
-  a.button--warning:link, a.button--warning:visited {
-    color: #aaac30; }
-  a.button--warning:hover, a.button--warning:focus {
-    border-color: #aaac30;
-    background: #aaac30;
-    color: #FFFFFF; }
-
-.button--error,
-input.button--error {
-  border-color: #ac3230;
-  color: #ac3230; }
-  .button--error:hover, .button--error:focus,
-  input.button--error:hover,
-  input.button--error:focus {
-    background: #ac3230;
-    color: #FFFFFF; }
-
-a.button--error {
-  border-color: #ac3230; }
-  a.button--error:link, a.button--error:visited {
-    color: #ac3230; }
-  a.button--error:hover, a.button--error:focus {
-    border-color: #ac3230;
-    background: #ac3230;
-    color: #FFFFFF; }
-
-input[type=submit][disabled],
-input[type=reset][disabled],
-input[type=button][disabled],
-button[disabled],
-button.disabled,
-a.button.disabled,
-input.disabled {
-  opacity: 0.33;
-  cursor: arrow;
-  pointer-events: none; }
-  input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
-  input[type=reset][disabled]:hover,
-  input[type=reset][disabled]:focus,
-  input[type=button][disabled]:hover,
-  input[type=button][disabled]:focus,
-  button[disabled]:hover,
-  button[disabled]:focus,
-  button.disabled:hover,
-  button.disabled:focus,
-  a.button.disabled:hover,
-  a.button.disabled:focus,
-  input.disabled:hover,
-  input.disabled:focus {
-    cursor: arrow; }
-
-/*
 Headings
 
 The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
@@ -1877,6 +1090,102 @@ Styleguide Typography.paragraph
 .text p:last-child, .alert p:last-child {
   margin-bottom: 0; }
 
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*
+Disabled
+
+Class and placeholder used to dim the element and indicate that is not usable anymore.
+
+It also disables user interactions on buttons, links, etc... (see on their respective sections)
+
+Markup:
+<p class="disabled">I'm no longer active</p>
+<mark class="disabled"> I'm no longer working</mark>
+
+
+Styleguide Helpers.disabled
+*/
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+  text-align: left; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
+/*
+Figure + Figcaption
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+
+Markup:
+<section>
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</section>
+<section class="center">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+<section class="right">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+
+
+Styleguide Base.images.figure-figcaption
+*/
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  text-align: left; }
+
 /*
 Tables
 
@@ -1962,44 +1271,35 @@ th {
   .table th, .table td {
     min-width: 120px; }
 
-/*
-Figure + Figcaption
+input,
+label,
+select,
+button,
+textarea {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  width: auto;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  border-radius: 0px;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit; }
 
-The variable `$figcaption-font-size` defines the sizing of image captions.
+label {
+  margin-right: 0.675rem; }
 
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #acb3bb inset;
+  color: #1A1A19; }
 
-Markup:
-<section>
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</section>
-<section class="center">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-<section class="right">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-
-
-Styleguide Base.images.figure-figcaption
-*/
-figcaption {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  text-align: left; }
-
-.visually-hidden, .selectr-hidden {
+input[type=checkbox].pseudo-checkbox {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -2007,56 +1307,294 @@ figcaption {
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px); }
-
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
+  input[type=checkbox].pseudo-checkbox:checked + label {
+    position: relative; }
+    input[type=checkbox].pseudo-checkbox:checked + label:after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      background-color: #384048; }
+  input[type=checkbox].pseudo-checkbox + label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    input[type=checkbox].pseudo-checkbox + label:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 0 0.675rem 0 0;
+      border: 1px solid #384048;
+      background-color: #f8f9f9;
+      cursor: pointer; }
 
 /*
-Disabled
+Fieldsets
 
-Class and placeholder used to dim the element and indicate that is not usable anymore.
-
-It also disables user interactions on buttons, links, etc... (see on their respective sections)
+If either `$disable-fieldset` boolean is set to true or `.fieldset--disabled` class is added, visually hides the fielset box and converts the `<legend>` into a pseudo-heading.
 
 Markup:
-<p class="disabled">I'm no longer active</p>
-<mark class="disabled"> I'm no longer working</mark>
+<fieldset>
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
+<fieldset class="fieldset--disabled">
+	<legend>Fieldset legend</legend>
+	<div class="form-item">
+		<label for="item">This is my label</label>
+		<input type="email" id="item" placeholder="Email" />
+	</div>
+	<div class="form-item">
+		<label for="item2">This is a second label</label>
+		<input type="text" id="item2" value="Text" />
+	</div>
+</fieldset>
 
-
-Styleguide Helpers.disabled
+Styleguide Forms.fieldset
 */
+fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  border: 1px solid #dee0e4;
+  border-radius: 0px;
+  padding: 1.35rem; }
+  fieldset legend {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
 
-.disabled {
-  opacity: 0.33; }
+fieldset.fieldset--disabled {
+  margin-right: 0;
+  margin-left: 0;
+  border: none;
+  padding: 0; }
+  fieldset.fieldset--disabled legend {
+    margin-bottom: 1.35rem;
+    font-size: 21px;
+    font-size: 1.333rem;
+    line-height: 27px;
+    line-height: 1.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
 
 /*
-Text alignment
+Form item wrapper
 
-Helper classes that provide a quick access to `text-align`.
+General block-level wrapper for spacing between items.
 
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+It also provides several variations for different styling of items.
+
+.form-item--required		- Marks the label with a red asterisk
+.form-item--col				- Stacks elements instead of displaying them side by side
+.form-item--label-inside	- Visually puts the label inside of the input. Only makes sense if the border strategy is full
+.form-item--label-inside.form-item--required	- `.form-item--required` can be combinated with the other modifiers
+.form-item--label-inside.form-item--col	- You can sum `col`and `required` to get this commonly seen pattern
 
 Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
+<div class="form-item {{modifier_class}}">
+	<label for="text">A form item</label>
+	<input type="text" id="text" name="text">
+</div>
 
-
-Styleguide Helpers.alignment
+Styleguide Forms.form-item
 */
-.left {
-  text-align: left; }
+.form-item {
+  margin-bottom: 1.35rem;
+  display: flex;
+  align-items: baseline; }
+  .form-item label {
+    flex: 0 1 auto;
+    font-size: 12px;
+    font-size: 0.75019rem;
+    line-height: 16px;
+    line-height: 1.0125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+  .form-item input[type="text"],
+  .form-item input[type="email"],
+  .form-item input[type="password"],
+  .form-item input[type="url"],
+  .form-item input[type="tel"],
+  .form-item input[type="search"] {
+    flex: 1 0 auto; }
+  .form-item:last-child, .form-item:last-of-type {
+    margin-bottom: 0; }
 
-.center {
-  text-align: center; }
+.form-item--col {
+  display: block; }
+  .form-item--col label,
+  .form-item--col input,
+  .form-item--col textarea {
+    display: block;
+    width: 100%; }
+  .form-item--col input[type="checkbox"],
+  .form-item--col input[type="radio"] {
+    width: auto; }
 
-.right {
-  text-align: right; }
+.form-item--required label::after {
+  content: "*";
+  color: #ac3230; }
+
+.form-item--label-inside {
+  border-radius: 0px;
+  border: 1px solid #dee0e4;
+  padding: 0.3375rem 0.675rem; }
+  .form-item--label-inside:hover, .form-item--label-inside:focus {
+    border-color: #959699; }
+  .form-item--label-inside input,
+  .form-item--label-inside textarea {
+    border: none;
+    border-radius: 0;
+    padding: 0; }
+
+input {
+  border: 1px solid #dee0e4;
+  padding: 0.3375rem 0.675rem;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /*
+	File Input
+	
+	Uses the label for handling click and hides the actual input element.
+	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	
+	Markup:
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file">Upload your file</label>
+	</div>
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
+	</div>
+	
+	Styleguide Forms.file
+	*/ }
+  input:hover, input:focus {
+    border-color: #959699; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 0.675rem; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=file] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+
+input[type=radio].pseudo-radio {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+  input[type=radio].pseudo-radio:checked + label {
+    position: relative; }
+    input[type=radio].pseudo-radio:checked + label:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%);
+      background-color: #384048;
+      border-radius: 50%;
+      cursor: pointer; }
+  input[type=radio].pseudo-radio + label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    input[type=radio].pseudo-radio + label:before {
+      content: "";
+      display: inline-block;
+      margin: 0 0.675rem 0 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #384048;
+      background-color: #f8f9f9;
+      vertical-align: top;
+      border-radius: 50%;
+      cursor: pointer; }
+
+select {
+  border: 1px solid #dee0e4;
+  padding: 0 0.675rem;
+  appearance: none;
+  /* Move the label to the top */ }
+  select:hover, select:focus {
+    border-color: #959699; }
+  select[multiple] {
+    vertical-align: top; }
+
+/*
+Textarea
+
+Use in conjunction with `.form-item` and its modifiers (see its own section)
+
+It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+
+
+Markup:
+<div class="form-item">
+	<label for="area1">Textarea</label>
+	<textarea rows="5" id="area1"></textarea>
+</div>
+<div class="form-item form-item--label-inside">
+	<label for="area2">Textarea</label>
+	<textarea rows="5" id="area2"></textarea>
+</div>
+<div class="form-item form-item--label-inside form-item--col">
+	<label for="area3">Textarea</label>
+	<textarea id="area3"></textarea>
+</div>
+
+Styleguide Forms.textarea
+*/
+textarea {
+  border: 1px solid #dee0e4;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+  width: 100%;
+  padding: 0.3375rem 0.675rem;
+  min-height: 2.7rem; }
 
 #main-wrapper {
   max-width: 960px;
@@ -2871,6 +2409,279 @@ a.tag, a.selectr-tag {
 .card__contents {
   padding: 1.35rem; }
 
+a.button {
+  border: 2px solid #606d7c; }
+  a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
+    text-decoration: none; }
+  a.button:link, a.button:visited {
+    color: #606d7c; }
+  a.button:hover, a.button:focus {
+    border: 2px solid #606d7c;
+    background: #606d7c;
+    color: #FFFFFF; }
+
+input[type=submit],
+input[type=reset],
+input[type=button],
+button,
+.button,
+input[type=file] + label {
+  background: none;
+  outline: none;
+  /* IE8 and FF freak out if this rule is within another selector */
+  cursor: pointer;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 27px;
+  line-height: 1.6875rem;
+  display: inline-block;
+  padding: 0 0.675rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  vertical-align: middle;
+  font-weight: 700;
+  font-family: "Lato", Helvetica, Arial sans-serif;
+  border-radius: 2px;
+  border: 2px solid #606d7c;
+  color: #606d7c; }
+  input[type=submit]::-moz-focus-inner,
+  input[type=reset]::-moz-focus-inner,
+  input[type=button]::-moz-focus-inner,
+  button::-moz-focus-inner,
+  .button::-moz-focus-inner,
+  input[type=file] + label::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus,
+  input[type=reset]:hover,
+  input[type=reset]:active,
+  input[type=reset]:focus,
+  input[type=button]:hover,
+  input[type=button]:active,
+  input[type=button]:focus,
+  button:hover,
+  button:active,
+  button:focus,
+  .button:hover,
+  input[type=file] + label:hover,
+  .button:active,
+  input[type=file] + label:active,
+  .button:focus,
+  input[type=file] + label:focus {
+    outline: 0; }
+  ::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none; }
+  input[type=submit]:hover, input[type=submit]:focus,
+  input[type=reset]:hover,
+  input[type=reset]:focus,
+  input[type=button]:hover,
+  input[type=button]:focus,
+  button:hover,
+  button:focus,
+  .button:hover,
+  input[type=file] + label:hover,
+  .button:focus,
+  input[type=file] + label:focus {
+    background: #606d7c;
+    color: #FFFFFF; }
+  input[type=submit] .icon,
+  input[type=reset] .icon,
+  input[type=button] .icon,
+  button .icon,
+  .button .icon,
+  input[type=file] + label .icon {
+    font-size: 12px;
+    font-size: 0.75019rem;
+    line-height: 16px;
+    line-height: 1.0125rem;
+    height: 0.75019rem;
+    line-height: 1; }
+    input[type=submit] .icon svg,
+    input[type=reset] .icon svg,
+    input[type=button] .icon svg,
+    button .icon svg,
+    .button .icon svg,
+    input[type=file] + label .icon svg {
+      fill: currentColor; }
+
+input[type=submit] + input[type=submit] {
+  margin-left: 0.3375rem; }
+
+input[type=submit] + input[type=reset] {
+  margin-left: 0.3375rem; }
+
+input[type=submit] + input[type=button] {
+  margin-left: 0.3375rem; }
+
+input[type=submit] + button {
+  margin-left: 0.3375rem; }
+
+input[type=submit] + .button, input[type=file][type=submit] + label {
+  margin-left: 0.3375rem; }
+
+input[type=reset] + input[type=submit] {
+  margin-left: 0.3375rem; }
+
+input[type=reset] + input[type=reset] {
+  margin-left: 0.3375rem; }
+
+input[type=reset] + input[type=button] {
+  margin-left: 0.3375rem; }
+
+input[type=reset] + button {
+  margin-left: 0.3375rem; }
+
+input[type=reset] + .button, input[type=file][type=reset] + label {
+  margin-left: 0.3375rem; }
+
+input[type=button] + input[type=submit] {
+  margin-left: 0.3375rem; }
+
+input[type=button] + input[type=reset] {
+  margin-left: 0.3375rem; }
+
+input[type=button] + input[type=button] {
+  margin-left: 0.3375rem; }
+
+input[type=button] + button {
+  margin-left: 0.3375rem; }
+
+input[type=button] + .button, input[type=file][type=button] + label {
+  margin-left: 0.3375rem; }
+
+button + input[type=submit] {
+  margin-left: 0.3375rem; }
+
+button + input[type=reset] {
+  margin-left: 0.3375rem; }
+
+button + input[type=button] {
+  margin-left: 0.3375rem; }
+
+button + button {
+  margin-left: 0.3375rem; }
+
+button + .button {
+  margin-left: 0.3375rem; }
+
+.button + input[type=submit], input[type=file] + label + input[type=submit] {
+  margin-left: 0.3375rem; }
+
+.button + input[type=reset], input[type=file] + label + input[type=reset] {
+  margin-left: 0.3375rem; }
+
+.button + input[type=button], input[type=file] + label + input[type=button] {
+  margin-left: 0.3375rem; }
+
+.button + button, input[type=file] + label + button {
+  margin-left: 0.3375rem; }
+
+.button + .button, input[type=file] + label + .button, input.button[type=file] + label {
+  margin-left: 0.3375rem; }
+
+.button--muted,
+input.button--muted {
+  border-color: #ecedef;
+  color: #ecedef; }
+  .button--muted:hover, .button--muted:focus,
+  input.button--muted:hover,
+  input.button--muted:focus {
+    background: #ecedef;
+    color: #1A1A19; }
+
+a.button--muted {
+  border-color: #ecedef; }
+  a.button--muted:link, a.button--muted:visited {
+    color: #ecedef; }
+  a.button--muted:hover, a.button--muted:focus {
+    border-color: #ecedef;
+    background: #ecedef;
+    color: #1A1A19; }
+
+.button--success,
+input.button--success {
+  border-color: #63c093;
+  color: #63c093; }
+  .button--success:hover, .button--success:focus,
+  input.button--success:hover,
+  input.button--success:focus {
+    background: #63c093;
+    color: #1A1A19; }
+
+a.button--success {
+  border-color: #63c093; }
+  a.button--success:link, a.button--success:visited {
+    color: #63c093; }
+  a.button--success:hover, a.button--success:focus {
+    border-color: #63c093;
+    background: #63c093;
+    color: #1A1A19; }
+
+.button--warning,
+input.button--warning {
+  border-color: #aaac30;
+  color: #aaac30; }
+  .button--warning:hover, .button--warning:focus,
+  input.button--warning:hover,
+  input.button--warning:focus {
+    background: #aaac30;
+    color: #FFFFFF; }
+
+a.button--warning {
+  border-color: #aaac30; }
+  a.button--warning:link, a.button--warning:visited {
+    color: #aaac30; }
+  a.button--warning:hover, a.button--warning:focus {
+    border-color: #aaac30;
+    background: #aaac30;
+    color: #FFFFFF; }
+
+.button--error,
+input.button--error {
+  border-color: #ac3230;
+  color: #ac3230; }
+  .button--error:hover, .button--error:focus,
+  input.button--error:hover,
+  input.button--error:focus {
+    background: #ac3230;
+    color: #FFFFFF; }
+
+a.button--error {
+  border-color: #ac3230; }
+  a.button--error:link, a.button--error:visited {
+    color: #ac3230; }
+  a.button--error:hover, a.button--error:focus {
+    border-color: #ac3230;
+    background: #ac3230;
+    color: #FFFFFF; }
+
+input[type=submit][disabled],
+input[type=reset][disabled],
+input[type=button][disabled],
+button[disabled],
+button.disabled,
+a.button.disabled,
+input.disabled {
+  opacity: 0.33;
+  cursor: arrow;
+  pointer-events: none; }
+  input[type=submit][disabled]:hover, input[type=submit][disabled]:focus,
+  input[type=reset][disabled]:hover,
+  input[type=reset][disabled]:focus,
+  input[type=button][disabled]:hover,
+  input[type=button][disabled]:focus,
+  button[disabled]:hover,
+  button[disabled]:focus,
+  button.disabled:hover,
+  button.disabled:focus,
+  a.button.disabled:hover,
+  a.button.disabled:focus,
+  input.disabled:hover,
+  input.disabled:focus {
+    cursor: arrow; }
+
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
@@ -3379,622 +3190,6 @@ Styleguide Huesitos.borders
   .bg-state-error h3, .bg-state-error .h3,
   .bg-state-error h4, .bg-state-error .h4,
   .bg-state-error h5, .bg-state-error .h5 h6, .bg-state-error .h6 {
-    color: inherit; }
-
-.bg-blue-0 {
-  background-color: #e8eff6;
-  color: #1A1A19; }
-  .bg-blue-0 h1, .bg-blue-0 .h1,
-  .bg-blue-0 h2, .bg-blue-0 .h2,
-  .bg-blue-0 h3, .bg-blue-0 .h3,
-  .bg-blue-0 h4, .bg-blue-0 .h4,
-  .bg-blue-0 h5, .bg-blue-0 .h5 h6, .bg-blue-0 .h6 {
-    color: inherit; }
-
-.bg-blue-1 {
-  background-color: #cfddec;
-  color: #1A1A19; }
-  .bg-blue-1 h1, .bg-blue-1 .h1,
-  .bg-blue-1 h2, .bg-blue-1 .h2,
-  .bg-blue-1 h3, .bg-blue-1 .h3,
-  .bg-blue-1 h4, .bg-blue-1 .h4,
-  .bg-blue-1 h5, .bg-blue-1 .h5 h6, .bg-blue-1 .h6 {
-    color: inherit; }
-
-.bg-blue-2 {
-  background-color: #b3c9e0;
-  color: #1A1A19; }
-  .bg-blue-2 h1, .bg-blue-2 .h1,
-  .bg-blue-2 h2, .bg-blue-2 .h2,
-  .bg-blue-2 h3, .bg-blue-2 .h3,
-  .bg-blue-2 h4, .bg-blue-2 .h4,
-  .bg-blue-2 h5, .bg-blue-2 .h5 h6, .bg-blue-2 .h6 {
-    color: inherit; }
-
-.bg-blue-3 {
-  background-color: #92b2d3;
-  color: #1A1A19; }
-  .bg-blue-3 h1, .bg-blue-3 .h1,
-  .bg-blue-3 h2, .bg-blue-3 .h2,
-  .bg-blue-3 h3, .bg-blue-3 .h3,
-  .bg-blue-3 h4, .bg-blue-3 .h4,
-  .bg-blue-3 h5, .bg-blue-3 .h5 h6, .bg-blue-3 .h6 {
-    color: inherit; }
-
-.bg-blue-4 {
-  background-color: #6a95c3;
-  color: #1A1A19; }
-  .bg-blue-4 h1, .bg-blue-4 .h1,
-  .bg-blue-4 h2, .bg-blue-4 .h2,
-  .bg-blue-4 h3, .bg-blue-4 .h3,
-  .bg-blue-4 h4, .bg-blue-4 .h4,
-  .bg-blue-4 h5, .bg-blue-4 .h5 h6, .bg-blue-4 .h6 {
-    color: inherit; }
-
-.bg-blue-5 {
-  background-color: #306cac;
-  color: #FFFFFF; }
-  .bg-blue-5 a, .bg-blue-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-5 a:visited {
-    color: #fff; }
-  .bg-blue-5 a:focus, .bg-blue-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-5 a:active {
-    color: #b3c9e0; }
-  .bg-blue-5 h1, .bg-blue-5 .h1,
-  .bg-blue-5 h2, .bg-blue-5 .h2,
-  .bg-blue-5 h3, .bg-blue-5 .h3,
-  .bg-blue-5 h4, .bg-blue-5 .h4,
-  .bg-blue-5 h5, .bg-blue-5 .h5 h6, .bg-blue-5 .h6 {
-    color: inherit; }
-
-.bg-blue-6 {
-  background-color: #2b619a;
-  color: #FFFFFF; }
-  .bg-blue-6 a, .bg-blue-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-6 a:visited {
-    color: #fff; }
-  .bg-blue-6 a:focus, .bg-blue-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-6 a:active {
-    color: #b3c9e0; }
-  .bg-blue-6 h1, .bg-blue-6 .h1,
-  .bg-blue-6 h2, .bg-blue-6 .h2,
-  .bg-blue-6 h3, .bg-blue-6 .h3,
-  .bg-blue-6 h4, .bg-blue-6 .h4,
-  .bg-blue-6 h5, .bg-blue-6 .h5 h6, .bg-blue-6 .h6 {
-    color: inherit; }
-
-.bg-blue-7 {
-  background-color: #255486;
-  color: #FFFFFF; }
-  .bg-blue-7 a, .bg-blue-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-7 a:visited {
-    color: #fff; }
-  .bg-blue-7 a:focus, .bg-blue-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-7 a:active {
-    color: #b3c9e0; }
-  .bg-blue-7 h1, .bg-blue-7 .h1,
-  .bg-blue-7 h2, .bg-blue-7 .h2,
-  .bg-blue-7 h3, .bg-blue-7 .h3,
-  .bg-blue-7 h4, .bg-blue-7 .h4,
-  .bg-blue-7 h5, .bg-blue-7 .h5 h6, .bg-blue-7 .h6 {
-    color: inherit; }
-
-.bg-blue-8 {
-  background-color: #1e456e;
-  color: #FFFFFF; }
-  .bg-blue-8 a, .bg-blue-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-8 a:visited {
-    color: #fff; }
-  .bg-blue-8 a:focus, .bg-blue-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-8 a:active {
-    color: #b3c9e0; }
-  .bg-blue-8 h1, .bg-blue-8 .h1,
-  .bg-blue-8 h2, .bg-blue-8 .h2,
-  .bg-blue-8 h3, .bg-blue-8 .h3,
-  .bg-blue-8 h4, .bg-blue-8 .h4,
-  .bg-blue-8 h5, .bg-blue-8 .h5 h6, .bg-blue-8 .h6 {
-    color: inherit; }
-
-.bg-blue-9 {
-  background-color: #15304d;
-  color: #FFFFFF; }
-  .bg-blue-9 a, .bg-blue-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-9 a:visited {
-    color: #fff; }
-  .bg-blue-9 a:focus, .bg-blue-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-9 a:active {
-    color: #b3c9e0; }
-  .bg-blue-9 h1, .bg-blue-9 .h1,
-  .bg-blue-9 h2, .bg-blue-9 .h2,
-  .bg-blue-9 h3, .bg-blue-9 .h3,
-  .bg-blue-9 h4, .bg-blue-9 .h4,
-  .bg-blue-9 h5, .bg-blue-9 .h5 h6, .bg-blue-9 .h6 {
-    color: inherit; }
-
-.bg-green-0 {
-  background-color: #e6f5ee;
-  color: #1A1A19; }
-  .bg-green-0 h1, .bg-green-0 .h1,
-  .bg-green-0 h2, .bg-green-0 .h2,
-  .bg-green-0 h3, .bg-green-0 .h3,
-  .bg-green-0 h4, .bg-green-0 .h4,
-  .bg-green-0 h5, .bg-green-0 .h5 h6, .bg-green-0 .h6 {
-    color: inherit; }
-
-.bg-green-1 {
-  background-color: #cbeadb;
-  color: #1A1A19; }
-  .bg-green-1 h1, .bg-green-1 .h1,
-  .bg-green-1 h2, .bg-green-1 .h2,
-  .bg-green-1 h3, .bg-green-1 .h3,
-  .bg-green-1 h4, .bg-green-1 .h4,
-  .bg-green-1 h5, .bg-green-1 .h5 h6, .bg-green-1 .h6 {
-    color: inherit; }
-
-.bg-green-2 {
-  background-color: #aedec7;
-  color: #1A1A19; }
-  .bg-green-2 h1, .bg-green-2 .h1,
-  .bg-green-2 h2, .bg-green-2 .h2,
-  .bg-green-2 h3, .bg-green-2 .h3,
-  .bg-green-2 h4, .bg-green-2 .h4,
-  .bg-green-2 h5, .bg-green-2 .h5 h6, .bg-green-2 .h6 {
-    color: inherit; }
-
-.bg-green-3 {
-  background-color: #8bd0af;
-  color: #1A1A19; }
-  .bg-green-3 h1, .bg-green-3 .h1,
-  .bg-green-3 h2, .bg-green-3 .h2,
-  .bg-green-3 h3, .bg-green-3 .h3,
-  .bg-green-3 h4, .bg-green-3 .h4,
-  .bg-green-3 h5, .bg-green-3 .h5 h6, .bg-green-3 .h6 {
-    color: inherit; }
-
-.bg-green-4 {
-  background-color: #63c093;
-  color: #1A1A19; }
-  .bg-green-4 h1, .bg-green-4 .h1,
-  .bg-green-4 h2, .bg-green-4 .h2,
-  .bg-green-4 h3, .bg-green-4 .h3,
-  .bg-green-4 h4, .bg-green-4 .h4,
-  .bg-green-4 h5, .bg-green-4 .h5 h6, .bg-green-4 .h6 {
-    color: inherit; }
-
-.bg-green-5 {
-  background-color: #30ac70;
-  color: #FFFFFF; }
-  .bg-green-5 a, .bg-green-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-5 a:visited {
-    color: #fff; }
-  .bg-green-5 a:focus, .bg-green-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-5 a:active {
-    color: #b3c9e0; }
-  .bg-green-5 h1, .bg-green-5 .h1,
-  .bg-green-5 h2, .bg-green-5 .h2,
-  .bg-green-5 h3, .bg-green-5 .h3,
-  .bg-green-5 h4, .bg-green-5 .h4,
-  .bg-green-5 h5, .bg-green-5 .h5 h6, .bg-green-5 .h6 {
-    color: inherit; }
-
-.bg-green-6 {
-  background-color: #2b9b65;
-  color: #FFFFFF; }
-  .bg-green-6 a, .bg-green-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-6 a:visited {
-    color: #fff; }
-  .bg-green-6 a:focus, .bg-green-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-6 a:active {
-    color: #b3c9e0; }
-  .bg-green-6 h1, .bg-green-6 .h1,
-  .bg-green-6 h2, .bg-green-6 .h2,
-  .bg-green-6 h3, .bg-green-6 .h3,
-  .bg-green-6 h4, .bg-green-6 .h4,
-  .bg-green-6 h5, .bg-green-6 .h5 h6, .bg-green-6 .h6 {
-    color: inherit; }
-
-.bg-green-7 {
-  background-color: #258858;
-  color: #FFFFFF; }
-  .bg-green-7 a, .bg-green-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-7 a:visited {
-    color: #fff; }
-  .bg-green-7 a:focus, .bg-green-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-7 a:active {
-    color: #b3c9e0; }
-  .bg-green-7 h1, .bg-green-7 .h1,
-  .bg-green-7 h2, .bg-green-7 .h2,
-  .bg-green-7 h3, .bg-green-7 .h3,
-  .bg-green-7 h4, .bg-green-7 .h4,
-  .bg-green-7 h5, .bg-green-7 .h5 h6, .bg-green-7 .h6 {
-    color: inherit; }
-
-.bg-green-8 {
-  background-color: #1f7049;
-  color: #FFFFFF; }
-  .bg-green-8 a, .bg-green-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-8 a:visited {
-    color: #fff; }
-  .bg-green-8 a:focus, .bg-green-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-8 a:active {
-    color: #b3c9e0; }
-  .bg-green-8 h1, .bg-green-8 .h1,
-  .bg-green-8 h2, .bg-green-8 .h2,
-  .bg-green-8 h3, .bg-green-8 .h3,
-  .bg-green-8 h4, .bg-green-8 .h4,
-  .bg-green-8 h5, .bg-green-8 .h5 h6, .bg-green-8 .h6 {
-    color: inherit; }
-
-.bg-green-9 {
-  background-color: #165034;
-  color: #FFFFFF; }
-  .bg-green-9 a, .bg-green-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-9 a:visited {
-    color: #fff; }
-  .bg-green-9 a:focus, .bg-green-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-9 a:active {
-    color: #b3c9e0; }
-  .bg-green-9 h1, .bg-green-9 .h1,
-  .bg-green-9 h2, .bg-green-9 .h2,
-  .bg-green-9 h3, .bg-green-9 .h3,
-  .bg-green-9 h4, .bg-green-9 .h4,
-  .bg-green-9 h5, .bg-green-9 .h5 h6, .bg-green-9 .h6 {
-    color: inherit; }
-
-.bg-red-0 {
-  background-color: #f6ebea;
-  color: #1A1A19; }
-  .bg-red-0 h1, .bg-red-0 .h1,
-  .bg-red-0 h2, .bg-red-0 .h2,
-  .bg-red-0 h3, .bg-red-0 .h3,
-  .bg-red-0 h4, .bg-red-0 .h4,
-  .bg-red-0 h5, .bg-red-0 .h5 h6, .bg-red-0 .h6 {
-    color: inherit; }
-
-.bg-red-1 {
-  background-color: #edd4d4;
-  color: #1A1A19; }
-  .bg-red-1 h1, .bg-red-1 .h1,
-  .bg-red-1 h2, .bg-red-1 .h2,
-  .bg-red-1 h3, .bg-red-1 .h3,
-  .bg-red-1 h4, .bg-red-1 .h4,
-  .bg-red-1 h5, .bg-red-1 .h5 h6, .bg-red-1 .h6 {
-    color: inherit; }
-
-.bg-red-2 {
-  background-color: #e3bbba;
-  color: #1A1A19; }
-  .bg-red-2 h1, .bg-red-2 .h1,
-  .bg-red-2 h2, .bg-red-2 .h2,
-  .bg-red-2 h3, .bg-red-2 .h3,
-  .bg-red-2 h4, .bg-red-2 .h4,
-  .bg-red-2 h5, .bg-red-2 .h5 h6, .bg-red-2 .h6 {
-    color: inherit; }
-
-.bg-red-3 {
-  background-color: #d79c9b;
-  color: #1A1A19; }
-  .bg-red-3 h1, .bg-red-3 .h1,
-  .bg-red-3 h2, .bg-red-3 .h2,
-  .bg-red-3 h3, .bg-red-3 .h3,
-  .bg-red-3 h4, .bg-red-3 .h4,
-  .bg-red-3 h5, .bg-red-3 .h5 h6, .bg-red-3 .h6 {
-    color: inherit; }
-
-.bg-red-4 {
-  background-color: #c77473;
-  color: #1A1A19; }
-  .bg-red-4 h1, .bg-red-4 .h1,
-  .bg-red-4 h2, .bg-red-4 .h2,
-  .bg-red-4 h3, .bg-red-4 .h3,
-  .bg-red-4 h4, .bg-red-4 .h4,
-  .bg-red-4 h5, .bg-red-4 .h5 h6, .bg-red-4 .h6 {
-    color: inherit; }
-
-.bg-red-5 {
-  background-color: #ac3230;
-  color: #FFFFFF; }
-  .bg-red-5 a, .bg-red-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-5 a:visited {
-    color: #fff; }
-  .bg-red-5 a:focus, .bg-red-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-5 a:active {
-    color: #b3c9e0; }
-  .bg-red-5 h1, .bg-red-5 .h1,
-  .bg-red-5 h2, .bg-red-5 .h2,
-  .bg-red-5 h3, .bg-red-5 .h3,
-  .bg-red-5 h4, .bg-red-5 .h4,
-  .bg-red-5 h5, .bg-red-5 .h5 h6, .bg-red-5 .h6 {
-    color: inherit; }
-
-.bg-red-6 {
-  background-color: #9a2d2b;
-  color: #FFFFFF; }
-  .bg-red-6 a, .bg-red-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-6 a:visited {
-    color: #fff; }
-  .bg-red-6 a:focus, .bg-red-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-6 a:active {
-    color: #b3c9e0; }
-  .bg-red-6 h1, .bg-red-6 .h1,
-  .bg-red-6 h2, .bg-red-6 .h2,
-  .bg-red-6 h3, .bg-red-6 .h3,
-  .bg-red-6 h4, .bg-red-6 .h4,
-  .bg-red-6 h5, .bg-red-6 .h5 h6, .bg-red-6 .h6 {
-    color: inherit; }
-
-.bg-red-7 {
-  background-color: #872725;
-  color: #FFFFFF; }
-  .bg-red-7 a, .bg-red-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-7 a:visited {
-    color: #fff; }
-  .bg-red-7 a:focus, .bg-red-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-7 a:active {
-    color: #b3c9e0; }
-  .bg-red-7 h1, .bg-red-7 .h1,
-  .bg-red-7 h2, .bg-red-7 .h2,
-  .bg-red-7 h3, .bg-red-7 .h3,
-  .bg-red-7 h4, .bg-red-7 .h4,
-  .bg-red-7 h5, .bg-red-7 .h5 h6, .bg-red-7 .h6 {
-    color: inherit; }
-
-.bg-red-8 {
-  background-color: #6e201e;
-  color: #FFFFFF; }
-  .bg-red-8 a, .bg-red-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-8 a:visited {
-    color: #fff; }
-  .bg-red-8 a:focus, .bg-red-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-8 a:active {
-    color: #b3c9e0; }
-  .bg-red-8 h1, .bg-red-8 .h1,
-  .bg-red-8 h2, .bg-red-8 .h2,
-  .bg-red-8 h3, .bg-red-8 .h3,
-  .bg-red-8 h4, .bg-red-8 .h4,
-  .bg-red-8 h5, .bg-red-8 .h5 h6, .bg-red-8 .h6 {
-    color: inherit; }
-
-.bg-red-9 {
-  background-color: #4d1615;
-  color: #FFFFFF; }
-  .bg-red-9 a, .bg-red-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-9 a:visited {
-    color: #fff; }
-  .bg-red-9 a:focus, .bg-red-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-9 a:active {
-    color: #b3c9e0; }
-  .bg-red-9 h1, .bg-red-9 .h1,
-  .bg-red-9 h2, .bg-red-9 .h2,
-  .bg-red-9 h3, .bg-red-9 .h3,
-  .bg-red-9 h4, .bg-red-9 .h4,
-  .bg-red-9 h5, .bg-red-9 .h5 h6, .bg-red-9 .h6 {
-    color: inherit; }
-
-.bg-gray-0 {
-  background-color: #f8f9f9;
-  color: #1A1A19; }
-  .bg-gray-0 h1, .bg-gray-0 .h1,
-  .bg-gray-0 h2, .bg-gray-0 .h2,
-  .bg-gray-0 h3, .bg-gray-0 .h3,
-  .bg-gray-0 h4, .bg-gray-0 .h4,
-  .bg-gray-0 h5, .bg-gray-0 .h5 h6, .bg-gray-0 .h6 {
-    color: inherit; }
-
-.bg-gray-1 {
-  background-color: #ecedef;
-  color: #1A1A19; }
-  .bg-gray-1 h1, .bg-gray-1 .h1,
-  .bg-gray-1 h2, .bg-gray-1 .h2,
-  .bg-gray-1 h3, .bg-gray-1 .h3,
-  .bg-gray-1 h4, .bg-gray-1 .h4,
-  .bg-gray-1 h5, .bg-gray-1 .h5 h6, .bg-gray-1 .h6 {
-    color: inherit; }
-
-.bg-gray-2 {
-  background-color: #dee0e4;
-  color: #1A1A19; }
-  .bg-gray-2 h1, .bg-gray-2 .h1,
-  .bg-gray-2 h2, .bg-gray-2 .h2,
-  .bg-gray-2 h3, .bg-gray-2 .h3,
-  .bg-gray-2 h4, .bg-gray-2 .h4,
-  .bg-gray-2 h5, .bg-gray-2 .h5 h6, .bg-gray-2 .h6 {
-    color: inherit; }
-
-.bg-gray-3 {
-  background-color: #cfd3d7;
-  color: #1A1A19; }
-  .bg-gray-3 h1, .bg-gray-3 .h1,
-  .bg-gray-3 h2, .bg-gray-3 .h2,
-  .bg-gray-3 h3, .bg-gray-3 .h3,
-  .bg-gray-3 h4, .bg-gray-3 .h4,
-  .bg-gray-3 h5, .bg-gray-3 .h5 h6, .bg-gray-3 .h6 {
-    color: inherit; }
-
-.bg-gray-4 {
-  background-color: #bfc4ca;
-  color: #1A1A19; }
-  .bg-gray-4 h1, .bg-gray-4 .h1,
-  .bg-gray-4 h2, .bg-gray-4 .h2,
-  .bg-gray-4 h3, .bg-gray-4 .h3,
-  .bg-gray-4 h4, .bg-gray-4 .h4,
-  .bg-gray-4 h5, .bg-gray-4 .h5 h6, .bg-gray-4 .h6 {
-    color: inherit; }
-
-.bg-gray-5 {
-  background-color: #acb3bb;
-  color: #1A1A19; }
-  .bg-gray-5 h1, .bg-gray-5 .h1,
-  .bg-gray-5 h2, .bg-gray-5 .h2,
-  .bg-gray-5 h3, .bg-gray-5 .h3,
-  .bg-gray-5 h4, .bg-gray-5 .h4,
-  .bg-gray-5 h5, .bg-gray-5 .h5 h6, .bg-gray-5 .h6 {
-    color: inherit; }
-
-.bg-gray-6 {
-  background-color: #98a0aa;
-  color: #1A1A19; }
-  .bg-gray-6 h1, .bg-gray-6 .h1,
-  .bg-gray-6 h2, .bg-gray-6 .h2,
-  .bg-gray-6 h3, .bg-gray-6 .h3,
-  .bg-gray-6 h4, .bg-gray-6 .h4,
-  .bg-gray-6 h5, .bg-gray-6 .h5 h6, .bg-gray-6 .h6 {
-    color: inherit; }
-
-.bg-gray-7 {
-  background-color: #7f8a96;
-  color: #FFFFFF; }
-  .bg-gray-7 a, .bg-gray-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-7 a:visited {
-    color: #fff; }
-  .bg-gray-7 a:focus, .bg-gray-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-7 a:active {
-    color: #b3c9e0; }
-  .bg-gray-7 h1, .bg-gray-7 .h1,
-  .bg-gray-7 h2, .bg-gray-7 .h2,
-  .bg-gray-7 h3, .bg-gray-7 .h3,
-  .bg-gray-7 h4, .bg-gray-7 .h4,
-  .bg-gray-7 h5, .bg-gray-7 .h5 h6, .bg-gray-7 .h6 {
-    color: inherit; }
-
-.bg-gray-8 {
-  background-color: #606d7c;
-  color: #FFFFFF; }
-  .bg-gray-8 a, .bg-gray-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-8 a:visited {
-    color: #fff; }
-  .bg-gray-8 a:focus, .bg-gray-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-8 a:active {
-    color: #b3c9e0; }
-  .bg-gray-8 h1, .bg-gray-8 .h1,
-  .bg-gray-8 h2, .bg-gray-8 .h2,
-  .bg-gray-8 h3, .bg-gray-8 .h3,
-  .bg-gray-8 h4, .bg-gray-8 .h4,
-  .bg-gray-8 h5, .bg-gray-8 .h5 h6, .bg-gray-8 .h6 {
-    color: inherit; }
-
-.bg-gray-9 {
-  background-color: #384048;
-  color: #FFFFFF; }
-  .bg-gray-9 a, .bg-gray-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-9 a:visited {
-    color: #fff; }
-  .bg-gray-9 a:focus, .bg-gray-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-9 a:active {
-    color: #b3c9e0; }
-  .bg-gray-9 h1, .bg-gray-9 .h1,
-  .bg-gray-9 h2, .bg-gray-9 .h2,
-  .bg-gray-9 h3, .bg-gray-9 .h3,
-  .bg-gray-9 h4, .bg-gray-9 .h4,
-  .bg-gray-9 h5, .bg-gray-9 .h5 h6, .bg-gray-9 .h6 {
     color: inherit; }
 
 /*

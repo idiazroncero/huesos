@@ -1,7 +1,7 @@
 .alert {
     padding: $gutter;
     border-radius: $border-radius;
-    @include background-split-color(get-color(gray, "5"));
+    @include background-split-color($gray5);
     @extend .text;
 }
 

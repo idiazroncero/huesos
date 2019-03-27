@@ -1,0 +1,31 @@
+/*
+Textarea
+
+Use in conjunction with `.form-item` and its modifiers (see its own section)
+
+It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+
+
+Markup:
+<div class="form-item">
+	<label for="area1">Textarea</label>
+	<textarea rows="5" id="area1"></textarea>
+</div>
+<div class="form-item form-item--label-inside">
+	<label for="area2">Textarea</label>
+	<textarea rows="5" id="area2"></textarea>
+</div>
+<div class="form-item form-item--label-inside form-item--col">
+	<label for="area3">Textarea</label>
+	<textarea id="area3"></textarea>
+</div>
+
+Styleguide Forms.textarea
+*/
+textarea {
+	border: $input-border;
+	@include form-reset-textarea();
+	width:100%;
+	padding: $input-padding;
+	min-height: $spacer * 2;
+}

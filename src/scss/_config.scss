@@ -1,56 +1,7 @@
-// ------
+// --------------------
 // COLOR PALETTE
-// ------
-// Use get-color('palette', 'color') in your .scss files to get values
-// For example: getColor('base', 'primary') => #C65146
-// Use contrast-color($color) to get your black || white color against a background
-// ------
-
-/*
-Color Palette
-
-The palettes are based on palx.jxnblk.com (for example, https://palx.jxnblk.com/C7FFC4). Every single palette lives on a separate `.scss` file under 
-`base/palettes` and is `@import`ed on `_config.scss` for later use on the `$colors` map.
-
-This `$colors` map can store as many maps as needed, but the following are mandatory:
-
-- base / for primary, secondary and separator colors
-- text / for typography colors
-- state / for indicating states like: muted, error, warning, success
-
-Following palx.jxnblk.com nomenclature, the colors are numbered from 0 to 9 (lightest to darkest).
-
-Markup:
-<section>
-	<p class="minititle">Base</p>
-	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-		<div class="grid-item p bg-base-primary">Primary</div>
-		<div class="grid-item p bg-base-secondary" >Secondary</div>
-		<div class="grid-item p bg-base-separator" >Separator</div>
-		<div class="grid-item p bg-base-black" >Black</div>
-		<div class="grid-item p bg-base-white" >White</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">Text</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
-		<div class="grid-item p bg-text-primary">Primary</div>
-		<div class="grid-item p bg-text-heading" >Heading</div>
-		<div class="grid-item p bg-text-mark" >Mark</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">State</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
-		<div class="grid-item p bg-state-muted">Muted</div>
-		<div class="grid-item p bg-state-success" >Success</div>
-		<div class="grid-item p bg-state-warning" >Warning</div>
-		<div class="grid-item p bg-state-error" >Error</div>
-	</div>
-</section>
-
-Styleguide Color.palette
-*/
+// Using https://palx.jxnblk.com/
+// --------------------
 
 @import "base/palettes/306BAC";
 
@@ -80,58 +31,6 @@ $colors: (
 		"success": $teal4,
 		"warning": $yellow5,
 		"error":   $red5
-	),
-
-	blue: (
-		"0" : $blue0,
-		"1" : $blue1,
-		"2" : $blue2,
-		"3" : $blue3,
-		"4" : $blue4,
-		"5" : $blue5,
-		"6" : $blue6,
-		"7" : $blue7,
-		"8" : $blue8,
-		"9" : $blue9,
-	),
-
-	green: (
-		"0" : $teal0,
-		"1" : $teal1,
-		"2" : $teal2,
-		"3" : $teal3,
-		"4" : $teal4,
-		"5" : $teal5,
-		"6" : $teal6,
-		"7" : $teal7,
-		"8" : $teal8,
-		"9" : $teal9,
-	),
-
-	red: (
-		"0" : $red0,
-		"1" : $red1,
-		"2" : $red2,
-		"3" : $red3,
-		"4" : $red4,
-		"5" : $red5,
-		"6" : $red6,
-		"7" : $red7,
-		"8" : $red8,
-		"9" : $red9,
-	),
-
-	gray: (
-		"0" : $gray0,
-		"1" : $gray1,
-		"2" : $gray2,
-		"3" : $gray3,
-		"4" : $gray4,
-		"5" : $gray5,
-		"6" : $gray6,
-		"7" : $gray7,
-		"8" : $gray8,
-		"9" : $gray9,
 	)
 ) !default;
 
@@ -367,12 +266,12 @@ $inverse-link-active: $blue2;
 // FORMS
 // ------
 
-// General reset
+// Global variables
 $form-border-radius: $border-radius;
 
 // Inputs
 $input-border-strategy: full; // Options: full, bottom, none;
-$input-border-color: get-color(gray, "2");
+$input-border-color: $gray2;
 $input-border: 1px solid $input-border-color;
 $input-padding: $spacer / 4 $spacer / 2;
 
@@ -396,12 +295,12 @@ $pseudo-border: 1px solid $pseudo-border-color;
 
 // Selects
 $select-border-strategy: full; // Options: full, bottom, none;
-$select-border-color: shade(get-color(gray, "5"), 25%);
+$select-border-color: shade($gray5, 25%);
 $select-border: 1px solid $input-border-color;
 $select-padding: 0 ($spacer / 2);
 
 // Browser quirks
-$webkit-autofill-color: get-color(gray, "5"); // When webkit fills the fields whith your stored data.
+$webkit-autofill-color: $gray5; // When webkit fills the fields whith your stored data.
 
 // Fieldsets
 $disable-fieldset: false;
@@ -514,78 +413,4 @@ $card-padding: $gutter * 2;
 // Project-specific variables
 // ------
 
-
-
-// ------
-// KSS-NODE
-// This is to be parsed with KSS-Node and assign custom weight to elements
-// ------
-
-// Color
-//
-// Weight: 1
-//
-// Styleguide Color
-
-// Base
-//
-// Weight: 2
-//
-// Styleguide Base
-
-// Typography
-//
-// Weight: 3
-//
-// Styleguide Typography
-
-// Components
-//
-// Weight: 4
-//
-// Styleguide Components
-
-// Layout
-//
-// Weight: 5
-//
-// Styleguide Layout
-
-// Forms
-//
-// Weight: 6
-//
-// Styleguide Forms
-
-// Helpers
-//
-// Weight: 7
-//
-// Styleguide Helpers
-
-// Mixins
-//
-// Weight: 8
-//
-// Styleguide Mixins
-
-// Functions
-//
-// Weight: 9
-//
-// Styleguide Functions
-
-// Pseudo-elements
-//
-// Weight: 10
-//
-// Styleguide Pseudo-elements
-
-// Huesitos
-//
-// Provide quick helper classes for common cases (like adding margin, padding or borders)
-//
-// Weight: 11
-//
-// Styleguide Huesitos
 

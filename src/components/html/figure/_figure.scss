@@ -33,9 +33,3 @@ figcaption {
 	@include ritmo-font-size($figcaption-font-size);
 	text-align: $figcaption-align;
 }
-
-figure {
-  .right & {
-
-  }
-}

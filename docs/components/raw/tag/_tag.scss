@@ -2,7 +2,7 @@
     display:inline-block;
     @include minititle($uppercase:false, $letter-spacing:0);
     padding: 0 $gutter / 3;
-    @include background-contrast(get-color(gray, "2"));
+    @include background-contrast($gray2);
     border-radius: $border-radius;
     margin-right: $gutter / 3;
     font-weight:normal;
@@ -36,7 +36,7 @@ a.tag {
     cursor:pointer;
     &:hover,
     &:focus {
-        @include background-contrast(shade(get-color(gray, "2"), $color-modify-ratio));
+        @include background-contrast(shade($gray2, $color-modify-ratio));
     }
     &.tag--success {
         &:hover,
