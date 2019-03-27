@@ -1,13 +1,4 @@
-/*
-Links
-
-Functions that set and modify link strategies and values
-
-Styleguide Mixins.links
-*/
-
-
-@mixin get-link-decoration($strategy: $link-strategy) {
+@mixin set-link-decoration($strategy: $link-strategy) {
 	@if $strategy == underline {
 		text-decoration:underline;
 	} @else if $strategy == border {
@@ -66,7 +57,7 @@ Styleguide Mixins.links.setLink
 			@if $link-highlight-on-hover {
 				text-decoration:none;
 			} @else {
-				@include get-link-decoration($strategy);
+				@include set-link-decoration($strategy);
 			}
 		}
 	}
@@ -78,7 +69,7 @@ Styleguide Mixins.links.setLink
 		color: $hover;
 		@if $strategy {
 			@if $link-highlight-on-hover {
-				@include get-link-decoration($strategy);
+				@include set-link-decoration($strategy);
 			} @else {
 				text-decoration:none;
 				border:none;

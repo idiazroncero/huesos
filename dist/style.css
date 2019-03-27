@@ -1,12 +1,5 @@
 @charset "UTF-8";
 /*
-Links
-
-Functions that set and modify link strategies and values
-
-Styleguide Mixins.links
-*/
-/*
 set-link($base, $visited, $hover, $active)
 
 Sets all link values according to global config.
