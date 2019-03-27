@@ -6,17 +6,30 @@
 @import "src/scss/base/typography";
 @import "src/scss/base/table";
 @import "src/scss/base/images";
-@import "src/scss/base/links";
 @import "src/scss/base/helpers";
 
-@import "src/scss/layout/layout";
-@import "src/scss/layout/grid";
+// Layout and positioning
+@import "src/components/layout/position/position";
+@import "src/components/layout/grid/grid";
+@import "src/components/layout/visibility/visibility";
 
-@import "src/scss/components/card";
-@import "src/scss/components/nav";
-@import "src/scss/components/tag";
-@import "src/scss/components/alert";
+// User navigation
+@import "src/components/navigation/nav/nav";
+@import "src/components/navigation/menu/menu";
+@import "src/components/navigation/toc/toc";
 
-@import "src/scss/huesitos/huesitos";
+// Components
+@import "src/components/elements/tag/tag";
+@import "src/components/elements/card/card";
 
+// User interaction
+@import "src/components/user_interaction/alert/alert";
+
+// Utility classes
+@import "src/components/huesitos/huesitos";
+
+// Third-party libraries
 @import "src/scss/external/selectr";
+
+// We need to keep base/links on the end to allow for the overrides to take precedence
+@import "src/scss/base/links";

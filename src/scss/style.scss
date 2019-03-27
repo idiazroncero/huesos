@@ -8,6 +8,7 @@
 // Mixins and variables
 @import "config";
 
+// Base
 @import "base/fonts"; // Fonts are loaded first to optimize performance. DON'T LOAD FONTS ON PRODUCTION BUILD
 @import "base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 @import "base/forms";
@@ -17,17 +18,27 @@
 @import "base/images";
 @import "base/helpers";
 
-@import "layout/layout";
-@import "layout/grid";
-@import "layout/helpers";
+// Layout and positioning
+@import "../components/layout/position/position";
+@import "../components/layout/grid/grid";
+@import "../components/layout/visibility/visibility";
 
-@import "../components/layout/card/card";
-@import "components/nav";
-@import "components/tag";
+// User navigation
+@import "../components/navigation/nav/nav";
+@import "../components/navigation/menu/menu";
+@import "../components/navigation/toc/toc";
+
+// Components
+@import "../components/elements/tag/tag";
+@import "../components/elements/card/card";
+
+// User interaction
 @import "../components/user_interaction/alert/alert";
 
-@import "huesitos/huesitos";
+// Utility classes
+@import "../components/huesitos/huesitos";
 
+// Third-party libraries
 @import "external/selectr";
 
 // We need to keep base/links on the end to allow for the overrides to take precedence
