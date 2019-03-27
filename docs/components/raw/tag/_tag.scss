@@ -1,0 +1,71 @@
+.tag {
+    display:inline-block;
+    @include minititle($uppercase:false, $letter-spacing:0);
+    padding: 0 $gutter / 3;
+    @include background-contrast($gray2);
+    border-radius: $border-radius;
+    margin-right: $gutter / 3;
+    font-weight:normal;
+    &.tag--success {
+        @include background-contrast(get-color(state, success)); 
+    }
+    &.tag--warning{
+        @include background-contrast(get-color(state, warning)); 
+    }
+    &.tag--error {
+        @include background-contrast(get-color(state, error)); 
+    }
+    &.tag--primary {
+        @include background-contrast(get-color(base, primary)); 
+    }
+    &.tag--secondary {
+        @include background-contrast(get-color(base, secondary)); 
+    }
+    .right & {
+        margin-right:0;
+        margin-left: $gutter / 3;
+    }
+    .center & {
+        margin-right: $gutter / 6;
+        margin-left: $gutter / 6;
+    }
+}
+
+a.tag {
+    @include kill-link-decoration();
+    cursor:pointer;
+    &:hover,
+    &:focus {
+        @include background-contrast(shade($gray2, $color-modify-ratio));
+    }
+    &.tag--success {
+        &:hover,
+        &:focus {
+            @include background-contrast(shade(get-color(state, success), $color-modify-ratio)); 
+        }
+    }
+    &.tag--warning{
+        &:hover,
+        &:focus {
+            @include background-contrast(shade(get-color(state, warning), $color-modify-ratio)); 
+        }
+    }
+    &.tag--error {
+        &:hover,
+        &:focus {
+            @include background-contrast(shade(get-color(state, error), $color-modify-ratio)); 
+        }
+    }
+    &.tag--primary {
+        &:hover,
+        &:focus {
+            @include background-contrast(shade(get-color(base, primary), $color-modify-ratio)); 
+        }
+    }
+    &.tag--secondary {
+        &:hover,
+        &:focus {
+            @include background-contrast(shade(get-color(base, secondary), $color-modify-ratio)); 
+        }
+    }
+}

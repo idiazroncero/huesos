@@ -1,0 +1,18 @@
+.alert {
+    padding: $gutter;
+    border-radius: $border-radius;
+    @include background-split-color($gray5);
+    @extend .text;
+}
+
+.alert--success {
+    @include background-split-color(get-color(state, "success"));
+}
+
+.alert--warning {
+    @include background-split-color(get-color(state, "warning"));
+}
+
+.alert--error {
+    @include background-split-color(get-color(state, "error"));
+}

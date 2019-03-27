@@ -1,5 +1,9 @@
 .visually-hidden {
-	@extend %hidden;
+	@include hidden();
+}
+
+.clearfix {
+	@include clearfix();
 }
 
 

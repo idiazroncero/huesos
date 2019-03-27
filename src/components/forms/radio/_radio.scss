@@ -1,0 +1,7 @@
+input {
+	@if($pseudo-radio == false) {
+		&[type=radio].pseudo-radio {
+			@include pseudo-radio();
+		}
+	}
+}

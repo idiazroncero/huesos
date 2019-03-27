@@ -1,0 +1,77 @@
+
+
+/*
+TOC (Table of contents)
+
+A toc or table of contents is a vertical menu based off a `<nav>` item.
+
+The first level can be configured on `_config.scss`.
+
+This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
+
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
+Markup:
+<section>
+  <nav class="toc kill-link">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Works</a>
+        <ul>
+          <li>
+            <a href="#">Home</a></li>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Section</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Section</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">About us</a></li>
+          <li><span>Contact</span></li>
+          <li><span class="disabled">Exit</span></li>
+        </ul>
+      </li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.toc
+*/
+
+.toc {
+	ul {
+		li {
+      margin: 0;
+      font-weight: $toc-font-weight;
+      letter-spacing: initial;
+      @if $toc-uppercase {
+        text-transform: uppercase;
+      } @else {
+        text-transform: initial;
+      }
+      @include ritmo-font-size($toc-font-size);
+      // a {
+      //   @include kill-link();
+      // }
+      ul {
+        margin: $gutter / 4 0 $gutter / 2 $gutter;
+        li{
+          // Don't let "bold" pass through here
+          font-weight: normal;
+          @include ritmo-font-size(0.95 * $toc-font-size);
+        }
+        ul {
+          li {
+            @include ritmo-font-size(0.7 * $toc-font-size);
+          }
+        }
+      }
+		}
+  }
+}
