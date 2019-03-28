@@ -102,6 +102,9 @@ Styleguide Base.lists
 ol,
 ul {
 	padding-left: $list-padding;
+	@if $list-padding == 0 {
+		list-style-position: outside;
+	}
 	li {
 		margin-bottom: $gutter / 2;
 	}
