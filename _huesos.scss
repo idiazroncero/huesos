@@ -1,22 +1,39 @@
 // CONFIG FILE GOES BEFORE THIS
 
 @import "src/scss/base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
-@import "src/scss/base/forms";
-@import "src/scss/base/buttons";
 @import "src/scss/base/typography";
-@import "src/scss/base/table";
-@import "src/scss/base/images";
-@import "src/scss/base/links";
 @import "src/scss/base/helpers";
 
-@import "src/scss/layout/layout";
-@import "src/scss/layout/grid";
+// HTML
+@import "src/components/html/figure/figure";
+@import "src/components/html/table/table";
 
-@import "src/scss/components/card";
-@import "src/scss/components/nav";
-@import "src/scss/components/tag";
-@import "src/scss/components/alert";
+// Forms
+@import "src/components/forms/forms";
 
-@import "src/scss/huesitos/huesitos";
+// Layout and positioning
+@import "src/components/layout/position/position";
+@import "src/components/layout/grid/grid";
+@import "src/components/layout/visibility/visibility";
 
+// User navigation
+@import "src/components/navigation/nav/nav";
+@import "src/components/navigation/menu/menu";
+@import "src/components/navigation/toc/toc";
+
+// Components
+@import "src/components/elements/tag/tag";
+@import "src/components/elements/card/card";
+@import "../components/elements/button/button";
+
+// User interaction
+@import "src/components/user_interaction/alert/alert";
+
+// Utility classes
+@import "src/components/huesitos/huesitos";
+
+// Third-party libraries
 @import "src/scss/external/selectr";
+
+// We need to keep base/links on the end to allow for the overrides to take precedence
+@import "src/scss/base/links";

@@ -136,12 +136,9 @@
 }
 
 @mixin pseudo-checkbox() {
-	@extend %hidden;
+	@include hidden();
 	&:checked + label {
 		position:relative;
-		// &:before {
-		// 	background-color: $input-border-color;
-		// }
 		&:after {
 			content:"";
 			display:inline-block;
@@ -172,7 +169,7 @@
 }
 
 @mixin pseudo-radio() {
-	@extend %hidden;
+	@include hidden();
 	&:checked + label {
 		position:relative;
 		&:after {

@@ -1,0 +1,51 @@
+/*
+Navigation menus
+
+Either `<nav>` HTML elements or enabled via the css class `.nav`.
+
+We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
+
+Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
+
+It's supposed to hold links (try "section"), but it can also have empty elements.
+
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
+
+Markup:
+<section>
+  <nav class="{{ modifier_class}} kill-link-decoration">
+    <ul>
+      <li>Home</li>
+      <li><a href="#">Section</a></li>
+      <li>Works</li>
+      <li>About us</li>
+      <li>Contact</li>
+      <li>Exit</li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Base.nav
+*/
+
+nav,
+.nav {
+	ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+		li {
+      margin: 0 $spacer 0 0;
+      font-weight: $nav-font-weight;
+      @if $nav-uppercase {
+        text-transform: uppercase;
+      }
+      @include ritmo-font-size($nav-font-size);
+      letter-spacing:$nav-spacing;
+      // a {
+      //   @include kill-link();
+      // }
+		}
+  }
+}

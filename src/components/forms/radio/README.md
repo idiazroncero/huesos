@@ -1,0 +1,19 @@
+
+
+/*
+Radio buttons
+
+Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
+
+Markup:
+<div class="form-item">
+	<input type="radio" id="radio" name="radio">
+	<label for="radio">Radio normal</label>
+</div>
+<div class="form-item">
+	<input type="radio" id="radio2" class="pseudo-radio" name="radio">
+	<label for="radio2">Pseudo Radio</label>
+</div>
+
+Styleguide Forms.radio
+*/

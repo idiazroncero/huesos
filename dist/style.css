@@ -1,105 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
-.grid {
-  *zoom: 1; }
-  .grid:before, .grid:after {
-    content: " ";
-    display: table; }
-  .grid:after {
-    clear: both; }
-
-input[type=file], input.pseudo-checkbox[type=checkbox], input.pseudo-radio[type=radio], .visually-hidden, .selectr-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden; }
-
-/*
-get-color($color, $value)
-
-Función que devuelve un color de un mapa determinado
-
-$color - Nombre del mapa
-$value  - Nombre del color
-
-Styleguide Functions.Color.getColor
-*/
-/*
-Color
-
-SASS functions that allow to extract colors from the palette and manipulate them.
-
-Styleguide Functions.Color
-*/
-/*
-tint($color, $dilution)
-
-Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of white to mix
-
-Styleguide Functions.Color.Tint
-*/
-/*
-shade($color, $dilution)
-
-Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of black to mix
-
-Styleguide Functions.Color.Shade
-*/
-/*
-contrast-color($color, $dark, $light)
-
-Returns a $dark or $light color value according to the background-color provided as $color.
-
-$color - Background-color to check
-$dark  - Dark color to return, defaults to $contrast-dark
-$light   - Light color to return, defaults to $contrast-light
-
-Styleguide Functions.Color.ContrastColor
-*/
-/*
-contrast-links($color)
-
-Returns a link formatted using `$inverse-link-` values from `_config.scss` if needed against the provided background-color.
-
-$color - Background-color to check
-
-Styleguide Mixins.Color.ContrastColor
-*/
-/*
-Color
-
-Mixins that perform color complex operations (contrasts, etc...)
-
-Styleguide Mixins.Color
-*/
-/*
-background-contrast($color)
-
-Given a $color, ensures that all text elements and links are correctly contrasted against that background.
-
-Uses contrast-color($color) SASS function to perform the lightness calculation.
-
-$color - Background-color
-
-Styleguide Mixins.Color.ContrastColor
-*/
-/*
-Links
-
-Functions that set and modify link strategies and values
-
-Styleguide Mixins.links
-*/
 /*
 set-link($base, $visited, $hover, $active)
 
@@ -150,51 +49,9 @@ $letter-spacing - A valid value for `letter-spacing`. Defaults to global `$lette
 
 Styleguide Mixins.Typography.Minititle
 */
-/*
-Color Palette
-
-The palettes are based on palx.jxnblk.com (for example, https://palx.jxnblk.com/C7FFC4). Every single palette lives on a separate `.scss` file under 
-`base/palettes` and is `@import`ed on `_config.scss` for later use on the `$colors` map.
-
-This `$colors` map can store as many maps as needed, but the following are mandatory:
-
-- base / for primary, secondary and separator colors
-- text / for typography colors
-- state / for indicating states like: muted, error, warning, success
-
-Following palx.jxnblk.com nomenclature, the colors are numbered from 0 to 9 (lightest to darkest).
-
-Markup:
-<section>
-	<p class="minititle">Base</p>
-	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-		<div class="grid-item p bg-base-primary">Primary</div>
-		<div class="grid-item p bg-base-secondary" >Secondary</div>
-		<div class="grid-item p bg-base-separator" >Separator</div>
-		<div class="grid-item p bg-base-black" >Black</div>
-		<div class="grid-item p bg-base-white" >White</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">Text</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
-		<div class="grid-item p bg-text-primary">Primary</div>
-		<div class="grid-item p bg-text-heading" >Heading</div>
-		<div class="grid-item p bg-text-mark" >Mark</div>
-	</div>
-</section>
-<section>
-	<p class="minititle">State</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
-		<div class="grid-item p bg-state-muted">Muted</div>
-		<div class="grid-item p bg-state-success" >Success</div>
-		<div class="grid-item p bg-state-warning" >Warning</div>
-		<div class="grid-item p bg-state-error" >Error</div>
-	</div>
-</section>
-
-Styleguide Color.palette
-*/
+@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
 *,
 ::before,
 ::after {
@@ -423,8 +280,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -903,6 +759,7 @@ select,
 summary,
 textarea,
 [tabindex] {
+  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -965,39 +822,455 @@ summary {
   cursor: pointer; }
 
 /*
-Checkboxes
+Headings
 
-Can be styled using `$pseudo-checkbox` global variable or the `.pseudo-checkbox` class
+The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
 
 Markup:
-<div class="form-item">
-	<input type="checkbox" id="check" name="check">
-	<label for="check">Checkbox normal</label>
-</div>
-<div class="form-item">
-	<input type="checkbox" id="check2" class="pseudo-checkbox" name="check2">
-	<label for="check2">Pseudo Checkbox</label>
-</div>
+<h1>Main titles use heading one</h1>
+<h2>Subtitules and main sections use h2</h2>
+<h3>H3 is mainly for nested sections</h3>
+<h4>In case you need furher sectioning, use an h4</h4>
+<h5>Rarely you will need a heading five</h5>
+<h6>Heading six is rather unexpected</h6>
 
-Styleguide Forms.checkbox
+
+Styleguide Typography.headings
 */
+h1, .h1 {
+  font-size: 51px;
+  font-size: 3.15733rem;
+  line-height: 59px;
+  line-height: 3.7125rem; }
+
+h2, .h2 {
+  font-size: 38px;
+  font-size: 2.36859rem;
+  line-height: 43px;
+  line-height: 2.7rem; }
+
+h3, .h3 {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 38px;
+  line-height: 2.3625rem; }
+
+h4, .h4 {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 27px;
+  line-height: 1.6875rem; }
+
+h5, .h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem; }
+
+h6, .h6 {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  line-height: 1; }
+
+h1, .h1,
+h2, .h2 {
+  letter-spacing: -0.03em; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #151448;
+  font-weight: normal; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+    color: inherit;
+    vertical-align: 0; }
+
 /*
-Radio buttons
+Secondary font
 
-Can be styled using `$pseudo-radio` global variable or the `.pseudo-checkbox` class
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
 
 Markup:
-<div class="form-item">
-	<input type="radio" id="radio" name="radio">
-	<label for="radio">Radio normal</label>
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
+.font-secondary,
+h1,
+h2,
+h3,
+h4,
+dt,
+.your-classes,
+#your-ids {
+  font-family: "Fira Sans", Helvetica, Arial sans-serif; }
+
+h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
+  text-decoration: none; }
+
+h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
+  text-decoration: none; }
+
+h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
+  text-decoration: none; }
+
+h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
+  text-decoration: none; }
+
+dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
+  text-decoration: none; }
+
+.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
+  text-decoration: none; }
+
+#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
+  text-decoration: none; }
+
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
+q {
+  quotes: "“" "”" "‘" "’"; }
+
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
+blockquote {
+  margin: 0 0 1.35rem 2.7rem; }
+
+.blockquote--decorated {
+  position: relative; }
+  .blockquote--decorated:before {
+    content: "*";
+    font-size: 38px;
+    font-size: 2.36859rem;
+    line-height: 43px;
+    line-height: 2.7rem;
+    font-family: "Fira Sans", Helvetica, Arial sans-serif;
+    position: absolute;
+    top: 0.3375rem;
+    left: -2.7rem; }
+
+code,
+kbd,
+samp,
+var {
+  display: inline-block;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  background-color: #dee0e4;
+  color: #1A1A19;
+  padding: 0 0.3375rem;
+  border-radius: 2px; }
+
+/*
+Minititle
+
+The concept of "minititle" makes reference to a small heading, normally used for sectioning.
+
+It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
+
+Markup:
+<section>
+	<p class="minititle">This is the minititle of this section</p>
+	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
+</section>
+<section class="card" style="width:250px">
+	<h3 class="minititle">An h3 reduced!</h3>
+	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
+</section>
+
+
+Styleguide Typography.minititle
+*/
+.minititle {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+/*
+Icons
+
+The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
+
+Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
+
+A set of icons is __not__ provided. You are supposed to provide your own choices.
+
+Markup:
+<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
+<p><i class="icon">☝︎</i> Drag & Drop me</p>
+<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
+
+
+Styleguide Typography.icons
+*/
+.icon {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.3375rem; }
+  .icon svg {
+    height: 100%;
+    width: auto;
+    vertical-align: bottom; }
+
+/*
+Paragraph Text
+
+Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
+
+They also feature an extra spacing on headings.
+
+This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
+
+Markup:
+<section class="text">
+	<h2>First heading has no margin-top</h2>
+	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
+	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
+	<h3>But the rest of headings have!</h3>
+	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
+</section>
+
+Styleguide Typography.paragraph
+*/
+.text h1, .alert h1, .text h2, .alert h2, .text h3, .alert h3, .text h4, .alert h4 {
+  margin-top: 2.7rem; }
+
+.text section, .alert section,
+.text article,
+.alert article {
+  margin-bottom: 2.7rem; }
+
+.text h1:first-child, .alert h1:first-child,
+.text h2:first-child,
+.alert h2:first-child,
+.text h3:first-child,
+.alert h3:first-child,
+.text h4:first-child,
+.alert h4:first-child {
+  margin-top: 0; }
+
+.text p:last-child, .alert p:last-child {
+  margin-bottom: 0; }
+
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*
+Disabled
+
+Class and placeholder used to dim the element and indicate that is not usable anymore.
+
+It also disables user interactions on buttons, links, etc... (see on their respective sections)
+
+Markup:
+<p class="disabled">I'm no longer active</p>
+<mark class="disabled"> I'm no longer working</mark>
+
+
+Styleguide Helpers.disabled
+*/
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+  text-align: left; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
+/*
+Figure + Figcaption
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+
+Markup:
+<section>
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</section>
+<section class="center">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
 </div>
-<div class="form-item">
-	<input type="radio" id="radio2" class="pseudo-radio" name="radio">
-	<label for="radio2">Pseudo Radio</label>
+<section class="right">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
 </div>
 
-Styleguide Forms.radio
+
+Styleguide Base.images.figure-figcaption
 */
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  text-align: left; }
+
+/*
+Tables
+
+Tables span across all available space evenly distributed.
+
+A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
+
+Borders are collapsed by default
+
+`<caption>` receives a `.minititle` styling
+
+Markup:
+<section class="table">
+  <table>
+    <caption>Table Caption</caption>
+    <thead>
+      <tr>
+        <th>Table Heading 1</th>
+        <th>Table Heading 2</th>
+        <th>Table Heading 3</th>
+        <th>Table Heading 4</th>
+        <th>Table Heading 5</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Table Footer 1</th>
+        <th>Table Footer 2</th>
+        <th>Table Footer 3</th>
+        <th>Table Footer 4</th>
+        <th>Table Footer 5</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+Styleguide Base.tables
+*/
+table {
+  table-layout: fixed;
+  min-width: 100%; }
+
+th, td {
+  border: 1px solid #dee0e4;
+  padding: 0.675rem; }
+
+th {
+  text-align: left; }
+
+.table {
+  overflow: auto; }
+  .table th, .table td {
+    min-width: 120px; }
+
 input,
 label,
 select,
@@ -1026,98 +1299,14 @@ select:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #acb3bb inset;
   color: #1A1A19; }
 
-input {
-  /*
-	Input
-	
-	General text input.
-
-	Please note a wrapper with a `.form-item` class is added in order to create separate blocks
-	and apply a vertical-rhythm based margin.
-
-	This wrapper also applies a flexbox in order to take the full width of the parent.
-
-	Without this wrapper and class, all the form elements would behave as inline-block elements.
-
-	A wrapper `.form-item--required` adds a marker to let users know the field is mandatory.
-
-	For items with an `input[disabled]`, the recommendation is to mark the whole `.form-item` as `.disabled`
-	
-	Markup:
-	<div class="form-item">
-	  <label for="text">Text</label>
-	  <input type="text" id="text" name="text">
-	</div>
-	<div class="form-item form-item--required">
-	  <label for="text">Text Required</label>
-	  <input required type="text" id="text" name="text">
-	</div>
-	<div class="form-item disabled">
-	  <label for="text">Form item disabled</label>
-	  <input disabled type="text" id="text" name="text">
-	</div>
-	<div class="form-item">
-	  <label for="password">Password</label>
-	  <input type="password" id="password" name="password">
-	</div>
-	<div class="form-item">
-	  <label for="email">Email</label>
-	  <input type="email" id="email" name="email">
-	</div>
-	<div class="form-item">
-	  <label for="url">Web Address</label>
-	  <input id="url" type="url" placeholder="http://yoursite.com">
-	</div>
-	<div class="form-item">
-	  <label for="input__phone">Phone Number</label>
-	  <input id="input__phone" type="tel" placeholder="(999) 999-9999">
-	</div>
-	<div class="form-item">
-	  <label for="input__search">Search</label>
-	  <input id="input__search" type="search" placeholder="Enter Search Term">
-	</div>
-	
-	Styleguide Forms.input
-	*/
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem;
-  /* Make webkit render the search input like a normal text field */
-  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  /* Fix IE7 display bug */
-  /*
-	File Input
-	
-	Uses the label for handling click and hides the actual input element.
-	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
-	
-	Markup:
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file">Upload your file</label>
-	</div>
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
-	</div>
-	
-	Styleguide Forms.file
-	*/ }
-  input:hover, input:focus {
-    border-color: #959699; }
-  input:focus {
-    outline: 0; }
-  input[type=checkbox], input[type=radio] {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 0.675rem; }
-  input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box; }
-  ::-webkit-search-decoration {
-    display: none; }
-  input[type="reset"], input[type="button"], input[type="submit"] {
-    overflow: visible; }
+input[type=checkbox].pseudo-checkbox {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
   input[type=checkbox].pseudo-checkbox:checked + label {
     position: relative; }
     input[type=checkbox].pseudo-checkbox:checked + label:after {
@@ -1143,120 +1332,6 @@ input {
       border: 1px solid #384048;
       background-color: #f8f9f9;
       cursor: pointer; }
-  input[type=radio].pseudo-radio:checked + label {
-    position: relative; }
-    input[type=radio].pseudo-radio:checked + label:after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      top: 50%;
-      left: 4px;
-      width: 8px;
-      height: 8px;
-      transform: translateY(-50%);
-      background-color: #384048;
-      border-radius: 50%;
-      cursor: pointer; }
-  input[type=radio].pseudo-radio + label {
-    cursor: pointer;
-    display: flex;
-    align-items: center; }
-    input[type=radio].pseudo-radio + label:before {
-      content: "";
-      display: inline-block;
-      margin: 0 0.675rem 0 0;
-      width: 16px;
-      height: 16px;
-      border: 1px solid #384048;
-      background-color: #f8f9f9;
-      vertical-align: top;
-      border-radius: 50%;
-      cursor: pointer; }
-
-/*
-Select
-
-<span class="tag tag--warning">JS</span> Handles multiple selection using [Selectr](https://github.com/Mobius1/Selectr)
-
-It is applied automatically to all `.js--selectr` inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common `huesos.js`
-
-Markup:
-<div class="form-item">
-	<select class="js--selectr">
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="mercedes">Mercedes</option>
-		<option value="audi">Audi</option>
-	</select>
-</div>
-<div class="form-item">
-	<select multiple class="js--selectr">
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="mercedes">Mercedes</option>
-		<option value="audi">Audi</option>
-	</select> 
-</div>
-<div class="form-item">
-	<select class="js--selectr">
-		<optgroup label= "Expensive cars">
-			<option value="volvo">Volvo</option>
-			<option value="saab">Saab</option>
-		</optgroup>
-		<optgroup label= "Unaffordable cars">
-			<option value="mercedes">Mercedes</option>
-			<option value="audi">Audi</option>
-		</optgroup>
-	</select> 
-</div>
-
-Styleguide Forms.select
-*/
-select {
-  border: 1px solid #dee0e4;
-  padding: 0 0.675rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  /* Move the label to the top */ }
-  select:hover, select:focus {
-    border-color: #959699; }
-  select[multiple] {
-    vertical-align: top; }
-
-/*
-Textarea
-
-Use in conjunction with `.form-item` and its modifiers (see its own section)
-
-It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
-
-
-Markup:
-<div class="form-item">
-	<label for="area1">Textarea</label>
-	<textarea rows="5" id="area1"></textarea>
-</div>
-<div class="form-item form-item--label-inside">
-	<label for="area2">Textarea</label>
-	<textarea rows="5" id="area2"></textarea>
-</div>
-<div class="form-item form-item--label-inside form-item--col">
-	<label for="area3">Textarea</label>
-	<textarea id="area3"></textarea>
-</div>
-
-Styleguide Forms.textarea
-*/
-textarea {
-  border: 1px solid #dee0e4;
-  /* Move the label to the top */
-  vertical-align: top;
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto;
-  width: 100%;
-  padding: 0.3375rem 0.675rem;
-  min-height: 2.7rem; }
 
 /*
 Fieldsets
@@ -1390,27 +1465,950 @@ Styleguide Forms.form-item
     border-radius: 0;
     padding: 0; }
 
+input {
+  border: 1px solid #dee0e4;
+  padding: 0.3375rem 0.675rem;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /*
+	File Input
+	
+	Uses the label for handling click and hides the actual input element.
+	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	
+	Markup:
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file">Upload your file</label>
+	</div>
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
+	</div>
+	
+	Styleguide Forms.file
+	*/ }
+  input:hover, input:focus {
+    border-color: #959699; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 0.675rem; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=file] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+
+input[type=radio].pseudo-radio {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+  input[type=radio].pseudo-radio:checked + label {
+    position: relative; }
+    input[type=radio].pseudo-radio:checked + label:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%);
+      background-color: #384048;
+      border-radius: 50%;
+      cursor: pointer; }
+  input[type=radio].pseudo-radio + label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    input[type=radio].pseudo-radio + label:before {
+      content: "";
+      display: inline-block;
+      margin: 0 0.675rem 0 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #384048;
+      background-color: #f8f9f9;
+      vertical-align: top;
+      border-radius: 50%;
+      cursor: pointer; }
+
+select {
+  border: 1px solid #dee0e4;
+  padding: 0 0.675rem;
+  appearance: none;
+  /* Move the label to the top */ }
+  select:hover, select:focus {
+    border-color: #959699; }
+  select[multiple] {
+    vertical-align: top; }
+
 /*
-Button
+Textarea
 
-Either `<input type="submit / ">`, `<button>` or `<a class="button">`.
+Use in conjunction with `.form-item` and its modifiers (see its own section)
 
-There are three general strategies available. `border`, `background` and `mixed`
+It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+
 
 Markup:
-<button class="{{modifier_class}}">Click me please!</button>
-<a href="#" class="button {{modifier_class}}">I'm a link!</a>
-<input type="submit" class="{{modifier_class}}" value="Submit input" />
+<div class="form-item">
+	<label for="area1">Textarea</label>
+	<textarea rows="5" id="area1"></textarea>
+</div>
+<div class="form-item form-item--label-inside">
+	<label for="area2">Textarea</label>
+	<textarea rows="5" id="area2"></textarea>
+</div>
+<div class="form-item form-item--label-inside form-item--col">
+	<label for="area3">Textarea</label>
+	<textarea id="area3"></textarea>
+</div>
 
-.button--success           - Uses success color to indicate a positive action (OK, login, continue...)
-.button--warning           - Uses warning color to indicate a potentially negative action
-.button--error             - Uses error color to indicate a negative action (delete, cancel, no...)
-.disabled          		   - The helper class `.disabled` knows how to erase user interaction on buttons
-.button--error.disabled             - .disabled and the rest of the modifiers can be safely applied at the same time
-
-
-Styleguide Components.buttons
+Styleguide Forms.textarea
 */
+textarea {
+  border: 1px solid #dee0e4;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+  width: 100%;
+  padding: 0.3375rem 0.675rem;
+  min-height: 2.7rem; }
+
+#main-wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.35rem; }
+
+/*
+Grid
+
+Establishes a grid. Uses a float fallback for less capable browsers.
+
+By default, it establishes a 4-col grid. Modifier classes can change this.
+
+No row height is set: it depends on the content.
+
+.grid--2col        - Establishes a 2col grid
+.grid--3col        - Establishes a 3col grid
+.grid--5col        - Establishes a 5col grid
+.grid--6col        - Establishes a 6col grid
+.grid--7col        - Establishes a 7col grid
+.grid--8col        - Establishes a 8col grid
+.grid--9col        - Establishes a 9col grid
+.grid--10col       - Establishes a 10col grid
+.grid--11col       - Establishes a 11col grid
+.grid--12col       - Establishes a 12col grid
+
+Markup:
+<div class="grid {{ modifier_class }}">
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+    <div class="grid-item bg-state-success" style="height:50px""></div>
+    <div class="grid-item bg-state-warning" style="height:50px""></div>
+    <div class="grid-item bg-state-error" style="height:50px""></div>
+    <div class="grid-item bg-blue-base" style="height:50px""></div>
+    <div class="grid-item bg-red-base" style="height:50px""></div>
+    <div class="grid-item bg-green-base" style="height:50px""></div>
+</div>
+
+Styleguide Layout.grid
+*/
+.grid {
+  *zoom: 1; }
+  .grid:before, .grid:after {
+    content: " ";
+    display: table; }
+  .grid:after {
+    clear: both; }
+  .grid .grid-item {
+    float: left;
+    margin-bottom: 1.35rem; }
+
+.grid--2col .grid-item {
+  width: 50%;
+  width: calc( (100% / 2) -  ( ( 1.35rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--2col .grid-item:nth-child(2n) {
+    margin-right: 0; }
+
+.grid--3col .grid-item {
+  width: 33.33333%;
+  width: calc( (100% / 3) -  ( ( 1.35rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--3col .grid-item:nth-child(3n) {
+    margin-right: 0; }
+
+.grid--4col .grid-item {
+  width: 25%;
+  width: calc( (100% / 4) -  ( ( 1.35rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--4col .grid-item:nth-child(4n) {
+    margin-right: 0; }
+
+.grid--5col .grid-item {
+  width: 20%;
+  width: calc( (100% / 5) -  ( ( 1.35rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--5col .grid-item:nth-child(5n) {
+    margin-right: 0; }
+
+.grid--6col .grid-item {
+  width: 16.66667%;
+  width: calc( (100% / 6) -  ( ( 1.35rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--6col .grid-item:nth-child(6n) {
+    margin-right: 0; }
+
+.grid--7col .grid-item {
+  width: 14.28571%;
+  width: calc( (100% / 7) -  ( ( 1.35rem * ( 7 - 1 ) / 7 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--7col .grid-item:nth-child(7n) {
+    margin-right: 0; }
+
+.grid--8col .grid-item {
+  width: 12.5%;
+  width: calc( (100% / 8) -  ( ( 1.35rem * ( 8 - 1 ) / 8 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--8col .grid-item:nth-child(8n) {
+    margin-right: 0; }
+
+.grid--9col .grid-item {
+  width: 11.11111%;
+  width: calc( (100% / 9) -  ( ( 1.35rem * ( 9 - 1 ) / 9 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--9col .grid-item:nth-child(9n) {
+    margin-right: 0; }
+
+.grid--10col .grid-item {
+  width: 10%;
+  width: calc( (100% / 10) -  ( ( 1.35rem * ( 10 - 1 ) / 10 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--10col .grid-item:nth-child(10n) {
+    margin-right: 0; }
+
+.grid--11col .grid-item {
+  width: 9.09091%;
+  width: calc( (100% / 11) -  ( ( 1.35rem * ( 11 - 1 ) / 11 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--11col .grid-item:nth-child(11n) {
+    margin-right: 0; }
+
+.grid--12col .grid-item {
+  width: 8.33333%;
+  width: calc( (100% / 12) -  ( ( 1.35rem * ( 12 - 1 ) / 12 ) + 0.001rem ));
+  margin-right: 1.35rem; }
+  .grid--12col .grid-item:nth-child(12n) {
+    margin-right: 0; }
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.35rem; }
+    .grid:before, .grid:after {
+      display: none; }
+    .grid .grid-item {
+      float: none;
+      margin: 0;
+      width: auto; }
+  .grid--2col {
+    grid-template-columns: repeat(2, 1fr); }
+  .grid--3col {
+    grid-template-columns: repeat(3, 1fr); }
+  .grid--4col {
+    grid-template-columns: repeat(4, 1fr); }
+  .grid--5col {
+    grid-template-columns: repeat(5, 1fr); }
+  .grid--6col {
+    grid-template-columns: repeat(6, 1fr); }
+  .grid--7col {
+    grid-template-columns: repeat(7, 1fr); }
+  .grid--8col {
+    grid-template-columns: repeat(8, 1fr); }
+  .grid--9col {
+    grid-template-columns: repeat(9, 1fr); }
+  .grid--10col {
+    grid-template-columns: repeat(10, 1fr); }
+  .grid--11col {
+    grid-template-columns: repeat(11, 1fr); }
+  .grid--12col {
+    grid-template-columns: repeat(12, 1fr); } }
+
+/*
+Responsive Grid
+
+Inestad of setting a grid, you can use a set of helper classes to define the specific number of
+columns on every breakpoint.
+
+The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col`.
+
+We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
+no `max-width` constraint is set and every breakpoint will be active until a larger breakpoint weighs in.
+
+Markup:
+<div class="grid grid--small--2col grid--medium--6col grid--large--3col">
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+</div>
+
+Styleguide Layout.grid.responsive
+*/
+@media (min-width: 640px) {
+  .grid--small--2col {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--3col {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--4col {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--5col {
+    grid-template-columns: repeat(5, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--6col {
+    grid-template-columns: repeat(6, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--7col {
+    grid-template-columns: repeat(7, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--8col {
+    grid-template-columns: repeat(8, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--9col {
+    grid-template-columns: repeat(9, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--10col {
+    grid-template-columns: repeat(10, 1fr); } }
+
+@media (min-width: 640px) {
+  .grid--small--11col {
+    grid-template-columns: repeat(11, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--2col {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--3col {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--4col {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--5col {
+    grid-template-columns: repeat(5, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--6col {
+    grid-template-columns: repeat(6, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--7col {
+    grid-template-columns: repeat(7, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--8col {
+    grid-template-columns: repeat(8, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--9col {
+    grid-template-columns: repeat(9, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--10col {
+    grid-template-columns: repeat(10, 1fr); } }
+
+@media (min-width: 960px) {
+  .grid--medium--11col {
+    grid-template-columns: repeat(11, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--2col {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--3col {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--4col {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--5col {
+    grid-template-columns: repeat(5, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--6col {
+    grid-template-columns: repeat(6, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--7col {
+    grid-template-columns: repeat(7, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--8col {
+    grid-template-columns: repeat(8, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--9col {
+    grid-template-columns: repeat(9, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--10col {
+    grid-template-columns: repeat(10, 1fr); } }
+
+@media (min-width: 1120px) {
+  .grid--large--11col {
+    grid-template-columns: repeat(11, 1fr); } }
+
+/*
+Gutterless Grid
+
+Add `.grid--gutterless` to remove all gutters
+
+Markup:
+<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+    <div class="grid-item bg-base-primary" style="height:50px"></div>
+    <div class="grid-item bg-base-secondary" style="height:50px""></div>
+    <div class="grid-item bg-base-separator" style="height:50px""></div>
+    <div class="grid-item bg-text-primary" style="height:50px""></div>
+    <div class="grid-item bg-text-mark" style="height:50px""></div>
+    <div class="grid-item bg-state-muted" style="height:50px""></div>
+</div>
+
+Styleguide Layout.grid.gutterless
+*/
+.grid--gutterless {
+  grid-gap: 0; }
+
+/*
+Helpers
+
+Some helper classes for easier layout setup.
+
+Styleguide Layout.helpers
+*/
+/*
+Breakpoint togglers
+
+A set of classes that toggle visibility on certain viewport widths: `.small-visible`, `.medium-visible`, `.large-visible`
+
+Markup:
+<section>
+    <h3 class="small-visible">I'm visible</h3>
+    <h3 class="medium-visible">I'm visible</h3>
+    <h3 class="large-visible">I'm visible</h3>
+</section>
+
+Styleguide Layout.helpers.breakpoint-toggle
+*/
+.small-visible {
+  display: none; }
+  @media (min-width: 640px) {
+    .small-visible {
+      display: inherit; } }
+
+.medium-visible {
+  display: none; }
+  @media (min-width: 960px) {
+    .medium-visible {
+      display: inherit; } }
+
+.large-visible {
+  display: none; }
+  @media (min-width: 1120px) {
+    .large-visible {
+      display: inherit; } }
+
+/*
+Navigation menus
+
+Either `<nav>` HTML elements or enabled via the css class `.nav`.
+
+We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
+
+Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
+
+It's supposed to hold links (try "section"), but it can also have empty elements.
+
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
+
+Markup:
+<section>
+  <nav class="{{ modifier_class}} kill-link-decoration">
+    <ul>
+      <li>Home</li>
+      <li><a href="#">Section</a></li>
+      <li>Works</li>
+      <li>About us</li>
+      <li>Contact</li>
+      <li>Exit</li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Base.nav
+*/
+nav ul,
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+  nav ul li,
+  .nav ul li {
+    margin: 0 1.35rem 0 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.35rem;
+    letter-spacing: 0.05em; }
+
+/*
+Menu
+
+An horizontal menu is a component based on an extended `<nav>` or `.nav`.
+
+Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
+
+It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
+
+Submenus are handled up to the 3rd level. If you need more, you might want to rethink your menu.
+
+Alignment of items can be controlled via helper classes. Defaults to "left"
+
+.center        - Aligns the nav to the center (margin on both sides of items)
+.right         - Aligns the nav to the right (margin on the right)
+
+Markup:
+<section>
+  <nav class="menu {{ modifier_class }}" style="margin-bottom: 200px">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Section</a>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Section</a></li>
+            <li>
+              <a href="#">Works</a>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Section</a></li>
+                  <li><a href="#">Works</a></li>
+                  <li><a href="#">About us</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About us</a></li>
+          </ul>
+      </li>
+      <li><a href="#">Works</a></li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.menus
+*/
+.menu {
+  margin: 0;
+  padding: 0; }
+  .menu li {
+    list-style-type: none;
+    display: inline-block; }
+  .menu a, .menu a:link, .menu a:visited, .menu a:focus, .menu a:hover, .menu a:active {
+    text-decoration: none; }
+  .menu ul > li {
+    margin: 0;
+    position: relative;
+    z-index: 1; }
+    .menu ul > li > a {
+      text-align: left;
+      display: block;
+      padding: 0.675rem;
+      white-space: nowrap; }
+      .menu ul > li > a, .menu ul > li > a:link {
+        color: #384048; }
+      .menu ul > li > a:visited {
+        color: #384048; }
+      .menu ul > li > a:focus, .menu ul > li > a:hover {
+        color: #FFFFFF; }
+      .menu ul > li > a:active {
+        color: #384048; }
+    .menu ul > li:hover > a, .menu ul > li:focus > a {
+      color: #FFFFFF;
+      background-color: #1e456e; }
+    .menu ul > li > span {
+      padding: 0.675rem; }
+    .menu ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+      min-width: 120%; }
+      .menu ul > li > ul > li {
+        display: block;
+        position: relative; }
+        .menu ul > li > ul > li > a {
+          display: block;
+          padding: 0.3375rem 0.675rem;
+          white-space: nowrap;
+          background-color: #235282;
+          font-size: 13px;
+          font-size: 0.8rem;
+          line-height: 22px;
+          line-height: 1.35rem; }
+          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
+            color: #FFFFFF;
+            text-decoration: underline; }
+          .menu ul > li > ul > li > a:visited {
+            color: #FFFFFF; }
+          .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+            border: none;
+            background: transparent; }
+          .menu ul > li > ul > li > a:active {
+            color: #FFFFFF; }
+          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link, .menu ul > li > ul > li > a:visited, .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:active {
+            text-decoration: none; }
+          .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
+            color: #FFFFFF;
+            background-color: #142e4a; }
+    .menu ul > li > ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      min-width: 100%;
+      z-index: 3; }
+      .menu ul > li > ul > li > ul li a {
+        background-color: #295e96;
+        font-size: 11px;
+        font-size: 0.7rem;
+        line-height: 16px;
+        line-height: 1.0125rem; }
+        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
+          color: #FFFFFF;
+          text-decoration: underline; }
+        .menu ul > li > ul > li > ul li a:visited {
+          color: #FFFFFF; }
+        .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
+          color: #FFFFFF;
+          text-decoration: none;
+          border: none;
+          background: transparent; }
+        .menu ul > li > ul > li > ul li a:active {
+          color: #FFFFFF; }
+        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link, .menu ul > li > ul > li > ul li a:visited, .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:active {
+          text-decoration: none; }
+        .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
+          color: #FFFFFF;
+          background-color: #0f2337; }
+    .menu ul > li > ul > li:hover > ul {
+      display: block; }
+    .menu ul > li:hover > ul {
+      display: block; }
+      .menu ul > li:hover > ul > li {
+        display: block; }
+
+/*
+TOC (Table of contents)
+
+A toc or table of contents is a vertical menu based off a `<nav>` item.
+
+The first level can be configured on `_config.scss`.
+
+This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
+
+It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+
+Markup:
+<section>
+  <nav class="toc kill-link">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Section</a></li>
+      <li>
+        <a href="#">Works</a>
+        <ul>
+          <li>
+            <a href="#">Home</a></li>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Section</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Section</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">About us</a></li>
+          <li><span>Contact</span></li>
+          <li><span class="disabled">Exit</span></li>
+        </ul>
+      </li>
+      <li><a href="#">About us</a></li>
+      <li><span>Contact</span></li>
+      <li><span class="disabled">Exit</span></li>
+    </ul>
+  </nav>
+</section>
+
+Styleguide Components.toc
+*/
+.toc ul li {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: initial;
+  text-transform: initial;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem; }
+  .toc ul li ul {
+    margin: 0.3375rem 0 0.675rem 1.35rem; }
+    .toc ul li ul li {
+      font-weight: normal;
+      font-size: 15px;
+      font-size: 0.95rem;
+      line-height: 22px;
+      line-height: 1.35rem; }
+    .toc ul li ul ul li {
+      font-size: 11px;
+      font-size: 0.7rem;
+      line-height: 16px;
+      line-height: 1.0125rem; }
+
+.tag, .selectr-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 0 0.45rem;
+  background-color: #dee0e4;
+  color: #1A1A19;
+  border-radius: 0px;
+  margin-right: 0.45rem;
+  font-weight: normal; }
+  .tag.tag--success, .tag--success.selectr-tag {
+    background-color: #63c093;
+    color: #1A1A19; }
+  .tag.tag--warning, .tag--warning.selectr-tag {
+    background-color: #aaac30;
+    color: #FFFFFF; }
+    .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--warning a:visited, .tag--warning.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus, .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--warning a:active, .tag--warning.selectr-tag a:active {
+      color: #b3c9e0; }
+  .tag.tag--error, .tag--error.selectr-tag {
+    background-color: #ac3230;
+    color: #FFFFFF; }
+    .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--error a:visited, .tag--error.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--error a:focus, .tag--error.selectr-tag a:focus, .tag.tag--error a:hover, .tag--error.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--error a:active, .tag--error.selectr-tag a:active {
+      color: #b3c9e0; }
+  .tag.tag--primary, .tag--primary.selectr-tag {
+    background-color: #2b619a;
+    color: #FFFFFF; }
+    .tag.tag--primary a, .tag--primary.selectr-tag a, .tag.tag--primary a:link, .tag--primary.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--primary a:visited, .tag--primary.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--primary a:focus, .tag--primary.selectr-tag a:focus, .tag.tag--primary a:hover, .tag--primary.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--primary a:active, .tag--primary.selectr-tag a:active {
+      color: #b3c9e0; }
+  .tag.tag--secondary, .tag--secondary.selectr-tag {
+    background-color: #1e456e;
+    color: #FFFFFF; }
+    .tag.tag--secondary a, .tag--secondary.selectr-tag a, .tag.tag--secondary a:link, .tag--secondary.selectr-tag a:link {
+      color: #fff;
+      text-decoration: underline; }
+    .tag.tag--secondary a:visited, .tag--secondary.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--secondary a:focus, .tag--secondary.selectr-tag a:focus, .tag.tag--secondary a:hover, .tag--secondary.selectr-tag a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    .tag.tag--secondary a:active, .tag--secondary.selectr-tag a:active {
+      color: #b3c9e0; }
+  .right .tag, .right .selectr-tag {
+    margin-right: 0;
+    margin-left: 0.45rem; }
+  .center .tag, .center .selectr-tag {
+    margin-right: 0.225rem;
+    margin-left: 0.225rem; }
+
+a.tag, a.selectr-tag {
+  cursor: pointer; }
+  a.tag, a.selectr-tag, a.tag:link, a.selectr-tag:link, a.tag:visited, a.selectr-tag:visited, a.tag:focus, a.selectr-tag:focus, a.tag:hover, a.selectr-tag:hover, a.tag:active, a.selectr-tag:active {
+    text-decoration: none; }
+  a.tag:hover, a.selectr-tag:hover, a.tag:focus, a.selectr-tag:focus {
+    background-color: #959699;
+    color: #1A1A19; }
+  a.tag.tag--success:hover, a.tag--success.selectr-tag:hover, a.tag.tag--success:focus, a.tag--success.selectr-tag:focus {
+    background-color: #428162;
+    color: #FFFFFF; }
+    a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--success:hover a:visited, a.tag--success.selectr-tag:hover a:visited, a.tag.tag--success:focus a:visited, a.tag--success.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--success:hover a:active, a.tag--success.selectr-tag:hover a:active, a.tag.tag--success:focus a:active, a.tag--success.selectr-tag:focus a:active {
+      color: #b3c9e0; }
+  a.tag.tag--warning:hover, a.tag--warning.selectr-tag:hover, a.tag.tag--warning:focus, a.tag--warning.selectr-tag:focus {
+    background-color: #727320;
+    color: #FFFFFF; }
+    a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--warning:hover a:visited, a.tag--warning.selectr-tag:hover a:visited, a.tag.tag--warning:focus a:visited, a.tag--warning.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--warning:hover a:active, a.tag--warning.selectr-tag:hover a:active, a.tag.tag--warning:focus a:active, a.tag--warning.selectr-tag:focus a:active {
+      color: #b3c9e0; }
+  a.tag.tag--error:hover, a.tag--error.selectr-tag:hover, a.tag.tag--error:focus, a.tag--error.selectr-tag:focus {
+    background-color: #732220;
+    color: #FFFFFF; }
+    a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--error:hover a:visited, a.tag--error.selectr-tag:hover a:visited, a.tag.tag--error:focus a:visited, a.tag--error.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--error:hover a:active, a.tag--error.selectr-tag:hover a:active, a.tag.tag--error:focus a:active, a.tag--error.selectr-tag:focus a:active {
+      color: #b3c9e0; }
+  a.tag.tag--primary:hover, a.tag--primary.selectr-tag:hover, a.tag.tag--primary:focus, a.tag--primary.selectr-tag:focus {
+    background-color: #1d4167;
+    color: #FFFFFF; }
+    a.tag.tag--primary:hover a, a.tag--primary.selectr-tag:hover a, a.tag.tag--primary:hover a:link, a.tag--primary.selectr-tag:hover a:link, a.tag.tag--primary:focus a, a.tag--primary.selectr-tag:focus a, a.tag.tag--primary:focus a:link, a.tag--primary.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--primary:hover a:visited, a.tag--primary.selectr-tag:hover a:visited, a.tag.tag--primary:focus a:visited, a.tag--primary.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--primary:hover a:focus, a.tag--primary.selectr-tag:hover a:focus, a.tag.tag--primary:hover a:hover, a.tag--primary.selectr-tag:hover a:hover, a.tag.tag--primary:focus a:focus, a.tag--primary.selectr-tag:focus a:focus, a.tag.tag--primary:focus a:hover, a.tag--primary.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--primary:hover a:active, a.tag--primary.selectr-tag:hover a:active, a.tag.tag--primary:focus a:active, a.tag--primary.selectr-tag:focus a:active {
+      color: #b3c9e0; }
+  a.tag.tag--secondary:hover, a.tag--secondary.selectr-tag:hover, a.tag.tag--secondary:focus, a.tag--secondary.selectr-tag:focus {
+    background-color: #142e4a;
+    color: #FFFFFF; }
+    a.tag.tag--secondary:hover a, a.tag--secondary.selectr-tag:hover a, a.tag.tag--secondary:hover a:link, a.tag--secondary.selectr-tag:hover a:link, a.tag.tag--secondary:focus a, a.tag--secondary.selectr-tag:focus a, a.tag.tag--secondary:focus a:link, a.tag--secondary.selectr-tag:focus a:link {
+      color: #fff;
+      text-decoration: underline; }
+    a.tag.tag--secondary:hover a:visited, a.tag--secondary.selectr-tag:hover a:visited, a.tag.tag--secondary:focus a:visited, a.tag--secondary.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--secondary:hover a:focus, a.tag--secondary.selectr-tag:hover a:focus, a.tag.tag--secondary:hover a:hover, a.tag--secondary.selectr-tag:hover a:hover, a.tag.tag--secondary:focus a:focus, a.tag--secondary.selectr-tag:focus a:focus, a.tag.tag--secondary:focus a:hover, a.tag--secondary.selectr-tag:focus a:hover {
+      color: #b3c9e0;
+      text-decoration: none;
+      border: none;
+      background: transparent; }
+    a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
+      color: #b3c9e0; }
+
+.card {
+  border: 1px solid #dee0e4;
+  background: #fff;
+  border-radius: 0px;
+  padding: 2.7rem;
+  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
+  .card .card {
+    padding: 0.675rem; }
+
+.card--image {
+  padding: 0; }
+
+.card__contents {
+  padding: 1.35rem; }
+
 a.button {
   border: 2px solid #606d7c; }
   a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
@@ -1684,1342 +2682,6 @@ input.disabled {
   input.disabled:focus {
     cursor: arrow; }
 
-/*
-Headings
-
-The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
-
-Markup:
-<h1>Main titles use heading one</h1>
-<h2>Subtitules and main sections use h2</h2>
-<h3>H3 is mainly for nested sections</h3>
-<h4>In case you need furher sectioning, use an h4</h4>
-<h5>Rarely you will need a heading five</h5>
-<h6>Heading six is rather unexpected</h6>
-
-
-Styleguide Typography.headings
-*/
-h1, .h1 {
-  font-size: 51px;
-  font-size: 3.15733rem;
-  line-height: 59px;
-  line-height: 3.7125rem; }
-
-h2, .h2 {
-  font-size: 38px;
-  font-size: 2.36859rem;
-  line-height: 43px;
-  line-height: 2.7rem; }
-
-h3, .h3 {
-  font-size: 28px;
-  font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
-
-h4, .h4 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
-
-h5, .h5 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-
-h6, .h6 {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  line-height: 1; }
-
-h1, .h1,
-h2, .h2 {
-  letter-spacing: -0.03em; }
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #151448;
-  font-weight: normal; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
-  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
-    color: inherit;
-    vertical-align: 0; }
-
-/*
-Secondary font
-
-Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
-
-Markup:
-<p class="font-secondary">This paragraph has been set to use the secondary font.
-It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
-to achive the same effect</p>
-
-
-Styleguide Helpers.secondary-font
-*/
-.font-secondary,
-h1,
-h2,
-h3,
-h4,
-dt,
-.your-classes,
-#your-ids {
-  font-family: "Fira Sans", Helvetica, Arial sans-serif; }
-
-h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
-  text-decoration: none; }
-
-h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
-  text-decoration: none; }
-
-h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
-  text-decoration: none; }
-
-h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
-  text-decoration: none; }
-
-dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
-  text-decoration: none; }
-
-.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
-  text-decoration: none; }
-
-#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
-  text-decoration: none; }
-
-/*
-Quotes
-
-Tipographic quotes can be explicitly defined using the variable `$quotes`
-
-Markup:
-<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
-
-Styleguide Typography.quotes
-*/
-q {
-  quotes: "“" "”" "‘" "’"; }
-
-/*
-Blockquotes
-
-Blockquotes receive a padding based on '$gutter`
-
-Markup:
-<blockquote class="myclass {{modifier_class}}">
-  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-  <cite><a href="#!">Said no one, ever.</a></cite>
-</blockquote>
-
-.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-
-Styleguide Typography.blockquote
-*/
-blockquote {
-  margin: 0 0 1.35rem 2.7rem; }
-
-.blockquote--decorated {
-  position: relative; }
-  .blockquote--decorated:before {
-    content: "*";
-    font-size: 38px;
-    font-size: 2.36859rem;
-    line-height: 43px;
-    line-height: 2.7rem;
-    font-family: "Fira Sans", Helvetica, Arial sans-serif;
-    position: absolute;
-    top: 0.3375rem;
-    left: -2.7rem; }
-
-code,
-kbd,
-samp,
-var {
-  display: inline-block;
-  vertical-align: baseline;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  background-color: #dee0e4;
-  color: #1A1A19;
-  padding: 0 0.3375rem;
-  border-radius: 2px; }
-
-/*
-Minititle
-
-The concept of "minititle" makes reference to a small heading, normally used for sectioning.
-
-It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
-
-Markup:
-<section>
-	<p class="minititle">This is the minititle of this section</p>
-	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
-</section>
-<section class="card" style="width:250px">
-	<h3 class="minititle">An h3 reduced!</h3>
-	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
-</section>
-
-
-Styleguide Typography.minititle
-*/
-.minititle {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; }
-
-/*
-Icons
-
-The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
-
-Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
-
-A set of icons is __not__ provided. You are supposed to provide your own choices.
-
-Markup:
-<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
-<p><i class="icon">☝︎</i> Drag & Drop me</p>
-<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
-
-
-Styleguide Typography.icons
-*/
-.icon {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  height: 1rem;
-  display: inline-block;
-  margin-right: 0.3375rem; }
-  .icon svg {
-    height: 100%;
-    width: auto;
-    vertical-align: bottom; }
-
-/*
-Paragraph Text
-
-Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
-
-They also feature an extra spacing on headings.
-
-This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
-
-Markup:
-<section class="text">
-	<h2>First heading has no margin-top</h2>
-	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
-	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
-	<h3>But the rest of headings have!</h3>
-	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
-</section>
-
-Styleguide Typography.paragraph
-*/
-.text h1, .alert h1, .text h2, .alert h2, .text h3, .alert h3, .text h4, .alert h4 {
-  margin-top: 2.7rem; }
-
-.text section, .alert section,
-.text article,
-.alert article {
-  margin-bottom: 2.7rem; }
-
-.text h1:first-child, .alert h1:first-child,
-.text h2:first-child,
-.alert h2:first-child,
-.text h3:first-child,
-.alert h3:first-child,
-.text h4:first-child,
-.alert h4:first-child {
-  margin-top: 0; }
-
-.text p:last-child, .alert p:last-child {
-  margin-bottom: 0; }
-
-/*
-Tables
-
-Tables span across all available space evenly distributed.
-
-A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
-
-Borders are collapsed by default
-
-`<caption>` receives a `.minititle` styling
-
-Markup:
-<section class="table">
-  <table>
-    <caption>Table Caption</caption>
-    <thead>
-      <tr>
-        <th>Table Heading 1</th>
-        <th>Table Heading 2</th>
-        <th>Table Heading 3</th>
-        <th>Table Heading 4</th>
-        <th>Table Heading 5</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>Table Footer 1</th>
-        <th>Table Footer 2</th>
-        <th>Table Footer 3</th>
-        <th>Table Footer 4</th>
-        <th>Table Footer 5</th>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
-Styleguide Base.tables
-*/
-table {
-  table-layout: fixed;
-  min-width: 100%; }
-
-th, td {
-  border: 1px solid #dee0e4;
-  padding: 0.675rem; }
-
-th {
-  text-align: left; }
-
-.table {
-  overflow: auto; }
-  .table th, .table td {
-    min-width: 120px; }
-
-/*
-Figure + Figcaption
-
-The variable `$figcaption-font-size` defines the sizing of image captions.
-
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
-
-Markup:
-<section>
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</section>
-<section class="center">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-<section class="right">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-
-
-Styleguide Base.images.figure-figcaption
-*/
-figcaption {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  text-align: left; }
-
-/*
-Disabled
-
-Class and placeholder used to dim the element and indicate that is not usable anymore.
-
-It also disables user interactions on buttons, links, etc... (see on their respective sections)
-
-Markup:
-<p class="disabled">I'm no longer active</p>
-<mark class="disabled"> I'm no longer working</mark>
-
-
-Styleguide Helpers.disabled
-*/
-
-.disabled {
-  opacity: 0.33; }
-
-/*
-Text alignment
-
-Helper classes that provide a quick access to `text-align`.
-
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
-
-Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
-
-
-Styleguide Helpers.alignment
-*/
-.left {
-  text-align: left; }
-
-.center {
-  text-align: center; }
-
-.right {
-  text-align: right; }
-
-#main-wrapper {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.35rem; }
-
-/*
-Grid
-
-Establishes a grid. Uses a float fallback for less capable browsers.
-
-By default, it establishes a 4-col grid. Modifier classes can change this.
-
-No row height is set: it depends on the content.
-
-.grid--2col        - Establishes a 2col grid
-.grid--3col        - Establishes a 3col grid
-.grid--5col        - Establishes a 5col grid
-.grid--6col        - Establishes a 6col grid
-.grid--7col        - Establishes a 7col grid
-.grid--8col        - Establishes a 8col grid
-.grid--9col        - Establishes a 9col grid
-.grid--10col       - Establishes a 10col grid
-.grid--11col       - Establishes a 11col grid
-.grid--12col       - Establishes a 12col grid
-
-Markup:
-<div class="grid {{ modifier_class }}">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-    <div class="grid-item bg-state-success" style="height:50px""></div>
-    <div class="grid-item bg-state-warning" style="height:50px""></div>
-    <div class="grid-item bg-state-error" style="height:50px""></div>
-    <div class="grid-item bg-blue-base" style="height:50px""></div>
-    <div class="grid-item bg-red-base" style="height:50px""></div>
-    <div class="grid-item bg-green-base" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid
-*/
-.grid .grid-item {
-  float: left;
-  margin-bottom: 1.35rem; }
-
-.grid--2col .grid-item {
-  width: 50%;
-  width: calc(50% - 0.676rem);
-  margin-right: 1.35rem; }
-  .grid--2col .grid-item:nth-child(2n) {
-    margin-right: 0; }
-
-.grid--3col .grid-item {
-  width: 33.33333%;
-  width: calc(33.33333% - 0.901rem);
-  margin-right: 1.35rem; }
-  .grid--3col .grid-item:nth-child(3n) {
-    margin-right: 0; }
-
-.grid--4col .grid-item {
-  width: 25%;
-  width: calc(25% - 1.0135rem);
-  margin-right: 1.35rem; }
-  .grid--4col .grid-item:nth-child(4n) {
-    margin-right: 0; }
-
-.grid--5col .grid-item {
-  width: 20%;
-  width: calc(20% - 1.081rem);
-  margin-right: 1.35rem; }
-  .grid--5col .grid-item:nth-child(5n) {
-    margin-right: 0; }
-
-.grid--6col .grid-item {
-  width: 16.66667%;
-  width: calc(16.66667% - 1.126rem);
-  margin-right: 1.35rem; }
-  .grid--6col .grid-item:nth-child(6n) {
-    margin-right: 0; }
-
-.grid--7col .grid-item {
-  width: 14.28571%;
-  width: calc(14.28571% - 1.15814rem);
-  margin-right: 1.35rem; }
-  .grid--7col .grid-item:nth-child(7n) {
-    margin-right: 0; }
-
-.grid--8col .grid-item {
-  width: 12.5%;
-  width: calc(12.5% - 1.18225rem);
-  margin-right: 1.35rem; }
-  .grid--8col .grid-item:nth-child(8n) {
-    margin-right: 0; }
-
-.grid--9col .grid-item {
-  width: 11.11111%;
-  width: calc(11.11111% - 1.201rem);
-  margin-right: 1.35rem; }
-  .grid--9col .grid-item:nth-child(9n) {
-    margin-right: 0; }
-
-.grid--10col .grid-item {
-  width: 10%;
-  width: calc(10% - 1.216rem);
-  margin-right: 1.35rem; }
-  .grid--10col .grid-item:nth-child(10n) {
-    margin-right: 0; }
-
-.grid--11col .grid-item {
-  width: 9.09091%;
-  width: calc(9.09091% - 1.22827rem);
-  margin-right: 1.35rem; }
-  .grid--11col .grid-item:nth-child(11n) {
-    margin-right: 0; }
-
-.grid--12col .grid-item {
-  width: 8.33333%;
-  width: calc(8.33333% - 1.2385rem);
-  margin-right: 1.35rem; }
-  .grid--12col .grid-item:nth-child(12n) {
-    margin-right: 0; }
-
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1.35rem; }
-    .grid:before, .grid:after {
-      display: none; }
-    .grid .grid-item {
-      float: none;
-      margin: 0;
-      width: auto; }
-  .grid--2col {
-    grid-template-columns: repeat(2, 1fr); }
-  .grid--3col {
-    grid-template-columns: repeat(3, 1fr); }
-  .grid--4col {
-    grid-template-columns: repeat(4, 1fr); }
-  .grid--5col {
-    grid-template-columns: repeat(5, 1fr); }
-  .grid--6col {
-    grid-template-columns: repeat(6, 1fr); }
-  .grid--7col {
-    grid-template-columns: repeat(7, 1fr); }
-  .grid--8col {
-    grid-template-columns: repeat(8, 1fr); }
-  .grid--9col {
-    grid-template-columns: repeat(9, 1fr); }
-  .grid--10col {
-    grid-template-columns: repeat(10, 1fr); }
-  .grid--11col {
-    grid-template-columns: repeat(11, 1fr); }
-  .grid--12col {
-    grid-template-columns: repeat(12, 1fr); } }
-
-/*
-Responsive Grid
-
-Inestad of setting a grid, you can use a set of helper classes to define the specific number of
-columns on every breakpoint.
-
-The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col`.
-
-We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
-no `max-width` constraint is set and every breakpoint will be active until a larger breakpoint weighs in.
-
-Markup:
-<div class="grid grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.responsive
-*/
-@media (min-width: 640px) {
-  .grid--small--2col {
-    grid-template-columns: repeat(2, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--3col {
-    grid-template-columns: repeat(3, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--4col {
-    grid-template-columns: repeat(4, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--5col {
-    grid-template-columns: repeat(5, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--6col {
-    grid-template-columns: repeat(6, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--2col {
-    grid-template-columns: repeat(2, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--3col {
-    grid-template-columns: repeat(3, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--4col {
-    grid-template-columns: repeat(4, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--5col {
-    grid-template-columns: repeat(5, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--6col {
-    grid-template-columns: repeat(6, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--2col {
-    grid-template-columns: repeat(2, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--3col {
-    grid-template-columns: repeat(3, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--4col {
-    grid-template-columns: repeat(4, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--5col {
-    grid-template-columns: repeat(5, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--6col {
-    grid-template-columns: repeat(6, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
-/*
-Gutterless Grid
-
-Add `.grid--gutterless` to remove all gutters
-
-Markup:
-<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.gutterless
-*/
-.grid--gutterless {
-  grid-gap: 0; }
-
-/*
-Helpers
-
-Some helper classes for easier layout setup.
-
-Styleguide Layout.helpers
-*/
-/*
-Breakpoint togglers
-
-A set of classes that toggle visibility on certain viewport widths: `.small-visible`, `.medium-visible`, `.large-visible`
-
-Markup:
-<section>
-    <h3 class="small-visible">I'm visible</h3>
-    <h3 class="medium-visible">I'm visible</h3>
-    <h3 class="large-visible">I'm visible</h3>
-</section>
-
-Styleguide Layout.helpers.breakpoint-toggle
-*/
-.small-visible {
-  display: none; }
-  @media (min-width: 640px) {
-    .small-visible {
-      display: inherit; } }
-
-.medium-visible {
-  display: none; }
-  @media (min-width: 960px) {
-    .medium-visible {
-      display: inherit; } }
-
-.large-visible {
-  display: none; }
-  @media (min-width: 1120px) {
-    .large-visible {
-      display: inherit; } }
-
-/*
-Card
-
-The `.card` is a common pattern on UX design.
-
-Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid.
-
-A set of settings are available under its own section on `_config.scss`
-
-A `.card` inside a `.card` has its padding reduced to 1/2
-
-Markup:
-<article class="card" style="width:400px; padding: 1.3rem">
-	<h3>Title of a card</h3>
-	<p>A card can have any content. Their appearance will be honored no matter what.</p>
-	<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
-	<div class="card right">
-		<a href="#" class="button button--error">Cancel</a>
-		<a href="#" class="button button--success">OK</a>
-	</div>
-</article>
-
-Styleguide Components.card
-*/
-.card {
-  border: 1px solid #dee0e4;
-  background: #fff;
-  border-radius: 0px;
-  padding: 2.7rem;
-  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, .1); }
-  .card .card {
-    padding: 0.675rem; }
-
-/*
-Card with Featured Image
-
-A special kind of card that features a full-bleed image.
-
-It requires a slightly different markup than the original `.card` item
-
-Markup:
-<!-- Style attributes are only set to avoid style overrides on this style guide! -->
-<article class="card card--image" style="width:400px; padding:0;">
-	<div class="card__image">
-		<img src="https://placeimg.com/400/200/nature" />
-	</div>
-	<div class="card__contents">
-		<h3>Title of a card</h3>
-		<p>A card can have any content. Their appearance will be honored no matter what.</p>
-		<p class="small">This paragraph, for example, uses a <code>.small</code> class</p>
-		<div class="card right">
-			<a href="#" class="button button--error">Cancel</a>
-			<a href="#" class="button button--success">OK</a>
-		</div>
-	</div>
-</article>
-
-Styleguide Components.card.card-image
-*/
-.card--image {
-  padding: 0; }
-
-.card__contents {
-  padding: 1.35rem; }
-
-/*
-Navigation menus
-
-Either `<nav>` HTML elements or enabled via the css class `.nav`.
-
-We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
-
-Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
-
-It's supposed to hold links (try "section"), but it can also have empty elements.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-
-Markup:
-<section>
-  <nav class="{{ modifier_class}} kill-link-decoration">
-    <ul>
-      <li>Home</li>
-      <li><a href="#">Section</a></li>
-      <li>Works</li>
-      <li>About us</li>
-      <li>Contact</li>
-      <li>Exit</li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Base.nav
-*/
-nav ul,
-.nav ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none; }
-  nav ul li,
-  .nav ul li {
-    margin: 0 1.35rem 0 0;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 22px;
-    line-height: 1.35rem;
-    letter-spacing: 0.05em; }
-
-/*
-Menu
-
-An horizontal menu is a component based on an extended `<nav>` or `.nav`.
-
-Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
-
-It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
-
-Submenus are handled up to the 3rd level. If you need more, you might want to rethink your menu.
-
-Alignment of items can be controlled via helper classes. Defaults to "left"
-
-.center        - Aligns the nav to the center (margin on both sides of items)
-.right         - Aligns the nav to the right (margin on the right)
-
-Markup:
-<section>
-  <nav class="menu {{ modifier_class }}" style="margin-bottom: 200px">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li>
-        <a href="#">Section</a>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Section</a></li>
-            <li>
-              <a href="#">Works</a>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Section</a></li>
-                  <li><a href="#">Works</a></li>
-                  <li><a href="#">About us</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About us</a></li>
-          </ul>
-      </li>
-      <li><a href="#">Works</a></li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.menus
-*/
-.menu {
-  margin: 0;
-  padding: 0; }
-  .menu li {
-    list-style-type: none;
-    display: inline-block; }
-  .menu a, .menu a:link, .menu a:visited, .menu a:focus, .menu a:hover, .menu a:active {
-    text-decoration: none; }
-  .menu ul > li {
-    margin: 0;
-    position: relative;
-    z-index: 1; }
-    .menu ul > li > a {
-      text-align: left;
-      display: block;
-      padding: 0.675rem;
-      white-space: nowrap; }
-      .menu ul > li > a, .menu ul > li > a:link {
-        color: #384048; }
-      .menu ul > li > a:visited {
-        color: #384048; }
-      .menu ul > li > a:focus, .menu ul > li > a:hover {
-        color: #FFFFFF; }
-      .menu ul > li > a:active {
-        color: #384048; }
-    .menu ul > li:hover > a, .menu ul > li:focus > a {
-      color: #FFFFFF;
-      background-color: #1e456e; }
-    .menu ul > li > span {
-      padding: 0.675rem; }
-    .menu ul > li > ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 2;
-      min-width: 120%; }
-      .menu ul > li > ul > li {
-        display: block;
-        position: relative; }
-        .menu ul > li > ul > li > a {
-          display: block;
-          padding: 0.3375rem 0.675rem;
-          white-space: nowrap;
-          background-color: #235282;
-          font-size: 13px;
-          font-size: 0.8rem;
-          line-height: 22px;
-          line-height: 1.35rem; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
-            color: #FFFFFF;
-            text-decoration: underline; }
-          .menu ul > li > ul > li > a:visited {
-            color: #FFFFFF; }
-          .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
-            color: #FFFFFF;
-            text-decoration: none;
-            border: none;
-            background: transparent; }
-          .menu ul > li > ul > li > a:active {
-            color: #FFFFFF; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link, .menu ul > li > ul > li > a:visited, .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:active {
-            text-decoration: none; }
-          .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
-            color: #FFFFFF;
-            background-color: #142e4a; }
-    .menu ul > li > ul > li > ul {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      min-width: 100%;
-      z-index: 3; }
-      .menu ul > li > ul > li > ul li a {
-        background-color: #295e96;
-        font-size: 11px;
-        font-size: 0.7rem;
-        line-height: 16px;
-        line-height: 1.0125rem; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
-          color: #FFFFFF;
-          text-decoration: underline; }
-        .menu ul > li > ul > li > ul li a:visited {
-          color: #FFFFFF; }
-        .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
-          color: #FFFFFF;
-          text-decoration: none;
-          border: none;
-          background: transparent; }
-        .menu ul > li > ul > li > ul li a:active {
-          color: #FFFFFF; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link, .menu ul > li > ul > li > ul li a:visited, .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:active {
-          text-decoration: none; }
-        .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
-          color: #FFFFFF;
-          background-color: #0f2337; }
-    .menu ul > li > ul > li:hover > ul {
-      display: block; }
-    .menu ul > li:hover > ul {
-      display: block; }
-      .menu ul > li:hover > ul > li {
-        display: block; }
-
-/*
-TOC (Table of contents)
-
-A toc or table of contents is a vertical menu based off a `<nav>` item.
-
-The first level can be configured on `_config.scss`.
-
-This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-Markup:
-<section>
-  <nav class="toc kill-link">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Section</a></li>
-      <li>
-        <a href="#">Works</a>
-        <ul>
-          <li>
-            <a href="#">Home</a></li>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Section</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Section</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">About us</a></li>
-          <li><span>Contact</span></li>
-          <li><span class="disabled">Exit</span></li>
-        </ul>
-      </li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.toc
-*/
-.toc ul li {
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: normal;
-  letter-spacing: initial;
-  text-transform: none;
-  text-transform: initial;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-  .toc ul li ul {
-    margin: 0.3375rem 0 0.675rem 1.35rem; }
-    .toc ul li ul li {
-      font-weight: normal;
-      font-size: 15px;
-      font-size: 0.95rem;
-      line-height: 22px;
-      line-height: 1.35rem; }
-    .toc ul li ul ul li {
-      font-size: 11px;
-      font-size: 0.7rem;
-      line-height: 16px;
-      line-height: 1.0125rem; }
-
-/*
-Tag
-
-Used for tag-like elements. They can be keywords, but also small elements that need some visual highlighting.
-
-They need to be set on inline or inline-block elements.
-
-If a link, it changes the link decoration for a background-color modification.
-
-A small margin is applied in order to allow for lists of tags.
-
-Wrappers `.right` and `.center` know how to switch margins.
-
-.tag--success       - Applies the success color
-.tag--warning       - Applies the warning color
-.tag--error         - Applies the error color
-.tag--primary       - Applies the primary color
-.tag--secondary     - Applies the secondary color
-
-Markup:
-<p><span class="tag {{ modifier_class }}">This is a tag-like element</span><a class="tag {{ modifier_class }}">Another one!</a></p>
-
-Styleguide Components.tag
-*/
-.tag, .selectr-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  padding: 0 0.45rem;
-  background-color: #dee0e4;
-  color: #1A1A19;
-  border-radius: 0px;
-  margin-right: 0.45rem;
-  font-weight: normal; }
-  .tag.tag--success, .tag--success.selectr-tag {
-    background-color: #63c093;
-    color: #1A1A19; }
-  .tag.tag--warning, .tag--warning.selectr-tag {
-    background-color: #aaac30;
-    color: #FFFFFF; }
-    .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--warning a:visited, .tag--warning.selectr-tag a:visited {
-      color: #fff; }
-    .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus, .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    .tag.tag--warning a:active, .tag--warning.selectr-tag a:active {
-      color: #b3c9e0; }
-  .tag.tag--error, .tag--error.selectr-tag {
-    background-color: #ac3230;
-    color: #FFFFFF; }
-    .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--error a:visited, .tag--error.selectr-tag a:visited {
-      color: #fff; }
-    .tag.tag--error a:focus, .tag--error.selectr-tag a:focus, .tag.tag--error a:hover, .tag--error.selectr-tag a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    .tag.tag--error a:active, .tag--error.selectr-tag a:active {
-      color: #b3c9e0; }
-  .tag.tag--primary, .tag--primary.selectr-tag {
-    background-color: #2b619a;
-    color: #FFFFFF; }
-    .tag.tag--primary a, .tag--primary.selectr-tag a, .tag.tag--primary a:link, .tag--primary.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--primary a:visited, .tag--primary.selectr-tag a:visited {
-      color: #fff; }
-    .tag.tag--primary a:focus, .tag--primary.selectr-tag a:focus, .tag.tag--primary a:hover, .tag--primary.selectr-tag a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    .tag.tag--primary a:active, .tag--primary.selectr-tag a:active {
-      color: #b3c9e0; }
-  .tag.tag--secondary, .tag--secondary.selectr-tag {
-    background-color: #1e456e;
-    color: #FFFFFF; }
-    .tag.tag--secondary a, .tag--secondary.selectr-tag a, .tag.tag--secondary a:link, .tag--secondary.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--secondary a:visited, .tag--secondary.selectr-tag a:visited {
-      color: #fff; }
-    .tag.tag--secondary a:focus, .tag--secondary.selectr-tag a:focus, .tag.tag--secondary a:hover, .tag--secondary.selectr-tag a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    .tag.tag--secondary a:active, .tag--secondary.selectr-tag a:active {
-      color: #b3c9e0; }
-  .right .tag, .right .selectr-tag {
-    margin-right: 0;
-    margin-left: 0.45rem; }
-  .center .tag, .center .selectr-tag {
-    margin-right: 0.225rem;
-    margin-left: 0.225rem; }
-
-a.tag, a.selectr-tag {
-  cursor: pointer; }
-  a.tag, a.selectr-tag, a.tag:link, a.selectr-tag:link, a.tag:visited, a.selectr-tag:visited, a.tag:focus, a.selectr-tag:focus, a.tag:hover, a.selectr-tag:hover, a.tag:active, a.selectr-tag:active {
-    text-decoration: none; }
-  a.tag:hover, a.selectr-tag:hover, a.tag:focus, a.selectr-tag:focus {
-    background-color: #959699;
-    color: #1A1A19; }
-  a.tag.tag--success:hover, a.tag--success.selectr-tag:hover, a.tag.tag--success:focus, a.tag--success.selectr-tag:focus {
-    background-color: #428162;
-    color: #FFFFFF; }
-    a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--success:hover a:visited, a.tag--success.selectr-tag:hover a:visited, a.tag.tag--success:focus a:visited, a.tag--success.selectr-tag:focus a:visited {
-      color: #fff; }
-    a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    a.tag.tag--success:hover a:active, a.tag--success.selectr-tag:hover a:active, a.tag.tag--success:focus a:active, a.tag--success.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-  a.tag.tag--warning:hover, a.tag--warning.selectr-tag:hover, a.tag.tag--warning:focus, a.tag--warning.selectr-tag:focus {
-    background-color: #727320;
-    color: #FFFFFF; }
-    a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--warning:hover a:visited, a.tag--warning.selectr-tag:hover a:visited, a.tag.tag--warning:focus a:visited, a.tag--warning.selectr-tag:focus a:visited {
-      color: #fff; }
-    a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    a.tag.tag--warning:hover a:active, a.tag--warning.selectr-tag:hover a:active, a.tag.tag--warning:focus a:active, a.tag--warning.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-  a.tag.tag--error:hover, a.tag--error.selectr-tag:hover, a.tag.tag--error:focus, a.tag--error.selectr-tag:focus {
-    background-color: #732220;
-    color: #FFFFFF; }
-    a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--error:hover a:visited, a.tag--error.selectr-tag:hover a:visited, a.tag.tag--error:focus a:visited, a.tag--error.selectr-tag:focus a:visited {
-      color: #fff; }
-    a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    a.tag.tag--error:hover a:active, a.tag--error.selectr-tag:hover a:active, a.tag.tag--error:focus a:active, a.tag--error.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-  a.tag.tag--primary:hover, a.tag--primary.selectr-tag:hover, a.tag.tag--primary:focus, a.tag--primary.selectr-tag:focus {
-    background-color: #1d4167;
-    color: #FFFFFF; }
-    a.tag.tag--primary:hover a, a.tag--primary.selectr-tag:hover a, a.tag.tag--primary:hover a:link, a.tag--primary.selectr-tag:hover a:link, a.tag.tag--primary:focus a, a.tag--primary.selectr-tag:focus a, a.tag.tag--primary:focus a:link, a.tag--primary.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--primary:hover a:visited, a.tag--primary.selectr-tag:hover a:visited, a.tag.tag--primary:focus a:visited, a.tag--primary.selectr-tag:focus a:visited {
-      color: #fff; }
-    a.tag.tag--primary:hover a:focus, a.tag--primary.selectr-tag:hover a:focus, a.tag.tag--primary:hover a:hover, a.tag--primary.selectr-tag:hover a:hover, a.tag.tag--primary:focus a:focus, a.tag--primary.selectr-tag:focus a:focus, a.tag.tag--primary:focus a:hover, a.tag--primary.selectr-tag:focus a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    a.tag.tag--primary:hover a:active, a.tag--primary.selectr-tag:hover a:active, a.tag.tag--primary:focus a:active, a.tag--primary.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-  a.tag.tag--secondary:hover, a.tag--secondary.selectr-tag:hover, a.tag.tag--secondary:focus, a.tag--secondary.selectr-tag:focus {
-    background-color: #142e4a;
-    color: #FFFFFF; }
-    a.tag.tag--secondary:hover a, a.tag--secondary.selectr-tag:hover a, a.tag.tag--secondary:hover a:link, a.tag--secondary.selectr-tag:hover a:link, a.tag.tag--secondary:focus a, a.tag--secondary.selectr-tag:focus a, a.tag.tag--secondary:focus a:link, a.tag--secondary.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--secondary:hover a:visited, a.tag--secondary.selectr-tag:hover a:visited, a.tag.tag--secondary:focus a:visited, a.tag--secondary.selectr-tag:focus a:visited {
-      color: #fff; }
-    a.tag.tag--secondary:hover a:focus, a.tag--secondary.selectr-tag:hover a:focus, a.tag.tag--secondary:hover a:hover, a.tag--secondary.selectr-tag:hover a:hover, a.tag.tag--secondary:focus a:focus, a.tag--secondary.selectr-tag:focus a:focus, a.tag.tag--secondary:focus a:hover, a.tag--secondary.selectr-tag:focus a:hover {
-      color: #b3c9e0;
-      text-decoration: none;
-      border: none;
-      background: transparent; }
-    a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-
-/*
-Alerts
-
-Boxes with background-colors to draw the user's attention towards specific messages.
-
-Any alert is automatically set as a `.text` to prevent paragraphs for setting an extra space.
-
-.alert--success     - Sets the color to indicate a positive action or message
-.alert--warning     - Sets the color to indicate a warning
-.alert--error       - Sets the color to indicate a negative action or message
-
-Markup:
-<section class="alert {{ modifier_class}}">
-	<p class="minititle">Hey ho, let's go</p>
-	<p>Dear user, you are required to <a href="#">read this very specific message</a> and take some action</p>
-</section>
-
-
-Styleguide Components.alert
-*/
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
@@ -3530,622 +3192,6 @@ Styleguide Huesitos.borders
   .bg-state-error h5, .bg-state-error .h5 h6, .bg-state-error .h6 {
     color: inherit; }
 
-.bg-blue-0 {
-  background-color: #e8eff6;
-  color: #1A1A19; }
-  .bg-blue-0 h1, .bg-blue-0 .h1,
-  .bg-blue-0 h2, .bg-blue-0 .h2,
-  .bg-blue-0 h3, .bg-blue-0 .h3,
-  .bg-blue-0 h4, .bg-blue-0 .h4,
-  .bg-blue-0 h5, .bg-blue-0 .h5 h6, .bg-blue-0 .h6 {
-    color: inherit; }
-
-.bg-blue-1 {
-  background-color: #cfddec;
-  color: #1A1A19; }
-  .bg-blue-1 h1, .bg-blue-1 .h1,
-  .bg-blue-1 h2, .bg-blue-1 .h2,
-  .bg-blue-1 h3, .bg-blue-1 .h3,
-  .bg-blue-1 h4, .bg-blue-1 .h4,
-  .bg-blue-1 h5, .bg-blue-1 .h5 h6, .bg-blue-1 .h6 {
-    color: inherit; }
-
-.bg-blue-2 {
-  background-color: #b3c9e0;
-  color: #1A1A19; }
-  .bg-blue-2 h1, .bg-blue-2 .h1,
-  .bg-blue-2 h2, .bg-blue-2 .h2,
-  .bg-blue-2 h3, .bg-blue-2 .h3,
-  .bg-blue-2 h4, .bg-blue-2 .h4,
-  .bg-blue-2 h5, .bg-blue-2 .h5 h6, .bg-blue-2 .h6 {
-    color: inherit; }
-
-.bg-blue-3 {
-  background-color: #92b2d3;
-  color: #1A1A19; }
-  .bg-blue-3 h1, .bg-blue-3 .h1,
-  .bg-blue-3 h2, .bg-blue-3 .h2,
-  .bg-blue-3 h3, .bg-blue-3 .h3,
-  .bg-blue-3 h4, .bg-blue-3 .h4,
-  .bg-blue-3 h5, .bg-blue-3 .h5 h6, .bg-blue-3 .h6 {
-    color: inherit; }
-
-.bg-blue-4 {
-  background-color: #6a95c3;
-  color: #1A1A19; }
-  .bg-blue-4 h1, .bg-blue-4 .h1,
-  .bg-blue-4 h2, .bg-blue-4 .h2,
-  .bg-blue-4 h3, .bg-blue-4 .h3,
-  .bg-blue-4 h4, .bg-blue-4 .h4,
-  .bg-blue-4 h5, .bg-blue-4 .h5 h6, .bg-blue-4 .h6 {
-    color: inherit; }
-
-.bg-blue-5 {
-  background-color: #306cac;
-  color: #FFFFFF; }
-  .bg-blue-5 a, .bg-blue-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-5 a:visited {
-    color: #fff; }
-  .bg-blue-5 a:focus, .bg-blue-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-5 a:active {
-    color: #b3c9e0; }
-  .bg-blue-5 h1, .bg-blue-5 .h1,
-  .bg-blue-5 h2, .bg-blue-5 .h2,
-  .bg-blue-5 h3, .bg-blue-5 .h3,
-  .bg-blue-5 h4, .bg-blue-5 .h4,
-  .bg-blue-5 h5, .bg-blue-5 .h5 h6, .bg-blue-5 .h6 {
-    color: inherit; }
-
-.bg-blue-6 {
-  background-color: #2b619a;
-  color: #FFFFFF; }
-  .bg-blue-6 a, .bg-blue-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-6 a:visited {
-    color: #fff; }
-  .bg-blue-6 a:focus, .bg-blue-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-6 a:active {
-    color: #b3c9e0; }
-  .bg-blue-6 h1, .bg-blue-6 .h1,
-  .bg-blue-6 h2, .bg-blue-6 .h2,
-  .bg-blue-6 h3, .bg-blue-6 .h3,
-  .bg-blue-6 h4, .bg-blue-6 .h4,
-  .bg-blue-6 h5, .bg-blue-6 .h5 h6, .bg-blue-6 .h6 {
-    color: inherit; }
-
-.bg-blue-7 {
-  background-color: #255486;
-  color: #FFFFFF; }
-  .bg-blue-7 a, .bg-blue-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-7 a:visited {
-    color: #fff; }
-  .bg-blue-7 a:focus, .bg-blue-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-7 a:active {
-    color: #b3c9e0; }
-  .bg-blue-7 h1, .bg-blue-7 .h1,
-  .bg-blue-7 h2, .bg-blue-7 .h2,
-  .bg-blue-7 h3, .bg-blue-7 .h3,
-  .bg-blue-7 h4, .bg-blue-7 .h4,
-  .bg-blue-7 h5, .bg-blue-7 .h5 h6, .bg-blue-7 .h6 {
-    color: inherit; }
-
-.bg-blue-8 {
-  background-color: #1e456e;
-  color: #FFFFFF; }
-  .bg-blue-8 a, .bg-blue-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-8 a:visited {
-    color: #fff; }
-  .bg-blue-8 a:focus, .bg-blue-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-8 a:active {
-    color: #b3c9e0; }
-  .bg-blue-8 h1, .bg-blue-8 .h1,
-  .bg-blue-8 h2, .bg-blue-8 .h2,
-  .bg-blue-8 h3, .bg-blue-8 .h3,
-  .bg-blue-8 h4, .bg-blue-8 .h4,
-  .bg-blue-8 h5, .bg-blue-8 .h5 h6, .bg-blue-8 .h6 {
-    color: inherit; }
-
-.bg-blue-9 {
-  background-color: #15304d;
-  color: #FFFFFF; }
-  .bg-blue-9 a, .bg-blue-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-blue-9 a:visited {
-    color: #fff; }
-  .bg-blue-9 a:focus, .bg-blue-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-blue-9 a:active {
-    color: #b3c9e0; }
-  .bg-blue-9 h1, .bg-blue-9 .h1,
-  .bg-blue-9 h2, .bg-blue-9 .h2,
-  .bg-blue-9 h3, .bg-blue-9 .h3,
-  .bg-blue-9 h4, .bg-blue-9 .h4,
-  .bg-blue-9 h5, .bg-blue-9 .h5 h6, .bg-blue-9 .h6 {
-    color: inherit; }
-
-.bg-green-0 {
-  background-color: #e6f5ee;
-  color: #1A1A19; }
-  .bg-green-0 h1, .bg-green-0 .h1,
-  .bg-green-0 h2, .bg-green-0 .h2,
-  .bg-green-0 h3, .bg-green-0 .h3,
-  .bg-green-0 h4, .bg-green-0 .h4,
-  .bg-green-0 h5, .bg-green-0 .h5 h6, .bg-green-0 .h6 {
-    color: inherit; }
-
-.bg-green-1 {
-  background-color: #cbeadb;
-  color: #1A1A19; }
-  .bg-green-1 h1, .bg-green-1 .h1,
-  .bg-green-1 h2, .bg-green-1 .h2,
-  .bg-green-1 h3, .bg-green-1 .h3,
-  .bg-green-1 h4, .bg-green-1 .h4,
-  .bg-green-1 h5, .bg-green-1 .h5 h6, .bg-green-1 .h6 {
-    color: inherit; }
-
-.bg-green-2 {
-  background-color: #aedec7;
-  color: #1A1A19; }
-  .bg-green-2 h1, .bg-green-2 .h1,
-  .bg-green-2 h2, .bg-green-2 .h2,
-  .bg-green-2 h3, .bg-green-2 .h3,
-  .bg-green-2 h4, .bg-green-2 .h4,
-  .bg-green-2 h5, .bg-green-2 .h5 h6, .bg-green-2 .h6 {
-    color: inherit; }
-
-.bg-green-3 {
-  background-color: #8bd0af;
-  color: #1A1A19; }
-  .bg-green-3 h1, .bg-green-3 .h1,
-  .bg-green-3 h2, .bg-green-3 .h2,
-  .bg-green-3 h3, .bg-green-3 .h3,
-  .bg-green-3 h4, .bg-green-3 .h4,
-  .bg-green-3 h5, .bg-green-3 .h5 h6, .bg-green-3 .h6 {
-    color: inherit; }
-
-.bg-green-4 {
-  background-color: #63c093;
-  color: #1A1A19; }
-  .bg-green-4 h1, .bg-green-4 .h1,
-  .bg-green-4 h2, .bg-green-4 .h2,
-  .bg-green-4 h3, .bg-green-4 .h3,
-  .bg-green-4 h4, .bg-green-4 .h4,
-  .bg-green-4 h5, .bg-green-4 .h5 h6, .bg-green-4 .h6 {
-    color: inherit; }
-
-.bg-green-5 {
-  background-color: #30ac70;
-  color: #FFFFFF; }
-  .bg-green-5 a, .bg-green-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-5 a:visited {
-    color: #fff; }
-  .bg-green-5 a:focus, .bg-green-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-5 a:active {
-    color: #b3c9e0; }
-  .bg-green-5 h1, .bg-green-5 .h1,
-  .bg-green-5 h2, .bg-green-5 .h2,
-  .bg-green-5 h3, .bg-green-5 .h3,
-  .bg-green-5 h4, .bg-green-5 .h4,
-  .bg-green-5 h5, .bg-green-5 .h5 h6, .bg-green-5 .h6 {
-    color: inherit; }
-
-.bg-green-6 {
-  background-color: #2b9b65;
-  color: #FFFFFF; }
-  .bg-green-6 a, .bg-green-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-6 a:visited {
-    color: #fff; }
-  .bg-green-6 a:focus, .bg-green-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-6 a:active {
-    color: #b3c9e0; }
-  .bg-green-6 h1, .bg-green-6 .h1,
-  .bg-green-6 h2, .bg-green-6 .h2,
-  .bg-green-6 h3, .bg-green-6 .h3,
-  .bg-green-6 h4, .bg-green-6 .h4,
-  .bg-green-6 h5, .bg-green-6 .h5 h6, .bg-green-6 .h6 {
-    color: inherit; }
-
-.bg-green-7 {
-  background-color: #258858;
-  color: #FFFFFF; }
-  .bg-green-7 a, .bg-green-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-7 a:visited {
-    color: #fff; }
-  .bg-green-7 a:focus, .bg-green-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-7 a:active {
-    color: #b3c9e0; }
-  .bg-green-7 h1, .bg-green-7 .h1,
-  .bg-green-7 h2, .bg-green-7 .h2,
-  .bg-green-7 h3, .bg-green-7 .h3,
-  .bg-green-7 h4, .bg-green-7 .h4,
-  .bg-green-7 h5, .bg-green-7 .h5 h6, .bg-green-7 .h6 {
-    color: inherit; }
-
-.bg-green-8 {
-  background-color: #1f7049;
-  color: #FFFFFF; }
-  .bg-green-8 a, .bg-green-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-8 a:visited {
-    color: #fff; }
-  .bg-green-8 a:focus, .bg-green-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-8 a:active {
-    color: #b3c9e0; }
-  .bg-green-8 h1, .bg-green-8 .h1,
-  .bg-green-8 h2, .bg-green-8 .h2,
-  .bg-green-8 h3, .bg-green-8 .h3,
-  .bg-green-8 h4, .bg-green-8 .h4,
-  .bg-green-8 h5, .bg-green-8 .h5 h6, .bg-green-8 .h6 {
-    color: inherit; }
-
-.bg-green-9 {
-  background-color: #165034;
-  color: #FFFFFF; }
-  .bg-green-9 a, .bg-green-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-green-9 a:visited {
-    color: #fff; }
-  .bg-green-9 a:focus, .bg-green-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-green-9 a:active {
-    color: #b3c9e0; }
-  .bg-green-9 h1, .bg-green-9 .h1,
-  .bg-green-9 h2, .bg-green-9 .h2,
-  .bg-green-9 h3, .bg-green-9 .h3,
-  .bg-green-9 h4, .bg-green-9 .h4,
-  .bg-green-9 h5, .bg-green-9 .h5 h6, .bg-green-9 .h6 {
-    color: inherit; }
-
-.bg-red-0 {
-  background-color: #f6ebea;
-  color: #1A1A19; }
-  .bg-red-0 h1, .bg-red-0 .h1,
-  .bg-red-0 h2, .bg-red-0 .h2,
-  .bg-red-0 h3, .bg-red-0 .h3,
-  .bg-red-0 h4, .bg-red-0 .h4,
-  .bg-red-0 h5, .bg-red-0 .h5 h6, .bg-red-0 .h6 {
-    color: inherit; }
-
-.bg-red-1 {
-  background-color: #edd4d4;
-  color: #1A1A19; }
-  .bg-red-1 h1, .bg-red-1 .h1,
-  .bg-red-1 h2, .bg-red-1 .h2,
-  .bg-red-1 h3, .bg-red-1 .h3,
-  .bg-red-1 h4, .bg-red-1 .h4,
-  .bg-red-1 h5, .bg-red-1 .h5 h6, .bg-red-1 .h6 {
-    color: inherit; }
-
-.bg-red-2 {
-  background-color: #e3bbba;
-  color: #1A1A19; }
-  .bg-red-2 h1, .bg-red-2 .h1,
-  .bg-red-2 h2, .bg-red-2 .h2,
-  .bg-red-2 h3, .bg-red-2 .h3,
-  .bg-red-2 h4, .bg-red-2 .h4,
-  .bg-red-2 h5, .bg-red-2 .h5 h6, .bg-red-2 .h6 {
-    color: inherit; }
-
-.bg-red-3 {
-  background-color: #d79c9b;
-  color: #1A1A19; }
-  .bg-red-3 h1, .bg-red-3 .h1,
-  .bg-red-3 h2, .bg-red-3 .h2,
-  .bg-red-3 h3, .bg-red-3 .h3,
-  .bg-red-3 h4, .bg-red-3 .h4,
-  .bg-red-3 h5, .bg-red-3 .h5 h6, .bg-red-3 .h6 {
-    color: inherit; }
-
-.bg-red-4 {
-  background-color: #c77473;
-  color: #1A1A19; }
-  .bg-red-4 h1, .bg-red-4 .h1,
-  .bg-red-4 h2, .bg-red-4 .h2,
-  .bg-red-4 h3, .bg-red-4 .h3,
-  .bg-red-4 h4, .bg-red-4 .h4,
-  .bg-red-4 h5, .bg-red-4 .h5 h6, .bg-red-4 .h6 {
-    color: inherit; }
-
-.bg-red-5 {
-  background-color: #ac3230;
-  color: #FFFFFF; }
-  .bg-red-5 a, .bg-red-5 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-5 a:visited {
-    color: #fff; }
-  .bg-red-5 a:focus, .bg-red-5 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-5 a:active {
-    color: #b3c9e0; }
-  .bg-red-5 h1, .bg-red-5 .h1,
-  .bg-red-5 h2, .bg-red-5 .h2,
-  .bg-red-5 h3, .bg-red-5 .h3,
-  .bg-red-5 h4, .bg-red-5 .h4,
-  .bg-red-5 h5, .bg-red-5 .h5 h6, .bg-red-5 .h6 {
-    color: inherit; }
-
-.bg-red-6 {
-  background-color: #9a2d2b;
-  color: #FFFFFF; }
-  .bg-red-6 a, .bg-red-6 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-6 a:visited {
-    color: #fff; }
-  .bg-red-6 a:focus, .bg-red-6 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-6 a:active {
-    color: #b3c9e0; }
-  .bg-red-6 h1, .bg-red-6 .h1,
-  .bg-red-6 h2, .bg-red-6 .h2,
-  .bg-red-6 h3, .bg-red-6 .h3,
-  .bg-red-6 h4, .bg-red-6 .h4,
-  .bg-red-6 h5, .bg-red-6 .h5 h6, .bg-red-6 .h6 {
-    color: inherit; }
-
-.bg-red-7 {
-  background-color: #872725;
-  color: #FFFFFF; }
-  .bg-red-7 a, .bg-red-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-7 a:visited {
-    color: #fff; }
-  .bg-red-7 a:focus, .bg-red-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-7 a:active {
-    color: #b3c9e0; }
-  .bg-red-7 h1, .bg-red-7 .h1,
-  .bg-red-7 h2, .bg-red-7 .h2,
-  .bg-red-7 h3, .bg-red-7 .h3,
-  .bg-red-7 h4, .bg-red-7 .h4,
-  .bg-red-7 h5, .bg-red-7 .h5 h6, .bg-red-7 .h6 {
-    color: inherit; }
-
-.bg-red-8 {
-  background-color: #6e201e;
-  color: #FFFFFF; }
-  .bg-red-8 a, .bg-red-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-8 a:visited {
-    color: #fff; }
-  .bg-red-8 a:focus, .bg-red-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-8 a:active {
-    color: #b3c9e0; }
-  .bg-red-8 h1, .bg-red-8 .h1,
-  .bg-red-8 h2, .bg-red-8 .h2,
-  .bg-red-8 h3, .bg-red-8 .h3,
-  .bg-red-8 h4, .bg-red-8 .h4,
-  .bg-red-8 h5, .bg-red-8 .h5 h6, .bg-red-8 .h6 {
-    color: inherit; }
-
-.bg-red-9 {
-  background-color: #4d1615;
-  color: #FFFFFF; }
-  .bg-red-9 a, .bg-red-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-red-9 a:visited {
-    color: #fff; }
-  .bg-red-9 a:focus, .bg-red-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-red-9 a:active {
-    color: #b3c9e0; }
-  .bg-red-9 h1, .bg-red-9 .h1,
-  .bg-red-9 h2, .bg-red-9 .h2,
-  .bg-red-9 h3, .bg-red-9 .h3,
-  .bg-red-9 h4, .bg-red-9 .h4,
-  .bg-red-9 h5, .bg-red-9 .h5 h6, .bg-red-9 .h6 {
-    color: inherit; }
-
-.bg-gray-0 {
-  background-color: #f8f9f9;
-  color: #1A1A19; }
-  .bg-gray-0 h1, .bg-gray-0 .h1,
-  .bg-gray-0 h2, .bg-gray-0 .h2,
-  .bg-gray-0 h3, .bg-gray-0 .h3,
-  .bg-gray-0 h4, .bg-gray-0 .h4,
-  .bg-gray-0 h5, .bg-gray-0 .h5 h6, .bg-gray-0 .h6 {
-    color: inherit; }
-
-.bg-gray-1 {
-  background-color: #ecedef;
-  color: #1A1A19; }
-  .bg-gray-1 h1, .bg-gray-1 .h1,
-  .bg-gray-1 h2, .bg-gray-1 .h2,
-  .bg-gray-1 h3, .bg-gray-1 .h3,
-  .bg-gray-1 h4, .bg-gray-1 .h4,
-  .bg-gray-1 h5, .bg-gray-1 .h5 h6, .bg-gray-1 .h6 {
-    color: inherit; }
-
-.bg-gray-2 {
-  background-color: #dee0e4;
-  color: #1A1A19; }
-  .bg-gray-2 h1, .bg-gray-2 .h1,
-  .bg-gray-2 h2, .bg-gray-2 .h2,
-  .bg-gray-2 h3, .bg-gray-2 .h3,
-  .bg-gray-2 h4, .bg-gray-2 .h4,
-  .bg-gray-2 h5, .bg-gray-2 .h5 h6, .bg-gray-2 .h6 {
-    color: inherit; }
-
-.bg-gray-3 {
-  background-color: #cfd3d7;
-  color: #1A1A19; }
-  .bg-gray-3 h1, .bg-gray-3 .h1,
-  .bg-gray-3 h2, .bg-gray-3 .h2,
-  .bg-gray-3 h3, .bg-gray-3 .h3,
-  .bg-gray-3 h4, .bg-gray-3 .h4,
-  .bg-gray-3 h5, .bg-gray-3 .h5 h6, .bg-gray-3 .h6 {
-    color: inherit; }
-
-.bg-gray-4 {
-  background-color: #bfc4ca;
-  color: #1A1A19; }
-  .bg-gray-4 h1, .bg-gray-4 .h1,
-  .bg-gray-4 h2, .bg-gray-4 .h2,
-  .bg-gray-4 h3, .bg-gray-4 .h3,
-  .bg-gray-4 h4, .bg-gray-4 .h4,
-  .bg-gray-4 h5, .bg-gray-4 .h5 h6, .bg-gray-4 .h6 {
-    color: inherit; }
-
-.bg-gray-5 {
-  background-color: #acb3bb;
-  color: #1A1A19; }
-  .bg-gray-5 h1, .bg-gray-5 .h1,
-  .bg-gray-5 h2, .bg-gray-5 .h2,
-  .bg-gray-5 h3, .bg-gray-5 .h3,
-  .bg-gray-5 h4, .bg-gray-5 .h4,
-  .bg-gray-5 h5, .bg-gray-5 .h5 h6, .bg-gray-5 .h6 {
-    color: inherit; }
-
-.bg-gray-6 {
-  background-color: #98a0aa;
-  color: #1A1A19; }
-  .bg-gray-6 h1, .bg-gray-6 .h1,
-  .bg-gray-6 h2, .bg-gray-6 .h2,
-  .bg-gray-6 h3, .bg-gray-6 .h3,
-  .bg-gray-6 h4, .bg-gray-6 .h4,
-  .bg-gray-6 h5, .bg-gray-6 .h5 h6, .bg-gray-6 .h6 {
-    color: inherit; }
-
-.bg-gray-7 {
-  background-color: #7f8a96;
-  color: #FFFFFF; }
-  .bg-gray-7 a, .bg-gray-7 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-7 a:visited {
-    color: #fff; }
-  .bg-gray-7 a:focus, .bg-gray-7 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-7 a:active {
-    color: #b3c9e0; }
-  .bg-gray-7 h1, .bg-gray-7 .h1,
-  .bg-gray-7 h2, .bg-gray-7 .h2,
-  .bg-gray-7 h3, .bg-gray-7 .h3,
-  .bg-gray-7 h4, .bg-gray-7 .h4,
-  .bg-gray-7 h5, .bg-gray-7 .h5 h6, .bg-gray-7 .h6 {
-    color: inherit; }
-
-.bg-gray-8 {
-  background-color: #606d7c;
-  color: #FFFFFF; }
-  .bg-gray-8 a, .bg-gray-8 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-8 a:visited {
-    color: #fff; }
-  .bg-gray-8 a:focus, .bg-gray-8 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-8 a:active {
-    color: #b3c9e0; }
-  .bg-gray-8 h1, .bg-gray-8 .h1,
-  .bg-gray-8 h2, .bg-gray-8 .h2,
-  .bg-gray-8 h3, .bg-gray-8 .h3,
-  .bg-gray-8 h4, .bg-gray-8 .h4,
-  .bg-gray-8 h5, .bg-gray-8 .h5 h6, .bg-gray-8 .h6 {
-    color: inherit; }
-
-.bg-gray-9 {
-  background-color: #384048;
-  color: #FFFFFF; }
-  .bg-gray-9 a, .bg-gray-9 a:link {
-    color: #fff;
-    text-decoration: underline; }
-  .bg-gray-9 a:visited {
-    color: #fff; }
-  .bg-gray-9 a:focus, .bg-gray-9 a:hover {
-    color: #b3c9e0;
-    text-decoration: none;
-    border: none;
-    background: transparent; }
-  .bg-gray-9 a:active {
-    color: #b3c9e0; }
-  .bg-gray-9 h1, .bg-gray-9 .h1,
-  .bg-gray-9 h2, .bg-gray-9 .h2,
-  .bg-gray-9 h3, .bg-gray-9 .h3,
-  .bg-gray-9 h4, .bg-gray-9 .h4,
-  .bg-gray-9 h5, .bg-gray-9 .h5 h6, .bg-gray-9 .h6 {
-    color: inherit; }
-
 /*
 Gutter modifiers
 
@@ -4275,6 +3321,10 @@ Styleguide Huesitos.gutter-modifier
   width: 0;
   height: 0;
   content: '';
+  -o-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -ms-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -moz-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+  -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
   transform: rotate(0deg) translate3d(0px, -50%, 0px);
   border-width: 4px 4px 0 4px;
   border-style: solid;
@@ -4345,6 +3395,10 @@ Styleguide Huesitos.gutter-modifier
   height: 0.9rem;
   padding: 0;
   cursor: pointer;
+  -o-transform: translate3d(0px, -50%, 0px);
+  -ms-transform: translate3d(0px, -50%, 0px);
+  -moz-transform: translate3d(0px, -50%, 0px);
+  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
@@ -4430,11 +3484,19 @@ Styleguide Huesitos.gutter-modifier
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 .selectr-input-container.active,
@@ -4444,7 +3506,7 @@ Styleguide Huesitos.gutter-modifier
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - 1.35rem);
+  width: calc(100% - (1.35rem));
   margin: 0.675rem; }
 
 .selectr-notice {
@@ -4527,6 +3589,10 @@ input.selectr-input {
   border-radius: 0px 0px 0 0; }
 
 .selectr-container.open .selectr-selected::after {
+  -o-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -ms-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -moz-transform: rotate(180deg) translate3d(0px, 50%, 0px);
+  -webkit-transform: rotate(180deg) translate3d(0px, 50%, 0px);
   transform: rotate(180deg) translate3d(0px, 50%, 0px); }
 
 .selectr-disabled {
@@ -4578,18 +3644,38 @@ input.selectr-input {
   width: 20px;
   height: 20px;
   content: '';
+  -o-transform: translate3d(0px, -50%, 0px);
+  -ms-transform: translate3d(0px, -50%, 0px);
+  -moz-transform: translate3d(0px, -50%, 0px);
+  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
+  -o-transform-origin: 50% 0 0;
+  -ms-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
+  -moz-animation: 500ms linear 0s normal forwards infinite running spin;
+  -webkit-animation: 500ms linear 0s normal forwards infinite running spin;
   animation: 500ms linear 0s normal forwards infinite running spin;
   border-width: 3px;
   border-style: solid;
   border-color: #aaa #ddd #ddd;
   border-radius: 50%; }
 
-@keyframes spin {
+@-webkit-keyframes spin {
   0% {
+    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
     transform: rotate(0deg) translate3d(0px, -50%, 0px); }
   100% {
+    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
+    transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
+    transform: rotate(0deg) translate3d(0px, -50%, 0px); }
+  100% {
+    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
@@ -4606,11 +3692,15 @@ input.selectr-input {
   top: auto;
   bottom: 100%; }
 
-.selectr-container :-ms-input-placeholder {
+.selectr-container ::-webkit-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 
-.selectr-container ::-ms-input-placeholder {
+.selectr-container ::-moz-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container :-ms-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 
@@ -4747,9 +3837,6 @@ a.link-strategy-smart, a.link-strategy-smart:link {
   background-size: .05em 1px, .05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
   a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
     text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
     background: #cfbae3; }

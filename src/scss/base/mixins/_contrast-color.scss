@@ -1,22 +1,3 @@
-/*
-Color
-
-SASS functions that allow to extract colors from the palette and manipulate them.
-
-Styleguide Functions.Color
-*/
-
-/*
-tint($color, $dilution)
-
-Sass Function extracted from compass.  Lightens the $color by mixing it with white as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of white to mix
-
-Styleguide Functions.Color.Tint
-*/
-
 @function tint($color, $dilution: 50) {
 	$white: rgba(255, 255, 255, 1);
 	@if $color == "transparent" {
@@ -26,17 +7,6 @@ Styleguide Functions.Color.Tint
 	$tint-color: mix($color, $white, 100 - $dilution);
 	@return $tint-color; 
 }
-
-/*
-shade($color, $dilution)
-
-Sass Function extracted from compass. Darkens the $color by mixing it with black as specified by $dilution.
-
-$color - Color to modify
-$dilution - % of black to mix
-
-Styleguide Functions.Color.Shade
-*/
   
 @function shade($color, $dilution: 50) {
 	$black: rgba(0, 0, 0, 1);
@@ -48,18 +18,6 @@ Styleguide Functions.Color.Shade
 	@return $shade-color; 
 }
 
-/*
-contrast-color($color, $dark, $light)
-
-Returns a $dark or $light color value according to the background-color provided as $color.
-
-$color - Background-color to check
-$dark  - Dark color to return, defaults to $contrast-dark
-$light   - Light color to return, defaults to $contrast-light
-
-Styleguide Functions.Color.ContrastColor
-*/
-
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
 	@if (lightness($color) > 55) { // 50 is too low
 		@return $dark; // Lighter backgorund, return dark color
@@ -68,18 +26,30 @@ Styleguide Functions.Color.ContrastColor
 	}
 }
 
-/*
-contrast-links($color)
+@function darken-color($color) {
+	@return shade($color, $color-modify-ratio);
+}
 
-Returns a link formatted using `$inverse-link-` values from `_config.scss` if needed against the provided background-color.
+@function lighten-color($color) {
+	@return tint($color, $color-modify-ratio);
+}
 
-$color - Background-color to check
-
-Styleguide Mixins.Color.ContrastColor
-*/
+@function get-color($color, $value) {
+	$curmap : map-get($colors, $color);
+	@if type-of($curmap) == map {
+		$map-exists: map-has-key($curmap, $value);
+		@if $map-exists == true {
+			@return map-get($curmap, $value);
+		} @else  {
+			@error 'Parece que el color no existe. Revisa tu get-color()';
+		}
+	} @else {
+		@error 'Parece que el mapa de color no existe. Revisa tu get-color()';
+	}
+}
 
 @mixin contrast-links($color) {
-	@if (lightness($color) < 55) { // 50 is too low
+	@if (lightness($color) < $lightness-threshold) { // 50 is too low
 		a {
 			@include set-link(
 				$inverse-link-color,
@@ -90,27 +60,6 @@ Styleguide Mixins.Color.ContrastColor
 		}
 	}
 }
-
-
-/*
-Color
-
-Mixins that perform color complex operations (contrasts, etc...)
-
-Styleguide Mixins.Color
-*/
-
-/*
-background-contrast($color)
-
-Given a $color, ensures that all text elements and links are correctly contrasted against that background.
-
-Uses contrast-color($color) SASS function to perform the lightness calculation.
-
-$color - Background-color
-
-Styleguide Mixins.Color.ContrastColor
-*/
 
 @mixin background-contrast($color, $include-typography: false) {
 	background-color: $color;
@@ -128,23 +77,15 @@ Styleguide Mixins.Color.ContrastColor
 	}
 }
 
-@mixin background-split-color($color) {
-	background-color: lighten-color($color, 70%);
-	color: darken-color($color, 50%);
+@mixin background-split-color($color, $lighten-amount: $lighten-split-ratio, $darken-amount: $darken-split-ratio) {
+	background-color: tint($color, $lighten-amount);
+	color: shade($color, $darken-amount);
 	a {
 		@include set-link(
-			darken-color($color, 50%),
-			darken-color($color, 50%),
+			shade($color, $darken-amount),
+			shade($color, $darken-amount),
 			$color,
-			darken-color($color, 50%)
+			shade($color, $darken-amount)
 		)
 	} 
-}
-
-@function darken-color($color, $color-modify-ratio: $color-modify-ratio) {
-	@return shade($color, $color-modify-ratio);
-}
-
-@function lighten-color($color, $color-modify-ratio: $color-modify-ratio) {
-	@return tint($color, $color-modify-ratio);
 }
