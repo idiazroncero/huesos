@@ -1,0 +1,122 @@
+@mixin button-outline($color) {
+    border-color: $color;
+    color: $color;
+    background-color: transparent;
+}
+
+@mixin button-link-outline($color) {
+    &:link,
+    &:active,
+    &:visited {
+        color: $color;
+    }
+}
+
+@mixin button-background($color) {
+    border-color: $color;
+    background-color:$color;
+    color: contrast-color($color);
+}
+
+@mixin button-link-background($color) {
+    &:link,
+    &:active,
+    &:visited {
+        color: contrast-color($color);
+    }
+}
+
+@mixin button-split($color) {
+    @include background-split-color($color, $include-links: false);
+    border-color: tint($color, $lighten-split-ratio);
+}
+
+@mixin button-link-split($color) {
+    &:link,
+    &:active,
+    &:visited {
+        color: shade($color, $darken-split-ratio);
+    }
+}
+
+@mixin button-split-inverse($color) {
+    @include background-split-color-inverse($color, $include-links: false);
+    border-color: shade($color, $darken-split-ratio);
+}
+
+@mixin button-link-split-inverse($color) {
+    &:link,
+    &:active,
+    &:visited {
+        color: tint($color, $lighten-split-ratio);
+    }
+}
+
+
+@mixin style-button(
+        $color, 
+        $button-strategy-default : $button-strategy-default,
+        $button-strategy-hover : $button-strategy-hover,  
+        ) 
+    {
+    border-radius: $button-border-radius;
+
+	@if $button-strategy-default == 'outline' {
+        @include button-outline($color);
+    } @else if $button-strategy-default == 'background' {
+        @include button-background($color);
+    } @else if $button-strategy-default == 'split' {
+        @include button-split($color);
+    } @else if $button-strategy-default == 'split-inverse' {
+        @include button-split-inverse($color);
+    }
+
+    &:hover, 
+    &:focus {
+        @if $button-strategy-hover == 'outline' {
+            @include button-outline($color);
+        } @else if $button-strategy-hover == 'background' {
+            @include button-background($color);
+        } @else if $button-strategy-hover == 'split' {
+            @include button-split($color);
+        } @else if $button-strategy-hover == 'split-inverse' {
+            @include button-split-inverse($color);
+        }
+    }
+}
+    
+    
+
+@mixin style-link-button(
+        $color, 
+        $button-strategy-default : $button-strategy-default,
+        $button-strategy-hover : $button-strategy-hover,  
+        ) 
+    {
+
+    border-radius: $button-border-radius;
+
+	@if $button-strategy-default == 'outline' {
+        @include button-link-outline($color);
+    } @else if $button-strategy-default == 'background' {
+        @include button-link-background($color);
+    } @else if $button-strategy-default == 'split' {
+        @include button-link-split($color);
+    } @else if $button-strategy-default == 'split-inverse' {
+        @include button-link-split-inverse($color);
+    }
+
+    &:hover, 
+    &:focus {
+        @if $button-strategy-hover == 'outline' {
+            @include button-link-outline($color);
+        } @else if $button-strategy-hover == 'background' {
+            @include button-link-background($color);
+        } @else if $button-strategy-hover == 'split' {
+            @include button-link-split($color);
+        } @else if $button-strategy-hover == 'split-inverse' {
+            @include button-link-split-inverse($color);
+        }
+    }
+}
+

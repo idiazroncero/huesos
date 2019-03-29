@@ -71,9 +71,13 @@ Styleguide Mixins.links.setLink
 			@if $link-highlight-on-hover {
 				@include set-link-decoration($strategy);
 			} @else {
-				text-decoration:none;
-				border:none;
-				background:transparent;
+				@if strategy == 'underline' {
+					text-decoration:none;
+				} @else if strategy == 'border' {
+					border:none;
+				} @else if strategy == 'mark' {
+					background:transparent;
+				}
 			}
 		}
 	}

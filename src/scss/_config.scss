@@ -3,12 +3,13 @@
 // Using https://palx.jxnblk.com/
 // --------------------
 
+// We recommend to import a palx palette and use their nomenclature
 @import "base/palettes/306BAC";
 
 $colors: (
 	base: (
 		"primary": $blue6,
-		"secondary": $blue8,
+		"secondary": $orange6,
 		"separator": $gray2,
 		"black": $gray9,
 		"white": #fff,
@@ -51,7 +52,7 @@ $darken-split-ratio: 50%;
 $lighten-split-ratio: 70%;
 
 // Lightness threshold for color invertion. A value between 0-100.
-$lightness-threshold: 55;
+$lightness-threshold: 60;
 
 // Wether to generate helper classes or not.
 // Set this to false to avoid bloating your css
@@ -277,15 +278,40 @@ $input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-font-family: $font-main;
-$button-strategy: 'border'; // Options: border, background
-$button-strategy-border: 'fill'; // Only if $button-strategy = border. Options: fill, highlight
-$button-color: $gray8;
-$button-border-width: 2px;
-$button-border: $button-border-width solid $button-color;
+$button-border-width: 1px;
 $button-padding: 0 ($spacer / 2);
 $button-border-radius: 2px; // $border-radius;
 $button-weight: $bold;
 $button-invert-color: false; // ONly valid on border:fill and background
+
+// BUILD YOUR OWN BUTTON
+// You can choose one strategy for every state!
+//
+// Available strategies: 
+// - outline - Colored outline and text, background transparent
+// - background - Background solid, font contrasted.
+// - split - Background colored dim, font colored dark, based on same color
+// - split-inverse - Inverse of split
+//
+// Note that background and outline can be considered "inverse" of each other
+$button-strategy-default: 'outline';
+$button-strategy-hover: 'background';
+
+$button-alternative-strategies: (
+	split : (
+		default : 'split', 
+		hover : 'split-inverse'
+	),
+);
+
+
+$button-states : (
+	primary: get-color(base, primary), 
+	secondary: get-color(base, secondary), 
+	success: get-color(state, success), 
+	warning: get-color(state, warning),  
+	error: get-color(state, error), 
+);
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;

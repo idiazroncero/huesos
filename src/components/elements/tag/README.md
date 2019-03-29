@@ -10,9 +10,3 @@ A small margin is applied in order to allow for lists of tags.
 
 Wrappers `.right` and `.center` know how to switch margins.
 
-.tag--success       - Applies the success color
-.tag--warning       - Applies the warning color
-.tag--error         - Applies the error color
-.tag--primary       - Applies the primary color
-.tag--secondary     - Applies the secondary color
-

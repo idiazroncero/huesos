@@ -94,6 +94,7 @@
   
 @mixin form-reset-button {
 	background: none;
+	border:$button-border-width solid transparent;
 	outline: none;
   
 	&::-moz-focus-inner {

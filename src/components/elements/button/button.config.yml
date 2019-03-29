@@ -1,0 +1,49 @@
+{
+  "context" : {
+    "text" : "I'm a button"
+  },
+  "variants" : [
+      { 
+        "name" : 'Primary',
+        "context": {
+          "modifier": "button--primary",
+          "text": "Main"
+        }
+      },
+      { 
+        "name" : 'Secondary',
+        "context": {
+          "modifier": "button--secondary",
+          "text": "Main"
+        }
+      },
+      { 
+        "name" : 'Success',
+        "context": {
+          "modifier": "button--success",
+          "text": "Success"
+        }
+      },
+      { 
+        "name" : 'Warning',
+        "context": {
+          "modifier": "button--warning",
+          "text": "Warning"
+        }
+      },
+      { 
+        "name" : 'Error',
+        "context": {
+          "modifier": "button--error",
+          "text": "Error"
+        }
+      },
+      { 
+        "name" : 'Disabled',
+        "context": {
+          "modifier": "disabled",
+          "text": "Disabled"
+        }
+      },
+  ]
+}
