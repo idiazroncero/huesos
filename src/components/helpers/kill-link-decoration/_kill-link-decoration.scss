@@ -1,0 +1,23 @@
+
+
+
+/*
+Kill Link Decoration
+
+Helper class that kills al link decoration on a given block
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link-decoration">
+	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
+</section>
+
+Styleguide Helpers.kill-link-decoration
+*/
+
+.kill-link-decoration {
+	a {
+		@include kill-link-decoration();
+	}
+}

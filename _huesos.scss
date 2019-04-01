@@ -1,12 +1,21 @@
-// CONFIG FILE GOES BEFORE THIS
 
-@import "src/scss/base/sanitize"; // Hueso's fork of sanitize.css, a fork itself of normalize.css
-@import "src/scss/base/typography";
-@import "src/scss/base/helpers";
+// Base
+@import "src/scss/base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 
 // HTML
 @import "src/components/html/figure/figure";
 @import "src/components/html/table/table";
+@import "src/components/html/link/link";
+@import "src/components/html/quotes/quotes";
+@import "src/components/html/blockquotes/blockquotes";
+@import "src/components/html/details/details";
+
+// Typography
+@import "src/components/typography/headings/headings";
+@import "src/components/typography/font-secondary/font-secondary";
+@import "src/components/typography/minititle/minititle";
+@import "src/components/typography/code/code";
+@import "src/components/typography/text-wrapper/text-wrapper";
 
 // Forms
 @import "src/components/forms/forms";
@@ -32,18 +41,26 @@
 @import "src/components/elements/tag/tag";
 @import "src/components/elements/card/card";
 @import "src/components/elements/button/button";
+@import "src/components/elements/icon/icon";
 
 // User interaction
 @import "src/components/user_interaction/alert/alert";
 
 // Helpers
 @import "src/components/helpers/scrollbar-hidden/scrollbar-hidden";
+@import "src/components/helpers/visually-hidden/visually-hidden";
+@import "src/components/helpers/clearfix/clearfix";
+@import "src/components/helpers/disabled/disabled";
+@import "src/components/helpers/kill-link/kill-link";
+@import "src/components/helpers/kill-link-decoration/kill-link-decoration";
 
 // Utility classes
 @import "src/components/huesitos/huesitos";
 
+// Visual debug helpers
+@import "src/components/debug/show-grid/show-grid";
+
 // Third-party libraries
 @import "src/scss/external/selectr";
 
-// We need to keep base/links on the end to allow for the overrides to take precedence
-@import "src/scss/base/links";
+

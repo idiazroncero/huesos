@@ -1,0 +1,32 @@
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
+
+blockquote {
+	margin: 0 0 $spacer $blockquote-whitespace;
+}
+
+.blockquote--decorated{
+	position:relative;
+	&:before {
+		content: $blockquote-decoration;
+		@include ritmo-font-size($blockquote-decoration-size);
+		font-family: $blockquote-font;
+		position: absolute;
+		top:ritmo(1);
+		left: - $blockquote-whitespace;
+	}
+}

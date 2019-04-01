@@ -2,7 +2,7 @@
     padding: $gutter;
     border-radius: $border-radius;
     @include background-split-color($gray5);
-    @extend .text;
+    @extend .text-wrapper;
 }
 
 .alert--success {

@@ -1,0 +1,22 @@
+
+
+/*
+Kill Link
+
+Completely disables the visual appearance of a link. It defaults to primary text color.
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link">
+	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
+</section>
+
+Styleguide Helpers.kill-link
+*/
+
+.kill-link {
+	a {
+		@include kill-link();
+	}
+}

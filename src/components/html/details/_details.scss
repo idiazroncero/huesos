@@ -1,0 +1,22 @@
+/*
+Details
+
+Markup:
+<details>
+	<summary>Pure HTML5 accordion</summary>
+	<p>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.</p>
+	<p>It's neat and simple. Love it.</p>
+</details>
+
+
+Styleguide Base.details
+*/
+
+details {
+
+}
+
+summary {
+	@include minititle();
+	cursor:pointer;
+}

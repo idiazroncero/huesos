@@ -1,0 +1,29 @@
+
+/*
+Secondary font
+
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
+
+Markup:
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
+
+.font-secondary,
+%font-secondary {
+	font-family: $font-secondary;
+}
+
+@each $item in $font-secondary-items {
+	#{$item} {
+		@extend %font-secondary;
+		// In case is a link, we have to kill all effects!
+		a {
+			@include kill-link-decoration();
+		}
+	}
+}

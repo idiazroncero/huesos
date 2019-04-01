@@ -48,7 +48,7 @@ $letter-spacing - A valid value for `letter-spacing`. Defaults to global `$lette
 
 Styleguide Mixins.Typography.Minititle
 */
-@mixin minititle($size: $h6-font-size, $weight: $bold, $uppercase: true, $letter-spacing: $letter-spacing) {
+@mixin minititle($size: $h6-font-size, $weight: $font-main-bold, $uppercase: true, $letter-spacing: $letter-spacing) {
 	@include ritmo-font-size($size);
 	font-weight: $weight;
 	@if $uppercase {

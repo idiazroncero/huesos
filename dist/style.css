@@ -49,9 +49,6 @@ $letter-spacing - A valid value for `letter-spacing`. Defaults to global `$lette
 
 Styleguide Mixins.Typography.Minititle
 */
-@import url("https://fonts.googleapis.com/css?family=Krub:300,400,600|Merriweather:400,900");
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600,800|Lato:300,700");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|VT323");
 *,
 ::before,
 ::after {
@@ -76,7 +73,7 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  font-family: "Lato", Helvetica, Arial sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #384048; }
 
 html {
@@ -163,7 +160,7 @@ caption {
   font-size: 0.75019rem;
   line-height: 16px;
   line-height: 1.0125rem;
-  font-weight: 700;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
@@ -242,7 +239,7 @@ Markup:
 Styleguide Typography.pre
 */
 pre {
-  font-family: "Inconsolata", monospace;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   /* 1 */
   font-size: 16px;
   font-size: 1rem;
@@ -300,7 +297,7 @@ Styleguide Typography.bold
 b,
 strong,
 .strong {
-  font-weight: 700; }
+  font-weight: bold; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -320,7 +317,7 @@ code,
 kbd,
 samp,
 var {
-  font-family: "Inconsolata", monospace;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   /* 1 */
   font-size: 16px;
   font-size: 1rem;
@@ -800,357 +797,6 @@ textarea,
   cursor: default; }
 
 /*
-Details
-
-Markup:
-<details>
-	<summary>Pure HTML5 accordion</summary>
-	<p>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.</p>
-	<p>It's neat and simple. Love it.</p>
-</details>
-
-
-Styleguide Base.details
-*/
-summary {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer; }
-
-/*
-Headings
-
-The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
-
-Markup:
-<h1>Main titles use heading one</h1>
-<h2>Subtitules and main sections use h2</h2>
-<h3>H3 is mainly for nested sections</h3>
-<h4>In case you need furher sectioning, use an h4</h4>
-<h5>Rarely you will need a heading five</h5>
-<h6>Heading six is rather unexpected</h6>
-
-
-Styleguide Typography.headings
-*/
-h1, .h1 {
-  font-size: 51px;
-  font-size: 3.15733rem;
-  line-height: 59px;
-  line-height: 3.7125rem; }
-
-h2, .h2 {
-  font-size: 38px;
-  font-size: 2.36859rem;
-  line-height: 43px;
-  line-height: 2.7rem; }
-
-h3, .h3 {
-  font-size: 28px;
-  font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
-
-h4, .h4 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
-
-h5, .h5 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-
-h6, .h6 {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  line-height: 1; }
-
-h1, .h1,
-h2, .h2 {
-  letter-spacing: -0.03em; }
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #151448;
-  font-weight: normal; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
-  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
-    color: inherit;
-    vertical-align: 0; }
-
-/*
-Secondary font
-
-Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
-
-Markup:
-<p class="font-secondary">This paragraph has been set to use the secondary font.
-It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
-to achive the same effect</p>
-
-
-Styleguide Helpers.secondary-font
-*/
-.font-secondary,
-h1,
-h2,
-h3,
-h4,
-dt,
-.your-classes,
-#your-ids {
-  font-family: "Fira Sans", Helvetica, Arial sans-serif; }
-
-h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
-  text-decoration: none; }
-
-h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
-  text-decoration: none; }
-
-h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
-  text-decoration: none; }
-
-h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
-  text-decoration: none; }
-
-dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
-  text-decoration: none; }
-
-.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
-  text-decoration: none; }
-
-#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
-  text-decoration: none; }
-
-/*
-Quotes
-
-Tipographic quotes can be explicitly defined using the variable `$quotes`
-
-Markup:
-<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
-
-Styleguide Typography.quotes
-*/
-q {
-  quotes: "“" "”" "‘" "’"; }
-
-/*
-Blockquotes
-
-Blockquotes receive a padding based on '$gutter`
-
-Markup:
-<blockquote class="myclass {{modifier_class}}">
-  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-  <cite><a href="#!">Said no one, ever.</a></cite>
-</blockquote>
-
-.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-
-Styleguide Typography.blockquote
-*/
-blockquote {
-  margin: 0 0 1.35rem 2.7rem; }
-
-.blockquote--decorated {
-  position: relative; }
-  .blockquote--decorated:before {
-    content: "*";
-    font-size: 38px;
-    font-size: 2.36859rem;
-    line-height: 43px;
-    line-height: 2.7rem;
-    font-family: "Fira Sans", Helvetica, Arial sans-serif;
-    position: absolute;
-    top: 0.3375rem;
-    left: -2.7rem; }
-
-code,
-kbd,
-samp,
-var {
-  display: inline-block;
-  vertical-align: baseline;
-  box-decoration-break: clone;
-  background-color: #dee0e4;
-  color: #1A1A19;
-  padding: 0 0.3375rem;
-  border-radius: 2px; }
-
-/*
-Minititle
-
-The concept of "minititle" makes reference to a small heading, normally used for sectioning.
-
-It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
-
-Markup:
-<section>
-	<p class="minititle">This is the minititle of this section</p>
-	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
-</section>
-<section class="card" style="width:250px">
-	<h3 class="minititle">An h3 reduced!</h3>
-	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
-</section>
-
-
-Styleguide Typography.minititle
-*/
-.minititle {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; }
-
-/*
-Icons
-
-The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
-
-Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
-
-A set of icons is __not__ provided. You are supposed to provide your own choices.
-
-Markup:
-<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
-<p><i class="icon">☝︎</i> Drag & Drop me</p>
-<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
-
-
-Styleguide Typography.icons
-*/
-.icon {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  height: 1rem;
-  display: inline-block;
-  margin-right: 0.3375rem; }
-  .icon svg {
-    height: 100%;
-    width: auto;
-    vertical-align: bottom; }
-
-/*
-Paragraph Text
-
-Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
-
-They also feature an extra spacing on headings.
-
-This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
-
-Markup:
-<section class="text">
-	<h2>First heading has no margin-top</h2>
-	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
-	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
-	<h3>But the rest of headings have!</h3>
-	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
-</section>
-
-Styleguide Typography.paragraph
-*/
-.text h1, .alert h1, .text h2, .alert h2, .text h3, .alert h3, .text h4, .alert h4 {
-  margin-top: 2.7rem; }
-
-.text section, .alert section,
-.text article,
-.alert article {
-  margin-bottom: 2.7rem; }
-
-.text h1:first-child, .alert h1:first-child,
-.text h2:first-child,
-.alert h2:first-child,
-.text h3:first-child,
-.alert h3:first-child,
-.text h4:first-child,
-.alert h4:first-child {
-  margin-top: 0; }
-
-.text p:last-child, .alert p:last-child {
-  margin-bottom: 0; }
-
-.visually-hidden, .selectr-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
-
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
-
-/*
-Disabled
-
-Class and placeholder used to dim the element and indicate that is not usable anymore.
-
-It also disables user interactions on buttons, links, etc... (see on their respective sections)
-
-Markup:
-<p class="disabled">I'm no longer active</p>
-<mark class="disabled"> I'm no longer working</mark>
-
-
-Styleguide Helpers.disabled
-*/
-
-.disabled {
-  opacity: 0.33; }
-
-/*
-Text alignment
-
-Helper classes that provide a quick access to `text-align`.
-
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
-
-Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
-
-
-Styleguide Helpers.alignment
-*/
-.left {
-  text-align: left; }
-
-.center {
-  text-align: center; }
-
-.right {
-  text-align: right; }
-
-/*
 Figure + Figcaption
 
 The variable `$figcaption-font-size` defines the sizing of image captions.
@@ -1272,6 +918,416 @@ th {
   .table th, .table td {
     min-width: 120px; }
 
+/*
+Links
+
+All links are formatted throught `set-link()` mixin.
+
+The `.link-strategy` is honored but you can override it anytime by using helper classes.
+
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
+
+.link--inactive         	- Makes link appear as normal text but retain functionality
+.disabled         			- The helper class dims the link and deletes visual feedback
+.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
+.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
+.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
+.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
+.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
+
+Styleguide Typography.links
+*/
+a, a:link {
+  color: #572586;
+  text-decoration: underline; }
+
+a:visited {
+  color: #572586; }
+
+a:focus, a:hover {
+  color: #7030ac; }
+
+a:active {
+  color: #7030ac; }
+
+a.link--inactive, a.link--inactive:link {
+  color: #384048;
+  text-decoration: underline; }
+
+a.link--inactive:visited {
+  color: #384048; }
+
+a.link--inactive:focus, a.link--inactive:hover {
+  color: #384048; }
+
+a.link--inactive:active {
+  color: #384048; }
+
+a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
+  text-decoration: none; }
+
+a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
+  text-decoration: none; }
+
+a.link-strategy-underline, a.link-strategy-underline:link {
+  color: #572586;
+  text-decoration: underline; }
+
+a.link-strategy-underline:visited {
+  color: #572586; }
+
+a.link-strategy-underline:focus, a.link-strategy-underline:hover {
+  color: #7030ac; }
+
+a.link-strategy-underline:active {
+  color: #7030ac; }
+
+a.link-strategy-border, a.link-strategy-border:link {
+  color: #572586;
+  text-decoration: none;
+  border-bottom: 0.16875rem solid #cfbae3; }
+
+a.link-strategy-border:visited {
+  color: #572586; }
+
+a.link-strategy-border:focus, a.link-strategy-border:hover {
+  color: #7030ac; }
+
+a.link-strategy-border:active {
+  color: #7030ac; }
+
+a.link-strategy-mark, a.link-strategy-mark:link {
+  color: #572586;
+  text-decoration: none;
+  background-color: #cfbae3;
+  position: relative; }
+  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #cfbae3; }
+  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
+    left: -2px; }
+  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
+    right: -2px; }
+
+a.link-strategy-mark:visited {
+  color: #572586; }
+
+a.link-strategy-mark:focus, a.link-strategy-mark:hover {
+  color: #7030ac; }
+
+a.link-strategy-mark:active {
+  color: #7030ac; }
+
+a.link-strategy-smart, a.link-strategy-smart:link {
+  color: #572586;
+  color: #572586;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
+  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
+  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
+    text-shadow: none; }
+  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
+    color: #572586; }
+
+a.link-strategy-smart:visited {
+  color: #572586; }
+
+a.link-strategy-smart:focus, a.link-strategy-smart:hover {
+  color: #7030ac; }
+
+a.link-strategy-smart:active {
+  color: #7030ac; }
+
+a.link-inverted, a.link-inverted:link {
+  color: #fff;
+  text-decoration: underline; }
+
+a.link-inverted:visited {
+  color: #fff; }
+
+a.link-inverted:focus, a.link-inverted:hover {
+  color: #b3c9e0; }
+
+a.link-inverted:active {
+  color: #b3c9e0; }
+
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
+q {
+  quotes: "“" "”" "‘" "’"; }
+
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
+blockquote {
+  margin: 0 0 1.35rem 2.7rem; }
+
+.blockquote--decorated {
+  position: relative; }
+  .blockquote--decorated:before {
+    content: "*";
+    font-size: 38px;
+    font-size: 2.36859rem;
+    line-height: 43px;
+    line-height: 2.7rem;
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    position: absolute;
+    top: 0.3375rem;
+    left: -2.7rem; }
+
+/*
+Details
+
+Markup:
+<details>
+	<summary>Pure HTML5 accordion</summary>
+	<p>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.</p>
+	<p>It's neat and simple. Love it.</p>
+</details>
+
+
+Styleguide Base.details
+*/
+summary {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer; }
+
+/*
+Headings
+
+The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
+
+Markup:
+<h1>Main titles use heading one</h1>
+<h2>Subtitules and main sections use h2</h2>
+<h3>H3 is mainly for nested sections</h3>
+<h4>In case you need furher sectioning, use an h4</h4>
+<h5>Rarely you will need a heading five</h5>
+<h6>Heading six is rather unexpected</h6>
+
+
+Styleguide Typography.headings
+*/
+h1, .h1 {
+  font-size: 51px;
+  font-size: 3.15733rem;
+  line-height: 59px;
+  line-height: 3.7125rem; }
+
+h2, .h2 {
+  font-size: 38px;
+  font-size: 2.36859rem;
+  line-height: 43px;
+  line-height: 2.7rem; }
+
+h3, .h3 {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 38px;
+  line-height: 2.3625rem; }
+
+h4, .h4 {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 27px;
+  line-height: 1.6875rem; }
+
+h5, .h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem; }
+
+h6, .h6 {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  line-height: 1; }
+
+h1, .h1,
+h2, .h2 {
+  letter-spacing: -0.03em; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #151448;
+  font-weight: normal; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+    color: inherit;
+    vertical-align: 0; }
+
+/*
+Secondary font
+
+Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
+
+Markup:
+<p class="font-secondary">This paragraph has been set to use the secondary font.
+It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
+to achive the same effect</p>
+
+
+Styleguide Helpers.secondary-font
+*/
+.font-secondary,
+h1,
+h2,
+h3,
+h4,
+dt,
+.your-classes,
+#your-ids {
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif; }
+
+h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
+  text-decoration: none; }
+
+h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
+  text-decoration: none; }
+
+h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
+  text-decoration: none; }
+
+h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
+  text-decoration: none; }
+
+dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
+  text-decoration: none; }
+
+.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
+  text-decoration: none; }
+
+#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
+  text-decoration: none; }
+
+/*
+Minititle
+
+The concept of "minititle" makes reference to a small heading, normally used for sectioning.
+
+It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
+
+Markup:
+<section>
+	<p class="minititle">This is the minititle of this section</p>
+	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
+</section>
+<section class="card" style="width:250px">
+	<h3 class="minititle">An h3 reduced!</h3>
+	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
+</section>
+
+
+Styleguide Typography.minititle
+*/
+.minititle {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+code,
+kbd,
+samp,
+var {
+  display: inline-block;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  background-color: #dee0e4;
+  color: #1A1A19;
+  padding: 0 0.3375rem;
+  border-radius: 2px; }
+
+/*
+Paragraph Text
+
+Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
+
+They also feature an extra spacing on headings.
+
+This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
+
+Markup:
+<section class="text">
+	<h2>First heading has no margin-top</h2>
+	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
+	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
+	<h3>But the rest of headings have!</h3>
+	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
+</section>
+
+Styleguide Typography.paragraph
+*/
+.text-wrapper h1, .alert h1, .text-wrapper h2, .alert h2, .text-wrapper h3, .alert h3, .text-wrapper h4, .alert h4 {
+  margin-top: 2.7rem; }
+
+.text-wrapper section, .alert section,
+.text-wrapper article,
+.alert article {
+  margin-bottom: 2.7rem; }
+
+.text-wrapper h1:first-child, .alert h1:first-child,
+.text-wrapper h2:first-child,
+.alert h2:first-child,
+.text-wrapper h3:first-child,
+.alert h3:first-child,
+.text-wrapper h4:first-child,
+.alert h4:first-child {
+  margin-top: 0; }
+
+.text-wrapper p:last-child, .alert p:last-child {
+  margin-bottom: 0; }
+
 input,
 label,
 select,
@@ -1339,7 +1395,7 @@ fieldset {
     font-size: 1rem;
     line-height: 22px;
     line-height: 1.35rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1354,7 +1410,7 @@ fieldset.fieldset--disabled {
     font-size: 1.333rem;
     line-height: 27px;
     line-height: 1.6875rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1368,7 +1424,7 @@ fieldset.fieldset--disabled {
     font-size: 0.75019rem;
     line-height: 16px;
     line-height: 1.0125rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
   .form-item input[type="text"],
@@ -1563,7 +1619,7 @@ fieldset {
     font-size: 1rem;
     line-height: 22px;
     line-height: 1.35rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1578,7 +1634,7 @@ fieldset.fieldset--disabled {
     font-size: 1.333rem;
     line-height: 27px;
     line-height: 1.6875rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
@@ -1592,7 +1648,7 @@ fieldset.fieldset--disabled {
     font-size: 0.75019rem;
     line-height: 16px;
     line-height: 1.0125rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
   .form-item input[type="text"],
@@ -2373,7 +2429,7 @@ Styleguide Components.toc
   font-size: 0.75019rem;
   line-height: 16px;
   line-height: 1.0125rem;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 0;
   padding: 0 0.45rem;
   background-color: #dee0e4;
@@ -2555,8 +2611,8 @@ a.tag, a.selectr-tag {
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   vertical-align: middle;
-  font-weight: 700;
-  font-family: "Lato", Helvetica, Arial sans-serif; }
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .button::-moz-focus-inner, input[type=file] + label::-moz-focus-inner {
     border: 0;
     padding: 0; }
@@ -2690,6 +2746,35 @@ a.button--error {
   .button.disabled:hover, input[type=file] + label.disabled:hover, .button.disabled:focus, input[type=file] + label.disabled:focus {
     cursor: arrow; }
 
+/*
+Icons
+
+The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
+
+Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
+
+A set of icons is __not__ provided. You are supposed to provide your own choices.
+
+Markup:
+<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
+<p><i class="icon">☝︎</i> Drag & Drop me</p>
+<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
+
+
+Styleguide Typography.icons
+*/
+.icon {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.3375rem; }
+  .icon svg {
+    height: 100%;
+    width: auto;
+    vertical-align: bottom; }
+
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
@@ -2713,6 +2798,74 @@ a.button--error {
   -ms-overflow-style: none; }
   .scrollbar-hidden::-webkit-scrollbar {
     width: 0 !important; }
+
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Kill Link
+
+Completely disables the visual appearance of a link. It defaults to primary text color.
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link">
+	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
+</section>
+
+Styleguide Helpers.kill-link
+*/
+.kill-link a, .kill-link a:link {
+  color: #384048;
+  text-decoration: underline; }
+
+.kill-link a:visited {
+  color: #384048; }
+
+.kill-link a:focus, .kill-link a:hover {
+  color: #384048; }
+
+.kill-link a:active {
+  color: #384048; }
+
+.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
+  text-decoration: none; }
+
+/*
+Kill Link Decoration
+
+Helper class that kills al link decoration on a given block
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link-decoration">
+	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
+</section>
+
+Styleguide Helpers.kill-link-decoration
+*/
+.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
+  text-decoration: none; }
 
 /*
 Margins
@@ -3215,6 +3368,30 @@ Styleguide Huesitos.gutter-modifier
 .quarter-gutter.pl {
   padding-left: 0.3375rem; }
 
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+  text-align: left; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
 /*!
  * Selectr 2.4.4
  * http://mobius.ovh/docs/selectr
@@ -3508,7 +3685,7 @@ input.selectr-input {
   font-size: 0.75019rem;
   line-height: 16px;
   line-height: 1.0125rem;
-  font-weight: 700;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
@@ -3652,197 +3829,3 @@ input.selectr-input {
 .selectr-container ::placeholder {
   color: #6c7a86;
   opacity: 1; }
-
-/*
-Links
-
-All links are formatted throught `set-link()` mixin.
-
-The `.link-strategy` is honored but you can override it anytime by using helper classes.
-
-Markup:
-<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
-
-.link--inactive         	- Makes link appear as normal text but retain functionality
-.disabled         			- The helper class dims the link and deletes visual feedback
-.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
-.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
-.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
-.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
-.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
-
-Styleguide Typography.links
-*/
-a, a:link {
-  color: #572586;
-  text-decoration: underline; }
-
-a:visited {
-  color: #572586; }
-
-a:focus, a:hover {
-  color: #7030ac; }
-
-a:active {
-  color: #7030ac; }
-
-a.link--inactive, a.link--inactive:link {
-  color: #384048;
-  text-decoration: underline; }
-
-a.link--inactive:visited {
-  color: #384048; }
-
-a.link--inactive:focus, a.link--inactive:hover {
-  color: #384048; }
-
-a.link--inactive:active {
-  color: #384048; }
-
-a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
-  text-decoration: none; }
-
-a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
-  text-decoration: none; }
-
-a.link-strategy-underline, a.link-strategy-underline:link {
-  color: #572586;
-  text-decoration: underline; }
-
-a.link-strategy-underline:visited {
-  color: #572586; }
-
-a.link-strategy-underline:focus, a.link-strategy-underline:hover {
-  color: #7030ac; }
-
-a.link-strategy-underline:active {
-  color: #7030ac; }
-
-a.link-strategy-border, a.link-strategy-border:link {
-  color: #572586;
-  text-decoration: none;
-  border-bottom: 0.16875rem solid #cfbae3; }
-
-a.link-strategy-border:visited {
-  color: #572586; }
-
-a.link-strategy-border:focus, a.link-strategy-border:hover {
-  color: #7030ac; }
-
-a.link-strategy-border:active {
-  color: #7030ac; }
-
-a.link-strategy-mark, a.link-strategy-mark:link {
-  color: #572586;
-  text-decoration: none;
-  background-color: #cfbae3;
-  position: relative; }
-  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #cfbae3; }
-  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
-    left: -2px; }
-  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
-    right: -2px; }
-
-a.link-strategy-mark:visited {
-  color: #572586; }
-
-a.link-strategy-mark:focus, a.link-strategy-mark:hover {
-  color: #7030ac; }
-
-a.link-strategy-mark:active {
-  color: #7030ac; }
-
-a.link-strategy-smart, a.link-strategy-smart:link {
-  color: #572586;
-  color: #572586;
-  text-decoration: none;
-  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
-    text-shadow: none; }
-  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
-    color: #572586; }
-
-a.link-strategy-smart:visited {
-  color: #572586; }
-
-a.link-strategy-smart:focus, a.link-strategy-smart:hover {
-  color: #7030ac; }
-
-a.link-strategy-smart:active {
-  color: #7030ac; }
-
-a.link-inverted, a.link-inverted:link {
-  color: #fff;
-  text-decoration: underline; }
-
-a.link-inverted:visited {
-  color: #fff; }
-
-a.link-inverted:focus, a.link-inverted:hover {
-  color: #b3c9e0; }
-
-a.link-inverted:active {
-  color: #b3c9e0; }
-
-/*
-Kill Link Decoration
-
-Helper class that kills al link decoration on a given block
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link-decoration">
-	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
-</section>
-
-Styleguide Helpers.kill-link-decoration
-*/
-.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
-  text-decoration: none; }
-
-/*
-Kill Link
-
-Completely disables the visual appearance of a link. It defaults to primary text color.
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link">
-	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
-</section>
-
-Styleguide Helpers.kill-link
-*/
-.kill-link a, .kill-link a:link {
-  color: #384048;
-  text-decoration: underline; }
-
-.kill-link a:visited {
-  color: #384048; }
-
-.kill-link a:focus, .kill-link a:hover {
-  color: #384048; }
-
-.kill-link a:active {
-  color: #384048; }
-
-.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
-  text-decoration: none; }

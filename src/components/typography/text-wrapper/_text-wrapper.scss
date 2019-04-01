@@ -1,0 +1,40 @@
+/*
+Paragraph Text
+
+Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
+
+They also feature an extra spacing on headings.
+
+This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
+
+Markup:
+<section class="text">
+	<h2>First heading has no margin-top</h2>
+	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
+	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
+	<h3>But the rest of headings have!</h3>
+	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
+</section>
+
+Styleguide Typography.paragraph
+*/
+
+.text-wrapper {
+	h1, h2, h3, h4 {
+		margin-top: $gutter * 2;
+	}
+	section,
+	article {
+		margin-bottom: $gutter * 2;
+	}
+	// Except if it is the first child of the text...
+	h1:first-child, 
+	h2:first-child, 
+	h3:first-child, 
+	h4:first-child {
+		margin-top:0;
+	}
+	p:last-child {
+		margin-bottom:0;
+	}
+}

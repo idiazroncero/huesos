@@ -4,63 +4,14 @@
 // --------------------
 @import "../../dependencies";
 
-
-// Mixins and variables
+// --------------------
+// CONFIG
+// Custom configuration
+// --------------------
 @import "config";
 
-// Base
-@import "base/fonts"; // Fonts are loaded first to optimize performance. DON'T LOAD FONTS ON PRODUCTION BUILD
-@import "base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
-@import "base/typography";
-@import "base/helpers";
-
-// HTML
-@import "../components/html/figure/figure";
-@import "../components/html/table/table";
-
-// Forms
-@import "../components/forms/forms";
-@import "../components/forms/checkbox/checkbox";
-@import "../components/forms/fieldset/fieldset";
-@import "../components/forms/form-item/form-item";
-@import "../components/forms/input/input";
-@import "../components/forms/radio/radio";
-@import "../components/forms/select/select";
-@import "../components/forms/textarea/textarea";
-
-// Layout and positioning
-@import "../components/layout/position/position";
-@import "../components/layout/grid/grid";
-@import "../components/layout/visibility/visibility";
-
-// User navigation
-@import "../components/navigation/nav/nav";
-@import "../components/navigation/menu/menu";
-@import "../components/navigation/toc/toc";
-
-// Elements
-@import "../components/elements/tag/tag";
-@import "../components/elements/card/card";
-@import "../components/elements/button/button";
-
-// User interaction
-@import "../components/user_interaction/alert/alert";
-
-// Helpers
-@import "../components/helpers/scrollbar-hidden/scrollbar-hidden";
-
-// Utility classes
-@import "../components/huesitos/huesitos";
-
-// Third-party libraries
-@import "external/selectr";
-
-// We need to keep base/links on the end to allow for the overrides to take precedence
-@import "base/links";
-
-
-// TODO
-// Icon system
-// Addons.glitch
-
-
+// --------------------
+// HUESOS
+// Import the library
+// --------------------
+@import "../../huesos";
