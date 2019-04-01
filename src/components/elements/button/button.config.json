@@ -4,46 +4,46 @@
   },
   "variants" : [
       { 
-        "name" : 'Primary',
+        "name" : "Primary",
         "context": {
           "modifier": "button--primary",
-          "text": "Main"
+          "text": "Primary"
         }
       },
       { 
-        "name" : 'Secondary',
+        "name" : "Secondary",
         "context": {
           "modifier": "button--secondary",
-          "text": "Main"
+          "text": "Secondary"
         }
       },
       { 
-        "name" : 'Success',
+        "name" : "Success",
         "context": {
           "modifier": "button--success",
           "text": "Success"
         }
       },
       { 
-        "name" : 'Warning',
+        "name" : "Warning",
         "context": {
           "modifier": "button--warning",
           "text": "Warning"
         }
       },
       { 
-        "name" : 'Error',
+        "name" : "Error",
         "context": {
           "modifier": "button--error",
           "text": "Error"
         }
       },
       { 
-        "name" : 'Disabled',
+        "name" : "Disabled",
         "context": {
-          "modifier": "disabled",
+          "modifier": "button--primary disabled",
           "text": "Disabled"
         }
-      },
+      }
   ]
 }

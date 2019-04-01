@@ -20,6 +20,13 @@
 
 // Forms
 @import "../components/forms/forms";
+@import "../components/forms/checkbox/checkbox";
+@import "../components/forms/fieldset/fieldset";
+@import "../components/forms/form-item/form-item";
+@import "../components/forms/input/input";
+@import "../components/forms/radio/radio";
+@import "../components/forms/select/select";
+@import "../components/forms/textarea/textarea";
 
 // Layout and positioning
 @import "../components/layout/position/position";
@@ -31,13 +38,16 @@
 @import "../components/navigation/menu/menu";
 @import "../components/navigation/toc/toc";
 
-// Components
+// Elements
 @import "../components/elements/tag/tag";
 @import "../components/elements/card/card";
 @import "../components/elements/button/button";
 
 // User interaction
 @import "../components/user_interaction/alert/alert";
+
+// Helpers
+@import "../components/helpers/scrollbar-hidden/scrollbar-hidden";
 
 // Utility classes
 @import "../components/huesitos/huesitos";

@@ -1294,12 +1294,6 @@ textarea {
 label {
   margin-right: 0.675rem; }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #acb3bb inset;
-  color: #1A1A19; }
-
 input[type=checkbox].pseudo-checkbox {
   position: absolute !important;
   height: 1px;
@@ -1319,7 +1313,7 @@ input[type=checkbox].pseudo-checkbox {
       top: 50%;
       left: 4px;
       transform: translateY(-50%);
-      background-color: #384048; }
+      background-color: #606d7c; }
   input[type=checkbox].pseudo-checkbox + label {
     cursor: pointer;
     display: flex;
@@ -1330,41 +1324,10 @@ input[type=checkbox].pseudo-checkbox {
       width: 16px;
       height: 16px;
       margin: 0 0.675rem 0 0;
-      border: 1px solid #384048;
+      border: 1px solid #606d7c;
       background-color: #f8f9f9;
       cursor: pointer; }
 
-/*
-Fieldsets
-
-If either `$disable-fieldset` boolean is set to true or `.fieldset--disabled` class is added, visually hides the fielset box and converts the `<legend>` into a pseudo-heading.
-
-Markup:
-<fieldset>
-	<legend>Fieldset legend</legend>
-	<div class="form-item">
-		<label for="item">This is my label</label>
-		<input type="email" id="item" placeholder="Email" />
-	</div>
-	<div class="form-item">
-		<label for="item2">This is a second label</label>
-		<input type="text" id="item2" value="Text" />
-	</div>
-</fieldset>
-<fieldset class="fieldset--disabled">
-	<legend>Fieldset legend</legend>
-	<div class="form-item">
-		<label for="item">This is my label</label>
-		<input type="email" id="item" placeholder="Email" />
-	</div>
-	<div class="form-item">
-		<label for="item2">This is a second label</label>
-		<input type="text" id="item2" value="Text" />
-	</div>
-</fieldset>
-
-Styleguide Forms.fieldset
-*/
 fieldset {
   margin-right: 0;
   margin-left: 0;
@@ -1395,27 +1358,6 @@ fieldset.fieldset--disabled {
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
-/*
-Form item wrapper
-
-General block-level wrapper for spacing between items.
-
-It also provides several variations for different styling of items.
-
-.form-item--required		- Marks the label with a red asterisk
-.form-item--col				- Stacks elements instead of displaying them side by side
-.form-item--label-inside	- Visually puts the label inside of the input. Only makes sense if the border strategy is full
-.form-item--label-inside.form-item--required	- `.form-item--required` can be combinated with the other modifiers
-.form-item--label-inside.form-item--col	- You can sum `col`and `required` to get this commonly seen pattern
-
-Markup:
-<div class="form-item {{modifier_class}}">
-	<label for="text">A form item</label>
-	<input type="text" id="text" name="text">
-</div>
-
-Styleguide Forms.form-item
-*/
 .form-item {
   margin-bottom: 1.35rem;
   display: flex;
@@ -1436,6 +1378,9 @@ Styleguide Forms.form-item
   .form-item input[type="tel"],
   .form-item input[type="search"] {
     flex: 1 0 auto; }
+  .form-item input[type="checkbox"],
+  .form-item input[type="radio"] {
+    align-self: center; }
   .form-item:last-child, .form-item:last-of-type {
     margin-bottom: 0; }
 
@@ -1534,7 +1479,7 @@ input[type=radio].pseudo-radio {
       width: 8px;
       height: 8px;
       transform: translateY(-50%);
-      background-color: #384048;
+      background-color: #606d7c;
       border-radius: 50%;
       cursor: pointer; }
   input[type=radio].pseudo-radio + label {
@@ -1547,7 +1492,7 @@ input[type=radio].pseudo-radio {
       margin: 0 0.675rem 0 0;
       width: 16px;
       height: 16px;
-      border: 1px solid #384048;
+      border: 1px solid #606d7c;
       background-color: #f8f9f9;
       vertical-align: top;
       border-radius: 50%;
@@ -1563,30 +1508,230 @@ select {
   select[multiple] {
     vertical-align: top; }
 
-/*
-Textarea
+textarea {
+  border: 1px solid #dee0e4;
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+  width: 100%;
+  padding: 0.3375rem 0.675rem;
+  min-height: 2.7rem; }
 
-Use in conjunction with `.form-item` and its modifiers (see its own section)
+input[type=checkbox].pseudo-checkbox {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+  input[type=checkbox].pseudo-checkbox:checked + label {
+    position: relative; }
+    input[type=checkbox].pseudo-checkbox:checked + label:after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      background-color: #606d7c; }
+  input[type=checkbox].pseudo-checkbox + label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    input[type=checkbox].pseudo-checkbox + label:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 0 0.675rem 0 0;
+      border: 1px solid #606d7c;
+      background-color: #f8f9f9;
+      cursor: pointer; }
 
-It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an `input[type="text"]` element.
+fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  border: 1px solid #dee0e4;
+  border-radius: 0px;
+  padding: 1.35rem; }
+  fieldset legend {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
 
+fieldset.fieldset--disabled {
+  margin-right: 0;
+  margin-left: 0;
+  border: none;
+  padding: 0; }
+  fieldset.fieldset--disabled legend {
+    margin-bottom: 1.35rem;
+    font-size: 21px;
+    font-size: 1.333rem;
+    line-height: 27px;
+    line-height: 1.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
 
-Markup:
-<div class="form-item">
-	<label for="area1">Textarea</label>
-	<textarea rows="5" id="area1"></textarea>
-</div>
-<div class="form-item form-item--label-inside">
-	<label for="area2">Textarea</label>
-	<textarea rows="5" id="area2"></textarea>
-</div>
-<div class="form-item form-item--label-inside form-item--col">
-	<label for="area3">Textarea</label>
-	<textarea id="area3"></textarea>
-</div>
+.form-item {
+  margin-bottom: 1.35rem;
+  display: flex;
+  align-items: baseline; }
+  .form-item label {
+    flex: 0 1 auto;
+    font-size: 12px;
+    font-size: 0.75019rem;
+    line-height: 16px;
+    line-height: 1.0125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+  .form-item input[type="text"],
+  .form-item input[type="email"],
+  .form-item input[type="password"],
+  .form-item input[type="url"],
+  .form-item input[type="tel"],
+  .form-item input[type="search"] {
+    flex: 1 0 auto; }
+  .form-item input[type="checkbox"],
+  .form-item input[type="radio"] {
+    align-self: center; }
+  .form-item:last-child, .form-item:last-of-type {
+    margin-bottom: 0; }
 
-Styleguide Forms.textarea
-*/
+.form-item--col {
+  display: block; }
+  .form-item--col label,
+  .form-item--col input,
+  .form-item--col textarea {
+    display: block;
+    width: 100%; }
+  .form-item--col input[type="checkbox"],
+  .form-item--col input[type="radio"] {
+    width: auto; }
+
+.form-item--required label::after {
+  content: "*";
+  color: #ac3230; }
+
+.form-item--label-inside {
+  border-radius: 0px;
+  border: 1px solid #dee0e4;
+  padding: 0.3375rem 0.675rem; }
+  .form-item--label-inside:hover, .form-item--label-inside:focus {
+    border-color: #959699; }
+  .form-item--label-inside input,
+  .form-item--label-inside textarea {
+    border: none;
+    border-radius: 0;
+    padding: 0; }
+
+input {
+  border: 1px solid #dee0e4;
+  padding: 0.3375rem 0.675rem;
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /*
+	File Input
+	
+	Uses the label for handling click and hides the actual input element.
+	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
+	
+	Markup:
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file">Upload your file</label>
+	</div>
+	<div class="form-item">
+		<input type="file" id="file" name="file">
+		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
+	</div>
+	
+	Styleguide Forms.file
+	*/ }
+  input:hover, input:focus {
+    border-color: #959699; }
+  input:focus {
+    outline: 0; }
+  input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 0.675rem; }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box; }
+  ::-webkit-search-decoration {
+    display: none; }
+  input[type="reset"], input[type="button"], input[type="submit"] {
+    overflow: visible; }
+  input[type=file] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); }
+
+input[type=radio].pseudo-radio {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+  input[type=radio].pseudo-radio:checked + label {
+    position: relative; }
+    input[type=radio].pseudo-radio:checked + label:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%);
+      background-color: #606d7c;
+      border-radius: 50%;
+      cursor: pointer; }
+  input[type=radio].pseudo-radio + label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    input[type=radio].pseudo-radio + label:before {
+      content: "";
+      display: inline-block;
+      margin: 0 0.675rem 0 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #606d7c;
+      background-color: #f8f9f9;
+      vertical-align: top;
+      border-radius: 50%;
+      cursor: pointer; }
+
+select {
+  border: 1px solid #dee0e4;
+  padding: 0 0.675rem;
+  appearance: none;
+  /* Move the label to the top */ }
+  select:hover, select:focus {
+    border-color: #959699; }
+  select[multiple] {
+    vertical-align: top; }
+
 textarea {
   border: 1px solid #dee0e4;
   /* Move the label to the top */
@@ -2397,7 +2542,7 @@ a.tag, a.selectr-tag {
 
 .button, input[type=file] + label {
   background: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   outline: none;
   /* IE8 and FF freak out if this rule is within another selector */
   cursor: pointer;
@@ -2430,6 +2575,22 @@ a.tag, a.selectr-tag {
     line-height: 1; }
     .button .icon svg, input[type=file] + label .icon svg {
       fill: currentColor; }
+
+input.button:hover, input.button:focus {
+  border-color: transparent; }
+
+a.button, a.button:link {
+  color: #384048;
+  text-decoration: underline; }
+
+a.button:visited {
+  color: #384048; }
+
+a.button:focus, a.button:hover {
+  color: #384048; }
+
+a.button:active {
+  color: #384048; }
 
 a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
   text-decoration: none; }
@@ -2546,6 +2707,12 @@ a.button--error {
 .alert--error {
   background-color: #e6c2c1;
   color: #561918; }
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none; }
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0 !important; }
 
 /*
 Margins

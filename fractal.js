@@ -8,7 +8,6 @@ fractal.set('project.title', 'Huesos @ Fractal');
 
 // COMPONENT CONFIG
 fractal.components.set('path', __dirname + '/src/components');
-fractal.components.set('default.status', 'prototype');
 
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', __dirname + '/src/docs');

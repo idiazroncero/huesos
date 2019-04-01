@@ -278,7 +278,7 @@ $input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-font-family: $font-main;
-$button-border-width: 1px;
+$button-border-width: 2px;
 $button-padding: 0 ($spacer / 2);
 $button-border-radius: 2px; // $border-radius;
 $button-weight: $bold;
@@ -297,12 +297,17 @@ $button-invert-color: false; // ONly valid on border:fill and background
 $button-strategy-default: 'outline';
 $button-strategy-hover: 'background';
 
-$button-alternative-strategies: (
-	split : (
-		default : 'split', 
-		hover : 'split-inverse'
-	),
-);
+$button-alternative-strategies: false;
+
+//
+// Example of $button-alternative-strategies:
+//
+// $button-alternative-strategies: (
+// 	split : (
+// 		default : 'split', 
+// 		hover : 'split-inverse'
+// 	),
+// );
 
 
 $button-states : (
@@ -316,7 +321,7 @@ $button-states : (
 // Checkboxes / Selects
 $pseudo-checkbox : false;
 $pseudo-radio: false;
-$pseudo-border-color: get-color(text, primary);
+$pseudo-border-color: $gray8;
 $pseudo-border: 1px solid $pseudo-border-color;
 
 // Selects

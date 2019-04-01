@@ -21,14 +21,16 @@
 	}
 }
 
-button.button,
 input.button {
-
+	&:hover,
+	&:focus {
+		border-color: transparent;
+	}
 }
 
 // Sepecific overrides for link buttons
 a.button {
-	@include kill-link-decoration();
+	@include kill-link();
 }
 
 
@@ -48,9 +50,16 @@ a.button {
 }
 
 // Button alernative styles
-@each $key, $value in $button-alternative-strategies {
-	@each $alternative, $map in $value {
-
+@if $button-alternative-strategies {
+	@each $strategy, $states in $button-alternative-strategies {
+		@each $key, $value in $button-states {
+			.button--#{$key}--#{$strategy} {
+				@include style-button($value, map-get($states, default), map-get($states, hover));
+			}
+			a.button--#{$key}--#{$strategy} {
+				@include style-link-button($value, map-get($states, default), map-get($states, hover));
+			}
+		}
 	}
 }
 

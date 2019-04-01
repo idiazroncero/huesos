@@ -4,35 +4,35 @@
   },
   "variants" : [
       { 
-        "name" : 'Success',
+        "name" : "Success",
         "context": {
           "modifier": "tag--success",
           "text": "This is a success tag!"
         }
       },
       { 
-        "name" : 'Warning',
+        "name" : "Warning",
         "context": {
           "modifier": "tag--warning",
           "text": "This is a warning tag!"
         }
       },
       { 
-        "name" : 'Error',
+        "name" : "Error",
         "context": {
           "modifier": "tag--error",
           "text": "This is a error tag!"
         }
       },
       { 
-        "name" : 'Primary',
+        "name" : "Primary",
         "context": {
           "modifier": "tag--primary",
           "text": "This is a primary tag!"
         }
       },
       { 
-        "name" : 'Secondary',
+        "name" : "Secondary",
         "context": {
           "modifier": "tag--secondary",
           "text": "This is a secondary tag!"
