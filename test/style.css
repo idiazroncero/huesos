@@ -90,80 +90,6 @@ fieldset,
 details, details[open] summary {
   margin: 0 0 1.35rem 0; }
 
-/*
-Definition lists
-
-By default, all `<dd>` items are spaced with a `$spacer`
-
-Markup:
-<dl>
-  <dt>Definition List Title</dt>
-  <dd>This is a definition list division.</dd>
-  <dt>Lorem ipsum</dt>
-  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
-  <dt>Huesos</dt>
-  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
-</dl>
-
-Styleguide Base.definitionLists
-*/
-dt {
-  margin: 0 0 0.675rem 0; }
-
-dd {
-  margin: 0 0 1.35rem 1.35rem; }
-
-/*
-Lists
-
-By default, `$gutter` is applied as margin. Square list-style-type is preferred.
-
-Lists are left-aligned.
-
-Markup:
-<ol class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ol>
-<ul class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ul>
-
-.list--inline	-  Inlines list items and removes decoration 
-
-Styleguide Base.lists
-*/
-ol,
-ul {
-  padding-left: 0;
-  list-style-position: outside; }
-  ol li,
-  ul li {
-    margin-bottom: 0.675rem; }
-
-ul {
-  list-style-type: square; }
-
-.list--inline {
-  margin: 0;
-  padding: 0; }
-  .list--inline li {
-    list-style-type: none;
-    display: inline-block; }
-
-caption {
-  text-align: left;
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; }
-
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
 /**
@@ -192,30 +118,6 @@ body {
 main {
   /* 1 */
   display: block; }
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-/*
-Horizontal rule
-
-Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
-
-Markup:
-<hr/>
-
-Styleguide Base.hr
-*/
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-  border: none;
-  border-bottom: 1px solid #dee0e4; }
 
 /**
  * Remove the list style on navigation lists in all browsers (opinionated).
@@ -259,201 +161,11 @@ a {
   -webkit-text-decoration-skip: objects;
   /* 2 */ }
 
-/**
- * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-/*
-Abbreviation
-
-Normalizes styling (underline)
-
-Markup:
-<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
-
-Styleguide Typography.abbr
-*/
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */ }
-
-/**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- */
-/*
-Bold
-
-Applies bolding weight defined on `_config.scss` using `bold()` mixin.
-
-Markup:
-<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
-
-Styleguide Typography.bold
-*/
-b,
-strong,
-.strong {
-  font-weight: bold; }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-/*
-Code, Keyboard, Samp, Var
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
-
-Styleguide Typography.code
-*/
-code,
-kbd,
-samp,
-var {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  /* 1 */
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem;
-  /* 2 */ }
-
-/**
- * Add the correct font style in Android 4.3-.
- */
-/*
-Definition
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p><dfn>Definition</dfn> is a tag used for defining terms</p>
-
-Styleguide Typography.dfn
-*/
-dfn {
-  font-style: italic; }
-
-/**
- * Add the correct background and color in IE 9-.
- */
-/*
-Mark
-
-Uses color defined on the palette `text`, key `mark`.
-
-Markup:
-<p><mark>Really important</mark> and thus, marked text</p>
-
-Styleguide Typography.mark
-*/
-mark {
-  background-color: #ac7030;
-  color: #FFFFFF;
-  padding: 0 0.3375rem; }
-
-/**
- * Add the correct font size in all browsers.
- */
-/*
-Small
-
-Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
-
-The helper class `.small` can be used to fake the element.
-
-Markup:
-<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
-<h1>A big heading with <small>an small portion of text</small></h1>
-<h2>A second-level title <small>featuring a minor text</small></h2>
-<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
-<p class="small">I'm a <code>.small</code> text!<p/>
-
-Styleguide Typography.small
-*/
-small,
-.small {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-.small * {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-h1 small {
-  font-size: 28px;
-  font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
-
-h2 small {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
-
-h3 small {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-/*
-Sub, Sup
-
-Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
-
-Markup:
-<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
-
-Styleguide Typography.sub
-*/
-sub,
-sup {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -.25em; }
-
-sup {
-  top: -.5em; }
-
 /*
  * Remove the text shadow on text selections (opinionated).
  * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
-/*
-Selection
-
-Uses the same color as in `<mark>` for text highlighting.
-
-Markup:
-<p>Try selecting a part of this text for <code>::selection</code> testing</p>
-
-Styleguide Pseudo-elements.selection
-*/
 ::-moz-selection {
   background-color: #ac7030;
   /* 1 */
@@ -480,27 +192,6 @@ img,
 svg,
 video {
   vertical-align: middle; }
-
-/*
- * Deletes ugly iframe border and makes it fill its parent by default
- */
-/*
-Iframe
-
-Deletes border, displays iframe as a block element that always fills its parent's size.
-
-Markup:
-<section style="width:50%; height: 600px">
-	<iframe src="https://mentalstones.com"></iframe>
-</section>
-
-Styleguide Base.iframe
-*/
-iframe {
-  border: none;
-  width: 100%;
-  height: 100%;
-  display: block; }
 
 /**
  * Add the correct display in IE 9-.
@@ -536,6 +227,7 @@ Markup:
 Styleguide Base.images
 */
 img {
+  display: inline-block;
   border-style: none;
   max-width: 100%;
   height: auto; }
@@ -797,6 +489,330 @@ textarea,
   cursor: default; }
 
 /*
+Figure + Figcaption
+
+The variable `$figcaption-font-size` defines the sizing of image captions.
+
+In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+
+Markup:
+<section>
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</section>
+<section class="center">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+<section class="right">
+  <figure>
+    <img src="https://placeimg.com/400/200/nature" />
+    <figcaption>Well documented code is always a bliss</figcaption>
+  </figure>
+</div>
+
+
+Styleguide Base.images.figure-figcaption
+*/
+figcaption {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  text-align: left; }
+
+/*
+Tables
+
+Tables span across all available space evenly distributed.
+
+A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
+
+Borders are collapsed by default
+
+`<caption>` receives a `.minititle` styling
+
+Markup:
+<section class="table">
+  <table>
+    <caption>Table Caption</caption>
+    <thead>
+      <tr>
+        <th>Table Heading 1</th>
+        <th>Table Heading 2</th>
+        <th>Table Heading 3</th>
+        <th>Table Heading 4</th>
+        <th>Table Heading 5</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Table Footer 1</th>
+        <th>Table Footer 2</th>
+        <th>Table Footer 3</th>
+        <th>Table Footer 4</th>
+        <th>Table Footer 5</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+      <tr>
+        <td>Table Cell 1</td>
+        <td>Table Cell 2</td>
+        <td>Table Cell 3</td>
+        <td>Table Cell 4</td>
+        <td>Table Cell 5</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+Styleguide Base.tables
+*/
+caption {
+  text-align: left;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+table {
+  table-layout: fixed;
+  min-width: 100%; }
+
+th, td {
+  border: 1px solid #dee0e4;
+  padding: 0.675rem; }
+
+th {
+  text-align: left; }
+
+.table {
+  overflow: auto; }
+  .table th, .table td {
+    min-width: 120px; }
+
+/*
+Links
+
+All links are formatted throught `set-link()` mixin.
+
+The `.link-strategy` is honored but you can override it anytime by using helper classes.
+
+Markup:
+<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
+
+.link--inactive         	- Makes link appear as normal text but retain functionality
+.disabled         			- The helper class dims the link and deletes visual feedback
+.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
+.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
+.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
+.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
+.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
+
+Styleguide Typography.links
+*/
+a, a:link {
+  color: #572586;
+  text-decoration: underline; }
+
+a:visited {
+  color: #572586; }
+
+a:focus, a:hover {
+  color: #7030ac; }
+
+a:active {
+  color: #7030ac; }
+
+a.link--inactive, a.link--inactive:link {
+  color: #384048;
+  text-decoration: underline; }
+
+a.link--inactive:visited {
+  color: #384048; }
+
+a.link--inactive:focus, a.link--inactive:hover {
+  color: #384048; }
+
+a.link--inactive:active {
+  color: #384048; }
+
+a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
+  text-decoration: none; }
+
+a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
+  text-decoration: none; }
+
+a.link-strategy-underline, a.link-strategy-underline:link {
+  color: #572586;
+  text-decoration: underline; }
+
+a.link-strategy-underline:visited {
+  color: #572586; }
+
+a.link-strategy-underline:focus, a.link-strategy-underline:hover {
+  color: #7030ac; }
+
+a.link-strategy-underline:active {
+  color: #7030ac; }
+
+a.link-strategy-border, a.link-strategy-border:link {
+  color: #572586;
+  text-decoration: none;
+  border-bottom: 0.16875rem solid #cfbae3; }
+
+a.link-strategy-border:visited {
+  color: #572586; }
+
+a.link-strategy-border:focus, a.link-strategy-border:hover {
+  color: #7030ac; }
+
+a.link-strategy-border:active {
+  color: #7030ac; }
+
+a.link-strategy-mark, a.link-strategy-mark:link {
+  color: #572586;
+  text-decoration: none;
+  background-color: #cfbae3;
+  position: relative; }
+  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #cfbae3; }
+  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
+    left: -2px; }
+  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
+    right: -2px; }
+
+a.link-strategy-mark:visited {
+  color: #572586; }
+
+a.link-strategy-mark:focus, a.link-strategy-mark:hover {
+  color: #7030ac; }
+
+a.link-strategy-mark:active {
+  color: #7030ac; }
+
+a.link-strategy-smart, a.link-strategy-smart:link {
+  color: #572586;
+  color: #572586;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
+  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
+    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
+    background: #cfbae3; }
+  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
+    text-shadow: none; }
+  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
+    color: #572586; }
+
+a.link-strategy-smart:visited {
+  color: #572586; }
+
+a.link-strategy-smart:focus, a.link-strategy-smart:hover {
+  color: #7030ac; }
+
+a.link-strategy-smart:active {
+  color: #7030ac; }
+
+a.link-inverted, a.link-inverted:link {
+  color: #fff;
+  text-decoration: underline; }
+
+a.link-inverted:visited {
+  color: #fff; }
+
+a.link-inverted:focus, a.link-inverted:hover {
+  color: #b3c9e0; }
+
+a.link-inverted:active {
+  color: #b3c9e0; }
+
+/*
+Quotes
+
+Tipographic quotes can be explicitly defined using the variable `$quotes`
+
+Markup:
+<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
+
+Styleguide Typography.quotes
+*/
+q {
+  quotes: "“" "”" "‘" "’"; }
+
+/*
+Blockquotes
+
+Blockquotes receive a padding based on '$gutter`
+
+Markup:
+<blockquote class="myclass {{modifier_class}}">
+  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+  <cite><a href="#!">Said no one, ever.</a></cite>
+</blockquote>
+
+.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
+
+Styleguide Typography.blockquote
+*/
+blockquote {
+  margin: 0 0 1.35rem 2.7rem; }
+
+.blockquote--decorated {
+  position: relative; }
+  .blockquote--decorated:before {
+    content: "*";
+    font-size: 38px;
+    font-size: 2.36859rem;
+    line-height: 43px;
+    line-height: 2.7rem;
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    position: absolute;
+    top: 0.3375rem;
+    left: -2.7rem; }
+
+/*
 Details
 
 Markup:
@@ -818,6 +834,90 @@ summary {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer; }
+
+/*
+Lists
+
+By default, `$gutter` is applied as margin. Square list-style-type is preferred.
+
+Lists are left-aligned.
+
+Markup:
+<ol class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ol>
+<ul class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+.list--inline	-  Inlines list items and removes decoration 
+
+Styleguide Base.lists
+*/
+ol,
+ul {
+  padding-left: 0;
+  list-style-position: outside; }
+  ol li,
+  ul li {
+    margin-bottom: 0.675rem; }
+
+ul {
+  list-style-type: square; }
+
+.list--inline {
+  margin: 0;
+  padding: 0; }
+  .list--inline li {
+    list-style-type: none;
+    display: inline-block; }
+
+/*
+Definition lists
+
+By default, all `<dd>` items are spaced with a `$spacer`
+
+Markup:
+<dl>
+  <dt>Definition List Title</dt>
+  <dd>This is a definition list division.</dd>
+  <dt>Lorem ipsum</dt>
+  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
+  <dt>Huesos</dt>
+  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
+</dl>
+
+Styleguide Base.definitionLists
+*/
+dt {
+  margin: 0 0 0.675rem 0; }
+
+dd {
+  margin: 0 0 1.35rem 1.35rem; }
+
+/*
+Horizontal rule
+
+Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
+
+Markup:
+<hr/>
+
+Styleguide Base.hr
+*/
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+  border: none;
+  border-bottom: 1px solid #dee0e4; }
 
 /*
 Headings
@@ -934,63 +1034,6 @@ dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
   text-decoration: none; }
 
 /*
-Quotes
-
-Tipographic quotes can be explicitly defined using the variable `$quotes`
-
-Markup:
-<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
-
-Styleguide Typography.quotes
-*/
-q {
-  quotes: "“" "”" "‘" "’"; }
-
-/*
-Blockquotes
-
-Blockquotes receive a padding based on '$gutter`
-
-Markup:
-<blockquote class="myclass {{modifier_class}}">
-  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-  <cite><a href="#!">Said no one, ever.</a></cite>
-</blockquote>
-
-.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-
-Styleguide Typography.blockquote
-*/
-blockquote {
-  margin: 0 0 1.35rem 2.7rem; }
-
-.blockquote--decorated {
-  position: relative; }
-  .blockquote--decorated:before {
-    content: "*";
-    font-size: 38px;
-    font-size: 2.36859rem;
-    line-height: 43px;
-    line-height: 2.7rem;
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-    position: absolute;
-    top: 0.3375rem;
-    left: -2.7rem; }
-
-code,
-kbd,
-samp,
-var {
-  display: inline-block;
-  vertical-align: baseline;
-  box-decoration-break: clone;
-  background-color: #dee0e4;
-  color: #1A1A19;
-  padding: 0 0.3375rem;
-  border-radius: 2px; }
-
-/*
 Minititle
 
 The concept of "minititle" makes reference to a small heading, normally used for sectioning.
@@ -1019,35 +1062,35 @@ Styleguide Typography.minititle
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
+code,
+kbd,
+samp,
+var {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  /* 1 */
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem;
+  /* 2 */
+  display: inline-block;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  background-color: #dee0e4;
+  color: #1A1A19;
+  padding: 0 0.3375rem;
+  border-radius: 2px; }
+
 /*
-Icons
+Code, Keyboard, Samp, Var
 
-The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
-
-Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
-
-A set of icons is __not__ provided. You are supposed to provide your own choices.
+Ensures monospaced fonts are used for computer-related text markup.
 
 Markup:
-<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
-<p><i class="icon">☝︎</i> Drag & Drop me</p>
-<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
+<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
 
-
-Styleguide Typography.icons
+Styleguide Typography.code
 */
-.icon {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  height: 1rem;
-  display: inline-block;
-  margin-right: 0.3375rem; }
-  .icon svg {
-    height: 100%;
-    width: auto;
-    vertical-align: bottom; }
-
 /*
 Paragraph Text
 
@@ -1068,206 +1111,163 @@ Markup:
 
 Styleguide Typography.paragraph
 */
-.text h1, .alert h1, .text h2, .alert h2, .text h3, .alert h3, .text h4, .alert h4 {
+.text-wrapper h1, .alert h1, .text-wrapper h2, .alert h2, .text-wrapper h3, .alert h3, .text-wrapper h4, .alert h4 {
   margin-top: 2.7rem; }
 
-.text section, .alert section,
-.text article,
+.text-wrapper section, .alert section,
+.text-wrapper article,
 .alert article {
   margin-bottom: 2.7rem; }
 
-.text h1:first-child, .alert h1:first-child,
-.text h2:first-child,
+.text-wrapper h1:first-child, .alert h1:first-child,
+.text-wrapper h2:first-child,
 .alert h2:first-child,
-.text h3:first-child,
+.text-wrapper h3:first-child,
 .alert h3:first-child,
-.text h4:first-child,
+.text-wrapper h4:first-child,
 .alert h4:first-child {
   margin-top: 0; }
 
-.text p:last-child, .alert p:last-child {
+.text-wrapper p:last-child, .alert p:last-child {
   margin-bottom: 0; }
 
-.visually-hidden, .selectr-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
-
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
-
 /*
-Disabled
+Abbreviation
 
-Class and placeholder used to dim the element and indicate that is not usable anymore.
-
-It also disables user interactions on buttons, links, etc... (see on their respective sections)
+Normalizes styling (underline)
 
 Markup:
-<p class="disabled">I'm no longer active</p>
-<mark class="disabled"> I'm no longer working</mark>
+<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
 
-
-Styleguide Helpers.disabled
+Styleguide Typography.abbr
 */
-
-.disabled {
-  opacity: 0.33; }
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
 
 /*
-Text alignment
+Bold
 
-Helper classes that provide a quick access to `text-align`.
-
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+Applies bolding weight defined on `_config.scss` using `bold()` mixin.
 
 Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
+<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
 
-
-Styleguide Helpers.alignment
+Styleguide Typography.bold
 */
-.left {
-  text-align: left; }
-
-.center {
-  text-align: center; }
-
-.right {
-  text-align: right; }
+b,
+strong,
+.strong {
+  font-weight: bold; }
 
 /*
-Figure + Figcaption
+Definition
 
-The variable `$figcaption-font-size` defines the sizing of image captions.
-
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
+Ensures monospaced fonts are used for computer-related text markup.
 
 Markup:
-<section>
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</section>
-<section class="center">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-<section class="right">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
+<p><dfn>Definition</dfn> is a tag used for defining terms</p>
 
-
-Styleguide Base.images.figure-figcaption
+Styleguide Typography.dfn
 */
-figcaption {
+dfn {
+  font-style: italic; }
+
+/*
+Mark
+
+Uses color defined on the palette `text`, key `mark`.
+
+Markup:
+<p><mark>Really important</mark> and thus, marked text</p>
+
+Styleguide Typography.mark
+*/
+mark {
+  background-color: #ac7030;
+  color: #FFFFFF;
+  padding: 0 0.3375rem; }
+
+/*
+Small
+
+Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
+
+The helper class `.small` can be used to fake the element.
+
+Markup:
+<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
+<h1>A big heading with <small>an small portion of text</small></h1>
+<h2>A second-level title <small>featuring a minor text</small></h2>
+<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+<p class="small">I'm a <code>.small</code> text!<p/>
+
+Styleguide Typography.small
+*/
+small,
+.small {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+.small * {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+h1 small {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 38px;
+  line-height: 2.3625rem; }
+
+h2 small {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 27px;
+  line-height: 1.6875rem; }
+
+h3 small {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/*
+Sub, Sup
+
+Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+
+Markup:
+<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+
+Styleguide Typography.sub
+*/
+sub,
+sup {
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 16px;
   line-height: 1.0125rem;
-  text-align: left; }
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
 
-/*
-Tables
+sub {
+  bottom: -.25em; }
 
-Tables span across all available space evenly distributed.
-
-A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
-
-Borders are collapsed by default
-
-`<caption>` receives a `.minititle` styling
-
-Markup:
-<section class="table">
-  <table>
-    <caption>Table Caption</caption>
-    <thead>
-      <tr>
-        <th>Table Heading 1</th>
-        <th>Table Heading 2</th>
-        <th>Table Heading 3</th>
-        <th>Table Heading 4</th>
-        <th>Table Heading 5</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>Table Footer 1</th>
-        <th>Table Footer 2</th>
-        <th>Table Footer 3</th>
-        <th>Table Footer 4</th>
-        <th>Table Footer 5</th>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
-Styleguide Base.tables
-*/
-table {
-  table-layout: fixed;
-  min-width: 100%; }
-
-th, td {
-  border: 1px solid #dee0e4;
-  padding: 0.675rem; }
-
-th {
-  text-align: left; }
-
-.table {
-  overflow: auto; }
-  .table th, .table td {
-    min-width: 120px; }
+sup {
+  top: -.5em; }
 
 input,
 label,
@@ -2687,6 +2687,35 @@ a.button--error {
   .button.disabled:hover, input[type=file] + label.disabled:hover, .button.disabled:focus, input[type=file] + label.disabled:focus {
     cursor: arrow; }
 
+/*
+Icons
+
+The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
+
+Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
+
+A set of icons is __not__ provided. You are supposed to provide your own choices.
+
+Markup:
+<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
+<p><i class="icon">☝︎</i> Drag & Drop me</p>
+<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
+
+
+Styleguide Typography.icons
+*/
+.icon {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.3375rem; }
+  .icon svg {
+    height: 100%;
+    width: auto;
+    vertical-align: bottom; }
+
 .alert {
   padding: 1.35rem;
   border-radius: 0px;
@@ -2710,6 +2739,74 @@ a.button--error {
   -ms-overflow-style: none; }
   .scrollbar-hidden::-webkit-scrollbar {
     width: 0 !important; }
+
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Kill Link
+
+Completely disables the visual appearance of a link. It defaults to primary text color.
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link">
+	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
+</section>
+
+Styleguide Helpers.kill-link
+*/
+.kill-link a, .kill-link a:link {
+  color: #384048;
+  text-decoration: underline; }
+
+.kill-link a:visited {
+  color: #384048; }
+
+.kill-link a:focus, .kill-link a:hover {
+  color: #384048; }
+
+.kill-link a:active {
+  color: #384048; }
+
+.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
+  text-decoration: none; }
+
+/*
+Kill Link Decoration
+
+Helper class that kills al link decoration on a given block
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link-decoration">
+	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
+</section>
+
+Styleguide Helpers.kill-link-decoration
+*/
+.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
+  text-decoration: none; }
 
 /*
 Margins
@@ -3212,6 +3309,30 @@ Styleguide Huesitos.gutter-modifier
 .quarter-gutter.pl {
   padding-left: 0.3375rem; }
 
+/*
+Text alignment
+
+Helper classes that provide a quick access to `text-align`.
+
+They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
+
+Markup:
+<p class="left">Text-alignment or even</p>
+<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
+<p class="right">can be achieved using this classes</p>
+
+
+Styleguide Helpers.alignment
+*/
+.left {
+  text-align: left; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
 /*!
  * Selectr 2.4.4
  * http://mobius.ovh/docs/selectr
@@ -3649,197 +3770,3 @@ input.selectr-input {
 .selectr-container ::placeholder {
   color: #6c7a86;
   opacity: 1; }
-
-/*
-Links
-
-All links are formatted throught `set-link()` mixin.
-
-The `.link-strategy` is honored but you can override it anytime by using helper classes.
-
-Markup:
-<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
-
-.link--inactive         	- Makes link appear as normal text but retain functionality
-.disabled         			- The helper class dims the link and deletes visual feedback
-.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
-.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
-.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
-.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
-.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
-
-Styleguide Typography.links
-*/
-a, a:link {
-  color: #572586;
-  text-decoration: underline; }
-
-a:visited {
-  color: #572586; }
-
-a:focus, a:hover {
-  color: #7030ac; }
-
-a:active {
-  color: #7030ac; }
-
-a.link--inactive, a.link--inactive:link {
-  color: #384048;
-  text-decoration: underline; }
-
-a.link--inactive:visited {
-  color: #384048; }
-
-a.link--inactive:focus, a.link--inactive:hover {
-  color: #384048; }
-
-a.link--inactive:active {
-  color: #384048; }
-
-a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
-  text-decoration: none; }
-
-a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
-  text-decoration: none; }
-
-a.link-strategy-underline, a.link-strategy-underline:link {
-  color: #572586;
-  text-decoration: underline; }
-
-a.link-strategy-underline:visited {
-  color: #572586; }
-
-a.link-strategy-underline:focus, a.link-strategy-underline:hover {
-  color: #7030ac; }
-
-a.link-strategy-underline:active {
-  color: #7030ac; }
-
-a.link-strategy-border, a.link-strategy-border:link {
-  color: #572586;
-  text-decoration: none;
-  border-bottom: 0.16875rem solid #cfbae3; }
-
-a.link-strategy-border:visited {
-  color: #572586; }
-
-a.link-strategy-border:focus, a.link-strategy-border:hover {
-  color: #7030ac; }
-
-a.link-strategy-border:active {
-  color: #7030ac; }
-
-a.link-strategy-mark, a.link-strategy-mark:link {
-  color: #572586;
-  text-decoration: none;
-  background-color: #cfbae3;
-  position: relative; }
-  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #cfbae3; }
-  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
-    left: -2px; }
-  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
-    right: -2px; }
-
-a.link-strategy-mark:visited {
-  color: #572586; }
-
-a.link-strategy-mark:focus, a.link-strategy-mark:hover {
-  color: #7030ac; }
-
-a.link-strategy-mark:active {
-  color: #7030ac; }
-
-a.link-strategy-smart, a.link-strategy-smart:link {
-  color: #572586;
-  color: #572586;
-  text-decoration: none;
-  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
-    text-shadow: none; }
-  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
-    color: #572586; }
-
-a.link-strategy-smart:visited {
-  color: #572586; }
-
-a.link-strategy-smart:focus, a.link-strategy-smart:hover {
-  color: #7030ac; }
-
-a.link-strategy-smart:active {
-  color: #7030ac; }
-
-a.link-inverted, a.link-inverted:link {
-  color: #fff;
-  text-decoration: underline; }
-
-a.link-inverted:visited {
-  color: #fff; }
-
-a.link-inverted:focus, a.link-inverted:hover {
-  color: #b3c9e0; }
-
-a.link-inverted:active {
-  color: #b3c9e0; }
-
-/*
-Kill Link Decoration
-
-Helper class that kills al link decoration on a given block
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link-decoration">
-	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
-</section>
-
-Styleguide Helpers.kill-link-decoration
-*/
-.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
-  text-decoration: none; }
-
-/*
-Kill Link
-
-Completely disables the visual appearance of a link. It defaults to primary text color.
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link">
-	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
-</section>
-
-Styleguide Helpers.kill-link
-*/
-.kill-link a, .kill-link a:link {
-  color: #384048;
-  text-decoration: underline; }
-
-.kill-link a:visited {
-  color: #384048; }
-
-.kill-link a:focus, .kill-link a:hover {
-  color: #384048; }
-
-.kill-link a:active {
-  color: #384048; }
-
-.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
-  text-decoration: none; }
