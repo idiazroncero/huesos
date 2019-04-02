@@ -1,0 +1,31 @@
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+/*
+Sub, Sup
+
+Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+
+Markup:
+<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+
+Styleguide Typography.sub
+*/
+
+sub,
+sup {
+	@include ritmo-font-size($h6-font-size);
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+sup {
+	top: -.5em;
+}

@@ -1,0 +1,35 @@
+
+
+@if $disable-fieldset {
+	fieldset {
+		margin-right:0;
+		margin-left:0;
+		border: none;
+		padding: 0;
+		legend {
+			margin-bottom: $spacer;
+			@include minititle($h4-font-size);
+		}
+	}
+} @else {
+	fieldset {
+		margin-right:0;
+		margin-left:0;
+		border: $input-border;
+		border-radius: $form-border-radius;
+		padding: $spacer;
+		legend {
+			@include minititle($h5-font-size);
+		}
+	}
+	fieldset.fieldset--disabled {
+		margin-right:0;
+		margin-left:0;
+		border: none;
+		padding: 0;
+		legend {
+			margin-bottom: $spacer;
+			@include minititle($h4-font-size);
+		}
+	}
+}

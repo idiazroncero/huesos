@@ -1,0 +1,62 @@
+.form-item {
+	margin-bottom : $gutter;
+	display:flex;
+	align-items: baseline;
+	label {
+		flex: 0 1 auto;
+		@include minititle();
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="search"] {
+		flex: 1 0 auto;
+	}
+	// Radio and checkbox won't use align-items : baseline
+	input[type="checkbox"],
+	input[type="radio"] {
+		align-self: center;
+	}
+
+	&:last-child,
+	&:last-of-type {
+		margin-bottom:0;
+	}
+}
+
+.form-item--col {
+	display:block;
+	label, 
+	input,
+	textarea {
+		display:block;
+		width:100%;
+	}
+	// Except radios and checkboxes!
+	input[type="checkbox"],
+	input[type="radio"] {
+        width:auto;
+    }
+}
+
+.form-item--required {
+	label::after {
+		content: "*";
+		color: get-color(state, error);
+	}
+}
+
+.form-item--label-inside {
+	border-radius: $form-border-radius;
+	@include form-border($input-border-strategy);
+	padding: $input-padding;
+	input,
+	textarea {
+		border:none;
+		border-radius:0;
+		padding:0;
+	}
+}
+

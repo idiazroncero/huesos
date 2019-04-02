@@ -1,0 +1,14 @@
+/*
+Definition
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p><dfn>Definition</dfn> is a tag used for defining terms</p>
+
+Styleguide Typography.dfn
+*/
+
+dfn {
+	font-style: italic;
+}

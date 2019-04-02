@@ -90,80 +90,6 @@ fieldset,
 details, details[open] summary {
   margin: 0 0 1.35rem 0; }
 
-/*
-Definition lists
-
-By default, all `<dd>` items are spaced with a `$spacer`
-
-Markup:
-<dl>
-  <dt>Definition List Title</dt>
-  <dd>This is a definition list division.</dd>
-  <dt>Lorem ipsum</dt>
-  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
-  <dt>Huesos</dt>
-  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
-</dl>
-
-Styleguide Base.definitionLists
-*/
-dt {
-  margin: 0 0 0.675rem 0; }
-
-dd {
-  margin: 0 0 1.35rem 1.35rem; }
-
-/*
-Lists
-
-By default, `$gutter` is applied as margin. Square list-style-type is preferred.
-
-Lists are left-aligned.
-
-Markup:
-<ol class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ol>
-<ul class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ul>
-
-.list--inline	-  Inlines list items and removes decoration 
-
-Styleguide Base.lists
-*/
-ol,
-ul {
-  padding-left: 0;
-  list-style-position: outside; }
-  ol li,
-  ul li {
-    margin-bottom: 0.675rem; }
-
-ul {
-  list-style-type: square; }
-
-.list--inline {
-  margin: 0;
-  padding: 0; }
-  .list--inline li {
-    list-style-type: none;
-    display: inline-block; }
-
-caption {
-  text-align: left;
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; }
-
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
 /**
@@ -192,30 +118,6 @@ body {
 main {
   /* 1 */
   display: block; }
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-/*
-Horizontal rule
-
-Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
-
-Markup:
-<hr/>
-
-Styleguide Base.hr
-*/
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-  border: none;
-  border-bottom: 1px solid #dee0e4; }
 
 /**
  * Remove the list style on navigation lists in all browsers (opinionated).
@@ -259,207 +161,11 @@ a {
   -webkit-text-decoration-skip: objects;
   /* 2 */ }
 
-/**
- * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-/*
-Abbreviation
-
-Normalizes styling (underline)
-
-Markup:
-<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
-
-Styleguide Typography.abbr
-*/
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */ }
-
-/**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- */
-/*
-Bold
-
-Applies bolding weight defined on `_config.scss` using `bold()` mixin.
-
-Markup:
-<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
-
-Styleguide Typography.bold
-*/
-b,
-strong,
-.strong {
-  font-weight: bold; }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-/*
-Code, Keyboard, Samp, Var
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
-
-Styleguide Typography.code
-*/
-code,
-kbd,
-samp,
-var {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  /* 1 */
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem;
-  /* 2 */ }
-
-/**
- * Add the correct font style in Android 4.3-.
- */
-/*
-Definition
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p><dfn>Definition</dfn> is a tag used for defining terms</p>
-
-Styleguide Typography.dfn
-*/
-dfn {
-  font-style: italic; }
-
-/**
- * Add the correct background and color in IE 9-.
- */
-/*
-Mark
-
-Uses color defined on the palette `text`, key `mark`.
-
-Markup:
-<p><mark>Really important</mark> and thus, marked text</p>
-
-Styleguide Typography.mark
-*/
-mark {
-  background-color: #ac7030;
-  color: #FFFFFF;
-  padding: 0 0.3375rem; }
-
-/**
- * Add the correct font size in all browsers.
- */
-/*
-Small
-
-Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
-
-The helper class `.small` can be used to fake the element.
-
-Markup:
-<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
-<h1>A big heading with <small>an small portion of text</small></h1>
-<h2>A second-level title <small>featuring a minor text</small></h2>
-<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
-<p class="small">I'm a <code>.small</code> text!<p/>
-
-Styleguide Typography.small
-*/
-small,
-.small {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-.small * {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-h1 small {
-  font-size: 28px;
-  font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
-
-h2 small {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
-
-h3 small {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-/*
-Sub, Sup
-
-Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
-
-Markup:
-<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
-
-Styleguide Typography.sub
-*/
-sub,
-sup {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -.25em; }
-
-sup {
-  top: -.5em; }
-
 /*
  * Remove the text shadow on text selections (opinionated).
  * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
-/*
-Selection
-
-Uses the same color as in `<mark>` for text highlighting.
-
-Markup:
-<p>Try selecting a part of this text for <code>::selection</code> testing</p>
-
-Styleguide Pseudo-elements.selection
-*/
-::-moz-selection {
-  background-color: #ac7030;
-  /* 1 */
-  color: #FFFFFF;
-  /* 1 */
-  text-shadow: none; }
 
 ::selection {
   background-color: #ac7030;
@@ -480,27 +186,6 @@ img,
 svg,
 video {
   vertical-align: middle; }
-
-/*
- * Deletes ugly iframe border and makes it fill its parent by default
- */
-/*
-Iframe
-
-Deletes border, displays iframe as a block element that always fills its parent's size.
-
-Markup:
-<section style="width:50%; height: 600px">
-	<iframe src="https://mentalstones.com"></iframe>
-</section>
-
-Styleguide Base.iframe
-*/
-iframe {
-  border: none;
-  width: 100%;
-  height: 100%;
-  display: block; }
 
 /**
  * Add the correct display in IE 9-.
@@ -757,7 +442,6 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -902,6 +586,16 @@ Markup:
 
 Styleguide Base.tables
 */
+caption {
+  text-align: left;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
 table {
   table-layout: fixed;
   min-width: 100%; }
@@ -1134,6 +828,90 @@ summary {
   cursor: pointer; }
 
 /*
+Lists
+
+By default, `$gutter` is applied as margin. Square list-style-type is preferred.
+
+Lists are left-aligned.
+
+Markup:
+<ol class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ol>
+<ul class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+.list--inline	-  Inlines list items and removes decoration 
+
+Styleguide Base.lists
+*/
+ol,
+ul {
+  padding-left: 0;
+  list-style-position: outside; }
+  ol li,
+  ul li {
+    margin-bottom: 0.675rem; }
+
+ul {
+  list-style-type: square; }
+
+.list--inline {
+  margin: 0;
+  padding: 0; }
+  .list--inline li {
+    list-style-type: none;
+    display: inline-block; }
+
+/*
+Definition lists
+
+By default, all `<dd>` items are spaced with a `$spacer`
+
+Markup:
+<dl>
+  <dt>Definition List Title</dt>
+  <dd>This is a definition list division.</dd>
+  <dt>Lorem ipsum</dt>
+  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
+  <dt>Huesos</dt>
+  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
+</dl>
+
+Styleguide Base.definitionLists
+*/
+dt {
+  margin: 0 0 0.675rem 0; }
+
+dd {
+  margin: 0 0 1.35rem 1.35rem; }
+
+/*
+Horizontal rule
+
+Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
+
+Markup:
+<hr/>
+
+Styleguide Base.hr
+*/
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+  border: none;
+  border-bottom: 1px solid #dee0e4; }
+
+/*
 Headings
 
 The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
@@ -1280,14 +1058,32 @@ code,
 kbd,
 samp,
 var {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  /* 1 */
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem;
+  /* 2 */
   display: inline-block;
   vertical-align: baseline;
-  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
   background-color: #dee0e4;
   color: #1A1A19;
   padding: 0 0.3375rem;
   border-radius: 2px; }
 
+/*
+Code, Keyboard, Samp, Var
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
+
+Styleguide Typography.code
+*/
 /*
 Paragraph Text
 
@@ -1327,6 +1123,145 @@ Styleguide Typography.paragraph
 
 .text-wrapper p:last-child, .alert p:last-child {
   margin-bottom: 0; }
+
+/*
+Abbreviation
+
+Normalizes styling (underline)
+
+Markup:
+<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
+
+Styleguide Typography.abbr
+*/
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/*
+Bold
+
+Applies bolding weight defined on `_config.scss` using `bold()` mixin.
+
+Markup:
+<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
+
+Styleguide Typography.bold
+*/
+b,
+strong,
+.strong {
+  font-weight: bold; }
+
+/*
+Definition
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p><dfn>Definition</dfn> is a tag used for defining terms</p>
+
+Styleguide Typography.dfn
+*/
+dfn {
+  font-style: italic; }
+
+/*
+Mark
+
+Uses color defined on the palette `text`, key `mark`.
+
+Markup:
+<p><mark>Really important</mark> and thus, marked text</p>
+
+Styleguide Typography.mark
+*/
+mark {
+  background-color: #ac7030;
+  color: #FFFFFF;
+  padding: 0 0.3375rem; }
+
+/*
+Small
+
+Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
+
+The helper class `.small` can be used to fake the element.
+
+Markup:
+<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
+<h1>A big heading with <small>an small portion of text</small></h1>
+<h2>A second-level title <small>featuring a minor text</small></h2>
+<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
+<p class="small">I'm a <code>.small</code> text!<p/>
+
+Styleguide Typography.small
+*/
+small,
+.small {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+.small * {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem; }
+
+h1 small {
+  font-size: 28px;
+  font-size: 1.77689rem;
+  line-height: 38px;
+  line-height: 2.3625rem; }
+
+h2 small {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 27px;
+  line-height: 1.6875rem; }
+
+h3 small {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.35rem; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/*
+Sub, Sup
+
+Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
+
+Markup:
+<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
+
+Styleguide Typography.sub
+*/
+sub,
+sup {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 16px;
+  line-height: 1.0125rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
 
 input,
 label,
@@ -1557,7 +1492,9 @@ input[type=radio].pseudo-radio {
 select {
   border: 1px solid #dee0e4;
   padding: 0 0.675rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
     border-color: #959699; }
@@ -1781,7 +1718,9 @@ input[type=radio].pseudo-radio {
 select {
   border: 1px solid #dee0e4;
   padding: 0 0.675rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
     border-color: #959699; }
@@ -1855,77 +1794,77 @@ Styleguide Layout.grid
 
 .grid--2col .grid-item {
   width: 50%;
-  width: calc( (100% / 2) -  ( ( 1.35rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
+  width: calc(50% - 0.676rem);
   margin-right: 1.35rem; }
   .grid--2col .grid-item:nth-child(2n) {
     margin-right: 0; }
 
 .grid--3col .grid-item {
   width: 33.33333%;
-  width: calc( (100% / 3) -  ( ( 1.35rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
+  width: calc(33.33333% - 0.901rem);
   margin-right: 1.35rem; }
   .grid--3col .grid-item:nth-child(3n) {
     margin-right: 0; }
 
 .grid--4col .grid-item {
   width: 25%;
-  width: calc( (100% / 4) -  ( ( 1.35rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
+  width: calc(25% - 1.0135rem);
   margin-right: 1.35rem; }
   .grid--4col .grid-item:nth-child(4n) {
     margin-right: 0; }
 
 .grid--5col .grid-item {
   width: 20%;
-  width: calc( (100% / 5) -  ( ( 1.35rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
+  width: calc(20% - 1.081rem);
   margin-right: 1.35rem; }
   .grid--5col .grid-item:nth-child(5n) {
     margin-right: 0; }
 
 .grid--6col .grid-item {
   width: 16.66667%;
-  width: calc( (100% / 6) -  ( ( 1.35rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
+  width: calc(16.66667% - 1.126rem);
   margin-right: 1.35rem; }
   .grid--6col .grid-item:nth-child(6n) {
     margin-right: 0; }
 
 .grid--7col .grid-item {
   width: 14.28571%;
-  width: calc( (100% / 7) -  ( ( 1.35rem * ( 7 - 1 ) / 7 ) + 0.001rem ));
+  width: calc(14.28571% - 1.15814rem);
   margin-right: 1.35rem; }
   .grid--7col .grid-item:nth-child(7n) {
     margin-right: 0; }
 
 .grid--8col .grid-item {
   width: 12.5%;
-  width: calc( (100% / 8) -  ( ( 1.35rem * ( 8 - 1 ) / 8 ) + 0.001rem ));
+  width: calc(12.5% - 1.18225rem);
   margin-right: 1.35rem; }
   .grid--8col .grid-item:nth-child(8n) {
     margin-right: 0; }
 
 .grid--9col .grid-item {
   width: 11.11111%;
-  width: calc( (100% / 9) -  ( ( 1.35rem * ( 9 - 1 ) / 9 ) + 0.001rem ));
+  width: calc(11.11111% - 1.201rem);
   margin-right: 1.35rem; }
   .grid--9col .grid-item:nth-child(9n) {
     margin-right: 0; }
 
 .grid--10col .grid-item {
   width: 10%;
-  width: calc( (100% / 10) -  ( ( 1.35rem * ( 10 - 1 ) / 10 ) + 0.001rem ));
+  width: calc(10% - 1.216rem);
   margin-right: 1.35rem; }
   .grid--10col .grid-item:nth-child(10n) {
     margin-right: 0; }
 
 .grid--11col .grid-item {
   width: 9.09091%;
-  width: calc( (100% / 11) -  ( ( 1.35rem * ( 11 - 1 ) / 11 ) + 0.001rem ));
+  width: calc(9.09091% - 1.22827rem);
   margin-right: 1.35rem; }
   .grid--11col .grid-item:nth-child(11n) {
     margin-right: 0; }
 
 .grid--12col .grid-item {
   width: 8.33333%;
-  width: calc( (100% / 12) -  ( ( 1.35rem * ( 12 - 1 ) / 12 ) + 0.001rem ));
+  width: calc(8.33333% - 1.2385rem);
   margin-right: 1.35rem; }
   .grid--12col .grid-item:nth-child(12n) {
     margin-right: 0; }
@@ -2403,7 +2342,9 @@ Styleguide Components.toc
 .toc ul li {
   margin: 0;
   font-weight: bold;
+  letter-spacing: normal;
   letter-spacing: initial;
+  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
@@ -2586,7 +2527,7 @@ a.tag, a.selectr-tag {
   background: #fff;
   border-radius: 0px;
   padding: 2.7rem;
-  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
+  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, .1); }
   .card .card {
     padding: 0.675rem; }
 
@@ -3446,10 +3387,6 @@ Styleguide Helpers.alignment
   width: 0;
   height: 0;
   content: '';
-  -o-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -ms-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -moz-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
   transform: rotate(0deg) translate3d(0px, -50%, 0px);
   border-width: 4px 4px 0 4px;
   border-style: solid;
@@ -3520,10 +3457,6 @@ Styleguide Helpers.alignment
   height: 0.9rem;
   padding: 0;
   cursor: pointer;
-  -o-transform: translate3d(0px, -50%, 0px);
-  -ms-transform: translate3d(0px, -50%, 0px);
-  -moz-transform: translate3d(0px, -50%, 0px);
-  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
@@ -3606,19 +3539,11 @@ Styleguide Helpers.alignment
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 .selectr-input-container.active,
@@ -3628,7 +3553,7 @@ Styleguide Helpers.alignment
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - (1.35rem));
+  width: calc(100% - 1.35rem);
   margin: 0.675rem; }
 
 .selectr-notice {
@@ -3711,10 +3636,6 @@ input.selectr-input {
   border-radius: 0px 0px 0 0; }
 
 .selectr-container.open .selectr-selected::after {
-  -o-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -ms-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -moz-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -webkit-transform: rotate(180deg) translate3d(0px, 50%, 0px);
   transform: rotate(180deg) translate3d(0px, 50%, 0px); }
 
 .selectr-disabled {
@@ -3766,38 +3687,18 @@ input.selectr-input {
   width: 20px;
   height: 20px;
   content: '';
-  -o-transform: translate3d(0px, -50%, 0px);
-  -ms-transform: translate3d(0px, -50%, 0px);
-  -moz-transform: translate3d(0px, -50%, 0px);
-  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
-  -o-transform-origin: 50% 0 0;
-  -ms-transform-origin: 50% 0 0;
-  -moz-transform-origin: 50% 0 0;
-  -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
-  -moz-animation: 500ms linear 0s normal forwards infinite running spin;
-  -webkit-animation: 500ms linear 0s normal forwards infinite running spin;
   animation: 500ms linear 0s normal forwards infinite running spin;
   border-width: 3px;
   border-style: solid;
   border-color: #aaa #ddd #ddd;
   border-radius: 50%; }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-    transform: rotate(0deg) translate3d(0px, -50%, 0px); }
-  100% {
-    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
-    transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
-
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
     transform: rotate(0deg) translate3d(0px, -50%, 0px); }
   100% {
-    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
@@ -3814,15 +3715,11 @@ input.selectr-input {
   top: auto;
   bottom: 100%; }
 
-.selectr-container ::-webkit-input-placeholder {
-  color: #6c7a86;
-  opacity: 1; }
-
-.selectr-container ::-moz-placeholder {
-  color: #6c7a86;
-  opacity: 1; }
-
 .selectr-container :-ms-input-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container ::-ms-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 

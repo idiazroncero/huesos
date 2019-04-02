@@ -1,0 +1,19 @@
+/*
+Horizontal rule
+
+Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
+
+Markup:
+<hr/>
+
+Styleguide Base.hr
+*/
+hr {
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+	@if $separators == true {
+		border:none;
+		border-bottom: $separator-width solid $separator-color;
+	}
+}

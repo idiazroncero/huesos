@@ -68,6 +68,11 @@ Markup:
 Styleguide Base.tables
 */
 
+caption {
+	text-align: $caption-align;
+	@include minititle();
+}
+
 table {
 	table-layout: fixed;
 	min-width:100%;

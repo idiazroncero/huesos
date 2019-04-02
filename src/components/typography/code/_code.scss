@@ -3,6 +3,8 @@ code,
 kbd,
 samp,
 var {
+	font-family: $font-monospace; /* 1 */
+	@include ritmo-font-size($base-font-size); /* 2 */
 	display:inline-block;
 	vertical-align:baseline;
 	box-decoration-break: clone;
@@ -15,3 +17,15 @@ var {
 		border-radius: $code-border-radius;
 	}
 }
+
+
+/*
+Code, Keyboard, Samp, Var
+
+Ensures monospaced fonts are used for computer-related text markup.
+
+Markup:
+<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
+
+Styleguide Typography.code
+*/

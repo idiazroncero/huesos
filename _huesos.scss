@@ -9,6 +9,10 @@
 @import "src/components/html/quotes/quotes";
 @import "src/components/html/blockquotes/blockquotes";
 @import "src/components/html/details/details";
+@import "src/components/html/lists/lists";
+@import "src/components/html/lists/definition-lists";
+@import "src/components/html/hr/hr";
+@import "src/components/html/iframe/iframe";
 
 // Typography
 @import "src/components/typography/headings/headings";
@@ -16,6 +20,12 @@
 @import "src/components/typography/minititle/minititle";
 @import "src/components/typography/code/code";
 @import "src/components/typography/text-wrapper/text-wrapper";
+@import "src/components/typography/abbreviation/abbreviation";
+@import "src/components/typography/strong/strong";
+@import "src/components/typography/definition/definition";
+@import "src/components/typography/mark/mark";
+@import "src/components/typography/small/small";
+@import "src/components/typography/sub-sup/sub-sup";
 
 // Forms
 @import "src/components/forms/forms";

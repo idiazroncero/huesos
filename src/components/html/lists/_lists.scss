@@ -1,0 +1,41 @@
+/*
+Lists
+
+By default, `$gutter` is applied as margin. Square list-style-type is preferred.
+
+Lists are left-aligned.
+
+Markup:
+<ol class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ol>
+<ul class="class {{ modifier_class }}">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+.list--inline	-  Inlines list items and removes decoration 
+
+Styleguide Base.lists
+*/
+ol,
+ul {
+	padding-left: $list-padding;
+	@if $list-padding == 0 {
+		list-style-position: outside;
+	}
+	li {
+		margin-bottom: $gutter / 2;
+	}
+}
+
+ul {
+	list-style-type: square;
+}
+
+.list--inline {
+	@include inline-list();
+}
