@@ -2,73 +2,65 @@
 // Base
 @import "src/scss/base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 
-// HTML
-@import "src/components/html/figure/figure";
-@import "src/components/html/table/table";
-@import "src/components/html/link/link";
-@import "src/components/html/quotes/quotes";
-@import "src/components/html/blockquotes/blockquotes";
-@import "src/components/html/details/details";
-@import "src/components/html/lists/lists";
-@import "src/components/html/lists/definition-lists";
-@import "src/components/html/hr/hr";
-@import "src/components/html/iframe/iframe";
+// 01-html
+@import "src/components/01-html/figure/figure";
+@import "src/components/01-html/table/table";
+@import "src/components/01-html/link/link";
+@import "src/components/01-html/quotes/quotes";
+@import "src/components/01-html/blockquote/blockquote";
+@import "src/components/01-html/details/details";
+@import "src/components/01-html/lists/lists";
+@import "src/components/01-html/lists/definition-lists";
+@import "src/components/01-html/hr/hr";
+@import "src/components/01-html/iframe/iframe";
+@import "src/components/01-html/images/images";
 
-// Typography
-@import "src/components/typography/headings/headings";
-@import "src/components/typography/font-secondary/font-secondary";
-@import "src/components/typography/minititle/minititle";
-@import "src/components/typography/code/code";
-@import "src/components/typography/text-wrapper/text-wrapper";
-@import "src/components/typography/abbreviation/abbreviation";
-@import "src/components/typography/strong/strong";
-@import "src/components/typography/definition/definition";
-@import "src/components/typography/mark/mark";
-@import "src/components/typography/small/small";
-@import "src/components/typography/sub-sup/sub-sup";
+// 03-typography
+@import "src/components/03-typography/headings/headings";
+@import "src/components/03-typography/font-secondary/font-secondary";
+@import "src/components/03-typography/minititle/minititle";
+@import "src/components/03-typography/code/code";
+@import "src/components/03-typography/text-wrapper/text-wrapper";
+@import "src/components/03-typography/abbreviation/abbreviation";
+@import "src/components/03-typography/strong/strong";
+@import "src/components/03-typography/definition/definition";
+@import "src/components/03-typography/mark/mark";
+@import "src/components/03-typography/small/small";
+@import "src/components/03-typography/sub-sup/sub-sup";
 
-// Forms
-@import "src/components/forms/forms";
-@import "src/components/forms/checkbox/checkbox";
-@import "src/components/forms/fieldset/fieldset";
-@import "src/components/forms/form-item/form-item";
-@import "src/components/forms/input/input";
-@import "src/components/forms/radio/radio";
-@import "src/components/forms/select/select";
-@import "src/components/forms/textarea/textarea";
+// 02-forms
+@import "src/components/02-forms/forms";
 
-// Layout and positioning
-@import "src/components/layout/position/position";
-@import "src/components/layout/grid/grid";
-@import "src/components/layout/visibility/visibility";
+// 04-layout and positioning
+@import "src/components/04-layout/position/position";
+@import "src/components/04-layout/grid/grid";
+@import "src/components/04-layout/visibility/visibility";
 
-// User navigation
-@import "src/components/navigation/nav/nav";
-@import "src/components/navigation/menu/menu";
-@import "src/components/navigation/toc/toc";
+// User 05-navigation
+@import "src/components/05-navigation/nav/nav";
+@import "src/components/05-navigation/menu/menu";
+@import "src/components/05-navigation/toc/toc";
 
-// Elements
-@import "src/components/elements/tag/tag";
-@import "src/components/elements/card/card";
-@import "src/components/elements/button/button";
-@import "src/components/elements/icon/icon";
-
-// User interaction
-@import "src/components/user_interaction/alert/alert";
-
-// Helpers
-@import "src/components/helpers/scrollbar-hidden/scrollbar-hidden";
-@import "src/components/helpers/visually-hidden/visually-hidden";
-@import "src/components/helpers/clearfix/clearfix";
-@import "src/components/helpers/disabled/disabled";
-@import "src/components/helpers/kill-link/kill-link";
-@import "src/components/helpers/kill-link-decoration/kill-link-decoration";
+// 06-elements
+@import "src/components/06-elements/tag/tag";
+@import "src/components/06-elements/card/card";
+@import "src/components/06-elements/button/button";
+@import "src/components/06-elements/icon/icon";
+@import "src/components/06-elements/alert/alert";
 
 // Utility classes
-@import "src/components/huesitos/huesitos";
+@import "src/components/07-huesitos/huesitos";
 
-// Visual debug helpers
-@import "src/components/debug/show-grid/show-grid";
+// Visual debug 
+@import "src/components/09-debug/show-grid/show-grid";
+
+// 08-helpers
+@import "src/components/08-helpers/scrollbar-hidden/scrollbar-hidden";
+@import "src/components/08-helpers/visually-hidden/visually-hidden";
+@import "src/components/08-helpers/clearfix/clearfix";
+@import "src/components/08-helpers/disabled/disabled";
+@import "src/components/08-helpers/kill-link/kill-link";
+@import "src/components/08-helpers/kill-link-decoration/kill-link-decoration";
 
 // Third-party libraries
 @import "src/scss/external/selectr";

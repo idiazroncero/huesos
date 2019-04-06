@@ -30,7 +30,7 @@ input.button {
 
 // Sepecific overrides for link buttons
 a.button {
-	@include kill-link();
+	// @include kill-link();
 }
 
 

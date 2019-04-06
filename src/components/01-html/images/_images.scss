@@ -1,0 +1,29 @@
+/*
+Images
+
+All images are responsive by default.
+
+Markup:
+<section>
+	<img src="https://placeimg.com/300/300/nature" />
+</section>
+<section>
+	<img src="https://placeimg.com/2500/750/nature" />
+</section>
+
+Styleguide Base.images
+*/
+
+img {
+	display:inline-block;
+	border-style: none;
+	max-width:100%;
+	height:auto;
+}
+figure {
+	display:inline-block;
+}
+
+figcaption {
+	display:block;
+}

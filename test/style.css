@@ -208,37 +208,6 @@ audio:not([controls]) {
   height: 0; }
 
 /**
- * Remove the border on images inside links in IE 10-.
- * Make all images responsive by default
- */
-/*
-Images
-
-All images are responsive by default.
-
-Markup:
-<section>
-	<img src="https://placeimg.com/300/300/nature" />
-</section>
-<section>
-	<img src="https://placeimg.com/2500/750/nature" />
-</section>
-
-Styleguide Base.images
-*/
-img {
-  display: inline-block;
-  border-style: none;
-  max-width: 100%;
-  height: auto; }
-
-figure {
-  display: inline-block; }
-
-figcaption {
-  display: block; }
-
-/**
  * Change the fill color to match the text color in all browsers (opinionated).
  */
 svg {
@@ -918,6 +887,51 @@ hr {
   /* 2 */
   border: none;
   border-bottom: 1px solid #dee0e4; }
+
+/*
+Iframe
+
+Deletes border, displays iframe as a block element that always fills its parent's size.
+
+Markup:
+<section style="width:50%; height: 600px">
+	<iframe src="https://mentalstones.com"></iframe>
+</section>
+
+Styleguide Base.iframe
+*/
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+/*
+Images
+
+All images are responsive by default.
+
+Markup:
+<section>
+	<img src="https://placeimg.com/300/300/nature" />
+</section>
+<section>
+	<img src="https://placeimg.com/2500/750/nature" />
+</section>
+
+Styleguide Base.images
+*/
+img {
+  display: inline-block;
+  border-style: none;
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  display: inline-block; }
+
+figcaption {
+  display: block; }
 
 /*
 Headings
@@ -2734,80 +2748,6 @@ Styleguide Typography.icons
   background-color: #e6c2c1;
   color: #561918; }
 
-.scrollbar-hidden {
-  scrollbar-width: none;
-  -ms-overflow-style: none; }
-  .scrollbar-hidden::-webkit-scrollbar {
-    width: 0 !important; }
-
-.visually-hidden, .selectr-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
-
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
-
-
-.disabled {
-  opacity: 0.33; }
-
-/*
-Kill Link
-
-Completely disables the visual appearance of a link. It defaults to primary text color.
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link">
-	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
-</section>
-
-Styleguide Helpers.kill-link
-*/
-.kill-link a, .kill-link a:link {
-  color: #384048;
-  text-decoration: underline; }
-
-.kill-link a:visited {
-  color: #384048; }
-
-.kill-link a:focus, .kill-link a:hover {
-  color: #384048; }
-
-.kill-link a:active {
-  color: #384048; }
-
-.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
-  text-decoration: none; }
-
-/*
-Kill Link Decoration
-
-Helper class that kills al link decoration on a given block
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link-decoration">
-	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
-</section>
-
-Styleguide Helpers.kill-link-decoration
-*/
-.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
-  text-decoration: none; }
-
 /*
 Margins
 
@@ -3332,6 +3272,96 @@ Styleguide Helpers.alignment
 
 .right {
   text-align: right; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  background-size: 1.35rem 1.35rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
+  background-repeat: repeat; }
+
+body {
+  background-size: 1.35rem 1.35rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-repeat: repeat; }
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none; }
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0 !important; }
+
+.visually-hidden, .selectr-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+
+.disabled {
+  opacity: 0.33; }
+
+/*
+Kill Link
+
+Completely disables the visual appearance of a link. It defaults to primary text color.
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link">
+	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
+</section>
+
+Styleguide Helpers.kill-link
+*/
+.kill-link a, .kill-link a:link {
+  color: #384048;
+  text-decoration: underline; }
+
+.kill-link a:visited {
+  color: #384048; }
+
+.kill-link a:focus, .kill-link a:hover {
+  color: #384048; }
+
+.kill-link a:active {
+  color: #384048; }
+
+.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
+  text-decoration: none; }
+
+/*
+Kill Link Decoration
+
+Helper class that kills al link decoration on a given block
+
+Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
+
+Markup:
+<section class="kill-link-decoration">
+	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
+</section>
+
+Styleguide Helpers.kill-link-decoration
+*/
+.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
+  text-decoration: none; }
 
 /*!
  * Selectr 2.4.4

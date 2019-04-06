@@ -52,3 +52,4 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Select heigh on multiselect + tags
 - Addons with glitch, etc
 - Basic svg icon library
+- Journalistic "sumarios" using blockquotes (as a component)

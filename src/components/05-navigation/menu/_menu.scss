@@ -70,7 +70,8 @@ Styleguide Components.menus
             get-color(text, primary),
             contrast-color($menu-background-color),
             get-color(text, primary),
-            false // Flag to avoid setting the link-decoration
+            false,
+            false
           )
         }
       }

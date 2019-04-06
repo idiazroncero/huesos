@@ -1,0 +1,30 @@
+
+@mixin image-fit($priority: 'width'){
+    position:relative;
+    overflow:hidden;
+    img {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        @if $priority == 'width' {
+            width: 100%;
+            height:auto;
+        } @else {
+            width: auto;
+            height: 100%;
+        }
+    }
+    
+    @at-root {
+        @supports(object-fit: cover) {
+            & img {
+                object-fit:cover;
+                position:static;
+                transform: translate(0, 0);
+                height: 100%;
+                width:100%;
+            }
+        }
+    }
+}

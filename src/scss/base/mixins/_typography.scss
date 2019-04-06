@@ -1,13 +1,4 @@
 /*
-Typography
-
-Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
-
-Styleguide Functions.Typography
-
-*/
-
-/*
 contrast-color($item)
 
 Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
@@ -55,4 +46,24 @@ Styleguide Mixins.Typography.Minititle
 		text-transform:uppercase;
 	}
 	letter-spacing: $letter-spacing;
+}
+
+
+@mixin text-border($color) {
+    color: transparent !important;
+    text-shadow: 
+        -1px -1px 0 $color,  
+        1px -1px 0 $color,
+        -1px 1px 0 $color,
+        1px 1px 0 $color;
+    
+    @at-root {
+        @supports (-webkit-text-stroke: 1px $color) {
+            & {
+                text-stroke: 1px $color;
+                -webkit-text-stroke: 0.5px $color;
+                text-shadow:none;
+            }
+        }
+    }
 }

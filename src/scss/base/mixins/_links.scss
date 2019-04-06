@@ -1,65 +1,105 @@
-@mixin set-link-decoration($strategy: $link-strategy) {
-	@if $strategy == underline {
-		text-decoration:underline;
-	} @else if $strategy == border {
-		text-decoration:none;
-		border-bottom: $link-border-width solid $link-border-color; 
-	} @else if $strategy == smart {
-		@include linkUnderlines($link-smart-background, $link-color);
-	} @else if $strategy == mark {
-		text-decoration:none;
-		background-color: $link-mark-color;
-		position:relative;
-		&:before,
-		&:after {
-			content:"";
-			position:absolute;
-			top:0;
-			bottom:0;
-			width:2px;
-			background-color: $link-mark-color;
-		}
-		&:before {
-			left:-2px;
-		}
-		&:after {
-			right:-2px;
-		}
-	} @else {
-		@error "No se ha definido un valor correcto para $link-strategy";
+@mixin link-underline(){
+	text-decoration:underline;
+	background-color: transparent;
+	border-bottom: none;
+	padding-left: 0;
+	padding-right: 0;
+	&:after { display:none }
+}
+
+@mixin link-border($color: $link-border-color, $width: $link-border-width){
+	text-decoration:none;
+	background-color: transparent;
+	border-bottom: $width solid $color; 
+	padding-left: 0;
+	padding-right: 0;
+	&:after { display:none }
+}
+
+@mixin link-mark($color: $link-mark-color, $padding: $link-mark-padding){
+	text-decoration:none;
+	background-color: $color;
+	border-bottom: none; 
+	padding-left: $padding;
+	padding-right: $padding;
+	&:after { display:none }
+}
+
+@mixin link-border-inset($color: $link-border-inset-color, $width: $link-border-inset-width){
+	text-decoration:none;
+	background-color: transparent;
+	border-bottom: none; 
+	padding-left: 0;
+	padding-right: 0;
+
+	position:relative;
+	&:after {
+		content:"";
+		display:block; // Explicit override
+		position:absolute;
+		bottom: 0;
+		left:0;
+		width: 100%;
+		height: $width;
+		background-color: $color;
+		z-index:-1;
 	}
 }
 
-/*
-set-link($base, $visited, $hover, $active)
 
-Sets all link values according to global config.
 
-$base - Base color
-$visited  - Color when visited
-$hover   - Color when hovered and focused
-$hover   - Color when active
 
-Styleguide Mixins.links.setLink
-*/
+@mixin set-link-decoration(
+		$link-strategy-default : $link-strategy-default,
+		$link-strategy-hover : $link-strategy-hover,  
+	) {
+	@if $link-strategy-default == false {
+		text-decoration:none;
+	} @else if $link-strategy-default == underline {
+		@include link-underline();
+	} @else if $link-strategy-default == border {
+		@include link-border();
+	} @else if $link-strategy-default == mark {
+		@include link-mark();
+	} @else if $link-strategy-default == 'border-inset' {
+		@include link-border-inset();
+	} @else {
+		@error "No se ha definido un valor correcto para $link-strategy-default";
+	}
+
+	&:hover,
+	&:focus {
+		@if $link-strategy-hover == false {
+			text-decoration:none;
+		} @else if $link-strategy-hover == underline {
+			@include link-underline();
+		} @else if $link-strategy-hover == border {
+			@include link-border($link-border-color-hover);
+		} @else if $link-strategy-hover == mark {
+			@include link-mark($link-mark-color-hover);
+		} @else if $link-strategy-hover == 'border-inset' {
+			@include link-border-inset($link-border-inset-color-hover, $link-border-inset-width-hover);
+		} @else {
+			@error "No se ha definido un valor correcto para $link-strategy-hover";
+		}	
+	}
+}
+
 
 @mixin set-link(
 	$base: $link-color,
     $visited: $link-visited,
     $hover: $link-hover,
 	$active: $link-active,
-	$strategy: $link-strategy
-) {
+	$strategy-default: $link-strategy-default,
+	$strategy-hover: $link-strategy-hover,
+	) {
+	& {
+		@include set-link-decoration($strategy-default, $strategy-hover);
+	}
 	&, 
 	&:link {
 		color: $base;
-		@if $strategy {
-			@if $link-highlight-on-hover {
-				text-decoration:none;
-			} @else {
-				@include set-link-decoration($strategy);
-			}
-		}
 	}
 	&:visited {
 		color: $visited;
@@ -67,19 +107,6 @@ Styleguide Mixins.links.setLink
 	&:focus,
 	&:hover { // Tratamos :hover y :focus siempre indistintamente
 		color: $hover;
-		@if $strategy {
-			@if $link-highlight-on-hover {
-				@include set-link-decoration($strategy);
-			} @else {
-				@if strategy == 'underline' {
-					text-decoration:none;
-				} @else if strategy == 'border' {
-					border:none;
-				} @else if strategy == 'mark' {
-					background:transparent;
-				}
-			}
-		}
 	}
 	&:active {
 		color: $active;
@@ -87,61 +114,44 @@ Styleguide Mixins.links.setLink
 }
 
 @mixin kill-link($color: get-color(text, primary)) {
-	@include set-link($color, $color, $color, $color);
+	@include set-link($color, $color, $color, $color, false, false);
 	@include kill-link-decoration();
 }
 
-@mixin kill-link-decoration($strategy: $link-strategy) {
+@mixin kill-link-decoration(
+	$strategy-default: $link-strategy-default,
+	$strategy-hover: $link-strategy-hover
+	) {
 	&, 
 	&:link,
 	&:visited,
-	&:focus,
-	&:hover,
 	&:active {
-		@if $strategy == underline {
+		@if $strategy-default == underline {
 			text-decoration:none;
-		} @else if $strategy == border {
+		} @else if $strategy-default == border {
 			border-bottom: none; 
-		} @else if $strategy == smart {
-			text-shadow: none;
-			background-image:none;
-			color: inherit;
-		} @else if $strategy == mark {
+		} @else if $strategy-default == mark {
 			background-color:none;
-		} 
-	}   
-}
-
-// Smart text-underline from https://eager.io/blog/smarter-link-underlines/
-
-@mixin textShadowToCropUnderline($color) {
-	text-shadow: .03em 0 $color, -.03em 0 $color, 0 .03em $color, 0 -.03em $color, .06em 0 $color, -.06em 0 $color, .09em 0 $color, -.09em 0 $color, .12em 0 $color, -.12em 0 $color, .15em 0 $color, -.15em 0 $color
-}
-
-@mixin linkUnderlines($backgroundColor, $color) {
-	color: $color;
-	text-decoration: none;
-	@include textShadowToCropUnderline($backgroundColor);
-	background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient($backgroundColor, $backgroundColor), linear-gradient($color, $color);
-	background-size: .05em 1px, .05em 1px, 1px 1px;
-	background-repeat: no-repeat, no-repeat, repeat-x;
-	background-position: 0% 90%, 100% 90%, 0% 90%;
-
-	&::selection {
-		@include textShadowToCropUnderline($backgroundColor);
-			background: $backgroundColor;
+			padding:0;
+		} @else if $strategy-default == 'button-inset' {
+			&:after {
+				display:none;
+			}
+		}
 	}
-
-	&::-moz-selection {
-		@include textShadowToCropUnderline($backgroundColor);
-			background: $backgroundColor;
-	}
-
-	&:before, &:after, *, *:before, *:after {
-		text-shadow: none
-	}
-
-	&:visited {
-		color: $color
-	}
+	&:focus,
+	&:hover {
+		@if $strategy-hover == underline {
+			text-decoration:none;
+		} @else if $strategy-hover == border {
+			border-bottom: none; 
+		} @else if $strategy-hover == mark {
+			background-color:transparent;
+			padding:initial;
+		} @else if $strategy-default == 'button-inset' {
+			&:after {
+				display:none;
+			}
+		}
+	} 
 }

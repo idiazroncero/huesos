@@ -22,29 +22,30 @@ Styleguide Typography.links
 a {
 	@include set-link();
 	&.link--inactive {
-		@include kill-link()
+		@include kill-link();
 	}
 	&.disabled {
-		@include kill-link-decoration();
+		@include kill-link(get-color(state, muted));
 	}
-	&.link-strategy-underline {
-		@include set-link($strategy: 'underline');
-	}
-	&.link-strategy-border {
-		@include set-link($strategy: 'border');
-	}
-	&.link-strategy-mark {
-		@include set-link($strategy: 'mark');
-	}
-	&.link-strategy-smart {
-		@include set-link($strategy: 'smart');
-	}
-	&.link-inverted {
+	&.link--inverted {
 		@include set-link(
 			$inverse-link-color,
 			$inverse-link-visited, 
 			$inverse-link-hover,
 			$inverse-link-active
 		);
+	}
+}
+
+
+// Link alernative styles
+@if $link-alternative-strategies {
+	@each $strategy, $states in $link-alternative-strategies {
+		.link--#{$strategy} {
+			@include set-link(
+				$strategy-default: map-get($states, default),
+				$strategy-hover: map-get($states, hover)
+			)
+		}
 	}
 }

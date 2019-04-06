@@ -210,8 +210,6 @@ $table-padding: $spacer / 2;
 $table-th-align: left;
 
 $blockquote-whitespace: $spacer * 2;
-$blockquote-decoration: '*';
-$blockquote-decoration-size: $h2-font-size;
 $blockquote-font: $font-secondary;
 
 $shadows: true;
@@ -227,18 +225,21 @@ $shadow-definition: 2px 2px 2px 0px rgba($black, 0.1);
 // There are four link strategies available.
 // ------
 
-$link-strategy: underline; // Alternatives: underline, border, smart, mark, false
-$link-highlight-on-hover: false; // "false" highlights the link before :hover
-
 // Only for $link-strategy:border
-$link-border-color: $violet2;
-$link-border-width: ritmo(0.5);
+$link-border-color: $violet1;
+$link-border-color-hover: $violet2; // You can set a different color on :hover
+$link-border-width: ritmo(1);
 
 // Only for $link-strategy:mark
-$link-mark-color: $violet2;
+$link-mark-color: $violet1;
+$link-mark-color-hover: $violet2;
+$link-mark-padding: 4px;
 
-// Only for $link-strategy:smart
-$link-smart-background: $violet2;
+// Only for $link-strategy:border-inset
+$link-border-inset-color: $violet1;
+$link-border-inset-color-hover: $violet2;
+$link-border-inset-width: 0.4rem;
+$link-border-inset-width-hover: 0.7rem;
 
 // Link colors
 $link-color: $violet7;
@@ -251,6 +252,31 @@ $inverse-link-color: $white;
 $inverse-link-visited: $white;
 $inverse-link-hover: $blue2;
 $inverse-link-active: $blue2;
+
+
+// BUILD YOUR OWN LINK
+// You can choose one strategy for every state!
+//
+// Available strategies: 
+// - false - No styling
+// - underline - Normal, text-decoration:underline
+// - border - Border-bottom with custom width
+// - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
+// - mark - Background-color (as in a <mark> element)
+//
+$link-strategy-default: 'underline';
+$link-strategy-hover: 'border-inset';
+
+$link-alternative-strategies: false;
+
+// Example of $link-alternative-strategies:
+//
+$link-alternative-strategies: (
+	mark : (
+		default : 'mark', 
+		hover : 'mark'
+	),
+);
 
 
 
@@ -286,8 +312,8 @@ $button-invert-color: false; // ONly valid on border:fill and background
 // - split-inverse - Inverse of split
 //
 // Note that background and outline can be considered "inverse" of each other
-$button-strategy-default: 'outline';
-$button-strategy-hover: 'background';
+$button-strategy-default: 'split';
+$button-strategy-hover: 'split-inverse';
 
 $button-alternative-strategies: false;
 

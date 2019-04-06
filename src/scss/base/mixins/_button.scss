@@ -1,5 +1,5 @@
 @mixin button-outline($color) {
-    border-color: $color;
+    border: $button-border-width solid $color;
     color: $color;
     background-color: transparent;
 }
@@ -93,8 +93,37 @@
         $button-strategy-hover : $button-strategy-hover,  
         ) 
     {
+    
+    // Custom link decoration override adapted to button elements
 
-    border-radius: $button-border-radius;
+    &, 
+    &:link,
+    &:visited,
+    &:active {
+        border-radius: $button-border-radius;
+        border-bottom-width: $button-border-width; // Ensure no link overrides the button
+        border-bottom-style: solid;
+        text-decoration:none;
+
+        @if $link-strategy-default == mark {
+
+        } @else if $link-strategy-default == 'border-inset' {
+            &:after {
+                display:none;
+            }
+        }
+    }
+    &:focus,
+    &:hover {
+        text-decoration:none;
+        @if $link-strategy-hover == mark {
+
+        } @else if $link-strategy-default == 'border-inset' {
+            &:after {
+                display:none;
+            }
+        }
+    } 
 
 	@if $button-strategy-default == 'outline' {
         @include button-link-outline($color);
