@@ -10,10 +10,10 @@ Misuse or lack of configuration of some of this parts can result on overtly bloa
 Follow these advices to avoid sending extra KBs to your users:
 
 
-## Audit your button strategies
+## Audit your button strategies and link strategies
 
-`$button-alternative-strategies` is a powerful weapon that will generate a ton of utility classes for your alternative buttons.
+Both `$button-alternative-strategies` and `$link-alternative-strategies` are powerful weapons that will generate a ton of utility classes for your alternative buttons and links.
 
-**Use it if you really need alternative buttons**, i.e, buttons whose styling difer from the default ones.
+**Use it if you really need alternatives**, i.e, buttons and links whose styling needs to difer from the default ones.
 
-Consider setting `$button-alternative-strategies` to `false` if you only need one global button style... which might be **the most common case**.
+Consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false` if you only need one global button style... which might be **the most common case**.

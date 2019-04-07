@@ -1,0 +1,26 @@
+ol,
+ul {
+	padding-left: $list-padding;
+	@if $list-padding == 0 {
+		list-style-position: outside;
+	}
+	li {
+		margin-bottom: $gutter / 2;
+	}
+}
+
+ul {
+	list-style-type: square;
+}
+
+dt {
+	margin: 0 0 $spacer / 2 0;
+}
+
+dd {
+	margin: 0 0 $spacer $spacer;
+}
+
+.list--inline {
+	@include inline-list();
+}

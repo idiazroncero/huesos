@@ -1,0 +1,29 @@
+{
+  "context" : {
+    "text" : "this gooey jooey is a link"
+  },
+  "variants" : [
+      { 
+        "name" : "Inactive",
+        "context": {
+          "modifier": "link--inactive",
+          "text": "this gooey jooey is a inactive link"
+        }
+      },
+      { 
+        "name" : "Inverted",
+        "context": {
+          "modifier": "link--inverted",
+          "text": "this gooey jooey is an inverted link",
+          "style": "background-color: #000"
+        }
+      },
+      { 
+        "name" : "Disabled",
+        "context": {
+          "modifier": "disabled",
+          "text": "this gooey jooey is a disabled link"
+        }
+      }
+  ]
+}

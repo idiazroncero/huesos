@@ -1,3 +1,9 @@
+// Explicit overrides for link buttons
+a.button {
+	padding: 0 ritmo(2);
+}
+
+
 // Global reset
 .button {
 	@include form-reset-button();
@@ -22,15 +28,7 @@
 }
 
 input.button {
-	&:hover,
-	&:focus {
-		border-color: transparent;
-	}
-}
 
-// Sepecific overrides for link buttons
-a.button {
-	// @include kill-link();
 }
 
 
@@ -49,7 +47,7 @@ a.button {
 	}
 }
 
-// Button alernative styles
+// Button alternative styles
 @if $button-alternative-strategies {
 	@each $strategy, $states in $button-alternative-strategies {
 		@each $key, $value in $button-states {

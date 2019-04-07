@@ -3,14 +3,12 @@
 @import "src/scss/base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 
 // 01-html
-@import "src/components/01-html/figure/figure";
 @import "src/components/01-html/table/table";
 @import "src/components/01-html/link/link";
 @import "src/components/01-html/quotes/quotes";
 @import "src/components/01-html/blockquote/blockquote";
 @import "src/components/01-html/details/details";
-@import "src/components/01-html/lists/lists";
-@import "src/components/01-html/lists/definition-lists";
+@import "src/components/01-html/list/list";
 @import "src/components/01-html/hr/hr";
 @import "src/components/01-html/iframe/iframe";
 @import "src/components/01-html/images/images";
