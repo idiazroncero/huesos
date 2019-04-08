@@ -1,17 +1,3 @@
-
-/*
-Iframe
-
-Deletes border, displays iframe as a block element that always fills its parent's size.
-
-Markup:
-<section style="width:50%; height: 600px">
-	<iframe src="https://mentalstones.com"></iframe>
-</section>
-
-Styleguide Base.iframe
-*/
-
 iframe {
 	border:none;
 	width:100%;
