@@ -1,0 +1,31 @@
+h1, .h1 { @include ritmo-font-size($h1-font-size); }
+h2, .h2 { @include ritmo-font-size($h2-font-size); }
+h3, .h3 { @include ritmo-font-size($h3-font-size); }
+h4, .h4 { @include ritmo-font-size($h4-font-size); }
+h5, .h5 { @include ritmo-font-size($h5-font-size); }
+h6, .h6 { @include ritmo-font-size($h6-font-size); }
+
+@if $heading-vertical-rhythm {
+	h1,.h1,
+	h2,.h2,
+	h3,.h3 {
+		line-height: $heading-vertical-rhythm;
+	}
+}
+
+@if $heading-letter-spacing {
+	h1,.h1,
+	h2,.h2 {
+		letter-spacing: $heading-letter-spacing;
+	}	
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6  {
+	color: get-color(text, heading);
+	font-weight:$heading-font-weight;
+	small {
+		color: inherit;
+		vertical-align: 0;
+	}
+}

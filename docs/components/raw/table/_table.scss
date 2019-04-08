@@ -1,0 +1,25 @@
+caption {
+	text-align: $caption-align;
+	@include minititle();
+}
+
+table {
+	table-layout: fixed;
+	min-width:100%;
+}
+
+th, td {
+	border: $table-border;
+	padding: $table-padding;
+}
+
+th {
+	text-align: $table-th-align;
+}
+
+.table {
+  overflow:auto;
+  th,td {
+    min-width:120px;
+  }
+}

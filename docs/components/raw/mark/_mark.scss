@@ -1,0 +1,5 @@
+mark {
+	background-color: get-color(text, mark);
+	color: contrast-color(get-color(text, mark));
+	padding: 0 ritmo(1);
+}

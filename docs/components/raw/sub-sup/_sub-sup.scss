@@ -1,0 +1,15 @@
+sub,
+sup {
+	@include ritmo-font-size($h6-font-size);
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+sup {
+	top: -.5em;
+}

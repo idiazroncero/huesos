@@ -49,7 +49,7 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Menu right should right-align items
 - Allow to deactivate grid on responsive grid on smaller viewports
 - Better required
-- Select heigh on multiselect + tags
+- Select height on multiselect + tags
 - Addons with glitch, etc
 - Basic svg icon library
 - Journalistic "sumarios" using blockquotes (as a component)
