@@ -141,7 +141,9 @@ $figcaption-align: left;
 
 // Quotes
 // Here are some common quotes: “ ” ‘ ’ ‛ ‟ ‚ „ ' " ‹ › « »
-$quotes: "“" "”" "‘" "’";
+// Latin quotes (spanish, french): "«" "»" "“" "”"
+// English quotes: "“" "”" "‘" "’"
+$quotes: "«" "»" "“" "”";
 
 // Code-like items
 $code-background: get-color(base, separator);

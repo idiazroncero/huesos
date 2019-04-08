@@ -1,20 +1,3 @@
-/*
-Headings
-
-The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
-
-Markup:
-<h1>Main titles use heading one</h1>
-<h2>Subtitules and main sections use h2</h2>
-<h3>H3 is mainly for nested sections</h3>
-<h4>In case you need furher sectioning, use an h4</h4>
-<h5>Rarely you will need a heading five</h5>
-<h6>Heading six is rather unexpected</h6>
-
-
-Styleguide Typography.headings
-*/
-
 h1, .h1 { @include ritmo-font-size($h1-font-size); }
 h2, .h2 { @include ritmo-font-size($h2-font-size); }
 h3, .h3 { @include ritmo-font-size($h3-font-size); }

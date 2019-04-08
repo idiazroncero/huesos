@@ -1,27 +1,5 @@
-/*
-Small
-
-Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
-
-The helper class `.small` can be used to fake the element.
-
-Markup:
-<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
-<h1>A big heading with <small>an small portion of text</small></h1>
-<h2>A second-level title <small>featuring a minor text</small></h2>
-<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
-<p class="small">I'm a <code>.small</code> text!<p/>
-
-Styleguide Typography.small
-*/
-
 small,
 .small {
-	@include ritmo-font-size($h6-font-size);
-}
-
-// Every child of a '.small' fake element needs to have the same size!!
-.small * {
 	@include ritmo-font-size($h6-font-size);
 }
 
