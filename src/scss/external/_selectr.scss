@@ -110,7 +110,8 @@
 	float: left;
 	cursor: default;
 	@extend .tag;
-	@extend .pr;
+	padding-right: $gutter * 1.25;
+	margin-bottom:0;
 }
 
 .selectr-container.multiple.has-selected .selectr-selected {
@@ -145,17 +146,12 @@
 .selectr-input-clear,
 .selectr-tag-remove {
 	position: absolute;
-	top: 50%;
-	right: 2px;
-	width: $gutter / 1.5;
-	height: $gutter / 1.5;
+	top: 0;
+	right: 0;
+	width: $vertical-rhythm+rem;
+	height: $vertical-rhythm+rem;
 	padding: 0;
 	cursor: pointer;
-	-o-transform: translate3d(0px, -50%, 0px);
-	-ms-transform: translate3d(0px, -50%, 0px);
-	-moz-transform: translate3d(0px, -50%, 0px);
-	-webkit-transform: translate3d(0px, -50%, 0px);
-			transform: translate3d(0px, -50%, 0px);
 	border: medium none;
 	background-color: transparent;
 	z-index: 11;
@@ -175,9 +171,6 @@
 	display: block;
 }
 
-.selectr-selected .selectr-tag-remove {
-	right: 2px;
-}
 
 .selectr-clear::before,
 .selectr-clear::after,
@@ -186,8 +179,8 @@
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
 	position: absolute;
-	top: 5px;
-	left: 9px;
+	top: 50%;
+	left: 50%;
 	width: 2px;
 	height: 10px;
 	content: ' ';
@@ -196,10 +189,9 @@
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-	top: $gutter / 12;
+	top: 50%;
 	left: 50%;
 	width: 2px;
-	margin-left:-1px;
 	height: $gutter / 2;
 	background-color: #fff;
 }
@@ -207,21 +199,13 @@
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
-	-o-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+	transform: translate(-50%, -50%)rotate(-45deg);
 }
 
 .selectr-input-container.active,

@@ -1,0 +1,28 @@
+.toc {
+	ul {
+		li {
+      margin: 0;
+      font-weight: $toc-font-weight;
+      letter-spacing: initial;
+      @if $toc-uppercase {
+        text-transform: uppercase;
+      } @else {
+        text-transform: initial;
+      }
+      @include ritmo-font-size($toc-font-size);
+      ul {
+        margin: $gutter / 4 0 $gutter / 2 $gutter;
+        li{
+          // Don't let "bold" pass through here
+          font-weight: normal;
+          @include ritmo-font-size(0.95 * $toc-font-size);
+        }
+        ul {
+          li {
+            @include ritmo-font-size(0.7 * $toc-font-size);
+          }
+        }
+      }
+		}
+  }
+}

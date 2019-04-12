@@ -1081,44 +1081,6 @@ textarea {
   margin-right: auto;
   padding: 1.35rem; }
 
-/*
-Grid
-
-Establishes a grid. Uses a float fallback for less capable browsers.
-
-By default, it establishes a 4-col grid. Modifier classes can change this.
-
-No row height is set: it depends on the content.
-
-.grid--2col        - Establishes a 2col grid
-.grid--3col        - Establishes a 3col grid
-.grid--5col        - Establishes a 5col grid
-.grid--6col        - Establishes a 6col grid
-.grid--7col        - Establishes a 7col grid
-.grid--8col        - Establishes a 8col grid
-.grid--9col        - Establishes a 9col grid
-.grid--10col       - Establishes a 10col grid
-.grid--11col       - Establishes a 11col grid
-.grid--12col       - Establishes a 12col grid
-
-Markup:
-<div class="grid {{ modifier_class }}">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-    <div class="grid-item bg-state-success" style="height:50px""></div>
-    <div class="grid-item bg-state-warning" style="height:50px""></div>
-    <div class="grid-item bg-state-error" style="height:50px""></div>
-    <div class="grid-item bg-blue-base" style="height:50px""></div>
-    <div class="grid-item bg-red-base" style="height:50px""></div>
-    <div class="grid-item bg-green-base" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid
-*/
 .grid {
   *zoom: 1; }
   .grid:before, .grid:after {
@@ -1165,52 +1127,9 @@ Styleguide Layout.grid
   .grid--6col .grid-item:nth-child(6n) {
     margin-right: 0; }
 
-.grid--7col .grid-item {
-  width: 14.28571%;
-  width: calc(14.28571% - 1.15814rem);
-  margin-right: 1.35rem; }
-  .grid--7col .grid-item:nth-child(7n) {
-    margin-right: 0; }
-
-.grid--8col .grid-item {
-  width: 12.5%;
-  width: calc(12.5% - 1.18225rem);
-  margin-right: 1.35rem; }
-  .grid--8col .grid-item:nth-child(8n) {
-    margin-right: 0; }
-
-.grid--9col .grid-item {
-  width: 11.11111%;
-  width: calc(11.11111% - 1.201rem);
-  margin-right: 1.35rem; }
-  .grid--9col .grid-item:nth-child(9n) {
-    margin-right: 0; }
-
-.grid--10col .grid-item {
-  width: 10%;
-  width: calc(10% - 1.216rem);
-  margin-right: 1.35rem; }
-  .grid--10col .grid-item:nth-child(10n) {
-    margin-right: 0; }
-
-.grid--11col .grid-item {
-  width: 9.09091%;
-  width: calc(9.09091% - 1.22827rem);
-  margin-right: 1.35rem; }
-  .grid--11col .grid-item:nth-child(11n) {
-    margin-right: 0; }
-
-.grid--12col .grid-item {
-  width: 8.33333%;
-  width: calc(8.33333% - 1.2385rem);
-  margin-right: 1.35rem; }
-  .grid--12col .grid-item:nth-child(12n) {
-    margin-right: 0; }
-
-@supports (display: grid) {
+@supports (display: grids) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.35rem; }
     .grid:before, .grid:after {
       display: none; }
@@ -1227,43 +1146,8 @@ Styleguide Layout.grid
   .grid--5col {
     grid-template-columns: repeat(5, 1fr); }
   .grid--6col {
-    grid-template-columns: repeat(6, 1fr); }
-  .grid--7col {
-    grid-template-columns: repeat(7, 1fr); }
-  .grid--8col {
-    grid-template-columns: repeat(8, 1fr); }
-  .grid--9col {
-    grid-template-columns: repeat(9, 1fr); }
-  .grid--10col {
-    grid-template-columns: repeat(10, 1fr); }
-  .grid--11col {
-    grid-template-columns: repeat(11, 1fr); }
-  .grid--12col {
-    grid-template-columns: repeat(12, 1fr); } }
+    grid-template-columns: repeat(6, 1fr); } }
 
-/*
-Responsive Grid
-
-Inestad of setting a grid, you can use a set of helper classes to define the specific number of
-columns on every breakpoint.
-
-The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col`.
-
-We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
-no `max-width` constraint is set and every breakpoint will be active until a larger breakpoint weighs in.
-
-Markup:
-<div class="grid grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.responsive
-*/
 @media (min-width: 640px) {
   .grid--small--2col {
     grid-template-columns: repeat(2, 1fr); } }
@@ -1283,26 +1167,6 @@ Styleguide Layout.grid.responsive
 @media (min-width: 640px) {
   .grid--small--6col {
     grid-template-columns: repeat(6, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--11col {
-    grid-template-columns: repeat(11, 1fr); } }
 
 @media (min-width: 960px) {
   .grid--medium--2col {
@@ -1324,26 +1188,6 @@ Styleguide Layout.grid.responsive
   .grid--medium--6col {
     grid-template-columns: repeat(6, 1fr); } }
 
-@media (min-width: 960px) {
-  .grid--medium--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
 @media (min-width: 1120px) {
   .grid--large--2col {
     grid-template-columns: repeat(2, 1fr); } }
@@ -1364,43 +1208,6 @@ Styleguide Layout.grid.responsive
   .grid--large--6col {
     grid-template-columns: repeat(6, 1fr); } }
 
-@media (min-width: 1120px) {
-  .grid--large--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
-/*
-Gutterless Grid
-
-Add `.grid--gutterless` to remove all gutters
-
-Markup:
-<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.gutterless
-*/
 .grid--gutterless {
   grid-gap: 0; }
 
@@ -1443,45 +1250,19 @@ Styleguide Layout.helpers.breakpoint-toggle
     .large-visible {
       display: inherit; } }
 
-/*
-Navigation menus
+.nav a:after, .nav a:link:after, .nav a:visited:after, .nav a:active:after {
+  display: none; }
 
-Either `<nav>` HTML elements or enabled via the css class `.nav`.
+.nav a:focus:after, .nav a:hover:after {
+  display: none; }
 
-We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
-
-Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
-
-It's supposed to hold links (try "section"), but it can also have empty elements.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-
-Markup:
-<section>
-  <nav class="{{ modifier_class}} kill-link-decoration">
-    <ul>
-      <li>Home</li>
-      <li><a href="#">Section</a></li>
-      <li>Works</li>
-      <li>About us</li>
-      <li>Contact</li>
-      <li>Exit</li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Base.nav
-*/
-nav ul,
 .nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none; }
-  nav ul li,
   .nav ul li {
     margin: 0 1.35rem 0 0;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: uppercase;
     font-size: 16px;
     font-size: 1rem;
@@ -1489,54 +1270,6 @@ nav ul,
     line-height: 1.35rem;
     letter-spacing: 0.05em; }
 
-/*
-Menu
-
-An horizontal menu is a component based on an extended `<nav>` or `.nav`.
-
-Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
-
-It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
-
-Submenus are handled up to the 3rd level. If you need more, you might want to rethink your menu.
-
-Alignment of items can be controlled via helper classes. Defaults to "left"
-
-.center        - Aligns the nav to the center (margin on both sides of items)
-.right         - Aligns the nav to the right (margin on the right)
-
-Markup:
-<section>
-  <nav class="menu {{ modifier_class }}" style="margin-bottom: 200px">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li>
-        <a href="#">Section</a>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Section</a></li>
-            <li>
-              <a href="#">Works</a>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Section</a></li>
-                  <li><a href="#">Works</a></li>
-                  <li><a href="#">About us</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About us</a></li>
-          </ul>
-      </li>
-      <li><a href="#">Works</a></li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.menus
-*/
 .menu {
   margin: 0;
   padding: 0; }
@@ -1554,7 +1287,7 @@ Styleguide Components.menus
     .menu ul > li > a {
       text-align: left;
       display: block;
-      padding: 0.675rem;
+      padding: 0.45rem 0.675rem;
       white-space: nowrap; }
       .menu ul > li > a {
         text-decoration: none; }
@@ -1565,14 +1298,14 @@ Styleguide Components.menus
       .menu ul > li > a:visited {
         color: #384048; }
       .menu ul > li > a:focus, .menu ul > li > a:hover {
-        color: #FFFFFF; }
+        color: #1A1A19; }
       .menu ul > li > a:active {
         color: #384048; }
     .menu ul > li:hover > a, .menu ul > li:focus > a {
-      color: #FFFFFF;
-      background-color: #9b642b; }
+      color: #1A1A19;
+      background-color: #bfc4ca; }
     .menu ul > li > span {
-      padding: 0.675rem; }
+      padding: 0.45rem 0.675rem; }
     .menu ul > li > ul {
       display: none;
       position: absolute;
@@ -1585,9 +1318,9 @@ Styleguide Components.menus
         position: relative; }
         .menu ul > li > ul > li > a {
           display: block;
-          padding: 0.3375rem 0.675rem;
+          padding: 0.45rem 0.675rem/2 0.45rem 0.675rem;
           white-space: nowrap;
-          background-color: #af7131;
+          background-color: #cdd1d6;
           font-size: 13px;
           font-size: 0.8rem;
           line-height: 22px;
@@ -1597,20 +1330,20 @@ Styleguide Components.menus
             .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
               text-decoration: none; }
           .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
-            color: #FFFFFF; }
+            color: #1A1A19; }
           .menu ul > li > ul > li > a:visited {
-            color: #FFFFFF; }
+            color: #1A1A19; }
           .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
-            color: #FFFFFF; }
+            color: #1A1A19; }
           .menu ul > li > ul > li > a:active {
-            color: #FFFFFF; }
+            color: #1A1A19; }
           .menu ul > li > ul > li > a:after, .menu ul > li > ul > li > a:link:after, .menu ul > li > ul > li > a:visited:after, .menu ul > li > ul > li > a:active:after {
             display: none; }
           .menu ul > li > ul > li > a:focus:after, .menu ul > li > ul > li > a:hover:after {
             display: none; }
           .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
-            color: #FFFFFF;
-            background-color: #68431d; }
+            background-color: #b5bac0;
+            color: #1A1A19; }
     .menu ul > li > ul > li > ul {
       display: none;
       position: absolute;
@@ -1619,30 +1352,30 @@ Styleguide Components.menus
       min-width: 100%;
       z-index: 3; }
       .menu ul > li > ul > li > ul li a {
-        background-color: #c37e36;
+        background-color: #dbdee1;
         font-size: 11px;
         font-size: 0.7rem;
-        line-height: 16px;
-        line-height: 1.0125rem; }
+        line-height: 22px;
+        line-height: 1.35rem; }
         .menu ul > li > ul > li > ul li a {
           text-decoration: none; }
           .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
             text-decoration: none; }
         .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
-          color: #FFFFFF; }
+          color: 5%; }
         .menu ul > li > ul > li > ul li a:visited {
-          color: #FFFFFF; }
+          color: 5%; }
         .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
-          color: #FFFFFF; }
+          color: 5%; }
         .menu ul > li > ul > li > ul li a:active {
-          color: #FFFFFF; }
+          color: 5%; }
         .menu ul > li > ul > li > ul li a:after, .menu ul > li > ul > li > ul li a:link:after, .menu ul > li > ul > li > ul li a:visited:after, .menu ul > li > ul > li > ul li a:active:after {
           display: none; }
         .menu ul > li > ul > li > ul li a:focus:after, .menu ul > li > ul > li > ul li a:hover:after {
           display: none; }
         .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
-          color: #FFFFFF;
-          background-color: #4e3216; }
+          background-color: #cdd1d6;
+          color: #1A1A19; }
     .menu ul > li > ul > li:hover > ul {
       display: block; }
     .menu ul > li:hover > ul {
@@ -1650,49 +1383,6 @@ Styleguide Components.menus
       .menu ul > li:hover > ul > li {
         display: block; }
 
-/*
-TOC (Table of contents)
-
-A toc or table of contents is a vertical menu based off a `<nav>` item.
-
-The first level can be configured on `_config.scss`.
-
-This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-Markup:
-<section>
-  <nav class="toc kill-link">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Section</a></li>
-      <li>
-        <a href="#">Works</a>
-        <ul>
-          <li>
-            <a href="#">Home</a></li>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Section</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Section</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">About us</a></li>
-          <li><span>Contact</span></li>
-          <li><span class="disabled">Exit</span></li>
-        </ul>
-      </li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.toc
-*/
 .toc ul li {
   margin: 0;
   font-weight: bold;
@@ -1720,13 +1410,11 @@ Styleguide Components.toc
 
 .tag, .selectr-tag {
   display: inline-block;
+  padding: 0.16875rem 0.675rem;
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 16px;
   line-height: 1.0125rem;
-  font-weight: bold;
-  letter-spacing: 0;
-  padding: 0 0.45rem;
   background-color: #dee0e4;
   color: #1A1A19;
   border-radius: 0px;
@@ -2280,19 +1968,35 @@ a.tag, a.selectr-tag {
 
 a.button {
   padding: 0 0.675rem; }
+  a.button {
+    text-decoration: none; }
+    a.button:hover, a.button:focus {
+      text-decoration: none; }
+  a.button, a.button:link {
+    color: #384048; }
+  a.button:visited {
+    color: #384048; }
+  a.button:focus, a.button:hover {
+    color: #384048; }
+  a.button:active {
+    color: #384048; }
+  a.button:after, a.button:link:after, a.button:visited:after, a.button:active:after {
+    display: none; }
+  a.button:focus:after, a.button:hover:after {
+    display: none; }
 
 .button, input[type=file] + label {
   background: none;
   border: 2px solid transparent;
   outline: none;
-  /* IE8 and FF freak out if this rule is within another selector */
   cursor: pointer;
+  display: inline-block;
+  padding: 0 0.675rem;
+  /* IE8 and FF freak out if this rule is within another selector */
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 27px;
   line-height: 1.6875rem;
-  display: inline-block;
-  padding: 0 0.675rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   vertical-align: middle;
@@ -2302,6 +2006,7 @@ a.button {
     border: 0;
     padding: 0; }
   .button:hover, input[type=file] + label:hover, .button:active, input[type=file] + label:active, .button:focus, input[type=file] + label:focus {
+    border: 2px solid transparent;
     outline: 0; }
   ::-webkit-file-upload-button {
     padding: 0;
@@ -2577,7 +2282,7 @@ Styleguide Huesitos.paddings
 .pt {
   padding-top: 1.35rem; }
 
-.pr, .selectr-tag {
+.pr {
   padding-right: 1.35rem; }
 
 .pb {
@@ -3375,7 +3080,7 @@ Styleguide Huesitos.gutter-modifier
 .half-gutter.pt {
   padding-top: 0.675rem; }
 
-.half-gutter.pr, .half-gutter.selectr-tag {
+.half-gutter.pr {
   padding-right: 0.675rem; }
 
 .half-gutter.pb {
@@ -3405,7 +3110,7 @@ Styleguide Huesitos.gutter-modifier
 .quarter-gutter.pt {
   padding-top: 0.3375rem; }
 
-.quarter-gutter.pr, .quarter-gutter.selectr-tag {
+.quarter-gutter.pr {
   padding-right: 0.3375rem; }
 
 .quarter-gutter.pb {
@@ -3610,7 +3315,9 @@ Styleguide Helpers.kill-link-decoration
   list-style: none;
   position: relative;
   float: left;
-  cursor: default; }
+  cursor: default;
+  padding-right: 1.6875rem;
+  margin-bottom: 0; }
 
 .selectr-container.multiple.has-selected .selectr-selected {
   padding: 5px 28px 5px 5px; }
@@ -3640,13 +3347,12 @@ Styleguide Helpers.kill-link-decoration
 .selectr-input-clear,
 .selectr-tag-remove {
   position: absolute;
-  top: 50%;
-  right: 2px;
-  width: 0.9rem;
-  height: 0.9rem;
+  top: 0;
+  right: 0;
+  width: 1.35rem;
+  height: 1.35rem;
   padding: 0;
   cursor: pointer;
-  transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
   z-index: 11; }
@@ -3758,9 +3464,6 @@ Styleguide Helpers.kill-link-decoration
 .selectr-input-container.active .selectr-input-clear {
   display: block; }
 
-.selectr-selected .selectr-tag-remove {
-  right: 2px; }
-
 .selectr-clear::before,
 .selectr-clear::after,
 .selectr-input-clear::before,
@@ -3768,8 +3471,8 @@ Styleguide Helpers.kill-link-decoration
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
   position: absolute;
-  top: 5px;
-  left: 9px;
+  top: 50%;
+  left: 50%;
   width: 2px;
   height: 10px;
   content: ' ';
@@ -3777,22 +3480,21 @@ Styleguide Helpers.kill-link-decoration
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-  top: 0.1125rem;
+  top: 50%;
   left: 50%;
   width: 2px;
-  margin-left: -1px;
   height: 0.675rem;
   background-color: #fff; }
 
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
-  transform: rotate(45deg); }
+  transform: translate(-50%, -50%) rotate(45deg); }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
-  transform: rotate(-45deg); }
+  transform: translate(-50%, -50%) rotate(-45deg); }
 
 .selectr-input-container.active,
 .selectr-input-container.active .selectr-clear {

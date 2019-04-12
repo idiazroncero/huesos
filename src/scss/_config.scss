@@ -363,8 +363,9 @@ $disable-fieldset: false;
 // Default menu appearance
 // ------
 
-$nav-font-weight: bold;
+$nav-font-weight: normal;
 $nav-uppercase: true;
+$nav-kill-links: true;
 $nav-font-size: $base-font-size;
 $nav-spacing: $letter-spacing;
 
@@ -372,9 +373,17 @@ $toc-font-weight: bold;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
 
-$menu-padding: $spacer / 2;
+$menu-padding: $spacer / 3 $spacer / 2;
 $menu-kill-links: true;
-$menu-background-color: get-color(base, secondary);
+$menu-background-color: $gray4;
+$menu-color-ratio: 5%;
+
+// ------
+// GRID
+// We asume a centered, responsive and max-width limited viewport.
+// ------
+
+$max-grid-cols: 6;
 
 
 // ------

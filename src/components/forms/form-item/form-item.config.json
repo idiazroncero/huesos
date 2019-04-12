@@ -1,0 +1,29 @@
+{
+  "order" : 0,
+  "context" : {
+    "text" : "I'm a button"
+  },
+  "variants" : [
+      { 
+        "name" : "Required",
+        "context": {
+          "modifier": "form-item--required",
+          "text": "required"
+        }
+      },
+      { 
+        "name" : "Column",
+        "context": {
+          "modifier": "form-item--col",
+          "text": "Column"
+        }
+      },
+      { 
+        "name" : "Label inside",
+        "context": {
+          "modifier": "form-item--label-inside",
+          "text": "Label inside"
+        }
+      }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+    "variants" :  [
+        { 
+            "name" : "2col",
+            "context": {
+              "modifier": "grid--2col"
+            }
+        },
+        { 
+            "name" : "3col",
+            "context": {
+              "modifier": "grid--3col"
+            }
+        },
+        { 
+          "name" : "4col",
+          "context": {
+            "modifier": "grid--4col"
+          }
+        },
+        { 
+            "name" : "5col",
+            "context": {
+              "modifier": "grid--5col"
+            }
+        },
+        { 
+          "name" : "6col",
+          "context": {
+            "modifier": "grid--6col"
+          }
+        },
+        { 
+            "name" : "Gutterless",
+            "context": {
+              "modifier": "grid--gutterless"
+            }
+        }
+    ]
+}

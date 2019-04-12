@@ -17,3 +17,9 @@ Both `$button-alternative-strategies` and `$link-alternative-strategies` are pow
 **Use it if you really need alternatives**, i.e, buttons and links whose styling needs to difer from the default ones.
 
 Consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false` if you only need one global button style... which might be **the most common case**.
+
+## Control your grid
+
+`$max-grid-cols` will generate lots of extra classes for handling every possible number of columns on every defined breakpoint.
+
+Check how many columns will you need and update this variable accordingly.

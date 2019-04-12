@@ -2,63 +2,63 @@
 // Base
 @import "src/scss/base/sanitize"; // Huesos' fork of sanitize.css, a fork itself of normalize.css
 
-// 01-html
-@import "src/components/01-html/table/table";
-@import "src/components/01-html/link/link";
-@import "src/components/01-html/blockquote/blockquote";
-@import "src/components/01-html/details/details";
-@import "src/components/01-html/list/list";
-@import "src/components/01-html/hr/hr";
-@import "src/components/01-html/iframe/iframe";
-@import "src/components/01-html/images/images";
+// html
+@import "src/components/html/table/table";
+@import "src/components/html/link/link";
+@import "src/components/html/blockquote/blockquote";
+@import "src/components/html/details/details";
+@import "src/components/html/list/list";
+@import "src/components/html/hr/hr";
+@import "src/components/html/iframe/iframe";
+@import "src/components/html/images/images";
 
-// 03-typography
-@import "src/components/03-typography/headings/headings";
-@import "src/components/03-typography/font-secondary/font-secondary";
-@import "src/components/03-typography/minititle/minititle";
-@import "src/components/03-typography/code/code";
-@import "src/components/03-typography/text-wrapper/text-wrapper";
-@import "src/components/03-typography/abbreviation/abbreviation";
-@import "src/components/03-typography/strong/strong";
-@import "src/components/03-typography/definition/definition";
-@import "src/components/03-typography/mark/mark";
-@import "src/components/03-typography/small/small";
-@import "src/components/03-typography/sub-sup/sub-sup";
-@import "src/components/03-typography/quotes/quotes";
+// typography
+@import "src/components/typography/headings/headings";
+@import "src/components/typography/font-secondary/font-secondary";
+@import "src/components/typography/minititle/minititle";
+@import "src/components/typography/code/code";
+@import "src/components/typography/text-wrapper/text-wrapper";
+@import "src/components/typography/abbreviation/abbreviation";
+@import "src/components/typography/strong/strong";
+@import "src/components/typography/definition/definition";
+@import "src/components/typography/mark/mark";
+@import "src/components/typography/small/small";
+@import "src/components/typography/sub-sup/sub-sup";
+@import "src/components/typography/quotes/quotes";
 
-// 02-forms
-@import "src/components/02-forms/forms";
+// forms
+@import "src/components/forms/forms";
 
-// 04-layout and positioning
-@import "src/components/04-layout/position/position";
-@import "src/components/04-layout/grid/grid";
-@import "src/components/04-layout/visibility/visibility";
+// layout and positioning
+@import "src/components/layout/main-wrapper/main-wrapper";
+@import "src/components/layout/grid/grid";
+@import "src/components/layout/visibility/visibility";
 
-// User 05-navigation
-@import "src/components/05-navigation/nav/nav";
-@import "src/components/05-navigation/menu/menu";
-@import "src/components/05-navigation/toc/toc";
+// User navigation
+@import "src/components/navigation/nav/nav";
+@import "src/components/navigation/menu/menu";
+@import "src/components/navigation/toc/toc";
 
-// 06-elements
-@import "src/components/06-elements/tag/tag";
-@import "src/components/06-elements/card/card";
-@import "src/components/06-elements/button/button";
-@import "src/components/06-elements/icon/icon";
-@import "src/components/06-elements/alert/alert";
+// elements
+@import "src/components/elements/tag/tag";
+@import "src/components/elements/card/card";
+@import "src/components/elements/button/button";
+@import "src/components/elements/icon/icon";
+@import "src/components/elements/alert/alert";
 
 // Utility classes
-@import "src/components/07-huesitos/huesitos";
+@import "src/components/huesitos/huesitos";
 
 // Visual debug 
-@import "src/components/09-debug/show-grid/show-grid";
+@import "src/components/debug/show-grid/show-grid";
 
-// 08-helpers
-@import "src/components/08-helpers/scrollbar-hidden/scrollbar-hidden";
-@import "src/components/08-helpers/visually-hidden/visually-hidden";
-@import "src/components/08-helpers/clearfix/clearfix";
-@import "src/components/08-helpers/disabled/disabled";
-@import "src/components/08-helpers/kill-link/kill-link";
-@import "src/components/08-helpers/kill-link-decoration/kill-link-decoration";
+// helpers
+@import "src/components/helpers/scrollbar-hidden/scrollbar-hidden";
+@import "src/components/helpers/visually-hidden/visually-hidden";
+@import "src/components/helpers/clearfix/clearfix";
+@import "src/components/helpers/disabled/disabled";
+@import "src/components/helpers/kill-link/kill-link";
+@import "src/components/helpers/kill-link-decoration/kill-link-decoration";
 
 // Third-party libraries
 @import "src/scss/external/selectr";

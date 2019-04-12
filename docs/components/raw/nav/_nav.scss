@@ -1,0 +1,21 @@
+.nav {
+  @if $nav-kill-links {
+    a {
+      @include kill-link-decoration();
+    }
+  }
+	ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+		li {
+      margin: 0 $spacer 0 0;
+      font-weight: $nav-font-weight;
+      @if $nav-uppercase {
+        text-transform: uppercase;
+      }
+      @include ritmo-font-size($nav-font-size);
+      letter-spacing:$nav-spacing;
+		}
+  }
+}
