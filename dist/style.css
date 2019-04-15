@@ -1127,7 +1127,7 @@ textarea {
   .grid--6col .grid-item:nth-child(6n) {
     margin-right: 0; }
 
-@supports (display: grids) {
+@supports (display: grid) {
   .grid {
     display: grid;
     grid-gap: 1.35rem; }

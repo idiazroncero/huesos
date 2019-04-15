@@ -22,7 +22,7 @@
 }
 
 
-@supports(display:grids) {
+@supports(display:grid) {
     .grid {
         display:grid;
         grid-gap: $spacer;

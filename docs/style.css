@@ -146,12 +146,6 @@ a {
  * HUESOS: Use the same as <mark> elements
  * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
-::-moz-selection {
-  background-color: #ac7030;
-  /* 1 */
-  color: #FFFFFF;
-  /* 1 */
-  text-shadow: none; }
 
 ::selection {
   background-color: #ac7030;
@@ -398,7 +392,6 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation;
   /* 1 */
   touch-action: manipulation; }
 
@@ -737,7 +730,8 @@ var {
   /* 2 */
   display: inline-block;
   vertical-align: baseline;
-  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
   background-color: #dee0e4;
   color: #1A1A19;
   padding: 0 0.3375rem;
@@ -772,7 +766,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 b,
@@ -1061,7 +1056,9 @@ input[type=radio].pseudo-radio {
 select {
   border: 1px solid #dee0e4;
   padding: 0 0.675rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
     border-color: #959699; }
@@ -1097,40 +1094,40 @@ textarea {
 
 .grid--2col .grid-item {
   width: 50%;
-  width: calc( (100% / 2) -  ( ( 1.35rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
+  width: calc(50% - 0.676rem);
   margin-right: 1.35rem; }
   .grid--2col .grid-item:nth-child(2n) {
     margin-right: 0; }
 
 .grid--3col .grid-item {
   width: 33.33333%;
-  width: calc( (100% / 3) -  ( ( 1.35rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
+  width: calc(33.33333% - 0.901rem);
   margin-right: 1.35rem; }
   .grid--3col .grid-item:nth-child(3n) {
     margin-right: 0; }
 
 .grid--4col .grid-item {
   width: 25%;
-  width: calc( (100% / 4) -  ( ( 1.35rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
+  width: calc(25% - 1.0135rem);
   margin-right: 1.35rem; }
   .grid--4col .grid-item:nth-child(4n) {
     margin-right: 0; }
 
 .grid--5col .grid-item {
   width: 20%;
-  width: calc( (100% / 5) -  ( ( 1.35rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
+  width: calc(20% - 1.081rem);
   margin-right: 1.35rem; }
   .grid--5col .grid-item:nth-child(5n) {
     margin-right: 0; }
 
 .grid--6col .grid-item {
   width: 16.66667%;
-  width: calc( (100% / 6) -  ( ( 1.35rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
+  width: calc(16.66667% - 1.126rem);
   margin-right: 1.35rem; }
   .grid--6col .grid-item:nth-child(6n) {
     margin-right: 0; }
 
-@supports (display: grids) {
+@supports (display: grid) {
   .grid {
     display: grid;
     grid-gap: 1.35rem; }
@@ -1368,7 +1365,9 @@ textarea {
 .toc ul li {
   margin: 0;
   font-weight: bold;
+  letter-spacing: normal;
   letter-spacing: initial;
+  text-transform: none;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
@@ -1937,7 +1936,7 @@ a.tag, a.selectr-tag {
   background: #fff;
   border-radius: 0px;
   padding: 2.7rem;
-  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
+  box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, .1); }
   .card .card {
     padding: 0.675rem; }
 
@@ -3100,10 +3099,6 @@ Styleguide Helpers.kill-link-decoration
   width: 0;
   height: 0;
   content: '';
-  -o-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -ms-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -moz-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-  -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
   transform: rotate(0deg) translate3d(0px, -50%, 0px);
   border-width: 4px 4px 0 4px;
   border-style: solid;
@@ -3326,7 +3321,7 @@ Styleguide Helpers.kill-link-decoration
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - (1.35rem));
+  width: calc(100% - 1.35rem);
   margin: 0.675rem; }
 
 .selectr-notice {
@@ -3409,10 +3404,6 @@ input.selectr-input {
   border-radius: 0px 0px 0 0; }
 
 .selectr-container.open .selectr-selected::after {
-  -o-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -ms-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -moz-transform: rotate(180deg) translate3d(0px, 50%, 0px);
-  -webkit-transform: rotate(180deg) translate3d(0px, 50%, 0px);
   transform: rotate(180deg) translate3d(0px, 50%, 0px); }
 
 .selectr-disabled {
@@ -3464,38 +3455,18 @@ input.selectr-input {
   width: 20px;
   height: 20px;
   content: '';
-  -o-transform: translate3d(0px, -50%, 0px);
-  -ms-transform: translate3d(0px, -50%, 0px);
-  -moz-transform: translate3d(0px, -50%, 0px);
-  -webkit-transform: translate3d(0px, -50%, 0px);
   transform: translate3d(0px, -50%, 0px);
-  -o-transform-origin: 50% 0 0;
-  -ms-transform-origin: 50% 0 0;
-  -moz-transform-origin: 50% 0 0;
-  -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
-  -moz-animation: 500ms linear 0s normal forwards infinite running spin;
-  -webkit-animation: 500ms linear 0s normal forwards infinite running spin;
   animation: 500ms linear 0s normal forwards infinite running spin;
   border-width: 3px;
   border-style: solid;
   border-color: #aaa #ddd #ddd;
   border-radius: 50%; }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
-    transform: rotate(0deg) translate3d(0px, -50%, 0px); }
-  100% {
-    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
-    transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
-
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg) translate3d(0px, -50%, 0px);
     transform: rotate(0deg) translate3d(0px, -50%, 0px); }
   100% {
-    -webkit-transform: rotate(360deg) translate3d(0px, -50%, 0px);
     transform: rotate(360deg) translate3d(0px, -50%, 0px); } }
 
 .selectr-container.open.inverted .selectr-selected {
@@ -3512,15 +3483,11 @@ input.selectr-input {
   top: auto;
   bottom: 100%; }
 
-.selectr-container ::-webkit-input-placeholder {
-  color: #6c7a86;
-  opacity: 1; }
-
-.selectr-container ::-moz-placeholder {
-  color: #6c7a86;
-  opacity: 1; }
-
 .selectr-container :-ms-input-placeholder {
+  color: #6c7a86;
+  opacity: 1; }
+
+.selectr-container ::-ms-input-placeholder {
   color: #6c7a86;
   opacity: 1; }
 
