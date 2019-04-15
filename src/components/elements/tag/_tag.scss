@@ -33,6 +33,7 @@
 
 a.tag {
     @include kill-link-decoration();
+    padding: $gutter / 8 $gutter / 2; // Explicit override
     cursor:pointer;
     &:hover,
     &:focus {

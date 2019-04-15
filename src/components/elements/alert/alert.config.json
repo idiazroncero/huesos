@@ -1,0 +1,28 @@
+{
+  "title": "Una alerta",
+  "collated": true,
+  "context": {
+    "message": "This is the content of an alert / info card.",
+    "title": "This is a title"
+  },
+  "variants": [
+    { 
+      "name" : "Success",
+      "context": {
+        "modifier": "alert--success"
+      }
+    },
+    { 
+      "name" : "Warning",
+      "context": {
+        "modifier": "alert--warning"
+      }
+    },
+    { 
+      "name" : "Error",
+      "context": {
+        "modifier": "alert--error"
+      }
+    }
+  ]
+}

@@ -393,6 +393,14 @@ $max-grid-cols: 6;
 
 $max-width: 960px;
 $layout-align: center; // left, right
+$layout-padding: $spacer;
+
+
+// ------
+// HUESITOS
+// Wether to generate utility classes or not
+// ------
+$huesitos: true;
 
 
 

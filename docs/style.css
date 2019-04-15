@@ -1214,27 +1214,6 @@ textarea {
 .grid--gutterless {
   grid-gap: 0; }
 
-/*
-Helpers
-
-Some helper classes for easier layout setup.
-
-Styleguide Layout.helpers
-*/
-/*
-Breakpoint togglers
-
-A set of classes that toggle visibility on certain viewport widths: `.small-visible`, `.medium-visible`, `.large-visible`
-
-Markup:
-<section>
-    <h3 class="small-visible">I'm visible</h3>
-    <h3 class="medium-visible">I'm visible</h3>
-    <h3 class="large-visible">I'm visible</h3>
-</section>
-
-Styleguide Layout.helpers.breakpoint-toggle
-*/
 .small-visible {
   display: none; }
   @media (min-width: 640px) {
@@ -1664,6 +1643,7 @@ Styleguide Layout.helpers.breakpoint-toggle
     margin-left: 0.225rem; }
 
 a.tag, a.selectr-tag {
+  padding: 0.16875rem 0.675rem;
   cursor: pointer; }
   a.tag:after, a.selectr-tag:after, a.tag:link:after, a.selectr-tag:link:after, a.tag:visited:after, a.selectr-tag:visited:after, a.tag:active:after, a.selectr-tag:active:after {
     display: none; }
@@ -2225,23 +2205,6 @@ Styleguide Typography.icons
   background-color: #e6c2c1;
   color: #561918; }
 
-/*
-Margins
-
-`$gutter` is applied as margin.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have som margin applied</p>
-
-.m              - Applies all margins
-.mt             - Applies a margin-top
-.mr             - Applies a margin-right
-.mb             - Applies a margin-bottom
-.ml             - Applies a margin-left
-.m0             - Deletes all margins
-
-Styleguide Huesitos.margins
-*/
 .m {
   margin: 1.35rem; }
 
@@ -2260,23 +2223,6 @@ Styleguide Huesitos.margins
 .m0 {
   margin: 0; }
 
-/*
-Paddings
-
-`$gutter` is applied as padding.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have a padding applied</p>
-
-.p              - Applies all paddings
-.pt             - Applies a padding-top
-.pr             - Applies a padding-right
-.pb             - Applies a padding-bottom
-.pl             - Applies a padding-left
-.p0             - Deletes all paddings
-
-Styleguide Huesitos.paddings
-*/
 .p {
   padding: 1.35rem; }
 
@@ -2295,23 +2241,6 @@ Styleguide Huesitos.paddings
 .p0 {
   padding: 0; }
 
-/*
-Borders
-
-Uses `$separator-color` by default.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have some border applied</p>
-
-.b              - Applies all borders
-.bt             - Applies a border-top
-.br             - Applies a border-right
-.bb             - Applies a border-bottom
-.bl             - Applies a border-left
-.b0             - Deletes all borders
-
-Styleguide Huesitos.borders
-*/
 .b {
   border: 1px solid #dee0e4; }
 
@@ -2330,87 +2259,6 @@ Styleguide Huesitos.borders
 .b0 {
   border: none; }
 
-/*
-    Background Color
-
-    A set of helper classes that map to common colors from the palette.
-
-    The text color is contrasted correctly.
-
-    Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
-
-    We showcase some examples here, but the list of classes could be much bigger or smaller, depending on your color palette.
-
-    You can avoid bloating your css with these helper classes by setting `$generate-color-classes: false`.
-
-    Markup:
-    <p class="minititle">Base</p>
-    <section class="grid grid--5col">
-        <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
-        <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
-    </section>
-    <p class="minititle">State</p>
-    <section class="grid grid--5col">
-        <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
-        <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
-        <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
-        <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
-    </section>
-    <p class="minititle">Blue palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-blue-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-blue-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-blue-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-blue-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-blue-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-blue-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-blue-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-blue-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-blue-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-blue-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Red palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-red-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-red-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-red-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-red-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-red-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-red-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-red-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-red-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-red-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-red-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Green palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-green-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-green-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-green-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-green-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-green-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-green-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-green-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-green-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-green-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-green-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Gray palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-gray-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-gray-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-gray-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-gray-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-gray-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-gray-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-gray-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-gray-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-gray-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-gray-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-
-    Styleguide Huesitos.Color
-    */
 .bg-base-primary {
   background-color: #2b619a;
   color: #FFFFFF; }
@@ -3045,21 +2893,6 @@ Styleguide Huesitos.borders
   .bg-state-error h5, .bg-state-error .h5 h6, .bg-state-error .h6 {
     color: inherit; }
 
-/*
-Gutter modifiers
-
-The presence of this class cuts the `$gutter` by half or quarter.
-
-Applies to `.m` and `.p` classes.
-
-Markup:
-<p class="{{modifier_class}} pl bl ml">My gutter variable is smaller</p>
-
-.half-gutter        - Sets gutter to a half
-.quarter-gutter     - Sets gutter to a quarter
-
-Styleguide Huesitos.gutter-modifier
-*/
 .half-gutter.m {
   margin: 0.675rem; }
 
@@ -3120,21 +2953,6 @@ Styleguide Huesitos.gutter-modifier
 .quarter-gutter.pl {
   padding-left: 0.3375rem; }
 
-/*
-Text alignment
-
-Helper classes that provide a quick access to `text-align`.
-
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
-
-Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
-
-
-Styleguide Helpers.alignment
-*/
 .left {
   text-align: left; }
 

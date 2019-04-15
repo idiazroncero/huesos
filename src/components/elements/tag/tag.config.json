@@ -2,6 +2,7 @@
   "context" : {
     "text" : "This is a normal tag!"
   },
+  "collated": true,
   "variants" : [
       { 
         "name" : "Success",

@@ -23,3 +23,9 @@ Consider setting `$button-alternative-strategies` and/or `$link-alternative-stra
 `$max-grid-cols` will generate lots of extra classes for handling every possible number of columns on every defined breakpoint.
 
 Check how many columns will you need and update this variable accordingly.
+
+# Check Huesitos
+
+You might not need the utility classes at all. Set `$huesitos` to false to avoid it.
+
+You can set `$generate-color-classes`to false to avoid generating all the palette's background-color classes.
