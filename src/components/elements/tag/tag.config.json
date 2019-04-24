@@ -24,27 +24,6 @@
           "modifier": "tag--error",
           "text": "This is a error tag!"
         }
-      },
-      { 
-        "name" : "Primary",
-        "context": {
-          "modifier": "tag--primary",
-          "text": "This is a primary tag!"
-        }
-      },
-      { 
-        "name" : "Secondary",
-        "context": {
-          "modifier": "tag--secondary",
-          "text": "This is a secondary tag!"
-        }
-      },
-      { 
-        "name" : "Small",
-        "context": {
-          "modifier": "tag--small",
-          "text": "This is a small tag!"
-        }
       }
   ]
 }

@@ -8,5 +8,7 @@ If a link, it changes the link decoration for a background-color modification.
 
 A small margin is applied in order to allow for lists of tags.
 
-Wrappers `.right` and `.center` know how to switch margins.
+Modifiers will be generated following the `states` map on `$colors`. 
+
+You can choose the color strategy by setting `$tag-strategy` to `split` or `contrast`. 
 

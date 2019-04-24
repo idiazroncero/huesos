@@ -31,7 +31,8 @@ $colors: (
 		"muted":   $gray9,
 		"success": $teal4,
 		"warning": $yellow5,
-		"error":   $red5
+		"error":   $red5,
+		"caca": limegreen,
 	)
 ) !default;
 
@@ -48,8 +49,8 @@ $contrast-light: #FFFFFF;
 $color-modify-ratio: 33%;
 
 // Darken and lighten % to apply to split-color operations
-$darken-split-ratio: 50%;
-$lighten-split-ratio: 70%;
+$darken-split-ratio: 70%;
+$lighten-split-ratio: 40%;
 
 // Lightness threshold for color invertion. A value between 0-100.
 $lightness-threshold: 60;
@@ -374,9 +375,27 @@ $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
 
 $menu-padding: $spacer / 3 $spacer / 2;
-$menu-kill-links: true;
+$menu-kill-links: true; // Kills decoration
 $menu-background-color: $gray4;
 $menu-color-ratio: 5%;
+
+$breadcrumb-kill-links: true; // Kills decoration
+$breadcrumb-font-size: $h6-font-size; // False avoids setting this value
+$breadcrumb-arrow: "›"; // Valid unicode character
+
+// ------
+// TAGS
+// ------
+
+$tag-strategy: 'contrast'; // One of split or contrast
+$tag-default-color: $gray3;
+
+// ------
+// ALERTS
+// ------
+
+$alert-strategy: 'split'; // One of split or contrast
+$alert-default-color: $gray3;
 
 // ------
 // GRID

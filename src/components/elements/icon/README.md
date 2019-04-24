@@ -1,3 +1,7 @@
 # Icon
 
-Provides a generic `.icon` wrapper (to be used preferably on a `<i>` element) that correctly sets the height and vertical alignment of a `<svg>` icon
+The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
+
+Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
+
+A set of icons is __not__ provided. You are supposed to provide your own choices.
