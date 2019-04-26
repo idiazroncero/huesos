@@ -5,10 +5,10 @@
   "scripts": {
     "build": "yarn styleguide:build; yarn css",
     "huesos": "yarn run build",
-    "css": "yarn css:sass && yarn css:cssnext",
+    "css": "yarn css:sass && yarn css:post",
     "css:watch": "yarn node-sass src/scss/style.scss dist/style.css -w",
     "css:sass": "yarn node-sass src/scss/style.scss dist/style.css --source-map=0",
-    "css:cssnext": "yarn postcss dist/style.css -o dist/style.css -u postcss-cssnext --no-map",
+    "css:post": "yarn postcss dist/style.css -o dist/style.css --no-map",
     "styleguide:build": "yarn fractal build",
     "styleguide:serve": "yarn fractal start --sync",
     "test-page": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
@@ -19,29 +19,25 @@
   "author": "Nacho Diaz",
   "license": "MIT",
   "repository": "git@github.com:idiazroncero/huesos.git",
-  "dependencies": {
+  "devDependencies": {
     "@frctl/fractal": "^1.1.7",
     "@frctl/mandelbrot": "^1.2.0",
     "animate-scss": "^3.2.1",
-    "atlas-guide": "^1.3.2",
     "autoprefixer": "^7.1.1",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.26.0",
     "concise.css": "^4.1.2",
     "family.scss": "^1.0.8",
     "fractal-huesos": "https://github.com/idiazroncero/fractal-huesos",
-    "global": "^4.3.2",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
-    "kss": "^3.0.0-beta.23",
-    "kss-webpack-plugin": "^1.2.0",
     "mobius1-selectr": "^2.4.4",
     "node-sass": "^4.9.3",
     "node-sass-import": "^2.0.1",
     "postcss": "^7.0.2",
     "postcss-cli": "^6.0.0",
-    "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.0.6",
+    "postcss-preset-env": "^6.6.0",
     "ritmo": "^0.5.0",
     "sanitize.css": "^5.0.0",
     "sass-loader": "^6.0.6",
@@ -49,12 +45,7 @@
     "stylelint": "^7.12.0",
     "susy": "^2.2.12",
     "waypoints": "^4.0.1",
-    "webpack": "^4.20.2"
-  },
-  "browserslist": [
-    "> 1%"
-  ],
-  "devDependencies": {
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
 }

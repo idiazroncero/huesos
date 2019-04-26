@@ -1,6 +1,10 @@
+const postcssPresetEnv = require('postcss-preset-env');
+const stylelint = require('stylelint');
+
+
 module.exports = {
-  plugins: {
-    'autoprefixer': {},
-    'stylelint': {},
-  }
+  plugins: [
+    postcssPresetEnv(),
+    stylelint()
+  ]
 }
