@@ -115,6 +115,7 @@ Styleguide Typography.pre
 pre {
 	font-family: $font-monospace; /* 1 */
 	@include ritmo-font-size($base-font-size); /* 2 */
+	white-space: pre-wrap;
 }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)

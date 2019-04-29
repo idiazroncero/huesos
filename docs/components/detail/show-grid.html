@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/fuchsia.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="../../huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
 <title>Show Grid | Huesos @ Fractal</title>
@@ -21,339 +21,45 @@
 
 
 
-<div class="Frame" id="frame">
+<div id="main-wrapper" data-role="body">
 
-    <div class="Frame-header">
-        <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
-</svg>
+    <header class="header">
+        <h1 class="h5">
+            <a href="../../index.html" class="header-title" data-pjax>
+                Huesos @ Fractal
+            </a>
+        </h1>
+    </header>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-</svg>
-
-    </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Huesos @ Fractal</a>
-</div>
-
-    </div>
-
-    <div class="Frame-body" data-role="body">
-
-        <div class="Frame-panel Frame-panel--main" data-role="main">
-            <div class="Frame-inner" id="pjax-container">
-            
-
-
+    <div class="wrapper__inner">
     
-    
-
-<div class="Pen" data-behaviour="pen" id="pen-94540d8aa8ff50a8e5fb03295b50e93a">
+        <aside class="sidebar" data-role="sidebar">
+            <nav class="nav">
 
     
 
-    <div class="Pen-panel Pen-header">
-    <h1 class="Pen-title">
-        <a class="Pen-previewLink" href="../preview/show-grid.html" title="Component preview">
-            Show Grid
-            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
 
-        </a>
-    </h1>
-    
-
-<div class="Status Status--tag">
-
-<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
-
-</div>
-
-
-</div>
-
-
-    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-94540d8aa8ff50a8e5fb03295b50e93a">
-    <div class="Preview-wrapper" data-role="resizer">
-        <div class="Preview-resizer">
-            
-             <iframe
-                class="Preview-iframe"
-                data-role="window"
-                src="../preview/show-grid.html"
-                sandbox="allow-same-origin allow-scripts allow-forms"
-                 style=""
-                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
-            </iframe>
-        </div>
-        <div class="Preview-handle" data-role="resize-handle"></div>
-        <div class="Preview-overlay"></div>
-    </div>
-</div>
-
-
-    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
-
-    <div class="Pen-panel Pen-info" data-role="info">
-    <div class="Browser" data-behaviour="browser" id="browser-94540d8aa8ff50a8e5fb03295b50e93a">
-
-    
-
-<div class="Browser-controls">
-    <ul class="Browser-tabs">
-        
-        
-        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-html">HTML</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--view" data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-view">View</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--context" data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-context">Context</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--resources" data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-assets">Assets</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--info" data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-info">Info</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--notes" data-role="tab">
-            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-notes">Notes</a>
-        </li>
-        
-        
-    </ul>
-</div>
-
-
-    
-    
-<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-html">
-    <code class="Code Code--lang-html">
-        
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"show-grid"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You will need to activate $show-grid<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>If deactivated, you won't see the grid behind this text<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque amet quis dolores, ullam quidem dolorum provident? At totam tempore nemo, necessitatibus eum temporibus deleniti itaque? Labore sed repellendus rerum sequi.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></pre>
-        
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-view">
-    <code class="Code Code--lang-handlebars">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"show-grid"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You will need to activate $show-grid<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>If deactivated, you won't see the grid behind this text<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque amet quis dolores, ullam quidem dolorum provident? At totam tempore nemo, necessitatibus eum temporibus deleniti itaque? Labore sed repellendus rerum sequi.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></span></pre>
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-context">
-    <code class="Code Code--lang-json">
-        
-            
-            <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
-            
-        
-    </code>
-</div>
-
-    
-    
-
-
-<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-assets">
-    <div class="FileBrowser">
-
-        <div class="FileBrowser-selectWrapper">
-            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
-            <select class="FileBrowser-select" id="filebrowser-select">
-                
-                <option value="file-cd44d368974097161b69a01f9bc70367">_show-grid.scss</option>
-                
-            </select>
-        </div>
-
-        
-        <div class="FileBrowser-item is-active" id="file-cd44d368974097161b69a01f9bc70367" data-role="resource-preview">
-            <ul class="Meta">
-                <li class="Meta-item">
-                    <strong class="Meta-key">Content:</strong>
-                    <span class="Meta-value">
-                        <div class="FileBrowser-itemPreview">
-                            
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre>@<span class="hljs-keyword">if</span> <span class="hljs-variable">$show-grid</span> == true {
-	<span class="hljs-selector-tag">h1</span>, 
-	<span class="hljs-selector-tag">h2</span>, 
-	<span class="hljs-selector-tag">h3</span>, 
-	<span class="hljs-selector-tag">h4</span>, 
-	<span class="hljs-selector-tag">h5</span>, 
-	<span class="hljs-selector-tag">h6</span>, 
-	<span class="hljs-selector-tag">p</span> {
-		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
-		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.35</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
-		<span class="hljs-attribute">background-repeat</span>: repeat;
-	}
-
-	<span class="hljs-selector-tag">body</span>,
-	<span class="hljs-selector-class">.show-grid</span> {
-		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
-		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.15</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
-		<span class="hljs-attribute">background-repeat</span>: repeat;
-	}
-}</pre>
-                            </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/show-grid/_show-grid.scss"><span>/components/raw/show-grid/_show-grid.scss</span></a></span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/debug/show-grid/_show-grid.scss</span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">463 Bytes</span>
-                </li>
-            </ul>
-        </div>
-        
-    </div>
-</div>
-
-
-
-    
-    <div class="Browser-panel" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-info">
-    <ul class="Meta">
-        <li class="Meta-item">
-            <strong class="Meta-key">Handle:</strong>
-            <span class="Meta-value">@show-grid</span>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">Preview:</strong>
-            <span class="Meta-value">
-                <ul>
-                    <li><a data-no-pjax href="../preview/show-grid.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                    <li><a data-no-pjax href="../render/show-grid.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                </ul>
-            </span>
-        </li>
-        <li class="Meta-item">
-            <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src/components/debug/show-grid/show-grid.hbs</span>
-        </li>
-        
-        
-    </ul>
-</div>
-
-    
-    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-notes">
-    <div class="Prose Prose--condensed">
-        
-        <h1 id="the-grid">The grid</h1>
-<p>Setting <code>$show-grid</code> to true will show a grid both behind the <code>&lt;body&gt;</code> element and behind every <code>&lt;h1-h6&gt;</code> and <code>&lt;p&gt;</code> elements using ritmo units in order to measure vertical rhythm.</p>
-<p>Since we don’t follow vertical rhythm as mandatory (i.e image heights, margins) it’s normal than elements won’t stick to the body grid.</p>
-<p>A helper class <code>.show-grid</code> is also included.</p>
-
-        
-    </div>
-</div>
-
-    
-
-</div>
-
-</div>
-
-
-    
-
-</div>
-
-
-            </div>
-        </div>
-
-        <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
-        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
-            <nav class="Navigation">
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
-    <ul class="Tree-items Tree-depth-1">
+    <h3>components</h3>
+    <ul class="toc">
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-html">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-html">
+            <h4 class="" data-role="toggle">
                 <span>Html</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-link">
+            <h4 class="" data-role="toggle">
                 <span>Link</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -581,11 +287,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-list">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-list">
+            <h4 class="" data-role="toggle">
                 <span>List</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -674,22 +380,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-forms">
+            <h4 class="" data-role="toggle">
                 <span>Forms</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-form-item">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-form-item">
+            <h4 class="" data-role="toggle">
                 <span>Form Item</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -946,11 +652,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1250,22 +956,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="" data-role="toggle">
                 <span>Layout</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="" data-role="toggle">
                 <span>Grid</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1522,15 +1228,39 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navigation">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-navigation">
+            <h4 class="" data-role="toggle">
                 <span>Navigation</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="breadcrumb.html" data-pjax>
+                <span>Breadcrumb</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -1610,11 +1340,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-elements">
+            <h4 class="" data-role="toggle">
                 <span>Elements</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1669,11 +1399,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="" data-role="toggle">
                 <span>Card</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1810,11 +1540,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1850,11 +1580,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-debug">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-debug">
+            <h4 class="" data-role="toggle">
                 <span>Debug</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1891,26 +1621,58 @@
     
 
     </ul>
+
+
+
+
+
+    
+
+
+    <h3>documentation</h3>
+    <ul class="toc">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/avoiding-bloat.html" data-pjax>
+                <span>Avoiding Bloat</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
 </div>
 
 </div>
 
 
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
-    <ul class="Tree-items Tree-depth-1">
+            </a>
+        </li>
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-color_palette">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Color Palette</span>
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
+                <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1919,7 +1681,31 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/color_palette/palette.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/color/handling-color.html" data-pjax>
+                <span>Handling Color</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/color/palette.html" data-pjax>
                 <span>Palette</span>
                 
             </a>
@@ -1932,22 +1718,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="" data-role="toggle">
                 <span>Functions</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2019,11 +1805,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2032,8 +1818,34 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/functions/helpers/z-index.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/functions/helpers/z_index.html" data-pjax>
                 <span>Z Index</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
+                <span>Typography</span>
+            </h4>
+            <ul class="" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/functions/typography/bold.html" data-pjax>
+                <span>Bold</span>
                 
             </a>
         </li>
@@ -2050,22 +1862,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="" data-role="toggle">
                 <span>Mixins</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2107,11 +1919,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2173,11 +1985,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-image">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-image">
+            <h4 class="" data-role="toggle">
                 <span>Image</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2199,11 +2011,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-links">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-links">
+            <h4 class="" data-role="toggle">
                 <span>Links</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2255,11 +2067,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2275,36 +2087,12 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/bloat.html" data-pjax>
-                <span>Bloat</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/inline-list.html" data-pjax>
+                <span>Inline List</span>
                 
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
-
-
-</div>
-
-</div>
-
-
             </a>
         </li>
         
@@ -2312,18 +2100,37 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../index.html" data-pjax>
-                <span>Overview</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/minititle.html" data-pjax>
+                <span>Minititle</span>
                 
             </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/text-border.html" data-pjax>
+                <span>Text Border</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
         </li>
         
     
 
     </ul>
-</div>
 
-</div>
+
 
 
 
@@ -2332,14 +2139,295 @@
 
 </nav>
 
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                
+
+
+    
+    
+
+<div class="Pen" data-behaviour="pen" id="pen-94540d8aa8ff50a8e5fb03295b50e93a">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/show-grid.html" title="Component preview">
+            Show Grid
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-94540d8aa8ff50a8e5fb03295b50e93a">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+            
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/show-grid.html"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
         </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-94540d8aa8ff50a8e5fb03295b50e93a">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-html">HTML</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-view">View</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-context">Context</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-info">Info</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-notes">Notes</a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-html">
+    <code class="Code Code--lang-html">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"show-grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You will need to activate $show-grid<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>If deactivated, you won't see the grid behind this text<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque amet quis dolores, ullam quidem dolorum provident? At totam tempore nemo, necessitatibus eum temporibus deleniti itaque? Labore sed repellendus rerum sequi.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-view">
+    <code class="Code Code--lang-handlebars">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"show-grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You will need to activate $show-grid<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>If deactivated, you won't see the grid behind this text<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque amet quis dolores, ullam quidem dolorum provident? At totam tempore nemo, necessitatibus eum temporibus deleniti itaque? Labore sed repellendus rerum sequi.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-context">
+    <code class="Code Code--lang-json">
+        
+            
+            <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-cd44d368974097161b69a01f9bc70367">_show-grid.scss</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-cd44d368974097161b69a01f9bc70367" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                                <pre>@<span class="hljs-keyword">if</span> <span class="hljs-variable">$show-grid</span> == true {
+	<span class="hljs-selector-tag">h1</span>, 
+	<span class="hljs-selector-tag">h2</span>, 
+	<span class="hljs-selector-tag">h3</span>, 
+	<span class="hljs-selector-tag">h4</span>, 
+	<span class="hljs-selector-tag">h5</span>, 
+	<span class="hljs-selector-tag">h6</span>, 
+	<span class="hljs-selector-tag">p</span> {
+		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
+		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.35</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
+		<span class="hljs-attribute">background-repeat</span>: repeat;
+	}
+
+	<span class="hljs-selector-tag">body</span>,
+	<span class="hljs-selector-class">.show-grid</span> {
+		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
+		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.15</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
+		<span class="hljs-attribute">background-repeat</span>: repeat;
+	}
+}</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/show-grid/_show-grid.scss"><span>/components/raw/show-grid/_show-grid.scss</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/debug/show-grid/_show-grid.scss</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">463 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
     </div>
 </div>
 
 
 
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@show-grid</span>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/show-grid.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/show-grid.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">src/components/debug/show-grid/show-grid.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <h1 id="the-grid">The grid</h1>
+<p>Setting <code>$show-grid</code> to true will show a grid both behind the <code>&lt;body&gt;</code> element and behind every <code>&lt;h1-h6&gt;</code> and <code>&lt;p&gt;</code> elements using ritmo units in order to measure vertical rhythm.</p>
+<p>Since we don’t follow vertical rhythm as mandatory (i.e image heights, margins) it’s normal than elements won’t stick to the body grid.</p>
+<p>A helper class <code>.show-grid</code> is also included.</p>
+
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </main>
+
+    </div>
+
+</div>
+
+
+
+
 
 
 

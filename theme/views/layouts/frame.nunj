@@ -1,0 +1,32 @@
+{% extends "layouts/skeleton.nunj" %}
+{% import "macros/navigation.nunj" as nav %}
+
+{% block page %}
+
+<div id="main-wrapper" data-role="body">
+
+    <header class="header">
+        <h1 class="h5">
+            <a href="{{ path('/') }}" class="header-title" data-pjax>
+                {{ frctl.get('project.title') }}
+            </a>
+        </h1>
+    </header>
+
+    <div class="wrapper__inner">
+    
+        <aside class="sidebar" data-role="sidebar">
+            {% include 'partials/navigation/navigation.nunj' %}
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+    </div>
+
+</div>
+
+{% endblock %}

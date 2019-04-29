@@ -1,0 +1,14 @@
+{% if frctl.assets.visible().length %}
+
+        <h3>{{ frctl.get('assets.label') }}</h3>
+        <ul class="toc">
+            {% for item in frctl.assets.visible() %}
+            <li class="{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
+                <a class="" href="{{ path( (item | url), request) }}" data-pjax>
+                    <span>{{ item.label }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+{% endif %}

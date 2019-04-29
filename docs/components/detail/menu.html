@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/fuchsia.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="../../huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
 <title>Menu | Huesos @ Fractal</title>
@@ -21,476 +21,45 @@
 
 
 
-<div class="Frame" id="frame">
+<div id="main-wrapper" data-role="body">
 
-    <div class="Frame-header">
-        <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
-</svg>
+    <header class="header">
+        <h1 class="h5">
+            <a href="../../index.html" class="header-title" data-pjax>
+                Huesos @ Fractal
+            </a>
+        </h1>
+    </header>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-</svg>
-
-    </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Huesos @ Fractal</a>
-</div>
-
-    </div>
-
-    <div class="Frame-body" data-role="body">
-
-        <div class="Frame-panel Frame-panel--main" data-role="main">
-            <div class="Frame-inner" id="pjax-container">
-            
-
-
+    <div class="wrapper__inner">
     
-    
-
-<div class="Pen" data-behaviour="pen" id="pen-0b4c7ad3b0ade36276f2bc4b600870eb">
+        <aside class="sidebar" data-role="sidebar">
+            <nav class="nav">
 
     
 
-    <div class="Pen-panel Pen-header">
-    <h1 class="Pen-title">
-        <a class="Pen-previewLink" href="../preview/menu.html" title="Component preview">
-            Menu
-            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
 
-        </a>
-    </h1>
-    
-
-<div class="Status Status--tag">
-
-<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
-
-</div>
-
-
-</div>
-
-
-    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-0b4c7ad3b0ade36276f2bc4b600870eb">
-    <div class="Preview-wrapper" data-role="resizer">
-        <div class="Preview-resizer">
-            
-             <iframe
-                class="Preview-iframe"
-                data-role="window"
-                src="../preview/menu.html"
-                sandbox="allow-same-origin allow-scripts allow-forms"
-                 style=""
-                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
-            </iframe>
-        </div>
-        <div class="Preview-handle" data-role="resize-handle"></div>
-        <div class="Preview-overlay"></div>
-    </div>
-</div>
-
-
-    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
-
-    <div class="Pen-panel Pen-info" data-role="info">
-    <div class="Browser" data-behaviour="browser" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb">
-
-    
-
-<div class="Browser-controls">
-    <ul class="Browser-tabs">
-        
-        
-        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-html">HTML</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--view" data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-view">View</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--context" data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-context">Context</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--resources" data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-assets">Assets</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--info" data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-info">Info</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--notes" data-role="tab">
-            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-notes">Notes</a>
-        </li>
-        
-        
-    </ul>
-</div>
-
-
-    
-    
-<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-html">
-    <code class="Code Code--lang-html">
-        
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav menu"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
-        
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-view">
-    <code class="Code Code--lang-handlebars">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav menu"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></pre>
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-context">
-    <code class="Code Code--lang-json">
-        
-            
-            <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
-            
-        
-    </code>
-</div>
-
-    
-    
-
-
-<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-assets">
-    <div class="FileBrowser">
-
-        <div class="FileBrowser-selectWrapper">
-            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
-            <select class="FileBrowser-select" id="filebrowser-select">
-                
-                <option value="file-bdddb7dcdd1c5c1c78ec47334caa80fe">_menu.scss</option>
-                
-            </select>
-        </div>
-
-        
-        <div class="FileBrowser-item is-active" id="file-bdddb7dcdd1c5c1c78ec47334caa80fe" data-role="resource-preview">
-            <ul class="Meta">
-                <li class="Meta-item">
-                    <strong class="Meta-key">Content:</strong>
-                    <span class="Meta-value">
-                        <div class="FileBrowser-itemPreview">
-                            
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.menu</span> {
-    @<span class="hljs-keyword">include</span> inline-list();
-    @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-      <span class="hljs-selector-tag">a</span> {
-        @<span class="hljs-keyword">include</span> kill-link-decoration();
-      }
-    }
-    <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
-      <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
-      <span class="hljs-attribute">position</span>:relative;
-      <span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;
-      &gt; <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">text-align</span>:left; <span class="hljs-comment">// Override any .right class</span>
-        <span class="hljs-attribute">display</span>:block;
-        <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
-        <span class="hljs-attribute">white-space</span>:nowrap;
-        @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-          @<span class="hljs-keyword">include</span> set-link(
-            get-color(text, primary),
-            get-color(text, primary),
-            contrast-color(<span class="hljs-variable">$menu-background-color</span>),
-            get-color(text, primary),
-            false,
-            false
-          )
-        }
-      }
-      &amp;:hover,
-      &amp;:focus {
-        &gt; <span class="hljs-selector-tag">a</span> {
-            <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$menu-background-color</span>);
-            <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$menu-background-color</span>;
-        }
-      }
-      &gt; <span class="hljs-selector-tag">span</span> {
-        <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
-      }
-      <span class="hljs-comment">// Second-level</span>
-      &gt; <span class="hljs-selector-tag">ul</span> {
-        <span class="hljs-attribute">display</span>:none;
-        <span class="hljs-attribute">position</span>:absolute;
-        <span class="hljs-attribute">top</span>:<span class="hljs-number">100%</span>;
-        <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
-        <span class="hljs-attribute">z-index</span>:<span class="hljs-number">2</span>;
-        <span class="hljs-attribute">min-width</span>:<span class="hljs-number">120%</span>;
-        &gt; <span class="hljs-selector-tag">li</span> {
-          <span class="hljs-attribute">display</span>:block;
-          <span class="hljs-attribute">position</span>:relative;
-          &gt; <span class="hljs-selector-tag">a</span> {
-            <span class="hljs-attribute">display</span>:block;
-            <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span> / <span class="hljs-number">2</span> <span class="hljs-variable">$menu-padding</span>;
-            <span class="hljs-attribute">white-space</span>:nowrap;
-
-            <span class="hljs-attribute">background-color</span>: lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>);
-            @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-              @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>)));
-            }
-            @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.8</span> * <span class="hljs-variable">$nav-font-size</span>);
-            &amp;:hover,
-            &amp;:focus {
-              @<span class="hljs-keyword">include</span> background-contrast(shade(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
-            }
-          }
-        }
-      }
-      <span class="hljs-comment">// Third-level</span>
-      &gt; <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
-        &gt; <span class="hljs-selector-tag">ul</span> {
-          <span class="hljs-attribute">display</span>:none;
-          <span class="hljs-attribute">position</span>:absolute;
-          <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
-          <span class="hljs-attribute">left</span>:<span class="hljs-number">100%</span>;
-          <span class="hljs-attribute">min-width</span>:<span class="hljs-number">100%</span>;
-          <span class="hljs-attribute">z-index</span>:<span class="hljs-number">3</span>;
-          <span class="hljs-selector-tag">li</span> {
-            <span class="hljs-selector-tag">a</span> {
-              <span class="hljs-attribute">background-color</span>: lighten(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>);
-              @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-                @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>));
-              }
-              @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.7</span> * <span class="hljs-variable">$nav-font-size</span>, 4);
-              &amp;:hover,
-              &amp;:focus {
-                @<span class="hljs-keyword">include</span> background-contrast(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
-              }
-            }
-          }
-        }
-        &amp;:hover {
-          &gt; <span class="hljs-selector-tag">ul</span> {
-            <span class="hljs-attribute">display</span>:block;
-          }
-        }
-      }
-      &amp;:hover {
-        &gt; <span class="hljs-selector-tag">ul</span> {
-          <span class="hljs-attribute">display</span>:block;
-          &gt; <span class="hljs-selector-tag">li</span> {
-            <span class="hljs-attribute">display</span>:block;
-          }
-        }
-      }
-    }
-  }</pre>
-                            </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/menu/_menu.scss"><span>/components/raw/menu/_menu.scss</span></a></span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/navigation/menu/_menu.scss</span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.7 KB</span>
-                </li>
-            </ul>
-        </div>
-        
-    </div>
-</div>
-
-
-
-    
-    <div class="Browser-panel" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-info">
-    <ul class="Meta">
-        <li class="Meta-item">
-            <strong class="Meta-key">Handle:</strong>
-            <span class="Meta-value">@menu</span>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">Preview:</strong>
-            <span class="Meta-value">
-                <ul>
-                    <li><a data-no-pjax href="../preview/menu.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                    <li><a data-no-pjax href="../render/menu.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                </ul>
-            </span>
-        </li>
-        <li class="Meta-item">
-            <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src/components/navigation/menu/menu.hbs</span>
-        </li>
-        
-        
-    </ul>
-</div>
-
-    
-    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-notes">
-    <div class="Prose Prose--condensed">
-        
-        <h1 id="menu">Menu</h1>
-<p>An horizontal menu is a component based on an extended <code>&lt;nav&gt;</code> or <code>.nav</code>.</p>
-<p>Unlike the <code>nav</code>, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.</p>
-<p>It is expected that all items on a menu are linked. Empty links can be faked by adding a <code>&lt;span&gt;</code> item and combined with the <code>.disabled</code> class in order to indicate a deactivated link</p>
-<p>Submenus are handled up to the 3rd level. If you need more levels… you might want to rethink your menu.</p>
-<h2 id="menu-configuration">Menu configuration</h2>
-<p>This menu is very opinionated and intented as a quick way to bootstrap a default-looking menu. If you need something more complex or very different, you should better develop your own solution.</p>
-<p>You can config the <code>$menu-padding</code>of every menu item. Use <code>$menu-kill-links</code> to kill all links (defaults to true) and set a <code>$menu-background-color</code>that will be used to make all color variations. Use <code>$menu-color-ratio</code> to set a % that will be applied to <code>lighten()</code> the color on every subsequent level.</p>
-<h2 id="quick-tip">Quick tip</h2>
-<p>If you don’t want to set the default <code>.nav</code> values, just delete the class! The <code>.menu</code> styling is not dependent on the <code>nav</code>. </p>
-<p>It is though recommended to use the <code>.nav</code> class to keep all navigation styles unified.</p>
-
-        
-    </div>
-</div>
-
-    
-
-</div>
-
-</div>
-
-
-    
-
-</div>
-
-
-            </div>
-        </div>
-
-        <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
-        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
-            <nav class="Navigation">
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
-    <ul class="Tree-items Tree-depth-1">
+    <h3>components</h3>
+    <ul class="toc">
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-html">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-html">
+            <h4 class="" data-role="toggle">
                 <span>Html</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-link">
+            <h4 class="" data-role="toggle">
                 <span>Link</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -718,11 +287,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-list">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-list">
+            <h4 class="" data-role="toggle">
                 <span>List</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -811,22 +380,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-forms">
+            <h4 class="" data-role="toggle">
                 <span>Forms</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-form-item">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-form-item">
+            <h4 class="" data-role="toggle">
                 <span>Form Item</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1083,11 +652,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1387,22 +956,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="" data-role="toggle">
                 <span>Layout</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="" data-role="toggle">
                 <span>Grid</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1659,15 +1228,39 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navigation">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-navigation">
+            <h4 class="" data-role="toggle">
                 <span>Navigation</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="breadcrumb.html" data-pjax>
+                <span>Breadcrumb</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -1747,11 +1340,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-elements">
+            <h4 class="" data-role="toggle">
                 <span>Elements</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1806,11 +1399,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="" data-role="toggle">
                 <span>Card</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1947,11 +1540,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1987,11 +1580,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-debug">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-debug">
+            <h4 class="" data-role="toggle">
                 <span>Debug</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2028,26 +1621,58 @@
     
 
     </ul>
+
+
+
+
+
+    
+
+
+    <h3>documentation</h3>
+    <ul class="toc">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/avoiding-bloat.html" data-pjax>
+                <span>Avoiding Bloat</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
 </div>
 
 </div>
 
 
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
-    <ul class="Tree-items Tree-depth-1">
+            </a>
+        </li>
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-color_palette">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Color Palette</span>
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
+                <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2056,7 +1681,31 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/color_palette/palette.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/color/handling-color.html" data-pjax>
+                <span>Handling Color</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/color/palette.html" data-pjax>
                 <span>Palette</span>
                 
             </a>
@@ -2069,22 +1718,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="" data-role="toggle">
                 <span>Functions</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2156,11 +1805,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2169,8 +1818,34 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/functions/helpers/z-index.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/functions/helpers/z_index.html" data-pjax>
                 <span>Z Index</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
+                <span>Typography</span>
+            </h4>
+            <ul class="" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/functions/typography/bold.html" data-pjax>
+                <span>Bold</span>
                 
             </a>
         </li>
@@ -2187,22 +1862,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="" data-role="toggle">
                 <span>Mixins</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2244,11 +1919,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2310,11 +1985,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-image">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-image">
+            <h4 class="" data-role="toggle">
                 <span>Image</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2336,11 +2011,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-links">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-links">
+            <h4 class="" data-role="toggle">
                 <span>Links</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2392,11 +2067,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2412,36 +2087,12 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/bloat.html" data-pjax>
-                <span>Bloat</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/inline-list.html" data-pjax>
+                <span>Inline List</span>
                 
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
-
-
-</div>
-
-</div>
-
-
             </a>
         </li>
         
@@ -2449,18 +2100,37 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../index.html" data-pjax>
-                <span>Overview</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/minititle.html" data-pjax>
+                <span>Minititle</span>
                 
             </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/text-border.html" data-pjax>
+                <span>Text Border</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
         </li>
         
     
 
     </ul>
-</div>
 
-</div>
+
 
 
 
@@ -2469,14 +2139,494 @@
 
 </nav>
 
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                
+
+
+    
+    
+
+<div class="Pen" data-behaviour="pen" id="pen-0b4c7ad3b0ade36276f2bc4b600870eb">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/menu.html" title="Component preview">
+            Menu
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-0b4c7ad3b0ade36276f2bc4b600870eb">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+            
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/menu.html"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
         </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-html">HTML</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-view">View</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-context">Context</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-info">Info</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-notes">Notes</a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-html">
+    <code class="Code Code--lang-html">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Simple menu<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Menu + nav<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav menu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-view">
+    <code class="Code Code--lang-handlebars">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Simple menu<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Menu + nav<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav menu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-context">
+    <code class="Code Code--lang-json">
+        
+            
+            <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-bdddb7dcdd1c5c1c78ec47334caa80fe">_menu.scss</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-bdddb7dcdd1c5c1c78ec47334caa80fe" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                                <pre><span class="hljs-selector-class">.menu</span> {
+    @<span class="hljs-keyword">include</span> inline-list();
+    @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
+      <span class="hljs-selector-tag">a</span> {
+        @<span class="hljs-keyword">include</span> kill-link-decoration();
+      }
+    }
+    <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
+      <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
+      <span class="hljs-attribute">position</span>:relative;
+      <span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;
+      &gt; <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">text-align</span>:left; <span class="hljs-comment">// Override any .right class</span>
+        <span class="hljs-attribute">display</span>:block;
+        <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
+        <span class="hljs-attribute">white-space</span>:nowrap;
+        @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
+          @<span class="hljs-keyword">include</span> set-link(
+            get-color(text, primary),
+            get-color(text, primary),
+            contrast-color(<span class="hljs-variable">$menu-background-color</span>),
+            get-color(text, primary),
+            false,
+            false
+          )
+        }
+      }
+      &amp;:hover,
+      &amp;:focus {
+        &gt; <span class="hljs-selector-tag">a</span> {
+            <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$menu-background-color</span>);
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$menu-background-color</span>;
+        }
+      }
+      &gt; <span class="hljs-selector-tag">span</span> {
+        <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
+      }
+      <span class="hljs-comment">// Second-level</span>
+      &gt; <span class="hljs-selector-tag">ul</span> {
+        <span class="hljs-attribute">display</span>:none;
+        <span class="hljs-attribute">position</span>:absolute;
+        <span class="hljs-attribute">top</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+        <span class="hljs-attribute">z-index</span>:<span class="hljs-number">2</span>;
+        <span class="hljs-attribute">min-width</span>:<span class="hljs-number">120%</span>;
+        &gt; <span class="hljs-selector-tag">li</span> {
+          <span class="hljs-attribute">display</span>:block;
+          <span class="hljs-attribute">position</span>:relative;
+          &gt; <span class="hljs-selector-tag">a</span> {
+            <span class="hljs-attribute">display</span>:block;
+            <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span> / <span class="hljs-number">2</span> <span class="hljs-variable">$menu-padding</span>;
+            <span class="hljs-attribute">white-space</span>:nowrap;
+
+            <span class="hljs-attribute">background-color</span>: lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>);
+            @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
+              @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>)));
+            }
+            @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.8</span> * <span class="hljs-variable">$nav-font-size</span>);
+            &amp;:hover,
+            &amp;:focus {
+              @<span class="hljs-keyword">include</span> background-contrast(shade(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
+            }
+          }
+        }
+      }
+      <span class="hljs-comment">// Third-level</span>
+      &gt; <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
+        &gt; <span class="hljs-selector-tag">ul</span> {
+          <span class="hljs-attribute">display</span>:none;
+          <span class="hljs-attribute">position</span>:absolute;
+          <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+          <span class="hljs-attribute">left</span>:<span class="hljs-number">100%</span>;
+          <span class="hljs-attribute">min-width</span>:<span class="hljs-number">100%</span>;
+          <span class="hljs-attribute">z-index</span>:<span class="hljs-number">3</span>;
+          <span class="hljs-selector-tag">li</span> {
+            <span class="hljs-selector-tag">a</span> {
+              <span class="hljs-attribute">background-color</span>: lighten(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>);
+              @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
+                @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>));
+              }
+              @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.7</span> * <span class="hljs-variable">$nav-font-size</span>, 4);
+              &amp;:hover,
+              &amp;:focus {
+                @<span class="hljs-keyword">include</span> background-contrast(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
+              }
+            }
+          }
+        }
+        &amp;:hover {
+          &gt; <span class="hljs-selector-tag">ul</span> {
+            <span class="hljs-attribute">display</span>:block;
+          }
+        }
+      }
+      &amp;:hover {
+        &gt; <span class="hljs-selector-tag">ul</span> {
+          <span class="hljs-attribute">display</span>:block;
+          &gt; <span class="hljs-selector-tag">li</span> {
+            <span class="hljs-attribute">display</span>:block;
+          }
+        }
+      }
+    }
+  }</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/menu/_menu.scss"><span>/components/raw/menu/_menu.scss</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/navigation/menu/_menu.scss</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">2.7 KB</span>
+                </li>
+            </ul>
+        </div>
+        
     </div>
 </div>
 
 
 
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@menu</span>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/menu.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/menu.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">src/components/navigation/menu/menu.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <h1 id="menu">Menu</h1>
+<p>An horizontal menu is a component based on an extended <code>&lt;nav&gt;</code> or <code>.nav</code>.</p>
+<p>Unlike the <code>nav</code>, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.</p>
+<p>It is expected that all items on a menu are linked. Empty links can be faked by adding a <code>&lt;span&gt;</code> item and combined with the <code>.disabled</code> class in order to indicate a deactivated link</p>
+<p>Submenus are handled up to the 3rd level. If you need more levels… you might want to rethink your menu.</p>
+<h2 id="menu-configuration">Menu configuration</h2>
+<p>This menu is very opinionated and intented as a quick way to bootstrap a default-looking menu. If you need something more complex or very different, you should better develop your own solution.</p>
+<p>You can config the <code>$menu-padding</code>of every menu item. Use <code>$menu-kill-links</code> to kill all links (defaults to true) and set a <code>$menu-background-color</code>that will be used to make all color variations. Use <code>$menu-color-ratio</code> to set a % that will be applied to <code>lighten()</code> the color on every subsequent level.</p>
+<h2 id="quick-tip">Quick tip</h2>
+<p>If you don’t want to set the default <code>.nav</code> values, just delete the class! The <code>.menu</code> styling is not dependent on the <code>nav</code>. </p>
+<p>It is though recommended to use the <code>.nav</code> class to keep all navigation styles unified.</p>
+
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </main>
+
+    </div>
+
+</div>
+
+
+
+
 
 
 

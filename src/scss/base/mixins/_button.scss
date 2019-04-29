@@ -1,3 +1,7 @@
+// ---
+// IMPORTANT: Do not document this mixins
+// ---
+
 @mixin button-outline($color) {
     border: $button-border-width solid $color;
     color: $color;

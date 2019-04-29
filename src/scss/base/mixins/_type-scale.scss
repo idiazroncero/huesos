@@ -1,6 +1,8 @@
 //
 // Function to easily retrieve sizes from a scale.
 // Fuente: concise.css
+// ---
+// IMPORTANT: Do not document this mixins
 // --------------------------------------------------
 
 @function typeScale($size, $ratio: $scale-ratio) {

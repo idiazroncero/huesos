@@ -1,18 +1,22 @@
 .alert {
     padding: $gutter;
     border-radius: $border-radius;
-    @include background-split-color($gray5);
     @extend .text-wrapper;
+    @if $alert-strategy == 'contrast' {
+        @include background-contrast($alert-default-color);
+    } @else if $alert-strategy == 'split' {
+        @include background-split-color($alert-default-color); 
+    }
 }
 
-.alert--success {
-    @include background-split-color(get-color(state, "success"));
-}
-
-.alert--warning {
-    @include background-split-color(get-color(state, "warning"));
-}
-
-.alert--error {
-    @include background-split-color(get-color(state, "error"));
+@each $key, $value in map-get($colors, state) {
+    .alert--#{$key} {
+        @if $alert-strategy == 'contrast' {
+            @include background-contrast($value); 
+        } @else if $alert-strategy == 'split' {
+            @include background-split-color($value); 
+        } @else {
+            @error "You must provide a valid $alert-strategy value";
+        }
+    }
 }

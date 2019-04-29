@@ -77,19 +77,41 @@
 	}
 }
 
-@mixin background-split-color($color, $lighten-amount: $lighten-split-ratio, $darken-amount: $darken-split-ratio, $include-links: false) {
-	background-color: tint($color, $lighten-amount);
-	color: shade($color, $darken-amount);
-	@if $include-links {
-		a {
-			@include set-link(
-				shade($color, $darken-amount),
-				shade($color, $darken-amount),
-				$color,
-				shade($color, $darken-amount)
-			)
-		} 
+@mixin background-split-color(
+		$color, 
+		$lighten-amount: $lighten-split-ratio, 
+		$darken-amount: $darken-split-ratio, 
+		$include-links: false,
+		$invert: false
+	) {
+	@if $invert {
+		background-color: shade($color, $lighten-amount);
+		color: tint($color, $darken-amount);
+		@if $include-links {
+			a {
+				@include set-link(
+					tint($color, $darken-amount),
+					tint($color, $darken-amount),
+					$color,
+					tint($color, $darken-amount)
+				)
+			} 
+		}
+	} @else {
+		background-color: tint($color, $lighten-amount);
+		color: shade($color, $darken-amount);
+		@if $include-links {
+			a {
+				@include set-link(
+					shade($color, $darken-amount),
+					shade($color, $darken-amount),
+					$color,
+					shade($color, $darken-amount)
+				)
+			} 
+		}
 	}
+
 }
 
 @mixin background-split-color-inverse($color, $lighten-amount: $lighten-split-ratio, $darken-amount: $darken-split-ratio, $include-links: false) {

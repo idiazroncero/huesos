@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/fuchsia.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="../../huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
 <title>Una alerta: Error | Huesos @ Fractal</title>
@@ -21,367 +21,45 @@
 
 
 
-<div class="Frame" id="frame">
+<div id="main-wrapper" data-role="body">
 
-    <div class="Frame-header">
-        <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
-</svg>
+    <header class="header">
+        <h1 class="h5">
+            <a href="../../index.html" class="header-title" data-pjax>
+                Huesos @ Fractal
+            </a>
+        </h1>
+    </header>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-</svg>
-
-    </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Huesos @ Fractal</a>
-</div>
-
-    </div>
-
-    <div class="Frame-body" data-role="body">
-
-        <div class="Frame-panel Frame-panel--main" data-role="main">
-            <div class="Frame-inner" id="pjax-container">
-            
-
-
+    <div class="wrapper__inner">
     
-    
-
-<div class="Pen" data-behaviour="pen" id="pen-003fe3a52a1a8893d8f33744126df188">
+        <aside class="sidebar" data-role="sidebar">
+            <nav class="nav">
 
     
 
-    <div class="Pen-panel Pen-header">
-    <h1 class="Pen-title">
-        <a class="Pen-previewLink" href="../preview/alert--error.html" title="Component preview">
-            Una alerta: Error
-            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
 
-        </a>
-    </h1>
-    
-
-<div class="Status Status--tag">
-
-<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
-
-</div>
-
-
-</div>
-
-
-    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-003fe3a52a1a8893d8f33744126df188">
-    <div class="Preview-wrapper" data-role="resizer">
-        <div class="Preview-resizer">
-            
-             <iframe
-                class="Preview-iframe"
-                data-role="window"
-                src="../preview/alert--error.html"
-                sandbox="allow-same-origin allow-scripts allow-forms"
-                 style=""
-                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
-            </iframe>
-        </div>
-        <div class="Preview-handle" data-role="resize-handle"></div>
-        <div class="Preview-overlay"></div>
-    </div>
-</div>
-
-
-    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
-
-    <div class="Pen-panel Pen-info" data-role="info">
-    <div class="Browser" data-behaviour="browser" id="browser-003fe3a52a1a8893d8f33744126df188">
-
-    
-
-<div class="Browser-controls">
-    <ul class="Browser-tabs">
-        
-        
-        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-html">HTML</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--view" data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-view">View</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--context" data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-context">Context</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--resources" data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-assets">Assets</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Browser-tab Browser-tab--info" data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-info">Info</a>
-        </li>
-        
-        
-        
-        <li class="Browser-tab Browser-tab--notes" data-role="tab">
-            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-notes">Notes</a>
-        </li>
-        
-        
-    </ul>
-</div>
-
-
-    
-    
-<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-html">
-    <code class="Code Code--lang-html">
-        
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb alert--error"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>This is a title<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is the content of an alert / info card.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-        
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-view">
-    <code class="Code Code--lang-handlebars">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb </span></span></span><span class="hljs-template-variable">{{ modifier }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span></span><span class="hljs-template-variable">{{ title }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{ message }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
-    </code>
-</div>
-
-    
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-context">
-    <code class="Code Code--lang-json">
-        
-            
-            <pre>{
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"This is the content of an alert / info card."</span>,
-  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"This is a title"</span>,
-  <span class="hljs-attr">"modifier"</span>: <span class="hljs-string">"alert--error"</span>
-}</pre>
-            
-        
-    </code>
-</div>
-
-    
-    
-
-
-<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-assets">
-    <div class="FileBrowser">
-
-        <div class="FileBrowser-selectWrapper">
-            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
-            <select class="FileBrowser-select" id="filebrowser-select">
-                
-                <option value="file-d143be6fe7c00015d5848e0393cd2af8">_alert.scss</option>
-                
-            </select>
-        </div>
-
-        
-        <div class="FileBrowser-item is-active" id="file-d143be6fe7c00015d5848e0393cd2af8" data-role="resource-preview">
-            <ul class="Meta">
-                <li class="Meta-item">
-                    <strong class="Meta-key">Content:</strong>
-                    <span class="Meta-value">
-                        <div class="FileBrowser-itemPreview">
-                            
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.alert</span> {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius</span>;
-    @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$gray5</span>);
-    @<span class="hljs-keyword">extend</span> .text-wrapper;
-}
-
-<span class="hljs-selector-class">.alert--success</span> {
-    @<span class="hljs-keyword">include</span> background-split-color(get-color(state, <span class="hljs-string">"success"</span>));
-}
-
-<span class="hljs-selector-class">.alert--warning</span> {
-    @<span class="hljs-keyword">include</span> background-split-color(get-color(state, <span class="hljs-string">"warning"</span>));
-}
-
-<span class="hljs-selector-class">.alert--error</span> {
-    @<span class="hljs-keyword">include</span> background-split-color(get-color(state, <span class="hljs-string">"error"</span>));
-}</pre>
-                            </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/alert/_alert.scss"><span>/components/raw/alert/_alert.scss</span></a></span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/elements/alert/_alert.scss</span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">396 Bytes</span>
-                </li>
-            </ul>
-        </div>
-        
-    </div>
-</div>
-
-
-
-    
-    <div class="Browser-panel" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-info">
-    <ul class="Meta">
-        <li class="Meta-item">
-            <strong class="Meta-key">Handle:</strong>
-            <span class="Meta-value">@alert--error</span>
-        </li>
-        
-        
-        
-        
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">Variants <em class="Meta-count">(4)</em>:</strong>
-            <span class="Meta-value Meta-value--linkList">
-            
-                <a href="alert--default.html">
-                    <span>Default</span>
-                </a>, 
-            
-                <a href="alert--success.html">
-                    <span>Success</span>
-                </a>, 
-            
-                <a href="alert--warning.html">
-                    <span>Warning</span>
-                </a>, 
-            
-                <a href="">
-                    <span>Error</span>
-                </a>
-            
-            </span>
-        </li>
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">Preview:</strong>
-            <span class="Meta-value">
-                <ul>
-                    <li><a data-no-pjax href="../preview/alert--error.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                    <li><a data-no-pjax href="../render/alert--error.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
-</svg>
-</a></li>
-                </ul>
-            </span>
-        </li>
-        <li class="Meta-item">
-            <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src/components/elements/alert/alert.hbs</span>
-        </li>
-        
-        
-    </ul>
-</div>
-
-    
-    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-notes">
-    <div class="Prose Prose--condensed">
-        
-        <h1 id="alerts">Alerts</h1>
-<p>Boxes with background-colors to draw the user’s attention towards specific messages.</p>
-<p>Any alert is automatically set as a <code>.text</code> to prevent paragraphs for setting an extra space.</p>
-<p>It is considered good practice to use <code>.minititle</code> for headings inside the alert box.</p>
-<ul>
-<li>.alert–success     - Sets the color to indicate a positive action or message</li>
-<li>.alert–warning     - Sets the color to indicate a warning</li>
-<li>.alert–error       - Sets the color to indicate a negative action or message</li>
-</ul>
-
-        
-    </div>
-</div>
-
-    
-
-</div>
-
-</div>
-
-
-    
-
-</div>
-
-
-            </div>
-        </div>
-
-        <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
-        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
-            <nav class="Navigation">
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
-    <ul class="Tree-items Tree-depth-1">
+    <h3>components</h3>
+    <ul class="toc">
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-html">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-html">
+            <h4 class="" data-role="toggle">
                 <span>Html</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-link">
+            <h4 class="" data-role="toggle">
                 <span>Link</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -609,11 +287,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-list">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-list">
+            <h4 class="" data-role="toggle">
                 <span>List</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -702,22 +380,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-forms">
+            <h4 class="" data-role="toggle">
                 <span>Forms</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-form-item">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-form-item">
+            <h4 class="" data-role="toggle">
                 <span>Form Item</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -974,11 +652,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1278,22 +956,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="" data-role="toggle">
                 <span>Layout</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="" data-role="toggle">
                 <span>Grid</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1550,15 +1228,39 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navigation">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-navigation">
+            <h4 class="" data-role="toggle">
                 <span>Navigation</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="breadcrumb.html" data-pjax>
+                <span>Breadcrumb</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -1638,11 +1340,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-elements">
+            <h4 class="" data-role="toggle">
                 <span>Elements</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1697,11 +1399,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="" data-role="toggle">
                 <span>Card</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1838,11 +1540,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1878,11 +1580,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-debug">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-debug">
+            <h4 class="" data-role="toggle">
                 <span>Debug</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1919,26 +1621,58 @@
     
 
     </ul>
+
+
+
+
+
+    
+
+
+    <h3>documentation</h3>
+    <ul class="toc">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/avoiding-bloat.html" data-pjax>
+                <span>Avoiding Bloat</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
 </div>
 
 </div>
 
 
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
-    <ul class="Tree-items Tree-depth-1">
+            </a>
+        </li>
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-color_palette">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Color Palette</span>
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
+                <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1947,7 +1681,31 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/color_palette/palette.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/color/handling-color.html" data-pjax>
+                <span>Handling Color</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/color/palette.html" data-pjax>
                 <span>Palette</span>
                 
             </a>
@@ -1960,22 +1718,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="" data-role="toggle">
                 <span>Functions</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2047,11 +1805,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2060,8 +1818,34 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/functions/helpers/z-index.html" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/functions/helpers/z_index.html" data-pjax>
                 <span>Z Index</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
+                <span>Typography</span>
+            </h4>
+            <ul class="" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/functions/typography/bold.html" data-pjax>
+                <span>Bold</span>
                 
             </a>
         </li>
@@ -2078,22 +1862,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="" data-role="toggle">
                 <span>Mixins</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2135,11 +1919,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2201,11 +1985,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-image">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-image">
+            <h4 class="" data-role="toggle">
                 <span>Image</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2227,11 +2011,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-links">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-links">
+            <h4 class="" data-role="toggle">
                 <span>Links</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2283,11 +2067,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2303,36 +2087,12 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/bloat.html" data-pjax>
-                <span>Bloat</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/inline-list.html" data-pjax>
+                <span>Inline List</span>
                 
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
-
-
-</div>
-
-</div>
-
-
             </a>
         </li>
         
@@ -2340,18 +2100,37 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../index.html" data-pjax>
-                <span>Overview</span>
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/minititle.html" data-pjax>
+                <span>Minititle</span>
                 
             </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/mixins/typography/text-border.html" data-pjax>
+                <span>Text Border</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
         </li>
         
     
 
     </ul>
-</div>
 
-</div>
+
 
 
 
@@ -2360,14 +2139,327 @@
 
 </nav>
 
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                
+
+
+    
+    
+
+<div class="Pen" data-behaviour="pen" id="pen-003fe3a52a1a8893d8f33744126df188">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/alert--error.html" title="Component preview">
+            Una alerta: Error
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-003fe3a52a1a8893d8f33744126df188">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+            
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/alert--error.html"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
         </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-003fe3a52a1a8893d8f33744126df188">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-html">HTML</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-view">View</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-context">Context</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-info">Info</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-003fe3a52a1a8893d8f33744126df188-panel-notes">Notes</a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-html">
+    <code class="Code Code--lang-html">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb alert--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>This is a title<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is the content of an alert / info card.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-view">
+    <code class="Code Code--lang-handlebars">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb </span></span></span><span class="hljs-template-variable">{{ modifier }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span></span><span class="hljs-template-variable">{{ title }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{ message }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-context">
+    <code class="Code Code--lang-json">
+        
+            
+            <pre>{
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"This is the content of an alert / info card."</span>,
+  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"This is a title"</span>,
+  <span class="hljs-attr">"modifier"</span>: <span class="hljs-string">"alert--error"</span>
+}</pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-d143be6fe7c00015d5848e0393cd2af8">_alert.scss</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-d143be6fe7c00015d5848e0393cd2af8" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                                <pre><span class="hljs-selector-class">.alert</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius</span>;
+    @<span class="hljs-keyword">extend</span> .text-wrapper;
+    @<span class="hljs-keyword">if</span> <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'contrast'</span> {
+        @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$alert-default-color</span>);
+    } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'split'</span> {
+        @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$alert-default-color</span>); 
+    }
+}
+
+@<span class="hljs-keyword">each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
+    <span class="hljs-selector-class">.alert--</span>#{<span class="hljs-variable">$key</span>} {
+        @<span class="hljs-keyword">if</span> <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'contrast'</span> {
+            @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$value</span>); 
+        } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'split'</span> {
+            @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$value</span>); 
+        } @<span class="hljs-keyword">else</span> {
+            @error <span class="hljs-string">"You must provide a valid $alert-strategy value"</span>;
+        }
+    }
+}</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/alert/_alert.scss"><span>/components/raw/alert/_alert.scss</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/elements/alert/_alert.scss</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">681 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
     </div>
 </div>
 
 
 
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@alert--error</span>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Variants <em class="Meta-count">(4)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="alert--default.html">
+                    <span>Default</span>
+                </a>, 
+            
+                <a href="alert--success.html">
+                    <span>Success</span>
+                </a>, 
+            
+                <a href="alert--warning.html">
+                    <span>Warning</span>
+                </a>, 
+            
+                <a href="">
+                    <span>Error</span>
+                </a>
+            
+            </span>
+        </li>
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/alert--error.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/alert--error.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">src/components/elements/alert/alert.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-003fe3a52a1a8893d8f33744126df188-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <h1 id="alerts">Alerts</h1>
+<p>Boxes with background-colors to draw the user’s attention towards specific messages.</p>
+<p>Any alert is automatically set as a <code>.text</code> to prevent paragraphs for setting an extra space.</p>
+<p>It is considered good practice to use <code>.minititle</code> for headings inside the alert box.</p>
+<ul>
+<li>.alert–success     - Sets the color to indicate a positive action or message</li>
+<li>.alert–warning     - Sets the color to indicate a warning</li>
+<li>.alert–error       - Sets the color to indicate a negative action or message</li>
+</ul>
+
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </main>
+
+    </div>
+
+</div>
+
+
+
+
 
 
 

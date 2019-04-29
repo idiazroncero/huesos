@@ -11,146 +11,55 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="themes/mandelbrot/css/fuchsia.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Huesos' | Huesos @ Fractal</title>
+<title>Huesos | Huesos @ Fractal</title>
 
 </head>
 <body>
 
 
 
-<div class="Frame" id="frame">
+<div id="main-wrapper" data-role="body">
 
-    <div class="Frame-header">
-        <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
-</svg>
+    <header class="header">
+        <h1 class="h5">
+            <a href="" class="header-title" data-pjax>
+                Huesos @ Fractal
+            </a>
+        </h1>
+    </header>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-</svg>
-
-    </button>
-    <a href="" class="Header-title" data-pjax>Huesos @ Fractal</a>
-</div>
-
-    </div>
-
-    <div class="Frame-body" data-role="body">
-
-        <div class="Frame-panel Frame-panel--main" data-role="main">
-            <div class="Frame-inner" id="pjax-container">
-            
-
-<div class="Document">
-
-    <div class="Document-header">
-        
-        <h1 class="Document-title">Huesos'</h1>
-        
-
-
-        
-    </div>
-
-    <div class="Document-content">
-
+    <div class="wrapper__inner">
     
-
-<div class="Prose">
-
-
-
-    
-    
-    <h2 id="a-basic-osamenta-br-for-your-web-proyects">A basic osamenta <br/> for your web proyects</h2>
-<h3 id="what-is-this-">What is this?</h3>
-<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
-<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
-<ul>
-<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
-<li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
-<li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
-<li><a href="https://palx.jxnblk.com/">Palx</a> for creating a palette based on a single color and its shades.</li>
-</ul>
-<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using <code>yarn add animate.scss</code></p>
-<h3 id="opinionated-stuff">Opinionated stuff</h3>
-<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file:)</p>
-<ul>
-<li><p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;div&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
-</li>
-<li><p><strong>All separator borders are solid.</strong> Borders that indicate boundaries are always set to <code>solid</code> and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don’t agree with this or don’t need separator borders, you can set <code>$separator-width</code> to <code>0</code>.</p>
-</li>
-<li><p><strong>Always use SVG</strong> No icon fonts, no images. For iconography, the use of SVG is always preferred.</p>
-</li>
-<li><p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings. Vertical rhythm is to be used as a tool rather than a constraint.</p>
-</li>
-<li><p><strong>Mobile-First</strong> We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don’t have a <code>max-width</code>). Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
-</li>
-</ul>
-<h3 id="third-parties-are-the-best-parties">Third-parties are the best parties</h3>
-<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code>) need to be tamed. We use JS for this.</p>
-<p>Javascript libraries are bundled into Huesos following this criteria:</p>
-<ul>
-<li>Zero overweight. Small, concise, single-purpose libraries</li>
-<li>Vanilla javascript. jQuery shouldn’t be a dependency.</li>
-</ul>
-<p>These are the winners:</p>
-<ul>
-<li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
-</ul>
+        <aside class="sidebar" data-role="sidebar">
+            <nav class="nav">
 
     
 
 
-</div>
-
-
-
-    </div>
-
-</div>
-
-
-            </div>
-        </div>
-
-        <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
-        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
-            <nav class="Navigation">
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
-    <ul class="Tree-items Tree-depth-1">
+    <h3>components</h3>
+    <ul class="toc">
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-html">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-html">
+            <h4 class="" data-role="toggle">
                 <span>Html</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-link">
+            <h4 class="" data-role="toggle">
                 <span>Link</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -378,11 +287,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-list">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-list">
+            <h4 class="" data-role="toggle">
                 <span>List</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -471,22 +380,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-forms">
+            <h4 class="" data-role="toggle">
                 <span>Forms</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-form-item">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-form-item">
+            <h4 class="" data-role="toggle">
                 <span>Form Item</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -743,11 +652,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1047,22 +956,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="" data-role="toggle">
                 <span>Layout</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="" data-role="toggle">
                 <span>Grid</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1319,15 +1228,39 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navigation">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-navigation">
+            <h4 class="" data-role="toggle">
                 <span>Navigation</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/breadcrumb.html" data-pjax>
+                <span>Breadcrumb</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -1407,11 +1340,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-elements">
+            <h4 class="" data-role="toggle">
                 <span>Elements</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1466,11 +1399,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="" data-role="toggle">
                 <span>Card</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1607,11 +1540,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1647,11 +1580,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-debug">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-debug">
+            <h4 class="" data-role="toggle">
                 <span>Debug</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1688,26 +1621,58 @@
     
 
     </ul>
+
+
+
+
+
+    
+
+
+    <h3>documentation</h3>
+    <ul class="toc">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/avoiding-bloat.html" data-pjax>
+                <span>Avoiding Bloat</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
 </div>
 
 </div>
 
 
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
-    <ul class="Tree-items Tree-depth-1">
+            </a>
+        </li>
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-color_palette">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Color Palette</span>
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
+                <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1716,7 +1681,31 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="docs/color_palette/palette.html" data-pjax>
+            <a class="Tree-entityLink" href="docs/color/handling-color.html" data-pjax>
+                <span>Handling Color</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/color/palette.html" data-pjax>
                 <span>Palette</span>
                 
             </a>
@@ -1729,22 +1718,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="" data-role="toggle">
                 <span>Functions</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1816,11 +1805,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1829,8 +1818,34 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="docs/functions/helpers/z-index.html" data-pjax>
+            <a class="Tree-entityLink" href="docs/functions/helpers/z_index.html" data-pjax>
                 <span>Z Index</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
+                <span>Typography</span>
+            </h4>
+            <ul class="" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/functions/typography/bold.html" data-pjax>
+                <span>Bold</span>
                 
             </a>
         </li>
@@ -1847,22 +1862,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="" data-role="toggle">
                 <span>Mixins</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1904,11 +1919,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1970,11 +1985,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-image">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-image">
+            <h4 class="" data-role="toggle">
                 <span>Image</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1996,11 +2011,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-links">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-links">
+            <h4 class="" data-role="toggle">
                 <span>Links</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2052,11 +2067,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2072,55 +2087,50 @@
         </li>
         
     
-
-            </ul>
-        </li>
         
-    
-
-            </ul>
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/mixins/typography/inline-list.html" data-pjax>
+                <span>Inline List</span>
+                
+            </a>
         </li>
         
     
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="docs/bloat.html" data-pjax>
-                <span>Bloat</span>
+            <a class="Tree-entityLink" href="docs/mixins/typography/minititle.html" data-pjax>
+                <span>Minititle</span>
                 
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
-
-
-</div>
-
-</div>
-
-
             </a>
         </li>
         
     
         
         
-        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
-            <a class="Tree-entityLink" href="" data-pjax>
-                <span>Overview</span>
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="docs/mixins/typography/text-border.html" data-pjax>
+                <span>Text Border</span>
                 
             </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
         </li>
         
     
 
     </ul>
-</div>
 
-</div>
+
 
 
 
@@ -2129,14 +2139,92 @@
 
 </nav>
 
-        </div>
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Huesos</h1>
+        
+
+
+        
     </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+    
+    
+    <h2 id="a-basic-osamenta-br-for-your-web-proyects">A basic osamenta <br/> for your web proyects</h2>
+<h3 id="what-is-this-">What is this?</h3>
+<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
+<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
+<ul>
+<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
+<li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
+<li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
+<li><a href="https://palx.jxnblk.com/">Palx</a> for creating a palette based on a single color and its shades.</li>
+</ul>
+<p><a href="https://github.com/geoffgraham/animate.scss">Animate.scss</a> has been dropped but is still a recomendation for handling UX/UI animations. You can easily add it to your project using <code>yarn add animate.scss</code></p>
+<h3 id="opinionated-stuff">Opinionated stuff</h3>
+<p>Huesos is not as opinionated as a closed UI kit like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file:)</p>
+<ul>
+<li><p><strong>Separator margins are always applied as margin-bottom.</strong> This means that the main block-level elements that compose a page (<code>&lt;p&gt; &lt;header&gt; &lt;article&gt; &lt;div&gt;</code> and the like) <em>only</em> have a margin-bottom set. This ensures consistent vertical spacing and avoids margin overlap.</p>
+</li>
+<li><p><strong>All separator borders are solid.</strong> Borders that indicate boundaries are always set to <code>solid</code> and not configurable. If you need decorator borders to be set to other value, write them on your own css. If you don’t agree with this or don’t need separator borders, you can set <code>$separator-width</code> to <code>0</code>.</p>
+</li>
+<li><p><strong>Always use SVG</strong> No icon fonts, no images. For iconography, the use of SVG is always preferred.</p>
+</li>
+<li><p><strong>Vertical rhythm is important, but not mandatory</strong> We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. Still, vertical rhythm is not mandatory, it can and should be avoided on specific ocasions like big headings. Vertical rhythm is to be used as a tool rather than a constraint.</p>
+</li>
+<li><p><strong>Mobile-First</strong> We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don’t have a <code>max-width</code>). Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
+</li>
+</ul>
+<h3 id="javascript">Javascript</h3>
+<p>Some nasty HTML stuff (lixe the infamous <code>&lt;select&gt;</code>) need to be tamed. We use JS for this.</p>
+<p>Javascript libraries are bundled into Huesos following this criteria:</p>
+<ul>
+<li>Zero overweight. Small, concise, single-purpose libraries</li>
+<li>Vanilla javascript. jQuery shouldn’t be a dependency.</li>
+</ul>
+<p>These are the winners:</p>
+<ul>
+<li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
+</ul>
+
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </main>
+
+    </div>
+
 </div>
 
 
 
 
-<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
 
 
 

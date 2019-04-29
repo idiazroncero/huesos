@@ -11,114 +11,55 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../../themes/mandelbrot/css/fuchsia.css?cachebust=1.2.0" type="text/css">
+<link rel="stylesheet" href="../../../huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Poly Fluid Sizing | Huesos @ Fractal</title>
+<title>poly-fluid-sizing(property, $map); | Huesos @ Fractal</title>
 
 </head>
 <body>
 
 
 
-<div class="Frame" id="frame">
+<div id="main-wrapper" data-role="body">
 
-    <div class="Frame-header">
-        <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
-</svg>
+    <header class="header">
+        <h1 class="h5">
+            <a href="../../../index.html" class="header-title" data-pjax>
+                Huesos @ Fractal
+            </a>
+        </h1>
+    </header>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-</svg>
-
-    </button>
-    <a href="../../../index.html" class="Header-title" data-pjax>Huesos @ Fractal</a>
-</div>
-
-    </div>
-
-    <div class="Frame-body" data-role="body">
-
-        <div class="Frame-panel Frame-panel--main" data-role="main">
-            <div class="Frame-inner" id="pjax-container">
-            
-
-<div class="Document">
-
-    <div class="Document-header">
-        
-        <h1 class="Document-title">Poly Fluid Sizing</h1>
-        
-
-
-        
-    </div>
-
-    <div class="Document-content">
+    <div class="wrapper__inner">
+    
+        <aside class="sidebar" data-role="sidebar">
+            <nav class="nav">
 
     
 
-<div class="Prose">
 
-
-
-    
-    
-    <h3 id="example">Example</h3>
-<code class="lang-sass"><pre>h1 {
-    $map: (<span class="hljs-number">576</span>px: <span class="hljs-number">22</span>px, <span class="hljs-number">768</span>px: <span class="hljs-number">24</span>px, <span class="hljs-number">992</span>px: <span class="hljs-number">34</span>px);
-    @include poly-fluid-sizing(<span class="hljs-string">'font-size'</span>, $map);
-}</pre></code>
-    
-
-
-</div>
-
-
-
-    </div>
-
-</div>
-
-
-            </div>
-        </div>
-
-        <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
-        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
-            <nav class="Navigation">
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
-    <ul class="Tree-items Tree-depth-1">
+    <h3>components</h3>
+    <ul class="toc">
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-html">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-html">
+            <h4 class="" data-role="toggle">
                 <span>Html</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-link">
+            <h4 class="" data-role="toggle">
                 <span>Link</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -346,11 +287,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-list">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-list">
+            <h4 class="" data-role="toggle">
                 <span>List</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -439,22 +380,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-forms">
+            <h4 class="" data-role="toggle">
                 <span>Forms</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-form-item">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-form-item">
+            <h4 class="" data-role="toggle">
                 <span>Form Item</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -711,11 +652,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1015,22 +956,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layout">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-layout">
+            <h4 class="" data-role="toggle">
                 <span>Layout</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="" data-role="toggle">
                 <span>Grid</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1287,15 +1228,39 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navigation">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-navigation">
+            <h4 class="" data-role="toggle">
                 <span>Navigation</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../../components/detail/breadcrumb.html" data-pjax>
+                <span>Breadcrumb</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -1375,11 +1340,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-elements">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-elements">
+            <h4 class="" data-role="toggle">
                 <span>Elements</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1434,11 +1399,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-card">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="" data-role="toggle">
                 <span>Card</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1575,11 +1540,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1615,11 +1580,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-debug">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-components-collection-debug">
+            <h4 class="" data-role="toggle">
                 <span>Debug</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1656,26 +1621,58 @@
     
 
     </ul>
+
+
+
+
+
+    
+
+
+    <h3>documentation</h3>
+    <ul class="toc">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../avoiding-bloat.html" data-pjax>
+                <span>Avoiding Bloat</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
 </div>
 
 </div>
 
 
-
-    
-<div class="Navigation-group">
-
-<div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
-    <ul class="Tree-items Tree-depth-1">
+            </a>
+        </li>
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-color_palette">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Color Palette</span>
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
+                <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1684,7 +1681,31 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../color_palette/palette.html" data-pjax>
+            <a class="Tree-entityLink" href="../../color/handling-color.html" data-pjax>
+                <span>Handling Color</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../color/palette.html" data-pjax>
                 <span>Palette</span>
                 
             </a>
@@ -1697,22 +1718,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-functions">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-functions">
+            <h4 class="" data-role="toggle">
                 <span>Functions</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1784,11 +1805,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1797,8 +1818,34 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../functions/helpers/z-index.html" data-pjax>
+            <a class="Tree-entityLink" href="../../functions/helpers/z_index.html" data-pjax>
                 <span>Z Index</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
+                <span>Typography</span>
+            </h4>
+            <ul class="" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../functions/typography/bold.html" data-pjax>
+                <span>Bold</span>
                 
             </a>
         </li>
@@ -1815,22 +1862,22 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-mixins">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-mixins">
+            <h4 class="" data-role="toggle">
                 <span>Mixins</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-color">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-color">
+            <h4 class="" data-role="toggle">
                 <span>Color</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1872,11 +1919,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="" data-role="toggle">
                 <span>Helpers</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1938,11 +1985,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-image">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-image">
+            <h4 class="" data-role="toggle">
                 <span>Image</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -1964,11 +2011,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-links">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-links">
+            <h4 class="" data-role="toggle">
                 <span>Links</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2020,11 +2067,11 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-docs-collection-typography">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        <li class="" data-behaviour="collection" id="tree-docs-collection-typography">
+            <h4 class="" data-role="toggle">
                 <span>Typography</span>
             </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <ul class="" data-role="items">
             
             
             
@@ -2040,36 +2087,12 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../bloat.html" data-pjax>
-                <span>Bloat</span>
+            <a class="Tree-entityLink" href="inline-list.html" data-pjax>
+                <span>Inline List</span>
                 
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
-
-
-</div>
-
-</div>
-
-
             </a>
         </li>
         
@@ -2077,18 +2100,37 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../../index.html" data-pjax>
-                <span>Overview</span>
+            <a class="Tree-entityLink" href="minititle.html" data-pjax>
+                <span>Minititle</span>
                 
             </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-border.html" data-pjax>
+                <span>Text Border</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
         </li>
         
     
 
     </ul>
-</div>
 
-</div>
+
 
 
 
@@ -2097,14 +2139,70 @@
 
 </nav>
 
-        </div>
+        </aside>
+
+        <main class="body" data-role="main">
+            <div class="content" >
+                
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">poly-fluid-sizing(property, $map);</h1>
+        
+
+
+        
     </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+    
+    
+    <p>Use this mixin to set a proportional, continuous sizing between some given breakpoints. It usually takes “font-size” as the property, but can be used with any css property that takes valid <code>calc()</code> units.</p>
+<p>To make it work, set points (viewport width and desired font-size) on a <code>$map</code> variable, pass it to the mixin and it will generate media queries and <code>calc()</code> values that will enable a fluid sizing of the given property (usually, ‘font-size’).</p>
+<p>For example: <code>$map: (576px: 22px, 768px: 24px, 992px: 34px)</code> will be read as: “at viewport width = 576px, start at 22px; then move up to 24px on 768px and then to a maximum of 34px on 992px)”. This also means that below 576s px we will have a fixed 22px value and above 992px we will see a 34px fixed maximum value.</p>
+<p>Resize this codepen to see it live:</p>
+<iframe height="378" style="width: 100%;" scrolling="no" title="Poly Fluid Sizing using linear equations, viewport units and calc()" src="//codepen.io/jakobud/embed/vmKLYb/?height=378&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/jakobud/pen/vmKLYb/'>Poly Fluid Sizing using linear equations, viewport units and calc()</a> by Jake Wilson
+  (<a href='https://codepen.io/jakobud'>@jakobud</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<p><strong>More info:</strong><br><a href="https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/">https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/</a>  </p>
+<h3 id="example">Example</h3>
+<code class="lang-sass"><pre>h1 {
+    $map: (<span class="hljs-number">576</span>px: <span class="hljs-number">22</span>px, <span class="hljs-number">768</span>px: <span class="hljs-number">24</span>px, <span class="hljs-number">992</span>px: <span class="hljs-number">34</span>px);
+    @include poly-fluid-sizing(<span class="hljs-string">'font-size'</span>, $map);
+}</pre></code>
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </main>
+
+    </div>
+
 </div>
 
 
 
 
-<script src="../../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
 
 
 

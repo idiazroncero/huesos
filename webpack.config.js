@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
     entry: {
       'dist': './src/js/index.js',
-      'docs/kss-assets': './src/js/index.js',
     },
     output: {
       path: path.resolve(__dirname),

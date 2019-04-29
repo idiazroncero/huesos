@@ -22,15 +22,14 @@ fractal.web.set('static.path', __dirname + '/dist');
 
 // THEME
 const mandelbrot = require('@frctl/mandelbrot');
-const huesosTheme = require('fractal-huesos');
-const myCustomisedTheme = mandelbrot({
-    skin: "fuchsia",
+// const huesosTheme = require('fractal-huesos');
+const huesosTheme = mandelbrot({
     styles: [
-        "default",
-        //"/huesos.css"
+        "/huesos-mandlebrot.css"
     ]
 });
 
 // Hasta que tengamos tema propio, cargamos el css directamente
-fractal.web.theme(myCustomisedTheme); 
+huesosTheme.addLoadPath(__dirname + '/theme/views'); 
+fractal.web.theme(huesosTheme); 
 // fractal.web.theme(huesosTheme);
