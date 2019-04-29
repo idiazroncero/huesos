@@ -5,27 +5,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <header class="header">
-        <h1 class="h5">
-            <a href="{{ path('/') }}" class="header-title" data-pjax>
-                {{ frctl.get('project.title') }}
-            </a>
-        </h1>
-    </header>
+    <div class="wrapper__sidebar scrollbar-hidden">
 
-    <div class="wrapper__inner">
+        <header class="header">
+            <h1 class="logo">
+                <a href="{{ path('/') }}" class="header-title" data-pjax>
+                    {{ frctl.get('project.title') }}
+                </a>
+            </h1>
+        </header>
+
+
     
         <aside class="sidebar" data-role="sidebar">
             {% include 'partials/navigation/navigation.nunj' %}
         </aside>
-
-        <main class="body" data-role="main">
-            <div class="content" >
-                {% block content %}{% endblock %}
-            </div>
-        </main>
-
+    
     </div>
+
+    <main class="body" data-role="main">
+        <div class="content" >
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
 
 </div>
 

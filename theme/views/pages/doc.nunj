@@ -14,7 +14,7 @@
 
 {% block docContent %}
 
-<div class="Prose">
+
 {% block pageContent %}
 {% import "macros/errors.nunj" as errors %}
 {% if doc %}
@@ -28,6 +28,6 @@
 {% include 'partials/content/overview.nunj' %}
 {% endif %}
 {% endblock %}
-</div>
+
 
 {% endblock %}

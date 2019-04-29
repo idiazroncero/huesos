@@ -4,17 +4,49 @@
 // Some overrides over the custom defaults
 $max-width: 2000px;
 $layout-align: left;
+$sidebar-width: 20%;
 
 @import "../huesos";
 
-.wrapper__inner {
-    display:flex;
-    .sidebar {
-        flex: 0 0 25%;
-    }
-    .body {
-        flex: 0 0 75%;
+#main-wrapper {
+    // display:flex;
+}
+
+.wrapper__sidebar {
+    // flex: 0 0 25%;
+    position:fixed;
+    top:$gutter;
+    left:$gutter;
+    bottom:$gutter;
+    overflow:auto;
+    width:$sidebar-width;
+    padding-right: $gutter;
+}
+.body {
+    // flex: 0 0 75%;
+    padding-left: $gutter * 2;
+    width: 75%;
+    margin-left:$sidebar-width;
+}
+
+h1, .h1 ,h2, .h2, h3, .h3 {
+    a {
+        @include kill-link(get-color(text, heading));
     }
 }
 
+.logo {
+    line-height:0.85;
+    font-weight:bold;
+}
+
+.text-wrapper {
+    max-width: 75ch;
+}
+
+code.lang-sass {
+    width: 100%;
+    padding: 0 $gutter;
+    border-radius: 6px;
+}
 

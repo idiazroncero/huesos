@@ -17,7 +17,7 @@ $colors: (
 
 	text: (
 		"primary":   $gray9,
-		"heading":   $indigo9,
+		"heading":   $blue9,
 		"mark" : $orange5,
 	),
 
@@ -132,7 +132,7 @@ $font-secondary-items:
 
 // Heading overrides
 // Select a font weight and an alternate line height for your headings
-$heading-font-weight: normal;
+$heading-font-weight: bold;
 $heading-vertical-rhythm:1; // We might want a slower VR for headings. Set to false if not.
 $heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing 
 
@@ -147,7 +147,7 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-background: get-color(base, separator);
+$code-background: get-color(text, heading);
 $code-border-radius: 2px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)

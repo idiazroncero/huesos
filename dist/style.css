@@ -673,8 +673,8 @@ h2, .h2 {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #151448;
-  font-weight: normal; }
+  color: #15304d;
+  font-weight: bold; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     color: inherit;
@@ -714,8 +714,8 @@ var {
   vertical-align: baseline;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-  background-color: #dee0e4;
-  color: #1A1A19;
+  background-color: #15304d;
+  color: #FFFFFF;
   padding: 0 0.3375rem;
   border-radius: 2px; }
 
@@ -2523,7 +2523,7 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
     color: inherit; }
 
 .bg-text-heading {
-  background-color: #151448;
+  background-color: #15304d;
   color: #FFFFFF; }
   .bg-text-heading a {
     text-decoration: none;

@@ -10,7 +10,7 @@ Misuse or lack of configuration of some of this parts can result on overtly bloa
 Follow these advices to avoid sending extra KBs to your users:
 
 
-## Audit your button strategies and link strategies
+### Audit your button strategies and link strategies
 
 Both `$button-alternative-strategies` and `$link-alternative-strategies` are powerful weapons that will generate a ton of utility classes for your alternative buttons and links.
 
@@ -18,13 +18,13 @@ Both `$button-alternative-strategies` and `$link-alternative-strategies` are pow
 
 Consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false` if you only need one global button style... which might be **the most common case**.
 
-## Control your grid
+### Control your grid
 
 `$max-grid-cols` will generate lots of extra classes for handling every possible number of columns on every defined breakpoint.
 
 Check how many columns will you need and update this variable accordingly.
 
-# Check Huesitos
+### Check Huesitos
 
 You might not need the utility classes at all. Set `$huesitos` to false to avoid it.
 

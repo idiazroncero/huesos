@@ -4,13 +4,15 @@
 const fractal = module.exports = require('@frctl/fractal').create();
 
 /* Set the title of the project */
-fractal.set('project.title', 'Huesos @ Fractal');
+fractal.set('project.title', 'Huesos <br>Style <br>Guide');
 
 // COMPONENT CONFIG
 fractal.components.set('path', __dirname + '/src/components');
+fractal.components.set('label', 'Components');
 
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', __dirname + '/src/docs');
+fractal.docs.set('label', 'Documentation');
 
 // WEB CONFIG
 
@@ -26,7 +28,8 @@ const mandelbrot = require('@frctl/mandelbrot');
 const huesosTheme = mandelbrot({
     styles: [
         "/huesos-mandlebrot.css"
-    ]
+    ],
+    nav: ["docs", "components"]
 });
 
 // Hasta que tengamos tema propio, cargamos el css directamente
