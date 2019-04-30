@@ -1,0 +1,10 @@
+{% extends "layouts/skeleton.nunj" %}
+
+{% block page %}
+<div class="iframe__inner">
+
+{% block content %}{% endblock %}
+
+</div>
+
+{% endblock %}

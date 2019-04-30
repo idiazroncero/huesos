@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro _tag(color, label) %}
-<label class="Status-label" style="background-color: {{ color }}; border-color: {{ color }};">{{ label }}</label>
+<label class="tag" style="background-color: {{ color }}; border-color: {{ color }};">{{ label }}</label>
 {% endmacro %}
 
 {% macro _dots(status) %}
@@ -47,7 +47,7 @@
 
 {% macro tag(status, modifier) %}
 {% if status %}
-<div class="Status Status--tag{% if modifier %} Status--{{ modifier }}{% endif %}">
+<div class="status{% if modifier %} status--{{ modifier }}{% endif %}">
 {{ _tag(status.color, status.label) }}
 </div>
 {% endif %}

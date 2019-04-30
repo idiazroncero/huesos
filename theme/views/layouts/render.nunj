@@ -2,13 +2,16 @@
 
 {% set rendered = entity.render(null, renderEnv, { preview: withLayout, collate: withCollation }) | async(true) %}
 
+{% extends 'layouts/iframe.nunj' %}
+{% block content -%}
 {% if rendered | isError -%}
-{% extends 'layouts/full.nunj' %}
+
 {% set error = rendered %}
 {% set page = {
     title: 'Error rendering component ' + request.params.handle
 } %}
-{% block content -%}{% import "macros/errors.nunj" as errors -%}{{ errors.renderError('component', error.message, error.stack) }}{% endblock %}
+{% import "macros/errors.nunj" as errors -%}{{ errors.renderError('component', error.message, error.stack) }}
 {%- else -%}
 {{ rendered }}
 {%- endif %}
+{% endblock %}

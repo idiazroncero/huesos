@@ -3,9 +3,9 @@
 {% macro tree(root, current, request) %}
     <h3 class="h4 strong mb half-gutter">{{ root.label }}</h3>
     <div class="pl half-gutter">
-        <ul>
+        <ol>
             {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request) }}
-        </ul>
+        </ol>
     </div>
 {% endmacro %}
 

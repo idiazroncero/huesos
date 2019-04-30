@@ -10,7 +10,9 @@
         <header class="header">
             <h1 class="logo">
                 <a href="{{ path('/') }}" class="header-title" data-pjax>
-                    {{ frctl.get('project.title') }}
+                    Huesos <br>
+                    Style <br>
+                    Guide
                 </a>
             </h1>
         </header>

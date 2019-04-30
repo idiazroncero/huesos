@@ -4,7 +4,7 @@
 const fractal = module.exports = require('@frctl/fractal').create();
 
 /* Set the title of the project */
-fractal.set('project.title', 'Huesos <br>Style <br>Guide');
+fractal.set('project.title', 'Huesos');
 
 // COMPONENT CONFIG
 fractal.components.set('path', __dirname + '/src/components');

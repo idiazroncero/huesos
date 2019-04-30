@@ -22,7 +22,7 @@
     {% endif %}
 {%- endif %}
 
-<div class="Pen" data-behaviour="pen" id="pen-{{ entity.id }}">
+<div class="pen" data-behaviour="pen" id="pen-{{ entity.id }}">
 
     {% block penContent %}
 

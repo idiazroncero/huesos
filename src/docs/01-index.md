@@ -1,9 +1,6 @@
 ---
-title: Huesos
+title: "A basic osamenta <br/> for your web proyects"
 ---
-
-
-## A basic osamenta <br/> for your web proyects
 
 ### What is this?
 

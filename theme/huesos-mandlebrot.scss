@@ -25,7 +25,7 @@ $sidebar-width: 20%;
 .body {
     // flex: 0 0 75%;
     padding-left: $gutter * 2;
-    width: 75%;
+    // width: 75%;
     margin-left:$sidebar-width;
 }
 
@@ -48,5 +48,34 @@ code.lang-sass {
     width: 100%;
     padding: 0 $gutter;
     border-radius: 6px;
+}
+
+
+// PEN
+
+.pen-header {
+    h1 {
+        margin:0;
+    }
+    .status {
+        margin-bottom: $gutter * 2;
+    }
+}
+
+.pen-preview {
+    min-height:25vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    iframe {
+        height:auto;
+    }
+}
+
+.iframe__inner {
+    display:flex;
+    flex-direction:column;
+    justify-content:center; 
+    min-height:150px;
 }
 
