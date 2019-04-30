@@ -44,7 +44,8 @@ h1, .h1 ,h2, .h2, h3, .h3 {
     max-width: 75ch;
 }
 
-code.lang-sass {
+code.lang-sass,
+code.code {
     width: 100%;
     padding: 0 $gutter;
     border-radius: 6px;
@@ -54,21 +55,39 @@ code.lang-sass {
 // PEN
 
 .pen-header {
+    display:flex;
+    align-items:flex-end;
+    margin-bottom: $gutter;
     h1 {
         margin:0;
+        display:inline-block;
+        margin-right: $gutter * 2;
+        line-height:0.75;
     }
     .status {
-        margin-bottom: $gutter * 2;
+        display:inline-block;
     }
 }
 
+.browser-controls,
+.browser-notes,
+.browser-code {
+    @include separator();
+} 
+
 .pen-preview {
-    min-height:25vh;
+    height:45vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    position:relative;
     iframe {
         height:auto;
+    }
+    .preview-tag {
+        position:absolute;
+        top: $gutter / 2;
+        right: $gutter / 2;
     }
 }
 
@@ -79,3 +98,9 @@ code.lang-sass {
     min-height:150px;
 }
 
+
+.filebrowser-item {
+    ul {
+        list-style:none;
+    }
+}

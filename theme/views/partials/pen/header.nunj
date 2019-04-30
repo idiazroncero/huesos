@@ -1,9 +1,8 @@
-<div class="pen-header">
-    <h1>
+<header class="pen-header">
+    <h1 class="m0">
         <a href="{{ previewUrl }}" title="Component preview">
             {{ entity.title }}
-            {% include "icons/open-in-browser.svg" %}
         </a>
     </h1>
     {{ status.tag(entity.status) }}
-</div>
+</header>

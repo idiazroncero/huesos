@@ -29,7 +29,8 @@ const huesosTheme = mandelbrot({
     styles: [
         "/huesos-mandlebrot.css"
     ],
-    nav: ["docs", "components"]
+    nav: ["docs", "components"],
+    panels: ["notes", "html", "resources",]
 });
 
 // Hasta que tengamos tema propio, cargamos el css directamente

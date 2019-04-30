@@ -1,4 +1,5 @@
-<div class="pen-preview card" data-behaviour="preview" id="preview-{{ entity.id }}">
+<section class="pen-preview card" data-behaviour="preview" id="preview-{{ entity.id }}">
+    <h3 class="preview-tag tag">Live preview</h3>
     {% if renderError -%}
         {{ renderError }}
     {% else %}
@@ -11,4 +12,4 @@
         marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes" height="0">
     </iframe>
     {%- endif %}
-</div>
+</section>

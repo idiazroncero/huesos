@@ -22,20 +22,18 @@
     {% endif %}
 {%- endif %}
 
-<div class="pen" data-behaviour="pen" id="pen-{{ entity.id }}">
+<article class="pen" data-behaviour="pen" id="pen-{{ entity.id }}">
 
     {% block penContent %}
 
-    {% include "partials/pen/header.nunj" %}
-
     {% include "partials/pen/preview.nunj" %}
 
-    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+    {% include "partials/pen/header.nunj" %}
 
     {% include "partials/pen/browser.nunj" %}
 
     {% endblock %}
 
-</div>
+</article>
 
 {% endblock %}

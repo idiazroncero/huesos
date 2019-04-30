@@ -1340,7 +1340,8 @@ textarea {
       .menu ul > li:hover > ul > li {
         display: block; }
 
-.toc ul li {
+.toc ul li,
+.toc ol li {
   margin: 0;
   font-weight: bold;
   letter-spacing: initial;
@@ -1349,15 +1350,28 @@ textarea {
   font-size: 1rem;
   line-height: 22px;
   line-height: 1.35rem; }
-  .toc ul li ul {
+  .toc ul li ul,
+  .toc ul li ol,
+  .toc ol li ul,
+  .toc ol li ol {
     margin: 0.3375rem 0 0.675rem 1.35rem; }
-    .toc ul li ul li {
+    .toc ul li ul li,
+    .toc ul li ol li,
+    .toc ol li ul li,
+    .toc ol li ol li {
       font-weight: normal;
       font-size: 15px;
       font-size: 0.95rem;
       line-height: 22px;
       line-height: 1.35rem; }
-    .toc ul li ul ul li {
+    .toc ul li ul ul li,
+    .toc ul li ul ol li,
+    .toc ul li ol ul li,
+    .toc ul li ol ol li,
+    .toc ol li ul ul li,
+    .toc ol li ul ol li,
+    .toc ol li ol ul li,
+    .toc ol li ol ol li {
       font-size: 11px;
       font-size: 0.7rem;
       line-height: 16px;
@@ -3587,7 +3601,6 @@ input.selectr-input {
 
 .body {
   padding-left: 2.7rem;
-  width: 75%;
   margin-left: 20%; }
 
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a {
@@ -3620,7 +3633,49 @@ h1 a:focus:after, h1 a:hover:after, .h1 a:focus:after, .h1 a:hover:after, h2 a:f
 .text-wrapper, .alert {
   max-width: 75ch; }
 
-code.lang-sass {
+code.lang-sass,
+code.code {
   width: 100%;
   padding: 0 1.35rem;
   border-radius: 6px; }
+
+.pen-header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1.35rem; }
+  .pen-header h1 {
+    margin: 0;
+    display: inline-block;
+    margin-right: 2.7rem;
+    line-height: 0.75; }
+  .pen-header .status {
+    display: inline-block; }
+
+.browser-controls,
+.browser-notes,
+.browser-code {
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid #dee0e4; }
+
+.pen-preview {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; }
+  .pen-preview iframe {
+    height: auto; }
+  .pen-preview .preview-tag {
+    position: absolute;
+    top: 0.675rem;
+    right: 0.675rem; }
+
+.iframe__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 150px; }
+
+.filebrowser-item ul {
+  list-style: none; }

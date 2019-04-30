@@ -1,5 +1,3 @@
-# Form item wrapper
-
 General block-level wrapper for form elements. Guarantees correct spacing, label and input vertical alignment and provides several helper classes for quick customization.
 
 It also provides several variations for different styling of items.

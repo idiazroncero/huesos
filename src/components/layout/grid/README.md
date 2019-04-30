@@ -1,5 +1,3 @@
-# Grid
-
 Establishes a grid using `display:grid`. Uses a float fallback for less capable browsers.
 
 No row height is set: it depends on the content.

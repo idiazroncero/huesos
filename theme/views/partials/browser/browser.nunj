@@ -1,9 +1,9 @@
-<div class="Browser" data-behaviour="browser" id="browser-{{ entity.id }}">
+<div class="browser" data-behaviour="browser" >
 
     {% include 'partials/browser/controls.nunj' %}
 
     {% asyncAll panel in frctl.theme.get('panels') %}
-    {% include 'partials/browser/panel-' + panel + '.nunj' %}
+        {% include 'partials/browser/panel-' + panel + '.nunj' %}
     {% endall %}
 
 </div>

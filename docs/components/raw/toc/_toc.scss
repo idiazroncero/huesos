@@ -1,5 +1,6 @@
 .toc {
-	ul {
+  ul,
+  ol {
 		li {
       margin: 0;
       font-weight: $toc-font-weight;
@@ -10,14 +11,16 @@
         text-transform: initial;
       }
       @include ritmo-font-size($toc-font-size);
-      ul {
+      ul,
+      ol {
         margin: $gutter / 4 0 $gutter / 2 $gutter;
         li{
           // Don't let "bold" pass through here
           font-weight: normal;
           @include ritmo-font-size(0.95 * $toc-font-size);
         }
-        ul {
+        ul,
+        ol {
           li {
             @include ritmo-font-size(0.7 * $toc-font-size);
           }

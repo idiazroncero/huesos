@@ -7,7 +7,7 @@
     "css:watch": "yarn node-sass src/scss/style.scss dist/style.css -w",
     "css:sass": "yarn node-sass src/scss/style.scss dist/style.css --source-map=0",
     "css:post": "yarn postcss dist/style.css -o dist/style.css --no-map",
-    "css:mandlebrot": "yarn node-sass theme/huesos-mandlebrot.scss dist/huesos-mandlebrot.css -w",
+    "css:mandelbrot": "yarn node-sass theme/huesos-mandlebrot.scss dist/huesos-mandlebrot.css -w",
     "styleguide:build": "yarn fractal build",
     "styleguide:serve": "yarn fractal start --sync",
     "test-page": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",

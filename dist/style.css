@@ -1368,7 +1368,8 @@ textarea {
       .menu ul > li:hover > ul > li {
         display: block; }
 
-.toc ul li {
+.toc ul li,
+.toc ol li {
   margin: 0;
   font-weight: bold;
   letter-spacing: normal;
@@ -1379,15 +1380,28 @@ textarea {
   font-size: 1rem;
   line-height: 22px;
   line-height: 1.35rem; }
-  .toc ul li ul {
+  .toc ul li ul,
+  .toc ul li ol,
+  .toc ol li ul,
+  .toc ol li ol {
     margin: 0.3375rem 0 0.675rem 1.35rem; }
-    .toc ul li ul li {
+    .toc ul li ul li,
+    .toc ul li ol li,
+    .toc ol li ul li,
+    .toc ol li ol li {
       font-weight: normal;
       font-size: 15px;
       font-size: 0.95rem;
       line-height: 22px;
       line-height: 1.35rem; }
-    .toc ul li ul ul li {
+    .toc ul li ul ul li,
+    .toc ul li ul ol li,
+    .toc ul li ol ul li,
+    .toc ul li ol ol li,
+    .toc ol li ul ul li,
+    .toc ol li ul ol li,
+    .toc ol li ol ul li,
+    .toc ol li ol ol li {
       font-size: 11px;
       font-size: 0.7rem;
       line-height: 16px;
