@@ -1,5 +1,3 @@
-# Huesitos
-
 Huesitos is a set of utility classes for borders. backgropunds, paddings, etc.
 
 `$gutter` is applied as margin, unless a gutter modifier class is present.

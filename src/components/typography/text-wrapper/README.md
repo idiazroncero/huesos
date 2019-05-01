@@ -1,5 +1,3 @@
-# Text wrapper
-
 Paragraph items wrapped on any element marked as `.text-wrapper` will have its last `p` child set marginless.
 
 They also feature extra spacing on headings, articles and sections.

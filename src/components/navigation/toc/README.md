@@ -1,7 +1,3 @@
-
-
-# TOC (Table of contents)
-
 A toc or table of contents is a vertical menu based off a `<nav>` item.
 
 The first level can be configured on `_config.scss`.

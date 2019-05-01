@@ -1,5 +1,3 @@
-# Tag
-
 Used for tag-like elements. They can be keywords, but also small elements that need some visual highlighting.
 
 They need to be set on inline or inline-block elements.

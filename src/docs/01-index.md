@@ -1,5 +1,5 @@
 ---
-title: "A basic osamenta <br/> for your web proyects"
+title: "A basic osamenta for your web proyects"
 ---
 
 ### What is this?

@@ -1,3 +1,1 @@
-# Abbreviation
-
 Normalizes styling (underline)

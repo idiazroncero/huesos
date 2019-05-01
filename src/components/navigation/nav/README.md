@@ -1,5 +1,3 @@
-# Navigation menus
-
 Any HTML that uses the css class `.nav`. This means `<nav>` elements __won't__ receive any styling by default until a `.nav` class is added. 
 
 In previous versions, we enforced `<nav>` elements to have this custom sytling. Navigation might vary a lot, so it seems better to separate againmarkup and style.

@@ -1,5 +1,3 @@
-# Button
-
 Applies to `<input>`, `<button>` or `<a>`. Without the `.button` class, only a reset is applied.
 
 You can define a separate appearance for every button state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.

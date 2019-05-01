@@ -1,5 +1,3 @@
-# Alerts
-
 Boxes with background-colors to draw the user's attention towards specific messages.
 
 Any alert is automatically set as a `.text` to prevent paragraphs for setting an extra space.

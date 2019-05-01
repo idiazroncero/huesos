@@ -1,5 +1,7 @@
 @import "../dependencies";
 @import "src/scss/config";
+// @import "../node_modules/highlight.js/styles/monokai-sublime";
+@import "../node_modules/highlight.js/styles/vs2015";
 
 // Some overrides over the custom defaults
 $max-width: 2000px;
@@ -45,6 +47,8 @@ h1, .h1 ,h2, .h2, h3, .h3 {
 }
 
 code.lang-sass,
+code.lang-scss,
+code.lang-html,
 code.code {
     width: 100%;
     padding: 0 $gutter;
@@ -54,14 +58,15 @@ code.code {
 
 // PEN
 
-.pen-header {
+.pen-header,
+.doc__header {
     display:flex;
     align-items:flex-end;
     margin-bottom: $gutter;
     h1 {
         margin:0;
         display:inline-block;
-        margin-right: $gutter * 2;
+        margin-right: $gutter;
         line-height:0.75;
     }
     .status {

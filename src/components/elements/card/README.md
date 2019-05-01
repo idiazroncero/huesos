@@ -1,5 +1,3 @@
-# Card (teaser)
-
 The `.card` is a common pattern on UX design.
 
 Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid item;

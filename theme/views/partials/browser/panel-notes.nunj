@@ -1,4 +1,4 @@
-<section class="browser-notes">
+<section class="browser-notes" id="browser-{{ entity.id }}-panel-notes">
     <div class="text-wrapper">
         {% if entity.notes %}
             {{ frctl.docs.renderString(entity.notes, renderEnv) | async }}

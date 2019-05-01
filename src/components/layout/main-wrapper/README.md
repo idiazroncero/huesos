@@ -1,5 +1,3 @@
-# Main Wrapper
-
 An (optional) wrapper for the main content of a webpage that sets three default bevahiors:
 
 - `$max-width`, the maximum size the container can get.

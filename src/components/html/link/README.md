@@ -1,5 +1,3 @@
-# Link
-
 Applies to `<a>` elements.
 
 As in `<button>`, you can define a separate appearance for each link state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.

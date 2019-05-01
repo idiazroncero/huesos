@@ -1,5 +1,3 @@
-# Input
-	
 General text input.
 
 Please note a wrapper with a `.form-item` class is added in order to create separate blocks

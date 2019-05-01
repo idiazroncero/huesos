@@ -239,16 +239,16 @@ $link-mark-color-hover: $violet2;
 $link-mark-padding: 4px;
 
 // Only for $link-strategy:border-inset
-$link-border-inset-color: $violet1;
-$link-border-inset-color-hover: $violet1;
-$link-border-inset-width: 0.3rem;
-$link-border-inset-width-hover: 1rem;
+$link-border-inset-color: $fuschia1;
+$link-border-inset-color-hover: $fuschia1;
+$link-border-inset-width: 0.33em;
+$link-border-inset-width-hover: 0.66em;
 
 // Link colors
-$link-color: $violet7;
-$link-visited: $violet7;
-$link-hover: $violet5;
-$link-active: $violet5;
+$link-color: $red8;
+$link-visited: $red8;
+$link-hover: $fuschia6;
+$link-active: $red8;
 
 // BUILD YOUR OWN LINK
 // You can choose one strategy for every state!

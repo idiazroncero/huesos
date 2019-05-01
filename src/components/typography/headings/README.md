@@ -1,5 +1,3 @@
-# Headings
-
 Headings can be configured using variables on `_config.scss`.
 
 Usually, headings will appear on the `$font-secondary-items` map.

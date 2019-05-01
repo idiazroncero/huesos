@@ -1,5 +1,3 @@
-# Menu
-
 An horizontal menu is a component based on an extended `<nav>` or `.nav`.
 
 Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.

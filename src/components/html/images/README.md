@@ -1,5 +1,3 @@
-# Images and figures
-
 Images are responsive by default.
 
 The variable `$figcaption-font-size` defines the sizing of image captions, while the `$figcaption-align` variable sets a global alignment.
