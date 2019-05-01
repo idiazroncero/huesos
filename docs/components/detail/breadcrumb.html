@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-8247db60de927ad94f87116d01add146-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="breadcrumb">Breadcrumb</h1>
-<p>Sets a horizontal navigation that indicates the user the “path” or hierarchy followed until the current page.</p>
+            <p>Sets a horizontal navigation that indicates the user the “path” or hierarchy followed until the current page.</p>
 <p>You can set the UNICODE element that marks the hierarchy by setting <code>$breadcrumb-arrow</code>.</p>
 <p><code>$breadcrumb-kill-links</code> will delete decoation (a common case) while <code>$breadcrumb-font-size</code> allows you to set a smaller/bigger font size. Usually, breadcrumbs feature a smaller size.</p>
 
@@ -2228,12 +2323,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-8247db60de927ad94f87116d01add146-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"breadcrumb"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -2252,8 +2346,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-8247db60de927ad94f87116d01add146-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2262,12 +2356,18 @@
         <div class="filebrowser-item is-active" id="file-201a0fc2eb81b5d11886f5b8085dd7a9" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-selector-class">.breadcrumb</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/navigation/breadcrumb/_breadcrumb.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>587 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-selector-class">.breadcrumb</span> {
     @<span class="hljs-keyword">if</span> <span class="hljs-variable">$breadcrumb-font-size</span> != false {
         @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$breadcrumb-font-size</span>);
     }
@@ -2294,22 +2394,8 @@
         }
     }
 }</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/breadcrumb/_breadcrumb.scss"><span>/components/raw/breadcrumb/_breadcrumb.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/navigation/breadcrumb/_breadcrumb.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">587 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

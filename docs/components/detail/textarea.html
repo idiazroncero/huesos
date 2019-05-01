@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-a17e63e3f8f4ed609dfb2abe1a9e55c0-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="textarea">Textarea</h1>
-<p>Use in conjunction with <code>.form-item</code> and its modifiers (see its own section)</p>
+            <p>Use in conjunction with <code>.form-item</code> and its modifiers (see its own section)</p>
 <p>It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an <code>input[type=&quot;text&quot;]</code> element.</p>
 
         
@@ -2227,12 +2322,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-a17e63e3f8f4ed609dfb2abe1a9e55c0-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"area1"</span>&gt;</span>Textarea<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"area1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2252,8 +2346,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-a17e63e3f8f4ed609dfb2abe1a9e55c0-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2262,12 +2356,18 @@
         <div class="filebrowser-item is-active" id="file-3f93e17a33a928edff352822f6addbc6" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-selector-tag">textarea</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/forms/textarea/_textarea.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>135 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-selector-tag">textarea</span> {
 	<span class="hljs-attribute">border</span>: <span class="hljs-variable">$input-border</span>;
 	@<span class="hljs-keyword">include</span> form-reset-textarea();
 	<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
@@ -2275,22 +2375,8 @@
 	<span class="hljs-attribute">min-height</span>: <span class="hljs-variable">$spacer</span> * <span class="hljs-number">2</span>;
 }
 </pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/textarea/_textarea.scss"><span>/components/raw/textarea/_textarea.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/forms/textarea/_textarea.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">135 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-8d8f2733acd101a66f9d8c7a47752efa-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="card-teaser-">Card (teaser)</h1>
-<p>The <code>.card</code> is a common pattern on UX design.</p>
+            <p>The <code>.card</code> is a common pattern on UX design.</p>
 <p>Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid item;</p>
 <p>Card settings are available under its own section on <code>_config.scss</code></p>
 <p>A <code>.card</code> inside a <code>.card</code> has its padding reduced to 1/2</p>
@@ -2232,12 +2327,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-8d8f2733acd101a66f9d8c7a47752efa-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card card--image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:400px; padding:0;"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card card--image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:400px; padding:0;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card__image"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/400/200/nature"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2259,8 +2353,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-8d8f2733acd101a66f9d8c7a47752efa-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2269,12 +2363,18 @@
         <div class="filebrowser-item is-active" id="file-ef35dedeb4cd873bc8fa6be3148c5af6" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-selector-class">.card</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/elements/card/_card.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>366 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-selector-class">.card</span> {
 	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$card-border</span> {
 		<span class="hljs-attribute">border</span>: <span class="hljs-variable">$card-border</span>;
 	}
@@ -2297,22 +2397,8 @@
 <span class="hljs-selector-class">.card__contents</span> {
 	<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
 }</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/card/_card.scss"><span>/components/raw/card/_card.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/elements/card/_card.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">366 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

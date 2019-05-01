@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-544f2afa366296ddf1ff58f50bf4399e-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="images-and-figures">Images and figures</h1>
-<p>Images are responsive by default.</p>
+            <p>Images are responsive by default.</p>
 <p>The variable <code>$figcaption-font-size</code> defines the sizing of image captions, while the <code>$figcaption-align</code> variable sets a global alignment.</p>
 <h2 id="alignment-tricks">Alignment tricks</h2>
 <p>In order to align the whole block while keeping the textalignment of the figcaption defined on <code>$figcaption-align</code>, you need to wrap the entire <code>&lt;figure&gt;</code> on an html block element containing the <code>.right</code>, <code>.left</code> or <code>.center</code> class.</p>
@@ -2229,12 +2324,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-544f2afa366296ddf1ff58f50bf4399e-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>An image<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://placeimg.com/300/300/nature"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -2263,8 +2357,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-544f2afa366296ddf1ff58f50bf4399e-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2273,12 +2367,18 @@
         <div class="filebrowser-item is-active" id="file-38cbcd38aaa65541ddf995da0afc21cd" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-selector-tag">img</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/html/images/_images.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>231 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-selector-tag">img</span> {
 	<span class="hljs-attribute">display</span>:inline-block;
 	<span class="hljs-attribute">border-style</span>: none;
 	<span class="hljs-attribute">max-width</span>:<span class="hljs-number">100%</span>;
@@ -2294,22 +2394,8 @@
 	@<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$figcaption-font-size</span>);
 	<span class="hljs-attribute">text-align</span>: <span class="hljs-variable">$figcaption-align</span>;
 }</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/images/_images.scss"><span>/components/raw/images/_images.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/html/images/_images.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">231 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

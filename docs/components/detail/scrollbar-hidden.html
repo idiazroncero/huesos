@@ -2047,9 +2047,105 @@
     
         
         
+        <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
         <li class=" is-current" data-state="current" data-role="item">
             <a href="" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,21 +2310,11 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-279b1dc38a2e2f02ea86fecd0aadf3f1-panel-notes">
     <div class="text-wrapper">
         
-            <p>/*
-Hide scrollbar</p>
-<p>Tries to hide the scrollbar of an overflown element (auto, scroll-x or scroll-y)</p>
+            <p>Tries to hide the scrollbar of an overflown element (auto, scroll-x or scroll-y)</p>
 <p>It uses -webkit- and -ms- prefixes and unofficial css properties. It won’t work on Firefox below v64.</p>
-<p>Markup:</p>
-<p style="height:100px; width: 50px; overflow: auto;">
-    This uses -webkit- and -ms- prefixes and unofficial css properties. It won’t work on Firefox below v64. It’s not perfect, but it’s far better than using negative padding and margin hacks that will provoke content hiding on macOS.
-</p>
-
-
-<p>Styleguide Helpers.alignment
-*/</p>
 
         
     </div>
@@ -2236,12 +2322,11 @@ Hide scrollbar</p>
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-279b1dc38a2e2f02ea86fecd0aadf3f1-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"scrollbar-hidden"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100px; height:100px; overflow:auto"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"scrollbar-hidden"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100px; height:100px; overflow:auto"</span>&gt;</span>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, necessitatibus cupiditate mollitia dolor corporis reiciendis quis veniam reprehenderit? Iste esse ab, sequi iusto magnam quam officia ducimus id temporibus animi.
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
         
@@ -2252,8 +2337,8 @@ Hide scrollbar</p>
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-279b1dc38a2e2f02ea86fecd0aadf3f1-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2262,33 +2347,25 @@ Hide scrollbar</p>
         <div class="filebrowser-item is-active" id="file-bfeba0c4d65f7c8b555f7295b253277b" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre>
-<span class="hljs-selector-class">.scrollbar-hidden</span> {
-    &amp;::-webkit-scrollbar { width: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span> }
-    scrollbar-width: none;
-    -ms-<span class="hljs-attribute">overflow</span>-<span class="hljs-selector-tag">style</span>: none;
-}</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/scrollbar-hidden/_scrollbar-hidden.scss"><span>/components/raw/scrollbar-hidden/_scrollbar-hidden.scss</span></a></span>
-                </li>
-                <li>
                     <strong>Filesystem Path:</strong>
                     <span>src/components/helpers/scrollbar-hidden/_scrollbar-hidden.scss</span>
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span">128 Bytes</span>
+                    <span>128 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre>
+<span class="hljs-selector-class">.scrollbar-hidden</span> {
+    &amp;::-webkit-scrollbar { width: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span> }
+    scrollbar-width: none;
+    -ms-<span class="hljs-attribute">overflow</span>-<span class="hljs-selector-tag">style</span>: none;
+}</pre>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

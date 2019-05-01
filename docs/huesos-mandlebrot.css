@@ -1,4 +1,100 @@
 @charset "UTF-8";
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1E1E1E;
+  color: #DCDCDC; }
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: #569CD6; }
+
+.hljs-link {
+  color: #569CD6;
+  text-decoration: underline; }
+
+.hljs-built_in,
+.hljs-type {
+  color: #4EC9B0; }
+
+.hljs-number,
+.hljs-class {
+  color: #B8D7A3; }
+
+.hljs-string,
+.hljs-meta-string {
+  color: #D69D85; }
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334; }
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC; }
+
+.hljs-comment,
+.hljs-quote {
+  color: #57A64A;
+  font-style: italic; }
+
+.hljs-doctag {
+  color: #608B4E; }
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B; }
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #BD63C5; }
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #9CDCFE; }
+
+.hljs-section {
+  color: gold; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+/*.hljs-code {
+  font-family:'Monospace';
+}*/
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #D7BA7D; }
+
+.hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%; }
+
+.hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%; }
+
 *,
 ::before,
 ::after {
@@ -449,8 +545,8 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 0.3rem;
-    background-color: #e1d4ed;
+    height: 0.33em;
+    background-color: #edd3ed;
     z-index: -1; }
   a:hover, a:focus {
     text-decoration: none;
@@ -467,21 +563,21 @@ a {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 1rem;
-      background-color: #e1d4ed;
+      height: 0.66em;
+      background-color: #edd3ed;
       z-index: -1; }
 
 a, a:link {
-  color: #572586; }
+  color: #6e201e; }
 
 a:visited {
-  color: #572586; }
+  color: #6e201e; }
 
 a:focus, a:hover {
-  color: #7030ac; }
+  color: #9b2b99; }
 
 a:active {
-  color: #7030ac; }
+  color: #6e201e; }
 
 a.link--inactive {
   text-decoration: none; }
@@ -1435,8 +1531,8 @@ textarea {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .tag.tag--muted a:hover, .tag--muted.selectr-tag a:hover, .tag.tag--muted a:focus, .tag--muted.selectr-tag a:focus {
         text-decoration: none;
@@ -1453,8 +1549,8 @@ textarea {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .tag.tag--muted a, .tag--muted.selectr-tag a, .tag.tag--muted a:link, .tag--muted.selectr-tag a:link {
       color: #fff; }
@@ -1482,8 +1578,8 @@ textarea {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .tag.tag--success a:hover, .tag--success.selectr-tag a:hover, .tag.tag--success a:focus, .tag--success.selectr-tag a:focus {
         text-decoration: none;
@@ -1500,8 +1596,8 @@ textarea {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .tag.tag--success a, .tag--success.selectr-tag a, .tag.tag--success a:link, .tag--success.selectr-tag a:link {
       color: #fff; }
@@ -1529,8 +1625,8 @@ textarea {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover, .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus {
         text-decoration: none;
@@ -1547,8 +1643,8 @@ textarea {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
       color: #fff; }
@@ -1576,8 +1672,8 @@ textarea {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .tag.tag--error a:hover, .tag--error.selectr-tag a:hover, .tag.tag--error a:focus, .tag--error.selectr-tag a:focus {
         text-decoration: none;
@@ -1594,8 +1690,8 @@ textarea {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
       color: #fff; }
@@ -1623,8 +1719,8 @@ textarea {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .tag.tag--caca a:hover, .tag--caca.selectr-tag a:hover, .tag.tag--caca a:focus, .tag--caca.selectr-tag a:focus {
         text-decoration: none;
@@ -1641,8 +1737,8 @@ textarea {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .tag.tag--caca a, .tag--caca.selectr-tag a, .tag.tag--caca a:link, .tag--caca.selectr-tag a:link {
       color: #fff; }
@@ -1684,8 +1780,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag:hover a:hover, a.selectr-tag:hover a:hover, a.tag:hover a:focus, a.selectr-tag:hover a:focus, a.tag:focus a:hover, a.selectr-tag:focus a:hover, a.tag:focus a:focus, a.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1702,8 +1798,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag:hover a, a.selectr-tag:hover a, a.tag:hover a:link, a.selectr-tag:hover a:link, a.tag:focus a, a.selectr-tag:focus a, a.tag:focus a:link, a.selectr-tag:focus a:link {
       color: #fff; }
@@ -1731,8 +1827,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag.tag--muted:hover a:hover, a.tag--muted.selectr-tag:hover a:hover, a.tag.tag--muted:hover a:focus, a.tag--muted.selectr-tag:hover a:focus, a.tag.tag--muted:focus a:hover, a.tag--muted.selectr-tag:focus a:hover, a.tag.tag--muted:focus a:focus, a.tag--muted.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1749,8 +1845,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag.tag--muted:hover a, a.tag--muted.selectr-tag:hover a, a.tag.tag--muted:hover a:link, a.tag--muted.selectr-tag:hover a:link, a.tag.tag--muted:focus a, a.tag--muted.selectr-tag:focus a, a.tag.tag--muted:focus a:link, a.tag--muted.selectr-tag:focus a:link {
       color: #fff; }
@@ -1778,8 +1874,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1796,8 +1892,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
       color: #fff; }
@@ -1825,8 +1921,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1843,8 +1939,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
       color: #fff; }
@@ -1872,8 +1968,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1890,8 +1986,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
       color: #fff; }
@@ -1919,8 +2015,8 @@ a.tag, a.selectr-tag {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       a.tag.tag--caca:hover a:hover, a.tag--caca.selectr-tag:hover a:hover, a.tag.tag--caca:hover a:focus, a.tag--caca.selectr-tag:hover a:focus, a.tag.tag--caca:focus a:hover, a.tag--caca.selectr-tag:focus a:hover, a.tag.tag--caca:focus a:focus, a.tag--caca.selectr-tag:focus a:focus {
         text-decoration: none;
@@ -1937,8 +2033,8 @@ a.tag, a.selectr-tag {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     a.tag.tag--caca:hover a, a.tag--caca.selectr-tag:hover a, a.tag.tag--caca:hover a:link, a.tag--caca.selectr-tag:hover a:link, a.tag.tag--caca:focus a, a.tag--caca.selectr-tag:focus a, a.tag.tag--caca:focus a:link, a.tag--caca.selectr-tag:focus a:link {
       color: #fff; }
@@ -2285,8 +2381,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-base-primary a:hover, .bg-base-primary a:focus {
       text-decoration: none;
@@ -2303,8 +2399,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-base-primary a, .bg-base-primary a:link {
     color: #fff; }
@@ -2339,8 +2435,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-base-secondary a:hover, .bg-base-secondary a:focus {
       text-decoration: none;
@@ -2357,8 +2453,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-base-secondary a, .bg-base-secondary a:link {
     color: #fff; }
@@ -2403,8 +2499,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-base-black a:hover, .bg-base-black a:focus {
       text-decoration: none;
@@ -2421,8 +2517,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-base-black a, .bg-base-black a:link {
     color: #fff; }
@@ -2467,8 +2563,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-text-primary a:hover, .bg-text-primary a:focus {
       text-decoration: none;
@@ -2485,8 +2581,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-text-primary a, .bg-text-primary a:link {
     color: #fff; }
@@ -2521,8 +2617,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-text-heading a:hover, .bg-text-heading a:focus {
       text-decoration: none;
@@ -2539,8 +2635,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-text-heading a, .bg-text-heading a:link {
     color: #fff; }
@@ -2575,8 +2671,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-text-mark a:hover, .bg-text-mark a:focus {
       text-decoration: none;
@@ -2593,8 +2689,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-text-mark a, .bg-text-mark a:link {
     color: #fff; }
@@ -2629,8 +2725,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-background-dark a:hover, .bg-background-dark a:focus {
       text-decoration: none;
@@ -2647,8 +2743,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-background-dark a, .bg-background-dark a:link {
     color: #fff; }
@@ -2703,8 +2799,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-state-muted a:hover, .bg-state-muted a:focus {
       text-decoration: none;
@@ -2721,8 +2817,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-state-muted a, .bg-state-muted a:link {
     color: #fff; }
@@ -2757,8 +2853,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-state-success a:hover, .bg-state-success a:focus {
       text-decoration: none;
@@ -2775,8 +2871,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-state-success a, .bg-state-success a:link {
     color: #fff; }
@@ -2811,8 +2907,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-state-warning a:hover, .bg-state-warning a:focus {
       text-decoration: none;
@@ -2829,8 +2925,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-state-warning a, .bg-state-warning a:link {
     color: #fff; }
@@ -2865,8 +2961,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-state-error a:hover, .bg-state-error a:focus {
       text-decoration: none;
@@ -2883,8 +2979,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-state-error a, .bg-state-error a:link {
     color: #fff; }
@@ -2919,8 +3015,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.3rem;
-      background-color: #e1d4ed;
+      height: 0.33em;
+      background-color: #edd3ed;
       z-index: -1; }
     .bg-state-caca a:hover, .bg-state-caca a:focus {
       text-decoration: none;
@@ -2937,8 +3033,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1rem;
-        background-color: #e1d4ed;
+        height: 0.66em;
+        background-color: #edd3ed;
         z-index: -1; }
   .bg-state-caca a, .bg-state-caca a:link {
     color: #fff; }
@@ -3051,20 +3147,6 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
 .disabled {
   opacity: 0.33; }
 
-/*
-Kill Link
-
-Completely disables the visual appearance of a link. It defaults to primary text color.
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link">
-	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
-</section>
-
-Styleguide Helpers.kill-link
-*/
 .kill-link a {
   text-decoration: none; }
   .kill-link a:hover, .kill-link a:focus {
@@ -3088,20 +3170,6 @@ Styleguide Helpers.kill-link
 .kill-link a:focus:after, .kill-link a:hover:after {
   display: none; }
 
-/*
-Kill Link Decoration
-
-Helper class that kills al link decoration on a given block
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link-decoration">
-	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
-</section>
-
-Styleguide Helpers.kill-link-decoration
-*/
 .kill-link-decoration a:after, .kill-link-decoration a:link:after, .kill-link-decoration a:visited:after, .kill-link-decoration a:active:after {
   display: none; }
 
@@ -3271,8 +3339,8 @@ Styleguide Helpers.kill-link-decoration
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background-color: #e1d4ed;
+        height: 0.33em;
+        background-color: #edd3ed;
         z-index: -1; }
       .selectr-clear:hover a:hover, .selectr-clear:hover a:focus, .selectr-clear:focus a:hover, .selectr-clear:focus a:focus,
       .selectr-input-clear:hover a:hover,
@@ -3305,8 +3373,8 @@ Styleguide Helpers.kill-link-decoration
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 1rem;
-          background-color: #e1d4ed;
+          height: 0.66em;
+          background-color: #edd3ed;
           z-index: -1; }
     .selectr-clear:hover a, .selectr-clear:hover a:link, .selectr-clear:focus a, .selectr-clear:focus a:link,
     .selectr-input-clear:hover a,
@@ -3634,21 +3702,26 @@ h1 a:focus:after, h1 a:hover:after, .h1 a:focus:after, .h1 a:hover:after, h2 a:f
   max-width: 75ch; }
 
 code.lang-sass,
+code.lang-scss,
+code.lang-html,
 code.code {
   width: 100%;
   padding: 0 1.35rem;
   border-radius: 6px; }
 
-.pen-header {
+.pen-header,
+.doc__header {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1.35rem; }
-  .pen-header h1 {
+  .pen-header h1,
+  .doc__header h1 {
     margin: 0;
     display: inline-block;
-    margin-right: 2.7rem;
+    margin-right: 1.35rem;
     line-height: 0.75; }
-  .pen-header .status {
+  .pen-header .status,
+  .doc__header .status {
     display: inline-block; }
 
 .browser-controls,

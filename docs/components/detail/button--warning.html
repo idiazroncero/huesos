@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-c3c882beadaafb65dee89fb5cd8698ac-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="button">Button</h1>
-<p>Applies to <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code>. Without the <code>.button</code> class, only a reset is applied.</p>
+            <p>Applies to <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code>. Without the <code>.button</code> class, only a reset is applied.</p>
 <p>You can define a separate appearance for every button state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.</p>
 <p>These are the available strategies: </p>
 <ul>
@@ -2258,12 +2353,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-c3c882beadaafb65dee89fb5cd8698ac-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Warning"</span> /&gt;</span>
@@ -2276,8 +2370,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-c3c882beadaafb65dee89fb5cd8698ac-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2286,12 +2380,18 @@
         <div class="filebrowser-item is-active" id="file-7d57f9dec042ac636ef227874bd87e38" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-comment">// Explicit overrides for link buttons</span>
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/elements/button/_button.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>1.4 KB</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-comment">// Explicit overrides for link buttons</span>
 <span class="hljs-comment">// This need to be set before the global button</span>
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button</span> {
 	<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> ritmo(<span class="hljs-number">2</span>);
@@ -2358,22 +2458,8 @@
         <span class="hljs-attribute">cursor</span>: arrow;
 	}
 }</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/button/_button.scss"><span>/components/raw/button/_button.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/elements/button/_button.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">1.4 KB</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

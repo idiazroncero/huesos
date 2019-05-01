@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-0e3a870ac6f6a8f7cf8251118543d92d-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="navigation-menus">Navigation menus</h1>
-<p>Any HTML that uses the css class <code>.nav</code>. This means <code>&lt;nav&gt;</code> elements <strong>won’t</strong> receive any styling by default until a <code>.nav</code> class is added. </p>
+            <p>Any HTML that uses the css class <code>.nav</code>. This means <code>&lt;nav&gt;</code> elements <strong>won’t</strong> receive any styling by default until a <code>.nav</code> class is added. </p>
 <p>In previous versions, we enforced <code>&lt;nav&gt;</code> elements to have this custom sytling. Navigation might vary a lot, so it seems better to separate againmarkup and style.</p>
 <p>We don’t assume a menu-style, horizontal navigation as the default. This is done by using the <code>.menu</code> component.</p>
 <p>Instead, we only style the text and delete the bullets. The nav items’ style can be controlled on <code>_config.scss</code> via a set of parameters on the Navigation section: <code>$nav-font-weight</code>, <code>$nav-uppercase</code>, <code>$nav-font-size</code> and <code>$nav-spacing</code>.</p>
@@ -2231,12 +2326,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-0e3a870ac6f6a8f7cf8251118543d92d-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- IMPORTANT! The class is needed --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
@@ -2257,8 +2351,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-0e3a870ac6f6a8f7cf8251118543d92d-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2267,12 +2361,18 @@
         <div class="filebrowser-item is-active" id="file-5715293bc4559938c71d134c8dec303a" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre><span class="hljs-selector-class">.nav</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/navigation/nav/_nav.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>385 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre><span class="hljs-selector-class">.nav</span> {
   @<span class="hljs-keyword">if</span> <span class="hljs-variable">$nav-kill-links</span> {
     <span class="hljs-selector-tag">a</span> {
       @<span class="hljs-keyword">include</span> kill-link-decoration();
@@ -2294,22 +2394,8 @@
   }
 }
 </pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/nav/_nav.scss"><span>/components/raw/nav/_nav.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/navigation/nav/_nav.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">385 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>

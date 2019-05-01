@@ -1,0 +1,5 @@
+.kill-link-decoration {
+	a {
+		@include kill-link-decoration();
+	}
+}

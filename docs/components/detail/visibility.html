@@ -2048,8 +2048,104 @@
         
         
         <li class="" data-role="item">
+            <a href="disabled.html" data-pjax>
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link.html" data-pjax>
+                <span>Kill Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="kill-link-decoration.html" data-pjax>
+                <span>Kill Link Decoration</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
             <a href="scrollbar-hidden.html" data-pjax>
                 <span>Scrollbar Hidden</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="" data-role="item">
+            <a href="visually-hidden.html" data-pjax>
+                <span>Visually Hidden</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2214,11 +2310,10 @@
 
 
     
-        <section class="browser-notes">
+        <section class="browser-notes" id="browser-24c22e6f6eb2577e9a0a54b01fb8d09c-panel-notes">
     <div class="text-wrapper">
         
-            <h1 id="visibility-helpers">Visibility helpers</h1>
-<p>Generate a set of classes that toggle visibility on certain viewport widths (for example, <code>.small-visible</code>, <code>.medium-visible</code>, <code>.large-visible</code>).</p>
+            <p>Generate a set of classes that toggle visibility on certain viewport widths (for example, <code>.small-visible</code>, <code>.medium-visible</code>, <code>.large-visible</code>).</p>
 <p>The default behavior is to assume the item is hidden until a breakpoint is reached.</p>
 
         
@@ -2227,12 +2322,11 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-24c22e6f6eb2577e9a0a54b01fb8d09c-panel-html">
     <h2>Example</h2>
     <code class="code code--lang-html">
         
-            <pre>
-                <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small-visible"</span>&gt;</span>I'm visible<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"medium-visible"</span>&gt;</span>I'm visible<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"large-visible"</span>&gt;</span>I'm visible<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
@@ -2245,8 +2339,8 @@
         
 
 
-<div class="browser-resources">
-    <h3>Assets</h3>
+<div class="browser-resources" id="browser-24c22e6f6eb2577e9a0a54b01fb8d09c-panel-assets">
+    <h2>Assets</h2>
 
 
         
@@ -2255,12 +2349,18 @@
         <div class="filebrowser-item is-active" id="file-9787a9456063c8bc031808eca92ad18c" data-role="resource-preview">
             <ul>
                 <li>
-                    <strong>Content:</strong>
-                    <span>
-                        <div class="FileBrowser-itemPreview">
-                            
-                                <code class="code code--lang-SCSS">
-                                    <pre>@<span class="hljs-keyword">each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$breakpoints</span> {
+                    <strong>Filesystem Path:</strong>
+                    <span>src/components/layout/visibility/_visibility.scss</span>
+                </li>
+                <li>
+                    <strong>Size:</strong>
+                    <span>171 Bytes</span>
+                </li>
+                <li>
+                    <strong class="visually-hidden">Content:</strong>
+                        
+                            <code class="code code--lang-SCSS">
+                                <pre>@<span class="hljs-keyword">each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$breakpoints</span> {
     .#{<span class="hljs-variable">$name</span>}-visible {
         <span class="hljs-attribute">display</span>:none;
         @<span class="hljs-keyword">include</span> breakpoint(#{<span class="hljs-variable">$value</span>}) {
@@ -2268,22 +2368,8 @@
         }
     }
 }</pre>
-                                </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li>
-                    <strong>URL:</strong>
-                    <span><a data-no-pjax href="../raw/visibility/_visibility.scss"><span>/components/raw/visibility/_visibility.scss</span></a></span>
-                </li>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/layout/visibility/_visibility.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span">171 Bytes</span>
+                            </code>
+                        
                 </li>
             </ul>
         </div>
