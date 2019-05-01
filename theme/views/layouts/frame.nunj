@@ -8,7 +8,7 @@
     <div class="wrapper__sidebar scrollbar-hidden">
 
         <header class="header">
-            <h1 class="logo">
+            <h1 class="logo h2">
                 <a href="{{ path('/') }}" class="header-title" data-pjax>
                     Huesos <br>
                     Style <br>

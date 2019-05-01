@@ -3732,13 +3732,11 @@ code.code {
   border-bottom: 1px solid #dee0e4; }
 
 .pen-preview {
-  height: 45vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative; }
-  .pen-preview iframe {
-    height: auto; }
   .pen-preview .preview-tag {
     position: absolute;
     top: 0.675rem;
@@ -3747,8 +3745,7 @@ code.code {
 .iframe__inner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 150px; }
+  justify-content: center; }
 
 .filebrowser-item ul {
   list-style: none; }

@@ -81,14 +81,11 @@ code.code {
 } 
 
 .pen-preview {
-    height:45vh;
+    height:50vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     position:relative;
-    iframe {
-        height:auto;
-    }
     .preview-tag {
         position:absolute;
         top: $gutter / 2;
@@ -100,7 +97,6 @@ code.code {
     display:flex;
     flex-direction:column;
     justify-content:center; 
-    min-height:150px;
 }
 
 
