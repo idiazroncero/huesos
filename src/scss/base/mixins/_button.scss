@@ -60,7 +60,7 @@
 @mixin style-button(
         $color, 
         $button-strategy-default : $button-strategy-default,
-        $button-strategy-hover : $button-strategy-hover,  
+        $button-strategy-hover : $button-strategy-hover 
         ) 
     {
     border-radius: $button-border-radius;
@@ -94,7 +94,7 @@
 @mixin style-link-button(
         $color, 
         $button-strategy-default : $button-strategy-default,
-        $button-strategy-hover : $button-strategy-hover,  
+        $button-strategy-hover : $button-strategy-hover
         ) 
     {
     

@@ -52,7 +52,7 @@
 
 @mixin set-link-decoration(
 		$link-strategy-default : $link-strategy-default,
-		$link-strategy-hover : $link-strategy-hover,  
+		$link-strategy-hover : $link-strategy-hover
 	) {
 	@if $link-strategy-default == false {
 		text-decoration:none;
@@ -93,7 +93,7 @@
     $hover: $link-hover,
 	$active: $link-active,
 	$strategy-default: $link-strategy-default,
-	$strategy-hover: $link-strategy-hover,
+	$strategy-hover: $link-strategy-hover
 	) {
 	& {
 		@include set-link-decoration($strategy-default, $strategy-hover);

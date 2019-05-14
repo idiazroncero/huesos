@@ -723,24 +723,18 @@ var {
   margin-top: 2.7rem; }
 
 .text-wrapper section, .alert section,
-.text-wrapper article,
-.alert article {
+.text-wrapper article, .alert article {
   margin-bottom: 2.7rem; }
 
 .text-wrapper h1:first-child, .alert h1:first-child,
-.text-wrapper h2:first-child,
-.alert h2:first-child,
-.text-wrapper h3:first-child,
-.alert h3:first-child,
-.text-wrapper h4:first-child,
-.alert h4:first-child {
+.text-wrapper h2:first-child, .alert h2:first-child,
+.text-wrapper h3:first-child, .alert h3:first-child,
+.text-wrapper h4:first-child, .alert h4:first-child {
   margin-top: 0; }
 
 .text-wrapper p:last-child, .alert p:last-child,
-.text-wrapper section:last-child,
-.alert section:last-child,
-.text-wrapper article:last-child,
-.alert article:last-child {
+.text-wrapper section:last-child, .alert section:last-child,
+.text-wrapper article:last-child, .alert article:last-child {
   margin-bottom: 0; }
 
 abbr[title] {
@@ -2053,7 +2047,7 @@ a.button {
     .button .icon svg, input[type=file] + label .icon svg {
       fill: currentColor; }
 
-.button + .button, input[type=file] + label + .button, input.button[type=file] + label {
+.button + .button, input[type=file] + label + .button, input[type=file].button + label {
   margin-left: 0.3375rem; }
 
 .button--primary {
