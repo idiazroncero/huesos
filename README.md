@@ -46,4 +46,3 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Addons with glitch, etc
 - Basic svg icon library
 - Journalistic "sumarios" using blockquotes (as a component)
-- Text outline (Websante-like)
