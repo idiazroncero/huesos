@@ -53,33 +53,51 @@
 	</nav>
 	<div id="main-wrapper" class="page" role="document">
 	  <header role="banner">
-		<p class="h3">This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
+		<p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
 	  </header>
 	  <main role="main">
 		<section id="text">
 		  <header><h2 class="tag tag--success m0">Text</h2></header>
-		  <article class="card" id="text__headings">
+		  <article class="nada" id="text__headings">
 			<header>
 			  <h1>Headings</h1>
 			</header>
 			<div>
-			  <h1>Heading 1</h1>
-			  <h2>Heading 2</h2>
-			  <h3>Heading 3</h3>
-			  <h4>Heading 4</h4>
-			  <h5>Heading 5</h5>
-			  <h6>Heading 6</h6>
+				<h1>
+					This is a Heading 1<br>
+					in two lines
+				</h1>
+				<h2>
+					This is a Heading 2<br>
+					in two lines
+				</h2>
+				<h3>
+					This is a Heading 3<br>
+					in two lines
+				</h3>
+				<h4>
+					This is a Heading 4<br>
+					in two lines
+				</h4>
+				<h5>
+					This is a Heading 5<br>
+					in two lines
+				</h5>
+				<h6>
+					This is a Heading 6<br>
+					in two lines
+				</h6>
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__paragraphs">
+		  <article class="nada" id="text__paragraphs">
 			<header><h2 class="tag tag--success m0">Paragraphs</h2></header>
 			<div>
 			  <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__blockquotes">
+		  <article class="nada" id="text__blockquotes">
 			<header><h2 class="tag tag--success m0">Blockquotes</h2></header>
 			<div>
 			  <blockquote>
@@ -90,7 +108,7 @@
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__lists">
+		  <article class="nada" id="text__lists">
 			<header><h2 class="tag tag--success m0">Lists</h2></header>
 			<div>
 			  <h3>Definition list</h3>
@@ -113,14 +131,14 @@
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__hr">
+		  <article class="nada" id="text__hr">
 			<header><h2 class="tag tag--success m0">Horizontal rules</h2></header>
 			<div>
 			  <hr>
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__tables">
+		  <article class="nada" id="text__tables">
 			<header><h2 class="tag tag--success m0">Tabular data</h2></header>
 			<table>
 			  <caption>Table Caption</caption>
@@ -175,7 +193,7 @@
 			</table>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__code">
+		  <article class="nada" id="text__code">
 			<header><h2 class="tag tag--success m0">Code</h2></header>
 			<div>
 			  <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
@@ -192,7 +210,7 @@
 			</div>
 			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
 		  </article>
-		  <article class="card" id="text__inline">
+		  <article class="nada" id="text__inline">
 			<header><h2 class="tag tag--success m0">Inline elements</h2></header>
 			<div>
 			  <p><a href="#!">This is a text link</a>.</p>
@@ -218,59 +236,6 @@
 		  </article>
 		</section>
 
-		<section id="embedded">
-		  <header><h2 class="tag tag--success m0">Embedded content</h2></header>
-		  <article class="card" id="embedded__images">
-			<header><h2>Images</h2></header>
-			<div>
-			  <h3>No <code>&lt;figure&gt;</code> element</h3>
-			  <p><img src="http://placekitten.com/460/460" alt="Image alt text"></p>
-			  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h3>
-			  <figure><img src="http://placekitten.com/420/420" alt="Image alt text"></figure>
-			  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h3>
-			  <figure>
-				<img src="http://placekitten.com/420/420" alt="Image alt text">
-				<figcaption>Here is a caption for this image.</figcaption>
-			  </figure>
-			</div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__audio">
-			<header><h2>Audio</h2></header>
-			<div><audio controls="">audio</audio></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__video">
-			<header><h2>Video</h2></header>
-			<div><video controls="">video</video></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__canvas">
-			<header><h2>Canvas</h2></header>
-			<div><canvas>canvas</canvas></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__meter">
-			<header><h2>Meter</h2></header>
-			<div><meter value="2" min="0" max="10">2 out of 10</meter></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__progress">
-			<header><h2>Progress</h2></header>
-			<div><progress>progress</progress></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__svg">
-			<header><h2>Inline SVG</h2></header>
-			<div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		  <article class="card" id="embedded__iframe">
-			<header><h2>IFrame</h2></header>
-			<div><iframe src="index.html" height="300"></iframe></div>
-			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
-		  </article>
-		</section>
 		<section id="forms">
 		  <header><h2 class="tag tag--success m0">Form elements</h2></header>
 		  <form>
@@ -411,6 +376,60 @@
 			</fieldset>
 			<p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p>
 		  </form>
+		</section>
+
+		<section id="embedded">
+		  <header><h2 class="tag tag--success m0">Embedded content</h2></header>
+		  <article class="nada" id="embedded__images">
+			<header><h2>Images</h2></header>
+			<div>
+			  <h3>No <code>&lt;figure&gt;</code> element</h3>
+			  <p><img src="http://placekitten.com/460/460" alt="Image alt text"></p>
+			  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h3>
+			  <figure><img src="http://placekitten.com/420/420" alt="Image alt text"></figure>
+			  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h3>
+			  <figure>
+				<img src="http://placekitten.com/420/420" alt="Image alt text">
+				<figcaption>Here is a caption for this image.</figcaption>
+			  </figure>
+			</div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__audio">
+			<header><h2>Audio</h2></header>
+			<div><audio controls="">audio</audio></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__video">
+			<header><h2>Video</h2></header>
+			<div><video controls="">video</video></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__canvas">
+			<header><h2>Canvas</h2></header>
+			<div><canvas>canvas</canvas></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__meter">
+			<header><h2>Meter</h2></header>
+			<div><meter value="2" min="0" max="10">2 out of 10</meter></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__progress">
+			<header><h2>Progress</h2></header>
+			<div><progress>progress</progress></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__svg">
+			<header><h2>Inline SVG</h2></header>
+			<div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
+		  <article class="nada" id="embedded__iframe">
+			<header><h2>IFrame</h2></header>
+			<div><iframe src="index.html" height="300"></iframe></div>
+			<footer><p><a class="link--inactive small" href="#top"><i class="icon">⇧</i>Top</a></p></footer>
+		  </article>
 		</section>
 	  </main>
 	  <footer role="contentinfo">

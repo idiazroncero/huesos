@@ -1,54 +1,4 @@
 @charset "UTF-8";
-/*
-set-link($base, $visited, $hover, $active)
-
-Sets all link values according to global config.
-
-$base - Base color
-$visited  - Color when visited
-$hover   - Color when hovered and focused
-$hover   - Color when active
-
-Styleguide Mixins.links.setLink
-*/
-/*
-Typography
-
-Functions that return values used on typography – other than vertical rhythm - like font-weight, letter-spacing, etc...
-
-Styleguide Functions.Typography
-
-*/
-/*
-contrast-color($item)
-
-Checks a given HTML item against `$font-secondary-items` map in order to get the font specific font-weight.
-
-$item - [String] - an HTMl element (without opening and closing `< >` marks)
-
-Styleguide Functions.Typography.Bold
-*/
-/*
-Typography
-
-Mixins that perform typography variations and calculations.
-
-Styleguide Mixins.Typography
-*/
-/*
-minititle($size, $weight, $uppercase, $letter-spacing)
-
-Formats a text to apply the <span class="minititle">minititle</span> styling, used for small headings and higly contrasted small texts.
-
-By overriding the defaults, minititle() becomes a full-fledged tool capable of handling many of the usual modificacions of text.
-
-$size - A valid font-size. Defaults to $h6-font-size
-$weight - Font weight. Defaults to $bold
-$uppercase - [Boolean] - Wether to apply `text-transform: uppercase`. Defaults to true.
-$letter-spacing - A valid value for `letter-spacing`. Defaults to global `$letter-spacing`
-
-Styleguide Mixins.Typography.Minititle
-*/
 *,
 ::before,
 ::after {
@@ -74,11 +24,12 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 3 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: #384048; }
+  color: #384048;
+  scroll-behavior: smooth; }
 
 html {
   font-size: 100%;
-  line-height: 1.35em; }
+  line-height: 1.5em; }
 
 p, h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
@@ -87,8 +38,9 @@ figure, audio, video,
 hr,
 table, caption, figcaption,
 fieldset,
-details, details[open] summary {
-  margin: 0 0 1.35rem 0; }
+details, details[open] summary,
+pre {
+  margin: 0 0 1.5rem 0; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -145,9 +97,10 @@ pre {
   /* 1 */
   font-size: 16px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem;
-  /* 2 */ }
+  line-height: 24px;
+  line-height: 1.5rem;
+  /* 2 */
+  white-space: pre-wrap; }
 
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
    ========================================================================== */
@@ -457,129 +410,38 @@ textarea,
 [aria-disabled] {
   cursor: default; }
 
-/*
-Figure + Figcaption
-
-The variable `$figcaption-font-size` defines the sizing of image captions.
-
-In order to align the whole block while keeping the textalignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
-
-Markup:
-<section>
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</section>
-<section class="center">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-<section class="right">
-  <figure>
-    <img src="https://placeimg.com/400/200/nature" />
-    <figcaption>Well documented code is always a bliss</figcaption>
-  </figure>
-</div>
-
-
-Styleguide Base.images.figure-figcaption
-*/
-figcaption {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  text-align: left; }
-
-/*
-Tables
-
-Tables span across all available space evenly distributed.
-
-A `.table` wrapper ensures that a basic responsive solution (using overflow-x) is set. Otherwise, the table collapses.
-
-Borders are collapsed by default
-
-`<caption>` receives a `.minititle` styling
-
-Markup:
-<section class="table">
-  <table>
-    <caption>Table Caption</caption>
-    <thead>
-      <tr>
-        <th>Table Heading 1</th>
-        <th>Table Heading 2</th>
-        <th>Table Heading 3</th>
-        <th>Table Heading 4</th>
-        <th>Table Heading 5</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>Table Footer 1</th>
-        <th>Table Footer 2</th>
-        <th>Table Footer 3</th>
-        <th>Table Footer 4</th>
-        <th>Table Footer 5</th>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-      <tr>
-        <td>Table Cell 1</td>
-        <td>Table Cell 2</td>
-        <td>Table Cell 3</td>
-        <td>Table Cell 4</td>
-        <td>Table Cell 5</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
-Styleguide Base.tables
-*/
 caption {
   text-align: left;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
 table {
   table-layout: fixed;
-  min-width: 100%; }
+  min-width: 100%;
+  margin-bottom: calc( 1.5rem - 1px); }
 
 th, td {
-  border: 1px solid #dee0e4;
-  padding: 0.675rem; }
+  border-top-width: 1px;
+  border-top-width: 0.0625rem;
+  padding-top: 11px;
+  padding-top: 0.6875rem;
+  border-left-width: 1px;
+  border-left-width: 0.0625rem;
+  padding-left: 11px;
+  padding-left: 0.6875rem;
+  border-right-width: 1px;
+  border-right-width: 0.0625rem;
+  padding-right: 11px;
+  padding-right: 0.6875rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid;
+  border-style: solid;
+  border-color: #dee0e4; }
 
 th {
   text-align: left; }
@@ -589,42 +451,62 @@ th {
   .table th, .table td {
     min-width: 120px; }
 
-/*
-Links
+a {
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: none;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  z-index: 0; }
+  a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.33em;
+    background-color: #edd3ed;
+    z-index: -1; }
+  a:hover, a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    a:hover:after, a:focus:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.66em;
+      background-color: #edd3ed;
+      z-index: -1; }
 
-All links are formatted throught `set-link()` mixin.
-
-The `.link-strategy` is honored but you can override it anytime by using helper classes.
-
-Markup:
-<a href="#" class="myclass {{modifier_class}}">This is a link! Here! Click! If smart, gujihqpol</a>
-
-.link--inactive         	- Makes link appear as normal text but retain functionality
-.disabled         			- The helper class dims the link and deletes visual feedback
-.link-strategy-underline	- Sets a link as if `$link-strategy` was set to 'underline'
-.link-strategy-border		- Sets a link as if `$link-strategy` was set to 'border'
-.link-strategy-smart		- Sets a link as if `$link-strategy` was set to 'smart'
-.link-strategy-mark			- Sets a link as if `$link-strategy` was set to 'mark'
-.link-inverted				- Uses the inverted colors for this link. Normally used against a background.
-
-Styleguide Typography.links
-*/
 a, a:link {
-  color: #572586;
-  text-decoration: underline; }
+  color: #6e201e; }
 
 a:visited {
-  color: #572586; }
+  color: #6e201e; }
 
 a:focus, a:hover {
-  color: #7030ac; }
+  color: #9b2b99; }
 
 a:active {
-  color: #7030ac; }
+  color: #6e201e; }
+
+a.link--inactive {
+  text-decoration: none; }
+  a.link--inactive:hover, a.link--inactive:focus {
+    text-decoration: none; }
 
 a.link--inactive, a.link--inactive:link {
-  color: #384048;
-  text-decoration: underline; }
+  color: #384048; }
 
 a.link--inactive:visited {
   color: #384048; }
@@ -635,249 +517,98 @@ a.link--inactive:focus, a.link--inactive:hover {
 a.link--inactive:active {
   color: #384048; }
 
-a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:focus, a.link--inactive:hover, a.link--inactive:active {
+a.link--inactive:after, a.link--inactive:link:after, a.link--inactive:visited:after, a.link--inactive:active:after {
+  display: none; }
+
+a.link--inactive:focus:after, a.link--inactive:hover:after {
+  display: none; }
+
+a.disabled {
   text-decoration: none; }
+  a.disabled:hover, a.disabled:focus {
+    text-decoration: none; }
 
-a.disabled, a.disabled:link, a.disabled:visited, a.disabled:focus, a.disabled:hover, a.disabled:active {
-  text-decoration: none; }
+a.disabled, a.disabled:link {
+  color: #384048; }
 
-a.link-strategy-underline, a.link-strategy-underline:link {
-  color: #572586;
-  text-decoration: underline; }
+a.disabled:visited {
+  color: #384048; }
 
-a.link-strategy-underline:visited {
-  color: #572586; }
+a.disabled:focus, a.disabled:hover {
+  color: #384048; }
 
-a.link-strategy-underline:focus, a.link-strategy-underline:hover {
-  color: #7030ac; }
+a.disabled:active {
+  color: #384048; }
 
-a.link-strategy-underline:active {
-  color: #7030ac; }
+a.disabled:after, a.disabled:link:after, a.disabled:visited:after, a.disabled:active:after {
+  display: none; }
 
-a.link-strategy-border, a.link-strategy-border:link {
-  color: #572586;
-  text-decoration: none;
-  border-bottom: 0.16875rem solid #cfbae3; }
+a.disabled:focus:after, a.disabled:hover:after {
+  display: none; }
 
-a.link-strategy-border:visited {
-  color: #572586; }
+a.link--inverted {
+  text-decoration: underline;
+  background-color: transparent;
+  border-bottom: none;
+  padding-left: 0;
+  padding-right: 0; }
+  a.link--inverted:after {
+    display: none; }
+  a.link--inverted:hover, a.link--inverted:focus {
+    text-decoration: none; }
 
-a.link-strategy-border:focus, a.link-strategy-border:hover {
-  color: #7030ac; }
-
-a.link-strategy-border:active {
-  color: #7030ac; }
-
-a.link-strategy-mark, a.link-strategy-mark:link {
-  color: #572586;
-  text-decoration: none;
-  background-color: #cfbae3;
-  position: relative; }
-  a.link-strategy-mark:before, a.link-strategy-mark:after, a.link-strategy-mark:link:before, a.link-strategy-mark:link:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #cfbae3; }
-  a.link-strategy-mark:before, a.link-strategy-mark:link:before {
-    left: -2px; }
-  a.link-strategy-mark:after, a.link-strategy-mark:link:after {
-    right: -2px; }
-
-a.link-strategy-mark:visited {
-  color: #572586; }
-
-a.link-strategy-mark:focus, a.link-strategy-mark:hover {
-  color: #7030ac; }
-
-a.link-strategy-mark:active {
-  color: #7030ac; }
-
-a.link-strategy-smart, a.link-strategy-smart:link {
-  color: #572586;
-  color: #572586;
-  text-decoration: none;
-  text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-  background-image: linear-gradient(#cfbae3, #cfbae3), linear-gradient(#cfbae3, #cfbae3), linear-gradient(#572586, #572586);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%; }
-  a.link-strategy-smart::selection, a.link-strategy-smart:link::selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart::-moz-selection, a.link-strategy-smart:link::-moz-selection {
-    text-shadow: 0.03em 0 #cfbae3, -0.03em 0 #cfbae3, 0 0.03em #cfbae3, 0 -0.03em #cfbae3, 0.06em 0 #cfbae3, -0.06em 0 #cfbae3, 0.09em 0 #cfbae3, -0.09em 0 #cfbae3, 0.12em 0 #cfbae3, -0.12em 0 #cfbae3, 0.15em 0 #cfbae3, -0.15em 0 #cfbae3;
-    background: #cfbae3; }
-  a.link-strategy-smart:before, a.link-strategy-smart:after, a.link-strategy-smart *, a.link-strategy-smart *:before, a.link-strategy-smart *:after, a.link-strategy-smart:link:before, a.link-strategy-smart:link:after, a.link-strategy-smart:link *, a.link-strategy-smart:link *:before, a.link-strategy-smart:link *:after {
-    text-shadow: none; }
-  a.link-strategy-smart:visited, a.link-strategy-smart:link:visited {
-    color: #572586; }
-
-a.link-strategy-smart:visited {
-  color: #572586; }
-
-a.link-strategy-smart:focus, a.link-strategy-smart:hover {
-  color: #7030ac; }
-
-a.link-strategy-smart:active {
-  color: #7030ac; }
-
-a.link-inverted, a.link-inverted:link {
-  color: #fff;
-  text-decoration: underline; }
-
-a.link-inverted:visited {
+a.link--inverted, a.link--inverted:link {
   color: #fff; }
 
-a.link-inverted:focus, a.link-inverted:hover {
+a.link--inverted:visited {
+  color: #fff; }
+
+a.link--inverted:focus, a.link--inverted:hover {
   color: #b3c9e0; }
 
-a.link-inverted:active {
+a.link--inverted:active {
   color: #b3c9e0; }
 
-/*
-Quotes
-
-Tipographic quotes can be explicitly defined using the variable `$quotes`
-
-Markup:
-<q>Look! As the quote said, <q>a quote can be nested inside another quote</q></q>
-
-Styleguide Typography.quotes
-*/
-q {
-  quotes: "“" "”" "‘" "’"; }
-
-/*
-Blockquotes
-
-Blockquotes receive a padding based on '$gutter`
-
-Markup:
-<blockquote class="myclass {{modifier_class}}">
-  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-  <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-  <cite><a href="#!">Said no one, ever.</a></cite>
-</blockquote>
-
-.blockquote--decorated        - Adds the user-defined decoration (usually a quote) as a pseudo-element
-
-Styleguide Typography.blockquote
-*/
 blockquote {
-  margin: 0 0 1.35rem 2.7rem; }
+  margin: 0 0 1.5rem 3rem; }
 
-.blockquote--decorated {
-  position: relative; }
-  .blockquote--decorated:before {
-    content: "*";
-    font-size: 38px;
-    font-size: 2.36859rem;
-    line-height: 43px;
-    line-height: 2.7rem;
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-    position: absolute;
-    top: 0.3375rem;
-    left: -2.7rem; }
-
-/*
-Details
-
-Markup:
-<details>
-	<summary>Pure HTML5 accordion</summary>
-	<p>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.</p>
-	<p>It's neat and simple. Love it.</p>
-</details>
-
-
-Styleguide Base.details
-*/
 summary {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer; }
 
-/*
-Lists
-
-By default, `$gutter` is applied as margin. Square list-style-type is preferred.
-
-Lists are left-aligned.
-
-Markup:
-<ol class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ol>
-<ul class="class {{ modifier_class }}">
-  <li>List Item 1</li>
-  <li>List Item 2</li>
-  <li>List Item 3</li>
-</ul>
-
-.list--inline	-  Inlines list items and removes decoration 
-
-Styleguide Base.lists
-*/
 ol,
 ul {
   padding-left: 0;
   list-style-position: outside; }
   ol li,
   ul li {
-    margin-bottom: 0.675rem; }
+    margin-bottom: 0; }
 
 ul {
   list-style-type: square; }
 
+dt {
+  font-weight: bold;
+  margin: 0; }
+
+dd {
+  margin: 0 0 1.5rem 1.5rem; }
+
 .list--inline {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
   .list--inline li {
     list-style-type: none;
     display: inline-block; }
 
-/*
-Definition lists
-
-By default, all `<dd>` items are spaced with a `$spacer`
-
-Markup:
-<dl>
-  <dt>Definition List Title</dt>
-  <dd>This is a definition list division.</dd>
-  <dt>Lorem ipsum</dt>
-  <dd>It's a long text in latin. For example: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex sed voluptates sequi doloremque repudiandae iure maxime autem nam placeat nostrum adipisci et, officia nisi consequatur animi eligendi molestias est rem.</dd>
-  <dt>Huesos</dt>
-  <dd>Is the spanish word for "bones". Osamenta, a rather unusual world, refers to the skeleton.</dd>
-</dl>
-
-Styleguide Base.definitionLists
-*/
-dt {
-  margin: 0 0 0.675rem 0; }
-
-dd {
-  margin: 0 0 1.35rem 1.35rem; }
-
-/*
-Horizontal rule
-
-Applies $separator styling defined at `_config.scss`. Eliminates ridge/bevel effects.
-
-Markup:
-<hr/>
-
-Styleguide Base.hr
-*/
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -888,39 +619,12 @@ hr {
   border: none;
   border-bottom: 1px solid #dee0e4; }
 
-/*
-Iframe
-
-Deletes border, displays iframe as a block element that always fills its parent's size.
-
-Markup:
-<section style="width:50%; height: 600px">
-	<iframe src="https://mentalstones.com"></iframe>
-</section>
-
-Styleguide Base.iframe
-*/
 iframe {
   border: none;
   width: 100%;
   height: 100%;
   display: block; }
 
-/*
-Images
-
-All images are responsive by default.
-
-Markup:
-<section>
-	<img src="https://placeimg.com/300/300/nature" />
-</section>
-<section>
-	<img src="https://placeimg.com/2500/750/nature" />
-</section>
-
-Styleguide Base.images
-*/
 img {
   display: inline-block;
   border-style: none;
@@ -931,64 +635,48 @@ figure {
   display: inline-block; }
 
 figcaption {
-  display: block; }
+  display: block;
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  text-align: left; }
 
-/*
-Headings
-
-The `<h1>` to `<h6>` HTML elements can be mimicked using `.h1` to `.h6` classes
-
-Markup:
-<h1>Main titles use heading one</h1>
-<h2>Subtitules and main sections use h2</h2>
-<h3>H3 is mainly for nested sections</h3>
-<h4>In case you need furher sectioning, use an h4</h4>
-<h5>Rarely you will need a heading five</h5>
-<h6>Heading six is rather unexpected</h6>
-
-
-Styleguide Typography.headings
-*/
 h1, .h1 {
   font-size: 51px;
   font-size: 3.15733rem;
-  line-height: 59px;
-  line-height: 3.7125rem; }
+  line-height: 48px;
+  line-height: 3rem; }
 
 h2, .h2 {
   font-size: 38px;
   font-size: 2.36859rem;
-  line-height: 43px;
-  line-height: 2.7rem; }
+  line-height: 36px;
+  line-height: 2.25rem; }
 
 h3, .h3 {
   font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h4, .h4 {
   font-size: 21px;
   font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h5, .h5 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h6, .h6 {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  line-height: 1; }
+  line-height: 12px;
+  line-height: 0.75rem; }
 
 h1, .h1,
 h2, .h2 {
@@ -996,26 +684,13 @@ h2, .h2 {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #151448;
-  font-weight: normal; }
+  color: #15304d;
+  font-weight: bold; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     color: inherit;
     vertical-align: 0; }
 
-/*
-Secondary font
-
-Helper `.class` and `%placeholder` used to apply the secondary font as set on `_config.scss`
-
-Markup:
-<p class="font-secondary">This paragraph has been set to use the secondary font.
-It could otherwise have used a regular CSS selector with <code>@extend %font-secondary</code>
-to achive the same effect</p>
-
-
-Styleguide Helpers.secondary-font
-*/
 .font-secondary,
 h1,
 h2,
@@ -1026,52 +701,11 @@ dt,
 #your-ids {
   font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif; }
 
-h1 a, h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
-  text-decoration: none; }
-
-h2 a, h2 a:link, h2 a:visited, h2 a:focus, h2 a:hover, h2 a:active {
-  text-decoration: none; }
-
-h3 a, h3 a:link, h3 a:visited, h3 a:focus, h3 a:hover, h3 a:active {
-  text-decoration: none; }
-
-h4 a, h4 a:link, h4 a:visited, h4 a:focus, h4 a:hover, h4 a:active {
-  text-decoration: none; }
-
-dt a, dt a:link, dt a:visited, dt a:focus, dt a:hover, dt a:active {
-  text-decoration: none; }
-
-.your-classes a, .your-classes a:link, .your-classes a:visited, .your-classes a:focus, .your-classes a:hover, .your-classes a:active {
-  text-decoration: none; }
-
-#your-ids a, #your-ids a:link, #your-ids a:visited, #your-ids a:focus, #your-ids a:hover, #your-ids a:active {
-  text-decoration: none; }
-
-/*
-Minititle
-
-The concept of "minititle" makes reference to a small heading, normally used for sectioning.
-
-It is an opinionated design that reduces the text size and then augments its visual weight by using a combination of a bold weight, an uppercase text-transform and a greater letter-spacing.
-
-Markup:
-<section>
-	<p class="minititle">This is the minititle of this section</p>
-	<p>A normal text. As we said before, the minititle gives visual weight while using a small font-size</p>
-</section>
-<section class="card" style="width:250px">
-	<h3 class="minititle">An h3 reduced!</h3>
-	<p>You can use your <em>minititle</em> on <code>heading</code> elements and maintain the semantics while reducing the font-size</p>
-</section>
-
-
-Styleguide Typography.minititle
-*/
 .minititle {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
@@ -1084,77 +718,35 @@ var {
   /* 1 */
   font-size: 16px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   /* 2 */
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: bottom;
   box-decoration-break: clone;
-  background-color: #dee0e4;
-  color: #1A1A19;
-  padding: 0 0.3375rem;
+  background-color: #15304d;
+  color: #FFFFFF;
+  padding: 0 0.375rem;
   border-radius: 2px; }
 
-/*
-Code, Keyboard, Samp, Var
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p>Either a sample of <code>computer code</code>, a <kbd>keyboard input</kbd>, a <var>variable</var> or a <samp>sample output from a computer program</samp>
-
-Styleguide Typography.code
-*/
-/*
-Paragraph Text
-
-Paragraph items wrapped on any element marked as `.text` will have its last `p` child set marginless.
-
-They also feature an extra spacing on headings.
-
-This used to be global behavior, but there are moments on which a standalone `p` needs to have its `margin-bottom` untouched.
-
-Markup:
-<section class="text">
-	<h2>First heading has no margin-top</h2>
-	<p>Hello there! i'm the first pararagph inside a card marked as text.</p>
-	<p>This means we can write several paragraphs and be sure that the last one will feature no margin-bottom</p>
-	<h3>But the rest of headings have!</h3>
-	<p>Otherwise, I will end up breaking the design by adding an unneeded space at the bottom!</p>
-</section>
-
-Styleguide Typography.paragraph
-*/
 .text-wrapper h1, .alert h1, .text-wrapper h2, .alert h2, .text-wrapper h3, .alert h3, .text-wrapper h4, .alert h4 {
-  margin-top: 2.7rem; }
+  margin-top: 3rem; }
 
 .text-wrapper section, .alert section,
-.text-wrapper article,
-.alert article {
-  margin-bottom: 2.7rem; }
+.text-wrapper article, .alert article {
+  margin-bottom: 3rem; }
 
 .text-wrapper h1:first-child, .alert h1:first-child,
-.text-wrapper h2:first-child,
-.alert h2:first-child,
-.text-wrapper h3:first-child,
-.alert h3:first-child,
-.text-wrapper h4:first-child,
-.alert h4:first-child {
+.text-wrapper h2:first-child, .alert h2:first-child,
+.text-wrapper h3:first-child, .alert h3:first-child,
+.text-wrapper h4:first-child, .alert h4:first-child {
   margin-top: 0; }
 
-.text-wrapper p:last-child, .alert p:last-child {
+.text-wrapper p:last-child, .alert p:last-child,
+.text-wrapper section:last-child, .alert section:last-child,
+.text-wrapper article:last-child, .alert article:last-child {
   margin-bottom: 0; }
 
-/*
-Abbreviation
-
-Normalizes styling (underline)
-
-Markup:
-<p>This is a clear example of a <abbr title="This Is An Abbreviation">TIAA</abbr></p>
-
-Styleguide Typography.abbr
-*/
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -1163,116 +755,50 @@ abbr[title] {
   text-decoration: underline dotted;
   /* 2 */ }
 
-/*
-Bold
-
-Applies bolding weight defined on `_config.scss` using `bold()` mixin.
-
-Markup:
-<p>An <b>emphasized</b> text and a <strong>strong</strong> one</p>
-
-Styleguide Typography.bold
-*/
 b,
 strong,
 .strong {
   font-weight: bold; }
 
-/*
-Definition
-
-Ensures monospaced fonts are used for computer-related text markup.
-
-Markup:
-<p><dfn>Definition</dfn> is a tag used for defining terms</p>
-
-Styleguide Typography.dfn
-*/
 dfn {
   font-style: italic; }
 
-/*
-Mark
-
-Uses color defined on the palette `text`, key `mark`.
-
-Markup:
-<p><mark>Really important</mark> and thus, marked text</p>
-
-Styleguide Typography.mark
-*/
 mark {
   background-color: #ac7030;
   color: #FFFFFF;
-  padding: 0 0.3375rem; }
+  padding: 0 0.375rem; }
 
-/*
-Small
-
-Applies `$h6-font-size` to small texts, applies a three-step reduction if inside a `<h1>`, `<h2>`, `<h3>` tag.
-
-The helper class `.small` can be used to fake the element.
-
-Markup:
-<p>Whenever I found a <small>not so important text,</small> i use the small tag</p>
-<h1>A big heading with <small>an small portion of text</small></h1>
-<h2>A second-level title <small>featuring a minor text</small></h2>
-<h3>Any h3 will also feature a <small>reduction on its smaller parts</small></h3>
-<p class="small">I'm a <code>.small</code> text!<p/>
-
-Styleguide Typography.small
-*/
 small,
 .small {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
-
-.small * {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem; }
+  line-height: 18px;
+  line-height: 1.125rem; }
 
 h1 small {
   font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 38px;
-  line-height: 2.3625rem; }
+  line-height: 36px;
+  line-height: 2.25rem; }
 
 h2 small {
   font-size: 21px;
   font-size: 1.333rem;
-  line-height: 27px;
-  line-height: 1.6875rem; }
+  line-height: 30px;
+  line-height: 1.875rem; }
 
 h3 small {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-/*
-Sub, Sup
-
-Normalizes font-size and prevents `sub` and `sup` elements from affecting the line height in all browsers.
-
-Markup:
-<p>When a <sub>sub</sub> or a <sup>sup</sup> text appears, citations are often the reason behind</p>
-
-Styleguide Typography.sub
-*/
 sub,
 sup {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -1282,6 +808,9 @@ sub {
 
 sup {
   top: -.5em; }
+
+q {
+  quotes: "«" "»" "“" "”"; }
 
 input,
 label,
@@ -1303,7 +832,7 @@ textarea {
   font-family: inherit; }
 
 label {
-  margin-right: 0.675rem; }
+  margin-right: 0.75rem; }
 
 input[type=checkbox].pseudo-checkbox {
   position: absolute !important;
@@ -1334,7 +863,7 @@ input[type=checkbox].pseudo-checkbox {
       display: inline-block;
       width: 16px;
       height: 16px;
-      margin: 0 0.675rem 0 0;
+      margin: 0 0.75rem 0 0;
       border: 1px solid #606d7c;
       background-color: #f8f9f9;
       cursor: pointer; }
@@ -1342,14 +871,17 @@ input[type=checkbox].pseudo-checkbox {
 fieldset {
   margin-right: 0;
   margin-left: 0;
-  border: 1px solid #dee0e4;
-  border-radius: 0px;
-  padding: 1.35rem; }
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 23px;
+  padding: 1.4375rem;
+  border-color: #dee0e4;
+  border-radius: 0px; }
   fieldset legend {
     font-size: 16px;
     font-size: 1rem;
-    line-height: 22px;
-    line-height: 1.35rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
@@ -1360,25 +892,25 @@ fieldset.fieldset--disabled {
   border: none;
   padding: 0; }
   fieldset.fieldset--disabled legend {
-    margin-bottom: 1.35rem;
+    margin-bottom: 1.5rem;
     font-size: 21px;
     font-size: 1.333rem;
-    line-height: 27px;
-    line-height: 1.6875rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
 
 .form-item {
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: baseline; }
   .form-item label {
     flex: 0 1 auto;
     font-size: 12px;
     font-size: 0.75019rem;
-    line-height: 16px;
-    line-height: 1.0125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
@@ -1412,8 +944,13 @@ fieldset.fieldset--disabled {
 
 .form-item--label-inside {
   border-radius: 0px;
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem; }
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
+  padding: 0.375rem 0.75rem; }
   .form-item--label-inside:hover, .form-item--label-inside:focus {
     border-color: #959699; }
   .form-item--label-inside input,
@@ -1423,8 +960,12 @@ fieldset.fieldset--disabled {
     padding: 0; }
 
 input {
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
   /* Make webkit render the search input like a normal text field */
   /* Turn off the recent search for webkit. It adds about 15px padding on the left */
   /* Fix IE7 display bug */
@@ -1454,7 +995,7 @@ input {
     width: 16px;
     height: 16px;
     vertical-align: middle;
-    margin-right: 0.675rem; }
+    margin-right: 0.75rem; }
   input[type=search] {
     -webkit-appearance: textfield;
     -webkit-box-sizing: content-box; }
@@ -1500,7 +1041,7 @@ input[type=radio].pseudo-radio {
     input[type=radio].pseudo-radio + label:before {
       content: "";
       display: inline-block;
-      margin: 0 0.675rem 0 0;
+      margin: 0 0.75rem 0 0;
       width: 16px;
       height: 16px;
       border: 1px solid #606d7c;
@@ -1510,8 +1051,13 @@ input[type=radio].pseudo-radio {
       cursor: pointer; }
 
 select {
-  border: 1px solid #dee0e4;
-  padding: 0 0.675rem;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
+  padding: 0 0.75rem;
   appearance: none;
   /* Move the label to the top */ }
   select:hover, select:focus {
@@ -1526,277 +1072,15 @@ textarea {
   /* Turn off scroll bars in IE unless needed */
   overflow: auto;
   width: 100%;
-  padding: 0.3375rem 0.675rem;
-  min-height: 2.7rem; }
-
-input[type=checkbox].pseudo-checkbox {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
-  input[type=checkbox].pseudo-checkbox:checked + label {
-    position: relative; }
-    input[type=checkbox].pseudo-checkbox:checked + label:after {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      position: absolute;
-      top: 50%;
-      left: 4px;
-      transform: translateY(-50%);
-      background-color: #606d7c; }
-  input[type=checkbox].pseudo-checkbox + label {
-    cursor: pointer;
-    display: flex;
-    align-items: center; }
-    input[type=checkbox].pseudo-checkbox + label:before {
-      content: "";
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin: 0 0.675rem 0 0;
-      border: 1px solid #606d7c;
-      background-color: #f8f9f9;
-      cursor: pointer; }
-
-fieldset {
-  margin-right: 0;
-  margin-left: 0;
-  border: 1px solid #dee0e4;
-  border-radius: 0px;
-  padding: 1.35rem; }
-  fieldset legend {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 22px;
-    line-height: 1.35rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-
-fieldset.fieldset--disabled {
-  margin-right: 0;
-  margin-left: 0;
-  border: none;
-  padding: 0; }
-  fieldset.fieldset--disabled legend {
-    margin-bottom: 1.35rem;
-    font-size: 21px;
-    font-size: 1.333rem;
-    line-height: 27px;
-    line-height: 1.6875rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-
-.form-item {
-  margin-bottom: 1.35rem;
-  display: flex;
-  align-items: baseline; }
-  .form-item label {
-    flex: 0 1 auto;
-    font-size: 12px;
-    font-size: 0.75019rem;
-    line-height: 16px;
-    line-height: 1.0125rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em; }
-  .form-item input[type="text"],
-  .form-item input[type="email"],
-  .form-item input[type="password"],
-  .form-item input[type="url"],
-  .form-item input[type="tel"],
-  .form-item input[type="search"] {
-    flex: 1 0 auto; }
-  .form-item input[type="checkbox"],
-  .form-item input[type="radio"] {
-    align-self: center; }
-  .form-item:last-child, .form-item:last-of-type {
-    margin-bottom: 0; }
-
-.form-item--col {
-  display: block; }
-  .form-item--col label,
-  .form-item--col input,
-  .form-item--col textarea {
-    display: block;
-    width: 100%; }
-  .form-item--col input[type="checkbox"],
-  .form-item--col input[type="radio"] {
-    width: auto; }
-
-.form-item--required label::after {
-  content: "*";
-  color: #ac3230; }
-
-.form-item--label-inside {
-  border-radius: 0px;
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem; }
-  .form-item--label-inside:hover, .form-item--label-inside:focus {
-    border-color: #959699; }
-  .form-item--label-inside input,
-  .form-item--label-inside textarea {
-    border: none;
-    border-radius: 0;
-    padding: 0; }
-
-input {
-  border: 1px solid #dee0e4;
-  padding: 0.3375rem 0.675rem;
-  /* Make webkit render the search input like a normal text field */
-  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  /* Fix IE7 display bug */
-  /*
-	File Input
-	
-	Uses the label for handling click and hides the actual input element.
-	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
-	
-	Markup:
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file">Upload your file</label>
-	</div>
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
-	</div>
-	
-	Styleguide Forms.file
-	*/ }
-  input:hover, input:focus {
-    border-color: #959699; }
-  input:focus {
-    outline: 0; }
-  input[type=checkbox], input[type=radio] {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 0.675rem; }
-  input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box; }
-  ::-webkit-search-decoration {
-    display: none; }
-  input[type="reset"], input[type="button"], input[type="submit"] {
-    overflow: visible; }
-  input[type=file] {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px); }
-
-input[type=radio].pseudo-radio {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
-  input[type=radio].pseudo-radio:checked + label {
-    position: relative; }
-    input[type=radio].pseudo-radio:checked + label:after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      top: 50%;
-      left: 4px;
-      width: 8px;
-      height: 8px;
-      transform: translateY(-50%);
-      background-color: #606d7c;
-      border-radius: 50%;
-      cursor: pointer; }
-  input[type=radio].pseudo-radio + label {
-    cursor: pointer;
-    display: flex;
-    align-items: center; }
-    input[type=radio].pseudo-radio + label:before {
-      content: "";
-      display: inline-block;
-      margin: 0 0.675rem 0 0;
-      width: 16px;
-      height: 16px;
-      border: 1px solid #606d7c;
-      background-color: #f8f9f9;
-      vertical-align: top;
-      border-radius: 50%;
-      cursor: pointer; }
-
-select {
-  border: 1px solid #dee0e4;
-  padding: 0 0.675rem;
-  appearance: none;
-  /* Move the label to the top */ }
-  select:hover, select:focus {
-    border-color: #959699; }
-  select[multiple] {
-    vertical-align: top; }
-
-textarea {
-  border: 1px solid #dee0e4;
-  /* Move the label to the top */
-  vertical-align: top;
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto;
-  width: 100%;
-  padding: 0.3375rem 0.675rem;
-  min-height: 2.7rem; }
+  padding: 0.375rem 0.75rem;
+  min-height: 3rem; }
 
 #main-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.35rem; }
+  padding: 1.5rem; }
 
-/*
-Grid
-
-Establishes a grid. Uses a float fallback for less capable browsers.
-
-By default, it establishes a 4-col grid. Modifier classes can change this.
-
-No row height is set: it depends on the content.
-
-.grid--2col        - Establishes a 2col grid
-.grid--3col        - Establishes a 3col grid
-.grid--5col        - Establishes a 5col grid
-.grid--6col        - Establishes a 6col grid
-.grid--7col        - Establishes a 7col grid
-.grid--8col        - Establishes a 8col grid
-.grid--9col        - Establishes a 9col grid
-.grid--10col       - Establishes a 10col grid
-.grid--11col       - Establishes a 11col grid
-.grid--12col       - Establishes a 12col grid
-
-Markup:
-<div class="grid {{ modifier_class }}">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-    <div class="grid-item bg-state-success" style="height:50px""></div>
-    <div class="grid-item bg-state-warning" style="height:50px""></div>
-    <div class="grid-item bg-state-error" style="height:50px""></div>
-    <div class="grid-item bg-blue-base" style="height:50px""></div>
-    <div class="grid-item bg-red-base" style="height:50px""></div>
-    <div class="grid-item bg-green-base" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid
-*/
 .grid {
   *zoom: 1; }
   .grid:before, .grid:after {
@@ -1806,90 +1090,47 @@ Styleguide Layout.grid
     clear: both; }
   .grid .grid-item {
     float: left;
-    margin-bottom: 1.35rem; }
+    margin-bottom: 1.5rem; }
 
 .grid--2col .grid-item {
   width: 50%;
-  width: calc( (100% / 2) -  ( ( 1.35rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
-  margin-right: 1.35rem; }
+  width: calc( (100% / 2) -  ( ( 1.5rem * ( 2 - 1 ) / 2 ) + 0.001rem ));
+  margin-right: 1.5rem; }
   .grid--2col .grid-item:nth-child(2n) {
     margin-right: 0; }
 
 .grid--3col .grid-item {
   width: 33.33333%;
-  width: calc( (100% / 3) -  ( ( 1.35rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
-  margin-right: 1.35rem; }
+  width: calc( (100% / 3) -  ( ( 1.5rem * ( 3 - 1 ) / 3 ) + 0.001rem ));
+  margin-right: 1.5rem; }
   .grid--3col .grid-item:nth-child(3n) {
     margin-right: 0; }
 
 .grid--4col .grid-item {
   width: 25%;
-  width: calc( (100% / 4) -  ( ( 1.35rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
-  margin-right: 1.35rem; }
+  width: calc( (100% / 4) -  ( ( 1.5rem * ( 4 - 1 ) / 4 ) + 0.001rem ));
+  margin-right: 1.5rem; }
   .grid--4col .grid-item:nth-child(4n) {
     margin-right: 0; }
 
 .grid--5col .grid-item {
   width: 20%;
-  width: calc( (100% / 5) -  ( ( 1.35rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
-  margin-right: 1.35rem; }
+  width: calc( (100% / 5) -  ( ( 1.5rem * ( 5 - 1 ) / 5 ) + 0.001rem ));
+  margin-right: 1.5rem; }
   .grid--5col .grid-item:nth-child(5n) {
     margin-right: 0; }
 
 .grid--6col .grid-item {
   width: 16.66667%;
-  width: calc( (100% / 6) -  ( ( 1.35rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
-  margin-right: 1.35rem; }
+  width: calc( (100% / 6) -  ( ( 1.5rem * ( 6 - 1 ) / 6 ) + 0.001rem ));
+  margin-right: 1.5rem; }
   .grid--6col .grid-item:nth-child(6n) {
-    margin-right: 0; }
-
-.grid--7col .grid-item {
-  width: 14.28571%;
-  width: calc( (100% / 7) -  ( ( 1.35rem * ( 7 - 1 ) / 7 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--7col .grid-item:nth-child(7n) {
-    margin-right: 0; }
-
-.grid--8col .grid-item {
-  width: 12.5%;
-  width: calc( (100% / 8) -  ( ( 1.35rem * ( 8 - 1 ) / 8 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--8col .grid-item:nth-child(8n) {
-    margin-right: 0; }
-
-.grid--9col .grid-item {
-  width: 11.11111%;
-  width: calc( (100% / 9) -  ( ( 1.35rem * ( 9 - 1 ) / 9 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--9col .grid-item:nth-child(9n) {
-    margin-right: 0; }
-
-.grid--10col .grid-item {
-  width: 10%;
-  width: calc( (100% / 10) -  ( ( 1.35rem * ( 10 - 1 ) / 10 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--10col .grid-item:nth-child(10n) {
-    margin-right: 0; }
-
-.grid--11col .grid-item {
-  width: 9.09091%;
-  width: calc( (100% / 11) -  ( ( 1.35rem * ( 11 - 1 ) / 11 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--11col .grid-item:nth-child(11n) {
-    margin-right: 0; }
-
-.grid--12col .grid-item {
-  width: 8.33333%;
-  width: calc( (100% / 12) -  ( ( 1.35rem * ( 12 - 1 ) / 12 ) + 0.001rem ));
-  margin-right: 1.35rem; }
-  .grid--12col .grid-item:nth-child(12n) {
     margin-right: 0; }
 
 @supports (display: grid) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1.35rem; }
+    grid-gap: 1.5rem; }
     .grid:before, .grid:after {
       display: none; }
     .grid .grid-item {
@@ -1905,43 +1146,8 @@ Styleguide Layout.grid
   .grid--5col {
     grid-template-columns: repeat(5, 1fr); }
   .grid--6col {
-    grid-template-columns: repeat(6, 1fr); }
-  .grid--7col {
-    grid-template-columns: repeat(7, 1fr); }
-  .grid--8col {
-    grid-template-columns: repeat(8, 1fr); }
-  .grid--9col {
-    grid-template-columns: repeat(9, 1fr); }
-  .grid--10col {
-    grid-template-columns: repeat(10, 1fr); }
-  .grid--11col {
-    grid-template-columns: repeat(11, 1fr); }
-  .grid--12col {
-    grid-template-columns: repeat(12, 1fr); } }
+    grid-template-columns: repeat(6, 1fr); } }
 
-/*
-Responsive Grid
-
-Inestad of setting a grid, you can use a set of helper classes to define the specific number of
-columns on every breakpoint.
-
-The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col`.
-
-We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that
-no `max-width` constraint is set and every breakpoint will be active until a larger breakpoint weighs in.
-
-Markup:
-<div class="grid grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.responsive
-*/
 @media (min-width: 640px) {
   .grid--small--2col {
     grid-template-columns: repeat(2, 1fr); } }
@@ -1961,26 +1167,6 @@ Styleguide Layout.grid.responsive
 @media (min-width: 640px) {
   .grid--small--6col {
     grid-template-columns: repeat(6, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 640px) {
-  .grid--small--11col {
-    grid-template-columns: repeat(11, 1fr); } }
 
 @media (min-width: 960px) {
   .grid--medium--2col {
@@ -2002,26 +1188,6 @@ Styleguide Layout.grid.responsive
   .grid--medium--6col {
     grid-template-columns: repeat(6, 1fr); } }
 
-@media (min-width: 960px) {
-  .grid--medium--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 960px) {
-  .grid--medium--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
 @media (min-width: 1120px) {
   .grid--large--2col {
     grid-template-columns: repeat(2, 1fr); } }
@@ -2042,67 +1208,9 @@ Styleguide Layout.grid.responsive
   .grid--large--6col {
     grid-template-columns: repeat(6, 1fr); } }
 
-@media (min-width: 1120px) {
-  .grid--large--7col {
-    grid-template-columns: repeat(7, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--8col {
-    grid-template-columns: repeat(8, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--9col {
-    grid-template-columns: repeat(9, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--10col {
-    grid-template-columns: repeat(10, 1fr); } }
-
-@media (min-width: 1120px) {
-  .grid--large--11col {
-    grid-template-columns: repeat(11, 1fr); } }
-
-/*
-Gutterless Grid
-
-Add `.grid--gutterless` to remove all gutters
-
-Markup:
-<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
-    <div class="grid-item bg-base-primary" style="height:50px"></div>
-    <div class="grid-item bg-base-secondary" style="height:50px""></div>
-    <div class="grid-item bg-base-separator" style="height:50px""></div>
-    <div class="grid-item bg-text-primary" style="height:50px""></div>
-    <div class="grid-item bg-text-mark" style="height:50px""></div>
-    <div class="grid-item bg-state-muted" style="height:50px""></div>
-</div>
-
-Styleguide Layout.grid.gutterless
-*/
 .grid--gutterless {
   grid-gap: 0; }
 
-/*
-Helpers
-
-Some helper classes for easier layout setup.
-
-Styleguide Layout.helpers
-*/
-/*
-Breakpoint togglers
-
-A set of classes that toggle visibility on certain viewport widths: `.small-visible`, `.medium-visible`, `.large-visible`
-
-Markup:
-<section>
-    <h3 class="small-visible">I'm visible</h3>
-    <h3 class="medium-visible">I'm visible</h3>
-    <h3 class="large-visible">I'm visible</h3>
-</section>
-
-Styleguide Layout.helpers.breakpoint-toggle
-*/
 .small-visible {
   display: none; }
   @media (min-width: 640px) {
@@ -2121,108 +1229,38 @@ Styleguide Layout.helpers.breakpoint-toggle
     .large-visible {
       display: inherit; } }
 
-/*
-Navigation menus
+.nav a:after, .nav a:link:after, .nav a:visited:after, .nav a:active:after {
+  display: none; }
 
-Either `<nav>` HTML elements or enabled via the css class `.nav`.
+.nav a:focus:after, .nav a:hover:after {
+  display: none; }
 
-We don't assume a menu-style, horizontal navigation as the default. This is done by using the `.menu` component.
-
-Instead, we only style the text and delete the bullets. The nav items' style can be controlled on `_config.scss` via a set of parameters on the Navigation section
-
-It's supposed to hold links (try "section"), but it can also have empty elements.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-
-Markup:
-<section>
-  <nav class="{{ modifier_class}} kill-link-decoration">
-    <ul>
-      <li>Home</li>
-      <li><a href="#">Section</a></li>
-      <li>Works</li>
-      <li>About us</li>
-      <li>Contact</li>
-      <li>Exit</li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Base.nav
-*/
-nav ul,
 .nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none; }
-  nav ul li,
   .nav ul li {
-    margin: 0 1.35rem 0 0;
-    font-weight: bold;
+    margin: 0 1.5rem 0 0;
+    font-weight: normal;
     text-transform: uppercase;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 22px;
-    line-height: 1.35rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.05em; }
 
-/*
-Menu
-
-An horizontal menu is a component based on an extended `<nav>` or `.nav`.
-
-Unlike the `nav`, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.
-
-It is expected that all items on a menu are linked. Empty links can be faked by adding a `<span>` item and combined with the `.disabled` class in order to indicate a deactivated link
-
-Submenus are handled up to the 3rd level. If you need more, you might want to rethink your menu.
-
-Alignment of items can be controlled via helper classes. Defaults to "left"
-
-.center        - Aligns the nav to the center (margin on both sides of items)
-.right         - Aligns the nav to the right (margin on the right)
-
-Markup:
-<section>
-  <nav class="menu {{ modifier_class }}" style="margin-bottom: 200px">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li>
-        <a href="#">Section</a>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Section</a></li>
-            <li>
-              <a href="#">Works</a>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Section</a></li>
-                  <li><a href="#">Works</a></li>
-                  <li><a href="#">About us</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About us</a></li>
-          </ul>
-      </li>
-      <li><a href="#">Works</a></li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.menus
-*/
 .menu {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
   .menu li {
     list-style-type: none;
     display: inline-block; }
-  .menu a, .menu a:link, .menu a:visited, .menu a:focus, .menu a:hover, .menu a:active {
-    text-decoration: none; }
+  .menu a:after, .menu a:link:after, .menu a:visited:after, .menu a:active:after {
+    display: none; }
+  .menu a:focus:after, .menu a:hover:after {
+    display: none; }
   .menu ul > li {
     margin: 0;
     position: relative;
@@ -2230,21 +1268,25 @@ Styleguide Components.menus
     .menu ul > li > a {
       text-align: left;
       display: block;
-      padding: 0.675rem;
+      padding: 0.5rem 0.75rem;
       white-space: nowrap; }
+      .menu ul > li > a {
+        text-decoration: none; }
+        .menu ul > li > a:hover, .menu ul > li > a:focus {
+          text-decoration: none; }
       .menu ul > li > a, .menu ul > li > a:link {
         color: #384048; }
       .menu ul > li > a:visited {
         color: #384048; }
       .menu ul > li > a:focus, .menu ul > li > a:hover {
-        color: #FFFFFF; }
+        color: #1A1A19; }
       .menu ul > li > a:active {
         color: #384048; }
     .menu ul > li:hover > a, .menu ul > li:focus > a {
-      color: #FFFFFF;
-      background-color: #9b642b; }
+      color: #1A1A19;
+      background-color: #bfc4ca; }
     .menu ul > li > span {
-      padding: 0.675rem; }
+      padding: 0.5rem 0.75rem; }
     .menu ul > li > ul {
       display: none;
       position: absolute;
@@ -2257,27 +1299,32 @@ Styleguide Components.menus
         position: relative; }
         .menu ul > li > ul > li > a {
           display: block;
-          padding: 0.3375rem 0.675rem;
+          padding: 0.5rem 0.75rem/2 0.5rem 0.75rem;
           white-space: nowrap;
-          background-color: #af7131;
+          background-color: #cdd1d6;
           font-size: 13px;
           font-size: 0.8rem;
-          line-height: 22px;
-          line-height: 1.35rem; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
-            color: #FFFFFF;
-            text-decoration: underline; }
-          .menu ul > li > ul > li > a:visited {
-            color: #FFFFFF; }
-          .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
-            color: #FFFFFF; }
-          .menu ul > li > ul > li > a:active {
-            color: #FFFFFF; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link, .menu ul > li > ul > li > a:visited, .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:active {
+          line-height: 18px;
+          line-height: 1.125rem; }
+          .menu ul > li > ul > li > a {
             text-decoration: none; }
+            .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
+              text-decoration: none; }
+          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
+            color: #1A1A19; }
+          .menu ul > li > ul > li > a:visited {
+            color: #1A1A19; }
+          .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
+            color: #1A1A19; }
+          .menu ul > li > ul > li > a:active {
+            color: #1A1A19; }
+          .menu ul > li > ul > li > a:after, .menu ul > li > ul > li > a:link:after, .menu ul > li > ul > li > a:visited:after, .menu ul > li > ul > li > a:active:after {
+            display: none; }
+          .menu ul > li > ul > li > a:focus:after, .menu ul > li > ul > li > a:hover:after {
+            display: none; }
           .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
-            color: #FFFFFF;
-            background-color: #68431d; }
+            background-color: #b5bac0;
+            color: #1A1A19; }
     .menu ul > li > ul > li > ul {
       display: none;
       position: absolute;
@@ -2286,25 +1333,30 @@ Styleguide Components.menus
       min-width: 100%;
       z-index: 3; }
       .menu ul > li > ul > li > ul li a {
-        background-color: #c37e36;
+        background-color: #dbdee1;
         font-size: 11px;
         font-size: 0.7rem;
-        line-height: 16px;
-        line-height: 1.0125rem; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
-          color: #FFFFFF;
-          text-decoration: underline; }
-        .menu ul > li > ul > li > ul li a:visited {
-          color: #FFFFFF; }
-        .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
-          color: #FFFFFF; }
-        .menu ul > li > ul > li > ul li a:active {
-          color: #FFFFFF; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link, .menu ul > li > ul > li > ul li a:visited, .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:active {
+        line-height: 24px;
+        line-height: 1.5rem; }
+        .menu ul > li > ul > li > ul li a {
           text-decoration: none; }
+          .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
+            text-decoration: none; }
+        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
+          color: 5%; }
+        .menu ul > li > ul > li > ul li a:visited {
+          color: 5%; }
+        .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
+          color: 5%; }
+        .menu ul > li > ul > li > ul li a:active {
+          color: 5%; }
+        .menu ul > li > ul > li > ul li a:after, .menu ul > li > ul > li > ul li a:link:after, .menu ul > li > ul > li > ul li a:visited:after, .menu ul > li > ul > li > ul li a:active:after {
+          display: none; }
+        .menu ul > li > ul > li > ul li a:focus:after, .menu ul > li > ul > li > ul li a:hover:after {
+          display: none; }
         .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
-          color: #FFFFFF;
-          background-color: #4e3216; }
+          background-color: #cdd1d6;
+          color: #1A1A19; }
     .menu ul > li > ul > li:hover > ul {
       display: block; }
     .menu ul > li:hover > ul {
@@ -2312,92 +1364,172 @@ Styleguide Components.menus
       .menu ul > li:hover > ul > li {
         display: block; }
 
-/*
-TOC (Table of contents)
-
-A toc or table of contents is a vertical menu based off a `<nav>` item.
-
-The first level can be configured on `_config.scss`.
-
-This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
-
-It is common the need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
-
-Markup:
-<section>
-  <nav class="toc kill-link">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Section</a></li>
-      <li>
-        <a href="#">Works</a>
-        <ul>
-          <li>
-            <a href="#">Home</a></li>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Section</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Section</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">About us</a></li>
-          <li><span>Contact</span></li>
-          <li><span class="disabled">Exit</span></li>
-        </ul>
-      </li>
-      <li><a href="#">About us</a></li>
-      <li><span>Contact</span></li>
-      <li><span class="disabled">Exit</span></li>
-    </ul>
-  </nav>
-</section>
-
-Styleguide Components.toc
-*/
-.toc ul li {
+.toc ul li,
+.toc ol li {
   margin: 0;
   font-weight: bold;
   letter-spacing: initial;
   text-transform: initial;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.35rem; }
-  .toc ul li ul {
-    margin: 0.3375rem 0 0.675rem 1.35rem; }
-    .toc ul li ul li {
+  line-height: 24px;
+  line-height: 1.5rem; }
+  .toc ul li ul,
+  .toc ul li ol,
+  .toc ol li ul,
+  .toc ol li ol {
+    margin: 0.375rem 0 0.75rem 1.5rem; }
+    .toc ul li ul li,
+    .toc ul li ol li,
+    .toc ol li ul li,
+    .toc ol li ol li {
       font-weight: normal;
       font-size: 15px;
       font-size: 0.95rem;
-      line-height: 22px;
-      line-height: 1.35rem; }
-    .toc ul li ul ul li {
+      line-height: 24px;
+      line-height: 1.5rem; }
+    .toc ul li ul ul li,
+    .toc ul li ul ol li,
+    .toc ul li ol ul li,
+    .toc ul li ol ol li,
+    .toc ol li ul ul li,
+    .toc ol li ul ol li,
+    .toc ol li ol ul li,
+    .toc ol li ol ol li {
       font-size: 11px;
       font-size: 0.7rem;
-      line-height: 16px;
-      line-height: 1.0125rem; }
+      line-height: 18px;
+      line-height: 1.125rem; }
+
+.breadcrumb {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+  .breadcrumb ul,
+  .breadcrumb ol {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; }
+    .breadcrumb ul li,
+    .breadcrumb ol li {
+      list-style-type: none;
+      display: inline-block; }
+  .breadcrumb a:after, .breadcrumb a:link:after, .breadcrumb a:visited:after, .breadcrumb a:active:after {
+    display: none; }
+  .breadcrumb a:focus:after, .breadcrumb a:hover:after {
+    display: none; }
+  .breadcrumb li {
+    margin-bottom: 0; }
+    .breadcrumb li:after {
+      content: "›";
+      padding: 0 0.25rem; }
+    .breadcrumb li:last-child:after {
+      content: "";
+      display: none; }
 
 .tag, .selectr-tag {
   display: inline-block;
+  vertical-align: bottom;
+  padding: 0.1875rem 0.75rem;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
-  font-weight: bold;
-  letter-spacing: 0;
-  padding: 0 0.45rem;
-  background-color: #dee0e4;
+  line-height: 18px;
+  line-height: 1.125rem;
+  background-color: #cfd3d7;
   color: #1A1A19;
   border-radius: 0px;
-  margin-right: 0.45rem;
+  margin-right: 0.5rem;
   font-weight: normal; }
+  .tag.tag--muted, .tag--muted.selectr-tag {
+    background-color: #384048;
+    color: #FFFFFF; }
+    .tag.tag--muted a, .tag--muted.selectr-tag a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .tag.tag--muted a:after, .tag--muted.selectr-tag a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .tag.tag--muted a:hover, .tag--muted.selectr-tag a:hover, .tag.tag--muted a:focus, .tag--muted.selectr-tag a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .tag.tag--muted a:hover:after, .tag--muted.selectr-tag a:hover:after, .tag.tag--muted a:focus:after, .tag--muted.selectr-tag a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
+    .tag.tag--muted a, .tag--muted.selectr-tag a, .tag.tag--muted a:link, .tag--muted.selectr-tag a:link {
+      color: #fff; }
+    .tag.tag--muted a:visited, .tag--muted.selectr-tag a:visited {
+      color: #fff; }
+    .tag.tag--muted a:focus, .tag--muted.selectr-tag a:focus, .tag.tag--muted a:hover, .tag--muted.selectr-tag a:hover {
+      color: #b3c9e0; }
+    .tag.tag--muted a:active, .tag--muted.selectr-tag a:active {
+      color: #b3c9e0; }
   .tag.tag--success, .tag--success.selectr-tag {
     background-color: #63c093;
     color: #FFFFFF; }
+    .tag.tag--success a, .tag--success.selectr-tag a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .tag.tag--success a:after, .tag--success.selectr-tag a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .tag.tag--success a:hover, .tag--success.selectr-tag a:hover, .tag.tag--success a:focus, .tag--success.selectr-tag a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .tag.tag--success a:hover:after, .tag--success.selectr-tag a:hover:after, .tag.tag--success a:focus:after, .tag--success.selectr-tag a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     .tag.tag--success a, .tag--success.selectr-tag a, .tag.tag--success a:link, .tag--success.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     .tag.tag--success a:visited, .tag--success.selectr-tag a:visited {
       color: #fff; }
     .tag.tag--success a:focus, .tag--success.selectr-tag a:focus, .tag.tag--success a:hover, .tag--success.selectr-tag a:hover {
@@ -2407,9 +1539,44 @@ Styleguide Components.toc
   .tag.tag--warning, .tag--warning.selectr-tag {
     background-color: #aaac30;
     color: #FFFFFF; }
+    .tag.tag--warning a, .tag--warning.selectr-tag a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .tag.tag--warning a:after, .tag--warning.selectr-tag a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover, .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .tag.tag--warning a:hover:after, .tag--warning.selectr-tag a:hover:after, .tag.tag--warning a:focus:after, .tag--warning.selectr-tag a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     .tag.tag--warning a, .tag--warning.selectr-tag a, .tag.tag--warning a:link, .tag--warning.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     .tag.tag--warning a:visited, .tag--warning.selectr-tag a:visited {
       color: #fff; }
     .tag.tag--warning a:focus, .tag--warning.selectr-tag a:focus, .tag.tag--warning a:hover, .tag--warning.selectr-tag a:hover {
@@ -2419,68 +1586,246 @@ Styleguide Components.toc
   .tag.tag--error, .tag--error.selectr-tag {
     background-color: #ac3230;
     color: #FFFFFF; }
+    .tag.tag--error a, .tag--error.selectr-tag a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .tag.tag--error a:after, .tag--error.selectr-tag a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .tag.tag--error a:hover, .tag--error.selectr-tag a:hover, .tag.tag--error a:focus, .tag--error.selectr-tag a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .tag.tag--error a:hover:after, .tag--error.selectr-tag a:hover:after, .tag.tag--error a:focus:after, .tag--error.selectr-tag a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     .tag.tag--error a, .tag--error.selectr-tag a, .tag.tag--error a:link, .tag--error.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     .tag.tag--error a:visited, .tag--error.selectr-tag a:visited {
       color: #fff; }
     .tag.tag--error a:focus, .tag--error.selectr-tag a:focus, .tag.tag--error a:hover, .tag--error.selectr-tag a:hover {
       color: #b3c9e0; }
     .tag.tag--error a:active, .tag--error.selectr-tag a:active {
       color: #b3c9e0; }
-  .tag.tag--primary, .tag--primary.selectr-tag {
-    background-color: #2b619a;
+  .tag.tag--caca, .tag--caca.selectr-tag {
+    background-color: limegreen;
     color: #FFFFFF; }
-    .tag.tag--primary a, .tag--primary.selectr-tag a, .tag.tag--primary a:link, .tag--primary.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--primary a:visited, .tag--primary.selectr-tag a:visited {
+    .tag.tag--caca a, .tag--caca.selectr-tag a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .tag.tag--caca a:after, .tag--caca.selectr-tag a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .tag.tag--caca a:hover, .tag--caca.selectr-tag a:hover, .tag.tag--caca a:focus, .tag--caca.selectr-tag a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .tag.tag--caca a:hover:after, .tag--caca.selectr-tag a:hover:after, .tag.tag--caca a:focus:after, .tag--caca.selectr-tag a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
+    .tag.tag--caca a, .tag--caca.selectr-tag a, .tag.tag--caca a:link, .tag--caca.selectr-tag a:link {
       color: #fff; }
-    .tag.tag--primary a:focus, .tag--primary.selectr-tag a:focus, .tag.tag--primary a:hover, .tag--primary.selectr-tag a:hover {
-      color: #b3c9e0; }
-    .tag.tag--primary a:active, .tag--primary.selectr-tag a:active {
-      color: #b3c9e0; }
-  .tag.tag--secondary, .tag--secondary.selectr-tag {
-    background-color: #9b642b;
-    color: #FFFFFF; }
-    .tag.tag--secondary a, .tag--secondary.selectr-tag a, .tag.tag--secondary a:link, .tag--secondary.selectr-tag a:link {
-      color: #fff;
-      text-decoration: underline; }
-    .tag.tag--secondary a:visited, .tag--secondary.selectr-tag a:visited {
+    .tag.tag--caca a:visited, .tag--caca.selectr-tag a:visited {
       color: #fff; }
-    .tag.tag--secondary a:focus, .tag--secondary.selectr-tag a:focus, .tag.tag--secondary a:hover, .tag--secondary.selectr-tag a:hover {
+    .tag.tag--caca a:focus, .tag--caca.selectr-tag a:focus, .tag.tag--caca a:hover, .tag--caca.selectr-tag a:hover {
       color: #b3c9e0; }
-    .tag.tag--secondary a:active, .tag--secondary.selectr-tag a:active {
+    .tag.tag--caca a:active, .tag--caca.selectr-tag a:active {
       color: #b3c9e0; }
   .right .tag, .right .selectr-tag {
     margin-right: 0;
-    margin-left: 0.45rem; }
+    margin-left: 0.5rem; }
   .center .tag, .center .selectr-tag {
-    margin-right: 0.225rem;
-    margin-left: 0.225rem; }
+    margin-right: 0.25rem;
+    margin-left: 0.25rem; }
 
 a.tag, a.selectr-tag {
+  padding: 0.1875rem 0.75rem;
   cursor: pointer; }
-  a.tag, a.selectr-tag, a.tag:link, a.selectr-tag:link, a.tag:visited, a.selectr-tag:visited, a.tag:focus, a.selectr-tag:focus, a.tag:hover, a.selectr-tag:hover, a.tag:active, a.selectr-tag:active {
-    text-decoration: none; }
+  a.tag:after, a.selectr-tag:after, a.tag:link:after, a.selectr-tag:link:after, a.tag:visited:after, a.selectr-tag:visited:after, a.tag:active:after, a.selectr-tag:active:after {
+    display: none; }
+  a.tag:focus:after, a.selectr-tag:focus:after, a.tag:hover:after, a.selectr-tag:hover:after {
+    display: none; }
   a.tag:hover, a.selectr-tag:hover, a.tag:focus, a.selectr-tag:focus {
-    background-color: #959699;
+    background-color: #8b8d90;
     color: #FFFFFF; }
+    a.tag:hover a, a.selectr-tag:hover a, a.tag:focus a, a.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag:hover a:after, a.selectr-tag:hover a:after, a.tag:focus a:after, a.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag:hover a:hover, a.selectr-tag:hover a:hover, a.tag:hover a:focus, a.selectr-tag:hover a:focus, a.tag:focus a:hover, a.selectr-tag:focus a:hover, a.tag:focus a:focus, a.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag:hover a:hover:after, a.selectr-tag:hover a:hover:after, a.tag:hover a:focus:after, a.selectr-tag:hover a:focus:after, a.tag:focus a:hover:after, a.selectr-tag:focus a:hover:after, a.tag:focus a:focus:after, a.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     a.tag:hover a, a.selectr-tag:hover a, a.tag:hover a:link, a.selectr-tag:hover a:link, a.tag:focus a, a.selectr-tag:focus a, a.tag:focus a:link, a.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     a.tag:hover a:visited, a.selectr-tag:hover a:visited, a.tag:focus a:visited, a.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag:hover a:focus, a.selectr-tag:hover a:focus, a.tag:hover a:hover, a.selectr-tag:hover a:hover, a.tag:focus a:focus, a.selectr-tag:focus a:focus, a.tag:focus a:hover, a.selectr-tag:focus a:hover {
       color: #b3c9e0; }
     a.tag:hover a:active, a.selectr-tag:hover a:active, a.tag:focus a:active, a.selectr-tag:focus a:active {
       color: #b3c9e0; }
+  a.tag.tag--muted:hover, a.tag--muted.selectr-tag:hover, a.tag.tag--muted:focus, a.tag--muted.selectr-tag:focus {
+    background-color: #262b30;
+    color: #FFFFFF; }
+    a.tag.tag--muted:hover a, a.tag--muted.selectr-tag:hover a, a.tag.tag--muted:focus a, a.tag--muted.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag.tag--muted:hover a:after, a.tag--muted.selectr-tag:hover a:after, a.tag.tag--muted:focus a:after, a.tag--muted.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag.tag--muted:hover a:hover, a.tag--muted.selectr-tag:hover a:hover, a.tag.tag--muted:hover a:focus, a.tag--muted.selectr-tag:hover a:focus, a.tag.tag--muted:focus a:hover, a.tag--muted.selectr-tag:focus a:hover, a.tag.tag--muted:focus a:focus, a.tag--muted.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag.tag--muted:hover a:hover:after, a.tag--muted.selectr-tag:hover a:hover:after, a.tag.tag--muted:hover a:focus:after, a.tag--muted.selectr-tag:hover a:focus:after, a.tag.tag--muted:focus a:hover:after, a.tag--muted.selectr-tag:focus a:hover:after, a.tag.tag--muted:focus a:focus:after, a.tag--muted.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
+    a.tag.tag--muted:hover a, a.tag--muted.selectr-tag:hover a, a.tag.tag--muted:hover a:link, a.tag--muted.selectr-tag:hover a:link, a.tag.tag--muted:focus a, a.tag--muted.selectr-tag:focus a, a.tag.tag--muted:focus a:link, a.tag--muted.selectr-tag:focus a:link {
+      color: #fff; }
+    a.tag.tag--muted:hover a:visited, a.tag--muted.selectr-tag:hover a:visited, a.tag.tag--muted:focus a:visited, a.tag--muted.selectr-tag:focus a:visited {
+      color: #fff; }
+    a.tag.tag--muted:hover a:focus, a.tag--muted.selectr-tag:hover a:focus, a.tag.tag--muted:hover a:hover, a.tag--muted.selectr-tag:hover a:hover, a.tag.tag--muted:focus a:focus, a.tag--muted.selectr-tag:focus a:focus, a.tag.tag--muted:focus a:hover, a.tag--muted.selectr-tag:focus a:hover {
+      color: #b3c9e0; }
+    a.tag.tag--muted:hover a:active, a.tag--muted.selectr-tag:hover a:active, a.tag.tag--muted:focus a:active, a.tag--muted.selectr-tag:focus a:active {
+      color: #b3c9e0; }
   a.tag.tag--success:hover, a.tag--success.selectr-tag:hover, a.tag.tag--success:focus, a.tag--success.selectr-tag:focus {
     background-color: #428162;
     color: #FFFFFF; }
+    a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag.tag--success:hover a:after, a.tag--success.selectr-tag:hover a:after, a.tag.tag--success:focus a:after, a.tag--success.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag.tag--success:hover a:hover:after, a.tag--success.selectr-tag:hover a:hover:after, a.tag.tag--success:hover a:focus:after, a.tag--success.selectr-tag:hover a:focus:after, a.tag.tag--success:focus a:hover:after, a.tag--success.selectr-tag:focus a:hover:after, a.tag.tag--success:focus a:focus:after, a.tag--success.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     a.tag.tag--success:hover a, a.tag--success.selectr-tag:hover a, a.tag.tag--success:hover a:link, a.tag--success.selectr-tag:hover a:link, a.tag.tag--success:focus a, a.tag--success.selectr-tag:focus a, a.tag.tag--success:focus a:link, a.tag--success.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     a.tag.tag--success:hover a:visited, a.tag--success.selectr-tag:hover a:visited, a.tag.tag--success:focus a:visited, a.tag--success.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--success:hover a:focus, a.tag--success.selectr-tag:hover a:focus, a.tag.tag--success:hover a:hover, a.tag--success.selectr-tag:hover a:hover, a.tag.tag--success:focus a:focus, a.tag--success.selectr-tag:focus a:focus, a.tag.tag--success:focus a:hover, a.tag--success.selectr-tag:focus a:hover {
@@ -2490,9 +1835,44 @@ a.tag, a.selectr-tag {
   a.tag.tag--warning:hover, a.tag--warning.selectr-tag:hover, a.tag.tag--warning:focus, a.tag--warning.selectr-tag:focus {
     background-color: #727320;
     color: #FFFFFF; }
+    a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag.tag--warning:hover a:after, a.tag--warning.selectr-tag:hover a:after, a.tag.tag--warning:focus a:after, a.tag--warning.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag.tag--warning:hover a:hover:after, a.tag--warning.selectr-tag:hover a:hover:after, a.tag.tag--warning:hover a:focus:after, a.tag--warning.selectr-tag:hover a:focus:after, a.tag.tag--warning:focus a:hover:after, a.tag--warning.selectr-tag:focus a:hover:after, a.tag.tag--warning:focus a:focus:after, a.tag--warning.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     a.tag.tag--warning:hover a, a.tag--warning.selectr-tag:hover a, a.tag.tag--warning:hover a:link, a.tag--warning.selectr-tag:hover a:link, a.tag.tag--warning:focus a, a.tag--warning.selectr-tag:focus a, a.tag.tag--warning:focus a:link, a.tag--warning.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     a.tag.tag--warning:hover a:visited, a.tag--warning.selectr-tag:hover a:visited, a.tag.tag--warning:focus a:visited, a.tag--warning.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--warning:hover a:focus, a.tag--warning.selectr-tag:hover a:focus, a.tag.tag--warning:hover a:hover, a.tag--warning.selectr-tag:hover a:hover, a.tag.tag--warning:focus a:focus, a.tag--warning.selectr-tag:focus a:focus, a.tag.tag--warning:focus a:hover, a.tag--warning.selectr-tag:focus a:hover {
@@ -2502,67 +1882,144 @@ a.tag, a.selectr-tag {
   a.tag.tag--error:hover, a.tag--error.selectr-tag:hover, a.tag.tag--error:focus, a.tag--error.selectr-tag:focus {
     background-color: #732220;
     color: #FFFFFF; }
+    a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag.tag--error:hover a:after, a.tag--error.selectr-tag:hover a:after, a.tag.tag--error:focus a:after, a.tag--error.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag.tag--error:hover a:hover:after, a.tag--error.selectr-tag:hover a:hover:after, a.tag.tag--error:hover a:focus:after, a.tag--error.selectr-tag:hover a:focus:after, a.tag.tag--error:focus a:hover:after, a.tag--error.selectr-tag:focus a:hover:after, a.tag.tag--error:focus a:focus:after, a.tag--error.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     a.tag.tag--error:hover a, a.tag--error.selectr-tag:hover a, a.tag.tag--error:hover a:link, a.tag--error.selectr-tag:hover a:link, a.tag.tag--error:focus a, a.tag--error.selectr-tag:focus a, a.tag.tag--error:focus a:link, a.tag--error.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     a.tag.tag--error:hover a:visited, a.tag--error.selectr-tag:hover a:visited, a.tag.tag--error:focus a:visited, a.tag--error.selectr-tag:focus a:visited {
       color: #fff; }
     a.tag.tag--error:hover a:focus, a.tag--error.selectr-tag:hover a:focus, a.tag.tag--error:hover a:hover, a.tag--error.selectr-tag:hover a:hover, a.tag.tag--error:focus a:focus, a.tag--error.selectr-tag:focus a:focus, a.tag.tag--error:focus a:hover, a.tag--error.selectr-tag:focus a:hover {
       color: #b3c9e0; }
     a.tag.tag--error:hover a:active, a.tag--error.selectr-tag:hover a:active, a.tag.tag--error:focus a:active, a.tag--error.selectr-tag:focus a:active {
       color: #b3c9e0; }
-  a.tag.tag--primary:hover, a.tag--primary.selectr-tag:hover, a.tag.tag--primary:focus, a.tag--primary.selectr-tag:focus {
-    background-color: #1d4167;
+  a.tag.tag--caca:hover, a.tag--caca.selectr-tag:hover, a.tag.tag--caca:focus, a.tag--caca.selectr-tag:focus {
+    background-color: #228922;
     color: #FFFFFF; }
-    a.tag.tag--primary:hover a, a.tag--primary.selectr-tag:hover a, a.tag.tag--primary:hover a:link, a.tag--primary.selectr-tag:hover a:link, a.tag.tag--primary:focus a, a.tag--primary.selectr-tag:focus a, a.tag.tag--primary:focus a:link, a.tag--primary.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--primary:hover a:visited, a.tag--primary.selectr-tag:hover a:visited, a.tag.tag--primary:focus a:visited, a.tag--primary.selectr-tag:focus a:visited {
+    a.tag.tag--caca:hover a, a.tag--caca.selectr-tag:hover a, a.tag.tag--caca:focus a, a.tag--caca.selectr-tag:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      a.tag.tag--caca:hover a:after, a.tag--caca.selectr-tag:hover a:after, a.tag.tag--caca:focus a:after, a.tag--caca.selectr-tag:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      a.tag.tag--caca:hover a:hover, a.tag--caca.selectr-tag:hover a:hover, a.tag.tag--caca:hover a:focus, a.tag--caca.selectr-tag:hover a:focus, a.tag.tag--caca:focus a:hover, a.tag--caca.selectr-tag:focus a:hover, a.tag.tag--caca:focus a:focus, a.tag--caca.selectr-tag:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        a.tag.tag--caca:hover a:hover:after, a.tag--caca.selectr-tag:hover a:hover:after, a.tag.tag--caca:hover a:focus:after, a.tag--caca.selectr-tag:hover a:focus:after, a.tag.tag--caca:focus a:hover:after, a.tag--caca.selectr-tag:focus a:hover:after, a.tag.tag--caca:focus a:focus:after, a.tag--caca.selectr-tag:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
+    a.tag.tag--caca:hover a, a.tag--caca.selectr-tag:hover a, a.tag.tag--caca:hover a:link, a.tag--caca.selectr-tag:hover a:link, a.tag.tag--caca:focus a, a.tag--caca.selectr-tag:focus a, a.tag.tag--caca:focus a:link, a.tag--caca.selectr-tag:focus a:link {
       color: #fff; }
-    a.tag.tag--primary:hover a:focus, a.tag--primary.selectr-tag:hover a:focus, a.tag.tag--primary:hover a:hover, a.tag--primary.selectr-tag:hover a:hover, a.tag.tag--primary:focus a:focus, a.tag--primary.selectr-tag:focus a:focus, a.tag.tag--primary:focus a:hover, a.tag--primary.selectr-tag:focus a:hover {
-      color: #b3c9e0; }
-    a.tag.tag--primary:hover a:active, a.tag--primary.selectr-tag:hover a:active, a.tag.tag--primary:focus a:active, a.tag--primary.selectr-tag:focus a:active {
-      color: #b3c9e0; }
-  a.tag.tag--secondary:hover, a.tag--secondary.selectr-tag:hover, a.tag.tag--secondary:focus, a.tag--secondary.selectr-tag:focus {
-    background-color: #68431d;
-    color: #FFFFFF; }
-    a.tag.tag--secondary:hover a, a.tag--secondary.selectr-tag:hover a, a.tag.tag--secondary:hover a:link, a.tag--secondary.selectr-tag:hover a:link, a.tag.tag--secondary:focus a, a.tag--secondary.selectr-tag:focus a, a.tag.tag--secondary:focus a:link, a.tag--secondary.selectr-tag:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
-    a.tag.tag--secondary:hover a:visited, a.tag--secondary.selectr-tag:hover a:visited, a.tag.tag--secondary:focus a:visited, a.tag--secondary.selectr-tag:focus a:visited {
+    a.tag.tag--caca:hover a:visited, a.tag--caca.selectr-tag:hover a:visited, a.tag.tag--caca:focus a:visited, a.tag--caca.selectr-tag:focus a:visited {
       color: #fff; }
-    a.tag.tag--secondary:hover a:focus, a.tag--secondary.selectr-tag:hover a:focus, a.tag.tag--secondary:hover a:hover, a.tag--secondary.selectr-tag:hover a:hover, a.tag.tag--secondary:focus a:focus, a.tag--secondary.selectr-tag:focus a:focus, a.tag.tag--secondary:focus a:hover, a.tag--secondary.selectr-tag:focus a:hover {
+    a.tag.tag--caca:hover a:focus, a.tag--caca.selectr-tag:hover a:focus, a.tag.tag--caca:hover a:hover, a.tag--caca.selectr-tag:hover a:hover, a.tag.tag--caca:focus a:focus, a.tag--caca.selectr-tag:focus a:focus, a.tag.tag--caca:focus a:hover, a.tag--caca.selectr-tag:focus a:hover {
       color: #b3c9e0; }
-    a.tag.tag--secondary:hover a:active, a.tag--secondary.selectr-tag:hover a:active, a.tag.tag--secondary:focus a:active, a.tag--secondary.selectr-tag:focus a:active {
+    a.tag.tag--caca:hover a:active, a.tag--caca.selectr-tag:hover a:active, a.tag.tag--caca:focus a:active, a.tag--caca.selectr-tag:focus a:active {
       color: #b3c9e0; }
 
 .card {
   border: 1px solid #dee0e4;
   background: #fff;
   border-radius: 0px;
-  padding: 2.7rem;
+  padding: 3rem;
   box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
   .card .card {
-    padding: 0.675rem; }
+    padding: 0.75rem; }
 
 .card--image {
   padding: 0; }
 
 .card__contents {
-  padding: 1.35rem; }
+  padding: 1.5rem; }
+
+a.button {
+  padding: 0 0.75rem; }
+  a.button {
+    text-decoration: none; }
+    a.button:hover, a.button:focus {
+      text-decoration: none; }
+  a.button, a.button:link {
+    color: #384048; }
+  a.button:visited {
+    color: #384048; }
+  a.button:focus, a.button:hover {
+    color: #384048; }
+  a.button:active {
+    color: #384048; }
+  a.button:after, a.button:link:after, a.button:visited:after, a.button:active:after {
+    display: none; }
+  a.button:focus:after, a.button:hover:after {
+    display: none; }
 
 .button, input[type=file] + label {
   background: none;
   border: 2px solid transparent;
   outline: none;
-  /* IE8 and FF freak out if this rule is within another selector */
   cursor: pointer;
+  display: inline-block;
+  padding: 0 0.75rem;
+  /* IE8 and FF freak out if this rule is within another selector */
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 27px;
-  line-height: 1.6875rem;
-  display: inline-block;
-  padding: 0 0.675rem;
+  line-height: 30px;
+  line-height: 1.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   vertical-align: middle;
@@ -2572,6 +2029,7 @@ a.tag, a.selectr-tag {
     border: 0;
     padding: 0; }
   .button:hover, input[type=file] + label:hover, .button:active, input[type=file] + label:active, .button:focus, input[type=file] + label:focus {
+    border: 2px solid transparent;
     outline: 0; }
   ::-webkit-file-upload-button {
     padding: 0;
@@ -2580,119 +2038,160 @@ a.tag, a.selectr-tag {
   .button .icon, input[type=file] + label .icon {
     font-size: 12px;
     font-size: 0.75019rem;
-    line-height: 16px;
-    line-height: 1.0125rem;
+    line-height: 18px;
+    line-height: 1.125rem;
     height: 0.75019rem;
     line-height: 1; }
     .button .icon svg, input[type=file] + label .icon svg {
       fill: currentColor; }
 
-input.button:hover, input.button:focus {
-  border-color: transparent; }
-
-a.button, a.button:link {
-  color: #384048;
-  text-decoration: underline; }
-
-a.button:visited {
-  color: #384048; }
-
-a.button:focus, a.button:hover {
-  color: #384048; }
-
-a.button:active {
-  color: #384048; }
-
-a.button, a.button:link, a.button:visited, a.button:focus, a.button:hover, a.button:active {
-  text-decoration: none; }
-
-.button + .button, input[type=file] + label + .button, input.button[type=file] + label {
-  margin-left: 0.3375rem; }
+.button + .button, input[type=file] + label + .button, input[type=file].button + label {
+  margin-left: 0.375rem; }
 
 .button--primary {
   border-radius: 2px;
-  border-color: #2b619a;
-  color: #2b619a;
-  background-color: transparent; }
+  background-color: #80a0c2;
+  color: #0d1d2e;
+  border-color: #80a0c2; }
   .button--primary:hover, .button--primary:focus {
-    border-color: #2b619a;
-    background-color: #2b619a;
-    color: #FFFFFF; }
+    background-color: #0d1d2e;
+    color: #80a0c2;
+    border-color: #0d1d2e; }
 
-a.button--primary {
-  border-radius: 2px; }
-  a.button--primary:link, a.button--primary:active, a.button--primary:visited {
-    color: #2b619a; }
-  a.button--primary:hover:link, a.button--primary:hover:active, a.button--primary:hover:visited, a.button--primary:focus:link, a.button--primary:focus:active, a.button--primary:focus:visited {
-    color: #FFFFFF; }
+a.button--primary, a.button--primary:link, a.button--primary:visited, a.button--primary:active {
+  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-decoration: none; }
+  a.button--primary:after, a.button--primary:link:after, a.button--primary:visited:after, a.button--primary:active:after {
+    display: none; }
+
+a.button--primary:focus, a.button--primary:hover {
+  text-decoration: none; }
+  a.button--primary:focus:after, a.button--primary:hover:after {
+    display: none; }
+
+a.button--primary:link, a.button--primary:active, a.button--primary:visited {
+  color: #0d1d2e; }
+
+a.button--primary:hover:link, a.button--primary:hover:active, a.button--primary:hover:visited, a.button--primary:focus:link, a.button--primary:focus:active, a.button--primary:focus:visited {
+  color: #80a0c2; }
 
 .button--secondary {
   border-radius: 2px;
-  border-color: #9b642b;
-  color: #9b642b;
-  background-color: transparent; }
+  background-color: #c3a280;
+  color: #2f1e0d;
+  border-color: #c3a280; }
   .button--secondary:hover, .button--secondary:focus {
-    border-color: #9b642b;
-    background-color: #9b642b;
-    color: #FFFFFF; }
+    background-color: #2f1e0d;
+    color: #c3a280;
+    border-color: #2f1e0d; }
 
-a.button--secondary {
-  border-radius: 2px; }
-  a.button--secondary:link, a.button--secondary:active, a.button--secondary:visited {
-    color: #9b642b; }
-  a.button--secondary:hover:link, a.button--secondary:hover:active, a.button--secondary:hover:visited, a.button--secondary:focus:link, a.button--secondary:focus:active, a.button--secondary:focus:visited {
-    color: #FFFFFF; }
+a.button--secondary, a.button--secondary:link, a.button--secondary:visited, a.button--secondary:active {
+  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-decoration: none; }
+  a.button--secondary:after, a.button--secondary:link:after, a.button--secondary:visited:after, a.button--secondary:active:after {
+    display: none; }
+
+a.button--secondary:focus, a.button--secondary:hover {
+  text-decoration: none; }
+  a.button--secondary:focus:after, a.button--secondary:hover:after {
+    display: none; }
+
+a.button--secondary:link, a.button--secondary:active, a.button--secondary:visited {
+  color: #2f1e0d; }
+
+a.button--secondary:hover:link, a.button--secondary:hover:active, a.button--secondary:hover:visited, a.button--secondary:focus:link, a.button--secondary:focus:active, a.button--secondary:focus:visited {
+  color: #c3a280; }
 
 .button--success {
   border-radius: 2px;
-  border-color: #63c093;
-  color: #63c093;
-  background-color: transparent; }
+  background-color: #a1d9be;
+  color: #1e3a2c;
+  border-color: #a1d9be; }
   .button--success:hover, .button--success:focus {
-    border-color: #63c093;
-    background-color: #63c093;
-    color: #FFFFFF; }
+    background-color: #1e3a2c;
+    color: #a1d9be;
+    border-color: #1e3a2c; }
 
-a.button--success {
-  border-radius: 2px; }
-  a.button--success:link, a.button--success:active, a.button--success:visited {
-    color: #63c093; }
-  a.button--success:hover:link, a.button--success:hover:active, a.button--success:hover:visited, a.button--success:focus:link, a.button--success:focus:active, a.button--success:focus:visited {
-    color: #FFFFFF; }
+a.button--success, a.button--success:link, a.button--success:visited, a.button--success:active {
+  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-decoration: none; }
+  a.button--success:after, a.button--success:link:after, a.button--success:visited:after, a.button--success:active:after {
+    display: none; }
+
+a.button--success:focus, a.button--success:hover {
+  text-decoration: none; }
+  a.button--success:focus:after, a.button--success:hover:after {
+    display: none; }
+
+a.button--success:link, a.button--success:active, a.button--success:visited {
+  color: #1e3a2c; }
+
+a.button--success:hover:link, a.button--success:hover:active, a.button--success:hover:visited, a.button--success:focus:link, a.button--success:focus:active, a.button--success:focus:visited {
+  color: #a1d9be; }
 
 .button--warning {
   border-radius: 2px;
-  border-color: #aaac30;
-  color: #aaac30;
-  background-color: transparent; }
+  background-color: #cccd83;
+  color: #33340e;
+  border-color: #cccd83; }
   .button--warning:hover, .button--warning:focus {
-    border-color: #aaac30;
-    background-color: #aaac30;
-    color: #FFFFFF; }
+    background-color: #33340e;
+    color: #cccd83;
+    border-color: #33340e; }
 
-a.button--warning {
-  border-radius: 2px; }
-  a.button--warning:link, a.button--warning:active, a.button--warning:visited {
-    color: #aaac30; }
-  a.button--warning:hover:link, a.button--warning:hover:active, a.button--warning:hover:visited, a.button--warning:focus:link, a.button--warning:focus:active, a.button--warning:focus:visited {
-    color: #FFFFFF; }
+a.button--warning, a.button--warning:link, a.button--warning:visited, a.button--warning:active {
+  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-decoration: none; }
+  a.button--warning:after, a.button--warning:link:after, a.button--warning:visited:after, a.button--warning:active:after {
+    display: none; }
+
+a.button--warning:focus, a.button--warning:hover {
+  text-decoration: none; }
+  a.button--warning:focus:after, a.button--warning:hover:after {
+    display: none; }
+
+a.button--warning:link, a.button--warning:active, a.button--warning:visited {
+  color: #33340e; }
+
+a.button--warning:hover:link, a.button--warning:hover:active, a.button--warning:hover:visited, a.button--warning:focus:link, a.button--warning:focus:active, a.button--warning:focus:visited {
+  color: #cccd83; }
 
 .button--error {
   border-radius: 2px;
-  border-color: #ac3230;
-  color: #ac3230;
-  background-color: transparent; }
+  background-color: #cd8483;
+  color: #340f0e;
+  border-color: #cd8483; }
   .button--error:hover, .button--error:focus {
-    border-color: #ac3230;
-    background-color: #ac3230;
-    color: #FFFFFF; }
+    background-color: #340f0e;
+    color: #cd8483;
+    border-color: #340f0e; }
 
-a.button--error {
-  border-radius: 2px; }
-  a.button--error:link, a.button--error:active, a.button--error:visited {
-    color: #ac3230; }
-  a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:visited, a.button--error:focus:link, a.button--error:focus:active, a.button--error:focus:visited {
-    color: #FFFFFF; }
+a.button--error, a.button--error:link, a.button--error:visited, a.button--error:active {
+  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-decoration: none; }
+  a.button--error:after, a.button--error:link:after, a.button--error:visited:after, a.button--error:active:after {
+    display: none; }
+
+a.button--error:focus, a.button--error:hover {
+  text-decoration: none; }
+  a.button--error:focus:after, a.button--error:hover:after {
+    display: none; }
+
+a.button--error:link, a.button--error:active, a.button--error:visited {
+  color: #340f0e; }
+
+a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:visited, a.button--error:focus:link, a.button--error:focus:active, a.button--error:focus:visited {
+  color: #cd8483; }
 
 .button.disabled, input[type=file] + label.disabled {
   opacity: 0.33;
@@ -2701,140 +2200,80 @@ a.button--error {
   .button.disabled:hover, input[type=file] + label.disabled:hover, .button.disabled:focus, input[type=file] + label.disabled:focus {
     cursor: arrow; }
 
-/*
-Icons
-
-The preferred use for icons is `<svg>` inline markup wrapped on `<i class="icon">` tags.
-
-Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases.
-
-A set of icons is __not__ provided. You are supposed to provide your own choices.
-
-Markup:
-<p><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"/></svg></i> Aircrafts & other stuff</p>
-<p><i class="icon">☝︎</i> Drag & Drop me</p>
-<a href="#" class="button"><i class="icon mr pr br quarter-gutter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"/></svg></i>An icon inside a button inherits its properties!</a>
-
-
-Styleguide Typography.icons
-*/
 .icon {
   font-weight: normal;
   font-style: normal;
   line-height: 1;
   height: 1rem;
   display: inline-block;
-  margin-right: 0.3375rem; }
+  margin-right: 0.375rem; }
   .icon svg {
     height: 100%;
     width: auto;
     vertical-align: bottom; }
 
 .alert {
-  padding: 1.35rem;
+  padding: 1.5rem;
   border-radius: 0px;
-  background-color: #e6e8eb;
-  color: #565a5e; }
+  background-color: #e2e5e7;
+  color: #3e3f41; }
+
+.alert--muted {
+  background-color: #888c91;
+  color: #111316; }
 
 .alert--success {
-  background-color: #d0ecdf;
-  color: #32604a; }
+  background-color: #a1d9be;
+  color: #1e3a2c; }
 
 .alert--warning {
-  background-color: #e6e6c1;
-  color: #555618; }
+  background-color: #cccd83;
+  color: #33340e; }
 
 .alert--error {
-  background-color: #e6c2c1;
-  color: #561918; }
+  background-color: #cd8483;
+  color: #340f0e; }
 
-/*
-Margins
+.alert--caca {
+  background-color: #84e184;
+  color: #0f3e0f; }
 
-`$gutter` is applied as margin.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have som margin applied</p>
-
-.m              - Applies all margins
-.mt             - Applies a margin-top
-.mr             - Applies a margin-right
-.mb             - Applies a margin-bottom
-.ml             - Applies a margin-left
-.m0             - Deletes all margins
-
-Styleguide Huesitos.margins
-*/
 .m {
-  margin: 1.35rem; }
+  margin: 1.5rem; }
 
 .mt {
-  margin-top: 1.35rem; }
+  margin-top: 1.5rem; }
 
 .mr {
-  margin-right: 1.35rem; }
+  margin-right: 1.5rem; }
 
 .mb {
-  margin-bottom: 1.35rem; }
+  margin-bottom: 1.5rem; }
 
 .ml {
-  margin-left: 1.35rem; }
+  margin-left: 1.5rem; }
 
 .m0 {
   margin: 0; }
 
-/*
-Paddings
-
-`$gutter` is applied as padding.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have a padding applied</p>
-
-.p              - Applies all paddings
-.pt             - Applies a padding-top
-.pr             - Applies a padding-right
-.pb             - Applies a padding-bottom
-.pl             - Applies a padding-left
-.p0             - Deletes all paddings
-
-Styleguide Huesitos.paddings
-*/
 .p {
-  padding: 1.35rem; }
+  padding: 1.5rem; }
 
 .pt {
-  padding-top: 1.35rem; }
+  padding-top: 1.5rem; }
 
-.pr, .selectr-tag {
-  padding-right: 1.35rem; }
+.pr {
+  padding-right: 1.5rem; }
 
 .pb {
-  padding-bottom: 1.35rem; }
+  padding-bottom: 1.5rem; }
 
 .pl {
-  padding-left: 1.35rem; }
+  padding-left: 1.5rem; }
 
 .p0 {
   padding: 0; }
 
-/*
-Borders
-
-Uses `$separator-color` by default.
-
-Markup:
-<p class="{{modifier_class}}">Hello, i have some border applied</p>
-
-.b              - Applies all borders
-.bt             - Applies a border-top
-.br             - Applies a border-right
-.bb             - Applies a border-bottom
-.bl             - Applies a border-left
-.b0             - Deletes all borders
-
-Styleguide Huesitos.borders
-*/
 .b {
   border: 1px solid #dee0e4; }
 
@@ -2853,93 +2292,47 @@ Styleguide Huesitos.borders
 .b0 {
   border: none; }
 
-/*
-    Background Color
-
-    A set of helper classes that map to common colors from the palette.
-
-    The text color is contrasted correctly.
-
-    Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
-
-    We showcase some examples here, but the list of classes could be much bigger or smaller, depending on your color palette.
-
-    You can avoid bloating your css with these helper classes by setting `$generate-color-classes: false`.
-
-    Markup:
-    <p class="minititle">Base</p>
-    <section class="grid grid--5col">
-        <div class="bg-base-primary p strong half-gutter" style="height:90px">Primary + <a href="#">link</a></div>
-        <div class="bg-base-secondary p strong half-gutter" style="height:90px">Secondary</div>
-    </section>
-    <p class="minititle">State</p>
-    <section class="grid grid--5col">
-        <div class="bg-state-success p strong half-gutter" style="height:90px">Success</div>
-        <div class="bg-state-warning p strong half-gutter" style="height:90px">Warning</div>
-        <div class="bg-state-error p strong half-gutter" style="height:90px">Error</div>
-        <div class="bg-state-muted p strong half-gutter" style="height:90px">Muted</div>
-    </section>
-    <p class="minititle">Blue palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-blue-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-blue-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-blue-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-blue-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-blue-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-blue-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-blue-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-blue-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-blue-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-blue-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Red palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-red-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-red-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-red-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-red-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-red-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-red-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-red-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-red-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-red-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-red-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Green palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-green-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-green-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-green-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-green-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-green-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-green-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-green-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-green-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-green-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-green-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-    <p class="minititle">Gray palette</p>
-    <section class="grid grid--5col">
-        <div class="bg-gray-0 p strong half-gutter" style="height:90px">Shade #0</div>
-        <div class="bg-gray-1 p strong half-gutter" style="height:90px">Shade #1</div>
-        <div class="bg-gray-2 p strong half-gutter" style="height:90px">Shade #2</div>
-        <div class="bg-gray-3 p strong half-gutter" style="height:90px">Shade #3</div>
-        <div class="bg-gray-4 p strong half-gutter" style="height:90px">Shade #4</div>
-        <div class="bg-gray-5 p strong half-gutter" style="height:90px">Shade #5</div>
-        <div class="bg-gray-6 p strong half-gutter" style="height:90px">Shade #6</div>
-        <div class="bg-gray-7 p strong half-gutter" style="height:90px">Shade #7</div>
-        <div class="bg-gray-8 p strong half-gutter" style="height:90px">Shade #8</div>
-        <div class="bg-gray-9 p strong half-gutter" style="height:90px">Shade #9</div>
-    </section>
-
-    Styleguide Huesitos.Color
-    */
 .bg-base-primary {
   background-color: #2b619a;
   color: #FFFFFF; }
+  .bg-base-primary a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-base-primary a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-base-primary a:hover, .bg-base-primary a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-base-primary a:hover:after, .bg-base-primary a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-base-primary a, .bg-base-primary a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-base-primary a:visited {
     color: #fff; }
   .bg-base-primary a:focus, .bg-base-primary a:hover {
@@ -2956,9 +2349,44 @@ Styleguide Huesitos.borders
 .bg-base-secondary {
   background-color: #9b642b;
   color: #FFFFFF; }
+  .bg-base-secondary a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-base-secondary a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-base-secondary a:hover, .bg-base-secondary a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-base-secondary a:hover:after, .bg-base-secondary a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-base-secondary a, .bg-base-secondary a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-base-secondary a:visited {
     color: #fff; }
   .bg-base-secondary a:focus, .bg-base-secondary a:hover {
@@ -2985,9 +2413,44 @@ Styleguide Huesitos.borders
 .bg-base-black {
   background-color: #384048;
   color: #FFFFFF; }
+  .bg-base-black a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-base-black a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-base-black a:hover, .bg-base-black a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-base-black a:hover:after, .bg-base-black a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-base-black a, .bg-base-black a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-base-black a:visited {
     color: #fff; }
   .bg-base-black a:focus, .bg-base-black a:hover {
@@ -3014,9 +2477,44 @@ Styleguide Huesitos.borders
 .bg-text-primary {
   background-color: #384048;
   color: #FFFFFF; }
+  .bg-text-primary a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-text-primary a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-text-primary a:hover, .bg-text-primary a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-text-primary a:hover:after, .bg-text-primary a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-text-primary a, .bg-text-primary a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-text-primary a:visited {
     color: #fff; }
   .bg-text-primary a:focus, .bg-text-primary a:hover {
@@ -3031,11 +2529,46 @@ Styleguide Huesitos.borders
     color: inherit; }
 
 .bg-text-heading {
-  background-color: #151448;
+  background-color: #15304d;
   color: #FFFFFF; }
+  .bg-text-heading a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-text-heading a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-text-heading a:hover, .bg-text-heading a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-text-heading a:hover:after, .bg-text-heading a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-text-heading a, .bg-text-heading a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-text-heading a:visited {
     color: #fff; }
   .bg-text-heading a:focus, .bg-text-heading a:hover {
@@ -3052,9 +2585,44 @@ Styleguide Huesitos.borders
 .bg-text-mark {
   background-color: #ac7030;
   color: #FFFFFF; }
+  .bg-text-mark a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-text-mark a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-text-mark a:hover, .bg-text-mark a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-text-mark a:hover:after, .bg-text-mark a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-text-mark a, .bg-text-mark a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-text-mark a:visited {
     color: #fff; }
   .bg-text-mark a:focus, .bg-text-mark a:hover {
@@ -3071,9 +2639,44 @@ Styleguide Huesitos.borders
 .bg-background-dark {
   background-color: #606d7c;
   color: #FFFFFF; }
+  .bg-background-dark a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-background-dark a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-background-dark a:hover, .bg-background-dark a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-background-dark a:hover:after, .bg-background-dark a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-background-dark a, .bg-background-dark a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-background-dark a:visited {
     color: #fff; }
   .bg-background-dark a:focus, .bg-background-dark a:hover {
@@ -3108,8 +2711,52 @@ Styleguide Huesitos.borders
     color: inherit; }
 
 .bg-state-muted {
-  background-color: #ecedef;
-  color: #1A1A19; }
+  background-color: #384048;
+  color: #FFFFFF; }
+  .bg-state-muted a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-state-muted a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-state-muted a:hover, .bg-state-muted a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-state-muted a:hover:after, .bg-state-muted a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
+  .bg-state-muted a, .bg-state-muted a:link {
+    color: #fff; }
+  .bg-state-muted a:visited {
+    color: #fff; }
+  .bg-state-muted a:focus, .bg-state-muted a:hover {
+    color: #b3c9e0; }
+  .bg-state-muted a:active {
+    color: #b3c9e0; }
   .bg-state-muted h1, .bg-state-muted .h1,
   .bg-state-muted h2, .bg-state-muted .h2,
   .bg-state-muted h3, .bg-state-muted .h3,
@@ -3120,9 +2767,44 @@ Styleguide Huesitos.borders
 .bg-state-success {
   background-color: #63c093;
   color: #FFFFFF; }
+  .bg-state-success a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-state-success a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-state-success a:hover, .bg-state-success a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-state-success a:hover:after, .bg-state-success a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-state-success a, .bg-state-success a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-state-success a:visited {
     color: #fff; }
   .bg-state-success a:focus, .bg-state-success a:hover {
@@ -3139,9 +2821,44 @@ Styleguide Huesitos.borders
 .bg-state-warning {
   background-color: #aaac30;
   color: #FFFFFF; }
+  .bg-state-warning a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-state-warning a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-state-warning a:hover, .bg-state-warning a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-state-warning a:hover:after, .bg-state-warning a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-state-warning a, .bg-state-warning a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-state-warning a:visited {
     color: #fff; }
   .bg-state-warning a:focus, .bg-state-warning a:hover {
@@ -3158,9 +2875,44 @@ Styleguide Huesitos.borders
 .bg-state-error {
   background-color: #ac3230;
   color: #FFFFFF; }
+  .bg-state-error a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-state-error a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-state-error a:hover, .bg-state-error a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-state-error a:hover:after, .bg-state-error a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
   .bg-state-error a, .bg-state-error a:link {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
   .bg-state-error a:visited {
     color: #fff; }
   .bg-state-error a:focus, .bg-state-error a:hover {
@@ -3174,96 +2926,120 @@ Styleguide Huesitos.borders
   .bg-state-error h5, .bg-state-error .h5 h6, .bg-state-error .h6 {
     color: inherit; }
 
-/*
-Gutter modifiers
+.bg-state-caca {
+  background-color: limegreen;
+  color: #FFFFFF; }
+  .bg-state-caca a {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 0; }
+    .bg-state-caca a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.33em;
+      background-color: #edd3ed;
+      z-index: -1; }
+    .bg-state-caca a:hover, .bg-state-caca a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .bg-state-caca a:hover:after, .bg-state-caca a:focus:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.66em;
+        background-color: #edd3ed;
+        z-index: -1; }
+  .bg-state-caca a, .bg-state-caca a:link {
+    color: #fff; }
+  .bg-state-caca a:visited {
+    color: #fff; }
+  .bg-state-caca a:focus, .bg-state-caca a:hover {
+    color: #b3c9e0; }
+  .bg-state-caca a:active {
+    color: #b3c9e0; }
+  .bg-state-caca h1, .bg-state-caca .h1,
+  .bg-state-caca h2, .bg-state-caca .h2,
+  .bg-state-caca h3, .bg-state-caca .h3,
+  .bg-state-caca h4, .bg-state-caca .h4,
+  .bg-state-caca h5, .bg-state-caca .h5 h6, .bg-state-caca .h6 {
+    color: inherit; }
 
-The presence of this class cuts the `$gutter` by half or quarter.
-
-Applies to `.m` and `.p` classes.
-
-Markup:
-<p class="{{modifier_class}} pl bl ml">My gutter variable is smaller</p>
-
-.half-gutter        - Sets gutter to a half
-.quarter-gutter     - Sets gutter to a quarter
-
-Styleguide Huesitos.gutter-modifier
-*/
 .half-gutter.m {
-  margin: 0.675rem; }
+  margin: 0.75rem; }
 
 .half-gutter.mt {
-  margin-top: 0.675rem; }
+  margin-top: 0.75rem; }
 
 .half-gutter.mr {
-  margin-right: 0.675rem; }
+  margin-right: 0.75rem; }
 
 .half-gutter.mb {
-  margin-bottom: 0.675rem; }
+  margin-bottom: 0.75rem; }
 
 .half-gutter.ml {
-  margin-left: 0.675rem; }
+  margin-left: 0.75rem; }
 
 .half-gutter.p {
-  padding: 0.675rem; }
+  padding: 0.75rem; }
 
 .half-gutter.pt {
-  padding-top: 0.675rem; }
+  padding-top: 0.75rem; }
 
-.half-gutter.pr, .half-gutter.selectr-tag {
-  padding-right: 0.675rem; }
+.half-gutter.pr {
+  padding-right: 0.75rem; }
 
 .half-gutter.pb {
-  padding-bottom: 0.675rem; }
+  padding-bottom: 0.75rem; }
 
 .half-gutter.pl {
-  padding-left: 0.675rem; }
+  padding-left: 0.75rem; }
 
 .quarter-gutter.m {
-  margin: 0.3375rem; }
+  margin: 0.375rem; }
 
 .quarter-gutter.mt {
-  margin-top: 0.3375rem; }
+  margin-top: 0.375rem; }
 
 .quarter-gutter.mr {
-  margin-right: 0.3375rem; }
+  margin-right: 0.375rem; }
 
 .quarter-gutter.mb {
-  margin-bottom: 0.3375rem; }
+  margin-bottom: 0.375rem; }
 
 .quarter-gutter.ml {
-  margin-left: 0.3375rem; }
+  margin-left: 0.375rem; }
 
 .quarter-gutter.p {
-  padding: 0.3375rem; }
+  padding: 0.375rem; }
 
 .quarter-gutter.pt {
-  padding-top: 0.3375rem; }
+  padding-top: 0.375rem; }
 
-.quarter-gutter.pr, .quarter-gutter.selectr-tag {
-  padding-right: 0.3375rem; }
+.quarter-gutter.pr {
+  padding-right: 0.375rem; }
 
 .quarter-gutter.pb {
-  padding-bottom: 0.3375rem; }
+  padding-bottom: 0.375rem; }
 
 .quarter-gutter.pl {
-  padding-left: 0.3375rem; }
+  padding-left: 0.375rem; }
 
-/*
-Text alignment
-
-Helper classes that provide a quick access to `text-align`.
-
-They also perform component-scoped alignment of items (see menu, figure and figcaption, etc...)
-
-Markup:
-<p class="left">Text-alignment or even</p>
-<nav class="menu"><ul class="center"><li><a href="#">Menu item</a></li><li><a href="#">alignment</a></li></ul></nav>
-<p class="right">can be achieved using this classes</p>
-
-
-Styleguide Helpers.alignment
-*/
 .left {
   text-align: left; }
 
@@ -3273,20 +3049,10 @@ Styleguide Helpers.alignment
 .right {
   text-align: right; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  background-size: 1.35rem 1.35rem;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
-  background-repeat: repeat; }
-
-body {
-  background-size: 1.35rem 1.35rem;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+body,
+.show-grid {
+  background-size: 1.5rem 1.5rem, 0.75rem 0.75rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-repeat: repeat; }
 
 .scrollbar-hidden {
@@ -3316,23 +3082,13 @@ body {
 .disabled {
   opacity: 0.33; }
 
-/*
-Kill Link
+.kill-link a {
+  text-decoration: none; }
+  .kill-link a:hover, .kill-link a:focus {
+    text-decoration: none; }
 
-Completely disables the visual appearance of a link. It defaults to primary text color.
-
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link">
-	<p>The <a href="#">links</a> within this text are <a href="#">completely equal to normal text</a></p>
-</section>
-
-Styleguide Helpers.kill-link
-*/
 .kill-link a, .kill-link a:link {
-  color: #384048;
-  text-decoration: underline; }
+  color: #384048; }
 
 .kill-link a:visited {
   color: #384048; }
@@ -3343,25 +3099,17 @@ Styleguide Helpers.kill-link
 .kill-link a:active {
   color: #384048; }
 
-.kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:focus, .kill-link a:hover, .kill-link a:active {
-  text-decoration: none; }
+.kill-link a:after, .kill-link a:link:after, .kill-link a:visited:after, .kill-link a:active:after {
+  display: none; }
 
-/*
-Kill Link Decoration
+.kill-link a:focus:after, .kill-link a:hover:after {
+  display: none; }
 
-Helper class that kills al link decoration on a given block
+.kill-link-decoration a:after, .kill-link-decoration a:link:after, .kill-link-decoration a:visited:after, .kill-link-decoration a:active:after {
+  display: none; }
 
-Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.
-
-Markup:
-<section class="kill-link-decoration">
-	<p>The <a href="#">links</a> within this text are <a href="#">not decorated</a> (underlines, border-bottom etc..)</p>
-</section>
-
-Styleguide Helpers.kill-link-decoration
-*/
-.kill-link-decoration a, .kill-link-decoration a:link, .kill-link-decoration a:visited, .kill-link-decoration a:focus, .kill-link-decoration a:hover, .kill-link-decoration a:active {
-  text-decoration: none; }
+.kill-link-decoration a:focus:after, .kill-link-decoration a:hover:after {
+  display: none; }
 
 /*!
  * Selectr 2.4.4
@@ -3408,7 +3156,7 @@ Styleguide Helpers.kill-link-decoration
   background-color: #fff; }
 
 .selectr-selected .selectr-label {
-  padding: 0.3375rem 0.675rem; }
+  padding: 0.375rem 0.75rem; }
 
 .selectr-selected::before {
   position: absolute;
@@ -3441,7 +3189,7 @@ Styleguide Helpers.kill-link-decoration
 
 .selectr-placeholder {
   color: #dee0e4;
-  padding: 0.3375rem 0.675rem; }
+  padding: 0.375rem 0.75rem; }
 
 .selectr-tags {
   margin: 0;
@@ -3455,7 +3203,9 @@ Styleguide Helpers.kill-link-decoration
   list-style: none;
   position: relative;
   float: left;
-  cursor: default; }
+  cursor: default;
+  padding-right: 1.875rem;
+  margin-bottom: 0; }
 
 .selectr-container.multiple.has-selected .selectr-selected {
   padding: 5px 28px 5px 5px; }
@@ -3485,17 +3235,12 @@ Styleguide Helpers.kill-link-decoration
 .selectr-input-clear,
 .selectr-tag-remove {
   position: absolute;
-  top: 50%;
-  right: 2px;
-  width: 0.9rem;
-  height: 0.9rem;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
   cursor: pointer;
-  -o-transform: translate3d(0px, -50%, 0px);
-  -ms-transform: translate3d(0px, -50%, 0px);
-  -moz-transform: translate3d(0px, -50%, 0px);
-  -webkit-transform: translate3d(0px, -50%, 0px);
-  transform: translate3d(0px, -50%, 0px);
   border: medium none;
   background-color: transparent;
   z-index: 11; }
@@ -3506,6 +3251,66 @@ Styleguide Helpers.kill-link-decoration
   .selectr-tag-remove:focus {
     background-color: #ac3230;
     color: #FFFFFF; }
+    .selectr-clear:hover a, .selectr-clear:focus a,
+    .selectr-input-clear:hover a,
+    .selectr-input-clear:focus a,
+    .selectr-tag-remove:hover a,
+    .selectr-tag-remove:focus a {
+      text-decoration: none;
+      background-color: transparent;
+      border-bottom: none;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      z-index: 0; }
+      .selectr-clear:hover a:after, .selectr-clear:focus a:after,
+      .selectr-input-clear:hover a:after,
+      .selectr-input-clear:focus a:after,
+      .selectr-tag-remove:hover a:after,
+      .selectr-tag-remove:focus a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.33em;
+        background-color: #edd3ed;
+        z-index: -1; }
+      .selectr-clear:hover a:hover, .selectr-clear:hover a:focus, .selectr-clear:focus a:hover, .selectr-clear:focus a:focus,
+      .selectr-input-clear:hover a:hover,
+      .selectr-input-clear:hover a:focus,
+      .selectr-input-clear:focus a:hover,
+      .selectr-input-clear:focus a:focus,
+      .selectr-tag-remove:hover a:hover,
+      .selectr-tag-remove:hover a:focus,
+      .selectr-tag-remove:focus a:hover,
+      .selectr-tag-remove:focus a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        z-index: 0; }
+        .selectr-clear:hover a:hover:after, .selectr-clear:hover a:focus:after, .selectr-clear:focus a:hover:after, .selectr-clear:focus a:focus:after,
+        .selectr-input-clear:hover a:hover:after,
+        .selectr-input-clear:hover a:focus:after,
+        .selectr-input-clear:focus a:hover:after,
+        .selectr-input-clear:focus a:focus:after,
+        .selectr-tag-remove:hover a:hover:after,
+        .selectr-tag-remove:hover a:focus:after,
+        .selectr-tag-remove:focus a:hover:after,
+        .selectr-tag-remove:focus a:focus:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.66em;
+          background-color: #edd3ed;
+          z-index: -1; }
     .selectr-clear:hover a, .selectr-clear:hover a:link, .selectr-clear:focus a, .selectr-clear:focus a:link,
     .selectr-input-clear:hover a,
     .selectr-input-clear:hover a:link,
@@ -3515,8 +3320,7 @@ Styleguide Helpers.kill-link-decoration
     .selectr-tag-remove:hover a:link,
     .selectr-tag-remove:focus a,
     .selectr-tag-remove:focus a:link {
-      color: #fff;
-      text-decoration: underline; }
+      color: #fff; }
     .selectr-clear:hover a:visited, .selectr-clear:focus a:visited,
     .selectr-input-clear:hover a:visited,
     .selectr-input-clear:focus a:visited,
@@ -3548,9 +3352,6 @@ Styleguide Helpers.kill-link-decoration
 .selectr-input-container.active .selectr-input-clear {
   display: block; }
 
-.selectr-selected .selectr-tag-remove {
-  right: 2px; }
-
 .selectr-clear::before,
 .selectr-clear::after,
 .selectr-input-clear::before,
@@ -3558,8 +3359,8 @@ Styleguide Helpers.kill-link-decoration
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
   position: absolute;
-  top: 5px;
-  left: 9px;
+  top: 50%;
+  left: 50%;
   width: 2px;
   height: 10px;
   content: ' ';
@@ -3567,30 +3368,21 @@ Styleguide Helpers.kill-link-decoration
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-  top: 0.1125rem;
+  top: 50%;
   left: 50%;
   width: 2px;
-  margin-left: -1px;
-  height: 0.675rem;
+  height: 0.75rem;
   background-color: #fff; }
 
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg); }
+  transform: translate(-50%, -50%) rotate(45deg); }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
+  transform: translate(-50%, -50%) rotate(-45deg); }
 
 .selectr-input-container.active,
 .selectr-input-container.active .selectr-clear {
@@ -3599,8 +3391,8 @@ Styleguide Helpers.kill-link-decoration
 input.selectr-input {
   box-sizing: border-box;
   width: 100%;
-  width: calc(100% - (1.35rem));
-  margin: 0.675rem; }
+  width: calc(100% - (1.5rem));
+  margin: 0.75rem; }
 
 .selectr-notice {
   display: none;
@@ -3624,7 +3416,7 @@ input.selectr-input {
   overflow-x: auto;
   overflow-y: scroll;
   max-height: 200px;
-  margin: 0 0.675rem 0.675rem 0.675rem;
+  margin: 0 0.75rem 0.75rem 0.75rem;
   padding: 0; }
 
 .selectr-container.open .selectr-options,
@@ -3635,7 +3427,7 @@ input.selectr-input {
 .selectr-option {
   position: relative;
   display: block;
-  padding: 0.3375rem 0.675rem;
+  padding: 0.375rem 0.75rem;
   margin: 0;
   list-style: outside none none;
   cursor: pointer;
@@ -3647,15 +3439,15 @@ input.selectr-input {
 .selectr-optgroup {
   font-weight: bold;
   padding: 0;
-  margin-bottom: 0.675rem; }
+  margin-bottom: 0.75rem; }
 
 .selectr-optgroup--label {
   font-weight: bold;
-  padding: 0.3375rem 0.675rem;
+  padding: 0.375rem 0.75rem;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 16px;
-  line-height: 1.0125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }

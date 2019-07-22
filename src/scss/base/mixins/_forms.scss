@@ -22,7 +22,9 @@
 @mixin form-border($strategy) {
 	// Border strategy
 	@if ($strategy == full){
-		border: $input-border;
+		@include ritmo-borders($input-border-width, $input-padding-lines);
+		border-style:solid;
+		border-color: $input-border-color;
 		&:hover, &:focus {
 			border-color: shade($input-border-color, $color-modify-ratio);
 		}
@@ -38,7 +40,7 @@
 @mixin form-reset-input {
 
 	@include form-border($input-border-strategy);
-	padding: $input-padding;
+
 	&:focus {
 		outline: 0;
 	}

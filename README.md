@@ -6,11 +6,16 @@ This is a custom SCSS framework made by and for [idiaz.roncero](http://idiazronc
 
 It sets sensible defaults, exposes a highly configurable `_config.scss` file and makes use of the following libraries and techniques:
 
-- [Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm.
+
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
+- [Every Layout](https://every-layout.dev/) for clever and arithmetic layouts.
+- [BEM](http://getbem.com/introduction/) for naming conventions
+- [Responsive vertical rhythm](https://zellwk.com/blog/responsive-vertical-rhythm/)
 
 [Animate.scss](https://github.com/geoffgraham/animate.scss) has been dropped but is still a recomendation for handling UX animations.
+
+[Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm has been dropped in favor of a CSS native, modern, rem and calc-based solutions.
 
 It is "somehow opinionated", meaning that is neither a Bootstrap-like complete set of closed and almost zero-config components nor a bare-bones css-reset and starterkit.
 
@@ -43,6 +48,8 @@ Then, the recommended way of work is to create your own scss folder and add the 
 __Important:__ you need to `@import` dependencies before config. This is because many mixins of the third-party libraries (like Ritmo) are used for calculations on `_config.scss`.
 
 ## In the near future...
-- Addons with glitch, etc
 - Basic svg icon library
 - Journalistic "sumarios" using blockquotes (as a component)
+- Convert selectr to our CSS style
+- Animation / transition system with prefers-reduced-motion
+- Substitute ritmo.css with rems or similar

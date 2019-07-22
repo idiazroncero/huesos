@@ -32,7 +32,16 @@ html {
 	-webkit-text-size-adjust: 100%; /* 3 */
 	font-family: $font-main;
 	color: get-color(text, primary);
+	scroll-behavior: smooth;
 }
+
+// Uncomment this to respect user preferences
+// @media (prefers-reduced-motion: reduce) {
+// 	* {
+// 	  animation: none;
+// 	  transition: none;
+// 	}
+// }
 
 // Sets vertical rhythm on the html element
 // More info: https://ritmo.marzeelabs.org/
@@ -48,7 +57,8 @@ figure, audio, video,
 hr,
 table, caption, figcaption,
 fieldset,
-details, details[open] summary {
+details, details[open] summary,
+pre {
 	margin: 0 0 $spacer 0;
 }
 

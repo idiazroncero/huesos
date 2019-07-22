@@ -10,7 +10,7 @@
     "css:mandelbrot": "yarn node-sass theme/huesos-mandlebrot.scss dist/huesos-mandlebrot.css -w",
     "styleguide:build": "yarn fractal build",
     "styleguide:serve": "yarn fractal start --sync",
-    "test-page": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
+    "test": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
     "lint:js": "eslint src/js webpack.*.js --cache --debug",
     "lint:css": "stylelint dist/css/*.css",
     "js:build": "webpack",
