@@ -1,6 +1,6 @@
 {
   "name": "huesos",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Huesos is a front-end starterkit. It provides a basic CSS osamenta by combining some preferred and battle-tested tools.",
   "scripts": {
     "css": "yarn css:sass && yarn css:post",
