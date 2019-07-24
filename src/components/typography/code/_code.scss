@@ -3,17 +3,30 @@ code,
 kbd,
 samp,
 var {
-	font-family: $font-monospace; /* 1 */
-	@include ritmo-font-size($base-font-size); /* 2 */
-	display:inline-block;
-	vertical-align:bottom;
+	font-family: $font-monospace;
+	@include ritmo-font-size($base-font-size, 3); // Keep it lower than $base-line-multi!!
+	display:inline;
+	vertical-align: baseline;
 	box-decoration-break: clone;
 	@if $code-background != false {
 		background-color: $code-background;
 		color: contrast-color($code-background);
-		padding: 0 ritmo(1);
+		padding: ritmo(0.5) ritmo(1);
 	}
 	@if $code-border-radius != false {
 		border-radius: $code-border-radius;
+	}
+}
+
+.code-block {
+	@if $code-background != false {
+		padding: $gutter;
+	}
+	@include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
+	display:block;
+
+	// Delete margin on pre element
+	pre {
+		margin:0;
 	}
 }

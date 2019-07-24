@@ -1,7 +1,7 @@
 {% import "macros/render.nunj" as render %}
 <section class="browser-code is-active" data-role="tab-panel" id="browser-{{ entity.id }}-panel-html">
     <h2>Example</h2>
-    <code class="code code--lang-html">
+    <code class="code-block code code--lang-html">
         {% if not entity.isCollated or entity.isVariant or entity.variants().size == 1 %}
             <pre>{{ render.entity(entity.render(null, renderEnv, {preview: false, collate: false}) | async(true)) | trim }}</pre>
         {% else %}

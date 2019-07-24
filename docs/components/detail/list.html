@@ -2330,7 +2330,7 @@
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-846c022cc750272029da4adea7ceec17-panel-html">
     <h2>Example</h2>
-    <code class="code code--lang-html">
+    <code class="code-block code code--lang-html">
         
             <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pl"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Ordered list<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
@@ -2378,12 +2378,12 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>292 Bytes</span>
+                    <span>301 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
-                            <code class="code code--lang-SCSS">
+                            <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-tag">ol</span>,
 <span class="hljs-selector-tag">ul</span> {
 	<span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$list-padding</span>;
@@ -2391,16 +2391,17 @@
 		<span class="hljs-attribute">list-style-position</span>: outside;
 	}
 	<span class="hljs-selector-tag">li</span> {
-		<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
+		<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$list-separator</span>
 	}
 }
 
-<span class="hljs-selector-tag">ul</span> {
-	<span class="hljs-attribute">list-style-type</span>: square;
+ul {
+	list-style-type: square;
 }
 
 <span class="hljs-selector-tag">dt</span> {
-	<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacer</span> / <span class="hljs-number">2</span> <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">font-weight</span>: bold();
+	<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
 }
 
 <span class="hljs-selector-tag">dd</span> {

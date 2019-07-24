@@ -2323,7 +2323,7 @@
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-6d008dd4f93112f10294858f8ea68417-panel-html">
     <h2>Example</h2>
-    <code class="code code--lang-html">
+    <code class="code-block code code--lang-html">
         
             <pre><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Fieldset legend<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
@@ -2371,12 +2371,12 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>563 Bytes</span>
+                    <span>605 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
-                            <code class="code code--lang-SCSS">
+                            <code class="code-block code code--lang-SCSS">
                                 <pre>
 
 @<span class="hljs-keyword">if</span> <span class="hljs-variable">$disable-fieldset</span> {
@@ -2394,9 +2394,9 @@
 	<span class="hljs-selector-tag">fieldset</span> {
 		<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">0</span>;
 		<span class="hljs-attribute">margin-left</span>:<span class="hljs-number">0</span>;
-		<span class="hljs-attribute">border</span>: <span class="hljs-variable">$input-border</span>;
+		@<span class="hljs-keyword">include</span> ritmo-borders(<span class="hljs-variable">$input-border-width</span>, 4);
+		<span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$input-border-color</span>;
 		<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$form-border-radius</span>;
-		<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacer</span>;
 		<span class="hljs-selector-tag">legend</span> {
 			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$h5-font-size</span>);
 		}

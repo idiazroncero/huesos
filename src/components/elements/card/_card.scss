@@ -1,16 +1,18 @@
 .card {
-	@if $card-border {
-		border: $card-border;
+	@if $card-border-width {
+		@include ritmo-borders($card-border-width, $card-padding);
+		border-style:solid;
+		border-color: $card-border-color;
+	} @else {
+		padding: ritmo($card-padding);
 	}
-	background: $card-background;
 	border-radius: $card-border-radius;
-	padding: $card-padding;
 	@if $shadows == true {
 		box-shadow: $shadow-definition;
 	}
 	// Nested cards are applied a padding reduction
 	.card {
-		padding: $gutter / 2;
+		padding: ritmo($card-padding / 2);
 	}
 }
 

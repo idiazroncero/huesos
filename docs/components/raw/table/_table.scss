@@ -3,14 +3,21 @@ caption {
 	@include minititle();
 }
 
+// We need to do some hacks to account for border-collapse
 table {
 	table-layout: fixed;
 	min-width:100%;
+	margin-bottom: calc( #{ritmo(4)} - #{$table-border-width} );
 }
 
 th, td {
-	border: $table-border;
-	padding: $table-padding;
+	@include ritmo-top-border($table-border-width, 2);
+	@include ritmo-side-border('left', $table-border-width, 2);
+	@include ritmo-side-border('right', $table-border-width, 2);
+	padding-bottom: ritmo(2);
+	border-bottom: $table-border-width solid;
+	border-style: solid;
+	border-color: $table-border-color;
 }
 
 th {

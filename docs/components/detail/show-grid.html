@@ -2325,7 +2325,7 @@
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-94540d8aa8ff50a8e5fb03295b50e93a-panel-html">
     <h2>Example</h2>
-    <code class="code code--lang-html">
+    <code class="code-block code code--lang-html">
         
             <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"show-grid"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You will need to activate $show-grid<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
@@ -2355,31 +2355,21 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>463 Bytes</span>
+                    <span>362 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
-                            <code class="code code--lang-SCSS">
+                            <code class="code-block code code--lang-SCSS">
                                 <pre>@<span class="hljs-keyword">if</span> <span class="hljs-variable">$show-grid</span> == true {
-	<span class="hljs-selector-tag">h1</span>, 
-	<span class="hljs-selector-tag">h2</span>, 
-	<span class="hljs-selector-tag">h3</span>, 
-	<span class="hljs-selector-tag">h4</span>, 
-	<span class="hljs-selector-tag">h5</span>, 
-	<span class="hljs-selector-tag">h6</span>, 
-	<span class="hljs-selector-tag">p</span> {
-		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
-		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.35</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
-		<span class="hljs-attribute">background-repeat</span>: repeat;
-	}
 
 	<span class="hljs-selector-tag">body</span>,
 	<span class="hljs-selector-class">.show-grid</span> {
-		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>);
-		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.15</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
+		<span class="hljs-attribute">background-size</span>: ritmo(<span class="hljs-variable">$base-line-multi</span>) ritmo(<span class="hljs-variable">$base-line-multi</span>), ritmo(<span class="hljs-variable">$base-line-multi</span> / <span class="hljs-number">2</span>) ritmo(<span class="hljs-variable">$base-line-multi</span> / <span class="hljs-number">2</span>);
+		<span class="hljs-attribute">background-image</span>: linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>), linear-gradient(to bottom, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, <span class="hljs-number">0.05</span>) <span class="hljs-number">1px</span>, transparent <span class="hljs-number">1px</span>);
 		<span class="hljs-attribute">background-repeat</span>: repeat;
 	}
+	
 }</pre>
                             </code>
                         

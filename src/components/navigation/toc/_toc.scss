@@ -13,7 +13,7 @@
       @include ritmo-font-size($toc-font-size);
       ul,
       ol {
-        margin: $gutter / 4 0 $gutter / 2 $gutter;
+        margin: 0 0 $gutter $gutter;
         li{
           // Don't let "bold" pass through here
           font-weight: normal;

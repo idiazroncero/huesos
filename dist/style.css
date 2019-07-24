@@ -38,7 +38,8 @@ figure, audio, video,
 hr,
 table, caption, figcaption,
 fieldset,
-details, details[open] summary {
+details, details[open] summary,
+pre {
   margin: 0 0 1.5rem 0; }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
@@ -412,19 +413,34 @@ caption {
   text-align: left;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
 table {
   table-layout: fixed;
-  min-width: 100%; }
+  min-width: 100%;
+  margin-bottom: calc( 1.5rem - 1px); }
 
 th, td {
-  border: 1px solid #dee0e4;
-  padding: 0.75rem; }
+  border-top-width: 1px;
+  border-top-width: 0.0625rem;
+  padding-top: 11px;
+  padding-top: 0.6875rem;
+  border-left-width: 1px;
+  border-left-width: 0.0625rem;
+  padding-left: 11px;
+  padding-left: 0.6875rem;
+  border-right-width: 1px;
+  border-right-width: 0.0625rem;
+  padding-right: 11px;
+  padding-right: 0.6875rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid;
+  border-style: solid;
+  border-color: #dee0e4; }
 
 th {
   text-align: left; }
@@ -558,8 +574,8 @@ blockquote {
 summary {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -577,7 +593,8 @@ ul {
   list-style-type: square; }
 
 dt {
-  margin: 0 0 0.75rem 0; }
+  font-weight: bold;
+  margin: 0; }
 
 dd {
   margin: 0 0 1.5rem 1.5rem; }
@@ -630,26 +647,26 @@ figcaption {
 h1, .h1 {
   font-size: 51px;
   font-size: 3.15733rem;
-  line-height: 60px;
-  line-height: 3.75rem; }
+  line-height: 48px;
+  line-height: 3rem; }
 
 h2, .h2 {
   font-size: 38px;
   font-size: 2.36859rem;
-  line-height: 42px;
-  line-height: 2.625rem; }
+  line-height: 36px;
+  line-height: 2.25rem; }
 
 h3, .h3 {
   font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h4, .h4 {
   font-size: 21px;
   font-size: 1.333rem;
-  line-height: 30px;
-  line-height: 1.875rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h5, .h5 {
   font-size: 16px;
@@ -660,8 +677,8 @@ h5, .h5 {
 h6, .h6 {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 12px;
+  line-height: 0.75rem; }
 
 h1, .h1,
 h2, .h2 {
@@ -689,8 +706,8 @@ dt,
 .minititle {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }
@@ -700,20 +717,28 @@ kbd,
 samp,
 var {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  /* 1 */
   font-size: 16px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  /* 2 */
-  display: inline-block;
+  line-height: 18px;
+  line-height: 1.125rem;
+  display: inline;
   vertical-align: baseline;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
   background-color: #15304d;
   color: #FFFFFF;
-  padding: 0 0.375rem;
+  padding: 0.1875rem 0.375rem;
   border-radius: 2px; }
+
+.code-block {
+  padding: 1.5rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  display: block; }
+  .code-block pre {
+    margin: 0; }
 
 .text-wrapper h1, .alert h1, .text-wrapper h2, .alert h2, .text-wrapper h3, .alert h3, .text-wrapper h4, .alert h4 {
   margin-top: 3rem; }
@@ -863,9 +888,12 @@ input[type=checkbox].pseudo-checkbox {
 fieldset {
   margin-right: 0;
   margin-left: 0;
-  border: 1px solid #dee0e4;
-  border-radius: 0px;
-  padding: 1.5rem; }
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 23px;
+  padding: 1.4375rem;
+  border-color: #dee0e4;
+  border-radius: 0px; }
   fieldset legend {
     font-size: 16px;
     font-size: 1rem;
@@ -884,8 +912,8 @@ fieldset.fieldset--disabled {
     margin-bottom: 1.5rem;
     font-size: 21px;
     font-size: 1.333rem;
-    line-height: 30px;
-    line-height: 1.875rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
@@ -904,8 +932,8 @@ fieldset.fieldset--disabled {
             flex: 0 1 auto;
     font-size: 12px;
     font-size: 0.75019rem;
-    line-height: 18px;
-    line-height: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
@@ -942,7 +970,12 @@ fieldset.fieldset--disabled {
 
 .form-item--label-inside {
   border-radius: 0px;
-  border: 1px solid #dee0e4;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
   padding: 0.375rem 0.75rem; }
   .form-item--label-inside:hover, .form-item--label-inside:focus {
     border-color: #959699; }
@@ -953,8 +986,12 @@ fieldset.fieldset--disabled {
     padding: 0; }
 
 input {
-  border: 1px solid #dee0e4;
-  padding: 0.375rem 0.75rem;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
   /* Make webkit render the search input like a normal text field */
   /* Turn off the recent search for webkit. It adds about 15px padding on the left */
   /* Fix IE7 display bug */
@@ -1045,7 +1082,12 @@ input[type=radio].pseudo-radio {
       cursor: pointer; }
 
 select {
-  border: 1px solid #dee0e4;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #dee0e4;
   padding: 0 0.75rem;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1262,7 +1304,7 @@ textarea {
     .menu ul > li > a {
       text-align: left;
       display: block;
-      padding: 0.5rem 0.75rem;
+      padding: 0.375rem 1.125rem;
       white-space: nowrap; }
       .menu ul > li > a {
         text-decoration: none; }
@@ -1280,7 +1322,7 @@ textarea {
       color: #1A1A19;
       background-color: #bfc4ca; }
     .menu ul > li > span {
-      padding: 0.5rem 0.75rem; }
+      padding: 0.375rem 1.125rem; }
     .menu ul > li > ul {
       display: none;
       position: absolute;
@@ -1293,7 +1335,7 @@ textarea {
         position: relative; }
         .menu ul > li > ul > li > a {
           display: block;
-          padding: 0.5rem 0.75rem/2 0.5rem 0.75rem;
+          padding: 0.375rem 1.125rem/2 0.375rem 1.125rem;
           white-space: nowrap;
           background-color: #cdd1d6;
           font-size: 13px;
@@ -1374,7 +1416,7 @@ textarea {
   .toc ul li ol,
   .toc ol li ul,
   .toc ol li ol {
-    margin: 0.375rem 0 0.75rem 1.5rem; }
+    margin: 0 0 1.5rem 1.5rem; }
     .toc ul li ul li,
     .toc ul li ol li,
     .toc ol li ul li,
@@ -1974,13 +2016,16 @@ a.tag, a.selectr-tag {
       color: #b3c9e0; }
 
 .card {
-  border: 1px solid #dee0e4;
-  background: #fff;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 47px;
+  padding: 2.9375rem;
+  border-style: solid;
+  border-color: #dee0e4;
   border-radius: 0px;
-  padding: 3rem;
   box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
   .card .card {
-    padding: 0.75rem; }
+    padding: 1.5rem; }
 
 .card--image {
   padding: 0; }
@@ -3050,9 +3095,9 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
 
 body,
 .show-grid {
-  background-size: 1.5rem 1.5rem;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem, 0.75rem 0.75rem;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 1px, transparent 1px), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-repeat: repeat; }
 
 .scrollbar-hidden {
@@ -3445,8 +3490,8 @@ input.selectr-input {
   padding: 0.375rem 0.75rem;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em; }

@@ -80,7 +80,9 @@ $round-to-nearest-half-size: true;
 $show-grid: true;
 
 // A "spacer" is a basic unit for both vertical and horizontal spacing
+// The common alias is $gutter
 $spacer: ritmo(4); 
+$gutter: $spacer;
 
 
 
@@ -153,6 +155,8 @@ $code-border-radius: 2px;
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.05em; 
 
+// List margin-bottom between <li> items.
+$list-separator: $gutter / 2;
 // List paddings. We recommend either 1em or 0.
 $list-padding: 0;
 
@@ -377,7 +381,7 @@ $toc-font-weight: bold;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
 
-$menu-padding: $spacer / 3 $spacer / 2;
+$menu-padding: $spacer * 0.25 $spacer * 0.75;
 $menu-kill-links: true; // Kills decoration
 $menu-background-color: $gray4;
 $menu-color-ratio: 5%;
@@ -481,8 +485,6 @@ $disabled-opacity: 0.33;
 // Because sometimes you remember the wrong / old / deprecated word...
 // ------
 
-$gutter: $spacer;
-
 
 
 
@@ -492,10 +494,11 @@ $gutter: $spacer;
 // Component for indvidual, card-like componentes
 // ------
 
-$card-border: 1px solid $separator-color;// Can be false or a full border value, like 2px solid $separator-color;
+$card-border-width: 1px; // Set to false to avoid border
+$card-border-color: $separator-color;// Can be false or a full border value, like 2px solid $separator-color;
 $card-background: $white;
 $card-border-radius: $border-radius;
-$card-padding: $gutter * 2;
+$card-padding: 8; // In base-line-multi
 
 
 

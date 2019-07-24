@@ -2323,9 +2323,13 @@
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-fb629e2cf83a3666daf936c81f66c031-panel-html">
     <h2>Example</h2>
-    <code class="code code--lang-html">
+    <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Either a sample of <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>computer code<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>keyboard input<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span> or a <span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>sample output from a computer program<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span></pre>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Either a sample of <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>computer code<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>keyboard input<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span> or a <span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>sample output from a computer program<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"code-block"</span>&gt;</span>
+        Add a .code-block class to format a block-level element
+    <span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span></pre>
         
     </code>
 </section>
@@ -2349,29 +2353,41 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>412 Bytes</span>
+                    <span>589 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
-                            <code class="code code--lang-SCSS">
+                            <code class="code-block code code--lang-SCSS">
                                 <pre>
 <span class="hljs-selector-tag">code</span>,
 <span class="hljs-selector-tag">kbd</span>,
 <span class="hljs-selector-tag">samp</span>,
 <span class="hljs-selector-tag">var</span> {
-	<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$font-monospace</span>; <span class="hljs-comment">/* 1 */</span>
-	@<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$base-font-size</span>); <span class="hljs-comment">/* 2 */</span>
-	<span class="hljs-attribute">display</span>:inline-block;
-	<span class="hljs-attribute">vertical-align</span>:baseline;
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$font-monospace</span>;
+	@<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$base-font-size</span>, 2); <span class="hljs-comment">// Keep it lower than $base-line-multi!!</span>
+	<span class="hljs-attribute">display</span>:inline;
+	<span class="hljs-attribute">vertical-align</span>: baseline;
 	<span class="hljs-attribute">box-decoration-break</span>: clone;
 	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$code-background</span> != false {
 		<span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$code-background</span>;
 		<span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$code-background</span>);
-		<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> ritmo(<span class="hljs-number">1</span>);
+		<span class="hljs-attribute">padding</span>: ritmo(<span class="hljs-number">0.5</span>) ritmo(<span class="hljs-number">1</span>);
 	}
 	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$code-border-radius</span> != false {
 		<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$code-border-radius</span>;
+	}
+}
+
+<span class="hljs-selector-class">.code-block</span> {
+	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$code-background</span> != false {
+		<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
+	}
+	<span class="hljs-attribute">display</span>:block;
+
+	<span class="hljs-comment">// Delete margin on pre element</span>
+	<span class="hljs-selector-tag">pre</span> {
+		<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
 	}
 }</pre>
                             </code>

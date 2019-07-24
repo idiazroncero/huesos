@@ -46,7 +46,8 @@
 @mixin separator($margin-bottom:$spacer, $border-width:$separator-width, $border-color:$separator-color) {
 	margin-bottom: $margin-bottom;
 	@if $separators == true {
-		padding-bottom: $margin-bottom;
-		border-bottom: $border-width solid $border-color;
+		@include ritmo-bottom-border($border-width, 4)
+		border-bottom-style: solid; 
+		border-bottom-color: $border-color;
 	}
 }

@@ -1,10 +1,11 @@
 .card {
-	@if $card-border {
-		border: $card-border;
+	@if $card-border-width {
+		@include ritmo-borders($card-border-width, $card-padding);
+		border-style:solid;
+		border-color: $card-border-color;
 	}
-	background: $card-background;
 	border-radius: $card-border-radius;
-	padding: $card-padding;
+	padding: ritmo($card-padding);
 	@if $shadows == true {
 		box-shadow: $shadow-definition;
 	}

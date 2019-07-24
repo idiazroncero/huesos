@@ -51,8 +51,6 @@ code.lang-scss,
 code.lang-html,
 code.code {
     width: 100%;
-    padding: 0 $gutter;
-    border-radius: 6px;
 }
 
 
@@ -81,7 +79,7 @@ code.code {
 } 
 
 .pen-preview {
-    height:50vh;
+    height: ritmo(4 * 12);
     display:flex;
     flex-direction:column;
     justify-content:center;
