@@ -5,9 +5,9 @@ status: draft
 
 Many parts of huesos' include programatically generated classes, looping over maps that loop over maps that loop over maps, etc...
 
-Misuse or lack of configuration of some of this parts can result on overtly bloated CSS files, filled with selectors that you will never use.
+Misuse or lack of configuration will result on big, bloated CSS files; filled with selectors that you will never use.
 
-Follow these advices to avoid sending extra KBs to your users:
+Follow these points to avoid sending extra KBs to your users:
 
 
 ### Audit your button strategies and link strategies
@@ -16,13 +16,13 @@ Both `$button-alternative-strategies` and `$link-alternative-strategies` are pow
 
 **Use it if you really need alternatives**, i.e, buttons and links whose styling needs to difer from the default ones.
 
-Consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false` if you only need one global button style... which might be **the most common case**.
+Consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false` if you only need one global button style... which might be **the most common scenario**.
 
 ### Control your grid
 
 `$max-grid-cols` will generate lots of extra classes for handling every possible number of columns on every defined breakpoint.
 
-Check how many columns will you need and update this variable accordingly.
+Check how many columns will you need and update this variable accordingly. Set to false to avoid outputting any CSS (but you will need to develop your own grid solution!)
 
 ### Check Huesitos
 

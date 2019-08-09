@@ -43,7 +43,7 @@ h1, .h1 ,h2, .h2, h3, .h3 {
 }
 
 .text-wrapper {
-    max-width: 75ch;
+    max-width: $max-ch;
 }
 
 code.lang-sass,
@@ -51,6 +51,7 @@ code.lang-scss,
 code.lang-html,
 code.code {
     width: 100%;
+    @extend .code-block;
 }
 
 
@@ -59,13 +60,17 @@ code.code {
 .pen-header,
 .doc__header {
     display:flex;
+    flex-wrap:wrap;
     align-items:flex-end;
     margin-bottom: $gutter;
     h1 {
-        margin:0;
+        margin-bottom: 0;
         display:inline-block;
         margin-right: $gutter;
-        line-height:0.75;
+    }
+    .doc__subtitle {
+        margin-top: ritmo(2);
+        width:100%;
     }
     .status {
         display:inline-block;
@@ -83,11 +88,16 @@ code.code {
     display:flex;
     flex-direction:column;
     justify-content:center;
-    position:relative;
+    position:relative; 
     .preview-tag {
         position:absolute;
         top: $gutter / 2;
         right: $gutter / 2;
+        margin:0;
+        cursor:pointer;
+    }
+    &.pen-preview--medium {
+        height: ritmo(4 * 36);
     }
 }
 
@@ -102,4 +112,8 @@ code.code {
     ul {
         list-style:none;
     }
+}
+
+.item--has-children {
+    cursor:pointer
 }

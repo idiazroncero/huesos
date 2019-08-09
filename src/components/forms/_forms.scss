@@ -6,6 +6,10 @@ textarea {
 	@include form-reset-general();
 }
 
+button {
+	cursor: pointer;
+}
+
 
 label {
 	margin-right: $spacer / 2; // Gives some room between inlined labels and inputs

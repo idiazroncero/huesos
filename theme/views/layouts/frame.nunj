@@ -22,6 +22,8 @@
         <aside class="sidebar" data-role="sidebar">
             {% include 'partials/navigation/navigation.nunj' %}
         </aside>
+
+        <button id="toggle-grid" class="small">Toggle Grid</button>
     
     </div>
 

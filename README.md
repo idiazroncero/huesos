@@ -53,3 +53,4 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Convert selectr to our CSS style
 - Animation / transition system with prefers-reduced-motion
 - Substitute ritmo.css with rems or similar
+- Apply intrinsic CSS sizing to grid system

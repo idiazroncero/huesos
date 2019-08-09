@@ -77,7 +77,7 @@ $ritmo-border-width: 1px;
 $round-to-nearest-half-size: true;
 
 // Show a grid to see vertical rhythm in action
-$show-grid: true;
+$show-grid: false;
 
 // A "spacer" is a basic unit for both vertical and horizontal spacing
 // The common alias is $gutter
@@ -160,6 +160,9 @@ $list-separator: $gutter / 2;
 // List paddings. We recommend either 1em or 0.
 $list-padding: 0;
 
+// Maximum characters per line, to apply using .max-ch class
+$max-ch: 65ch;
+
 
 
 
@@ -208,7 +211,7 @@ $figcaption-font-size: $h6-font-size;
 
 $border-radius: 0px;
 
-$separators: true;
+$separators: true; // Set this to false to disable all separators
 $separator-width: 1px;
 $separator-color: get-color(base, separator);
 

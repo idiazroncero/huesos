@@ -813,8 +813,8 @@ var {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 12px;
-  line-height: 0.75rem;
+  line-height: 18px;
+  line-height: 1.125rem;
   display: inline;
   vertical-align: baseline;
   box-decoration-break: clone;
@@ -825,6 +825,10 @@ var {
 
 .code-block {
   padding: 1.5rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   display: block; }
   .code-block pre {
     margin: 0; }
@@ -1368,7 +1372,7 @@ textarea {
     .menu ul > li > a {
       text-align: left;
       display: block;
-      padding: 0.5rem 0.75rem;
+      padding: 0.375rem 1.125rem;
       white-space: nowrap; }
       .menu ul > li > a {
         text-decoration: none; }
@@ -1386,7 +1390,7 @@ textarea {
       color: #1A1A19;
       background-color: #bfc4ca; }
     .menu ul > li > span {
-      padding: 0.5rem 0.75rem; }
+      padding: 0.375rem 1.125rem; }
     .menu ul > li > ul {
       display: none;
       position: absolute;
@@ -1399,7 +1403,7 @@ textarea {
         position: relative; }
         .menu ul > li > ul > li > a {
           display: block;
-          padding: 0.5rem 0.75rem/2 0.5rem 0.75rem;
+          padding: 0.375rem 1.125rem/2 0.375rem 1.125rem;
           white-space: nowrap;
           background-color: #cdd1d6;
           font-size: 13px;
@@ -2075,13 +2079,16 @@ a.tag, a.selectr-tag {
       color: #b3c9e0; }
 
 .card {
-  border: 1px solid #dee0e4;
-  background: #fff;
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 47px;
+  padding: 2.9375rem;
+  border-style: solid;
+  border-color: #dee0e4;
   border-radius: 0px;
-  padding: 3rem;
   box-shadow: 2px 2px 2px 0px rgba(56, 64, 72, 0.1); }
   .card .card {
-    padding: 0.75rem; }
+    padding: 1.5rem; }
 
 .card--image {
   padding: 0; }
@@ -3761,11 +3768,15 @@ code.code {
 .browser-notes,
 .browser-code {
   margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #dee0e4; }
+  border-bottom-width: 1px;
+  border-bottom-width: 0.0625rem;
+  padding-bottom: 23px;
+  padding-bottom: 1.4375rem;
+  border-bottom-style: solid;
+  border-bottom-color: #dee0e4; }
 
 .pen-preview {
-  height: 50vh;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3773,7 +3784,11 @@ code.code {
   .pen-preview .preview-tag {
     position: absolute;
     top: 0.75rem;
-    right: 0.75rem; }
+    right: 0.75rem;
+    margin: 0;
+    cursor: pointer; }
+  .pen-preview.pen-preview--enlarge {
+    height: 75rem; }
 
 .iframe__inner {
   display: flex;
@@ -3782,3 +3797,6 @@ code.code {
 
 .filebrowser-item ul {
   list-style: none; }
+
+.item--has-children {
+  cursor: pointer; }

@@ -6,7 +6,12 @@
 
     <div class="doc__header">
         {% block docHeader %}
-        <h1>{{ page.title }}</h1>
+        {% if page.title.split("(")[1] %}
+            <h1>{{ page.title.split("(")[0] }}</h1>
+            <p class="h4 doc__subtitle">({{ page.title.split("(")[1] }}</p>
+        {% else %}
+            <h1>{{ page.title }}</h1>
+        {% endif %}
         {% if status %}{{ status }}{% endif %}
         {% endblock %}
     </div>

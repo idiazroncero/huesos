@@ -27,7 +27,11 @@ const mandelbrot = require('@frctl/mandelbrot');
 // const huesosTheme = require('fractal-huesos');
 const huesosTheme = mandelbrot({
     styles: [
-        "/huesos-mandlebrot.css"
+        "/styleguide/huesos-mandlebrot.css"
+    ],
+    scripts: [
+        "https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js",
+        "/styleguide/huesos-mandlebrot.js"
     ],
     nav: ["docs", "components"],
     panels: ["notes", "html", "resources",]
