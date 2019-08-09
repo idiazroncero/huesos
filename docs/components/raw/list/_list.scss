@@ -7,6 +7,19 @@ ul {
 	li {
 		margin-bottom: $list-separator
 	}
+
+	ol,
+	ul {
+		@if $list-padding == 0 {
+			// Ensure that child lists get a paddding even if we set them to 0
+			padding-left: 1em;
+		} @else {
+			padding-left: $list-padding;
+		}
+		li {
+			margin-bottom: $list-separator / 2;
+		}
+	}
 }
 
 ul {

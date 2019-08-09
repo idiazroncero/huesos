@@ -19,6 +19,23 @@
             }
         }
     }
+
+    @each $point, $value in $breakpoints {
+        @for $i from 2 through $max-grid-cols {
+            .grid--#{$point}--#{$i}col {
+                @include breakpoint($value) {
+                    .grid-item {
+                        width: (100% / #{$i});
+                        width: calc( (100% / #{$i}) -  ( ( #{$spacer} * ( #{$i} - 1 ) / #{$i} ) + 0.001rem ) );
+                        margin-right:$spacer;
+                        &:nth-child(#{$i}n) {
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -42,17 +59,18 @@
             grid-template-columns: repeat( #{$i} , 1fr);
         }
     }
-}
 
-@each $point, $value in $breakpoints {
-    @for $i from 2 through $max-grid-cols {
-        .grid--#{$point}--#{$i}col {
-            @include breakpoint($value) {
-                grid-template-columns: repeat( #{$i} , 1fr);
+    @each $point, $value in $breakpoints {
+        @for $i from 2 through $max-grid-cols {
+            .grid--#{$point}--#{$i}col {
+                @include breakpoint($value) {
+                    grid-template-columns: repeat( #{$i} , 1fr);
+                }
             }
         }
     }
 }
+
 
 .grid--gutterless {
     grid-gap: 0;
