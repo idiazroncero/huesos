@@ -2,22 +2,23 @@
 title: Color Palette
 ---
 
-The palettes are based on palx.jxnblk.com (for example, https://palx.jxnblk.com/C7FFC4). Every single palette lives on a separate `.scss` file under 
-`base/palettes` and is `@import`ed on `_config.scss` for later use on the `$colors` map.
+Hueso's default color palettes are based on palx.jxnblk.com. This tool auto-generates up to 13 colors from a single hex value, and then divides each color on 10 different shades ([see example for #C7FFC4](https://palx.jxnblk.com/C7FFC4)).
 
-This `$colors` map can store as many maps as needed, but the following are **mandatory** and will trigger errors if not present:
+Every single palette lives on a separate *.scss* file under `base/palettes` and is @imported on `_config.scss` for later use on the `$colors` map.
 
-- base / for primary, secondary and separator colors
-- text / for typography colors
-- state / for indicating states like: muted, error, warning, success
+Of course, you can choose any file hierarchy, any palette generator, etc. You might need to adapt `_config.scss` values because we follow Palx nomenclature, which ranges every color from 0 to 10 (i.e, `$blue0` to `$blue10`).
 
-Following palx.jxnblk.com nomenclature, the colors are usually numbered from 0 to 9 (lightest to darkest).
+The `$colors` map can store as many sub-maps as needed, but the following are __mandatory__ and __will trigger errors if not present__:
 
-### Example
+- __base__ for primary, secondary and separator colors
+- __text__ for typography colors
+- __state__ for indicating states like: muted, error, warning, success
+
+### Current values
 
 <section>
 	<p class="minititle">Base</p>
-	<div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+	<div class="grid grid--gutterless grid--small--2col grid--medium--3col">
 		<div class="grid-item p bg-base-primary">Primary</div>
 		<div class="grid-item p bg-base-secondary" >Secondary</div>
 		<div class="grid-item p bg-base-separator" >Separator</div>
@@ -35,7 +36,7 @@ Following palx.jxnblk.com nomenclature, the colors are usually numbered from 0 t
 </section>
 <section>
 	<p class="minititle">State</p>
-	<div class="grid grid--gutterless grid--small--2col grid--large--4col">
+	<div class="grid grid--gutterless grid--small--2col grid--large--3col">
 		<div class="grid-item p bg-state-muted">Muted</div>
 		<div class="grid-item p bg-state-success" >Success</div>
 		<div class="grid-item p bg-state-warning" >Warning</div>

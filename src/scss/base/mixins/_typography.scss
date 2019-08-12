@@ -1,8 +1,8 @@
 @function bold($item: &) {
-	@if index($font-secondary-items, $item) == null {
-		@return $font-main-bold;
+	@if index($font-secondary-items, $item) != null {
+        @return $font-secondary-bold;
 	} @else {
-		@return $font-secondary-bold;
+        @return $font-main-bold;
 	}
 }
 

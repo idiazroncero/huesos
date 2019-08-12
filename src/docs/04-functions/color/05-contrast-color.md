@@ -11,24 +11,39 @@ Returns a `$dark` or `$light` color value according to the background-color prov
 
 ### Example
 
-```html
-<div class="element">
-    <div class="contrasted">
-        I'm contrasted against my background
-    </div>
-</div>
-```
 
 ```sass
-.element {
+.contrast-color {
     background-color: $red6;
 }
 
 .contrasted-element {
     // Using defaults set on config.scss
     color: contrast-color($red6);
+}
 
+.contrasted-element--overriden {
     // Optionally, provide the dark and light contrasted colors
-    color: contrast-color($red6, $yellow9, $yellow1);
+    color: contrast-color($red6, $blue9, $orange2);
 }
 ```
+
+```html
+<div class="contrast-color">
+    <div class="contrasted-element">
+        I'm contrasted against my background
+    </div>
+    <div class="contrasted-element--overriden">
+        I'm contrasted against my background overriding defaults
+    </div>
+</div>
+```
+
+<div class="p contrast-color">
+    <p class="contrasted-element">
+        I'm contrasted against my background
+    </p>
+    <p class="contrasted-element--overriden">
+        I'm contrasted against my background overriding defaults
+    </p>
+</div>

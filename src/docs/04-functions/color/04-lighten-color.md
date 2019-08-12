@@ -6,12 +6,12 @@ Shortcut that applies a % of `tint()` equal to `$color-modify-ratio` (defined on
 
 If a different % is needed, use `tint()` directly.
 
-## Parameters
+### Parameters
 
 - `$color` - Color to operate with.
 
 
-## Example
+### Example
 
 ```sass
 .element {

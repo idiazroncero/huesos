@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2355,9 +2365,15 @@
 <li><code>$dilution</code> - % of white to mix</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-sass"><pre><span class="hljs-selector-class">.element</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">tint</span>($grey1, 25%);
-}</pre></code>
+<code class="lang-sass"><pre>.<span class="hljs-string">tint </span>{
+   <span class="hljs-string">tint(</span><span class="hljs-built_in">get-color(base,</span> <span class="hljs-string">secondary)</span>, 7%)
+}</pre></code><div class="bg-base-secondary p">
+   get-color(base, secondary)
+</div>
+
+<div class="tint p invert">
+   tint(get-color(base, secondary), 7%)
+</div>
     
 
 

@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2504,7 +2514,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>2.7 KB</span>
+                    <span>2.9 KB</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2671,6 +2681,19 @@
 
     <span class="hljs-selector-class">.right</span> {
         <span class="hljs-attribute">text-align</span>:right;
+    }
+
+    <span class="hljs-selector-class">.invert</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$contrast-light</span>;
+        <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-class">.h1</span>,
+        <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-class">.h2</span>,
+        <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-class">.h3</span>,
+        <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-class">.h4</span>,
+        <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-class">.h5</span>,
+        <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-class">.h6</span> {
+            <span class="hljs-attribute">color</span>: inherit;
+        }
+        @<span class="hljs-keyword">include</span> invert-links();
     }
 }
 

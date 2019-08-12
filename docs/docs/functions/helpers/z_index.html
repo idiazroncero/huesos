@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2350,12 +2360,37 @@
     
     <p>Returns the z-index value of the <code>$item</code> as defined on the <code>$z-index</code> map on <code>_config.scss</code>.</p>
 <p>This technique allows for quick redefinition of z-index stack levels: instead of parsing the whole scss, you can simply re-order the map.</p>
+<p>Be careful with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">z-index stacking context</a>: this tool isn’t powerful enough and treats all z-indexes as “global”, no matter the contex.</p>
+<p>There are two strategies to the stacking context problem:</p>
+<ul>
+<li><strong>Purely incremental:</strong> Put all z-indexes in order, no matter what the stacking context.</li>
+<li><strong>Local context:</strong> Re-start the z-index inside every time a new context is created, retake the order when the context is finished, use comments to let you know when do you change context. We prefer this strategy.</li>
+</ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-comment">// Example of z-index map on config.scss</span>
+<code class="lang-scss"><pre><span class="hljs-comment">// Example of z-index map on config.scss using incremental strategy</span>
 <span class="hljs-variable">$z-index</span>: (
     background: <span class="hljs-number">0</span>,
     layer: <span class="hljs-number">1</span>,
-    popup: <span class="hljs-number">2</span>,
+    popup: <span class="hljs-number">2</span>, // New stacking context
+    popup__child: <span class="hljs-number">3</span>
+    popup__element: <span class="hljs-number">4</span>
+    menu: <span class="hljs-number">5</span>,
+    modal: <span class="hljs-number">6</span>, // New stacking context
+    modal__item: <span class="hljs-number">7</span>,
+    modal__element: <span class="hljs-number">8</span>
+);
+
+<span class="hljs-comment">// Example of z-index map on config.scss using local context</span>
+<span class="hljs-variable">$z-index</span>: (
+    background: <span class="hljs-number">0</span>,
+    layer: <span class="hljs-number">1</span>,
+    popup: <span class="hljs-number">2</span>, // New stacking context
+      popup__child: <span class="hljs-number">0</span>
+      popup__element: <span class="hljs-number">1</span>
+    menu: <span class="hljs-number">3</span>,
+    modal: <span class="hljs-number">4</span>, // New stacking context
+      modal__item: <span class="hljs-number">0</span>,
+      modal__element: <span class="hljs-number">1</span>
 )</pre></code><code class="lang-scss"><pre><span class="hljs-selector-tag">body</span> {
     <span class="hljs-attribute">z-index</span>: z-index(background);
 }
@@ -2364,7 +2399,9 @@
 }
 <span class="hljs-selector-class">.modal</span> {
     <span class="hljs-attribute">z-index</span>: z-index(popup);
-}</pre></code>
+}</pre></code><h3 id="resources">Resources</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">The stacking context</a></p>
+
     
 
 

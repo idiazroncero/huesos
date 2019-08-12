@@ -12,7 +12,15 @@ Sass Function extracted from compass. Darkens the `$color` by mixing it with bla
 ### Example
 
 ```sass
-.element {
-    color: shade($grey1, 25%);
+.shade {
+    background-color: shade( get-color(base, primary), 7% );
 }
 ```
+
+<div class="bg-base-primary p">
+   get-color(base, primary)
+</div>
+
+<div class="shade p invert">
+   shade(get-color(base, primary), 7%)
+</div>

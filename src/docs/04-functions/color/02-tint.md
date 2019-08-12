@@ -12,7 +12,15 @@ Sass Function extracted from compass.  Lightens the `$color` by mixing it with w
 ### Example
 
 ```sass
-.element {
-    color: tint($grey1, 25%);
+.tint {
+   tint(get-color(base, secondary), 7%)
 }
 ```
+
+<div class="bg-base-secondary p">
+   get-color(base, secondary)
+</div>
+
+<div class="tint p invert">
+   tint(get-color(base, secondary), 7%)
+</div>

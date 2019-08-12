@@ -9,8 +9,8 @@
 
 $colors: (
 	base: (
-		"primary": $gray6,
-		"secondary": $cyan4,
+		"primary": $cyan7,
+		"secondary": $blue7,
 		"separator": $gray1,
 		"black": $gray9,
 		"white": #fff,
@@ -19,7 +19,7 @@ $colors: (
 	text: (
 		"primary":   $gray9,
 		"heading":   $cyan6,
-		"mark" : $orange5,
+		"mark" : $orange4,
 	),
 
 	background: (
@@ -29,10 +29,10 @@ $colors: (
 	),
 
 	state: (
-		"muted":   $gray9,
-		"success": $teal4,
-		"warning": $yellow5,
-		"error":   $red5,
+		"muted":   $gray4,
+		"success": $teal5,
+		"warning": $yellow4,
+		"error":   $red6,
 	)
 ) !default;
 
@@ -120,7 +120,8 @@ $font-secondary: $trebuchet;
 $font-monospace: $courier;
 
 // Setting custom values for bold and light (100, 500, etc) allow for more precise mapping
-// Don't touch the settings to keep them by default.
+// Important! Don't set this to invalid font-weight values or falsy values.
+// Some mixins and functions need valid values in order to work!
 $font-main-bold: bold;
 $font-secondary-bold: bold;
 $light: lighter;
@@ -286,8 +287,8 @@ $link-alternative-strategies: false;
 // );
 
 // Inverse link colors and strategy (for contrasted backgrounds)
-$inverse-link-color: $white;
-$inverse-link-visited: $white;
+$inverse-link-color: $blue1;
+$inverse-link-visited: $blue1;
 $inverse-link-hover: $blue2;
 $inverse-link-active: $blue2;
 $inverse-link-strategy-default:'underline';
@@ -447,6 +448,7 @@ $huesitos: true;
 $z-index : (
 	item1 : 0,
 	item2 : 1,
+	  item3 : 3,
 );
 
 

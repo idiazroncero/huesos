@@ -2,7 +2,7 @@
 title: background-contrast($color, $include-typography)
 ---
 
-__Please note:__ this mixin is intended as a block-level override and, as such, is verbose and powerful. Before using this weapon, please check the rest of the color functions and mixins.
+__Bloat alert:__ this mixin is intended as a block-level override and, as such, is verbose and powerful. Please check the rest of the color functions and mixins before resorting to this.
 
 Given a `$color`, ensures that text and links are correctly contrasted against that background.
 
@@ -15,15 +15,17 @@ Uses `contrast-color($color)` function to perform the lightness calculation.
 - `$color` - Background-color to check
 - `$include-typography` - Boolean that adds overrides to all typographic elements.
 
-## Example
+### Example
 
 ```html
-<div class="element">
+<div class="background-contrast">
+    <h1>I'm a heading</h1>
     <a href="/" > I'm a link </a>
+    <h3>Sub heading, h3 level!</h3>
     <p>I'm some text.</p>
 </div>
 
-<div class="element2">
+<div class="background-contrast--typography">
     <h1>I'm a heading</h1>
     <a href="/" > I'm a link </a>
     <h3>Sub heading, h3 level!</h3>
@@ -32,12 +34,26 @@ Uses `contrast-color($color)` function to perform the lightness calculation.
 ```
 
 ```sass
-.element {
+.background-contrast {
     background-color: $teal9;
     @include background-contrast($teal9);
 }
-.element2 {
+.background-contrast--typography {
     background-color: $teal9;
     @include background-contrast($teal9, true);
 }
 ```
+
+<div class="p mb background-contrast">
+    <h1>I'm a heading</h1>
+    <a href="/" > I'm a link </a>
+    <h3>Sub heading, h3 level!</h3>
+    <p>I'm some text.</p>
+</div>
+
+<div class="p background-contrast--typography">
+    <h1>I'm a heading</h1>
+    <a href="/" > I'm a link </a>
+    <h3>Sub heading, h3 level!</h3>
+    <p>I'm some text.</p>
+</div>

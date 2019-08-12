@@ -3,6 +3,7 @@ a {
 	&.link--inactive {
 		@include kill-link();
 	}
+	// TODO: is this consistent enough?
 	&.disabled {
 		@include kill-link(get-color(state, muted));
 	}
@@ -19,7 +20,7 @@ a {
 }
 
 
-// Link alernative styles
+// Link alternative styles
 @if $link-alternative-strategies {
 	@each $strategy, $states in $link-alternative-strategies {
 		.link--#{$strategy} {

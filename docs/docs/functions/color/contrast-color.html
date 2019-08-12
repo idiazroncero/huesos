@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2356,21 +2366,34 @@
 <li><code>$light</code>   - Light color to return, defaults to <code>$contrast-light</code></li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"element"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contrasted"</span>&gt;</span>
-        I'm contrasted against my background
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.element</span> {
+<code class="lang-sass"><pre><span class="hljs-selector-class">.contrast-color</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$red6</span>;
 }
 
 <span class="hljs-selector-class">.contrasted-element</span> {
     <span class="hljs-comment">// Using defaults set on config.scss</span>
     <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$red6</span>);
+}
 
+<span class="hljs-selector-class">.contrasted-element--overriden</span> {
     <span class="hljs-comment">// Optionally, provide the dark and light contrasted colors</span>
-    <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$red6</span>, <span class="hljs-variable">$yellow9</span>, <span class="hljs-variable">$yellow1</span>);
-}</pre></code>
+    <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$red6</span>, <span class="hljs-variable">$blue9</span>, <span class="hljs-variable">$orange2</span>);
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contrast-color"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contrasted-element"</span>&gt;</span>
+        I'm contrasted against my background
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contrasted-element--overriden"</span>&gt;</span>
+        I'm contrasted against my background overriding defaults
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="p contrast-color">
+    <p class="contrasted-element">
+        I’m contrasted against my background
+    </p>
+    <p class="contrasted-element--overriden">
+        I’m contrasted against my background overriding defaults
+    </p>
+</div>
+
     
 
 

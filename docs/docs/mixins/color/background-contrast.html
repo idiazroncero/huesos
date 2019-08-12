@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2348,7 +2358,7 @@
 
     
     
-    <p><strong>Please note:</strong> this mixin is intended as a block-level override and, as such, is verbose and powerful. Before using this weapon, please check the rest of the color functions and mixins.</p>
+    <p><strong>Bloat alert:</strong> this mixin is intended as a block-level override and, as such, is verbose and powerful. Please check the rest of the color functions and mixins before resorting to this.</p>
 <p>Given a <code>$color</code>, ensures that text and links are correctly contrasted against that background.</p>
 <p>If <code>$include-typography</code> is set to true, overrides all typographic elements. By default, this value is set to <code>false</code> to prevent CSS bloat.</p>
 <p>Uses <code>contrast-color($color)</code> function to perform the lightness calculation.</p>
@@ -2357,25 +2367,39 @@
 <li><code>$color</code> - Background-color to check</li>
 <li><code>$include-typography</code> - Boolean that adds overrides to all typographic elements.</li>
 </ul>
-<h2 id="example">Example</h2>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"element"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"element2"</span>&gt;</span>
+<h3 id="example">Example</h3>
+<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-contrast"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>I'm a heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sub heading, h3 level!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.element</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-contrast--typography"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>I'm a heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sub heading, h3 level!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.background-contrast</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
     @include <span class="hljs-attribute">background</span>-contrast(<span class="hljs-variable">$teal9</span>);
 }
-<span class="hljs-selector-class">.element2</span> {
+<span class="hljs-selector-class">.background-contrast--typography</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
     @include <span class="hljs-attribute">background</span>-contrast(<span class="hljs-variable">$teal9</span>, true);
-}</pre></code>
+}</pre></code><div class="p mb background-contrast">
+    <h1>I’m a heading</h1>
+    <a href="/" > I’m a link </a>
+    <h3>Sub heading, h3 level!</h3>
+    <p>I’m some text.</p>
+</div>
+
+<div class="p background-contrast--typography">
+    <h1>I’m a heading</h1>
+    <a href="/" > I’m a link </a>
+    <h3>Sub heading, h3 level!</h3>
+    <p>I’m some text.</p>
+</div>
     
 
 

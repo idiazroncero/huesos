@@ -270,13 +270,13 @@ input.selectr-input {
 }
 
 .selectr-optgroup {
-	font-weight: bold;
+	font-weight: bold();
 	padding: 0;
 	margin-bottom: $gutter / 2;
 }
 
 .selectr-optgroup--label {
-	font-weight: bold;
+	font-weight: bold();
 	padding: $input-padding;
 	@include minititle();
 }

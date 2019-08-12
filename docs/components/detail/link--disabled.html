@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2480,7 +2490,7 @@ $button-strategy-hover: <span class="hljs-string">'border'</span>;</pre></code><
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>632 Bytes</span>
+                    <span>670 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2491,6 +2501,7 @@ $button-strategy-hover: <span class="hljs-string">'border'</span>;</pre></code><
 	&amp;<span class="hljs-selector-class">.link--inactive</span> {
 		@<span class="hljs-keyword">include</span> kill-link();
 	}
+	<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> is this consistent enough?</span>
 	&amp;<span class="hljs-selector-class">.disabled</span> {
 		@<span class="hljs-keyword">include</span> kill-link(get-color(state, muted));
 	}
@@ -2507,7 +2518,7 @@ $button-strategy-hover: <span class="hljs-string">'border'</span>;</pre></code><
 }
 
 
-<span class="hljs-comment">// Link alernative styles</span>
+<span class="hljs-comment">// Link alternative styles</span>
 @<span class="hljs-keyword">if</span> <span class="hljs-variable">$link-alternative-strategies</span> {
 	@<span class="hljs-keyword">each</span> <span class="hljs-variable">$strategy</span>, <span class="hljs-variable">$states</span> in <span class="hljs-variable">$link-alternative-strategies</span> {
 		<span class="hljs-selector-class">.link--</span>#{<span class="hljs-variable">$strategy</span>} {

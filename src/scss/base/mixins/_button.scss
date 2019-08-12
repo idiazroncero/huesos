@@ -44,7 +44,7 @@
 }
 
 @mixin button-split-inverse($color) {
-    @include background-split-color-inverse($color, $include-links: false);
+    @include background-split-color($color, $include-links: false, $invert: true);
     border-color: shade($color, $darken-split-ratio);
 }
 

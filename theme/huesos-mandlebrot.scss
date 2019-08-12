@@ -61,7 +61,7 @@ h3 {
 
 .logo {
     line-height:0.85;
-    font-weight:bold;
+    font-weight:bold();
 }
 
 .text-wrapper {
@@ -157,3 +157,51 @@ code.code {
         top: 0.1em;
     }
 }
+
+
+// Function
+
+.shade {
+    background-color: shade( get-color(base, primary), 7% );
+}
+
+.tint {
+    background-color: tint( get-color(base, secondary), 7% );
+}
+
+.contrast-color {
+    background-color: $red6;
+}
+
+.contrasted-element {
+    color: contrast-color($red6);
+}
+
+.contrasted-element--overriden {
+    color: contrast-color($red6, $blue9, $orange2);
+}
+
+.background-contrast {
+    background-color: $teal9;
+    @include background-contrast($teal9);
+}
+.background-contrast--typography {
+    background-color: $teal9;
+    @include background-contrast($teal9, true);
+}
+
+.background-split {
+    @include background-split-color($red5);
+}
+
+.background-split--links {
+    @include background-split-color($red5, $include-links: true);
+}
+
+.background-split--custom {
+    @include background-split-color($orange5, 15%, 66%, true);
+}
+
+.background-split--custom--inverse {
+    @include background-split-color($orange5, 15%, 66%, true, true);
+};

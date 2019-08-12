@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2349,11 +2359,11 @@
     
     
     <p>Returns the color value of a given map.</p>
-<p>Use in conjunction with <code>$colors</code> map of maps.</p>
+<p>It is designed to be used in conjunction with <code>$colors</code>. It won’t look up on any different map.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li><code>$color</code> - Name of the color key</li>
-<li><code>$value</code>  - Name of the map</li>
+<li><code>$color</code> - Name of the color key.</li>
+<li><code>$value</code>  - Name of the map. Defaults are: base, text, state. You can add as many as you want.</li>
 </ul>
 <h3 id="example">Example</h3>
 <code class="lang-sass"><pre>.<span class="hljs-string">primary-text </span>{

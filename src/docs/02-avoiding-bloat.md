@@ -9,7 +9,7 @@ __This is a potentially dangerous weapon.__ Any lack of awareness, misuse or bad
 
 Ask these questions and act accordingly to avoid sending extra KBs to your end-users. You, your boss and your Lighthouse score will be grateful:
 
-### ¿Do I need all the button states?
+### Do I need all the button states?
 
 By default, a `$button-states` map is populated with the following values:
 
@@ -27,7 +27,7 @@ This will generate helper classes for quick styling, like `.button--warning`.
 We consider these five states to be common, but if you can get rid of any of them, do it. Your code will be smaller.
 
 
-### ¿Do I have any unused button or link strategy?
+### Do I have any unused button or link strategy?
 
 `$button-alternative-strategies` and `$link-alternative-strategies` are powerful weapons.
 
@@ -43,7 +43,7 @@ Consider what might happen if you added 3/4 more states and 3/4 more alternative
 
 If you don't (which might be **the common case**) consider setting `$button-alternative-strategies` and/or `$link-alternative-strategies` to `false`. 
 
-### ¿Is my grid fine-tuned?
+### Is my grid fine-tuned?
 
 `$max-grid-cols` will generate classes for handling every possible number of columns on every defined breakpoint. That's a lot of css. By default, is set to a sensible number of six.
 
@@ -51,7 +51,14 @@ Check how many columns will you need and update this variable accordingly.
 
 You might want to roll out your own solution, or prescind of the grid. Set `$max-grid-cols: false` to avoid outputting any CSS.
 
-### ¿Do I need Huesitos?
+### Am I abusing background-contrast($include-typography: true) mixin?
+
+Each time you invoke this sorcery with `$include-typography: true`, you get a bunch of overrides for headings, which means a bunch of CSS.
+
+By default, `$include-typography` is set to false. It you don't need to override your links and headings, be sure to use the default value!
+
+
+### Do I need Huesitos?
 
 Huesitos is the utility part of Huesos. 
 
@@ -62,9 +69,9 @@ Utility classes are the subject of a heated debate. [Some frameworks](https://ta
 You might not want the utility classes at all. Set `$huesitos:false` to avoid it.
 
 
-#### I want Huesitos but... ¿Do i need all the color classes?
+#### I want Huesitos but... ¿do i need all the color classes?
 
-As a part of Huesitos, there are some color helpers that will apply `background-contrast` to every item on your `$colors` palette.
+As a part of Huesitos, there are some color helpers that will apply `background-contrast` to every item on your `$colors` palette. As we said before, `background-contrast` is evil.
 
 You will end up with a library of helper classes like `.bg-state-warning` that will check the text color against your background-color and apply any needed overrides. See the following example:
 

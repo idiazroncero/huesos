@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2349,26 +2359,67 @@
     
     
     <p>Split colors are a different strategy from <code>background-contrast</code>. Instead of contrasting a given dark/light color against a background, this mixin receives a <code>$color</code> and then applies a <code>tint()</code> function to the background and a <code>shade()</code> to the text and links.</p>
-<p>As a result, the contrast is now obtained by superimposing two different shades of a same <code>$color</code>.</p>
 <p>It takes <code>$lighten-split-ratio</code> and <code>$darken-split-ratio</code> from <code>config.scss</code> as default values that can be overriden.</p>
+<p>As a result, the contrast is now obtained by superimposing two different shades of a same <code>$color</code>.</p>
+<p>See <a href="/docs/color/handling-color">handling color</a> for more info.</p>
+<p><strong>Beware!</strong> There is a limit on link overriding. By default, it will override link colors. Link decoration will remain the same, and may result on weird behavior on some cases (i.e. border and border-inset strategies). We simply can’t automate every case. Use link-decoration mixins to handle these cases.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
 <li><code>$color</code> - Color to operate with.</li>
-<li><code>$lighten-amount</code> - % of lightness to apply to the background. </li>
-<li><code>$darken-amount</code> - % of darkness to apply to the text and links.</li>
-<li><code>$include-links</code>- Wether to override children links. Defaults to false,</li>
-<li><code>$invert</code> - Inverts behavior (background gets darker, color lighter). Defaults to false</li>
+<li><code>$lighten-amount</code> - % of lightness to apply to the background. Defaults to <code>$lighten-split-ratio</code></li>
+<li><code>$darken-amount</code> - % of darkness to apply to the text and links. Defaults to <code>$darken-split-ratio</code>.</li>
+<li><code>$include-links</code>- Wether to override children links. Defaults to <code>false</code>.</li>
+<li><code>$invert</code> - Inverts behavior (background gets darker, color lighter). Defaults to <code>false</code>.</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"element"</span>&gt;</span>
+<code class="lang-scss"><pre><span class="hljs-comment">// Using defaults</span>
+<span class="hljs-selector-class">.background-split</span> {
+    @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$red5</span>);
+};
+
+<span class="hljs-comment">// Add links</span>
+<span class="hljs-selector-class">.background-split--links</span> {
+  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$red5</span>, <span class="hljs-variable">$include-links</span>: true);
+};
+
+<span class="hljs-comment">// Fully customized</span>
+<span class="hljs-selector-class">.background-split--custom</span> {
+  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$orange5</span>, 15%, 66%, true);
+};
+
+<span class="hljs-selector-class">.background-split--custom--inverse</span> {
+  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$orange5</span>, 15%, 66%, true, true);
+};</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.element</span> {
-    @include <span class="hljs-attribute">background</span>-split-color(<span class="hljs-variable">$teal5</span>);
-}</pre></code><code class="lang-sass"><pre><span class="hljs-comment">/* Custom values */</span>
-.element {
-    @include background-split-<span class="hljs-keyword">color</span>($teal5, <span class="hljs-number">25</span>%, <span class="hljs-number">30</span>%, true, true);
-}</pre></code>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Background split by default<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split--links"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Background split including link overrides<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split--custom"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Split with custom values.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split--custom--inverse"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Split with custom values and inversion<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="p mb background-split">
+    <a href="/" > I’m a link </a>
+    <p>Background split by default</p>
+</div>
+<div class="p mb background-split--links">
+    <a href="/" > I’m a link </a>
+    <p>Background split including link overrides</p>
+</div>
+<div class="p mb background-split--custom">
+    <a href="/" > I’m a link </a>
+    <p>Split with custom values.</p>
+</div>
+<div class="p background-split--custom--inverse">
+    <a href="/" > I’m a link </a>
+    <p>Split with custom values and inversion</p>
+</div>
     
 
 

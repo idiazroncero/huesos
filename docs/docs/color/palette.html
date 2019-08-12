@@ -337,6 +337,16 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../mixins/color/invert-links.html" data-pjax>
+                    <span>Invert Links</span>
+                    
+                </a>
+            </li>
+        
+    
 
                 </ul>
             </li>
@@ -2347,19 +2357,19 @@
 
     
     
-    <p>The palettes are based on palx.jxnblk.com (for example, <a href="https://palx.jxnblk.com/C7FFC4)">https://palx.jxnblk.com/C7FFC4)</a>. Every single palette lives on a separate <code>.scss</code> file under 
-<code>base/palettes</code> and is <code>@import</code>ed on <code>_config.scss</code> for later use on the <code>$colors</code> map.</p>
-<p>This <code>$colors</code> map can store as many maps as needed, but the following are <strong>mandatory</strong> and will trigger errors if not present:</p>
+    <p>Hueso’s default color palettes are based on palx.jxnblk.com. This tool auto-generates up to 13 colors from a single hex value, and then divides each color on 10 different shades (<a href="https://palx.jxnblk.com/C7FFC4">see example for #C7FFC4</a>).</p>
+<p>Every single palette lives on a separate <em>.scss</em> file under <code>base/palettes</code> and is @imported on <code>_config.scss</code> for later use on the <code>$colors</code> map.</p>
+<p>Of course, you can choose any file hierarchy, any palette generator, etc. You might need to adapt <code>_config.scss</code> values because we follow Palx nomenclature, which ranges every color from 0 to 10 (i.e, <code>$blue0</code> to <code>$blue10</code>).</p>
+<p>The <code>$colors</code> map can store as many sub-maps as needed, but the following are <strong>mandatory</strong> and <strong>will trigger errors if not present</strong>:</p>
 <ul>
-<li>base / for primary, secondary and separator colors</li>
-<li>text / for typography colors</li>
-<li>state / for indicating states like: muted, error, warning, success</li>
+<li><strong>base</strong> for primary, secondary and separator colors</li>
+<li><strong>text</strong> for typography colors</li>
+<li><strong>state</strong> for indicating states like: muted, error, warning, success</li>
 </ul>
-<p>Following palx.jxnblk.com nomenclature, the colors are usually numbered from 0 to 9 (lightest to darkest).</p>
-<h3 id="example">Example</h3>
+<h3 id="current-values">Current values</h3>
 <section>
     <p class="minititle">Base</p>
-    <div class="grid grid--gutterless grid--small--2col grid--medium--6col grid--large--3col">
+    <div class="grid grid--gutterless grid--small--2col grid--medium--3col">
         <div class="grid-item p bg-base-primary">Primary</div>
         <div class="grid-item p bg-base-secondary" >Secondary</div>
         <div class="grid-item p bg-base-separator" >Separator</div>
@@ -2377,7 +2387,7 @@
 </section>
 <section>
     <p class="minititle">State</p>
-    <div class="grid grid--gutterless grid--small--2col grid--large--4col">
+    <div class="grid grid--gutterless grid--small--2col grid--large--3col">
         <div class="grid-item p bg-state-muted">Muted</div>
         <div class="grid-item p bg-state-success" >Success</div>
         <div class="grid-item p bg-state-warning" >Warning</div>
