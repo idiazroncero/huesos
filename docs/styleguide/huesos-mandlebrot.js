@@ -17,6 +17,7 @@ $(function(){
 
     $('.is-current').each(function(){
         $(this).parents('ul, li').show();
+        $(this).parents('.item--has-children').addClass('item--has-children--open');
     });
 
 

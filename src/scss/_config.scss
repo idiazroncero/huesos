@@ -49,8 +49,8 @@ $contrast-light: #FFFFFF;
 $color-modify-ratio: 33%;
 
 // Darken and lighten % to apply to split-color operations
-$darken-split-ratio: 70%;
-$lighten-split-ratio: 40%;
+$darken-split-ratio: 50%;
+$lighten-split-ratio: 50%;
 
 // Lightness threshold for color invertion. A value between 0-100.
 $lightness-threshold: 60;
@@ -402,6 +402,7 @@ $breadcrumb-arrow: "›"; // Valid unicode character
 
 $tag-strategy: 'contrast'; // One of split or contrast
 $tag-default-color: $gray3;
+$tag-padding: 0 $gutter / 4; // Shorthand
 
 // ------
 // ALERTS

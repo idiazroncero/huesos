@@ -6,7 +6,7 @@
 // Some overrides over the custom defaults
 $max-width: 2000px;
 $layout-align: left;
-$sidebar-width: 20%;
+$sidebar-width: 300px;
 
 @import "../huesos";
 
@@ -39,10 +39,14 @@ h3 {
 
 }
 
+.content {
+    margin:0 auto;
+}
+
 .wrapper__sidebar {
     background-color: $gray0;
     position:fixed;
-    padding: $gutter;
+    padding: $gutter * 2;
     top:0;
     left:0;
     bottom:0;
@@ -51,17 +55,9 @@ h3 {
 }
 
 .body {
-    // flex: 0 0 75%;
-    padding-left: $gutter * 2;
-    // width: 75%;
     margin-left:$sidebar-width;
+    padding: $gutter 0;
 }
-
-// h1, .h1 ,h2, .h2, h3, .h3 {
-//     a {
-//         @include kill-link(get-color(text, heading));
-//     }
-// }
 
 .logo {
     line-height:0.85;
@@ -93,13 +89,14 @@ code.code {
         margin-bottom: 0;
         display:inline-block;
         margin-right: $gutter;
+        min-width:100%;
     }
     .doc__subtitle {
         margin-top: ritmo(2);
         width:100%;
     }
-    .status {
-        display:inline-block;
+    .tag{
+        margin-top:$gutter / 2;
     }
 }
 

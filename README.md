@@ -6,7 +6,7 @@ This is a custom SCSS framework made by and for [idiaz.roncero](http://idiazronc
 
 It sets sensible defaults, exposes a highly configurable `_config.scss` file and makes use of the following libraries and techniques:
 
-
+- [Fractal](https://fractal.build) for building a live syleguide and documentation.
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
 - [Every Layout](https://every-layout.dev/) for clever and arithmetic layouts.

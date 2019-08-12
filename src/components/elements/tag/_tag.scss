@@ -1,7 +1,7 @@
 .tag {
     display:inline-block;
     vertical-align: bottom;
-    padding: $gutter / 8 $gutter / 2;
+    padding: $tag-padding;
     @include ritmo-font-size($h6-font-size);
     @if $tag-strategy == 'contrast' {
         @include background-contrast($tag-default-color);

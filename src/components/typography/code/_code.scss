@@ -20,6 +20,12 @@ var {
 }
 
 .code-block {
+
+	display:block;
+	margin-bottom: $spacer;
+	@include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
+
+	
 	@if $code-background != false or $code-block-background != false {
 		padding: $gutter;
 	}
@@ -27,8 +33,6 @@ var {
 		background-color: $code-block-background;
 		color: contrast-color($code-block-background);
 	}
-	@include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
-	display:block;
 
 	// Delete margin on pre element
 	pre {

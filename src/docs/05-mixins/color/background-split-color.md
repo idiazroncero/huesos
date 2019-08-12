@@ -2,7 +2,7 @@
 title: background-split-color($color, $lighten-amount, $darken-amount, $include-links, $invert)
 ---
 
-Split colors are a different strategy from `background-contrast`. Instead of contrasting a given dark/light color against a background, this mixin receives a `$color` and then applies a `lighten-color()` function to the background and a `darken-color()` to the text and links.
+Split colors are a different strategy from `background-contrast`. Instead of contrasting a given dark/light color against a background, this mixin receives a `$color` and then applies a `tint()` function to the background and a `shade()` to the text and links.
 
 As a result, the contrast is now obtained by superimposing two different shades of a same `$color`.
 
@@ -17,7 +17,7 @@ It takes `$lighten-split-ratio` and `$darken-split-ratio` from `config.scss` as 
 - `$invert` - Inverts behavior (background gets darker, color lighter). Defaults to false
 
 
-##3 Example
+### Example
 
 ```html
 <div class="element">

@@ -8,7 +8,7 @@
     <div class="wrapper__sidebar scrollbar-hidden">
 
         <header class="header">
-            <h1 class="logo h2">
+            <h1 class="logo h1">
                 <a href="{{ path('/') }}" class="header-title" data-pjax>
                     Huesos <br>
                     Style <br>
@@ -31,7 +31,7 @@
     </div>
 
     <main class="body" data-role="main">
-        <div class="content" >
+        <div class="content max-ch" >
             {% block content %}{% endblock %}
         </div>
     </main>
