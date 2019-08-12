@@ -3108,8 +3108,7 @@ h3 {
   padding: 1.5rem 0; }
 
 .logo {
-  line-height: 0.85;
-  font-weight: bold; }
+  font-weight: lighter; }
 
 .text-wrapper, .alert {
   max-width: 65ch; }
