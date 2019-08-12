@@ -50,3 +50,9 @@ Huesos make use of the following JS libraries:
 - [Selectr](https://github.com/Mobius1/Selectr) for vanilla-JS, Chosen-like `<select>` fields.
 
 
+### Roadmap / Ideas for the future
+- ¿Include a basic svg icon library?
+- Journalistic "sumarios" using blockquotes (as a component).
+- Completely migrate selectr CSS.
+- Optional animation / transition system with prefers-reduced-motion.
+- Apply intrinsic CSS sizing to grid system.

@@ -2,11 +2,9 @@
 
 {% macro tree(root, current, request) %}
     <h3 class="h4 strong mb half-gutter">{{ root.label }}</h3>
-    <div class="pl half-gutter">
-        <ol>
-            {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request) }}
-        </ol>
-    </div>
+    <ol>
+        {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request) }}
+    </ol>
 {% endmacro %}
 
 {% macro leaves(items, root, current, depth, request) %}
@@ -14,7 +12,7 @@
         {% if item.isCollection or (item.isComponent and not item.isCollated and item.variants().filter('isHidden', false).size > 1) %}
             
             <li class="item--has-children" data-behaviour="collection">
-                {{ item.label }}
+                <span class="item__label">{{ item.label }}</span>
                 <ul class="item__children" data-role="items">
 
                     {% if item.isComponent and not item.isCollated %}

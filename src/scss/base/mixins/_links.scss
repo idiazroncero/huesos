@@ -149,7 +149,7 @@
 		} @else if $strategy-hover == mark {
 			background-color:transparent;
 			padding:initial;
-		} @else if $strategy-default == 'border-inset' {
+		} @else if $strategy-hover == 'border-inset' {
 			&:after {
 				display:none;
 			}

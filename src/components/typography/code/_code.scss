@@ -8,6 +8,7 @@ var {
 	display:inline;
 	vertical-align: baseline;
 	box-decoration-break: clone;
+	white-space: nowrap; // Avoid line breaking!
 	@if $code-background != false {
 		background-color: $code-background;
 		color: contrast-color($code-background);
@@ -19,8 +20,12 @@ var {
 }
 
 .code-block {
-	@if $code-background != false {
+	@if $code-background != false or $code-block-background != false {
 		padding: $gutter;
+	}
+	@if $code-block-background {
+		background-color: $code-block-background;
+		color: contrast-color($code-block-background);
 	}
 	@include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
 	display:block;

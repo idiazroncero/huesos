@@ -17,7 +17,10 @@
             </h1>
         </header>
 
-
+        <section class="repo">
+            <h1 class="visually-hidden">Repositoire</h1>
+            <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
+        </section>
     
         <aside class="sidebar" data-role="sidebar">
             {% include 'partials/navigation/navigation.nunj' %}

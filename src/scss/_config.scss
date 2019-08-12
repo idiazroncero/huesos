@@ -4,20 +4,21 @@
 // --------------------
 
 // We recommend to import a palx palette and use their nomenclature
-@import "base/palettes/306BAC";
+// but you can use your preferred tool or write directly here instead...
+@import "base/palettes/0900C3";
 
 $colors: (
 	base: (
-		"primary": $blue6,
-		"secondary": $orange6,
-		"separator": $gray2,
+		"primary": $gray6,
+		"secondary": $cyan4,
+		"separator": $gray1,
 		"black": $gray9,
 		"white": #fff,
 	),
 
 	text: (
 		"primary":   $gray9,
-		"heading":   $blue9,
+		"heading":   $cyan6,
 		"mark" : $orange5,
 	),
 
@@ -32,7 +33,6 @@ $colors: (
 		"success": $teal4,
 		"warning": $yellow5,
 		"error":   $red5,
-		"caca": limegreen,
 	)
 ) !default;
 
@@ -149,8 +149,9 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-background: get-color(text, heading);
-$code-border-radius: 2px;
+$code-background: $blue5;
+$code-block-background: $gray9; // You might want to apply a different bg to block elements using .code-block
+$code-border-radius: 10px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.05em; 
@@ -185,12 +186,14 @@ $golden-ratio:     1.618 !default;
 $scale-ratio: $perfect-fourth !default;
 
 // Uses concise.css typeScale mixin to map font-sizes
+$h0-font-size: typeScale(7); // Extra big font
 $h1-font-size: typeScale(6);
 $h2-font-size: typeScale(5);
 $h3-font-size: typeScale(4);
 $h4-font-size: typeScale(3);
 $h5-font-size: typeScale(2); // Equals base-font-size
 $h6-font-size: typeScale(1);
+$h7-font-size: typeScale(0); // Extra small font
 
 // Set font sizes of specific, size-aware elements
 $sub-font-size: $h6-font-size;
@@ -237,8 +240,8 @@ $shadow-definition: 2px 2px 2px 0px rgba($black, 0.1);
 // ------
 
 // Only for $link-strategy:border
-$link-border-color: $violet1;
-$link-border-color-hover: $violet2; // You can set a different color on :hover
+$link-border-color: $indigo1;
+$link-border-color-hover: $indigo2; // You can set a different color on :hover
 $link-border-width: ritmo(1);
 
 // Only for $link-strategy:mark
@@ -247,16 +250,16 @@ $link-mark-color-hover: $violet2;
 $link-mark-padding: 4px;
 
 // Only for $link-strategy:border-inset
-$link-border-inset-color: $fuschia1;
-$link-border-inset-color-hover: $fuschia1;
+$link-border-inset-color: $indigo1;
+$link-border-inset-color-hover: $indigo1;
 $link-border-inset-width: 0.33em;
 $link-border-inset-width-hover: 0.66em;
 
 // Link colors
-$link-color: $red8;
-$link-visited: $red8;
-$link-hover: $fuschia6;
-$link-active: $red8;
+$link-color: $cyan9;
+$link-visited: $cyan8;
+$link-hover: $indigo7;
+$link-active: $indigo7;
 
 // BUILD YOUR OWN LINK
 // You can choose one strategy for every state!
@@ -268,7 +271,7 @@ $link-active: $red8;
 // - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
 // - mark - Background-color (as in a <mark> element)
 //
-$link-strategy-default: 'border-inset';
+$link-strategy-default: false;
 $link-strategy-hover: 'border-inset';
 
 $link-alternative-strategies: false;

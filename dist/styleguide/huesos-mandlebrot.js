@@ -5,6 +5,7 @@ $(function(){
         menu.hide();
 
         $(this).on('click', function(e){
+            $(this).toggleClass('item--has-children--open');
             e.stopPropagation();
             menu.toggle();
         })
@@ -20,6 +21,6 @@ $(function(){
 
 
     $('#toggle-grid').on('click', function(){
-        $('body').toggleClass('show-grid');
+        $('body, .wrapper__sidebar').toggleClass('show-grid');
     })
 })

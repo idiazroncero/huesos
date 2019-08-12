@@ -10,20 +10,46 @@ $sidebar-width: 20%;
 
 @import "../huesos";
 
+h1 {
+    color: $cyan8;
+}
+
+h2 {
+    color: $cyan7;
+}
+
+h3 {
+    color: $cyan6;
+}
+
+.header,
+.header h1 {
+    margin:0;
+}
+
+.repo a {
+    @include ritmo-font-size($h7-font-size);
+}
+
+.header-title {
+    @include kill-link($gray9)
+}
+
 #main-wrapper {
-    // display:flex;
+
 }
 
 .wrapper__sidebar {
-    // flex: 0 0 25%;
+    background-color: $gray0;
     position:fixed;
-    top:$gutter;
-    left:$gutter;
-    bottom:$gutter;
+    padding: $gutter;
+    top:0;
+    left:0;
+    bottom:0;
     overflow:auto;
     width:$sidebar-width;
-    padding-right: $gutter;
 }
+
 .body {
     // flex: 0 0 75%;
     padding-left: $gutter * 2;
@@ -31,11 +57,11 @@ $sidebar-width: 20%;
     margin-left:$sidebar-width;
 }
 
-h1, .h1 ,h2, .h2, h3, .h3 {
-    a {
-        @include kill-link(get-color(text, heading));
-    }
-}
+// h1, .h1 ,h2, .h2, h3, .h3 {
+//     a {
+//         @include kill-link(get-color(text, heading));
+//     }
+// }
 
 .logo {
     line-height:0.85;
@@ -115,5 +141,22 @@ code.code {
 }
 
 .item--has-children {
-    cursor:pointer
+    cursor:pointer;
+    > .item__label:after {
+        content:"▿";
+        display:inline-block;
+        margin-left: $gutter / 4;
+        font-size: 0.66em;
+        line-height: 0.66em;
+        vertical-align:middle;
+        position:relative;
+        top: -0.1em;
+    }
+}
+
+.item--has-children--open {
+    > .item__label:after {
+        transform: rotate(180deg);
+        top: 0.1em;
+    }
 }
