@@ -35,6 +35,7 @@ h3 {
     @include kill-link($gray9)
 }
 
+
 #main-wrapper {
 
 }
@@ -93,6 +94,7 @@ code.code {
     .doc__subtitle {
         margin-top: ritmo(2);
         width:100%;
+        font-family: $font-secondary;
     }
     .tag{
         margin-top:$gutter / 2;
@@ -204,3 +206,47 @@ code.code {
 .background-split--custom--inverse {
     @include background-split-color($orange5, 15%, 66%, true, true);
 };
+
+.contrast-links {
+    background-color: $teal9;
+    @include contrast-links($teal9);
+}
+
+.invert-links {
+    @include invert-links();
+}
+
+.hide-me {
+    @include hidden()
+}
+
+.float-parent {    
+    @include clearfix();
+    outline: 1px solid red;
+}
+.float-element {
+    float:left;
+}
+
+.right-align {
+    width:300px;
+    @include block-align(right);
+}
+
+.parent {
+    position:relative;
+    width:500px;
+    height:500px;
+    background-color: $teal4;
+}
+.layer {
+    @include layer(5px, 10px, 15px, 20px, 5);
+    background-color: $red2;
+}
+
+.item-with-default-separator {
+    @include separator();
+}
+.item-with-custom-separator {
+    @include separator(8, 6px, green );
+}

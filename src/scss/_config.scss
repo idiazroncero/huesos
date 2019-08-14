@@ -81,6 +81,7 @@ $show-grid: false;
 
 // A "spacer" is a basic unit for both vertical and horizontal spacing
 // The common alias is $gutter
+$spacer-lines: 4;
 $spacer: ritmo(4); 
 $gutter: $spacer;
 

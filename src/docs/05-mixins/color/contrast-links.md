@@ -4,7 +4,9 @@ title: contrast-links($color)
 
 Overrides all `<a>` elements against the provided background `$color`, only if necessary as defined by `$lightness-threshold` config.
 
-Uses `$inverse-link-` values from `_config.scss`.
+It uses `$inverse-link-` values from `_config.scss`. 
+
+These values provide for a generic link color inversion. If you need a more specific override, you should use `set-link()` instead.
 
 __Important!__ This mixin only works at a parent level.
 
@@ -14,16 +16,21 @@ __Important!__ This mixin only works at a parent level.
 
 ## Example
 
-```html
-<div class="element">
-    <a href="/" > I'm a link </a>
-    <a href="/" > Me too! </a>
-</div>
-```
-
-```sass
-.element {
+```scss
+.contrast-links {
     background-color: $teal9;
     @include contrast-links($teal9);
 }
 ```
+
+```html
+<div class="contrast-links">
+    <a href="/" > I'm a link </a><br>
+    <a href="/" > Me too! </a>
+</div>
+```
+
+<div class="p contrast-links">
+    <a href="/" > I'm a link </a><br>
+    <a href="/" > Me too! </a>
+</div>

@@ -1,10 +1,10 @@
 ---
-title: clearfix()
+title: clearfix
 ---
 
 Aplies a clearfix hack to a wrapper element.
 
-For quick prototyping, the utility class `.clearfix` is also provided.
+The helper class `.clearfix` is also provided.
 
 ### Example
 
@@ -19,8 +19,15 @@ For quick prototyping, the utility class `.clearfix` is also provided.
 ```scss
 .float-parent {    
     @include clearfix();
+    outline: 1px solid red;
 }
 .float-element {
     float:left;
 }
 ```
+
+<div class="float-parent">
+    <div class="p float-element">
+        Content
+    </div>
+</div>

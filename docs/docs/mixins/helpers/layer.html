@@ -2358,26 +2358,37 @@
 
     
     
-    <p>Sets an absolutely positioned layer above the closest parent ancestor which has a non-static position.</p>
+    <p>Sets an absolutely positioned layer above the closest parent ancestor which has position different to <code>static</code>.</p>
 <p>By default, it uses <code>0</code> for the four positioning values and <code>1</code> for the z-index, in order to ensure it stays above the rest of the elements.</p>
+<p><code>z-index</code> might need to be changed. You can pass either a number or a string representig a valid key of the <code>$z-index</code> map (see <a href="/docs/functions/helpers/z_index">documentation for z-index function</a>)</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li>$top - Offset from top, defaults to 0</li>
-<li>$right - Offset from right, defaults to 0</li>
-<li>$bottom - Offset from bottom, defaults to 0</li>
-<li>$left - Offset from left, defaults to 0</li>
-<li>$z-index - Z-index value, defaults to 1</li>
+<li><code>$top</code> - Offset from top, defaults to 0</li>
+<li><code>$right</code> - Offset from right, defaults to 0</li>
+<li><code>$bottom</code> - Offset from bottom, defaults to 0</li>
+<li><code>$left</code> - Offset from left, defaults to 0</li>
+<li><code>$z-index</code> - Z-index value, defaults to 1. Can be either a number or a string representing a valid value for the <code>$z-index</code> map.</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parent"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"layer"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.parent</span> {
+<code class="lang-scss"><pre><span class="hljs-selector-class">.parent</span> {
     <span class="hljs-attribute">position</span>:relative;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal4</span>;
 }
 <span class="hljs-selector-class">.layer</span> {
     @<span class="hljs-keyword">include</span> layer(<span class="hljs-number">15px</span>, 15px, 20px, 15px, 5);
-}</pre></code>
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$red4</span>;
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"layer"</span>&gt;</span>
+        I'm a layered div
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="parent">
+    <div class="p layer">
+        I’m a layered div
+    </div>
+</div>
+
     
 
 

@@ -2,7 +2,9 @@
 title: block-align($align)
 ---
 
-Aligns a block element using margin:auto.
+Helper mixin that aligns a block element using `margin:auto`.
+
+It won't create floating elements. This is intended for alignment of block elements relative to their parents. It will generate empty space.
 
 Defaults to `center`.
 
@@ -13,7 +15,19 @@ Defaults to `center`.
 ### Example
 
 ```scss
-article.left-align {
-    @include block-align(left);
+article.right-align {
+    width:300px;
+    @include block-align(right);
 }
 ```
+
+```html
+<article class="right-align">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate non eligendi natus unde iste omnis corrupti quaerat molestiae ipsam, laborum enim quisquam, aliquid obcaecati repellendus? Sit vel iure officiis?
+</article>
+```
+
+<article class="right-align">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate non eligendi natus unde iste omnis corrupti quaerat molestiae ipsam, laborum enim quisquam, aliquid obcaecati repellendus? Sit vel iure officiis?
+</article>
+

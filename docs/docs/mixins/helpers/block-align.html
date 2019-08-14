@@ -2358,16 +2358,24 @@
 
     
     
-    <p>Aligns a block element using margin:auto.</p>
+    <p>Helper mixin that aligns a block element using <code>margin:auto</code>.</p>
+<p>It won’t create floating elements. This is intended for alignment of block elements relative to their parents. It will generate empty space.</p>
 <p>Defaults to <code>center</code>.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
 <li><code>$align</code> - Either <code>center</code>, <code>left</code> or <code>right</code></li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-selector-tag">article</span><span class="hljs-selector-class">.left-align</span> {
-    @<span class="hljs-keyword">include</span> block-align(left);
-}</pre></code>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">article</span><span class="hljs-selector-class">.right-align</span> {
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">300px</span>;
+    @<span class="hljs-keyword">include</span> block-align(right);
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right-align"</span>&gt;</span>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate non eligendi natus unde iste omnis corrupti quaerat molestiae ipsam, laborum enim quisquam, aliquid obcaecati repellendus? Sit vel iure officiis?
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></pre></code><article class="right-align">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate non eligendi natus unde iste omnis corrupti quaerat molestiae ipsam, laborum enim quisquam, aliquid obcaecati repellendus? Sit vel iure officiis?
+</article>
+
+
     
 
 

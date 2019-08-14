@@ -40,13 +40,17 @@
 	right: $right;
 	bottom: $bottom;
 	left: $left;
-	z-index: $z-index;
+	@if type-of($z-index) == number {
+		z-index: $z-index;
+	} @else {
+		z-index: z-index($z-index);
+	} 
 }
 
-@mixin separator($margin-bottom:$spacer, $border-width:$separator-width, $border-color:$separator-color) {
-	margin-bottom: $margin-bottom;
+@mixin separator($ritmo-lines:$spacer-lines, $border-width:$separator-width, $border-color:$separator-color) {
+	margin-bottom: ritmo($ritmo-lines);
 	@if $separators == true {
-		@include ritmo-bottom-border($border-width, 4)
+		@include ritmo-bottom-border( $border-width, $ritmo-lines )
 		border-bottom-style: solid; 
 		border-bottom-color: $border-color;
 	}

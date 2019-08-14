@@ -1,22 +1,52 @@
 ---
-title: separator($margin-bottom:$spacer, $border-width:$separator-width $border-color:$separator-color)
+title: separator($ritmo-lines:$spacer-lines, $border-width:$separator-width $border-color:$separator-color)
 ---
 
 Uses a positive margin bottom, border width and border color to apply an offset and, depending on the `$separators` value, a border.
 
-By default, it uses `$spacer`, `$separator-width` and `$separator-color` values.
+By default, it uses `$spacer-lines`, `$separator-width` and `$separator-color` values.
+
+It can't accept any arbitrary value (i.e, px or em). We stick to the vertical rhythm using ritmo.scss. That's why the margin-bottom value needs to be expressed on `$lines`. See [ritmo's documentation](https://ritmo.marzeelabs.org/) for more info.
 
 ### Parameters
 
-- `$margin-bottom`- A valid margin-bottom value, better if expresed as a vertical rhythm. Defaults to the global `$spacer`.
+- `$ritmo-lines,`- A number of vertical rhythm lines, using ritmo. This is enforced because we use `ritmo-bottom-border()` in the mixin. Defaults to the global `$spacer-lines`.
 - `$border-width` - A width for the separator. Defaults to `$separator-width`. Only applies if `$separators` boolean is true.
 - `$border-color` - A color for the separator. Defaults to `$separator-color`. Only applies if `$separators` boolean is true.
 
 ### Example
 
 ```scss
-.item-with-separator {
-    @include separator(25px);
+.item-with-default-separator {
+    @include separator();
+}
+.item-with-custom-separator {
+    @include separator(8, 6px, green );
 }
 ```
 
+```html
+<div class="item-with-default-separator">
+    I have a default separator
+</div>
+<div class="item-with-custom-separator">
+    Me, instead, I've got the custom one
+</div>
+<div>
+    I'm just a text
+</div>
+```
+
+<div class="item-with-default-separator">
+    I have a default separator
+</div>
+<div class="item-with-custom-separator">
+    Me, instead, I've got the custom one
+</div>
+<div>
+    I'm just a text
+</div>
+
+### Reference
+
+[Ritmo.scss](https://ritmo.marzeelabs.org/)

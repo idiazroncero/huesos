@@ -2358,13 +2358,23 @@
 
     
     
-    <p>Returns the correct bold weight for the given html <code>element</code>.</p>
+    <p>Huesos will let you define different bold weights (<code>$font-main-bold</code> and <code>$font-secondary-bold</code>) for the two typefaces used in a proyect. This way, you can fine-tune your bold weights using specific values, like 300 or 900, instead of the generic and relative <strong>bold</strong> or <strong>bolder</strong>.</p>
+<p>If you don’t make use of the two typefaces or you don’t need to resort to specific <code>font-weight</code> values, you can omit this function.</p>
+<p>If you do, <code>bold()</code> Returns the correct bold weight for the given html <code>$element</code> and defaults to the current element (<code>&amp;</code>). <code>$element</code> needs to be a valid html element, not a class nor an ID.</p>
 <p>Internally, uses <code>$font-secondary-items</code> to decide wich font-weight to use.</p>
-<p>It only makes sense to use this when <code>$font-main-bold</code> and <code>$font-secondary-bold</code> are set to different weights.</p>
-<p><code>$element</code> defaults to the current element (<code>&amp;</code>);</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>$element</code> - A valid html element. Defaults to the current one (<code>&amp;</code>);</li>
+</ul>
 <h3 id="example">Example</h3>
 <code class="lang-scss"><pre><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-comment">// Use the current html element, p in this case</span>
     <span class="hljs-attribute">font-weight</span>: bold();
+}
+
+<span class="hljs-selector-class">.class</span> {
+    <span class="hljs-comment">// Pass another element</span>
+    <span class="hljs-attribute">font-weight</span>: bold(header);
 }</pre></code>
     
 

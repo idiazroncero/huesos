@@ -2359,20 +2359,24 @@
     
     
     <p>Overrides all <code>&lt;a&gt;</code> elements against the provided background <code>$color</code>, only if necessary as defined by <code>$lightness-threshold</code> config.</p>
-<p>Uses <code>$inverse-link-</code> values from <code>_config.scss</code>.</p>
+<p>It uses <code>$inverse-link-</code> values from <code>_config.scss</code>. </p>
+<p>These values provide for a generic link color inversion. If you need a more specific override, you should use <code>set-link()</code> instead.</p>
 <p><strong>Important!</strong> This mixin only works at a parent level.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
 <li><code>$color</code> - Background-color to check</li>
 </ul>
 <h2 id="example">Example</h2>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"element"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> Me too! <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.element</span> {
+<code class="lang-scss"><pre><span class="hljs-selector-class">.contrast-links</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
     @<span class="hljs-keyword">include</span> contrast-links(<span class="hljs-variable">$teal9</span>);
-}</pre></code>
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contrast-links"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> Me too! <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="p contrast-links">
+    <a href="/" > I’m a link </a><br>
+    <a href="/" > Me too! </a>
+</div>
     
 
 

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>separator($margin-bottom:$spacer, $border-width:$separator-width $border-color:$separator-color) | Huesos</title>
+<title>separator($ritmo-lines:$spacer-lines, $border-width:$separator-width $border-color:$separator-color) | Huesos</title>
 
 </head>
 <body>
@@ -2340,7 +2340,7 @@
         
         
             <h1>separator</h1>
-            <p class="h4 doc__subtitle">($margin-bottom:$spacer, $border-width:$separator-width $border-color:$separator-color)</p>
+            <p class="h4 doc__subtitle">($ritmo-lines:$spacer-lines, $border-width:$separator-width $border-color:$separator-color)</p>
         
         
 
@@ -2359,17 +2359,41 @@
     
     
     <p>Uses a positive margin bottom, border width and border color to apply an offset and, depending on the <code>$separators</code> value, a border.</p>
-<p>By default, it uses <code>$spacer</code>, <code>$separator-width</code> and <code>$separator-color</code> values.</p>
+<p>By default, it uses <code>$spacer-lines</code>, <code>$separator-width</code> and <code>$separator-color</code> values.</p>
+<p>It can’t accept any arbitrary value (i.e, px or em). We stick to the vertical rhythm using ritmo.scss. That’s why the margin-bottom value needs to be expressed on <code>$lines</code>. See <a href="https://ritmo.marzeelabs.org/">ritmo’s documentation</a> for more info.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li><code>$margin-bottom</code>- A valid margin-bottom value, better if expresed as a vertical rhythm. Defaults to the global <code>$spacer</code>.</li>
+<li><code>$ritmo-lines,</code>- A number of vertical rhythm lines, using ritmo. This is enforced because we use <code>ritmo-bottom-border()</code> in the mixin. Defaults to the global <code>$spacer-lines</code>.</li>
 <li><code>$border-width</code> - A width for the separator. Defaults to <code>$separator-width</code>. Only applies if <code>$separators</code> boolean is true.</li>
 <li><code>$border-color</code> - A color for the separator. Defaults to <code>$separator-color</code>. Only applies if <code>$separators</code> boolean is true.</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-selector-class">.item-with-separator</span> {
-    @<span class="hljs-keyword">include</span> separator(<span class="hljs-number">25px</span>);
-}</pre></code>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.item-with-default-separator</span> {
+    @<span class="hljs-keyword">include</span> separator();
+}
+<span class="hljs-selector-class">.item-with-custom-separator</span> {
+    @<span class="hljs-keyword">include</span> separator(<span class="hljs-number">8</span>, 6px, green );
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item-with-default-separator"</span>&gt;</span>
+    I have a default separator
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item-with-custom-separator"</span>&gt;</span>
+    Me, instead, I've got the custom one
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    I'm just a text
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="item-with-default-separator">
+    I have a default separator
+</div>
+<div class="item-with-custom-separator">
+    Me, instead, I’ve got the custom one
+</div>
+<div>
+    I’m just a text
+</div>
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://ritmo.marzeelabs.org/">Ritmo.scss</a></p>
+
     
 
 

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>hidden() | Huesos</title>
+<title>hidden | Huesos</title>
 
 </head>
 <body>
@@ -2340,7 +2340,6 @@
         
         
             <h1>hidden</h1>
-            <p class="h4 doc__subtitle">()</p>
         
         
 
@@ -2359,12 +2358,36 @@
     
     
     <p>Applies css styles to visually hide the given element without affecting accessibility.</p>
-<p>For quick prototyping, the utility class <code>.visually-hidden</code> is also provided.</p>
+<p>For quick access, the helper class <code>.visually-hidden</code> is also provided.</p>
+<p>Its use is recommended for correct semantic HTML and section naming. It is a good practice, for example, to give a heading to every section element. It also common that you won’t need or want all of this headings to be visible to the end user. Visually hiding those headings is the best practice (see example)</p>
 <p>This technique is borrowed from <a href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">https://snook.ca/archives/html_and_css/hiding-content-for-accessibility</a></p>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-selector-class">.visually-hidden</span> {
+<code class="lang-scss"><pre><span class="hljs-selector-class">.hide-me</span> {
     @<span class="hljs-keyword">include</span> hidden()
-}</pre></code>
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"news"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- We want to semantically name this section but don't show it to the user --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hide-me"</span>&gt;</span>News<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- This heading is ok --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>This is a headline that needs to be shown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti consequatur veniam beatae ad, neque accusantium consectetur unde dolorum vitae magnam inventore animi minima et molestias repellat reprehenderit. Excepturi, itaque!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre></code><section>
+    <h1 class="hide-me">News</h1>
+    <article class="card">
+        <h3>This is a headline that needs to be shown</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti consequatur veniam beatae ad, neque accusantium consectetur unde dolorum vitae magnam inventore animi minima et molestias repellat reprehenderit. Excepturi, itaque!</p>
+    </article>
+</section>
+
+
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding content for accessibility</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">Using HTML sections and outlines</a></p>
+
     
 
 
