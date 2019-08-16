@@ -134,11 +134,11 @@ $font-secondary-items:
 	'.your-classes',
 	'#your-ids';
 
-// Heading overrides
+// Heading overrides and configuration
 // Select a font weight and an alternate line height for your headings
 $heading-font-weight: bold;
-$heading-vertical-rhythm: false; // We might want a slower VR for headings. Set to false if not.
 $heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing 
+$heading-decorated-links: false; // Wether to decorate or not links inside headings
 
 // Text alignment for some elements
 $caption-align: left;
@@ -196,6 +196,16 @@ $h4-font-size: typeScale(3);
 $h5-font-size: typeScale(2); // Equals base-font-size
 $h6-font-size: typeScale(1);
 $h7-font-size: typeScale(0); // Extra small font
+
+// Set vetical rhythm using ritmo lines for headings
+// This might be needed to manually override automatic ritmo.scss calculations
+// For example: h1 and h2 legibility usually benefit from a reduced line height.
+$h1-ritmo-lines: 8;
+$h2-ritmo-lines: 6;
+$h3-ritmo-lines: 4;
+$h4-ritmo-lines: 4;
+$h5-ritmo-lines: 4;
+$h6-ritmo-lines: 2;
 
 // Set font sizes of specific, size-aware elements
 $sub-font-size: $h6-font-size;
