@@ -2421,11 +2421,23 @@
         <section class="browser-notes" id="browser-f1afc096b1e80d850f850f538b87c906-panel-notes">
     <div class="text-wrapper">
         
-            <p>Headings can be configured using variables on <code>_config.scss</code>.</p>
-<p>Usually, headings will appear on the <code>$font-secondary-items</code> map.</p>
+            <p>Headings are heavily customizable using variables on <code>_config.scss</code>.</p>
+<p>By default, headings appear on the <code>$font-secondary-items</code> map. This means they will receive a different font style, and (if configured), a different <strong>bold</strong> weight.</p>
+<h3 id="heading-configurations">Heading configurations</h3>
 <p>Heading-specific overrides can be set using <code>$heading-font-weight</code>, 
-<code>$heading-vertical-rhythm</code> and <code>$heading-letter-spacing</code>. It is especially adviced to set these two last values to 1 and a negative value to improve legibility.</p>
+<code>$heading-decorated-links</code> and <code>$heading-letter-spacing</code>.</p>
+<p>It is advisable to set <code>$heading-decorated-links</code> to false. Link decoration can obstruct legibility or interfere with your design when applied to big typefaces.</p>
+<p>By default, <code>$heading-letter-spacing</code> will take a negative value to improve legibility.</p>
+<h3 id="font-sizing-and-vertical-rhythm">Font sizing and vertical rhythm</h3>
 <p>Font sizing follows a type-scale based on <a href="http://type-scale.com/">http://type-scale.com/</a>. Choose your <code>$scale-ratio</code> and it will be automatically applied to h1-h6 font sizes.</p>
+<p>You can also set <code>$h1-ritmo-lines</code> to <code>$h6-ritmo-lines</code>. These variables take a number of ritmo lines and will be applied to the <code>ritmo-font-size()</code> mixin that will set the font size and line height of headings.</p>
+<div class="alert alert--success">
+<strong>Why do I need to manually set the vertical rhythm?</strong><br>Tweaking this values might seem overkill but the result is far more appealing and legible.
+The automatic and arithmetic ritmo.scss calculations result on excessive line height, specially on bigger sizes.
+</div>
+
+
+<h3 id="helper-classes">Helper classes</h3>
 <p>The <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> HTML elements can be mimicked using <code>.h1</code> to <code>.h6</code> classes.</p>
 
         
@@ -2438,12 +2450,12 @@
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main titles use heading one<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Subtitules and main sections use h2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>H3 is mainly for nested sections<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>In case you need furher sectioning, use an h4<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Rarely you will need a heading five<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading six is rather unexpected<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></pre>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main titles will usualy make use of heading one<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Subtitules and main sections might need to use h2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>H3 usually finds its place on nested sections inside a bigger block<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>In case you need further sectioning, use an h4. You can go down any number of levels. Well, actually, not<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Rarely you will need a heading five. But if you need it, you can use it. This is really nested and the font-size is very decreased<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading six is rather unexpected. On this nesting level the font-size has dropped and is small, even compared with normal text<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></pre>
         
     </code>
 </section>
@@ -2467,26 +2479,18 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>720 Bytes</span>
+                    <span>804 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-class">.h1</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h1-font-size</span>, 8); }
-<span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-class">.h2</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h2-font-size</span>, 6); }
-<span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-class">.h3</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h3-font-size</span>, 4); }
-<span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-class">.h4</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h4-font-size</span>, 4); }
-<span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-class">.h5</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h5-font-size</span>, 4); }
-<span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-class">.h6</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h6-font-size</span>, 2); }
-
-@<span class="hljs-keyword">if</span> <span class="hljs-variable">$heading-vertical-rhythm</span> {
-	<span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-class">.h1</span>,
-	<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-class">.h2</span>,
-	<span class="hljs-selector-tag">h3</span>,<span class="hljs-selector-class">.h3</span> {
-		<span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$heading-vertical-rhythm</span>;
-	}
-}
+                                <pre><span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-class">.h1</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h1-font-size</span>, <span class="hljs-variable">$h1-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-class">.h2</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h2-font-size</span>, <span class="hljs-variable">$h2-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-class">.h3</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h3-font-size</span>, <span class="hljs-variable">$h3-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-class">.h4</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h4-font-size</span>, <span class="hljs-variable">$h4-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-class">.h5</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h5-font-size</span>, <span class="hljs-variable">$h5-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-class">.h6</span> { @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h6-font-size</span>, <span class="hljs-variable">$h6-ritmo-lines</span>); }
 
 @<span class="hljs-keyword">if</span> <span class="hljs-variable">$heading-letter-spacing</span> {
 	<span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-class">.h1</span>,
@@ -2495,13 +2499,21 @@
 	}	
 }
 
+
 <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>,
 <span class="hljs-selector-class">.h1</span>, <span class="hljs-selector-class">.h2</span>, <span class="hljs-selector-class">.h3</span>, <span class="hljs-selector-class">.h4</span>, <span class="hljs-selector-class">.h5</span>, <span class="hljs-selector-class">.h6</span>  {
 	<span class="hljs-attribute">color</span>: get-color(text, heading);
 	<span class="hljs-attribute">font-weight</span>:<span class="hljs-variable">$heading-font-weight</span>;
+
 	<span class="hljs-selector-tag">small</span> {
 		<span class="hljs-attribute">color</span>: inherit;
 		<span class="hljs-attribute">vertical-align</span>: <span class="hljs-number">0</span>;
+	}
+
+	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$heading-decorated-links</span> == false {
+		<span class="hljs-selector-tag">a</span> {
+			@<span class="hljs-keyword">include</span> kill-link(get-color(text, heading));
+		}
 	}
 }
 </pre>

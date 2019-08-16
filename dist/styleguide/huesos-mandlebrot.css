@@ -753,8 +753,8 @@ h2, .h2 {
 h3, .h3 {
   font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  line-height: 30px;
+  line-height: 1.875rem; }
 
 h4, .h4 {
   font-size: 21px;
@@ -765,8 +765,8 @@ h4, .h4 {
 h5, .h5 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  line-height: 18px;
+  line-height: 1.125rem; }
 
 h6, .h6 {
   font-size: 12px;
@@ -823,9 +823,9 @@ h1,
 h2,
 h3,
 h4,
-dt,
-.your-classes,
-#your-ids {
+h5,
+h6,
+dt {
   font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif; }
 
 .minititle {

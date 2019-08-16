@@ -130,9 +130,9 @@ $normal: normal;
 
 // List of all elements which use $font-secondary.
 $font-secondary-items:
-	h1, h2, h3, h4, dt,
-	'.your-classes',
-	'#your-ids';
+	h1, h2, h3, h4, h5, h6, dt;
+	// '.your-classes',
+	// '#your-ids';
 
 // Heading overrides and configuration
 // Select a font weight and an alternate line height for your headings
@@ -202,9 +202,9 @@ $h7-font-size: typeScale(0); // Extra small font
 // For example: h1 and h2 legibility usually benefit from a reduced line height.
 $h1-ritmo-lines: 8;
 $h2-ritmo-lines: 6;
-$h3-ritmo-lines: 4;
+$h3-ritmo-lines: 5;
 $h4-ritmo-lines: 4;
-$h5-ritmo-lines: 4;
+$h5-ritmo-lines: 3;
 $h6-ritmo-lines: 2;
 
 // Set font sizes of specific, size-aware elements
