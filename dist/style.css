@@ -603,10 +603,8 @@ dd {
   margin: 0;
   padding: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap; }
+  flex-wrap: wrap; }
   .list--inline li {
     list-style-type: none;
     display: inline-block; }
@@ -880,10 +878,8 @@ input[type=checkbox].pseudo-checkbox {
   input[type=checkbox].pseudo-checkbox + label {
     cursor: pointer;
     display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
             align-items: center; }
     input[type=checkbox].pseudo-checkbox + label:before {
       content: "";
@@ -930,14 +926,11 @@ fieldset.fieldset--disabled {
 .form-item {
   margin-bottom: 1.5rem;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
           align-items: baseline; }
   .form-item label {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 1 auto;
             flex: 0 1 auto;
     font-size: 16px;
     font-size: 1rem;
@@ -953,12 +946,10 @@ fieldset.fieldset--disabled {
   .form-item input[type="tel"],
   .form-item input[type="search"] {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
             flex: 1 0 auto; }
   .form-item input[type="checkbox"],
   .form-item input[type="radio"] {
-    -webkit-align-self: center;
-            align-self: center; }
+    align-self: center; }
   .form-item:last-child, .form-item:last-of-type {
     margin-bottom: 0; }
 
@@ -1073,10 +1064,8 @@ input[type=radio].pseudo-radio {
   input[type=radio].pseudo-radio + label {
     cursor: pointer;
     display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
             align-items: center; }
     input[type=radio].pseudo-radio + label:before {
       content: "";
@@ -1399,10 +1388,8 @@ textarea {
   margin: 0;
   padding: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap; }
+  flex-wrap: wrap; }
   .menu li {
     list-style-type: none;
     display: inline-block; }
@@ -1562,10 +1549,8 @@ textarea {
     margin: 0;
     padding: 0;
     display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    flex-wrap: wrap; }
     .breadcrumb ul li,
     .breadcrumb ol li {
       list-style-type: none;
