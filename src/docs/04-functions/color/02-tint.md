@@ -11,7 +11,7 @@ Sass Function extracted from compass.  Lightens the `$color` by mixing it with w
 
 ### Example
 
-```sass
+```scss
 .tint {
    tint(get-color(base, secondary), 7%)
 }

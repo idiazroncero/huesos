@@ -13,7 +13,7 @@ If a different % is needed, use `tint()` directly.
 
 ### Example
 
-```sass
+```scss
 .element {
     border-color: lighten-color($gray7);
 }

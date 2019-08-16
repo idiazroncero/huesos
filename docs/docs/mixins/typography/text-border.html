@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2358,7 +2358,8 @@
 
     
     
-    <p>Sets a text-stroke with a fallback.</p>
+    <p>Another little trick to pull off from the hat when needed.</p>
+<p>Sets a text-stroke with a fallback for less capable browsers. Ideal for those pesky headings that need to contrast against an image.</p>
 <p>Uses the tecnique defined on <a href="https://css-tricks.com/adding-stroke-to-web-text/">Adding stroke to web text</a>.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
@@ -2366,6 +2367,13 @@
 <li><code>$border-width</code> - Defines the border width, defaults to 1px</li>
 <li><code>$text-color</code> - Defines the color of the text. A false value won’t apply any change.</li>
 </ul>
+<h3 id="example">Example</h3>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.text-border</span> {
+    @<span class="hljs-keyword">include</span> text-border(<span class="hljs-variable">$indigo8</span>, 3px, transparent);
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-border"</span>&gt;</span>I have a text border<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></pre></code><h1 class="text-border">I have a text border</h1>
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://css-tricks.com/adding-stroke-to-web-text/">Adding stroke to web text</a>.</p>
 
     
 

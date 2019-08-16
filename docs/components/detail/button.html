@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/mixins/links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../../docs/mixins/links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/mixins/links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../../docs/mixins/links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2432,11 +2432,11 @@
 </ul>
 <p>Use this values to define a <code>$button-strategy-default</code>and a <code>$button-strategy-hover</code>.</p>
 <p>Some common examples are:</p>
-<code class="lang-sass"><pre><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>
+<code class="lang-scss"><pre><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'outline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</pre></code><code class="lang-sass"><pre><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</pre></code><code class="lang-scss"><pre><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'background'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</pre></code><code class="lang-sass"><pre><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</pre></code><code class="lang-scss"><pre><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'split'</span>;
 <span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</pre></code><h2 id="disabled-buttons">Disabled buttons</h2>
 <p>Instead of using a custom <code>.button--disabled</code> class, disable buttons by usign the global <code>.disabled</code> helper class. </p>
@@ -2444,10 +2444,10 @@
 <h2 id="alternative-buttons-">Alternative buttons.</h2>
 <p>Alternative strategies can be created by populating the <code>$button-alternative-strategies</code> map with combinations of <code>default</code> and <code>hover</code> values.</p>
 <p>We provide a commented example on <code>_config.scss</code></p>
-<code class="lang-sass"><pre>$button-alternative-<span class="hljs-string">strategies:</span> (
-    <span class="hljs-string">split :</span> (
-        <span class="hljs-string">default :</span> <span class="hljs-string">'split'</span>, 
-        <span class="hljs-string">hover :</span> <span class="hljs-string">'split-inverse'</span>
+<code class="lang-scss"><pre><span class="hljs-variable">$button-alternative-strategies</span>: (
+    split : (
+        default : <span class="hljs-string">'split'</span>, 
+        hover : <span class="hljs-string">'split-inverse'</span>
     ),
 );</pre></code><p>The generated classes will take the following format: <code>.button--#{variant}--#{strategy}</code>. For example, the <code>split</code> strategy consisting of <code>split</code> as default and <code>split-inverse</code> as hover becomes <code>.button--primary--split</code> for the primary variant, <code>.button--error--split</code> por the error variant and so on…</p>
 <p>Setting <code>$button-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>

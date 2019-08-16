@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>set-link-decoration($strategy) | Huesos</title>
+<title>set-link-decoration($link-strategy-default, $link-strategy-hover) | Huesos</title>
 
 </head>
 <body>
@@ -460,9 +460,9 @@
     
         
             
-            <li class=" is-current" data-state="current" data-role="item">
-                <a href="" data-pjax>
-                    <span>Set Link Decoration</span>
+            <li class="" data-role="item">
+                <a href="set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -470,9 +470,9 @@
     
         
             
-            <li class="" data-role="item">
-                <a href="set-link.html" data-pjax>
-                    <span>Set Link</span>
+            <li class=" is-current" data-state="current" data-role="item">
+                <a href="" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2340,7 +2340,7 @@
         
         
             <h1>set-link-decoration</h1>
-            <p class="h4 doc__subtitle">($strategy)</p>
+            <p class="h4 doc__subtitle">($link-strategy-default, $link-strategy-hover)</p>
         
         
 
@@ -2359,19 +2359,24 @@
     
     
     <p>Sets the link decoration on a <code>&lt;a&gt;</code> element, defaults to <code>$link-strategy</code> as defined on <code>_config.scss</code>.</p>
-<p>The available link decorations are: underline, border, smart and mark.</p>
-<p>It is mainly used by other mixins (<code>set-link()</code>) but can be used to manually override a specific link. It needs to be applied directly at the element level and doesn’t apply any styling to link status (:hover, :focus, etc)</p>
+<p>The available link decorations are: <strong>false, underline, border, border-inset</strong> and <strong>mark</strong>.</p>
+<p>It is mainly used by other mixins (<code>set-link()</code>) but can be used anytime to manually override a specific link. </p>
+<p>It needs to be applied directly at the element level and doesn’t apply any styling to link state (<code>:hover</code>, <code>:focus</code>, etc), so you will need to add them case by case. </p>
+<p>Refer to <a href="/components/detail/link--default">link documentation</a> to learn more about the very specific way Huesos handle link states.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li><code>$link-strategy</code> - One of ‘underline’, ‘border’, ‘smart’ or ‘mark’</li>
+<li><code>$link-strategy-default</code> - One of ‘false’, ‘underline’, ‘border’, ‘border-inset’ or ‘mark’</li>
+<li><code>$link-strategy-hover</code> - One of ‘false’, ‘underline’, ‘border’, ‘border-inset’ or ‘mark’</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.link</span> {
-    @<span class="hljs-keyword">include</span> set-link-decoration(<span class="hljs-string">'mark'</span>);
-    &amp;:hover {
-        @<span class="hljs-keyword">include</span> set-link-decoration(<span class="hljs-string">'border'</span>)
-    }
-}</pre></code>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.my-link</span> {
+    @<span class="hljs-keyword">include</span> set-link-decoration(<span class="hljs-string">'mark'</span>, <span class="hljs-string">'underline'</span>);
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-link"</span>&gt;</span>
+    Custom decorated link
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></code><p><a href="#" class="my-link">
+    Custom decorated link
+</a></p>
+
     
 
 

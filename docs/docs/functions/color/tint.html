@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../mixins/links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../../mixins/links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../mixins/links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../../mixins/links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2365,8 +2365,8 @@
 <li><code>$dilution</code> - % of white to mix</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-sass"><pre>.<span class="hljs-string">tint </span>{
-   <span class="hljs-string">tint(</span><span class="hljs-built_in">get-color(base,</span> <span class="hljs-string">secondary)</span>, 7%)
+<code class="lang-scss"><pre><span class="hljs-selector-class">.tint</span> {
+   tint(get-<span class="hljs-attribute">color</span>(<span class="hljs-selector-tag">base</span>, secondary), 7%)
 }</pre></code><div class="bg-base-secondary p">
    get-color(base, secondary)
 </div>

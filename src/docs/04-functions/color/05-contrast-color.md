@@ -12,7 +12,7 @@ Returns a `$dark` or `$light` color value according to the background-color prov
 ### Example
 
 
-```sass
+```scss
 .contrast-color {
     background-color: $red6;
 }

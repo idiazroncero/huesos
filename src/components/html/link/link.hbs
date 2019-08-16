@@ -1,1 +1,4 @@
-<p {{#if style}} style="{{style}}" {{/if}}>Well, you know, <a href="#" class="{{ modifier }}">{{ text }}</a> inside a text that lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero reprehenderit tempora mollitia necessitatibus delectus facilis. Vel repellat quod earum quo aperiam itaque veritatis delectus esse. Consectetur excepturi quasi corrupti.</p>
+<p {{#if style}} style="{{style}}" {{/if}}>
+    You are looking at a 
+    <a href="#" {{#if modifier}}class="{{ modifier }}"{{/if}}>{{ text }}{{#if modifier}} with {{ modifier }} class{{/if}}</a>, inside a text that lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero reprehenderit tempora mollitia necessitatibus delectus facilis. Vel repellat quod earum quo aperiam itaque veritatis delectus esse. Consectetur excepturi quasi corrupti.
+</p>

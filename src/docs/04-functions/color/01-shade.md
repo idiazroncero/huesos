@@ -11,7 +11,7 @@ Sass Function extracted from compass. Darkens the `$color` by mixing it with bla
 
 ### Example
 
-```sass
+```scss
 .shade {
     background-color: shade( get-color(base, primary), 7% );
 }

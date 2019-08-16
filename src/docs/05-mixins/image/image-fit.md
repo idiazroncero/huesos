@@ -2,9 +2,11 @@
 title: image-fit($priority)
 ---
 
-Sets a `object-fit:cover` image on a given element, parent of the image and its fallback using `position:absolute`.
+Applied to the parent of an image, sets an `object-fit:cover` for the inner image and provides a fallback using `position:absolute`.
 
-It requires a `$priority` value (defaults to 'width') that indicates the value to scale to 100% of the container. Only needed for the fallback.
+It requires a `$priority` value (width or height, defaults to width) indicating which value will take 100% of the container's value. This is only needed for the fallback.
+
+Assumes object-position to be `center center`. You can easily add your overrides.
 
 ### Parameters
 - `$priority` - One of 'width' or 'height'
@@ -12,13 +14,19 @@ It requires a `$priority` value (defaults to 'width') that indicates the value t
 ### Example
 
 ```html
-<div class="parent">
-    <img src="poster.jpg" />
+<div class="image-fit">
+    <img src="http://placehold.it/1200x600" />
 </div>
 ```
 
 ```scss
-.parent {
+.image-fit {
+    width:400px;
+    height:400px;
     @include image-fit('height');
 }
 ```
+
+<div class="image-fit">
+    <img src="http://placehold.it/1200x600" />
+</div>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>kill-link-decoration($strategy) | Huesos</title>
+<title>kill-link-decoration($strategy-default, $strategy-hover); | Huesos</title>
 
 </head>
 <body>
@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2340,7 +2340,7 @@
         
         
             <h1>kill-link-decoration</h1>
-            <p class="h4 doc__subtitle">($strategy)</p>
+            <p class="h4 doc__subtitle">($strategy-default, $strategy-hover);</p>
         
         
 
@@ -2359,11 +2359,46 @@
     
     
     <p>Completely removes any link decoration.</p>
-<p>It needs to be applied directly on the <code>&lt;a&gt;</code> element.</p>
+<p>It assumes <code>$link-strategy-default</code> and <code>$link-strategy-hover</code> as defaults. </p>
+<p>Helper <code>.kill-link-decoration</code> class basically implements this mixin.</p>
+<p>If you are trying to kill the decoration of an already overriden link (using <code>set-link()</code> or <code>set-link-decoration()</code>) you will need to manually pass the correct values. </p>
+<p>Nevertheless, if you are trying to delete the decoration of a link that already overrides the default behavior of all links on your site… well, <strong>you might consider a different approach</strong>.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li><code>$strategy</code> - Valid <code>$link-strategy</code> value.</li>
+<li><code>$strategy-default</code> - Valid <code>$link-strategy</code> value.</li>
+<li><code>$strategy-hover</code> - Valid <code>$link-strategy</code> value.</li>
 </ul>
+<h3 id="examples">Examples</h3>
+<code class="lang-scss"><pre><span class="hljs-comment">// Normal link, no values passed</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.kill-my-decoration</span> {
+    @<span class="hljs-keyword">include</span> kill-link-decoration();
+}
+
+<span class="hljs-comment">// Oh, we made a custom decoration for a link...</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.my-very-special-link</span> {
+    @<span class="hljs-keyword">include</span> set-link-decoration(<span class="hljs-string">'mark'</span>, <span class="hljs-string">'border-inset'</span>);
+}
+
+<span class="hljs-comment">// ...but we need to delete the decoration on a more specific case! We'll need to manually pass the correct values because the mixin can't tell!</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.my-very-special-link--modified</span> {
+    @<span class="hljs-keyword">include</span> kill-link-decoration(<span class="hljs-string">'mark'</span>, <span class="hljs-string">'border-inset'</span>);
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-my-decoration"</span>&gt;</span>
+    Undecorated link. Keeps color. Deletes decorative elements.
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-very-special-link"</span>&gt;</span>
+    I'm a custom decorated link.
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-very-special-link--modified"</span>"&gt;</span>
+    I'm a custom decorated link that has gotten undecorated. Long life CSS bloat.
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></code><p><a href="#" class="kill-my-decoration">
+    Undecorated link. Keeps color. Deletes decorative elements.
+</a><br>
+<a href="#" class="my-very-special-link">
+    I’m a custom decorated link.
+</a><br>
+<a href="#" class="my-very-special-link--modified">
+    I’m a custom decorated link that has gotten undecorated. Long life CSS bloat.
+</a></p>
 
     
 

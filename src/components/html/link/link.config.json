@@ -1,29 +1,26 @@
 {
   "context" : {
-    "text" : "this gooey jooey is a link"
+    "text" : "link html tag, properly configured"
   },
   "order" : 0,
   "variants" : [
       { 
         "name" : "Inactive",
         "context": {
-          "modifier": "link--inactive",
-          "text": "this gooey jooey is a inactive link"
+          "modifier": "link--inactive"
         }
       },
       { 
         "name" : "Inverted",
         "context": {
           "modifier": "link--inverted",
-          "text": "this gooey jooey is an inverted link",
-          "style": "background-color: #000"
+          "style": "padding: 15px; color: #fff; background-color: #000"
         }
       },
       { 
         "name" : "Disabled",
         "context": {
-          "modifier": "disabled",
-          "text": "this gooey jooey is a disabled link"
+          "modifier": "disabled"
         }
       }
   ]

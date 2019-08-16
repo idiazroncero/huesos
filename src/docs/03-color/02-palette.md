@@ -6,7 +6,7 @@ Hueso's default color palettes are based on palx.jxnblk.com. This tool auto-gene
 
 Every single palette lives on a separate *.scss* file under `base/palettes` and is @imported on `_config.scss` for later use on the `$colors` map.
 
-Of course, you can choose any file hierarchy, any palette generator, etc. You might need to adapt `_config.scss` values because we follow Palx nomenclature, which ranges every color from 0 to 10 (i.e, `$blue0` to `$blue10`).
+Of course, you can choose any file hierarchy, any palette generator, etc. You might need to adapt `_config.scss` values because we follow Palx nomenclature, which ranges every color from 0 to 10 (i.e, `$blue0` to `$blue10`). You can find some similar palette generators on References
 
 The `$colors` map can store as many sub-maps as needed, but the following are __mandatory__ and __will trigger errors if not present__:
 
@@ -43,3 +43,7 @@ The `$colors` map can store as many sub-maps as needed, but the following are __
 		<div class="grid-item p bg-state-error" >Error</div>
 	</div>
 </section>
+
+### References
+
+[Eva Design System](https://colors.eva.design/)

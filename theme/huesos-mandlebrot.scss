@@ -250,3 +250,58 @@ code.code {
 .item-with-custom-separator {
     @include separator(8, 6px, green );
 }
+
+.image-fit {
+    width:400px;
+    height:400px;
+    @include image-fit('height');
+}
+
+a.my-link {
+    @include set-link-decoration('mark', 'underline');
+}
+
+a.set-link {
+    @include set-link(
+        red,
+        blue,
+        purple,
+        green,
+        'border',
+        'underline'
+    )
+}
+
+a.kill-link {
+    @include kill-link(purple)
+}
+
+a.kill-my-decoration {
+    @include kill-link-decoration();
+}
+
+a.my-very-special-link {
+    @include set-link-decoration('mark', 'border-inset');
+}
+
+a.my-very-special-link--modified {
+    @include kill-link-decoration('mark', 'border-inset');
+}
+
+h1.poly-fluid-sizing {
+    $map: (400px: 6px, 700px: 30px, 1100px: 35px, 1200px: 60px);
+    @include poly-fluid-sizing('font-size', $map);
+    line-height:1;
+}
+
+ul.inline-list {
+    @include inline-list();
+}
+
+.my-minititle {
+    @include minititle($h6-font-size, lighter, true, 1em)
+}
+
+.text-border {
+    @include text-border($indigo8, 3px, transparent);
+}

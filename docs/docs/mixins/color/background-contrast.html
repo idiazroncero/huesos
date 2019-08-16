@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2380,13 +2380,13 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sub heading, h3 level!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-sass"><pre><span class="hljs-selector-class">.background-contrast</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.background-contrast</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
-    @include <span class="hljs-attribute">background</span>-contrast(<span class="hljs-variable">$teal9</span>);
+    @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$teal9</span>);
 }
 <span class="hljs-selector-class">.background-contrast--typography</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
-    @include <span class="hljs-attribute">background</span>-contrast(<span class="hljs-variable">$teal9</span>, true);
+    @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$teal9</span>, true);
 }</pre></code><div class="p mb background-contrast">
     <h1>I’m a heading</h1>
     <a href="/" > I’m a link </a>

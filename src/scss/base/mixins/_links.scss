@@ -56,11 +56,11 @@
 	) {
 	@if $link-strategy-default == false {
 		text-decoration:none;
-	} @else if $link-strategy-default == underline {
+	} @else if $link-strategy-default == 'underline' {
 		@include link-underline();
-	} @else if $link-strategy-default == border {
+	} @else if $link-strategy-default == 'border' {
 		@include link-border();
-	} @else if $link-strategy-default == mark {
+	} @else if $link-strategy-default == 'mark' {
 		@include link-mark();
 	} @else if $link-strategy-default == 'border-inset' {
 		@include link-border-inset();
@@ -72,11 +72,11 @@
 	&:focus {
 		@if $link-strategy-hover == false {
 			text-decoration:none;
-		} @else if $link-strategy-hover == underline {
+		} @else if $link-strategy-hover == 'underline' {
 			@include link-underline();
-		} @else if $link-strategy-hover == border {
+		} @else if $link-strategy-hover == 'border' {
 			@include link-border($link-border-color-hover);
-		} @else if $link-strategy-hover == mark {
+		} @else if $link-strategy-hover == 'mark' {
 			@include link-mark($link-mark-color-hover);
 		} @else if $link-strategy-hover == 'border-inset' {
 			@include link-border-inset($link-border-inset-color-hover, $link-border-inset-width-hover);

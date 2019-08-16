@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>poly-fluid-sizing(property, $map); | Huesos</title>
+<title>poly-fluid-sizing($property, $map); | Huesos</title>
 
 </head>
 <body>
@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2340,7 +2340,7 @@
         
         
             <h1>poly-fluid-sizing</h1>
-            <p class="h4 doc__subtitle">(property, $map);</p>
+            <p class="h4 doc__subtitle">($property, $map);</p>
         
         
 
@@ -2358,21 +2358,51 @@
 
     
     
-    <p>Use this mixin to set a proportional, continuous sizing between some given breakpoints. It usually takes “font-size” as the property, but can be used with any css property that takes valid <code>calc()</code> units.</p>
-<p>To make it work, set points (viewport width and desired font-size) on a <code>$map</code> variable, pass it to the mixin and it will generate media queries and <code>calc()</code> values that will enable a fluid sizing of the given property (usually, ‘font-size’).</p>
-<p>For example: <code>$map: (576px: 22px, 768px: 24px, 992px: 34px)</code> will be read as: “at viewport width = 576px, start at 22px; then move up to 24px on 768px and then to a maximum of 34px on 992px)”. This also means that below 576s px we will have a fixed 22px value and above 992px we will see a 34px fixed maximum value.</p>
-<p>Resize this codepen to see it live:</p>
-<iframe height="378" style="width: 100%;" scrolling="no" title="Poly Fluid Sizing using linear equations, viewport units and calc()" src="//codepen.io/jakobud/embed/vmKLYb/?height=378&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+    <div class="mb alert alert--warning">
+  <p><strong>Important!</strong> Be aware that using this technique is completely against maintaining a vertical rhythm. Fluid elements __won’t stick to the grid.</p>
+  <p>To put the best techniques a good starting point is to use poly-fluid-sizing for headings and big text (h1 and h2, specially) and strict vertical-rhythm for the rest of the site</p>
+</div>
+
+<p>Use this mixin to set a proportional, continuous sizing between some given breakpoints. It usually takes <code>$property: font-size</code>, but can be used with any css property that acepts <code>calc()</code>.</p>
+<p>To make it work, set points (viewport width and desired font-size) on a <code>$map</code> variable, pass it to the mixin and it will generate media queries and <code>calc()</code> values that will enable a fluid sizing of the given property, as opposed to <code>@media</code> query “jumps”.</p>
+<p>For example: <code>$map: (576px: 22px, 768px: 24px, 992px: 34px)</code> will be read as: </p>
+<blockquote>
+<p><em>at viewport width = 576px, start at 22px; then move up to 24px on 768px and then to a maximum of 34px on 992px)</em></p>
+</blockquote>
+<p>This also means that below 576s px we will have a fixed 22px value and above 992px we will see a 34px fixed maximum value (think of it as a kind of <code>max-height</code> property).</p>
+<p>Resize this codepen to see it live (open it on a new tab to see it clearly).</p>
+<iframe style="height:600px;" scrolling="no" title="Poly Fluid Sizing using linear equations, viewport units and calc()" src="//codepen.io/jakobud/embed/vmKLYb/?height=378&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/jakobud/pen/vmKLYb/'>Poly Fluid Sizing using linear equations, viewport units and calc()</a> by Jake Wilson
   (<a href='https://codepen.io/jakobud'>@jakobud</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-<p><strong>More info:</strong><br><a href="https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/">https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/</a>  </p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>$property</code> - A valid css property that can take <code>calc()</code> as value.</li>
+<li><code>$map</code> - A map containing the fluid breakpoints in the form of <code>viewport-width: property-value</code></li>
+</ul>
 <h3 id="example">Example</h3>
-<code class="lang-sass"><pre>h1 {
-    $map: (<span class="hljs-number">576</span>px: <span class="hljs-number">22</span>px, <span class="hljs-number">768</span>px: <span class="hljs-number">24</span>px, <span class="hljs-number">992</span>px: <span class="hljs-number">34</span>px);
-    @include poly-fluid-sizing(<span class="hljs-string">'font-size'</span>, $map);
-}</pre></code>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">h1</span><span class="hljs-selector-class">.poly-fluid-sizing</span> {
+    <span class="hljs-comment">// Let's put some crazy values to see a clear progression...!</span>
+    <span class="hljs-comment">// Start at 6px @ 400w, </span>
+    <span class="hljs-comment">// quick increase to 30px @ 700w</span>
+    <span class="hljs-comment">// then reeeeally slow up to 35px @ 1100px </span>
+    <span class="hljs-comment">// and then a great jump to 80px @ 1200px</span>
+    <span class="hljs-variable">$map</span>: (<span class="hljs-number">400px</span>: <span class="hljs-number">6px</span>, <span class="hljs-number">700px</span>: <span class="hljs-number">30px</span>, <span class="hljs-number">1100px</span>: <span class="hljs-number">35px</span>, <span class="hljs-number">1200px</span>: <span class="hljs-number">60px</span>);
+    @<span class="hljs-keyword">include</span> poly-fluid-sizing(<span class="hljs-string">'font-size'</span>, <span class="hljs-variable">$map</span>);
+
+    <span class="hljs-comment">// Unitless or em relative line-heights will really help you here...</span>
+    <span class="hljs-attribute">line-height</span>:<span class="hljs-number">1em</span>;
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"poly-fluid-sizing"</span>&gt;</span>
+  I grow and shrink with the viewport
+<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></pre></code><h1 class="poly-fluid-sizing">
+  I grow and shrink with the viewport
+</h1>
+
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/">Fluid Responsive Typography With CSS Poly Fluid Sizing</a></p>
+
     
 
 

@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/mixins/links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../../docs/mixins/links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/mixins/links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../../docs/mixins/links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2425,33 +2425,37 @@
 <p>As in <code>&lt;button&gt;</code>, you can define a separate appearance for each link state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.</p>
 <p>These are the available strategies: </p>
 <ul>
-<li>false - No styling</li>
-<li>underline - Normal, text-decoration:underline</li>
-<li>border - Border-bottom with custom width</li>
-<li>border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top</li>
-<li>mark - Background-color (as in a <code>&lt;mark&gt;</code> element)</li>
+<li><strong>false</strong> - No styling</li>
+<li><strong>underline</strong> - The old-style, text-decoration:underline</li>
+<li><strong>border</strong> - Border-bottom with custom width</li>
+<li><strong>border-inset</strong> - Pseudo-element that fakes a border bottom that grows from bottom to top</li>
+<li><strong>mark</strong> - Background-color (as in a <code>&lt;mark&gt;</code> element)</li>
 </ul>
-<p>Use this values to define a <code>$link-strategy-default</code>and a <code>$link-strategy-hover</code>.</p>
-<p>The most common case would be like this.</p>
-<code class="lang-sass"><pre><span class="hljs-comment">/* Underline that disappears on hover */</span>
+<p>Use this values to define a <code>$link-strategy-default</code> and a <code>$link-strategy-hover</code>.</p>
+<p>The old-style behavior we all know would be like this:</p>
+<code class="lang-scss"><pre><span class="hljs-comment">/* Underline that disappears on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'underline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'false'</span>;</pre></code><p>And border / mark work perfectly in pair:</p>
-<code class="lang-sass"><pre><span class="hljs-comment">/* Underline that disappears on hover */</span>
-<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'border-inset'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border-inset'</span>;</pre></code><p>But some interesting styles could be as follows:</p>
-<code class="lang-sass"><pre><span class="hljs-comment">/* An underline that becomes a border */</span>
-$button-strategy-<span class="hljs-keyword">default</span>: <span class="hljs-string">'underline'</span>;
-$button-strategy-hover: <span class="hljs-string">'border'</span>;</pre></code><p>Please note the padding applied to ‘mark’ makes it difficult to use with other styles (unless you set padding to 0).</p>
-<h2 id="disabled-buttons">Disabled buttons</h2>
+<span class="hljs-variable">$button-strategy-hover</span>: false;</pre></code><p>Setting both states to the same value and using the config to differentiate them is a safe strategy.</p>
+<code class="lang-scss"><pre><span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'border-inset'</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border-inset'</span>;</pre></code><p>Mixes can led to interesting results, but careful testing is adviced. It can break.</p>
+<code class="lang-scss"><pre><span class="hljs-comment">/* An underline that becomes a border */</span>
+<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'underline'</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border'</span>;</pre></code><div class="alert alert--warning">
+<strong>Be careful when throwing <em>mark</em> on the mix!</strong><br>The left and right padding usually applied to ‘mark’ makes it difficult to mix it with other styles (unless you set padding to 0, wich is not recommended).
+</div>
+
+<h3 id="disabled-links">Disabled links</h3>
 <p>Disable buttons by usign the global <code>.disabled</code> helper class. </p>
 <p>This class is configured to detect context and apply the correct disabling properties.</p>
-<h2 id="alternative-buttons-">Alternative buttons.</h2>
+<h3 id="inverted-links">Inverted links</h3>
+<p>Helper class <code>.link--inverted</code> will apply a color inversion on the link, similar to using <code>invert-links()</code> mixin.</p>
+<h3 id="alternative-links-">Alternative links.</h3>
 <p>Alternative strategies can be created by populating the <code>$link-alternative-strategies</code> map with combinations of <code>default</code> and <code>hover</code> values.</p>
 <p>We provide a commented example on <code>_config.scss</code></p>
-<code class="lang-sass"><pre>$link-alternative-<span class="hljs-string">strategies:</span> (
-    <span class="hljs-string">mark :</span> (
-        <span class="hljs-string">default :</span> <span class="hljs-string">'mark'</span>, 
-        <span class="hljs-string">hover :</span> <span class="hljs-string">'mark'</span>
+<code class="lang-scss"><pre><span class="hljs-variable">$link-alternative-strategies</span>: (
+    mark : (
+        default : <span class="hljs-string">'mark'</span>, 
+        hover : <span class="hljs-string">'mark'</span>
     ),
 );</pre></code><p>The generated classes will take the following format: <code>.link--#{strategy}</code>. For example, the <code>mark</code> strategy consisting of <code>mark</code> as default and hover becomes <code>.link--mark</code>.</p>
 <p>Setting <code>$link-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>
@@ -2466,7 +2470,10 @@ $button-strategy-hover: <span class="hljs-string">'border'</span>;</pre></code><
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Well, you know, <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link--inactive"</span>&gt;</span>this gooey jooey is a inactive link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> inside a text that lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero reprehenderit tempora mollitia necessitatibus delectus facilis. Vel repellat quod earum quo aperiam itaque veritatis delectus esse. Consectetur excepturi quasi corrupti.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    You are looking at a
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link--inactive"</span>&gt;</span>link html tag, properly configured with link--inactive class<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>, inside a text that lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero reprehenderit tempora mollitia necessitatibus delectus facilis. Vel repellat quod earum quo aperiam itaque veritatis delectus esse. Consectetur excepturi quasi corrupti.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
         
     </code>
 </section>

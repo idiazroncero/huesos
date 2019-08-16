@@ -12,7 +12,7 @@ It is designed to be used in conjunction with `$colors`. It won't look up on any
 
 ### Example
 
-```sass
+```scss
 .primary-text {
     border-top-color: get-color(primary, base)
 }

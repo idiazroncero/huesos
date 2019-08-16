@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="../links/set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../links/set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="../links/set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2358,18 +2358,24 @@
 
     
     
-    <p>Sets a <code>object-fit:cover</code> image on a given element, parent of the image and its fallback using <code>position:absolute</code>.</p>
-<p>It requires a <code>$priority</code> value (defaults to ‘width’) that indicates the value to scale to 100% of the container. Only needed for the fallback.</p>
+    <p>Applied to the parent of an image, sets an <code>object-fit:cover</code> for the inner image and provides a fallback using <code>position:absolute</code>.</p>
+<p>It requires a <code>$priority</code> value (width or height, defaults to width) indicating which value will take 100% of the container’s value. This is only needed for the fallback.</p>
+<p>Assumes object-position to be <code>center center</code>. You can easily add your overrides.</p>
 <h3 id="parameters">Parameters</h3>
 <ul>
 <li><code>$priority</code> - One of ‘width’ or ‘height’</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parent"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"poster.jpg"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.parent</span> {
+<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"image-fit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placehold.it/1200x600"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.image-fit</span> {
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">400px</span>;
     @<span class="hljs-keyword">include</span> image-fit(<span class="hljs-string">'height'</span>);
-}</pre></code>
+}</pre></code><div class="image-fit">
+    <img src="http://placehold.it/1200x600" />
+</div>
+
     
 
 

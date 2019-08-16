@@ -80,9 +80,8 @@ On your SCSS main file, add the following lines before your code (where `path/to
 __Important:__ you need to `@import` dependencies before config. This is because many mixins of the third-party libraries (like Ritmo) are used for calculations on `_config.scss`.
 
 ## In the near future...
-- Basic svg icon library
 - Journalistic "sumarios" using blockquotes (as a component)
 - Convert selectr to our CSS style
 - Animation / transition system with prefers-reduced-motion
-- Substitute ritmo.css with rems or similar
 - Apply intrinsic CSS sizing to grid system
+- Be able to quickly disable or override links on headings

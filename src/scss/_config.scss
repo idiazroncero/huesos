@@ -156,7 +156,7 @@ $code-block-background: $gray9; // You might want to apply a different bg to blo
 $code-border-radius: 10px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
-$letter-spacing: 0.05em; 
+$letter-spacing: 0.1em; 
 
 // List margin-bottom between <li> items.
 $list-separator: $gutter / 2;
@@ -252,10 +252,10 @@ $link-mark-color-hover: $violet2;
 $link-mark-padding: 4px;
 
 // Only for $link-strategy:border-inset
-$link-border-inset-color: $indigo1;
-$link-border-inset-color-hover: $indigo1;
+$link-border-inset-color: $indigo0;
+$link-border-inset-color-hover: $indigo0;
 $link-border-inset-width: 0.33em;
-$link-border-inset-width-hover: 0.66em;
+$link-border-inset-width-hover: 1em;
 
 // Link colors
 $link-color: $cyan9;
@@ -273,7 +273,7 @@ $link-active: $indigo7;
 // - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
 // - mark - Background-color (as in a <mark> element)
 //
-$link-strategy-default: false;
+$link-strategy-default: 'underline';
 $link-strategy-hover: 'border-inset';
 
 $link-alternative-strategies: false;

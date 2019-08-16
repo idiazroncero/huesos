@@ -3,53 +3,59 @@ Applies to `<a>` elements.
 As in `<button>`, you can define a separate appearance for each link state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.
 
 These are the available strategies: 
-- false - No styling
-- underline - Normal, text-decoration:underline
-- border - Border-bottom with custom width
-- border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
-- mark - Background-color (as in a `<mark>` element)
+- __false__ - No styling
+- __underline__ - The old-style, text-decoration:underline
+- __border__ - Border-bottom with custom width
+- __border-inset__ - Pseudo-element that fakes a border bottom that grows from bottom to top
+- __mark__ - Background-color (as in a `<mark>` element)
 
-Use this values to define a `$link-strategy-default`and a `$link-strategy-hover`.
+Use this values to define a `$link-strategy-default` and a `$link-strategy-hover`.
 
-The most common case would be like this.
+The old-style behavior we all know would be like this:
 
-```sass
+```scss
 /* Underline that disappears on hover */
 $button-strategy-default: 'underline';
-$button-strategy-hover: 'false';
+$button-strategy-hover: false;
 ```
 
-And border / mark work perfectly in pair:
+Setting both states to the same value and using the config to differentiate them is a safe strategy.
 
-```sass
-/* Underline that disappears on hover */
+```scss
 $button-strategy-default: 'border-inset';
 $button-strategy-hover: 'border-inset';
 ```
 
-But some interesting styles could be as follows:
+Mixes can led to interesting results, but careful testing is adviced. It can break.
 
-```sass
+```scss
 /* An underline that becomes a border */
 $button-strategy-default: 'underline';
 $button-strategy-hover: 'border';
 ```
 
-Please note the padding applied to 'mark' makes it difficult to use with other styles (unless you set padding to 0).
+<div class="alert alert--warning">
+__Be careful when throwing *mark* on the mix!__  
+The left and right padding usually applied to 'mark' makes it difficult to mix it with other styles (unless you set padding to 0, wich is not recommended).
+</div>
 
-## Disabled buttons
+### Disabled links
 
 Disable buttons by usign the global `.disabled` helper class. 
 
 This class is configured to detect context and apply the correct disabling properties.
 
-## Alternative buttons.
+### Inverted links
+
+Helper class `.link--inverted` will apply a color inversion on the link, similar to using `invert-links()` mixin.
+
+### Alternative links.
 
 Alternative strategies can be created by populating the `$link-alternative-strategies` map with combinations of `default` and `hover` values.
 
 We provide a commented example on `_config.scss`
 
-```sass
+```scss
 $link-alternative-strategies: (
 	mark : (
 		default : 'mark', 

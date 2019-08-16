@@ -33,7 +33,7 @@ Uses `contrast-color($color)` function to perform the lightness calculation.
 </div>
 ```
 
-```sass
+```scss
 .background-contrast {
     background-color: $teal9;
     @include background-contrast($teal9);

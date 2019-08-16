@@ -12,19 +12,19 @@ Use this values to define a `$button-strategy-default`and a `$button-strategy-ho
 
 Some common examples are:
 
-```sass
+```scss
 /* Button with outline that fills with color on hover (default) */
 $button-strategy-default: 'outline';
 $button-strategy-hover: 'background';
 ```
 
-```sass
+```scss
 /* Button with solid background that darkens on hover */
 $button-strategy-default: 'background';
 $button-strategy-hover: 'split-inverse';
 ```
 
-```sass
+```scss
 /* Button with split colors that are set to inverse on hover */
 $button-strategy-default: 'split';
 $button-strategy-hover: 'split-inverse';
@@ -42,7 +42,7 @@ Alternative strategies can be created by populating the `$button-alternative-str
 
 We provide a commented example on `_config.scss`
 
-```sass
+```scss
 $button-alternative-strategies: (
 	split : (
 		default : 'split', 

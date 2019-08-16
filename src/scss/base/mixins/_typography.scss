@@ -7,7 +7,7 @@
 }
 
 
-@mixin minititle($size: $h6-font-size, $weight: $font-main-bold, $uppercase: true, $letter-spacing: $letter-spacing) {
+@mixin minititle($size: $h5-font-size, $weight: $font-main-bold, $uppercase: true, $letter-spacing: $letter-spacing) {
 	@include ritmo-font-size($size, 4);
 	font-weight: $weight;
 	@if $uppercase {

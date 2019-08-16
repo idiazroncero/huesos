@@ -13,7 +13,7 @@ If a different % is needed, use `shade()` directly.
 
 ### Example
 
-```sass
+```scss
 .element {
     background-color: darken-color($gray7);
 }

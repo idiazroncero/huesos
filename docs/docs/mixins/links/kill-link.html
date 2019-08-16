@@ -461,8 +461,8 @@
         
             
             <li class="" data-role="item">
-                <a href="set-link-decoration.html" data-pjax>
-                    <span>Set Link Decoration</span>
+                <a href="set-link.html" data-pjax>
+                    <span>Set Link</span>
                     
                 </a>
             </li>
@@ -471,8 +471,8 @@
         
             
             <li class="" data-role="item">
-                <a href="set-link.html" data-pjax>
-                    <span>Set Link</span>
+                <a href="set-link-decoration.html" data-pjax>
+                    <span>Set Link Decoration</span>
                     
                 </a>
             </li>
@@ -2358,12 +2358,22 @@
 
     
     
-    <p>Completely overrides link style to make it appear as normal text.</p>
-<p>It also deletes the decoration (by invoking <code>kill-link-decoration</code> mixin);</p>
+    <p>Completely overrides link style to make it appear as plain text. You can define a <code>$color</code> to give on each state.</p>
+<p>It also deletes the decoration (by invoking <code>kill-link-decoration()</code>).</p>
+<p><code>.link--inactive</code> helper class is basically an implementation of <code>kill-link()</code>;</p>
 <p><code>$color</code>defaults to <code>get-color(text, primary)</code>.</p>
+<h3 id="parameters">Parameters</h3>
 <ul>
 <li><code>$color</code> - Valid color to apply to the link on every state.</li>
 </ul>
+<h3 id="example">Example</h3>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.kill-link</span> {
+    @<span class="hljs-keyword">include</span> kill-link(purple)
+}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-link"</span>&gt;</span>
+    Completely overriden link. Purple color.
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></code><p><a href="#" class="kill-link">
+    Completely overriden link. Purple color.
+</a></p>
 
     
 
