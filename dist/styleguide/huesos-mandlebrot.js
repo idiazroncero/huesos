@@ -4,10 +4,22 @@ $(function(){
         var menu = $(this).children('.item__children');
         menu.hide();
 
-        $(this).on('click', function(e){
+        $(this).on('focus', function(e){
+            // // For the focus, first determine if we are targeting the parent itself
+            var isParent = $(e.target).get(0) === $(this).get(0);
+
+            if(isParent) {
+                $(this).toggleClass('item--has-children--open');
+                menu.toggle();
+            }
+
+            e.stopImmediatePropagation();
+
+        }).on('mousedown touch', function(e){
             $(this).toggleClass('item--has-children--open');
-            e.stopPropagation();
             menu.toggle();
+            e.preventDefault();
+            e.stopImmediatePropagation();
         })
     })
 
