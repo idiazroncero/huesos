@@ -4,7 +4,11 @@
 	align-items: baseline;
 	label {
 		flex: 0 1 auto;
-		@include minititle();
+		@if $label-as-minititle {
+			@include minititle($label-font-size)
+		} @else {
+			@include ritmo-font-size($label-font-size)
+		}
 	}
 	input[type="text"],
 	input[type="email"],

@@ -9,3 +9,4 @@ Since `$figcaption-font-size` will likely be a small size, it is forced to have 
 In order to align the whole block while keeping the text alignment of the figcaption defined on `$figcaption-align`, you need to wrap the entire `<figure>` on an html block element containing the `.right`, `.left` or `.center` class.
 
 
+

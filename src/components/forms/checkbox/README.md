@@ -1,1 +1,3 @@
-An alternative style can be applied globaly by using `$pseudo-checkbox` global variable or case by case using the `.pseudo-checkbox` class
+By default, checkboxes will use the native HTML styling.
+
+An alternative style can be applied globaly by setting `$pseudo-checkbox: true` or case by case using the `.pseudo-checkbox` class or `pseudo-checkbox()` mixin.

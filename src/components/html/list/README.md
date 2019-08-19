@@ -12,15 +12,14 @@ Be warned: this also means __you will need to be sure that overflow is possible 
 
 For unordered lists, square list-style-type is preferred (opinionated);
 
- 
-### Definition lists
-
-By default, all `<dd>` items are spaced with a `$spacer`
-
-### Inline lists
+#### Inline lists
 
 Other than using `inline-list()` mixin, you can use the helper class `.list--inline` to quickly delete the bullets/numbers and set the `<li>` elements to `inline-block`
 
-### References
+#### Config example
+
+
+
+#### References
 
 [Rhythm in web typography](https://betterwebtype.com/articles/2018/10/15/rhythm-in-web-typography/)

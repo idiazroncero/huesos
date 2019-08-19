@@ -53,6 +53,23 @@ h3 {
     bottom:0;
     overflow:auto;
     width:$sidebar-width;
+    .nav {
+        .is-current {
+            background-color: $cyan2;
+            display:inline-block;
+            a {
+                @include set-link(
+                    contrast-color($cyan2),
+                    contrast-color($cyan2),
+                    contrast-color($cyan2),
+                    contrast-color($cyan2),
+                    false,
+                    false
+                )
+            }
+            padding: 0 $gutter / 4;
+        }
+    }
 }
 
 .body {

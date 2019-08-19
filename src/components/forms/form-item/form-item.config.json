@@ -1,7 +1,7 @@
 {
   "order" : 0,
   "context" : {
-    "text" : "I'm a button"
+    "text" : "Default"
   },
   "variants" : [
       { 

@@ -609,6 +609,13 @@ dd {
     list-style-type: none;
     display: inline-block; }
 
+dt {
+  font-weight: bold;
+  margin: 0; }
+
+dd {
+  margin: 0 0 1.5rem 1.5rem; }
+
 hr {
   height: 0;
   overflow: visible;
@@ -959,8 +966,8 @@ fieldset.fieldset--disabled {
   .form-item label {
     -webkit-box-flex: 0;
             flex: 0 1 auto;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 12px;
+    font-size: 0.75019rem;
     line-height: 24px;
     line-height: 1.5rem;
     font-weight: bold;

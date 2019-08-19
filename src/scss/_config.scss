@@ -211,6 +211,7 @@ $h6-ritmo-lines: 2;
 $sub-font-size: $h6-font-size;
 $small-font-size: $h6-font-size;
 $figcaption-font-size: $h6-font-size;
+$label-font-size: $h6-font-size;
 
 
 
@@ -313,6 +314,9 @@ $inverse-link-strategy-hover: false;
 
 // Global variables
 $form-border-radius: $border-radius;
+
+// Labels
+$label-as-minititle: true;
 
 // Inputs
 $input-border-strategy: full; // Options: full, bottom, none;

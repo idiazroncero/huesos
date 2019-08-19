@@ -28,7 +28,7 @@
             {% set isCurrent = true if (current and (current.id == item.id)) else false %}
             <li class="{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
                 <a href="{{ path( (item | url), request) }}" data-pjax>
-                    <span>{{ item.label }}</span>
+                    {{ item.label }}
                     {% if item.status %}{{ status.unlabelled(item.status) }}{% endif %}
                 </a>
             </li>

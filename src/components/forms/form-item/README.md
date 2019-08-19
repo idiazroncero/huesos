@@ -10,3 +10,17 @@ Most of these classes can be stacked:
 
 - `.form-item--label-inside.form-item--required`	- `.form-item--required` can be combinated with the other modifiers
 - `.form-item--label-inside.form-item--col`	- You can sum `col`and `required` to get this commonly seen pattern
+
+### Labels
+
+Labels are formatted according to values from `$label-as-minititle` and `$label-font-size`. The size will be respected, and minititle will be applied if the boolean value is set to true.
+
+By default, we consider labels as a kind of minititle.
+
+<div class="alert alert--warning mb">
+
+    __There's life outside form items__  
+    This wrapper is a handy way of scoping a set of form-like styles. You can freely use form elements outside a `.form-item` wrapper and they will default to normal behavior (i.e, labels will cease to be minititles). This way, you can easily decide wether to apply form-like styles or not to your HTML.
+
+
+</div>

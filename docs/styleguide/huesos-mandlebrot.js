@@ -16,6 +16,10 @@ $(function(){
             e.stopImmediatePropagation();
 
         }).on('mousedown touch', function(e){
+            // Follow it ONLY if is a link
+            if(e.target.nodeName === 'A') {
+                return true;
+            };
             $(this).toggleClass('item--has-children--open');
             menu.toggle();
             e.preventDefault();
