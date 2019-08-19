@@ -610,12 +610,8 @@ dd {
     display: inline-block; }
 
 hr {
-  box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
   overflow: visible;
-  /* 2 */
   border: none;
   border-bottom: 1px solid #ededef; }
 
@@ -638,8 +634,8 @@ figcaption {
   display: block;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   text-align: left; }
 
 h1, .h1 {
@@ -657,8 +653,8 @@ h2, .h2 {
 h3, .h3 {
   font-size: 28px;
   font-size: 1.77689rem;
-  line-height: 30px;
-  line-height: 1.875rem; }
+  line-height: 36px;
+  line-height: 2.25rem; }
 
 h4, .h4 {
   font-size: 21px;
@@ -669,8 +665,8 @@ h4, .h4 {
 h5, .h5 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h6, .h6 {
   font-size: 12px;
@@ -2564,6 +2560,10 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
 
 .kill-link-decoration a:focus:after, .kill-link-decoration a:hover:after {
   display: none; }
+
+.owl * + *, details * + * {
+  margin-top: 1.5rem;
+  margin-bottom: 0; }
 
 /*!
  * Selectr 2.4.4

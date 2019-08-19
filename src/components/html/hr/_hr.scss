@@ -1,9 +1,6 @@
 hr {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	overflow: visible; /* 2 */
-	@if $separators == true {
-		border:none;
-		border-bottom: $separator-width solid $separator-color;
-	}
+	height: 0;
+	overflow: visible;
+	border:none;
+	border-bottom: $separator-width solid $separator-color;
 }

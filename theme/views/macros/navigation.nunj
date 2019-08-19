@@ -11,9 +11,9 @@
     {% for item in items %}
         {% if item.isCollection or (item.isComponent and not item.isCollated and item.variants().filter('isHidden', false).size > 1) %}
             
-            <li class="item--has-children" data-behaviour="collection">
+            <li class="item--has-children" data-behaviour="collection" tabindex="0">
                 <span class="item__label">{{ item.label }}</span>
-                <ul class="item__children" data-role="items">
+                <ul class="item__children" data-role="items" tabindex="0">
 
                     {% if item.isComponent and not item.isCollated %}
                         {% set items = item.variants().filter('isHidden', false).items() %}
@@ -26,7 +26,7 @@
             </li>
         {% else %}
             {% set isCurrent = true if (current and (current.id == item.id)) else false %}
-            <li class="{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
+            <li tabindex="0" class="{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
                 <a href="{{ path( (item | url), request) }}" data-pjax>
                     <span>{{ item.label }}</span>
                     {% if item.status %}{{ status.unlabelled(item.status) }}{% endif %}

@@ -565,6 +565,30 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/faqs.html" data-pjax>
+                    <span>Faqs</span>
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
 
     </ol>
 
@@ -2223,6 +2247,30 @@
         
             
             <li class="" data-role="item">
+                <a href="lobotomized-owl.html" data-pjax>
+                    <span>Lobotomized Owl</span>
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="scrollbar-hidden.html" data-pjax>
                     <span>Scrollbar Hidden</span>
                     
@@ -2422,6 +2470,8 @@
     <div class="text-wrapper">
         
             <p>Sets <code>&lt;summary&gt;</code> as a <code>.minititle</code> by default.</p>
+<p>It uses the <a href="/components/detail/lobotomized-owl">lobotomized owl technique</a> to prevent excessive spacing inside the <code>&lt;details&gt;</code> element even if we don’t know the specific markup.</p>
+<p>Use <code>[data-accordion]</code> on a wrapper element to set an accordion-like behavior using JS (where the opening of an item should close the rest).</p>
 
         
     </div>
@@ -2433,11 +2483,17 @@
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Pure HTML5 accordion<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>It's neat and simple. Love it.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span></pre>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-accordion</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Pure HTML5 accordion<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is HTML5's alternative to the old-fashioned accordion plugins made on JS.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>It's neat and simple. Love it.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Another details element<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Just to check spacing, gutters, etc...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
         
     </code>
 </section>
@@ -2461,13 +2517,17 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>51 Bytes</span>
+                    <span>79 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre>summary {
+                                <pre><span class="hljs-selector-tag">details</span> {
+	@<span class="hljs-keyword">extend</span> .owl;
+}
+
+summary {
 	@<span class="hljs-keyword">include</span> minititle();
 	<span class="hljs-attribute">cursor</span>:pointer;
 }</pre>

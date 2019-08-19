@@ -565,6 +565,30 @@
             </li>
         
     
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/faqs.html" data-pjax>
+                    <span>Faqs</span>
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #FF3333;" title="Draft"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
 
     </ol>
 
@@ -2223,6 +2247,30 @@
         
             
             <li class="" data-role="item">
+                <a href="lobotomized-owl.html" data-pjax>
+                    <span>Lobotomized Owl</span>
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="scrollbar-hidden.html" data-pjax>
                     <span>Scrollbar Hidden</span>
                     
@@ -2421,8 +2469,14 @@
         <section class="browser-notes" id="browser-e11f65bb6daeb1dfdc4416d7dc0f4ef6-panel-notes">
     <div class="text-wrapper">
         
-            <p>Applies $separator styling defined at <code>_config.scss</code> only if <code>$separators</code> is set to <code>true</code>. Eliminates ridge/bevel effects.</p>
+            <p>Applies <code>$separator</code> styling defined at <code>_config.scss</code>. </p>
+<p>It won’t be affected if <code>$separators</code> is set to <code>false</code>. <code>&lt;hr&gt;</code> is a semantical element and we understand it <em>requires</em> to be visible no matter what.</p>
+<p>It also eliminates ridge/bevel effects.</p>
+<div class="alert alert--warning">
 
+The whole <code>separators</code> strategy will likely be refactored soon. They’re not consistent enough.
+
+</div>
         
     </div>
 </section>
@@ -2459,20 +2513,17 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>191 Bytes</span>
+                    <span>109 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-tag">hr</span> {
-	<span class="hljs-attribute">box-sizing</span>: content-box; <span class="hljs-comment">/* 1 */</span>
-	<span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* 1 */</span>
-	<span class="hljs-attribute">overflow</span>: visible; <span class="hljs-comment">/* 2 */</span>
-	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$separators</span> == true {
-		<span class="hljs-attribute">border</span>:none;
-		<span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-	}
+	<span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">overflow</span>: visible;
+	<span class="hljs-attribute">border</span>:none;
+	<span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
 }</pre>
                             </code>
                         
