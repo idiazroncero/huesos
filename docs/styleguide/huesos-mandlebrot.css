@@ -656,7 +656,8 @@ a.link--inverted:active {
   color: #a9c7ea; }
 
 blockquote {
-  margin: 0 0 1.5rem 3rem; }
+  margin: 0 0 1.5rem 3rem;
+  hanging-punctuation: first; }
 
 summary {
   font-size: 16px;
@@ -1046,8 +1047,8 @@ fieldset.fieldset--disabled {
   padding: 0; }
   fieldset.fieldset--disabled legend {
     margin-bottom: 1.5rem;
-    font-size: 21px;
-    font-size: 1.333rem;
+    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     line-height: 1.5rem;
     font-weight: bold;
@@ -1121,25 +1122,7 @@ input {
   border-color: #e0e0e4;
   /* Make webkit render the search input like a normal text field */
   /* Turn off the recent search for webkit. It adds about 15px padding on the left */
-  /* Fix IE7 display bug */
-  /*
-	File Input
-	
-	Uses the label for handling click and hides the actual input element.
-	Important! Requires the `<label>` to be an inmediate sibling of the `<input>`
-	
-	Markup:
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file">Upload your file</label>
-	</div>
-	<div class="form-item">
-		<input type="file" id="file" name="file">
-		<label for="file"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 12h4V6h3l-5-5-5 5h3v6zm11.338 1.532c-.21-.224-1.611-1.723-2.011-2.114A1.503 1.503 0 0 0 16.285 11h-1.757l3.064 2.994h-3.544a.274.274 0 0 0-.24.133L12.992 16H7.008l-.816-1.873a.276.276 0 0 0-.24-.133H2.408L5.471 11H3.715c-.397 0-.776.159-1.042.418-.4.392-1.801 1.891-2.011 2.114-.489.521-.758.936-.63 1.449l.561 3.074c.128.514.691.936 1.252.936h16.312c.561 0 1.124-.422 1.252-.936l.561-3.074c.126-.513-.142-.928-.632-1.449z"/></svg></i>Upload your file (with icon!)</label>
-	</div>
-	
-	Styleguide Forms.file
-	*/ }
+  /* Fix IE7 display bug */ }
   input:hover, input:focus {
     border-color: #969699; }
   input:focus {
@@ -1156,14 +1139,44 @@ input {
     display: none; }
   input[type="reset"], input[type="button"], input[type="submit"] {
     overflow: visible; }
-  input[type=file] {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px); }
+
+input[type=file] {
+  border: none;
+  padding: 0; }
+  input[type=file] + label {
+    margin-left: 0.75rem;
+    margin-right: 0; }
+
+input::-webkit-file-upload-button {
+  margin-right: 0.375rem;
+  padding-right: 0.375rem;
+  border-right: 1px solid #e0e0e4; }
+
+.file-input {
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #e0e0e4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .file-input:hover, .file-input:focus {
+    border-color: #969699; }
+  .file-input[data-file-input] {
+    border: none;
+    padding: 0; }
+    .file-input[data-file-input] input[type=file] {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px 1px 1px 1px);
+      /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px); }
+    .file-input[data-file-input] label {
+      margin: 0; }
 
 input[type=radio].pseudo-radio {
   position: absolute !important;
@@ -1904,46 +1917,50 @@ a.tag, a.selectr-tag {
   padding: 1.5rem; }
 
 a.button {
-  padding: 0 0.75rem; }
-  a.button {
+  text-decoration: none; }
+  a.button:hover, a.button:focus {
     text-decoration: none; }
-    a.button:hover, a.button:focus {
-      text-decoration: none; }
-  a.button, a.button:link {
-    color: #3e3d4f; }
-  a.button:visited {
-    color: #3e3d4f; }
-  a.button:focus, a.button:hover {
-    color: #3e3d4f; }
-  a.button:active {
-    color: #3e3d4f; }
-  a.button, a.button:link, a.button:visited, a.button:active {
-    text-decoration: none; }
-  a.button:focus:after, a.button:hover:after {
-    display: none; }
+
+a.button, a.button:link {
+  color: #3e3d4f; }
+
+a.button:visited {
+  color: #3e3d4f; }
+
+a.button:focus, a.button:hover {
+  color: #3e3d4f; }
+
+a.button:active {
+  color: #3e3d4f; }
+
+a.button, a.button:link, a.button:visited, a.button:active {
+  text-decoration: none; }
+
+a.button:focus:after, a.button:hover:after {
+  display: none; }
 
 .button, input[type=file] + label {
   background: none;
-  border: 2px solid transparent;
+  border: none;
   outline: none;
   cursor: pointer;
   display: inline-block;
-  padding: 0 0.75rem;
+  padding: 0;
   /* IE8 and FF freak out if this rule is within another selector */
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 30px;
-  line-height: 1.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  vertical-align: middle;
+  vertical-align: bottom;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .button::-moz-focus-inner, input[type=file] + label::-moz-focus-inner {
     border: 0;
     padding: 0; }
   .button:hover, input[type=file] + label:hover, .button:active, input[type=file] + label:active, .button:focus, input[type=file] + label:focus {
-    border: 2px solid transparent;
+    border: none;
     outline: 0; }
   ::-webkit-file-upload-button {
     padding: 0;
@@ -1964,128 +1981,208 @@ a.button {
 
 .button--primary {
   border-radius: 2px;
-  background-color: #80cacd;
-  color: #004b4d;
-  border-color: #80cacd; }
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  padding-top: 4px;
+  padding-top: 0.25rem;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  border-left-width: 2px;
+  border-left-width: 0.125rem;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  border-right-width: 2px;
+  border-right-width: 0.125rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  border-style: solid;
+  border-color: #00959a;
+  color: #00959a;
+  background-color: transparent; }
   .button--primary:hover, .button--primary:focus {
-    background-color: #004b4d;
-    color: #80cacd;
-    border-color: #004b4d; }
+    border-color: #00959a;
+    background-color: #00959a;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem; }
 
 a.button--primary, a.button--primary:link, a.button--primary:visited, a.button--primary:active {
   border-radius: 2px;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   text-decoration: none; }
 
 a.button--primary:focus, a.button--primary:hover {
   text-decoration: none; }
 
 a.button--primary:link, a.button--primary:active, a.button--primary:visited {
-  color: #004b4d; }
+  color: #00959a; }
 
 a.button--primary:hover:link, a.button--primary:hover:active, a.button--primary:hover:visited, a.button--primary:focus:link, a.button--primary:focus:active, a.button--primary:focus:visited {
-  color: #80cacd; }
+  color: #FFFFFF; }
 
 .button--secondary {
   border-radius: 2px;
-  background-color: #80a3cc;
-  color: #00244c;
-  border-color: #80a3cc; }
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  padding-top: 4px;
+  padding-top: 0.25rem;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  border-left-width: 2px;
+  border-left-width: 0.125rem;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  border-right-width: 2px;
+  border-right-width: 0.125rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  border-style: solid;
+  border-color: #004798;
+  color: #004798;
+  background-color: transparent; }
   .button--secondary:hover, .button--secondary:focus {
-    background-color: #00244c;
-    color: #80a3cc;
-    border-color: #00244c; }
+    border-color: #004798;
+    background-color: #004798;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem; }
 
 a.button--secondary, a.button--secondary:link, a.button--secondary:visited, a.button--secondary:active {
   border-radius: 2px;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   text-decoration: none; }
 
 a.button--secondary:focus, a.button--secondary:hover {
   text-decoration: none; }
 
 a.button--secondary:link, a.button--secondary:active, a.button--secondary:visited {
-  color: #00244c; }
+  color: #004798; }
 
 a.button--secondary:hover:link, a.button--secondary:hover:active, a.button--secondary:hover:visited, a.button--secondary:focus:link, a.button--secondary:focus:active, a.button--secondary:focus:visited {
-  color: #80a3cc; }
+  color: #FFFFFF; }
 
-.button--success {
+.button--success, input[type=file] + label {
   border-radius: 2px;
-  background-color: #80e1b4;
-  color: #006234;
-  border-color: #80e1b4; }
-  .button--success:hover, .button--success:focus {
-    background-color: #006234;
-    color: #80e1b4;
-    border-color: #006234; }
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  padding-top: 4px;
+  padding-top: 0.25rem;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  border-left-width: 2px;
+  border-left-width: 0.125rem;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  border-right-width: 2px;
+  border-right-width: 0.125rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  border-style: solid;
+  border-color: #00c368;
+  color: #00c368;
+  background-color: transparent; }
+  .button--success:hover, input[type=file] + label:hover, .button--success:focus, input[type=file] + label:focus {
+    border-color: #00c368;
+    background-color: #00c368;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem; }
 
 a.button--success, a.button--success:link, a.button--success:visited, a.button--success:active {
   border-radius: 2px;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   text-decoration: none; }
 
 a.button--success:focus, a.button--success:hover {
   text-decoration: none; }
 
 a.button--success:link, a.button--success:active, a.button--success:visited {
-  color: #006234; }
+  color: #00c368; }
 
 a.button--success:hover:link, a.button--success:hover:active, a.button--success:hover:visited, a.button--success:focus:link, a.button--success:focus:active, a.button--success:focus:visited {
-  color: #80e1b4; }
+  color: #FFFFFF; }
 
 .button--warning {
   border-radius: 2px;
-  background-color: #e5e89b;
-  color: #65681c;
-  border-color: #e5e89b; }
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  padding-top: 4px;
+  padding-top: 0.25rem;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  border-left-width: 2px;
+  border-left-width: 0.125rem;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  border-right-width: 2px;
+  border-right-width: 0.125rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  border-style: solid;
+  border-color: #cad037;
+  color: #cad037;
+  background-color: transparent; }
   .button--warning:hover, .button--warning:focus {
-    background-color: #65681c;
-    color: #e5e89b;
-    border-color: #65681c; }
+    border-color: #cad037;
+    background-color: #cad037;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem; }
 
 a.button--warning, a.button--warning:link, a.button--warning:visited, a.button--warning:active {
   border-radius: 2px;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   text-decoration: none; }
 
 a.button--warning:focus, a.button--warning:hover {
   text-decoration: none; }
 
 a.button--warning:link, a.button--warning:active, a.button--warning:visited {
-  color: #65681c; }
+  color: #cad037; }
 
 a.button--warning:hover:link, a.button--warning:hover:active, a.button--warning:hover:visited, a.button--warning:focus:link, a.button--warning:focus:active, a.button--warning:focus:visited {
-  color: #e5e89b; }
+  color: #FFFFFF; }
 
 .button--error {
   border-radius: 2px;
-  background-color: #d88380;
-  color: #580300;
-  border-color: #d88380; }
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  padding-top: 4px;
+  padding-top: 0.25rem;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  border-left-width: 2px;
+  border-left-width: 0.125rem;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  border-right-width: 2px;
+  border-right-width: 0.125rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  border-style: solid;
+  border-color: #b00600;
+  color: #b00600;
+  background-color: transparent; }
   .button--error:hover, .button--error:focus {
-    background-color: #580300;
-    color: #d88380;
-    border-color: #580300; }
+    border-color: #b00600;
+    background-color: #b00600;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem; }
 
 a.button--error, a.button--error:link, a.button--error:visited, a.button--error:active {
   border-radius: 2px;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   text-decoration: none; }
 
 a.button--error:focus, a.button--error:hover {
   text-decoration: none; }
 
 a.button--error:link, a.button--error:active, a.button--error:visited {
-  color: #580300; }
+  color: #b00600; }
 
 a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:visited, a.button--error:focus:link, a.button--error:focus:active, a.button--error:focus:visited {
-  color: #d88380; }
+  color: #FFFFFF; }
 
 .button.disabled, input[type=file] + label.disabled {
   opacity: 0.33;

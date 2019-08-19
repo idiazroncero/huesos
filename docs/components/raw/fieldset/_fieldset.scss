@@ -8,7 +8,7 @@
 		padding: 0;
 		legend {
 			margin-bottom: $spacer;
-			@include minititle($h4-font-size);
+			@include minititle($fieldset-font-size);
 		}
 	}
 } @else {
@@ -19,7 +19,7 @@
 		border-color: $input-border-color;
 		border-radius: $form-border-radius;
 		legend {
-			@include minititle($h5-font-size);
+			@include minititle($fieldset-font-size);
 		}
 	}
 	fieldset.fieldset--disabled {
@@ -29,7 +29,7 @@
 		padding: 0;
 		legend {
 			margin-bottom: $spacer;
-			@include minititle($h4-font-size);
+			@include minititle($fieldset-font-size);
 		}
 	}
 }

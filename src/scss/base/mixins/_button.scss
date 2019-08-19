@@ -2,8 +2,21 @@
 // IMPORTANT: Do not document this mixins
 // ---
 
+
 @mixin button-outline($color) {
-    border: $button-border-width solid $color;
+
+    // Calculate the ritmo lines without the text
+    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
+
+
+    @include ritmo-top-border($button-border-width, $ritmo-lines);
+    @include ritmo-bottom-border($button-border-width, $ritmo-lines);
+    @include ritmo-side-border('left', $button-border-width, $button-ritmo-padding-x);
+    @include ritmo-side-border('right', $button-border-width, $button-ritmo-padding-x);
+
+    border-style: solid;
+    border-color: $color;
+
     color: $color;
     background-color: transparent;
 }
@@ -17,9 +30,14 @@
 }
 
 @mixin button-background($color) {
+
+    // Calculate the ritmo lines without the text
+    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
+
     border-color: $color;
     background-color:$color;
     color: contrast-color($color);
+    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-background($color) {
@@ -31,8 +49,12 @@
 }
 
 @mixin button-split($color) {
+    // Calculate the ritmo lines without the text
+    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
+
     @include background-split-color($color, $include-links: false);
     border-color: tint($color, $lighten-split-ratio);
+    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-split($color) {
@@ -44,8 +66,12 @@
 }
 
 @mixin button-split-inverse($color) {
+    // Calculate the ritmo lines without the text
+    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
+
     @include background-split-color($color, $include-links: false, $invert: true);
     border-color: shade($color, $darken-split-ratio);
+    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-split-inverse($color) {
@@ -63,6 +89,7 @@
         $button-strategy-hover : $button-strategy-hover 
         ) 
     {
+
     border-radius: $button-border-radius;
 
 	@if $button-strategy-default == 'outline' {
@@ -105,8 +132,6 @@
     &:visited,
     &:active {
         border-radius: $button-border-radius;
-        border-bottom-width: $button-border-width; // Ensure no link overrides the button
-        border-bottom-style: solid;
         text-decoration:none;
 
         @if $link-strategy-default == mark {

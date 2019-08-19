@@ -31,7 +31,8 @@ const huesosTheme = mandelbrot({
     ],
     scripts: [
         "https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js",
-        "/styleguide/huesos-mandlebrot.js"
+        "/styleguide/huesos-mandlebrot.js",
+        "/huesos.js"
     ],
     nav: ["docs", "components"],
     panels: ["notes", "html", "resources",]

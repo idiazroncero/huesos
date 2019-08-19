@@ -212,6 +212,7 @@ $sub-font-size: $h6-font-size;
 $small-font-size: $h6-font-size;
 $figcaption-font-size: $h6-font-size;
 $label-font-size: $h6-font-size;
+$fieldset-font-size: $h5-font-size;
 
 
 
@@ -328,8 +329,10 @@ $input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-font-family: $font-main;
+$button-font-size: $h6-font-size;
 $button-border-width: 2px;
-$button-padding: 0 ($spacer / 2);
+$button-ritmo-height: 6; // Ritmo line units
+$button-ritmo-padding-x: 2;
 $button-border-radius: 2px; // $border-radius;
 $button-weight: bold(button);
 $button-invert-color: false; // ONly valid on border:fill and background
@@ -344,8 +347,8 @@ $button-invert-color: false; // ONly valid on border:fill and background
 // - split-inverse - Inverse of split
 //
 // Note that background and outline can be considered "inverse" of each other
-$button-strategy-default: 'split';
-$button-strategy-hover: 'split-inverse';
+$button-strategy-default: 'outline';
+$button-strategy-hover: 'background';
 
 $button-alternative-strategies: false;
 

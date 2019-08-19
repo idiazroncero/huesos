@@ -567,6 +567,43 @@
     
         
             
+            <li class="item--has-children" data-behaviour="collection" tabindex="0">
+                <span class="item__label">Javascript</span>
+                <ul class="item__children" data-role="items">
+
+                    
+                        
+                    
+
+                    
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/javascript/accordion.html" data-pjax>
+                    Accordion
+                    
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="../../docs/javascript/file-uploader.html" data-pjax>
+                    File Uploader
+                    
+                </a>
+            </li>
+        
+    
+
+                </ul>
+            </li>
+        
+    
+        
+            
             <li class="" data-role="item">
                 <a href="../../docs/faqs.html" data-pjax>
                     Faqs
@@ -1122,6 +1159,30 @@
             <li class=" is-current" data-state="current" data-role="item">
                 <a href="" data-pjax>
                     Fieldset
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="file-input.html" data-pjax>
+                    File Input
                     
 
 <div class="Status Status--unlabelled">
@@ -2493,7 +2554,8 @@
         <section class="browser-notes" id="browser-6d008dd4f93112f10294858f8ea68417-panel-notes">
     <div class="text-wrapper">
         
-            <p>If either <code>$disable-fieldset</code> boolean is set to true or <code>.fieldset--disabled</code> class is added, visually hides the fielset box and converts the <code>&lt;legend&gt;</code> into a pseudo-heading.</p>
+            <p>If either <code>$disable-fieldset: true</code> or <code>.fieldset--disabled</code> class is added, visually hides the fielset box.</p>
+<p>On any case, the <code>&lt;legend&gt;</code> is set to a <code>minititle</code> of <code>$fieldset-font-size</code>.</p>
 
         
     </div>
@@ -2551,7 +2613,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>605 Bytes</span>
+                    <span>623 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2567,7 +2629,7 @@
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
 		<span class="hljs-selector-tag">legend</span> {
 			<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacer</span>;
-			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$h4-font-size</span>);
+			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$fieldset-font-size</span>);
 		}
 	}
 } @<span class="hljs-keyword">else</span> {
@@ -2578,7 +2640,7 @@
 		<span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$input-border-color</span>;
 		<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$form-border-radius</span>;
 		<span class="hljs-selector-tag">legend</span> {
-			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$h5-font-size</span>);
+			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$fieldset-font-size</span>);
 		}
 	}
 	<span class="hljs-selector-tag">fieldset</span><span class="hljs-selector-class">.fieldset--disabled</span> {
@@ -2588,7 +2650,7 @@
 		<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
 		<span class="hljs-selector-tag">legend</span> {
 			<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacer</span>;
-			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$h4-font-size</span>);
+			@<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$fieldset-font-size</span>);
 		}
 	}
 }
@@ -2628,6 +2690,9 @@
 
 
 <script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+
+
+<script src="../../huesos.js?cachebust=1.2.1"></script>
 
 
 

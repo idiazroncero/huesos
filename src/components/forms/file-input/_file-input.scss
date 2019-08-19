@@ -1,0 +1,33 @@
+input[type=file] {
+	border:none;
+	padding:0;
+	+ label {
+		@extend .button;
+		@extend .button--success;
+		margin-left: $gutter / 2;
+		margin-right:0,
+	}
+}
+
+input::-webkit-file-upload-button {
+	margin-right: ritmo($input-padding-lines);
+	padding-right: ritmo($input-padding-lines);
+	border-right: $input-border-width solid $input-border-color;
+}
+
+.file-input {
+	@include form-border($input-border-strategy);
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+	&[data-file-input] {
+		border:none;
+		padding:0;
+		input[type=file] {
+			@include hidden();
+		}
+		label {
+			margin:0;
+		}
+	}
+}

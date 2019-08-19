@@ -1,5 +1,6 @@
 const Selectr = require('mobius1-selectr');
 const accordionNodes = document.querySelectorAll('[data-accordion]');
+const fileInputNodes = document.querySelectorAll('[data-file-input]');
 
 // If selects, Initialize selectr on all fields
 var selects = document.getElementsByClassName('js--selectr');
@@ -24,3 +25,24 @@ for(let accordion of accordionNodes) {
 		});	
 	});
 }
+
+
+// Set file input behavior
+for(let fileInput of fileInputNodes) {
+	let label = fileInput.querySelector('label'),
+		labelVal = label.innerHTML,
+		labelVerb = label.getAttribute('data-upload-verb'),
+		labelName = label.getAttribute('data-upload-name'),
+		input = fileInput.querySelector('input');
+
+	input.addEventListener('change', function(e){
+		let fileName = labelVal;
+		if( this.files && this.files.length > 1 ){
+			fileName = labelVerb + ' ' + this.files.length + ' ' + labelName;
+		} else if(this.files && this.files.length == 1) {
+			fileName = labelVerb + ' ' + e.target.value.split('\\').pop();
+		}
+		label.innerHTML = fileName;
+	});
+}
+
