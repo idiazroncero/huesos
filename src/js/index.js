@@ -3,11 +3,12 @@ const accordionNodes = document.querySelectorAll('[data-accordion]');
 const fileInputNodes = document.querySelectorAll('[data-file-input]');
 
 // If selects, Initialize selectr on all fields
-var selects = document.getElementsByClassName('js--selectr');
+const selects = document.querySelectorAll('[data-selectr]');
+console.log('executed');
 if(selects.length) {
-	Array.prototype.forEach.call(selects, function(el){
-		new Selectr(el);
-	});
+	for(let select of selects) {
+		new Selectr(select);
+	}
 }
 
 // Set accordion behavior

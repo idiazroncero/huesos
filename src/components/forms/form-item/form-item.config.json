@@ -24,6 +24,20 @@
           "modifier": "form-item--label-inside",
           "text": "Label inside"
         }
+      },
+      { 
+        "name" : "Label top",
+        "context": {
+          "modifier": "form-item--label-top",
+          "text": "Label inside"
+        }
+      },
+      { 
+        "name" : "Label bottom",
+        "context": {
+          "modifier": "form-item--label-bottom",
+          "text": "Label inside"
+        }
       }
   ]
 }

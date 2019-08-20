@@ -1,3 +1,3 @@
-Handles multiple selection using [Selectr](https://github.com/Mobius1/Selectr)
+When `[data-selectr]` is applied directly on the element, it uses [Selectr](https://github.com/Mobius1/Selectr) for a leaner UI.
 
-It is applied automatically to all `.js--selectr` inputs on the page. To prevent this, you will need to make your own JS bundle instead of using the common `huesos.js`
+Otherwise, you get the default behavior.

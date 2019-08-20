@@ -567,38 +567,11 @@
     
         
             
-            <li class="item--has-children" data-behaviour="collection" tabindex="0">
-                <span class="item__label">Javascript</span>
-                <ul class="item__children" data-role="items">
-
-                    
-                        
-                    
-
-                    
-    
-        
-            
             <li class="" data-role="item">
-                <a href="../../docs/javascript/accordion.html" data-pjax>
-                    Accordion
+                <a href="../../docs/javascript.html" data-pjax>
+                    Javascript
                     
                 </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="../../docs/javascript/file-uploader.html" data-pjax>
-                    File Uploader
-                    
-                </a>
-            </li>
-        
-    
-
-                </ul>
             </li>
         
     
@@ -1106,6 +1079,54 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--label-top.html" data-pjax>
+                    Label Top
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--label-bottom.html" data-pjax>
+                    Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -2612,7 +2633,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>1.1 KB</span>
+                    <span>1.2 KB</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2621,7 +2642,7 @@
                                 <pre><span class="hljs-selector-class">.form-item</span> {
 	<span class="hljs-attribute">margin-bottom</span> : <span class="hljs-variable">$gutter</span>;
 	<span class="hljs-attribute">display</span>:flex;
-	<span class="hljs-attribute">align-items</span>: baseline;
+	<span class="hljs-attribute">align-items</span>: center;
 	<span class="hljs-selector-tag">label</span> {
 		<span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">1</span> auto;
 		@<span class="hljs-keyword">if</span> <span class="hljs-variable">$label-as-minititle</span> {
@@ -2675,13 +2696,20 @@
 <span class="hljs-selector-class">.form-item--label-inside</span> {
 	<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$form-border-radius</span>;
 	@<span class="hljs-keyword">include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
-	<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$input-padding</span>;
 	<span class="hljs-selector-tag">input</span>,
 	<span class="hljs-selector-tag">textarea</span> {
 		<span class="hljs-attribute">border</span>:none;
 		<span class="hljs-attribute">border-radius</span>:<span class="hljs-number">0</span>;
 		<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
 	}
+}
+
+<span class="hljs-selector-class">.form-item--label-top</span> {
+	<span class="hljs-attribute">align-items</span>: flex-start;
+}
+
+<span class="hljs-selector-class">.form-item--label-bottom</span> {
+	<span class="hljs-attribute">align-items</span>: flex-end;
 }
 
 </pre>
@@ -2720,9 +2748,6 @@
 
 
 <script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
-
-
-<script src="../../huesos.js?cachebust=1.2.1"></script>
 
 
 

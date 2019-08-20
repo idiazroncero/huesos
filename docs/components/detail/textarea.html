@@ -567,38 +567,11 @@
     
         
             
-            <li class="item--has-children" data-behaviour="collection" tabindex="0">
-                <span class="item__label">Javascript</span>
-                <ul class="item__children" data-role="items">
-
-                    
-                        
-                    
-
-                    
-    
-        
-            
             <li class="" data-role="item">
-                <a href="../../docs/javascript/accordion.html" data-pjax>
-                    Accordion
+                <a href="../../docs/javascript.html" data-pjax>
+                    Javascript
                     
                 </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="../../docs/javascript/file-uploader.html" data-pjax>
-                    File Uploader
-                    
-                </a>
-            </li>
-        
-    
-
-                </ul>
             </li>
         
     
@@ -1106,6 +1079,54 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--label-top.html" data-pjax>
+                    Label Top
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--label-bottom.html" data-pjax>
+                    Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -2554,7 +2575,7 @@
         <section class="browser-notes" id="browser-a17e63e3f8f4ed609dfb2abe1a9e55c0-panel-notes">
     <div class="text-wrapper">
         
-            <p>Use in conjunction with <code>.form-item</code> and its modifiers (see its own section)</p>
+            <p>Use in conjunction with <code>.form-item</code> and its modifiers (see its own section). It is specially advised to use <code>.form-item--label-top</code> and <code>.form-item--label-bottom</code></p>
 <p>It is recommended to set a minimum rows value of 5. A min-height will prevent textareas from looking too similar to an <code>input[type=&quot;text&quot;]</code> element.</p>
 
         
@@ -2567,11 +2588,11 @@
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--label-top"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"area1"</span>&gt;</span>Textarea<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"area1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--label-inside"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--label-inside form-item--label-bottom"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"area2"</span>&gt;</span>Textarea<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"area2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2602,17 +2623,16 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>135 Bytes</span>
+                    <span>132 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-tag">textarea</span> {
-	<span class="hljs-attribute">border</span>: <span class="hljs-variable">$input-border</span>;
+	@<span class="hljs-keyword">include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
 	@<span class="hljs-keyword">include</span> form-reset-textarea();
 	<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
-	<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$input-padding</span>;
 	<span class="hljs-attribute">min-height</span>: <span class="hljs-variable">$spacer</span> * <span class="hljs-number">2</span>;
 }
 </pre>
@@ -2651,9 +2671,6 @@
 
 
 <script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
-
-
-<script src="../../huesos.js?cachebust=1.2.1"></script>
 
 
 

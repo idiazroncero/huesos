@@ -324,8 +324,6 @@ $input-border-strategy: full; // Options: full, bottom, none;
 $input-border-color: $gray2;
 $input-border-width: 1px;
 $input-padding-lines: 1;
-$input-border: $input-border-width solid $input-border-color;
-$input-padding: $spacer / 4 $spacer / 2;
 
 // Buttons
 $button-font-family: $font-main;
@@ -376,12 +374,6 @@ $pseudo-checkbox : false;
 $pseudo-radio: false;
 $pseudo-border-color: $gray8;
 $pseudo-border: 1px solid $pseudo-border-color;
-
-// Selects
-$select-border-strategy: full; // Options: full, bottom, none;
-$select-border-color: shade($gray5, 25%);
-$select-border: 1px solid $input-border-color;
-$select-padding: 0 ($spacer / 2);
 
 // Browser quirks
 $webkit-autofill-color: $gray5; // When webkit fills the fields whith your stored data.

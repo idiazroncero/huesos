@@ -1,10 +1,4 @@
-/*!
- * Selectr 2.4.4
- * http://mobius.ovh/docs/selectr
- *
- * Released under the MIT license
- */
- .selectr-container {
+.selectr-container {
 	position: relative;
 }
 
@@ -13,7 +7,7 @@
 }
 
 .selectr-hidden {
-	@extend .visually-hidden;
+	@include hidden();
 }
 
 .selectr-visible {
@@ -45,16 +39,9 @@
 .selectr-selected {
 	position: relative;
 	z-index: 1;
-	box-sizing: border-box;
 	width: 100%;
+	@include form-border($input-border-strategy);
 	cursor: pointer;
-	border: $input-border;
-	border-radius: $form-border-radius;
-	background-color: #fff;
-}
-
-.selectr-selected .selectr-label{
-	padding: $input-padding;
 }
 
 .selectr-selected::before {
@@ -71,7 +58,7 @@
 			transform: rotate(0deg) translate3d(0px, -50%, 0px);
 	border-width: 4px 4px 0 4px;
 	border-style: solid;
-	border-color: $input-border-color transparent transparent;
+	border-color: #6c7a86 transparent transparent;
 }
 
 .selectr-container.open .selectr-selected::before,
@@ -90,8 +77,7 @@
 }
 
 .selectr-placeholder {
-	color: $input-border-color;
-	padding: $input-padding;
+	color: #6c7a86;
 }
 
 .selectr-tags {
@@ -108,10 +94,13 @@
 	list-style: none;
 	position: relative;
 	float: left;
+	padding: 2px 25px 2px 8px;
+	margin: 0 2px 2px 0;
 	cursor: default;
-	@extend .tag;
-	padding-right: $gutter * 1.25;
-	margin-bottom:0;
+	color: #fff;
+	border: medium none;
+	border-radius: 10px;
+	background: #acb7bf none repeat scroll 0 0;
 }
 
 .selectr-container.multiple.has-selected .selectr-selected {
@@ -124,13 +113,10 @@
 	top: calc(100% - 1px);
 	left: 0;
 	display: none;
-	box-sizing: border-box;
 	width: 100%;
-	border-width: 0 1px 1px;
-	border-style: solid;
-	border-color: transparent $input-border-color $input-border-color;
-	border-radius: $form-border-radius;
+	@include form-border($input-border-strategy);
 	background-color: $white;
+	border-top:none;
 }
 
 .selectr-container.open .selectr-options-container {
@@ -146,19 +132,20 @@
 .selectr-input-clear,
 .selectr-tag-remove {
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: $vertical-rhythm+rem;
-	height: $vertical-rhythm+rem;
+	top: 50%;
+	right: ritmo($input-padding-lines);
+	width: 20px;
+	height: 20px;
 	padding: 0;
 	cursor: pointer;
+	-o-transform: translate3d(0px, -50%, 0px);
+	-ms-transform: translate3d(0px, -50%, 0px);
+	-moz-transform: translate3d(0px, -50%, 0px);
+	-webkit-transform: translate3d(0px, -50%, 0px);
+			transform: translate3d(0px, -50%, 0px);
 	border: medium none;
 	background-color: transparent;
 	z-index: 11;
-	&:hover,
-	&:focus {
-		@include background-contrast(get-color(state, "error"));
-	}
 }
 
 .selectr-clear,
@@ -171,6 +158,9 @@
 	display: block;
 }
 
+.selectr-selected .selectr-tag-remove {
+	right: 2px;
+}
 
 .selectr-clear::before,
 .selectr-clear::after,
@@ -179,8 +169,8 @@
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 5px;
+	left: 9px;
 	width: 2px;
 	height: 10px;
 	content: ' ';
@@ -189,23 +179,30 @@
 
 .selectr-tag-remove::before,
 .selectr-tag-remove::after {
-	top: 50%;
-	left: 50%;
-	width: 2px;
-	height: $gutter / 2;
+	top: 4px;
+	width: 3px;
+	height: 12px;
 	background-color: #fff;
 }
 
 .selectr-clear:before,
 .selectr-input-clear::before,
 .selectr-tag-remove::before {
-	transform: translate(-50%, -50%) rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .selectr-clear:after,
 .selectr-input-clear::after,
 .selectr-tag-remove::after {
-	transform: translate(-50%, -50%)rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .selectr-input-container.active,
@@ -213,19 +210,16 @@
 	display: block;
 }
 
-input.selectr-input {
-	box-sizing: border-box;
-	width: 100%;
-	width: calc(100% - (#{$gutter}) );
-	margin: $gutter / 2;
+.selectr-input {
+	width:100%;
+	@include form-border($input-border-strategy);
 }
 
 .selectr-notice {
 	display: none;
-	box-sizing: border-box;
 	width: 100%;
 	padding: 8px 16px;
-	border-top: 1px solid $input-border-color;
+	border-top: 1px solid #999;
 	border-radius: 0 0 3px 3px;
 	background-color: #fff;
 }
@@ -245,7 +239,7 @@ input.selectr-input {
 	overflow-x: auto;
 	overflow-y: scroll;
 	max-height: 200px;
-	margin: 0 $gutter/ 2 $gutter/ 2 $gutter/ 2;
+	margin: 0;
 	padding: 0;
 }
 
@@ -258,11 +252,12 @@ input.selectr-input {
 .selectr-option {
 	position: relative;
 	display: block;
-	padding: $input-padding;
-	margin: 0;
 	list-style: outside none none;
 	cursor: pointer;
 	font-weight: normal;
+	margin:0;
+	padding: ritmo($input-padding-lines);
+	@include ritmo-font-size($h5-font-size);
 }
 
 .selectr-options.optgroups > .selectr-option {
@@ -270,15 +265,14 @@ input.selectr-input {
 }
 
 .selectr-optgroup {
-	font-weight: bold();
+	font-weight: bold;
 	padding: 0;
-	margin-bottom: $gutter / 2;
 }
 
 .selectr-optgroup--label {
-	font-weight: bold();
-	padding: $input-padding;
-	@include minititle();
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 5px 15px;
 }
 
 .selectr-match {
@@ -286,11 +280,12 @@ input.selectr-input {
 }
 
 .selectr-option.selected {
-	@include background-contrast($input-border-color);
+	background-color: #ddd;
 }
 
 .selectr-option.active {
-	@include background-contrast($input-border-color);
+	color: #fff;
+	background-color: #5897fb;
 }
 
 .selectr-option.disabled {
@@ -302,8 +297,7 @@ input.selectr-input {
 }
 
 .selectr-container.open .selectr-selected {
-	border-color: $input-border-color $input-border-color transparent $input-border-color;
-	border-radius: $form-border-radius $form-border-radius 0 0;
+	border-bottom-color: transparent;
 }
 
 .selectr-container.open .selectr-selected::after {
@@ -415,20 +409,20 @@ input.selectr-input {
 	}
 }
 .selectr-container.open.inverted .selectr-selected {
-	border-color: lighten-color($input-border-color) $input-border-color $input-border-color;
-	border-radius: 0 0 $form-border-radius $form-border-radius;
+	border-color: transparent #999 #999;
+	border-radius: 0 0 3px 3px;
 }
 
 .selectr-container.inverted .selectr-options-container {
 	border-width: 1px 1px 0;
-	border-color: $input-border-color $input-border-color transparent;
-	border-radius: $form-border-radius $form-border-radius 0 0;
+	border-color: #999 #999 transparent;
+	border-radius: 3px 3px 0 0;
 	background-color: #fff;
 }
 
 .selectr-container.inverted .selectr-options-container {
 	top: auto;
-	bottom: 100%;
+	bottom: calc(100% - 1px);
 }
 
 .selectr-container ::-webkit-input-placeholder {

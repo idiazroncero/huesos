@@ -1,7 +1,7 @@
 .form-item {
 	margin-bottom : $gutter;
 	display:flex;
-	align-items: baseline;
+	align-items: center;
 	label {
 		flex: 0 1 auto;
 		@if $label-as-minititle {
@@ -55,12 +55,19 @@
 .form-item--label-inside {
 	border-radius: $form-border-radius;
 	@include form-border($input-border-strategy);
-	padding: $input-padding;
 	input,
 	textarea {
 		border:none;
 		border-radius:0;
 		padding:0;
 	}
+}
+
+.form-item--label-top {
+	align-items: flex-start;
+}
+
+.form-item--label-bottom {
+	align-items: flex-end;
 }
 

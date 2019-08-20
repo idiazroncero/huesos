@@ -68,7 +68,6 @@
 	/* Make webkit render the search input like a normal text field */
 	&[type=search] {
 		-webkit-appearance: textfield;
-		-webkit-box-sizing: content-box;
 	}
 
 	/* Turn off the recent search for webkit. It adds about 15px padding on the left */
@@ -85,18 +84,6 @@
 		overflow: visible;
 	}
 }
-  
-@mixin form-reset-select {
-	@include form-border($select-border-strategy);
-	padding: $select-padding;
-	appearance:none;
-	/* Move the label to the top */
-	&[multiple] {
-		vertical-align: top;
-	}
-}
-  
-  
   
 @mixin form-reset-button {
 	background: none;

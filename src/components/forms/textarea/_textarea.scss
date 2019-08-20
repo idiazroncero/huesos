@@ -1,7 +1,6 @@
 textarea {
-	border: $input-border;
+	@include form-border($input-border-strategy);
 	@include form-reset-textarea();
 	width:100%;
-	padding: $input-padding;
 	min-height: $spacer * 2;
 }

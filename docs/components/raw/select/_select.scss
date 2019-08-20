@@ -1,5 +1,11 @@
-
-
 select {
-	@include form-reset-select();
+	@include form-reset-general();
+	@include form-border($input-border-strategy);
+	-webkit-appearance: none;
+	appearance:none;
+	width:100%;
+	/* Move the label to the top */
+	&[multiple] {
+		vertical-align: top;
+	}
 }
