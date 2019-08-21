@@ -1,7 +1,12 @@
-A toc or table of contents is a vertical menu based off a `<nav>` item.
+A toc or table of contents is a special kind of vertical menu based off a `<nav>` item.
 
-The first level can be configured on `_config.scss`.
+It usually differs from a normal menu in some or all of this aspects:
+- It holds several nested menus.
+- These nested menus are visible by default (no "accordions" or open/close triggers).
+- They're dense and informative (as opposite to small, site-wide navigation menus).
 
-This is a very opinionated component. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.
+__Our TOC is a very opinionated component__ because exposing all the configuration would be overkill. It won't let `bold` weight to pass below the first depth level, it will apply a progressive reduction of font-size.
 
-If you need to disable partially or totally the link appearance. Use `kill-link` or `kill-link-decoration` classes or mixins for this.
+You can still use `$toc-font-weight`, `$toc-uppercase` and `$toc-font-size` to determine the first-level font-size, the first-level font-weight and the uppercase status
+
+If you need to disable partially or totally the link appearanceu ese `kill-link` or `kill-link-decoration` classes or mixins for this.

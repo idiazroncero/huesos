@@ -1,3 +1,5 @@
-Generate a set of classes that toggle visibility on certain viewport widths (for example, `.small-visible`, `.medium-visible`, `.large-visible`).
+__Note: you will need to toggle fullscreen preview to see the breakpoints working properly.__
 
-The default behavior is to assume the item is hidden until a breakpoint is reached.
+Set of classes based on `$breakpoints` map that will toggle visibility on certain viewport widths (with the default breakpoints, `.small-visible`, `.medium-visible` and `.large-visible`). 
+
+This means __the item is hidden until a breakpoint is reached__.

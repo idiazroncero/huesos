@@ -12,6 +12,8 @@ The scheme is as follows: `$grid--#{N}col`, being N the number of columns needed
 
 ## Responsive
 
+__Note that you will need to activate the fullscreen preview to see the breakpoints working properly__
+
 Inestad of setting a grid, you can use a set of helper classes to define the specific number of columns on every breakpoint.
 
 The pattern is as follows: `.grid--[breakpoint]--[number]col`. So, a 11-col grid from `$medium` breakpoint up would be `$grid--medium--11col` (provided you have as many columns!)

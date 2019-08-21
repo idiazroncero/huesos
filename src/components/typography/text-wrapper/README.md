@@ -7,6 +7,7 @@ It expects the inner HTMl to be:
 It will perform the following operations:
 - Ensure the last item won't have a margin-bottom.
 - Increase the whitespace between sections.
+- Applies `$max-ch` to ensure a maximum width based on a character number.
 
 <div class="alert alert--warning">
     __Negras tormentas agitan los aires__  
