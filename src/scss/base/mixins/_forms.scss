@@ -26,13 +26,13 @@
 		border-style:solid;
 		border-color: $input-border-color;
 		&:hover, &:focus {
-			border-color: shade($input-border-color, $color-modify-ratio);
+			border-color: darken-color($input-border-color);
 		}
 	} @else if ($strategy == bottom){
 		border-bottom: $input-border;
 		border-radius: 0; // Reset border-radius, on bottom border has no sense
 		&:hover, &:focus {
-			border-color: shade($input-border-color, $color-modify-ratio);
+			border-color: darken-color($input-border-color);
 		}
 	}
 }

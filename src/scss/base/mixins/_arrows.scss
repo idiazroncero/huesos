@@ -1,6 +1,42 @@
 @mixin arrow(
     $direction: 'up',
-    $size
+    $size: 0.5rem,
+    $color: get-color(base, primary),
+    $top: 0,
+    $right: 0,
+    $bottom: auto,
+    $left: auto,
+    $pseudo: before
 ) {
-    
+    &:#{$pseudo} {
+        content:"";
+        position:absolute;
+        height:0;
+        width:0;
+
+        @if $direction == 'up' {
+            border-color: transparent transparent $color transparent;
+            margin-top: -1 * ($size + $size / 2);
+        } @else if $direction == 'down' {
+            border-color: $color transparent transparent transparent;
+            margin-top: -1 * ($size / 2);
+        } @else if $direction == 'left' {
+            border-color: transparent $color transparent transparent;
+            margin-top: -1 * $size;
+        } @else if $direction == 'right' {
+            border-color: transparent transparent transparent $color;
+            margin-top: -1 * $size;
+            margin-right: -1 * $size;
+        }
+
+        border-width: $size;
+        border-style: solid;
+
+		pointer-events: none;
+
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+    }
 }

@@ -4,8 +4,19 @@ select {
 	-webkit-appearance: none;
 	appearance:none;
 	width:100%;
-	/* Move the label to the top */
+
 	&[multiple] {
 		vertical-align: top;
 	}
+
+	option {
+		min-height: 1em; // Overrides default behavior on Chrome that breaks vrhythm
+		padding:ritmo(0.5) 0; // We can't use line-height so we size it using ritmo lines...
+	}
+}
+
+.select-wrapper {
+	position:relative;
+	@include arrow('down', 0.25rem, darken-color($input-border-color), 50%, ritmo($input-padding-lines) );
+
 }

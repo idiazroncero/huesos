@@ -228,7 +228,7 @@ $fieldset-font-size: $h5-font-size;
 
 $border-radius: 0px;
 
-$separators: false; // Set this to false to disable all separators
+$separators: true; // Set this to false to disable all separators
 $separator-width: 1px;
 $separator-color: get-color(base, separator);
 
