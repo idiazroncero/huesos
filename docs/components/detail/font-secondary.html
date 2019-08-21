@@ -2575,7 +2575,8 @@
         <section class="browser-notes" id="browser-4b49b03131d18d690faa7772080773b8-panel-notes">
     <div class="text-wrapper">
         
-            <p>Helper <code>.class</code> and <code>%placeholder</code> used to apply the secondary font as set on <code>_config.scss</code></p>
+            <p>Applies your <code>$font-secondary</code> to the list of elements defined on <code>$font-secondary-items</code> and sets a helper <code>.class</code> and <code>%placeholder</code> used to apply the secondary font as set on <code>_config.scss</code></p>
+<p>Setting <code>$font-secondary:false</code> will skip this code.</p>
 
         
     </div>
@@ -2613,21 +2614,25 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>151 Bytes</span>
+                    <span>195 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-class">.font-secondary</span>,
-%<span class="hljs-attribute">font</span>-secondary {
-	<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$font-secondary</span>;
-}
+                                <pre>@<span class="hljs-keyword">if</span> <span class="hljs-variable">$font-secondary</span> != false {
 
-@<span class="hljs-keyword">each</span> <span class="hljs-variable">$item</span> in <span class="hljs-variable">$font-secondary-items</span> {
-	#{<span class="hljs-variable">$item</span>} {
-		@<span class="hljs-keyword">extend</span> %font-secondary;
+	<span class="hljs-selector-class">.font-secondary</span>,
+	%<span class="hljs-attribute">font</span>-secondary {
+		<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$font-secondary</span>;
 	}
+
+	@<span class="hljs-keyword">each</span> <span class="hljs-variable">$item</span> in <span class="hljs-variable">$font-secondary-items</span> {
+		#{<span class="hljs-variable">$item</span>} {
+			@<span class="hljs-keyword">extend</span> %font-secondary;
+		}
+	}
+
 }</pre>
                             </code>
                         

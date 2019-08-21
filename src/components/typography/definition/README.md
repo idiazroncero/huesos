@@ -1,1 +1,1 @@
-Ensures monospaced fonts are used for computer-related text markup.
+Sets `<dfn>` to italic.

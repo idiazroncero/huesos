@@ -1,9 +1,13 @@
 @function bold($item: &) {
-	@if index($font-secondary-items, $item) != null {
-        @return $font-secondary-bold;
-	} @else {
+    @if $font-secondary != false { 
+        @if index($font-secondary-items, $item) != null {
+            @return $font-secondary-bold;
+        } @else {
+            @return $font-main-bold;
+        }
+    } @else {
         @return $font-main-bold;
-	}
+    }
 }
 
 

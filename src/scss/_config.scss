@@ -117,7 +117,7 @@ $courier: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida S
 
 // Global variables. It is good practice (performance & design) to only use one or two typefaces.
 $font-main: $system;
-$font-secondary: $trebuchet;
+$font-secondary: $trebuchet; // Set to false to only onse one font
 $font-monospace: $courier;
 
 // Setting custom values for bold and light (100, 500, etc) allow for more precise mapping
@@ -165,6 +165,9 @@ $list-padding: 0;
 
 // Maximum characters per line, to apply using .max-ch class
 $max-ch: 65ch;
+
+// Mark padding
+$mark-padding: 2px;
 
 
 

@@ -2575,7 +2575,7 @@
         <section class="browser-notes" id="browser-e71a54d0e360e3e54f58016c899b6c86-panel-notes">
     <div class="text-wrapper">
         
-            <p>Uses color defined on the palette <code>text</code>, key <code>mark</code>.</p>
+            <p>Uses color defined on the <code>$colors</code> palette <code>text</code>, key <code>mark</code>.</p>
 
         
     </div>
@@ -2587,7 +2587,7 @@
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>Really important<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span> and thus, marked text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>Really important<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span> and thus, marked text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque maiores, iste ipsa, accusamus rem quae reiciendis quod sit, quasi alias <span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>quisquam!<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span> Impedit quis at et assumenda explicabo porro quasi? Exercitationem!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
         
     </code>
 </section>
@@ -2611,7 +2611,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>119 Bytes</span>
+                    <span>122 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2620,7 +2620,7 @@
                                 <pre><span class="hljs-selector-tag">mark</span> {
 	<span class="hljs-attribute">background-color</span>: get-color(text, mark);
 	<span class="hljs-attribute">color</span>: contrast-color(get-color(text, mark));
-	<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> ritmo(<span class="hljs-number">1</span>);
+	<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$mark-padding</span>;
 }</pre>
                             </code>
                         

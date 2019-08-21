@@ -1,1 +1,1 @@
-Uses color defined on the palette `text`, key `mark`.
+Uses color defined on the `$colors` palette `text`, key `mark`.

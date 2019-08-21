@@ -915,7 +915,7 @@ dfn {
 mark {
   background-color: #d39145;
   color: #FFFFFF;
-  padding: 0 0.375rem; }
+  padding: 2px; }
 
 .max-ch {
   max-width: 65ch; }

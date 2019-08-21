@@ -2575,10 +2575,20 @@
         <section class="browser-notes" id="browser-e6f774d787a8ef29a055b9a1b015b506-panel-notes">
     <div class="text-wrapper">
         
-            <p>Paragraph items wrapped on any element marked as <code>.text-wrapper</code> will have its last <code>p</code> child set marginless.</p>
-<p>They also feature extra spacing on headings, articles and sections.</p>
-<p>Use this class as a quick way for setting some typographic default behaviors on big chunks of formatted text (i.e, the body of a blog post or article, etc).</p>
-
+            <p>This is a <strong>very opinionated</strong> set of rules to apply to ling texts (i.e, the full text of a blog post).</p>
+<p>It expects the inner HTMl to be:</p>
+<ul>
+<li>Mainly headings, paragraphs and sectioning content (<code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>).</li>
+<li>Last element will be either a <code>&lt;p&gt;</code>, an <code>&lt;article&gt;</code>or <code>&lt;section&gt;</code>.</li>
+</ul>
+<p>It will perform the following operations:</p>
+<ul>
+<li>Ensure the last item won’t have a margin-bottom.</li>
+<li>Increase the whitespace between sections.</li>
+</ul>
+<div class="alert alert--warning">
+    <strong>Negras tormentas agitan los aires</strong><br>    The future of <code>.text-wrapper</code> is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
+</div>
         
     </div>
 </section>

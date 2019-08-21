@@ -9,6 +9,18 @@ __This is a potentially dangerous weapon.__ Any lack of awareness, misuse or bad
 
 Ask these questions and act accordingly to avoid sending extra KBs to your end-users. You, your boss and your Lighthouse score will be grateful:
 
+### Can I skip some @imports?
+
+When you add Huesos to your proyect you usually `@import`the whole `_huesos.scss` file.
+
+For a fine-tuning, you can also copy & paste `_huesos.scss` (you'll need to adapt the paths to your structure) and get rid of the `@imports` you don't need.
+
+For example, it makes no sense to `@import selectr` if you're not using JS enhancements. Or you might rid of the `show-grid` debug scss, or all the `components` if you only want Huesos as a global reset, etc...
+
+<div class="alert">
+	__Did you wonder why we don't use glob patterns to load scss files?__ Now you know: manually importing files is cumbersome but allows you to easily select which files to drop only by commenting them out.
+</div>
+
 ### Do I need all the button states?
 
 By default, a `$button-states` map is populated with the following values:

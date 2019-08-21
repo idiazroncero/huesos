@@ -1,5 +1,14 @@
-Paragraph items wrapped on any element marked as `.text-wrapper` will have its last `p` child set marginless.
+This is a __very opinionated__ set of rules to apply to ling texts (i.e, the full text of a blog post).
 
-They also feature extra spacing on headings, articles and sections.
+It expects the inner HTMl to be:
+- Mainly headings, paragraphs and sectioning content (`<nav>`, `<article>`, `<section>`).
+- Last element will be either a `<p>`, an `<article>`or `<section>`.
 
-Use this class as a quick way for setting some typographic default behaviors on big chunks of formatted text (i.e, the body of a blog post or article, etc).
+It will perform the following operations:
+- Ensure the last item won't have a margin-bottom.
+- Increase the whitespace between sections.
+
+<div class="alert alert--warning">
+    __Negras tormentas agitan los aires__  
+    The future of `.text-wrapper` is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
+</div>
