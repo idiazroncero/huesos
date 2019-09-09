@@ -1,10 +1,25 @@
 .menu {
-    @include inline-list();
     @if $menu-kill-links {
       a {
         @include kill-link-decoration();
       }
     }
+
+    li {
+      background-color:#eee;
+    }
+
+    // All ul elements
+    ul {
+      @include inline-list();
+    }
+
+    // All a and span elements
+    a, span {
+      display:inline-block;
+    }
+
+    // li
     ul > li {
       margin:0;
       position:relative;
@@ -14,24 +29,19 @@
         display:block;
         padding:$menu-padding;
         white-space:nowrap;
+
         @if $menu-kill-links {
           @include set-link(
             get-color(text, primary),
             get-color(text, primary),
-            contrast-color($menu-background-color),
+            get-color(text, primary),
             get-color(text, primary),
             false,
             false
           )
         }
       }
-      &:hover,
-      &:focus {
-        > a {
-            color: contrast-color($menu-background-color);
-            background-color: $menu-background-color;
-        }
-      }
+
       > span {
         padding:$menu-padding;
       }
@@ -50,16 +60,7 @@
             display:block;
             padding:$menu-padding / 2 $menu-padding;
             white-space:nowrap;
-
-            background-color: lighten($menu-background-color, $menu-color-ratio);
-            @if $menu-kill-links {
-              @include kill-link(contrast-color(lighten($menu-background-color, $menu-color-ratio)));
-            }
             @include ritmo-font-size(0.8 * $nav-font-size);
-            &:hover,
-            &:focus {
-              @include background-contrast(shade($menu-background-color, $menu-color-ratio));
-            }
           }
         }
       }
@@ -74,15 +75,7 @@
           z-index:3;
           li {
             a {
-              background-color: lighten(lighten($menu-background-color, $menu-color-ratio), $menu-color-ratio);
-              @if $menu-kill-links {
-                @include kill-link(contrast-color(lighten($menu-background-color, $menu-color-ratio), $menu-color-ratio));
-              }
               @include ritmo-font-size(0.7 * $nav-font-size, 4);
-              &:hover,
-              &:focus {
-                @include background-contrast(lighten($menu-background-color, $menu-color-ratio));
-              }
             }
           }
         }

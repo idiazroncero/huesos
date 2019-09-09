@@ -400,7 +400,7 @@ $toc-font-weight: normal;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
 
-$menu-padding: $spacer * 0.25 $spacer * 0.75;
+$menu-padding: ritmo(1) ritmo(2);
 $menu-kill-links: true; // Kills decoration
 $menu-background-color: $gray4;
 $menu-color-ratio: 5%;

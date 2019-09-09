@@ -1459,120 +1459,86 @@ textarea {
     line-height: 1.5rem;
     letter-spacing: 0.1em; }
 
-.menu {
+.menu a, .menu a:link, .menu a:visited, .menu a:active {
+  text-decoration: none; }
+
+.menu a:focus:after, .menu a:hover:after {
+  display: none; }
+
+.menu li {
+  background-color: #eee; }
+
+.menu ul {
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap; }
-  .menu li {
+  .menu ul li {
     list-style-type: none;
     display: inline-block; }
-  .menu a, .menu a:link, .menu a:visited, .menu a:active {
-    text-decoration: none; }
-  .menu a:focus:after, .menu a:hover:after {
-    display: none; }
-  .menu ul > li {
-    margin: 0;
-    position: relative;
-    z-index: 1; }
+
+.menu a, .menu span {
+  display: inline-block; }
+
+.menu ul > li {
+  margin: 0;
+  position: relative;
+  z-index: 1; }
+  .menu ul > li > a {
+    text-align: left;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    white-space: nowrap; }
     .menu ul > li > a {
-      text-align: left;
-      display: block;
-      padding: 0.375rem 1.125rem;
-      white-space: nowrap; }
-      .menu ul > li > a {
+      text-decoration: none; }
+      .menu ul > li > a:hover, .menu ul > li > a:focus {
         text-decoration: none; }
-        .menu ul > li > a:hover, .menu ul > li > a:focus {
-          text-decoration: none; }
-      .menu ul > li > a, .menu ul > li > a:link {
-        color: #3e3d4f; }
-      .menu ul > li > a:visited {
-        color: #3e3d4f; }
-      .menu ul > li > a:focus, .menu ul > li > a:hover {
-        color: #1A1A19; }
-      .menu ul > li > a:active {
-        color: #3e3d4f; }
-    .menu ul > li:hover > a, .menu ul > li:focus > a {
-      color: #1A1A19;
-      background-color: #c3c2cb; }
-    .menu ul > li > span {
-      padding: 0.375rem 1.125rem; }
-    .menu ul > li > ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 2;
-      min-width: 120%; }
-      .menu ul > li > ul > li {
+    .menu ul > li > a, .menu ul > li > a:link {
+      color: #3e3d4f; }
+    .menu ul > li > a:visited {
+      color: #3e3d4f; }
+    .menu ul > li > a:focus, .menu ul > li > a:hover {
+      color: #3e3d4f; }
+    .menu ul > li > a:active {
+      color: #3e3d4f; }
+  .menu ul > li > span {
+    padding: 0.375rem 0.75rem; }
+  .menu ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    min-width: 120%; }
+    .menu ul > li > ul > li {
+      display: block;
+      position: relative; }
+      .menu ul > li > ul > li > a {
         display: block;
-        position: relative; }
-        .menu ul > li > ul > li > a {
-          display: block;
-          padding: 0.375rem 1.125rem/2 0.375rem 1.125rem;
-          white-space: nowrap;
-          background-color: #d1d0d7;
-          font-size: 13px;
-          font-size: 0.8rem;
-          line-height: 18px;
-          line-height: 1.125rem; }
-          .menu ul > li > ul > li > a {
-            text-decoration: none; }
-            .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
-              text-decoration: none; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link {
-            color: #1A1A19; }
-          .menu ul > li > ul > li > a:visited {
-            color: #1A1A19; }
-          .menu ul > li > ul > li > a:focus, .menu ul > li > ul > li > a:hover {
-            color: #1A1A19; }
-          .menu ul > li > ul > li > a:active {
-            color: #1A1A19; }
-          .menu ul > li > ul > li > a, .menu ul > li > ul > li > a:link, .menu ul > li > ul > li > a:visited, .menu ul > li > ul > li > a:active {
-            text-decoration: none; }
-          .menu ul > li > ul > li > a:focus:after, .menu ul > li > ul > li > a:hover:after {
-            display: none; }
-          .menu ul > li > ul > li > a:hover, .menu ul > li > ul > li > a:focus {
-            background-color: #b9b8c1;
-            color: #1A1A19; }
-    .menu ul > li > ul > li > ul {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      min-width: 100%;
-      z-index: 3; }
-      .menu ul > li > ul > li > ul li a {
-        background-color: #dedee2;
-        font-size: 11px;
-        font-size: 0.7rem;
-        line-height: 24px;
-        line-height: 1.5rem; }
-        .menu ul > li > ul > li > ul li a {
-          text-decoration: none; }
-          .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
-            text-decoration: none; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link {
-          color: 5%; }
-        .menu ul > li > ul > li > ul li a:visited {
-          color: 5%; }
-        .menu ul > li > ul > li > ul li a:focus, .menu ul > li > ul > li > ul li a:hover {
-          color: 5%; }
-        .menu ul > li > ul > li > ul li a:active {
-          color: 5%; }
-        .menu ul > li > ul > li > ul li a, .menu ul > li > ul > li > ul li a:link, .menu ul > li > ul > li > ul li a:visited, .menu ul > li > ul > li > ul li a:active {
-          text-decoration: none; }
-        .menu ul > li > ul > li > ul li a:focus:after, .menu ul > li > ul > li > ul li a:hover:after {
-          display: none; }
-        .menu ul > li > ul > li > ul li a:hover, .menu ul > li > ul > li > ul li a:focus {
-          background-color: #d1d0d7;
-          color: #1A1A19; }
-    .menu ul > li > ul > li:hover > ul {
+        padding: 0.375rem 0.75rem/2 0.375rem 0.75rem;
+        white-space: nowrap;
+        font-size: 13px;
+        font-size: 0.8rem;
+        line-height: 18px;
+        line-height: 1.125rem; }
+  .menu ul > li > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 100%;
+    z-index: 3; }
+    .menu ul > li > ul > li > ul li a {
+      font-size: 11px;
+      font-size: 0.7rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
+  .menu ul > li > ul > li:hover > ul {
+    display: block; }
+  .menu ul > li:hover > ul {
+    display: block; }
+    .menu ul > li:hover > ul > li {
       display: block; }
-    .menu ul > li:hover > ul {
-      display: block; }
-      .menu ul > li:hover > ul > li {
-        display: block; }
 
 .toc ul li,
 .toc ol li {
