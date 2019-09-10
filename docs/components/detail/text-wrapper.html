@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-e6f774d787a8ef29a055b9a1b015b506">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2585,9 +2589,11 @@
 <ul>
 <li>Ensure the last item won’t have a margin-bottom.</li>
 <li>Increase the whitespace between sections.</li>
+<li>Applies <code>$max-ch</code> to ensure a maximum width based on a character number.</li>
 </ul>
 <div class="alert alert--warning">
-    <strong>Negras tormentas agitan los aires</strong><br>    The future of <code>.text-wrapper</code> is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
+    __Negras tormentas agitan los aires__  
+    The future of `.text-wrapper` is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
 </div>
         
     </div>
@@ -2633,13 +2639,14 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>402 Bytes</span>
+                    <span>423 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.text-wrapper</span> {
+	<span class="hljs-attribute">max-width</span>: <span class="hljs-variable">$max-ch</span>;
 	<span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span> {
 		<span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-number">2</span>;
 	}

@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-24c22e6f6eb2577e9a0a54b01fb8d09c">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2575,8 +2579,9 @@
         <section class="browser-notes" id="browser-24c22e6f6eb2577e9a0a54b01fb8d09c-panel-notes">
     <div class="text-wrapper">
         
-            <p>Generate a set of classes that toggle visibility on certain viewport widths (for example, <code>.small-visible</code>, <code>.medium-visible</code>, <code>.large-visible</code>).</p>
-<p>The default behavior is to assume the item is hidden until a breakpoint is reached.</p>
+            <p><strong>Note: you will need to toggle fullscreen preview to see the breakpoints working properly.</strong></p>
+<p>Set of classes based on <code>$breakpoints</code> map that will toggle visibility on certain viewport widths (with the default breakpoints, <code>.small-visible</code>, <code>.medium-visible</code> and <code>.large-visible</code>). </p>
+<p>This means <strong>the item is hidden until a breakpoint is reached</strong>.</p>
 
         
     </div>

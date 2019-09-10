@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-322e254ddbd405bd64d303f9aff4ccfe">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2581,6 +2585,7 @@
 <p>By default, the <code>.grid</code> class doesn’t apply any columns (this is needed for responsive design). Modifier classes can change this. You get as many modifier classes as <code>$max-grid-cols</code> (set it to false to avoid generating any markup).</p>
 <p>The scheme is as follows: <code>$grid--#{N}col</code>, being N the number of columns needed.</p>
 <h2 id="responsive">Responsive</h2>
+<p><strong>Note that you will need to activate the fullscreen preview to see the breakpoints working properly</strong></p>
 <p>Inestad of setting a grid, you can use a set of helper classes to define the specific number of columns on every breakpoint.</p>
 <p>The pattern is as follows: <code>.grid--[breakpoint]--[number]col</code>. So, a 11-col grid from <code>$medium</code> breakpoint up would be <code>$grid--medium--11col</code> (provided you have as many columns!)</p>
 <p>We follow the mobile-first approach to responsive web design, so you will need to stack your classes understanding that no <code>max-width</code> constraint is set and every breakpoint will be active until a larger breakpoint weighs in.</p>
@@ -2597,7 +2602,7 @@
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
         
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--small--3col grid--medium--4col grid--large--5col"</span>&gt;</span>
+            <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--2col grid--small--3col grid--medium--4col grid--large--5col"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p grid-item bg-base-primary"</span>&gt;</span>Grid item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p grid-item bg-base-secondary"</span>&gt;</span>Grid item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p grid-item bg-base-separator"</span>&gt;</span>Grid item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

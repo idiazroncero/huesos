@@ -27,8 +27,12 @@ $(function(){
         })
     })
 
-    $('.preview-tag').on('click', function(){
-        $(this).parent('.pen-preview').toggleClass('pen-preview--medium');
+    $('.preview').on('click', function(){
+        $(this).parents('.pen-preview').toggleClass('pen-preview--medium');
+    })
+
+    $('.fullscreen').on('click', function(){
+        $(this).parents('.pen-preview').toggleClass('pen-preview--full');
     })
 
     $('.is-current').each(function(){

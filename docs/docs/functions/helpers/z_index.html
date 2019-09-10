@@ -2521,7 +2521,7 @@
 <li><strong>Local context:</strong> Re-start the z-index inside every time a new context is created, retake the order when the context is finished, use comments to let you know when do you change context. We prefer this strategy.</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-comment">// Example of z-index map on config.scss using incremental strategy</span>
+<pre><code class="language-scss"><span class="hljs-comment">// Example of z-index map on config.scss using incremental strategy</span>
 <span class="hljs-variable">$z-index</span>: (
     background: <span class="hljs-number">0</span>,
     layer: <span class="hljs-number">1</span>,
@@ -2545,7 +2545,7 @@
     modal: <span class="hljs-number">4</span>, // New stacking context
       modal__item: <span class="hljs-number">0</span>,
       modal__element: <span class="hljs-number">1</span>
-)</pre></code><code class="lang-scss"><pre><span class="hljs-selector-tag">body</span> {
+)</code></pre><pre><code class="language-scss"><span class="hljs-selector-tag">body</span> {
     <span class="hljs-attribute">z-index</span>: z-index(background);
 }
 <span class="hljs-selector-class">.item</span> {
@@ -2553,7 +2553,7 @@
 }
 <span class="hljs-selector-class">.modal</span> {
     <span class="hljs-attribute">z-index</span>: z-index(popup);
-}</pre></code><h3 id="resources">Resources</h3>
+}</code></pre><h3 id="resources">Resources</h3>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">The stacking context</a></p>
 
     

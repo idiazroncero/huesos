@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-05358dbbe9d3c074a5d691c44ff445f7">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2587,15 +2591,16 @@
 </ul>
 <p>Use this values to define a <code>$link-strategy-default</code> and a <code>$link-strategy-hover</code>.</p>
 <p>The old-style behavior we all know would be like this:</p>
-<code class="lang-scss"><pre><span class="hljs-comment">/* Underline that disappears on hover */</span>
+<pre><code class="language-scss"><span class="hljs-comment">/* Underline that disappears on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'underline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: false;</pre></code><p>Setting both states to the same value and using the config to differentiate them is a safe strategy.</p>
-<code class="lang-scss"><pre><span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'border-inset'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border-inset'</span>;</pre></code><p>Mixes can led to interesting results, but careful testing is adviced. It can break.</p>
-<code class="lang-scss"><pre><span class="hljs-comment">/* An underline that becomes a border */</span>
+<span class="hljs-variable">$button-strategy-hover</span>: false;</code></pre><p>Setting both states to the same value and using the config to differentiate them is a safe strategy.</p>
+<pre><code class="language-scss"><span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'border-inset'</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border-inset'</span>;</code></pre><p>Mixes can led to interesting results, but careful testing is adviced. It can break.</p>
+<pre><code class="language-scss"><span class="hljs-comment">/* An underline that becomes a border */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'underline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border'</span>;</pre></code><div class="alert alert--warning">
-<strong>Be careful when throwing <em>mark</em> on the mix!</strong><br>The left and right padding usually applied to ‘mark’ makes it difficult to mix it with other styles (unless you set padding to 0, wich is not recommended).
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'border'</span>;</code></pre><div class="alert alert--warning">
+__Be careful when throwing *mark* on the mix!__  
+The left and right padding usually applied to 'mark' makes it difficult to mix it with other styles (unless you set padding to 0, wich is not recommended).
 </div>
 
 <h3 id="disabled-links">Disabled links</h3>
@@ -2603,15 +2608,15 @@
 <p>This class is configured to detect context and apply the correct disabling properties.</p>
 <h3 id="inverted-links">Inverted links</h3>
 <p>Helper class <code>.link--inverted</code> will apply a color inversion on the link, similar to using <code>invert-links()</code> mixin.</p>
-<h3 id="alternative-links-">Alternative links.</h3>
+<h3 id="alternative-links">Alternative links.</h3>
 <p>Alternative strategies can be created by populating the <code>$link-alternative-strategies</code> map with combinations of <code>default</code> and <code>hover</code> values.</p>
 <p>We provide a commented example on <code>_config.scss</code></p>
-<code class="lang-scss"><pre><span class="hljs-variable">$link-alternative-strategies</span>: (
+<pre><code class="language-scss"><span class="hljs-variable">$link-alternative-strategies</span>: (
     mark : (
         default : <span class="hljs-string">'mark'</span>, 
         hover : <span class="hljs-string">'mark'</span>
     ),
-);</pre></code><p>The generated classes will take the following format: <code>.link--#{strategy}</code>. For example, the <code>mark</code> strategy consisting of <code>mark</code> as default and hover becomes <code>.link--mark</code>.</p>
+);</code></pre><p>The generated classes will take the following format: <code>.link--#{strategy}</code>. For example, the <code>mark</code> strategy consisting of <code>mark</code> as default and hover becomes <code>.link--mark</code>.</p>
 <p>Setting <code>$link-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>
 
         

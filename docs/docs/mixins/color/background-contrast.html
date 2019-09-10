@@ -2522,7 +2522,7 @@
 <li><code>$include-typography</code> - Boolean that adds overrides to all typographic elements.</li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-contrast"</span>&gt;</span>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-contrast"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>I'm a heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sub heading, h3 level!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
@@ -2534,25 +2534,25 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sub heading, h3 level!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm some text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.background-contrast</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><pre><code class="language-scss"><span class="hljs-selector-class">.background-contrast</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
     @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$teal9</span>);
 }
 <span class="hljs-selector-class">.background-contrast--typography</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal9</span>;
     @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$teal9</span>, true);
-}</pre></code><div class="p mb background-contrast">
-    <h1>I’m a heading</h1>
-    <a href="/" > I’m a link </a>
+}</code></pre><div class="p mb background-contrast">
+    <h1>I'm a heading</h1>
+    <a href="/" > I'm a link </a>
     <h3>Sub heading, h3 level!</h3>
-    <p>I’m some text.</p>
+    <p>I'm some text.</p>
 </div>
 
 <div class="p background-contrast--typography">
-    <h1>I’m a heading</h1>
-    <a href="/" > I’m a link </a>
+    <h1>I'm a heading</h1>
+    <a href="/" > I'm a link </a>
     <h3>Sub heading, h3 level!</h3>
-    <p>I’m some text.</p>
+    <p>I'm some text.</p>
 </div>
     
 

@@ -2514,17 +2514,17 @@
     <p>Aplies a clearfix hack to a wrapper element.</p>
 <p>The helper class <code>.clearfix</code> is also provided.</p>
 <h3 id="example">Example</h3>
-<code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-parent"</span>&gt;</span>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-parent"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-element"</span>&gt;</span>
         Content
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><code class="lang-scss"><pre><span class="hljs-selector-class">.float-parent</span> {    
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><pre><code class="language-scss"><span class="hljs-selector-class">.float-parent</span> {    
     @<span class="hljs-keyword">include</span> clearfix();
     <span class="hljs-attribute">outline</span>: <span class="hljs-number">1px</span> solid red;
 }
 <span class="hljs-selector-class">.float-element</span> {
     <span class="hljs-attribute">float</span>:left;
-}</pre></code><div class="float-parent">
+}</code></pre><div class="float-parent">
     <div class="p float-element">
         Content
     </div>

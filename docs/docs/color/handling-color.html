@@ -2528,13 +2528,13 @@
 <h2 id="contrasting-color-two-strategies">Contrasting color: two strategies</h2>
 <p>When reading trough the docs and configuring your buttons, linkss, etc… you will find two different strategies.</p>
 <p>This strategies refer to how we contrast a color against a background:</p>
-<h3 id="contrast-">Contrast:</h3>
+<h3 id="contrast">Contrast:</h3>
 <p>A pure “contrast” solution will check your provided background color and decide wether to use your configured <em>dark</em> or <em>light</em> colors for the text.</p>
 <p>It will use <code>contrast-color($color, $dark, $light)</code> function. </p>
 <p>As usual, your <strong>dark</strong> and <strong>light</strong> colors can be either the pre-defined <code>$contrast-dark</code> and <code>$contrast-light</code> on <code>_config.scss</code> or passed manually.</p>
 <p>But… <strong>¿when should we decide that a given color is “too dark” or “too light?</strong> The threshold of lightness that activate the contrast can also be set using <code>$lightness-threshold</code>. </p>
 <p>So, for example, if you provide a <code>yellow</code> color as <code>$contrast-light</code> and your background-color’s lightness is greater than your <code>$lightness-threshold</code> value, the text will be set to yellow. Otherwise, the <code>$contrast-dark</code> color will be used.</p>
-<code class="lang-scss"><pre><span class="hljs-variable">$contrast-light</span>: yellow;
+<pre><code class="language-scss"><span class="hljs-variable">$contrast-light</span>: yellow;
 
 <span class="hljs-selector-class">.my-box</span> {
     <span class="hljs-comment">// We set a background color</span>
@@ -2543,34 +2543,34 @@
     <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-number">#666</span>);
     <span class="hljs-comment">// We could pass the values directly to override the default behavior</span>
     <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-number">#666</span>, limegreen, black)
-}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
+}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
     My box
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div style="background-color: #666; color: limegreen" class="p my-box">
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><div style="background-color: #666; color: limegreen" class="p my-box">
     My box
 </div>
 
 
-<h3 id="split-">Split:</h3>
+<h3 id="split">Split:</h3>
 <p>Split color is a completely different strategy, commonly seen on Bootstrap and others. </p>
 <p>Instead of contrasting <strong>against</strong> a color, it takes the given color and makes two different mixes: one darker, and one lighter.</p>
 <p>You can control the amount of the mix using <code>$lighten-amount</code> and <code>$darken-amount</code> global values or pass them directly to the mixin. </p>
 <p>For example, if you set <code>#bcc300</code> (gold) as the color, you will get a lighter version as the background-color and a darker version as the text.</p>
 <p>By default, the lighter color will be used on the background. To switch this behavior, you can simply set <code>$invert</code> to true. </p>
 <p>Read the <a href="/docs/mixins/color/background-split-color">docs of this useful mixin</a> to get more info.</p>
-<code class="lang-scss"><pre><span class="hljs-selector-class">.my-box</span> {
+<pre><code class="language-scss"><span class="hljs-selector-class">.my-box</span> {
     @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>);
 }
 
 <span class="hljs-selector-class">.my-box--inverted</span> {
     <span class="hljs-comment">// Pass the $invert parameter manually</span>
     @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>, <span class="hljs-variable">$invert</span>: true);
-}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
+}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
     My box
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box--inverted"</span>&gt;</span>
     My box ($invert = true)
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><div class="p mb" style="background-color: #dee180; color:#5e6200">
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><div class="p mb" style="background-color: #dee180; color:#5e6200">
     My box
 </div>
 

@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-f1afc096b1e80d850f850f538b87c906">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2586,7 +2590,8 @@
 <p>Font sizing follows a type-scale based on <a href="http://type-scale.com/">http://type-scale.com/</a>. Choose your <code>$scale-ratio</code> and it will be automatically applied to h1-h6 font sizes.</p>
 <p>You can also set <code>$h1-ritmo-lines</code> to <code>$h6-ritmo-lines</code>. These variables take a number of ritmo lines and will be applied to the <code>ritmo-font-size()</code> mixin that will set the font size and line height of headings.</p>
 <div class="alert alert--success">
-<strong>Why do I need to manually set the vertical rhythm?</strong><br>Tweaking this values might seem overkill but the result is far more appealing and legible.
+__Why do I need to manually set the vertical rhythm?__  
+Tweaking this values might seem overkill but the result is far more appealing and legible.
 The automatic and arithmetic ritmo.scss calculations result on excessive line height, specially on bigger sizes.
 </div>
 

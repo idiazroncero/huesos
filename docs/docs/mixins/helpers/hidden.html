@@ -2516,9 +2516,9 @@
 <p>Its use is recommended for correct semantic HTML and section naming. It is a good practice, for example, to give a heading to every section element. It also common that you won’t need or want all of this headings to be visible to the end user. Visually hiding those headings is the best practice (see example)</p>
 <p>This technique is borrowed from <a href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">https://snook.ca/archives/html_and_css/hiding-content-for-accessibility</a></p>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-selector-class">.hide-me</span> {
+<pre><code class="language-scss"><span class="hljs-selector-class">.hide-me</span> {
     @<span class="hljs-keyword">include</span> hidden()
-}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"news"</span>&gt;</span>
+}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"news"</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- We want to semantically name this section but don't show it to the user --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hide-me"</span>&gt;</span>News<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 
@@ -2529,7 +2529,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti consequatur veniam beatae ad, neque accusantium consectetur unde dolorum vitae magnam inventore animi minima et molestias repellat reprehenderit. Excepturi, itaque!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre></code><section>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre><section>
     <h1 class="hide-me">News</h1>
     <article class="card">
         <h3>This is a headline that needs to be shown</h3>

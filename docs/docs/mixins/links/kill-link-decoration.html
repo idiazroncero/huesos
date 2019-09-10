@@ -2523,7 +2523,7 @@
 <li><code>$strategy-hover</code> - Valid <code>$link-strategy</code> value.</li>
 </ul>
 <h3 id="examples">Examples</h3>
-<code class="lang-scss"><pre><span class="hljs-comment">// Normal link, no values passed</span>
+<pre><code class="language-scss"><span class="hljs-comment">// Normal link, no values passed</span>
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.kill-my-decoration</span> {
     @<span class="hljs-keyword">include</span> kill-link-decoration();
 }
@@ -2536,7 +2536,7 @@
 <span class="hljs-comment">// ...but we need to delete the decoration on a more specific case! We'll need to manually pass the correct values because the mixin can't tell!</span>
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.my-very-special-link--modified</span> {
     @<span class="hljs-keyword">include</span> kill-link-decoration(<span class="hljs-string">'mark'</span>, <span class="hljs-string">'border-inset'</span>);
-}</pre></code><code class="lang-html"><pre><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-my-decoration"</span>&gt;</span>
+}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-my-decoration"</span>&gt;</span>
     Undecorated link. Keeps color. Deletes decorative elements.
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-very-special-link"</span>&gt;</span>
@@ -2544,16 +2544,15 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-very-special-link--modified"</span>"&gt;</span>
     I'm a custom decorated link that has gotten undecorated. Long life CSS bloat.
-<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></code><p><a href="#" class="kill-my-decoration">
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre><a href="#" class="kill-my-decoration">
     Undecorated link. Keeps color. Deletes decorative elements.
 </a><br>
 <a href="#" class="my-very-special-link">
-    I’m a custom decorated link.
+    I'm a custom decorated link.
 </a><br>
 <a href="#" class="my-very-special-link--modified">
-    I’m a custom decorated link that has gotten undecorated. Long life CSS bloat.
-</a></p>
-
+    I'm a custom decorated link that has gotten undecorated. Long life CSS bloat.
+</a>
     
 
 

@@ -2523,13 +2523,13 @@
 <p><code>.minititle</code> helper class does its job by applying the defaults to any item.</p>
 <div class="alert alert--success">
 
-<p><strong>Hold on!</strong> If you override the defaults, <code>minititle()</code> mixin can become a full-fledged tool capable of handling many of the usual modificacions of text.</p>
+<p>__Hold on!__ If you override the defaults, `minititle()` mixin can become a full-fledged tool capable of handling many of the usual modificacions of text.</p>
 
 <p>This means you can also use this mixin to format a huge, lowercase text with small kerning. Why not?</p>
 
 </div>
 
-<h3 id="why-minititle-">Why minititle?</h3>
+<h3 id="why-minititle">Why minititle?</h3>
 <p>This is a common pattern i’ve seen for a while on web design. Still, I haven’t found any specific naming convention.</p>
 <p>In my head, it took two different names. First one was <em>ladillo</em>, which is journalistic jargon and is the spanish word for the kind of inner titles you see on the printed news. A good one, but too specific and jargon-ish. </p>
 <p>The second one was <em>minititle</em>. It makes sense: in the end, we are looking at some kind of title (semantically, it uses to be a heading), whose relevance in the visual hierarchy needs to be somewhat diminished without losing its relevance. It is mini, but it is still a title.</p>
@@ -2541,10 +2541,10 @@
 <li><code>$letter-spacing</code> - A valid value for <code>letter-spacing</code>. Defaults to global <code>$letter-spacing</code></li>
 </ul>
 <h3 id="example">Example</h3>
-<code class="lang-scss"><pre><span class="hljs-comment">// Let's roll our own minititle</span>
+<pre><code class="language-scss"><span class="hljs-comment">// Let's roll our own minititle</span>
 <span class="hljs-selector-class">.my-minititle</span> {
     @<span class="hljs-keyword">include</span> minititle(<span class="hljs-variable">$h6-font-size</span>, lighter, true, 1em)
-}</pre></code><code class="lang-html"><pre><span class="hljs-comment">&lt;!-- Using the default class --&gt;</span>
+}</code></pre><pre><code class="language-html"><span class="hljs-comment">&lt;!-- Using the default class --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>Default minititle<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, adipisci eum enim dicta esse aliquam ab fugit obcaecati perspiciatis iure corporis laborum eligendi dignissimos, et ex earum sunt. Pariatur, iure.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -2554,7 +2554,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-minititle"</span>&gt;</span>Custom minititle<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, adipisci eum enim dicta esse aliquam ab fugit obcaecati perspiciatis iure corporis laborum eligendi dignissimos, et ex earum sunt. Pariatur, iure.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></pre></code><article>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre><article>
     <h1 class="minititle">Default minititle</h1>
     <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, adipisci eum enim dicta esse aliquam ab fugit obcaecati perspiciatis iure corporis laborum eligendi dignissimos, et ex earum sunt. Pariatur, iure.</p>
 </article>

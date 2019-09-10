@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-4d3ee98bec65752b70c4127387451629">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2586,24 +2590,24 @@
 </ul>
 <p>Use this values to define a <code>$button-strategy-default</code>and a <code>$button-strategy-hover</code>.</p>
 <p>Some common examples are:</p>
-<code class="lang-scss"><pre><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>
+<pre><code class="language-scss"><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'outline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</pre></code><code class="lang-scss"><pre><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</code></pre><pre><code class="language-scss"><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'background'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</pre></code><code class="lang-scss"><pre><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><pre><code class="language-scss"><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'split'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</pre></code><h2 id="disabled-buttons">Disabled buttons</h2>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><h2 id="disabled-buttons">Disabled buttons</h2>
 <p>Instead of using a custom <code>.button--disabled</code> class, disable buttons by usign the global <code>.disabled</code> helper class. </p>
 <p>This class is configured to detect context and apply the correct disabling properties.</p>
-<h2 id="alternative-buttons-">Alternative buttons.</h2>
+<h2 id="alternative-buttons">Alternative buttons.</h2>
 <p>Alternative strategies can be created by populating the <code>$button-alternative-strategies</code> map with combinations of <code>default</code> and <code>hover</code> values.</p>
 <p>We provide a commented example on <code>_config.scss</code></p>
-<code class="lang-scss"><pre><span class="hljs-variable">$button-alternative-strategies</span>: (
+<pre><code class="language-scss"><span class="hljs-variable">$button-alternative-strategies</span>: (
     split : (
         default : <span class="hljs-string">'split'</span>, 
         hover : <span class="hljs-string">'split-inverse'</span>
     ),
-);</pre></code><p>The generated classes will take the following format: <code>.button--#{variant}--#{strategy}</code>. For example, the <code>split</code> strategy consisting of <code>split</code> as default and <code>split-inverse</code> as hover becomes <code>.button--primary--split</code> for the primary variant, <code>.button--error--split</code> por the error variant and so on…</p>
+);</code></pre><p>The generated classes will take the following format: <code>.button--#{variant}--#{strategy}</code>. For example, the <code>split</code> strategy consisting of <code>split</code> as default and <code>split-inverse</code> as hover becomes <code>.button--primary--split</code> for the primary variant, <code>.button--error--split</code> por the error variant and so on…</p>
 <p>Setting <code>$button-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>
 <h2 id="why-is-a-button-class-needed">Why is a .button class needed</h2>
 <p>Styling all posible combinations of <code>&lt;input&gt;</code>, <code>&lt;a class=&quot;button&quot;&gt;</code> and <code>&lt;button&gt;</code> elements, their variations and their adjacent / sibling selectors results on a unnecesarily bloated css.</p>

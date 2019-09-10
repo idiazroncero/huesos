@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-0e3a870ac6f6a8f7cf8251118543d92d">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2575,12 +2579,17 @@
         <section class="browser-notes" id="browser-0e3a870ac6f6a8f7cf8251118543d92d-panel-notes">
     <div class="text-wrapper">
         
-            <p>Any HTML that uses the css class <code>.nav</code>. This means <code>&lt;nav&gt;</code> elements <strong>won’t</strong> receive any styling by default until a <code>.nav</code> class is added. </p>
-<p>In previous versions, we enforced <code>&lt;nav&gt;</code> elements to have this custom sytling. Navigation might vary a lot, so it seems better to separate againmarkup and style.</p>
-<p>We don’t assume a menu-style, horizontal navigation as the default. This is done by using the <code>.menu</code> component.</p>
+            <p><code>&lt;nav&gt;</code> elements <strong>won’t</strong> receive any styling by default until a <code>.nav</code> class is added. This class performs a minimal, common styling to make it look like a menu.</p>
+<p>We don’t assume a horizontal navigation as the default. This is done by adding the <code>.menu</code> class.</p>
 <p>Instead, we only style the text and delete the bullets. The nav items’ style can be controlled on <code>_config.scss</code> via a set of parameters on the Navigation section: <code>$nav-font-weight</code>, <code>$nav-uppercase</code>, <code>$nav-font-size</code> and <code>$nav-spacing</code>.</p>
-<p>It’s supposed to hold links (try “section”), but it can also have empty elements.</p>
-<p>It is common the need to disable partially or totally the link appearance. You can use <code>kill-link</code> or <code>kill-link-decoration</code> classes or mixins for this or set <code>$nav-kill-links</code> to true for a global override of decoration styles.</p>
+<div class="alert mb">
+
+<p>In previous versions, we forced <code>&lt;nav&gt;</code> elements to behave like the common horizontal menus. It was very opinionated, so we separated <code>.nav</code> from <code>.menu</code>.</p>
+</div>
+
+<h3 id="links-inside-navigation">Links inside navigation</h3>
+<p>A nav component is supposed to hold links, but it can also have empty elements.</p>
+<p>It is common the need to disable partially or totally the link appearance. You can either use <code>kill-link</code> or <code>kill-link-decoration</code> classes/mixins or set <code>$nav-kill-links: true</code> for a global override of decoration styles.</p>
 
         
     </div>
@@ -2628,7 +2637,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>385 Bytes</span>
+                    <span>373 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2645,7 +2654,7 @@
     <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
     <span class="hljs-attribute">list-style-type</span>:none;
 		<span class="hljs-selector-tag">li</span> {
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacer</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
       <span class="hljs-attribute">font-weight</span>: <span class="hljs-variable">$nav-font-weight</span>;
       @<span class="hljs-keyword">if</span> <span class="hljs-variable">$nav-uppercase</span> {
         <span class="hljs-attribute">text-transform</span>: uppercase;

@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-0b4c7ad3b0ade36276f2bc4b600870eb">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2575,16 +2579,24 @@
         <section class="browser-notes" id="browser-0b4c7ad3b0ade36276f2bc4b600870eb-panel-notes">
     <div class="text-wrapper">
         
-            <p>An horizontal menu is a component based on an extended <code>&lt;nav&gt;</code> or <code>.nav</code>.</p>
-<p>Unlike the <code>nav</code>, which is a bare-bones item, the menu includes highlighting of links and a set of decoration items.</p>
-<p>It is expected that all items on a menu are linked. Empty links can be faked by adding a <code>&lt;span&gt;</code> item and combined with the <code>.disabled</code> class in order to indicate a deactivated link</p>
-<p>Submenus are handled up to the 3rd level. If you need more levels… you might want to rethink your menu.</p>
-<h2 id="menu-configuration">Menu configuration</h2>
-<p>This menu is very opinionated and intented as a quick way to bootstrap a default-looking menu. If you need something more complex or very different, you should better develop your own solution.</p>
-<p>You can config the <code>$menu-padding</code>of every menu item. Use <code>$menu-kill-links</code> to kill all links (defaults to true) and set a <code>$menu-background-color</code>that will be used to make all color variations. Use <code>$menu-color-ratio</code> to set a % that will be applied to <code>lighten()</code> the color on every subsequent level.</p>
-<h2 id="quick-tip">Quick tip</h2>
-<p>If you don’t want to set the default <code>.nav</code> values, just delete the class! The <code>.menu</code> styling is not dependent on the <code>nav</code>. </p>
-<p>It is though recommended to use the <code>.nav</code> class to keep all navigation styles unified.</p>
+            <div class="mb alert alert--warning">
+
+<p><strong>This menu is very opinionated</strong> and intented as a quick way to bootstrap a default-looking menu. If you need something more complex or different, consider developing your own solution.</p>
+</div>
+
+<p>We consider en horizontal menu as a component based on an extended <code>&lt;nav&gt;</code> or <code>.nav</code>.</p>
+<p>Unlike the <code>nav</code>, which is a bare-bones item, the menu includes highlighting of links, a set of decoration items and handling of sub-menus.</p>
+<p>It is expected that all items on a menu are linked. Empty links can be faked by adding a <code>&lt;span&gt;</code> item and combined with the <code>.disabled</code> class in order to indicate a deactivated link (see ‘Exit’)</p>
+<p>Submenus are handled up to the 3rd level. If you need more levels, you’re gooing too deep and you might want to rethink your menu.</p>
+<h3 id="menu-configuration">Menu configuration</h3>
+<p>You can config the <code>$menu-padding</code> of every menu item. Use <code>$menu-kill-links</code> to kill all links (defaults to true).</p>
+<h3 id="menu-color">Menu color</h3>
+<p>In past editions of Huesos we tried to devise a way to handle background-color for the menu. We set a <code>$menu-background-color</code> and a <code>$menu-color-ratio</code> to derive shades from.</p>
+<p><strong>It was senseless.</strong> This menu can descend up to the third level and can have a lot of color strategies (involving contrasts, backgrounds, borders) on each level. Our default and very basic solution would surely need to be overriden 90% of the time, generating more bloat and unneeded CSS.</p>
+<p>We decided instead to go for a <strong>minimum viable menu</strong>. We only put a white background-color (it is needed to avoid transparency on nested levels) and let you freely decide how to style your own menu. <strong>We only provide functionality, not appearance</strong></p>
+<h3 id="menu--nav">Menu + nav</h3>
+<p>You can quickly apply <code>.nav</code> values by just adding the class to your <code>.menu</code>. It will style the text and will be compatible with <code>.menu</code>.</p>
+<p><code>.nav</code> and <code>.menu</code> habe been designed to be able to work in pairs or separately. The first one takes care of styling the text, the second takes care of establishing a horizontal menu hierarchy.</p>
 
         
     </div>
@@ -2597,38 +2609,7 @@
     <code class="code-block code code--lang-html">
         
             <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Simple menu<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Works<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"disabled"</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Menu + nav<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav menu"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
@@ -2678,19 +2659,34 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>2.7 KB</span>
+                    <span>1.9 KB</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.menu</span> {
-    @<span class="hljs-keyword">include</span> inline-list();
     @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
       <span class="hljs-selector-tag">a</span> {
         @<span class="hljs-keyword">include</span> kill-link-decoration();
       }
     }
+
+    <span class="hljs-selector-tag">li</span> {
+      <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#eee</span>;
+    }
+
+    <span class="hljs-comment">// All ul elements</span>
+    <span class="hljs-selector-tag">ul</span> {
+      @<span class="hljs-keyword">include</span> inline-list();
+    }
+
+    <span class="hljs-comment">// All a and span elements</span>
+    <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-tag">span</span> {
+      <span class="hljs-attribute">display</span>:inline-block;
+    }
+
+    <span class="hljs-comment">// li</span>
     <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
       <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
       <span class="hljs-attribute">position</span>:relative;
@@ -2700,25 +2696,20 @@
         <span class="hljs-attribute">display</span>:block;
         <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
         <span class="hljs-attribute">white-space</span>:nowrap;
+
         @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
           @<span class="hljs-keyword">include</span> set-link(
             get-color(text, primary),
             get-color(text, primary),
-            contrast-color(<span class="hljs-variable">$menu-background-color</span>),
+            get-color(text, primary),
             get-color(text, primary),
             false,
             false
           )
         }
       }
-      &amp;:hover,
-      &amp;:focus {
-        &gt; <span class="hljs-selector-tag">a</span> {
-            <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-variable">$menu-background-color</span>);
-            <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$menu-background-color</span>;
-        }
-      }
-      &gt; <span class="hljs-selector-tag">span</span> {
+
+      &gt; span {
         <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span>;
       }
       <span class="hljs-comment">// Second-level</span>
@@ -2736,16 +2727,7 @@
             <span class="hljs-attribute">display</span>:block;
             <span class="hljs-attribute">padding</span>:<span class="hljs-variable">$menu-padding</span> / <span class="hljs-number">2</span> <span class="hljs-variable">$menu-padding</span>;
             <span class="hljs-attribute">white-space</span>:nowrap;
-
-            <span class="hljs-attribute">background-color</span>: lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>);
-            @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-              @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>)));
-            }
             @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.8</span> * <span class="hljs-variable">$nav-font-size</span>);
-            &amp;:hover,
-            &amp;:focus {
-              @<span class="hljs-keyword">include</span> background-contrast(shade(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
-            }
           }
         }
       }
@@ -2760,15 +2742,7 @@
           <span class="hljs-attribute">z-index</span>:<span class="hljs-number">3</span>;
           <span class="hljs-selector-tag">li</span> {
             <span class="hljs-selector-tag">a</span> {
-              <span class="hljs-attribute">background-color</span>: lighten(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>);
-              @<span class="hljs-keyword">if</span> <span class="hljs-variable">$menu-kill-links</span> {
-                @<span class="hljs-keyword">include</span> kill-link(contrast-color(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>), <span class="hljs-variable">$menu-color-ratio</span>));
-              }
               @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-number">0.7</span> * <span class="hljs-variable">$nav-font-size</span>, 4);
-              &amp;:hover,
-              &amp;:focus {
-                @<span class="hljs-keyword">include</span> background-contrast(lighten(<span class="hljs-variable">$menu-background-color</span>, <span class="hljs-variable">$menu-color-ratio</span>));
-              }
             }
           }
         }

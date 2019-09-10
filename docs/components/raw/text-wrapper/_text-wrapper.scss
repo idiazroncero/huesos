@@ -1,4 +1,5 @@
 .text-wrapper {
+	max-width: $max-ch;
 	h1, h2, h3, h4 {
 		margin-top: $gutter * 2;
 	}

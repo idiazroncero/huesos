@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-ab8b35fb76f85cfe680ad87d1af839a0">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2575,10 +2579,16 @@
         <section class="browser-notes" id="browser-ab8b35fb76f85cfe680ad87d1af839a0-panel-notes">
     <div class="text-wrapper">
         
-            <p>A toc or table of contents is a vertical menu based off a <code>&lt;nav&gt;</code> item.</p>
-<p>The first level can be configured on <code>_config.scss</code>.</p>
-<p>This is a very opinionated component. It won’t let <code>bold</code> weight to pass below the first depth level, it will apply a progressive reduction of font-size and it will set uppercase from the 3rd level on.</p>
-<p>If you need to disable partially or totally the link appearance. Use <code>kill-link</code> or <code>kill-link-decoration</code> classes or mixins for this.</p>
+            <p>A toc or table of contents is a special kind of vertical menu based off a <code>&lt;nav&gt;</code> item.</p>
+<p>It usually differs from a normal menu in some or all of this aspects:</p>
+<ul>
+<li>It holds several nested menus.</li>
+<li>These nested menus are visible by default (no “accordions” or open/close triggers).</li>
+<li>They’re dense and informative (as opposite to small, site-wide navigation menus).</li>
+</ul>
+<p><strong>Our TOC is a very opinionated component</strong> because exposing all the configuration would be overkill. It won’t let <code>bold</code> weight to pass below the first depth level, it will apply a progressive reduction of font-size.</p>
+<p>You can still use <code>$toc-font-weight</code>, <code>$toc-uppercase</code> and <code>$toc-font-size</code> to determine the first-level font-size, the first-level font-weight and the uppercase status</p>
+<p>If you need to disable partially or totally the link appearanceu ese <code>kill-link</code> or <code>kill-link-decoration</code> classes or mixins for this.</p>
 
         
     </div>

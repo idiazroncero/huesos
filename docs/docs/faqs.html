@@ -2520,13 +2520,13 @@
 
     
     
-    <h3 id="why-don-t-you-use-lobotomized-owl-">Why don’t you use lobotomized owl?</h3>
+    <h3 id="why-dont-you-use-lobotomized-owl">Why don’t you use lobotomized owl?</h3>
 <p>Even if we agree that <a href="https://css-tricks.com/lobotomized-owls/">lobotomized owl</a> is one of the most ingenious techniques we’ve seen for a while, we want also to stick to the <strong>only margin-bottoms</strong> rule… and that is opposite to the way the lobotomized owl works.</p>
 <p>So… no global lobotomized owls, for the time being. But… you can still use <code>.owl</code> helpers to apply it at a block-level!</p>
-<h3 id="your-ul-and-ol-are-wrong-">Your &lt;ul> and &lt;ol> are wrong!</h3>
+<h3 id="your-ul-and-ol-are-wrong">Your &lt;ul&gt; and &lt;ol&gt; are wrong!</h3>
 <p>Nope, they’re right. It’s the whole internet who’s wrong. Read <em>hanging punctuation</em> section on <a href="https://betterwebtype.com/articles/2018/10/15/rhythm-in-web-typography/">this article</a> to see why.</p>
 <p>Unconvinced? Set <code>$list-padding</code> to other than <code>0</code> and be as happily wrong as 90% of the web.</p>
-<h3 id="why-don-t-you-use-glob-patterns-to-import-scss-files-">Why don’t you use glob patterns to import scss files?</h3>
+<h3 id="why-dont-you-use-glob-patterns-to-import-scss-files">Why don’t you use glob patterns to import scss files?</h3>
 <p>Manually importing scss files on <code>_huesos.scss</code> is cumbersome. It looks like a stupid thing to do when you could just <code>@import src/**/*.scss</code>.</p>
 <p>There is a reason behind, though. As a framework, Huesos strive for flexibility and customization. For example, we might need to drop all the <code>components</code> part for a proyect in order to reduce Huesos to a global reset. Or we might just hate the <code>navigation</code> part and want to replace it with our own.</p>
 <p>Having all the <code>@import</code>s exposed on a single <code>_huesos.scss</code> file allows for easy customization of your bundle: if you want to drop some parts of the code you just need to comment them out. You can’t do this with glob patterns.</p>

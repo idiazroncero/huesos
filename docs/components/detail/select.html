@@ -2497,7 +2497,11 @@
     
 
     <section class="pen-preview card" data-behaviour="preview" id="preview-e284f63a6f38740f65fdf28adec43c39">
-    <h3 class="preview-tag tag">Live preview</h3>
+    <div class="preview-tag">
+        <h3 class="small">Preview</h3>
+        <button class="preview tag">Expand</button>
+        <button class="fullscreen tag">Fullscreen</button>
+    </div>
     
         <iframe
         class="preview-iframe"
@@ -2579,7 +2583,7 @@
 <p>There are many shortcomings on <code>&lt;select&gt;</code> styling and the UX is broken (to say the least) , so we recommend using the js-enhanced solution.</p>
 <p>Still, if you want to use the native HTML solution, a basic syling is provided: vertical rhythm is preserved, borders are added, sizing is always 100% width.</p>
 <p>In order to make the arrows appear, you will need to wrap the whole <code>&lt;select&gt;</code> element on a <code>.select-wrapper</code> parent (this is because HTML form elements won’t accept pseudo-elements).</p>
-<code class="lang-html"><pre><span class="hljs-comment">&lt;!-- Wrap it on a .select-wrapper to add the arrow --&gt;</span>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Wrap it on a .select-wrapper to add the arrow --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item select-wrapper"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
@@ -2587,7 +2591,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre></code><h3 id="js-enhanced">JS-enhanced</h3>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3 id="js-enhanced">JS-enhanced</h3>
 <p>When <code>[data-selectr]</code> is applied directly on the element, it uses <a href="https://github.com/Mobius1/Selectr">Selectr</a> for a leaner UI, search box, tag-like behavior on <code>[multiple]</code>, etc…</p>
 <p>Selectr’s css has been adapted to Huesos styling and respects vertical rhythm and <code>_config.scss</code> values.</p>
 
