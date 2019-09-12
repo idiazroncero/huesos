@@ -22,7 +22,7 @@
         "name" : "Error",
         "context": {
           "modifier": "tag--error",
-          "text": "This is a error tag!"
+          "text": "This is an error tag!"
         }
       }
   ]

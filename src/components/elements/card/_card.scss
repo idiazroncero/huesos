@@ -7,7 +7,7 @@
 		padding: ritmo($card-padding);
 	}
 	border-radius: $card-border-radius;
-	@if $shadows == true {
+	@if $card-shadow == true {
 		box-shadow: $shadow-definition;
 	}
 	// Nested cards are applied a padding reduction

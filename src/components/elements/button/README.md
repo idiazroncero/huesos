@@ -3,17 +3,17 @@ Applies to `<input>`, `<button>` or `<a>`. Without the `.button` class, only a r
 You can define a separate appearance for every button state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.
 
 These are the available strategies: 
-- outline - Colored outline and text, background transparent.
-- background - Background solid, text contrasted against the background.
-- split - Background lightened, font darkened, based on same color.
-- split-inverse - Inverse of split.
+- `outline` - Colored outline and text, background transparent.
+- `background` - Background solid, text contrasted against the background.
+- `split` - Background lightened, font darkened, based on same color.
+- `split-inverse` - Inverse of split.
 
 Use this values to define a `$button-strategy-default`and a `$button-strategy-hover`.
 
 Some common examples are:
 
 ```scss
-/* Button with outline that fills with color on hover (default) */
+/* Button with outline that fills with color on hover (default) */  
 $button-strategy-default: 'outline';
 $button-strategy-hover: 'background';
 ```
@@ -30,13 +30,13 @@ $button-strategy-default: 'split';
 $button-strategy-hover: 'split-inverse';
 ```
 
-## Disabled buttons
+### Disabled buttons
 
 Instead of using a custom `.button--disabled` class, disable buttons by usign the global `.disabled` helper class. 
 
 This class is configured to detect context and apply the correct disabling properties.
 
-## Alternative buttons.
+### Alternative buttons.
 
 Alternative strategies can be created by populating the `$button-alternative-strategies` map with combinations of `default` and `hover` values.
 
@@ -55,8 +55,8 @@ The generated classes will take the following format: `.button--#{variant}--#{st
 
 Setting `$button-alternative-strategies` to a falsy value avoids the programatic generation of classes and avoids bloating your css.
 
-## Why is a .button class needed
+### Why a .button class?
 
 Styling all posible combinations of `<input>`, `<a class="button">` and `<button>` elements, their variations and their adjacent / sibling selectors results on a unnecesarily bloated css.
 
-Moreover, a Bootstrap-like approach where the `.button` class simply ensures a global reset and the modifier applies a style allows for better customization.
+A Bootstrap-like approach where the `.button` class simply ensures a global reset and every modifier applies a style allows for better customization.

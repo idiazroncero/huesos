@@ -2538,11 +2538,11 @@
 <li><strong>All separator borders are solid.</strong><br>Borders that indicate boundaries are always set to <code>solid</code> and are not configurable. This is because 1) we find solid borders to be the most “solid” choice and 2) exposing that level of detail on our config file would kill this projects’s purpose.<br>If you need decorator borders to be set to other value, write them on your own css. If you don’t agree with this or don’t need separator borders, you can set <code>$separators</code> to <code>false</code>.</li>
 </ul>
 <ul>
-<li><p><strong>Utility classes have their uses</strong><br>Utility classes are the subject of a heated debate. <a href="https://tachyons.io/">Some frameworks</a> are based exclusively on utility classes. Some people say they’re unmaintanable, bloated and meaningless. Others praise the quick prototyping and development you can achieve.</p>
-<p>Huesitos is our (optional and small) library of utility classes. We don’t favor design by using utility classes, we do embrace BEM and semantical naming <strong>BUT</strong> we have found that a small subset of utility classes on top of BEM is really useful on two cases:</p>
+<li><p><strong>Utility classes have their uses</strong><br>Utility classes are the subject of a heated debate. <a href="https://tachyons.io/">Some frameworks</a> are based exclusively on utility classes. Some people say they’re unmaintanable, bloated and meaningless while others praise the quick prototyping and development you can achieve with them.</p>
+<p>Huesitos is our (optional and small) library of utility classes. We don’t favor design by using utility classes, we do embrace BEM and semantical naming but <strong>we have found that a small subset of utility classes on top of BEM is really useful on two cases:</strong></p>
 <ol>
 <li>For overrides so small they won’t justify a modifier class (i.e: deleting/adding margins).</li>
-<li>For items so small they won’t justify a block class.</li>
+<li>For items so small they won’t justify a new set of BEM classes.</li>
 </ol>
 </li>
 </ul>
@@ -2553,7 +2553,7 @@
 <li><strong>Zero overweight.</strong> Small, concise, single-purpose libraries</li>
 <li><strong>Vanilla javascript.</strong> jQuery shouldn’t be a dependency.</li>
 </ul>
-<p>Huesos make use of the following JS libraries:</p>
+<p>Apart from custom solutions, Huesos make use of the following JS third-pary libraries:</p>
 <ul>
 <li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
 </ul>

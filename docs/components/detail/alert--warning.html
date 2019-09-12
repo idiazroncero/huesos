@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Una alerta: Warning | Huesos</title>
+<title>Alert: Warning | Huesos</title>
 
 </head>
 <body>
@@ -2517,7 +2517,7 @@
     <header class="pen-header">
     <h1 class="m0">
         <a href="../preview/alert--warning.html" title="Component preview">
-            Una alerta: Warning
+            Alert: Warning
         </a>
     </h1>
     
@@ -2579,13 +2579,13 @@
         <section class="browser-notes" id="browser-88b1b0713869ce4fbcb1165b29cf38db-panel-notes">
     <div class="text-wrapper">
         
-            <p>Boxes with background-colors to draw the user’s attention towards specific messages.</p>
-<p>Any alert is automatically set as a <code>.text</code> to prevent paragraphs for setting an extra space.</p>
-<p>It is considered good practice to use <code>.minititle</code> for headings inside the alert box.</p>
+            <p>Alerts are colored boxes set to draw the user’s attention towards specific messages.</p>
+<p>You can set a <code>$alert-strategy</code> of <code>split</code> or <code>contrast</code> (see <a href="/docs/color/handling-color">handling color</a> to know the difference) and a <code>$alert-default-color</code> for the default case.</p>
+<p>It will use the <code>$state</code> map on <code>$colors</code> to generate a set of helper classes. By default, they are the following:</p>
 <ul>
-<li>.alert–success     - Sets the color to indicate a positive action or message</li>
-<li>.alert–warning     - Sets the color to indicate a warning</li>
-<li>.alert–error       - Sets the color to indicate a negative action or message</li>
+<li><code>.alert--success</code>     - Sets the color to indicate a positive action or message</li>
+<li><code>.alert--warning</code>     - Sets the color to indicate a warning</li>
+<li><code>.alert--error</code>       - Sets the color to indicate a negative action or message</li>
 </ul>
 
         
@@ -2597,12 +2597,13 @@
 <section class="browser-code is-active" data-role="tab-panel" id="browser-88b1b0713869ce4fbcb1165b29cf38db-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
-        
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb alert--warning"</span>&gt;</span>
+
+
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert mb alert--warning"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>This is a title<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is the content of an alert / info card.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-        
+
     </code>
 </section>
 
@@ -2625,7 +2626,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>681 Bytes</span>
+                    <span>705 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2634,11 +2635,14 @@
                                 <pre><span class="hljs-selector-class">.alert</span> {
     <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius</span>;
-    @<span class="hljs-keyword">extend</span> .text-wrapper;
     @<span class="hljs-keyword">if</span> <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'contrast'</span> {
         @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$alert-default-color</span>);
     } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$alert-strategy</span> == <span class="hljs-string">'split'</span> {
         @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$alert-default-color</span>); 
+    }
+
+    *:last-child {
+        <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">0</span>;
     }
 }
 

@@ -35,8 +35,10 @@ $button-strategy-hover: 'border';
 ```
 
 <div class="alert alert--warning">
+
 __Be careful when throwing *mark* on the mix!__  
 The left and right padding usually applied to 'mark' makes it difficult to mix it with other styles (unless you set padding to 0, wich is not recommended).
+
 </div>
 
 ### Disabled links

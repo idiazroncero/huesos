@@ -19,8 +19,7 @@ By default, we consider labels as a kind of minititle.
 
 <div class="alert alert--warning mb">
 
-    __There's life outside form items__  
-    This wrapper is a handy way of scoping a set of form-like styles. You can freely use form elements outside a `.form-item` wrapper and they will default to normal behavior (i.e, labels will cease to be minititles). This way, you can easily decide wether to apply form-like styles or not to your HTML.
-
+__There's life outside form items__  
+This wrapper is a handy way of scoping a set of form-like styles. You can freely use form elements outside a `.form-item` wrapper and they will default to normal behavior (i.e, labels will cease to be minititles). This way, you can easily decide wether to apply form-like styles or not to your HTML.
 
 </div>

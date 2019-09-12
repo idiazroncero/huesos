@@ -2593,15 +2593,16 @@
 <section class="browser-code is-active" data-role="tab-panel" id="browser-fb629e2cf83a3666daf936c81f66c031-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
-        
-            <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Either a sample of <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>computer code<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>keyboard input<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span> or a <span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>sample output from a computer program<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Either a sample of <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>computer code<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>keyboard input<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>, a <span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span> or a <span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>sample output from a computer program<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"code-block"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>By default, it behaves as a inline element with a line-heigth set to avoid vertical rhythm breaking<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>Add a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>.code-block<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> class to format a block-level element<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-        
+
     </code>
 </section>
 
@@ -2624,7 +2625,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>910 Bytes</span>
+                    <span>1.1 KB</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2655,6 +2656,7 @@
 
 	<span class="hljs-attribute">display</span>:block;
 	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacer</span>;
+
 	@<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$base-font-size</span>); <span class="hljs-comment">// Keep it lower than $base-line-multi!!</span>
 
 	
@@ -2670,6 +2672,14 @@
 	<span class="hljs-selector-tag">pre</span> {
 		<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
 	}
+}
+
+<span class="hljs-comment">// Some people wrap &lt;pre&gt; inside &lt;code&gt;,</span>
+<span class="hljs-comment">// some people do the opposite.</span>
+<span class="hljs-comment">// Ensure that white-space is inherited if &lt;pre&gt; is the wrapper:</span>
+
+<span class="hljs-selector-tag">pre</span> <span class="hljs-selector-tag">code</span> {
+    <span class="hljs-attribute">white-space</span>: inherit;
 }</pre>
                             </code>
                         

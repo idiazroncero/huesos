@@ -10,6 +10,8 @@ It will perform the following operations:
 - Applies `$max-ch` to ensure a maximum width based on a character number.
 
 <div class="alert alert--warning">
-    __Negras tormentas agitan los aires__  
-    The future of `.text-wrapper` is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
+
+__Negras tormentas agitan los aires__  
+The future of `.text-wrapper` is bleak. It can and will be overriden by a combination of max-ch, lobotomized owl and other tecniques. Deprecation is coming.
+
 </div>

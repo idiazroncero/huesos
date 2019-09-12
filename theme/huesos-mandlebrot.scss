@@ -81,13 +81,15 @@ h3 {
     font-weight:lighter;
 }
 
-code.lang-sass,
-code.lang-scss,
-code.lang-html,
+code.language-sass,
+code.language-scss,
+code.language-html,
 code.code {
     width: 100%;
     @extend .code-block;
 }
+
+
 
 
 // PEN

@@ -399,11 +399,12 @@ $nav-spacing: $letter-spacing;
 $toc-font-weight: normal;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
+$toc-kill-links: $nav-kill-links;
 
-$menu-padding: ritmo(1) ritmo(2);
+$menu-x-padding: ritmo(2);
 $menu-kill-links: true; // Kills decoration
-$menu-background-color: $gray4;
-$menu-color-ratio: 5%;
+$menu-background-color: $gray2;
+$menu-font-size: $nav-font-size;
 
 $breadcrumb-kill-links: true; // Kills decoration
 $breadcrumb-font-size: $h6-font-size; // False avoids setting this value
@@ -416,6 +417,7 @@ $breadcrumb-arrow: "›"; // Valid unicode character
 $tag-strategy: 'contrast'; // One of split or contrast
 $tag-default-color: $gray3;
 $tag-padding: 0 $gutter / 4; // Shorthand
+$tag-font-size: $h6-font-size;
 
 // ------
 // ALERTS
@@ -520,6 +522,7 @@ $card-border-color: $separator-color;// Can be false or a full border value, lik
 $card-background: $white;
 $card-border-radius: $border-radius;
 $card-padding: 8; // In base-line-multi
+$card-shadow: true; // Aplies shadow-definition
 
 
 

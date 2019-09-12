@@ -87,3 +87,4 @@ __Important:__ you need to `@import` dependencies before config. This is because
 - Optional animation / transition system with prefers-reduced-motion.
 - Apply intrinsic CSS sizing to grid system.
 - Assess lobotomized owl impact
+- Extend and apply some common criteria to both drop shadows and animations

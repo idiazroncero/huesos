@@ -41,12 +41,12 @@ Huesos is not as opinionated as tools like Bootstrap or Foundation, but there ar
 
 
 - __Utility classes have their uses__  
-  Utility classes are the subject of a heated debate. [Some frameworks](https://tachyons.io/) are based exclusively on utility classes. Some people say they're unmaintanable, bloated and meaningless. Others praise the quick prototyping and development you can achieve.
+  Utility classes are the subject of a heated debate. [Some frameworks](https://tachyons.io/) are based exclusively on utility classes. Some people say they're unmaintanable, bloated and meaningless while others praise the quick prototyping and development you can achieve with them.
 
-  Huesitos is our (optional and small) library of utility classes. We don't favor design by using utility classes, we do embrace BEM and semantical naming __BUT__ we have found that a small subset of utility classes on top of BEM is really useful on two cases:
+  Huesitos is our (optional and small) library of utility classes. We don't favor design by using utility classes, we do embrace BEM and semantical naming but __we have found that a small subset of utility classes on top of BEM is really useful on two cases:__
 
   1. For overrides so small they won't justify a modifier class (i.e: deleting/adding margins).
-  2. For items so small they won't justify a block class.
+  2. For items so small they won't justify a new set of BEM classes.
 
 
 
@@ -59,6 +59,6 @@ Javascript libraries that are bundled follow this requirements:
 - __Zero overweight.__ Small, concise, single-purpose libraries
 - __Vanilla javascript.__ jQuery shouldn't be a dependency.
 
-Huesos make use of the following JS libraries:
+Apart from custom solutions, Huesos make use of the following JS third-pary libraries:
 
 - [Selectr](https://github.com/Mobius1/Selectr) for vanilla-JS, Chosen-like `<select>` fields.

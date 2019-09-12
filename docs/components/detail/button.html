@@ -2583,23 +2583,23 @@
 <p>You can define a separate appearance for every button state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.</p>
 <p>These are the available strategies: </p>
 <ul>
-<li>outline - Colored outline and text, background transparent.</li>
-<li>background - Background solid, text contrasted against the background.</li>
-<li>split - Background lightened, font darkened, based on same color.</li>
-<li>split-inverse - Inverse of split.</li>
+<li><code>outline</code> - Colored outline and text, background transparent.</li>
+<li><code>background</code> - Background solid, text contrasted against the background.</li>
+<li><code>split</code> - Background lightened, font darkened, based on same color.</li>
+<li><code>split-inverse</code> - Inverse of split.</li>
 </ul>
 <p>Use this values to define a <code>$button-strategy-default</code>and a <code>$button-strategy-hover</code>.</p>
 <p>Some common examples are:</p>
-<pre><code class="language-scss"><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>
+<pre><code class="language-scss"><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>  
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'outline'</span>;
 <span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</code></pre><pre><code class="language-scss"><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'background'</span>;
 <span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><pre><code class="language-scss"><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
 <span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'split'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><h2 id="disabled-buttons">Disabled buttons</h2>
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><h3 id="disabled-buttons">Disabled buttons</h3>
 <p>Instead of using a custom <code>.button--disabled</code> class, disable buttons by usign the global <code>.disabled</code> helper class. </p>
 <p>This class is configured to detect context and apply the correct disabling properties.</p>
-<h2 id="alternative-buttons">Alternative buttons.</h2>
+<h3 id="alternative-buttons">Alternative buttons.</h3>
 <p>Alternative strategies can be created by populating the <code>$button-alternative-strategies</code> map with combinations of <code>default</code> and <code>hover</code> values.</p>
 <p>We provide a commented example on <code>_config.scss</code></p>
 <pre><code class="language-scss"><span class="hljs-variable">$button-alternative-strategies</span>: (
@@ -2609,9 +2609,9 @@
     ),
 );</code></pre><p>The generated classes will take the following format: <code>.button--#{variant}--#{strategy}</code>. For example, the <code>split</code> strategy consisting of <code>split</code> as default and <code>split-inverse</code> as hover becomes <code>.button--primary--split</code> for the primary variant, <code>.button--error--split</code> por the error variant and so on…</p>
 <p>Setting <code>$button-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>
-<h2 id="why-is-a-button-class-needed">Why is a .button class needed</h2>
+<h3 id="why-a-button-class">Why a .button class?</h3>
 <p>Styling all posible combinations of <code>&lt;input&gt;</code>, <code>&lt;a class=&quot;button&quot;&gt;</code> and <code>&lt;button&gt;</code> elements, their variations and their adjacent / sibling selectors results on a unnecesarily bloated css.</p>
-<p>Moreover, a Bootstrap-like approach where the <code>.button</code> class simply ensures a global reset and the modifier applies a style allows for better customization.</p>
+<p>A Bootstrap-like approach where the <code>.button</code> class simply ensures a global reset and every modifier applies a style allows for better customization.</p>
 
         
     </div>
@@ -2622,51 +2622,73 @@
 <section class="browser-code is-active" data-role="tab-panel" id="browser-829e4f510a321bb211eca7595c08433c-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
-        
-            
-                <pre><span class="hljs-comment">&lt;!-- Default --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+
+
+
+<pre><span class="hljs-comment">&lt;!-- Default --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button "</span>&gt;</span>Unstyled button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button "</span>&gt;</span>Unstyled button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button "</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Unstyled button"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Primary --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Primary --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Primary"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Secondary --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Secondary --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--secondary"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Secondary"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Success --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Success --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--success"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Success"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Warning --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Warning --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--warning"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Warning"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Error --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Error --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--error"</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--error"</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--error"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Error"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-                <pre><span class="hljs-comment">&lt;!-- Disabled --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+<br>
+
+<pre><span class="hljs-comment">&lt;!-- Disabled --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary disabled"</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary disabled"</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary disabled"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Disabled"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-            
-        
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre>
+
+
+
     </code>
 </section>
 

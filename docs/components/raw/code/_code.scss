@@ -23,6 +23,7 @@ var {
 
 	display:block;
 	margin-bottom: $spacer;
+
 	@include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
 
 	
@@ -38,4 +39,12 @@ var {
 	pre {
 		margin:0;
 	}
+}
+
+// Some people wrap <pre> inside <code>,
+// some people do the opposite.
+// Ensure that white-space is inherited if <pre> is the wrapper:
+
+pre code {
+    white-space: inherit;
 }

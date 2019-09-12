@@ -1,11 +1,14 @@
 .alert {
     padding: $gutter;
     border-radius: $border-radius;
-    @extend .text-wrapper;
     @if $alert-strategy == 'contrast' {
         @include background-contrast($alert-default-color);
     } @else if $alert-strategy == 'split' {
         @include background-split-color($alert-default-color); 
+    }
+
+    *:last-child {
+        margin-bottom:0;
     }
 }
 
