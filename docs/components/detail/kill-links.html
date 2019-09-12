@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Kill Link Decoration | Huesos</title>
+<title>Kill Links | Huesos</title>
 
 </head>
 <body>
@@ -2304,9 +2304,9 @@
     
         
             
-            <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+            <li class=" is-current" data-state="current" data-role="item">
+                <a href="" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2328,9 +2328,9 @@
     
         
             
-            <li class=" is-current" data-state="current" data-role="item">
-                <a href="" data-pjax>
-                    Kill Link Decoration
+            <li class="" data-role="item">
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2492,11 +2492,11 @@
     
     
 
-<article class="pen" data-behaviour="pen" id="pen-000fbc12eeadf799cde106c16bc45978">
+<article class="pen" data-behaviour="pen" id="pen-341e899a708e24d8205ec0e150e97259">
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-000fbc12eeadf799cde106c16bc45978">
+    <section class="pen-preview card" data-behaviour="preview" id="preview-341e899a708e24d8205ec0e150e97259">
     <div class="preview-tag">
         <h3 class="small">Preview</h3>
         <button class="preview tag">Expand</button>
@@ -2506,7 +2506,7 @@
         <iframe
         class="preview-iframe"
         data-role="window"
-        src="../preview/kill-link-decoration.html"
+        src="../preview/kill-links.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
          style=""
         marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes" height="0">
@@ -2516,8 +2516,8 @@
 
     <header class="pen-header">
     <h1 class="m0">
-        <a href="../preview/kill-link-decoration.html" title="Component preview">
-            Kill Link Decoration
+        <a href="../preview/kill-links.html" title="Component preview">
+            Kill Links
         </a>
     </h1>
     
@@ -2543,7 +2543,7 @@
         
             
                 <li class=" is-active " data-role="tab">
-                    <a href="#browser-000fbc12eeadf799cde106c16bc45978-panel-notes">
+                    <a href="#browser-341e899a708e24d8205ec0e150e97259-panel-notes">
                         
                             Docs
                         
@@ -2553,7 +2553,7 @@
         
             
                 <li class="" data-role="tab">
-                    <a href="#browser-000fbc12eeadf799cde106c16bc45978-panel-html">
+                    <a href="#browser-341e899a708e24d8205ec0e150e97259-panel-html">
                         
                             HTML
                         
@@ -2565,7 +2565,7 @@
                 
                     
                     <li data-role="tab">
-                        <a href="#browser-000fbc12eeadf799cde106c16bc45978-panel-assets">Assets</a>
+                        <a href="#browser-341e899a708e24d8205ec0e150e97259-panel-assets">Assets</a>
                     </li>
                     
                 
@@ -2576,11 +2576,12 @@
 
 
     
-        <section class="browser-notes" id="browser-000fbc12eeadf799cde106c16bc45978-panel-notes">
+        <section class="browser-notes" id="browser-341e899a708e24d8205ec0e150e97259-panel-notes">
     <div class="text-wrapper">
         
-            <p>Helper class that kills al link decoration on a given block</p>
+            <p>Completely disables the visual appearance of <strong>links within a container</strong>. It defaults to primary text color.</p>
 <p>Use carefully and scope only to the very elements you want to style. Unwanted overrides are easy to get.</p>
+<p><strong>How’s this different from the mixin?</strong> This class is helper devised to quickly disable all links within a container. It is applied at a container-level and will apply to <em>every</em> link, while the mixin is applied individually.</p>
 
         
     </div>
@@ -2588,13 +2589,13 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel" id="browser-000fbc12eeadf799cde106c16bc45978-panel-html">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-341e899a708e24d8205ec0e150e97259-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
 
 
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-link-decoration"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>links<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> within this text are <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>not decorated<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> (underlines, border-bottom etc..)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"kill-link"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>links<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> within this text are <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>completely equal to normal text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
 
     </code>
@@ -2604,30 +2605,30 @@
         
 
 
-<div class="browser-resources" id="browser-000fbc12eeadf799cde106c16bc45978-panel-assets">
+<div class="browser-resources" id="browser-341e899a708e24d8205ec0e150e97259-panel-assets">
     <h2>Assets</h2>
 
 
         
 
     
-        <div class="filebrowser-item is-active" id="file-19ccd69e9f54319cdece249b3d6bb898" data-role="resource-preview">
+        <div class="filebrowser-item is-active" id="file-ce6e7ae34608dafe94bcda862b506a98" data-role="resource-preview">
             <ul>
                 <li>
                     <strong>Filesystem Path:</strong>
-                    <span>src/components/helpers/kill-link-decoration/_kill-link-decoration.scss</span>
+                    <span>src/components/helpers/kill-links/_kill-links.scss</span>
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>68 Bytes</span>
+                    <span>46 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-class">.kill-link-decoration</span> {
+                                <pre><span class="hljs-selector-class">.kill-link</span> {
 	<span class="hljs-selector-tag">a</span> {
-		@<span class="hljs-keyword">include</span> kill-link-decoration();
+		@<span class="hljs-keyword">include</span> kill-link();
 	}
 }</pre>
                             </code>

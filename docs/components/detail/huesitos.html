@@ -2305,8 +2305,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+                <a href="kill-links.html" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2329,8 +2329,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link-decoration.html" data-pjax>
-                    Kill Link Decoration
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2580,10 +2580,10 @@
     <div class="text-wrapper">
         
             <p>Huesitos is a set of utility classes for borders. backgropunds, paddings, etc.</p>
-<p><code>$gutter</code> is applied as margin, unless a gutter modifier class is present.</p>
-<h2 id="gutter-modifiers">Gutter modifiers</h2>
+<p><code>$gutter</code> is always applied as margin, unless a gutter modifier class is present.</p>
+<h3 id="gutter-modifiers">Gutter modifiers</h3>
 <p>Adding a <code>$half-gutter</code> or <code>$quarter-gutter</code> modifier class will set all paddings to the desired ratio.</p>
-<h2 id="margin">Margin</h2>
+<h3 id="margin">Margin</h3>
 <ul>
 <li><code>.m</code>             - Applies all margins</li>
 <li><code>.mt</code>             - Applies a margin-top</li>
@@ -2592,7 +2592,7 @@
 <li><code>.ml</code>             - Applies a margin-left</li>
 <li><code>.m0</code>             - Deletes all margins</li>
 </ul>
-<h2 id="padding">Padding</h2>
+<h3 id="padding">Padding</h3>
 <ul>
 <li><code>.p</code>             - Applies all paddings</li>
 <li><code>.pt</code>             - Applies a padding-top</li>
@@ -2601,7 +2601,7 @@
 <li><code>.pl</code>             - Applies a padding-left</li>
 <li><code>.p0</code>             - Deletes all paddings</li>
 </ul>
-<h2 id="borders">Borders</h2>
+<h3 id="borders">Borders</h3>
 <ul>
 <li><code>.b</code>             - Applies all borders</li>
 <li><code>.bt</code>             - Applies a border-top</li>
@@ -2610,15 +2610,26 @@
 <li><code>.bl</code>             - Applies a border-left</li>
 <li><code>.b0</code>             - Deletes all borders</li>
 </ul>
-<h1 id="text-align">Text align</h1>
+<h3 id="text-align">Text align</h3>
 <ul>
-<li><code>.left</code></li>
-<li><code>.center</code></li>
-<li><code>.right</code></li>
+<li><code>.tl</code> - Aligns text to left</li>
+<li><code>.tc</code> - Aligns text to center</li>
+<li><code>.tr</code> - Aligns text to right</li>
 </ul>
-<h2 id="background-color">Background Color</h2>
-<p>A set of helper classes that map to common colors from the palette.</p>
-<p>The text color is contrasted correctly.</p>
+<h3 id="typography-and-helpers">Typography and helpers</h3>
+<ul>
+<li><code>.up</code> - Sets uppercase</li>
+<li><code>.st</code> - Sets font-weight to bold</li>
+<li><code>.em</code> - Sets font-style to italic</li>
+<li><code>.ls</code> - Sets letter spacing as <code>$letter-spacing</code></li>
+<li><code>.sh</code> - Applies <code>$box-shadow</code></li>
+</ul>
+<h3 id="inversion">Inversion</h3>
+<ul>
+<li><code>.invert</code> - Inverts colors.</li>
+</ul>
+<h3 id="background-color">Background Color</h3>
+<p>A set of helper classes that map to common colors from the palette. The text color is contrasted.</p>
 <p>Classes are auto-generated based on the sass <code>$colors</code> map and follow the schema <code>$bg-$palette-$name</code>.</p>
 <p>We showcase some examples here, but the list of classes could be much bigger or smaller, depending on your color palette.</p>
 <p>You can avoid bloating your css with these helper classes by setting <code>$generate-color-classes: false</code>.</p>
@@ -2634,8 +2645,16 @@
     <code class="code-block code code--lang-html">
 
 
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Paddings, margins, borders<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>See README.md or "Notes" tab<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>TYpography and helpers<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"st"</span>&gt;</span>Bold text, <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"up"</span>&gt;</span>uppercase applied<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"em"</span>&gt;</span>italic as font-style<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ls"</span>&gt;</span>letter-spacing as defined on config...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sh"</span>&gt;</span>...and box-shadow as well.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Color Classes<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>Base<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -2649,6 +2668,12 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-warning p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-error p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-muted p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Color inversion<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color:#000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p invert"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m0"</span>&gt;</span>Lorem ipsum dolor sit amet consectetur, <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adipisicing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> Autem aperiam laborum atque harum vel ex iusto illum laboriosam minima! Mollitia debitis quae fugiat necessitatibus quam ex tempora ullam eum expedita.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
 
     </code>
@@ -2673,7 +2698,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>2.9 KB</span>
+                    <span>3.2 KB</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2830,16 +2855,36 @@
         }
     }
 
-    <span class="hljs-selector-class">.left</span> {
+    <span class="hljs-selector-class">.tl</span> {
         <span class="hljs-attribute">text-align</span>:left;
     }
 
-    <span class="hljs-selector-class">.center</span> {
+    <span class="hljs-selector-class">.tc</span> {
         <span class="hljs-attribute">text-align</span>:center;
     }
 
-    <span class="hljs-selector-class">.right</span> {
+    <span class="hljs-selector-class">.tr</span> {
         <span class="hljs-attribute">text-align</span>:right;
+    }
+
+    <span class="hljs-selector-class">.up</span> {
+        <span class="hljs-attribute">text-transform</span>:uppercase;
+    }
+
+    <span class="hljs-selector-class">.st</span> {
+        <span class="hljs-attribute">font-weight</span>:bold;
+    }
+
+    <span class="hljs-selector-class">.em</span> {
+        <span class="hljs-attribute">font-style</span>: italic;
+    }
+
+    <span class="hljs-selector-class">.ls</span> {
+        <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-variable">$letter-spacing</span>;
+    }
+
+    <span class="hljs-selector-class">.sh</span> {
+        <span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$box-shadow</span>;
     }
 
     <span class="hljs-selector-class">.invert</span> {

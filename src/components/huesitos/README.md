@@ -1,12 +1,12 @@
 Huesitos is a set of utility classes for borders. backgropunds, paddings, etc.
 
-`$gutter` is applied as margin, unless a gutter modifier class is present.
+`$gutter` is always applied as margin, unless a gutter modifier class is present.
 
-## Gutter modifiers
+### Gutter modifiers
 
 Adding a `$half-gutter` or `$quarter-gutter` modifier class will set all paddings to the desired ratio.
 
-## Margin
+### Margin
 
 - `.m`             - Applies all margins
 - `.mt`             - Applies a margin-top
@@ -15,7 +15,7 @@ Adding a `$half-gutter` or `$quarter-gutter` modifier class will set all padding
 - `.ml`             - Applies a margin-left
 - `.m0`             - Deletes all margins
 
-## Padding 
+### Padding 
 
 - `.p`             - Applies all paddings
 - `.pt`             - Applies a padding-top
@@ -24,7 +24,7 @@ Adding a `$half-gutter` or `$quarter-gutter` modifier class will set all padding
 - `.pl`             - Applies a padding-left
 - `.p0`             - Deletes all paddings
 
-## Borders
+### Borders
 
 - `.b`             - Applies all borders
 - `.bt`             - Applies a border-top
@@ -33,18 +33,28 @@ Adding a `$half-gutter` or `$quarter-gutter` modifier class will set all padding
 - `.bl`             - Applies a border-left
 - `.b0`             - Deletes all borders
 
-# Text align
+### Text align
 
-- `.left`
-- `.center`
-- `.right`
+- `.tl` - Aligns text to left
+- `.tc` - Aligns text to center
+- `.tr` - Aligns text to right
+
+### Typography and helpers
+
+- `.up` - Sets uppercase
+- `.st` - Sets font-weight to bold
+- `.em` - Sets font-style to italic
+- `.ls` - Sets letter spacing as `$letter-spacing`
+- `.sh` - Applies `$box-shadow`
+
+### Inversion
+
+- `.invert` - Inverts colors.
 
 
-## Background Color
+### Background Color
 
-A set of helper classes that map to common colors from the palette.
-
-The text color is contrasted correctly.
+A set of helper classes that map to common colors from the palette. The text color is contrasted.
 
 Classes are auto-generated based on the sass `$colors` map and follow the schema `$bg-$palette-$name`.
 

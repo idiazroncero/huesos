@@ -1,4 +1,11 @@
 .toc {
+
+  @if $toc-kill-links {
+    a {
+      @include kill-link-decoration();
+    }
+  }
+
   ul,
   ol {
 		li {
@@ -13,7 +20,7 @@
       @include ritmo-font-size($toc-font-size);
       ul,
       ol {
-        margin: 0 0 $gutter $gutter;
+        margin: 0 0 $gutter / 2 $gutter / 2;
         li{
           // Don't let "bold" pass through here
           font-weight: normal;

@@ -149,16 +149,36 @@
         }
     }
 
-    .left {
+    .tl {
         text-align:left;
     }
 
-    .center {
+    .tc {
         text-align:center;
     }
 
-    .right {
+    .tr {
         text-align:right;
+    }
+
+    .up {
+        text-transform:uppercase;
+    }
+
+    .st {
+        font-weight:bold;
+    }
+
+    .em {
+        font-style: italic;
+    }
+
+    .ls {
+        letter-spacing: $letter-spacing;
+    }
+
+    .sh {
+        box-shadow: $box-shadow;
     }
 
     .invert {

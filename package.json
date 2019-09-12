@@ -12,9 +12,9 @@
     "styleguide:build": "yarn fractal build",
     "styleguide:serve": "yarn fractal start --sync",
     "test": "yarn node-sass src/scss/style.scss test/style.css --source-map=0",
-    "lint:js": "eslint src/js webpack.*.js --cache --debug",
+    "lint:js": "eslint src/js --cache --debug",
     "lint:css": "stylelint dist/**/*.css",
-    "js:build": "webpack",
+    "js:build": "yarn parcel build src/js/script.js -o huesos",
     "build": "yarn styleguide:build; yarn css; yarn js:build",
     "serve": "yarn styleguide:serve",
     "huesos": "yarn build"
@@ -39,14 +39,13 @@
     "mobius1-selectr": "^2.4.4",
     "node-sass": "4.5.3",
     "node-sass-import": "^2.0.1",
+    "parcel": "^1.12.3",
     "postcss": "^7.0.2",
     "postcss-cli": "^6.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-preset-env": "^6.6.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "stylelint": "^7.12.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "stylelint": "^7.12.0"
   }
 }

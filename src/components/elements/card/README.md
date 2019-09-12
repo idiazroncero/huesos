@@ -2,7 +2,7 @@ The `.card` is a common pattern. It helps visually set apart a piece of content 
 
 Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid item;
 
-You can set a `$card-border-width` (and color) to indicate card boundaries, or set it to false to avoid them. If `$card-shadow` is set to true, it will apply the site-wide `$shadow-definition`.
+You can set a `$card-border-width` (and color) to indicate card boundaries, or set it to false to avoid them. If `$card-shadow` is set to true, it will apply the site-wide `$box-shadow`.
 
 <div class="alert alert--warning mb">
 

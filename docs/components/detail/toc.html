@@ -2305,8 +2305,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+                <a href="kill-links.html" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2329,8 +2329,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link-decoration.html" data-pjax>
-                    Kill Link Decoration
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2587,8 +2587,8 @@
 <li>They’re dense and informative (as opposite to small, site-wide navigation menus).</li>
 </ul>
 <p><strong>Our TOC is a very opinionated component</strong> because exposing all the configuration would be overkill. It won’t let <code>bold</code> weight to pass below the first depth level, it will apply a progressive reduction of font-size.</p>
-<p>You can still use <code>$toc-font-weight</code>, <code>$toc-uppercase</code> and <code>$toc-font-size</code> to determine the first-level font-size, the first-level font-weight and the uppercase status</p>
-<p>If you need to disable partially or totally the link appearanceu ese <code>kill-link</code> or <code>kill-link-decoration</code> classes or mixins for this.</p>
+<p>You can still use <code>$toc-font-weight</code>, <code>$toc-uppercase</code> and <code>$toc-font-size</code> to determine the first-level font-size, the first-level font-weight and the uppercase status.</p>
+<p><code>$toc-kill-links</code> is set to <code>$nav-kill-links</code> (true by default) and it will kill the link decoration, but not the color. If you need to totally disable the links, you can use <code>kill-link</code>.</p>
 
         
     </div>
@@ -2652,13 +2652,20 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>636 Bytes</span>
+                    <span>727 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.toc</span> {
+
+  @<span class="hljs-keyword">if</span> <span class="hljs-variable">$toc-kill-links</span> {
+    <span class="hljs-selector-tag">a</span> {
+      @<span class="hljs-keyword">include</span> kill-link-decoration();
+    }
+  }
+
   <span class="hljs-selector-tag">ul</span>,
   <span class="hljs-selector-tag">ol</span> {
 		<span class="hljs-selector-tag">li</span> {
@@ -2673,7 +2680,7 @@
       @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$toc-font-size</span>);
       <span class="hljs-selector-tag">ul</span>,
       <span class="hljs-selector-tag">ol</span> {
-        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$gutter</span> <span class="hljs-variable">$gutter</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span> <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
         <span class="hljs-selector-tag">li</span>{
           <span class="hljs-comment">// Don't let "bold" pass through here</span>
           <span class="hljs-attribute">font-weight</span>: normal;

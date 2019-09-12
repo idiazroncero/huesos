@@ -2305,8 +2305,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+                <a href="kill-links.html" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2329,8 +2329,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link-decoration.html" data-pjax>
-                    Kill Link Decoration
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2579,7 +2579,11 @@
         <section class="browser-notes" id="browser-97719c951206538bc7a8aedca9a73620-panel-notes">
     <div class="text-wrapper">
         
-            <p><mark>@TODO: Document this item</mark></p>
+            <p>Applies a clearfix to a parent element.</p>
+<p>Introduced mainly on float-based fallbacks for flex or grid-based layouts.</p>
+<p>With flexbox at roughly 96% browser support, it will be deprecated soon.</p>
+<p>You can also use the <code>clearfix()</code> mixin.</p>
+
         
     </div>
 </section>
@@ -2591,7 +2595,14 @@
     <code class="code-block code code--lang-html">
 
 
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Clearfix<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></pre>
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b clearfix"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p bg-state-success"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"float:left; height: 100px"</span>&gt;</span>
+        Floated box
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p bg-state-warning"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"float:left; height: 150px"</span>&gt;</span>
+        Floated box 2
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
 
     </code>
 </section>

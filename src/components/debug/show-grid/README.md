@@ -1,5 +1,5 @@
-Setting `$show-grid` to true will show a grid both behind the `<body>` element and behind every `<h1-h6>` and `<p>` elements using ritmo units in order to measure vertical rhythm.
+Setting `$show-grid` to true will show a grid both behind the `<body>`. Note that image, video and iframe's height may throw vertical rhythm away.
 
-Since we don't follow vertical rhythm as mandatory (i.e image heights, margins) it's normal than elements won't stick to the body grid.
+A helper class `.show-grid` is also included. This class can be applied to any container to show the grid.
 
-A helper class `.show-grid` is also included.
+The grid includes "half steps" (1/2 of the vertical rhythm) to help debugging uneven units (i.e. `ritmo(5)`).

@@ -2305,8 +2305,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+                <a href="kill-links.html" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2329,8 +2329,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link-decoration.html" data-pjax>
-                    Kill Link Decoration
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2581,7 +2581,7 @@
         
             <p>Used for tag-like elements. They can be keywords, but also small elements that need some visual highlighting.</p>
 <p>They need to be set on inline or inline-block elements.</p>
-<p>If a link, it changes the link decoration for a background-color modification.</p>
+<p>If the <code>.tags</code> is a link, it overrides the link decoration and switches to a background-color modification.</p>
 <p>A small margin is applied in order to allow for lists of tags.</p>
 <p>Modifiers will be generated following the <code>states</code> map on <code>$colors</code>. </p>
 <p>You can choose the color strategy by setting <code>$tag-strategy</code> to <code>split</code> or <code>contrast</code>. </p>
@@ -2624,8 +2624,8 @@
 
 <pre><span class="hljs-comment">&lt;!-- Error --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--error"</span>&gt;</span>This is a error tag!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--error"</span>&gt;</span>This is a error tag!<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--error"</span>&gt;</span>This is an error tag!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--error"</span>&gt;</span>This is an error tag!<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </pre>
 
@@ -2663,7 +2663,8 @@
     <span class="hljs-attribute">display</span>:inline-block;
     <span class="hljs-attribute">vertical-align</span>: bottom;
     <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
-    @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$h6-font-size</span>);
+    @<span class="hljs-keyword">include</span> ritmo-font-size(<span class="hljs-variable">$tag-font-size</span>);
+
     @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
         @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$tag-default-color</span>);
     } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
@@ -2672,17 +2673,7 @@
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius</span>;
     <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">3</span>;
     <span class="hljs-attribute">font-weight</span>:normal;
-    @<span class="hljs-keyword">each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
-        &amp;<span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
-            @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-                @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$value</span>); 
-            } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-                @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$value</span>); 
-            } @<span class="hljs-keyword">else</span> {
-                @error <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
-            }
-        }
-    }
+
     <span class="hljs-selector-class">.right</span> &amp; {
         <span class="hljs-attribute">margin-right</span>:<span class="hljs-number">0</span>;
         <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">3</span>;
@@ -2695,27 +2686,45 @@
 
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.tag</span> {
     @<span class="hljs-keyword">include</span> kill-link-decoration();
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">8</span> <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>; <span class="hljs-comment">// Explicit override</span>
     <span class="hljs-attribute">cursor</span>:pointer;
+    <span class="hljs-comment">// Keep the padding!</span>
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
+
     &amp;:hover,
     &amp;:focus {
+        <span class="hljs-comment">// Keep the padding!</span>
+        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
+
         @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
             @<span class="hljs-keyword">include</span> background-contrast(darken-color(<span class="hljs-variable">$tag-default-color</span>));
         } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
             @<span class="hljs-keyword">include</span> background-split-color(lighten-color(<span class="hljs-variable">$tag-default-color</span>)); 
         }
     }
-    @<span class="hljs-keyword">each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
-        &amp;<span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
-            &amp;:hover,
-            &amp;:focus {
-                @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-                    @<span class="hljs-keyword">include</span> background-contrast(darken-color(<span class="hljs-variable">$value</span>)); 
-                } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-                    @<span class="hljs-keyword">include</span> background-split-color(lighten-color(<span class="hljs-variable">$value</span>)); 
-                } @<span class="hljs-keyword">else</span> {
-                    @error <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
-                }
+}
+
+@<span class="hljs-keyword">each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
+    <span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
+        @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
+            @<span class="hljs-keyword">include</span> background-contrast(<span class="hljs-variable">$value</span>); 
+        } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
+            @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$value</span>); 
+        } @<span class="hljs-keyword">else</span> {
+            @error <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
+        }
+    }
+}
+
+@<span class="hljs-keyword">each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
+    <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
+        &amp;:hover,
+        &amp;:focus {
+            @<span class="hljs-keyword">if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
+                @<span class="hljs-keyword">include</span> background-contrast(darken-color(<span class="hljs-variable">$value</span>)); 
+            } @<span class="hljs-keyword">else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
+                @<span class="hljs-keyword">include</span> background-split-color(lighten-color(<span class="hljs-variable">$value</span>)); 
+            } @<span class="hljs-keyword">else</span> {
+                @error <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
             }
         }
     }

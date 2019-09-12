@@ -2305,8 +2305,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link.html" data-pjax>
-                    Kill Link
+                <a href="kill-links.html" data-pjax>
+                    Kill Links
                     
 
 <div class="Status Status--unlabelled">
@@ -2329,8 +2329,8 @@
         
             
             <li class="" data-role="item">
-                <a href="kill-link-decoration.html" data-pjax>
-                    Kill Link Decoration
+                <a href="kill-links-decoration.html" data-pjax>
+                    Kill Links Decoration
                     
 
 <div class="Status Status--unlabelled">
@@ -2579,14 +2579,21 @@
         <section class="browser-notes" id="browser-8d8f2733acd101a66f9d8c7a47752efa-panel-notes">
     <div class="text-wrapper">
         
-            <p>The <code>.card</code> is a common pattern on UX design.</p>
+            <p>The <code>.card</code> is a common pattern. It helps visually set apart a piece of content (i.e: a news teaser, a small section, a grid element).</p>
 <p>Usually, the card width is limited either by setting a custom width or by stacking them on a flex / grid item;</p>
-<p>Card settings are available under its own section on <code>_config.scss</code></p>
-<p>A <code>.card</code> inside a <code>.card</code> has its padding reduced to 1/2</p>
-<h2 id="card-with-featured-image">Card with Featured Image</h2>
-<p>This variation features a full-bleed image on top of the card.</p>
-<p>It requires a slightly different markup than the original <code>.card</code> item</p>
+<p>You can set a <code>$card-border-width</code> (and color) to indicate card boundaries, or set it to false to avoid them. If <code>$card-shadow</code> is set to true, it will apply the site-wide <code>$box-shadow</code>.</p>
+<div class="alert alert--warning mb">
 
+<p><strong>Beware!</strong><br>If you set both border and shadow to false, and your background color, is not contrasted, you will end up with an element without visible boundaries - and this will kill the element’s purpose.</p>
+</div>
+
+<p>You can also define your <code>.card-padding</code>. By default, any <code>.card</code> inside a <code>.card</code> will have its padding reduced to 1/2.</p>
+<h3 id="card-with-featured-image">Card with Featured Image</h3>
+<p>This common variation features a full-bleed image on top of the card.</p>
+<div class="alert alert--warning">
+
+<p><strong>Careful!</strong><br>This version requires a slightly different markup than the original <code>.card</code> item</p>
+</div>
         
     </div>
 </section>
@@ -2635,7 +2642,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>468 Bytes</span>
+                    <span>465 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2650,8 +2657,8 @@
 		<span class="hljs-attribute">padding</span>: ritmo(<span class="hljs-variable">$card-padding</span>);
 	}
 	<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$card-border-radius</span>;
-	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$shadows</span> == true {
-		<span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$shadow-definition</span>;
+	@<span class="hljs-keyword">if</span> <span class="hljs-variable">$card-shadow</span> == true {
+		<span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$box-shadow</span>;
 	}
 	<span class="hljs-comment">// Nested cards are applied a padding reduction</span>
 	<span class="hljs-selector-class">.card</span> {
