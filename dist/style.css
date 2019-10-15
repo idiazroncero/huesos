@@ -625,9 +625,11 @@ hr {
 
 iframe {
   border: none;
-  width: 100%;
-  height: 100%;
   display: block; }
+
+.iframe-sizeless {
+  width: 100%;
+  height: 100%; }
 
 img {
   display: inline-block;

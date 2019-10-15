@@ -2579,7 +2579,8 @@
         <section class="browser-notes" id="browser-501789a4cd73a04950caf232140abba6-panel-notes">
     <div class="text-wrapper">
         
-            <p>Deletes border and displays iframe as a block element that always fills its parent’s size.</p>
+            <p>Deletes border and displays iframe as a block element.</p>
+<p>If you use <code>.iframe-sizeless</code>, the item will always fills its parent’s size (useful when you want to overide iframe’s default width and heigth attributes and make it dependent on its container).</p>
 
         
     </div>
@@ -2593,7 +2594,11 @@
 
 
 <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:50%; height: 250px"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mentalstones.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mentalstones.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:50%; height: 250px"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"iframe-sizeless"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://mentalstones.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
 
     </code>
@@ -2618,7 +2623,7 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>68 Bytes</span>
+                    <span>90 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
@@ -2626,9 +2631,12 @@
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-tag">iframe</span> {
 	<span class="hljs-attribute">border</span>:none;
+	<span class="hljs-attribute">display</span>:block;
+}
+
+<span class="hljs-selector-class">.iframe-sizeless</span> {
 	<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
 	<span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
-	<span class="hljs-attribute">display</span>:block;
 }
 </pre>
                             </code>
