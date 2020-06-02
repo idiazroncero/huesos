@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
 <title>File Input | Huesos</title>
@@ -2618,7 +2618,7 @@
         
 
     
-        <div class="filebrowser-item is-active" id="file-eb4c00a29ee1f4b8825603d49088455f" data-role="resource-preview">
+        <div class="filebrowser-item is-active" id="file-f6f5df18a9b7b200fcc22c4caba927ec" data-role="resource-preview">
             <ul>
                 <li>
                     <strong>Filesystem Path:</strong>
@@ -2636,8 +2636,8 @@
 	<span class="hljs-attribute">border</span>:none;
 	<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
 	+ <span class="hljs-selector-tag">label</span> {
-		@<span class="hljs-keyword">extend</span> .button;
-		@<span class="hljs-keyword">extend</span> .button--success;
+		<span class="hljs-keyword">@extend</span> .button;
+		<span class="hljs-keyword">@extend</span> .button--success;
 		<span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
 		<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">0</span>,
 	}
@@ -2650,7 +2650,7 @@ input::-webkit-file-upload-button {
 }
 
 <span class="hljs-selector-class">.file-input</span> {
-	@<span class="hljs-keyword">include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
+	<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
 	<span class="hljs-attribute">display</span>:flex;
 	<span class="hljs-attribute">justify-content</span>: space-between;
 	<span class="hljs-attribute">align-items</span>:center;
@@ -2658,7 +2658,7 @@ input::-webkit-file-upload-button {
 		<span class="hljs-attribute">border</span>:none;
 		<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
 		<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=file]</span> {
-			@<span class="hljs-keyword">include</span> hidden();
+			<span class="hljs-keyword">@include</span> hidden();
 		}
 		<span class="hljs-selector-tag">label</span> {
 			<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
@@ -2696,10 +2696,10 @@ input::-webkit-file-upload-button {
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.2.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
 
 
 

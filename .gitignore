@@ -13,3 +13,6 @@ node_modules
 # Custom theme
 src/fractal-huesos
 
+# cache files
+.cache
+

@@ -29,6 +29,7 @@ const huesosTheme = mandelbrot({
     styles: [
         "/styleguide/huesos-mandlebrot.css"
     ],
+    highlightStyles: "",
     scripts: [
         "https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js",
         "/styleguide/huesos-mandlebrot.js"

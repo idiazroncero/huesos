@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
 <title>Font Secondary | Huesos</title>
@@ -2611,7 +2611,7 @@
         
 
     
-        <div class="filebrowser-item is-active" id="file-7bd254b944081577af7b96a20d6adf9e" data-role="resource-preview">
+        <div class="filebrowser-item is-active" id="file-e23f02f4e19f3daeca2e9252cdcf304b" data-role="resource-preview">
             <ul>
                 <li>
                     <strong>Filesystem Path:</strong>
@@ -2625,16 +2625,16 @@
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre>@<span class="hljs-keyword">if</span> <span class="hljs-variable">$font-secondary</span> != false {
+                                <pre><span class="hljs-keyword">@if</span> <span class="hljs-variable">$font-secondary</span> != false {
 
 	<span class="hljs-selector-class">.font-secondary</span>,
 	%<span class="hljs-attribute">font</span>-secondary {
 		<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$font-secondary</span>;
 	}
 
-	@<span class="hljs-keyword">each</span> <span class="hljs-variable">$item</span> in <span class="hljs-variable">$font-secondary-items</span> {
+	<span class="hljs-keyword">@each</span> <span class="hljs-variable">$item</span> in <span class="hljs-variable">$font-secondary-items</span> {
 		#{<span class="hljs-variable">$item</span>} {
-			@<span class="hljs-keyword">extend</span> %font-secondary;
+			<span class="hljs-keyword">@extend</span> %font-secondary;
 		}
 	}
 
@@ -2670,10 +2670,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.2.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
 
 
 

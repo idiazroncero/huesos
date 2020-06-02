@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
+    <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
 <title>layer($top, $right, $bottom, $left, $z-index) | Huesos</title>
@@ -2524,16 +2524,16 @@
 <li><code>$z-index</code> - Z-index value, defaults to 1. Can be either a number or a string representing a valid value for the <code>$z-index</code> map.</li>
 </ul>
 <h3 id="example">Example</h3>
-<pre><code class="language-scss"><span class="hljs-selector-class">.parent</span> {
+<pre><code class="hljs language-scss"><span class="hljs-selector-class">.parent</span> {
     <span class="hljs-attribute">position</span>:relative;
     <span class="hljs-attribute">width</span>:<span class="hljs-number">500px</span>;
     <span class="hljs-attribute">height</span>:<span class="hljs-number">500px</span>;
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal4</span>;
 }
 <span class="hljs-selector-class">.layer</span> {
-    @<span class="hljs-keyword">include</span> layer(<span class="hljs-number">15px</span>, 15px, 20px, 15px, 5);
+    <span class="hljs-keyword">@include</span> layer(<span class="hljs-number">15px</span>, <span class="hljs-number">15px</span>, <span class="hljs-number">20px</span>, <span class="hljs-number">15px</span>, <span class="hljs-number">5</span>);
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$red4</span>;
-}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parent"</span>&gt;</span>
+}</code></pre><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parent"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"layer"</span>&gt;</span>
         I'm a layered div
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2564,10 +2564,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.2.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
 
 
-<script src="../../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+<script src="../../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
 
 
 

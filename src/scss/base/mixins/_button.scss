@@ -134,9 +134,7 @@
         border-radius: $button-border-radius;
         text-decoration:none;
 
-        @if $link-strategy-default == mark {
-
-        } @else if $link-strategy-default == 'border-inset' {
+        @if $link-strategy-default == 'border-inset' {
             &:after {
                 display:none;
             }
@@ -145,9 +143,7 @@
     &:focus,
     &:hover {
         text-decoration:none;
-        @if $link-strategy-hover == mark {
-
-        } @else if $link-strategy-default == 'border-inset' {
+        @if $link-strategy-default == 'border-inset' {
             &:after {
                 display:none;
             }

@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
+    <link rel="stylesheet" href="../../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
 <title>background-split-color($color, $lighten-amount, $darken-amount, $include-links, $invert) | Huesos</title>
@@ -2526,24 +2526,24 @@
 <li><code>$invert</code> - Inverts behavior (background gets darker, color lighter). Defaults to <code>false</code>.</li>
 </ul>
 <h3 id="example">Example</h3>
-<pre><code class="language-scss"><span class="hljs-comment">// Using defaults</span>
+<pre><code class="hljs language-scss"><span class="hljs-comment">// Using defaults</span>
 <span class="hljs-selector-class">.background-split</span> {
-    @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$red5</span>);
+    <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$red5</span>);
 };
 
 <span class="hljs-comment">// Add links</span>
 <span class="hljs-selector-class">.background-split--links</span> {
-  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$red5</span>, <span class="hljs-variable">$include-links</span>: true);
+  <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$red5</span>, <span class="hljs-variable">$include-links</span>: true);
 };
 
 <span class="hljs-comment">// Fully customized</span>
 <span class="hljs-selector-class">.background-split--custom</span> {
-  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$orange5</span>, 15%, 66%, true);
+  <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$orange5</span>, <span class="hljs-number">15%</span>, <span class="hljs-number">66%</span>, true);
 };
 
 <span class="hljs-selector-class">.background-split--custom--inverse</span> {
-  @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-variable">$orange5</span>, 15%, 66%, true, true);
-};</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split"</span>&gt;</span>
+  <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$orange5</span>, <span class="hljs-number">15%</span>, <span class="hljs-number">66%</span>, true, true);
+};</code></pre><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"background-split"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span> I'm a link <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Background split by default<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2595,10 +2595,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.2.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
 
 
-<script src="../../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+<script src="../../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
 
 
 

@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.2.1" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
 <title>Handling color | Huesos</title>
@@ -2534,7 +2534,7 @@
 <p>As usual, your <strong>dark</strong> and <strong>light</strong> colors can be either the pre-defined <code>$contrast-dark</code> and <code>$contrast-light</code> on <code>_config.scss</code> or passed manually.</p>
 <p>But… <strong>¿when should we decide that a given color is “too dark” or “too light?</strong> The threshold of lightness that activate the contrast can also be set using <code>$lightness-threshold</code>. </p>
 <p>So, for example, if you provide a <code>yellow</code> color as <code>$contrast-light</code> and your background-color’s lightness is greater than your <code>$lightness-threshold</code> value, the text will be set to yellow. Otherwise, the <code>$contrast-dark</code> color will be used.</p>
-<pre><code class="language-scss"><span class="hljs-variable">$contrast-light</span>: yellow;
+<pre><code class="hljs language-scss"><span class="hljs-variable">$contrast-light</span>: yellow;
 
 <span class="hljs-selector-class">.my-box</span> {
     <span class="hljs-comment">// We set a background color</span>
@@ -2543,7 +2543,7 @@
     <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-number">#666</span>);
     <span class="hljs-comment">// We could pass the values directly to override the default behavior</span>
     <span class="hljs-attribute">color</span>: contrast-color(<span class="hljs-number">#666</span>, limegreen, black)
-}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
+}</code></pre><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
     My box
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><div style="background-color: #666; color: limegreen" class="p my-box">
     My box
@@ -2557,14 +2557,14 @@
 <p>For example, if you set <code>#bcc300</code> (gold) as the color, you will get a lighter version as the background-color and a darker version as the text.</p>
 <p>By default, the lighter color will be used on the background. To switch this behavior, you can simply set <code>$invert</code> to true. </p>
 <p>Read the <a href="/docs/mixins/color/background-split-color">docs of this useful mixin</a> to get more info.</p>
-<pre><code class="language-scss"><span class="hljs-selector-class">.my-box</span> {
-    @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>);
+<pre><code class="hljs language-scss"><span class="hljs-selector-class">.my-box</span> {
+    <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>);
 }
 
 <span class="hljs-selector-class">.my-box--inverted</span> {
     <span class="hljs-comment">// Pass the $invert parameter manually</span>
-    @<span class="hljs-keyword">include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>, <span class="hljs-variable">$invert</span>: true);
-}</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
+    <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-string">'#bcc300'</span>, <span class="hljs-variable">$invert</span>: true);
+}</code></pre><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p my-box"</span>&gt;</span>
     My box
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
@@ -2599,10 +2599,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.2.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.2.1"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
 
 
 

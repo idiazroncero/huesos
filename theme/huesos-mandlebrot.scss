@@ -1,5 +1,5 @@
 @import "../dependencies";
-@import "src/scss/config";
+@import "../src/scss/config";
 // @import "../node_modules/highlight.js/styles/monokai-sublime";
 @import "../node_modules/highlight.js/styles/vs2015";
 
@@ -295,7 +295,7 @@ code.code {
 }
 
 a.my-link {
-    @include set-link-decoration('mark', 'underline');
+    @include set-link-decoration('border', 'underline');
 }
 
 a.set-link {
@@ -318,11 +318,11 @@ a.kill-my-decoration {
 }
 
 a.my-very-special-link {
-    @include set-link-decoration('mark', 'border-inset');
+    @include set-link-decoration('border', 'border-inset');
 }
 
 a.my-very-special-link--modified {
-    @include kill-link-decoration('mark', 'border-inset');
+    @include kill-link-decoration('border', 'border-inset');
 }
 
 h1.poly-fluid-sizing {

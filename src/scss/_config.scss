@@ -164,7 +164,7 @@ $list-separator: $gutter / 2;
 $list-padding: 0;
 
 // Maximum characters per line, to apply using .max-ch class
-$max-ch: 65ch;
+$max-ch: 75ch;
 
 // Mark padding
 $mark-padding: 2px;
@@ -207,7 +207,7 @@ $h1-ritmo-lines: 8;
 $h2-ritmo-lines: 6;
 $h3-ritmo-lines: 6;
 $h4-ritmo-lines: 4;
-$h5-ritmo-lines: 4;
+$h5-ritmo-lines: 3;
 $h6-ritmo-lines: 2;
 
 // Set font sizes of specific, size-aware elements
@@ -269,7 +269,7 @@ $link-mark-padding: 4px;
 $link-border-inset-color: $indigo0;
 $link-border-inset-color-hover: $indigo0;
 $link-border-inset-width: 0.33em;
-$link-border-inset-width-hover: 1em;
+$link-border-inset-width-hover: 0.33em;
 
 // Link colors
 $link-color: $cyan9;
@@ -285,9 +285,8 @@ $link-active: $indigo7;
 // - underline - Normal, text-decoration:underline
 // - border - Border-bottom with custom width
 // - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
-// - mark - Background-color (as in a <mark> element)
 //
-$link-strategy-default: 'underline';
+$link-strategy-default: false;
 $link-strategy-hover: 'border-inset';
 
 $link-alternative-strategies: false;
@@ -295,9 +294,9 @@ $link-alternative-strategies: false;
 // Example of $link-alternative-strategies:
 //
 // $link-alternative-strategies: (
-// 	mark : (
-// 		default : 'mark', 
-// 		hover : 'mark'
+// 	border : (
+// 		default : 'border', 
+// 		hover : 'border-inset'
 // 	),
 // );
 
@@ -333,10 +332,10 @@ $button-font-family: $font-main;
 $button-font-size: $h6-font-size;
 $button-border-width: 2px;
 $button-ritmo-height: 6; // Ritmo line units
-$button-ritmo-padding-x: 2;
+$button-ritmo-padding-x: 3;
 $button-border-radius: 2px; // $border-radius;
 $button-weight: bold(button);
-$button-invert-color: false; // ONly valid on border:fill and background
+$button-invert-color: false; // Only valid on border:fill and background
 
 // BUILD YOUR OWN BUTTON
 // You can choose one strategy for every state!
@@ -349,7 +348,7 @@ $button-invert-color: false; // ONly valid on border:fill and background
 //
 // Note that background and outline can be considered "inverse" of each other
 $button-strategy-default: 'outline';
-$button-strategy-hover: 'background';
+$button-strategy-hover: 'split-inverse';
 
 $button-alternative-strategies: false;
 
@@ -462,7 +461,7 @@ $huesitos: true;
 $z-index : (
 	item1 : 0,
 	item2 : 1,
-	  item3 : 3,
+	item3 : 3,
 );
 
 
