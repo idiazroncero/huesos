@@ -5,3 +5,7 @@ input {
 		}
 	}
 }
+
+label input[type=radio] + span {
+	vertical-align: middle;
+}

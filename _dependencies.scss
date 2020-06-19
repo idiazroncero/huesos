@@ -7,6 +7,7 @@
 @import "node_modules/family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
 @import "node_modules/breakpoint-sass/stylesheets/breakpoint";
 
+@import "src/scss/base/mixins/layout/wrapper";
 @import "src/scss/base/mixins/arrows";
 @import "src/scss/base/mixins/button";
 @import "src/scss/base/mixins/contrast-color";

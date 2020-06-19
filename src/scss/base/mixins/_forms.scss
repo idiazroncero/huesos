@@ -2,11 +2,11 @@
 // IMPORTANT: Do not document this mixins
 // ---
 
-@mixin form-reset-general {
+@mixin form-reset-general($width: auto) {
 	display: inline-block;
 	margin: 0;
 	border:0;
-	width: auto;
+	width: $width;
 	vertical-align: middle; // IE6,IE7
 	white-space: normal;
 	line-height: inherit;
@@ -19,20 +19,23 @@
 	font-family: inherit;
 }
 
-@mixin form-border($strategy) {
+@mixin form-border(
+	$strategy: $input-border-strategy, 
+	$color: $input-border-color, 
+	$padding: $input-padding-lines) {
 	// Border strategy
 	@if ($strategy == full){
-		@include ritmo-borders($input-border-width, $input-padding-lines);
+		@include ritmo-borders($input-border-width, $padding);
 		border-style:solid;
-		border-color: $input-border-color;
+		border-color: $color;
 		&:hover, &:focus {
-			border-color: darken-color($input-border-color);
+			border-color: darken-color($color);
 		}
 	} @else if ($strategy == bottom){
 		border-bottom: $input-border;
 		border-radius: 0; // Reset border-radius, on bottom border has no sense
 		&:hover, &:focus {
-			border-color: darken-color($input-border-color);
+			border-color: darken-color($color);
 		}
 	}
 }

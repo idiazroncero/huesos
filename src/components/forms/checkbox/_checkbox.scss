@@ -1,8 +1,12 @@
 input[type=checkbox] {
-    // Provide an opt-in using a class if pseudo is deactivated
+  // Provide an opt-in using a class if pseudo is deactivated
 	@if($pseudo-checkbox == false) {
 		&.pseudo-checkbox {
 			@include pseudo-checkbox();
 		}
-    }
+	}
+}
+
+label input[type=checkbox] + span {
+	vertical-align: middle;
 }

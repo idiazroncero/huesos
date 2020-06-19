@@ -1,9 +1,8 @@
 select {
-	@include form-reset-general();
+	@include form-reset-general(100%);
 	@include form-border($input-border-strategy);
 	-webkit-appearance: none;
 	appearance:none;
-	width:100%;
 
 	&[multiple] {
 		vertical-align: top;

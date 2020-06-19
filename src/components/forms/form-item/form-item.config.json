@@ -12,10 +12,24 @@
         }
       },
       { 
-        "name" : "Column",
+        "name" : "Inline",
         "context": {
-          "modifier": "form-item--col",
+          "modifier": "form-item--inline",
           "text": "Column"
+        }
+      },
+      { 
+        "name" : "Errored",
+        "context": {
+          "modifier": "form-item--error",
+          "text": "error"
+        }
+      },
+      { 
+        "name" : "Succeeded",
+        "context": {
+          "modifier": "form-item--success",
+          "text": "success"
         }
       },
       { 
@@ -26,16 +40,16 @@
         }
       },
       { 
-        "name" : "Label top",
+        "name" : "Inline Label top",
         "context": {
-          "modifier": "form-item--label-top",
+          "modifier": "form-item--inline form-item--label-top",
           "text": "Label inside"
         }
       },
       { 
-        "name" : "Label bottom",
+        "name" : "Inline Label bottom",
         "context": {
-          "modifier": "form-item--label-bottom",
+          "modifier": "form-item--inline form-item--label-bottom",
           "text": "Label inside"
         }
       }

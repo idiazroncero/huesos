@@ -1,0 +1,11 @@
+@mixin wrapper(
+    $max-width: $max-width,
+    $layout-align: $layout-align,
+    $layout-padding: $layout-padding
+) {
+    max-width: $max-width;
+    @include block-align($layout-align);
+    @if $layout-padding {
+        padding: $layout-padding;
+    }
+}
