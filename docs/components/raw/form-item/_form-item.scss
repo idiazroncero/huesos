@@ -1,27 +1,22 @@
 .form-item {
-	margin-bottom : $gutter;
-	display:flex;
-	align-items: center;
+  display:block;
+	margin-bottom: $gutter;
+
 	label {
-		flex: 0 1 auto;
+		display:block;
 		@if $label-as-minititle {
 			@include minititle($label-font-size)
 		} @else {
 			@include ritmo-font-size($label-font-size)
 		}
 	}
-	input[type="text"],
-	input[type="email"],
-	input[type="password"],
-	input[type="url"],
-	input[type="tel"],
-	input[type="search"] {
-		flex: 1 0 auto;
-	}
-	// Radio and checkbox won't use align-items : baseline
+
+	// Label position exception: radios and checkboxes.
 	input[type="checkbox"],
 	input[type="radio"] {
-		align-self: center;
+		+ label {
+			display:inline-block;
+		}
 	}
 
 	&:last-child,
@@ -30,31 +25,47 @@
 	}
 }
 
-.form-item--col {
-	display:block;
-	label, 
-	input,
-	textarea {
-		display:block;
-		width:100%;
+.form-item--inline {
+	display:flex;
+	align-items: baseline;
+	label {
+			flex: 0 1 auto;
 	}
-	// Except radios and checkboxes!
-	input[type="checkbox"],
-	input[type="radio"] {
-        width:auto;
-    }
 }
 
 .form-item--required {
 	label::after {
 		content: "*";
 		color: get-color(state, error);
+		margin-left: $gutter / 4;
 	}
 }
 
+.form-item--error {
+	label {
+		color: get-color(state, error);
+	}
+	input,
+	textarea {
+		@include form-border($color: get-color(state, error));
+	}
+}
+
+.form-item--success {
+	label {
+		color: get-color(state, success);
+	}
+	input,
+	textarea {
+		@include form-border($color: get-color(state, success));
+	}
+}
+
+
+
 .form-item--label-inside {
 	border-radius: $form-border-radius;
-	@include form-border($input-border-strategy);
+	@include form-border(); 
 	input,
 	textarea {
 		border:none;

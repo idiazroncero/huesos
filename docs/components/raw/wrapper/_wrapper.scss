@@ -1,0 +1,6 @@
+// ---------
+// Applies wrapper() mixin
+
+.wrapper {
+  @include wrapper();
+}

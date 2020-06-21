@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
-<title>Form Item: Label Bottom | Huesos</title>
+<title>Form Item: Errored | Huesos</title>
 
 </head>
 <body>
@@ -1053,8 +1053,56 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--column.html" data-pjax>
-                    Column
+                <a href="form-item--inline.html" data-pjax>
+                    Inline
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class=" is-current" data-state="current" data-role="item">
+                <a href="" data-pjax>
+                    Errored
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--succeeded.html" data-pjax>
+                    Succeeded
                     
 
 <div class="Status Status--unlabelled">
@@ -1101,8 +1149,8 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--label-top.html" data-pjax>
-                    Label Top
+                <a href="form-item--inline-label-top.html" data-pjax>
+                    Inline Label Top
                     
 
 <div class="Status Status--unlabelled">
@@ -1124,9 +1172,9 @@
     
         
             
-            <li class=" is-current" data-state="current" data-role="item">
-                <a href="" data-pjax>
-                    Label Bottom
+            <li class="" data-role="item">
+                <a href="form-item--inline-label-bottom.html" data-pjax>
+                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1877,8 +1925,8 @@
         
             
             <li class="" data-role="item">
-                <a href="main-wrapper.html" data-pjax>
-                    Main Wrapper
+                <a href="visibility.html" data-pjax>
+                    Visibility
                     
 
 <div class="Status Status--unlabelled">
@@ -1901,8 +1949,8 @@
         
             
             <li class="" data-role="item">
-                <a href="visibility.html" data-pjax>
-                    Visibility
+                <a href="wrapper.html" data-pjax>
+                    Wrapper
                     
 
 <div class="Status Status--unlabelled">
@@ -2492,11 +2540,11 @@
     
     
 
-<article class="pen" data-behaviour="pen" id="pen-6973a0354f090a32508030c4d2ba4990">
+<article class="pen" data-behaviour="pen" id="pen-9dfd2c5ce88fcfe34d85e7d6d3938403">
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-6973a0354f090a32508030c4d2ba4990">
+    <section class="pen-preview card" data-behaviour="preview" id="preview-9dfd2c5ce88fcfe34d85e7d6d3938403">
     <div class="preview-tag">
         <h3 class="small">Preview</h3>
         <button class="preview tag">Expand</button>
@@ -2506,7 +2554,7 @@
         <iframe
         class="preview-iframe"
         data-role="window"
-        src="../preview/form-item--label-bottom.html"
+        src="../preview/form-item--errored.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
          style=""
         marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes" height="0">
@@ -2516,8 +2564,8 @@
 
     <header class="pen-header">
     <h1 class="m0">
-        <a href="../preview/form-item--label-bottom.html" title="Component preview">
-            Form Item: Label Bottom
+        <a href="../preview/form-item--errored.html" title="Component preview">
+            Form Item: Errored
         </a>
     </h1>
     
@@ -2543,7 +2591,7 @@
         
             
                 <li class=" is-active " data-role="tab">
-                    <a href="#browser-6973a0354f090a32508030c4d2ba4990-panel-notes">
+                    <a href="#browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-notes">
                         
                             Docs
                         
@@ -2553,7 +2601,7 @@
         
             
                 <li class="" data-role="tab">
-                    <a href="#browser-6973a0354f090a32508030c4d2ba4990-panel-html">
+                    <a href="#browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-html">
                         
                             HTML
                         
@@ -2565,7 +2613,7 @@
                 
                     
                     <li data-role="tab">
-                        <a href="#browser-6973a0354f090a32508030c4d2ba4990-panel-assets">Assets</a>
+                        <a href="#browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-assets">Assets</a>
                     </li>
                     
                 
@@ -2576,21 +2624,28 @@
 
 
     
-        <section class="browser-notes" id="browser-6973a0354f090a32508030c4d2ba4990-panel-notes">
+        <section class="browser-notes" id="browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-notes">
     <div class="text-wrapper">
         
             <p>General block-level wrapper for form elements. Guarantees correct spacing, label and input vertical alignment and provides several helper classes for quick customization.</p>
+<p>Remeber that select wrappers require a <code>select-wrapper</code> modifier in order to show the arrow.</p>
 <p>It also provides several variations for different styling of items.</p>
 <ul>
 <li><code>.form-item--required</code>        - Marks the label with a red asterisk</li>
-<li><code>.form-item--col</code>                - Stacks elements instead of displaying them side by side</li>
+<li><code>.form-item--inline</code>            - Displays elements side by side instead of stacked</li>
 <li><code>.form-item--label-inside</code>    - Visually puts the label inside of the input. Only makes sense if the border strategy is full</li>
 </ul>
-<p>Most of these classes can be stacked:</p>
+<p>Most of these classes can be stacked. For example:</p>
 <ul>
-<li><code>.form-item--label-inside.form-item--required</code>    - <code>.form-item--required</code> can be combinated with the other modifiers</li>
-<li><code>.form-item--label-inside.form-item--col</code>    - You can sum <code>col</code>and <code>required</code> to get this commonly seen pattern</li>
+<li><code>.form-item--required</code> can be combined with other modifiers.</li>
+<li>You can sum <code>.form-item--label-inside</code>and <code>form-item--inline</code> to get a box-like input like this:</li>
 </ul>
+<div class="form-item form-item--inline form-item--label-inside">
+    <label for="text">Fill me with info:</label>
+    <input type="text" id="text" name="text">
+</div>
+
+
 <h3 id="labels">Labels</h3>
 <p>Labels are formatted according to values from <code>$label-as-minititle</code> and <code>$label-font-size</code>. The size will be respected, and minititle will be applied if the boolean value is set to true.</p>
 <p>By default, we consider labels as a kind of minititle.</p>
@@ -2604,14 +2659,116 @@
 
     
         
-<section class="browser-code is-active" data-role="tab-panel" id="browser-6973a0354f090a32508030c4d2ba4990-panel-html">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
 
 
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--label-bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>A Label inside form item<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"text"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__password"</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__password"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type your Password"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__webaddress"</span>&gt;</span>Web Address<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__webaddress"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"url"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"http://yoursite.com"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__emailaddress"</span>&gt;</span>Email Address<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__emailaddress"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"name@email.com"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__phone"</span>&gt;</span>Phone Number<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__phone"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tel"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"(999) 999-9999"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__search"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__search"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Enter Search Term"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input__text2"</span>&gt;</span>Number Input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input__text2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Enter a Number"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"select"</span>&gt;</span>Select<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select-wrapper"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"select"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Option Group"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option One<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option Two<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option Three<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small m0"</span>&gt;</span>Input + label<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">"checked"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox1"</span>&gt;</span>Choice A<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox2"</span>&gt;</span>Choice B<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox3"</span>&gt;</span>Choice C<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small m0"</span>&gt;</span>Label as wrapper<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">"checked"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Option
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio2"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"radio"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio3"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"radio"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"textarea"</span>&gt;</span>Textarea<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"textarea"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"8"</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Enter your message here"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"ic"</span>&gt;</span>Color input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"color"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ic"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"#000000"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"in"</span>&gt;</span>Number input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"in"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"5"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"ir"</span>&gt;</span>Range input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ir"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"10"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"idd"</span>&gt;</span>Date input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"date"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"idd"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1970-01-01"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"idm"</span>&gt;</span>Month input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"month"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"idm"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1970-01"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"idw"</span>&gt;</span>Week input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"week"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"idw"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1970-W01"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"idt"</span>&gt;</span>Datetime input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"idt"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1970-01-01T00:00:00Z"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"idtl"</span>&gt;</span>Datetime-local input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"idtl"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1970-01-01T00:00"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
 
     </code>
@@ -2621,7 +2778,7 @@
         
 
 
-<div class="browser-resources" id="browser-6973a0354f090a32508030c4d2ba4990-panel-assets">
+<div class="browser-resources" id="browser-9dfd2c5ce88fcfe34d85e7d6d3938403-panel-assets">
     <h2>Assets</h2>
 
 
@@ -2643,29 +2800,24 @@
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.form-item</span> {
-	<span class="hljs-attribute">margin-bottom</span> : <span class="hljs-variable">$gutter</span>;
-	<span class="hljs-attribute">display</span>:flex;
-	<span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">display</span>:block;
+	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span>;
+
 	<span class="hljs-selector-tag">label</span> {
-		<span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">1</span> auto;
+		<span class="hljs-attribute">display</span>:block;
 		<span class="hljs-keyword">@if</span> <span class="hljs-variable">$label-as-minititle</span> {
 			<span class="hljs-keyword">@include</span> minititle(<span class="hljs-variable">$label-font-size</span>)
 		} <span class="hljs-keyword">@else</span> {
 			<span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$label-font-size</span>)
 		}
 	}
-	input[type=<span class="hljs-string">"text"</span>],
-	input[type=<span class="hljs-string">"email"</span>],
-	input[type=<span class="hljs-string">"password"</span>],
-	input[type=<span class="hljs-string">"url"</span>],
-	input[type=<span class="hljs-string">"tel"</span>],
-	input[type=<span class="hljs-string">"search"</span>] {
-		<span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> auto;
-	}
-	<span class="hljs-comment">// Radio and checkbox won't use align-items : baseline</span>
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="checkbox"]</span>,
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="radio"]</span> {
-		<span class="hljs-attribute">align-self</span>: center;
+
+	// Label position exception: radios <span class="hljs-keyword">and</span> checkboxes.
+	input[type=<span class="hljs-string">"checkbox"</span>],
+	input[type=<span class="hljs-string">"radio"</span>] {
+		+ <span class="hljs-selector-tag">label</span> {
+			<span class="hljs-attribute">display</span>:inline-block;
+		}
 	}
 
 	&amp;<span class="hljs-selector-pseudo">:last-child</span>,
@@ -2674,31 +2826,47 @@
 	}
 }
 
-<span class="hljs-selector-class">.form-item--col</span> {
-	<span class="hljs-attribute">display</span>:block;
-	<span class="hljs-selector-tag">label</span>, 
-	<span class="hljs-selector-tag">input</span>,
-	<span class="hljs-selector-tag">textarea</span> {
-		<span class="hljs-attribute">display</span>:block;
-		<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+<span class="hljs-selector-class">.form-item--inline</span> {
+	<span class="hljs-attribute">display</span>:flex;
+	<span class="hljs-attribute">align-items</span>: baseline;
+	<span class="hljs-selector-tag">label</span> {
+			<span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">1</span> auto;
 	}
-	<span class="hljs-comment">// Except radios and checkboxes!</span>
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="checkbox"]</span>,
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="radio"]</span> {
-        <span class="hljs-attribute">width</span>:auto;
-    }
 }
 
 <span class="hljs-selector-class">.form-item--required</span> {
 	<span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">::after</span> {
 		<span class="hljs-attribute">content</span>: <span class="hljs-string">"*"</span>;
 		<span class="hljs-attribute">color</span>: get-color(state, error);
+		<span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
 	}
 }
 
+<span class="hljs-selector-class">.form-item--error</span> {
+	<span class="hljs-selector-tag">label</span> {
+		<span class="hljs-attribute">color</span>: get-color(state, error);
+	}
+	<span class="hljs-selector-tag">input</span>,
+	<span class="hljs-selector-tag">textarea</span> {
+		<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$color</span>: get-color(state, error));
+	}
+}
+
+<span class="hljs-selector-class">.form-item--success</span> {
+	<span class="hljs-selector-tag">label</span> {
+		<span class="hljs-attribute">color</span>: get-color(state, success);
+	}
+	<span class="hljs-selector-tag">input</span>,
+	<span class="hljs-selector-tag">textarea</span> {
+		<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$color</span>: get-color(state, success));
+	}
+}
+
+
+
 <span class="hljs-selector-class">.form-item--label-inside</span> {
 	<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$form-border-radius</span>;
-	<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
+	<span class="hljs-keyword">@include</span> form-border(); 
 	<span class="hljs-selector-tag">input</span>,
 	<span class="hljs-selector-tag">textarea</span> {
 		<span class="hljs-attribute">border</span>:none;

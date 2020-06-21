@@ -1053,8 +1053,56 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--column.html" data-pjax>
-                    Column
+                <a href="form-item--inline.html" data-pjax>
+                    Inline
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--errored.html" data-pjax>
+                    Errored
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--succeeded.html" data-pjax>
+                    Succeeded
                     
 
 <div class="Status Status--unlabelled">
@@ -1101,8 +1149,8 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--label-top.html" data-pjax>
-                    Label Top
+                <a href="form-item--inline-label-top.html" data-pjax>
+                    Inline Label Top
                     
 
 <div class="Status Status--unlabelled">
@@ -1125,8 +1173,8 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--label-bottom.html" data-pjax>
-                    Label Bottom
+                <a href="form-item--inline-label-bottom.html" data-pjax>
+                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1877,8 +1925,8 @@
         
             
             <li class="" data-role="item">
-                <a href="main-wrapper.html" data-pjax>
-                    Main Wrapper
+                <a href="visibility.html" data-pjax>
+                    Visibility
                     
 
 <div class="Status Status--unlabelled">
@@ -1901,8 +1949,8 @@
         
             
             <li class="" data-role="item">
-                <a href="visibility.html" data-pjax>
-                    Visibility
+                <a href="wrapper.html" data-pjax>
+                    Wrapper
                     
 
 <div class="Status Status--unlabelled">
@@ -2581,6 +2629,8 @@
         
             <p>By default, checkboxes will use the native HTML styling.</p>
 <p>An alternative style can be applied globaly by setting <code>$pseudo-checkbox: true</code> or case by case using the <code>.pseudo-checkbox</code> class or <code>pseudo-checkbox()</code> mixin.</p>
+<p>It is recommended <strong>not</strong> touse the label as a wrapper. If needed, an additional <code>span</code> tag will ensure proper vertical alignment.</p>
+<p>Please note that <strong>you can’t use the label as a wrapper and pseudo-checkboxes at the same time</strong>.</p>
 
         
     </div>
@@ -2596,6 +2646,13 @@
 <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Checkbox<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Checkbox (label as wrapper)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
@@ -2625,19 +2682,23 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>185 Bytes</span>
+                    <span>244 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span> {
-    <span class="hljs-comment">// Provide an opt-in using a class if pseudo is deactivated</span>
+  <span class="hljs-comment">// Provide an opt-in using a class if pseudo is deactivated</span>
 	<span class="hljs-keyword">@if</span>(<span class="hljs-variable">$pseudo-checkbox</span> == false) {
 		&amp;<span class="hljs-selector-class">.pseudo-checkbox</span> {
 			<span class="hljs-keyword">@include</span> pseudo-checkbox();
 		}
-    }
+	}
+}
+
+<span class="hljs-selector-tag">label</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span> + <span class="hljs-selector-tag">span</span> {
+	<span class="hljs-attribute">vertical-align</span>: middle;
 }</pre>
                             </code>
                         

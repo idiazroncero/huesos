@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
 
 
-<title>Form Item: Label Top | Huesos</title>
+<title>Wrapper | Huesos</title>
 
 </head>
 <body>
@@ -1053,8 +1053,56 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--column.html" data-pjax>
-                    Column
+                <a href="form-item--inline.html" data-pjax>
+                    Inline
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--errored.html" data-pjax>
+                    Errored
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
+                <a href="form-item--succeeded.html" data-pjax>
+                    Succeeded
                     
 
 <div class="Status Status--unlabelled">
@@ -1100,9 +1148,9 @@
     
         
             
-            <li class=" is-current" data-state="current" data-role="item">
-                <a href="" data-pjax>
-                    Label Top
+            <li class="" data-role="item">
+                <a href="form-item--inline-label-top.html" data-pjax>
+                    Inline Label Top
                     
 
 <div class="Status Status--unlabelled">
@@ -1125,8 +1173,8 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--label-bottom.html" data-pjax>
-                    Label Bottom
+                <a href="form-item--inline-label-bottom.html" data-pjax>
+                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1877,8 +1925,8 @@
         
             
             <li class="" data-role="item">
-                <a href="main-wrapper.html" data-pjax>
-                    Main Wrapper
+                <a href="visibility.html" data-pjax>
+                    Visibility
                     
 
 <div class="Status Status--unlabelled">
@@ -1900,9 +1948,9 @@
     
         
             
-            <li class="" data-role="item">
-                <a href="visibility.html" data-pjax>
-                    Visibility
+            <li class=" is-current" data-state="current" data-role="item">
+                <a href="" data-pjax>
+                    Wrapper
                     
 
 <div class="Status Status--unlabelled">
@@ -2492,11 +2540,11 @@
     
     
 
-<article class="pen" data-behaviour="pen" id="pen-5b062de7df93f18b05b1302fe418c329">
+<article class="pen" data-behaviour="pen" id="pen-e0d52c4a652eedbf8fa071ae5191917e">
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-5b062de7df93f18b05b1302fe418c329">
+    <section class="pen-preview card" data-behaviour="preview" id="preview-e0d52c4a652eedbf8fa071ae5191917e">
     <div class="preview-tag">
         <h3 class="small">Preview</h3>
         <button class="preview tag">Expand</button>
@@ -2506,7 +2554,7 @@
         <iframe
         class="preview-iframe"
         data-role="window"
-        src="../preview/form-item--label-top.html"
+        src="../preview/wrapper.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
          style=""
         marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes" height="0">
@@ -2516,8 +2564,8 @@
 
     <header class="pen-header">
     <h1 class="m0">
-        <a href="../preview/form-item--label-top.html" title="Component preview">
-            Form Item: Label Top
+        <a href="../preview/wrapper.html" title="Component preview">
+            Wrapper
         </a>
     </h1>
     
@@ -2543,7 +2591,7 @@
         
             
                 <li class=" is-active " data-role="tab">
-                    <a href="#browser-5b062de7df93f18b05b1302fe418c329-panel-notes">
+                    <a href="#browser-e0d52c4a652eedbf8fa071ae5191917e-panel-notes">
                         
                             Docs
                         
@@ -2553,7 +2601,7 @@
         
             
                 <li class="" data-role="tab">
-                    <a href="#browser-5b062de7df93f18b05b1302fe418c329-panel-html">
+                    <a href="#browser-e0d52c4a652eedbf8fa071ae5191917e-panel-html">
                         
                             HTML
                         
@@ -2565,7 +2613,7 @@
                 
                     
                     <li data-role="tab">
-                        <a href="#browser-5b062de7df93f18b05b1302fe418c329-panel-assets">Assets</a>
+                        <a href="#browser-e0d52c4a652eedbf8fa071ae5191917e-panel-assets">Assets</a>
                     </li>
                     
                 
@@ -2576,42 +2624,31 @@
 
 
     
-        <section class="browser-notes" id="browser-5b062de7df93f18b05b1302fe418c329-panel-notes">
+        <section class="browser-notes" id="browser-e0d52c4a652eedbf8fa071ae5191917e-panel-notes">
     <div class="text-wrapper">
         
-            <p>General block-level wrapper for form elements. Guarantees correct spacing, label and input vertical alignment and provides several helper classes for quick customization.</p>
-<p>It also provides several variations for different styling of items.</p>
+            <p>An (optional) wrapper that applies three configurations:</p>
 <ul>
-<li><code>.form-item--required</code>        - Marks the label with a red asterisk</li>
-<li><code>.form-item--col</code>                - Stacks elements instead of displaying them side by side</li>
-<li><code>.form-item--label-inside</code>    - Visually puts the label inside of the input. Only makes sense if the border strategy is full</li>
+<li><code>$max-width</code>, the maximum size the container can get.</li>
+<li><code>$layout-align</code>, wether to align the container (on larger screens) to the left, right or center.</li>
+<li><code>$layout-padding</code>, the padding to apply to the container (set to false to delete it);</li>
 </ul>
-<p>Most of these classes can be stacked:</p>
-<ul>
-<li><code>.form-item--label-inside.form-item--required</code>    - <code>.form-item--required</code> can be combinated with the other modifiers</li>
-<li><code>.form-item--label-inside.form-item--col</code>    - You can sum <code>col</code>and <code>required</code> to get this commonly seen pattern</li>
-</ul>
-<h3 id="labels">Labels</h3>
-<p>Labels are formatted according to values from <code>$label-as-minititle</code> and <code>$label-font-size</code>. The size will be respected, and minititle will be applied if the boolean value is set to true.</p>
-<p>By default, we consider labels as a kind of minititle.</p>
-<div class="alert alert--warning mb">
+<p>Also provided as a <code>wrapper()</code> mixin. </p>
 
-<p><strong>There’s life outside form items</strong><br>This wrapper is a handy way of scoping a set of form-like styles. You can freely use form elements outside a <code>.form-item</code> wrapper and they will default to normal behavior (i.e, labels will cease to be minititles). This way, you can easily decide wether to apply form-like styles or not to your HTML.</p>
-</div>
         
     </div>
 </section>
 
     
         
-<section class="browser-code is-active" data-role="tab-panel" id="browser-5b062de7df93f18b05b1302fe418c329-panel-html">
+<section class="browser-code is-active" data-role="tab-panel" id="browser-e0d52c4a652eedbf8fa071ae5191917e-panel-html">
     <h2>Example</h2>
     <code class="code-block code code--lang-html">
 
 
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item form-item--label-top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>A Label inside form item<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"text"</span>&gt;</span>
+<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h3"</span>&gt;</span>Content inside main wrapper<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa dicta, laboriosam laborum ab, ex amet nesciunt quod aliquid accusamus, sapiente beatae autem. Velit optio aperiam modi esse? Nemo, quisquam voluptatum!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
 
     </code>
@@ -2621,101 +2658,33 @@
         
 
 
-<div class="browser-resources" id="browser-5b062de7df93f18b05b1302fe418c329-panel-assets">
+<div class="browser-resources" id="browser-e0d52c4a652eedbf8fa071ae5191917e-panel-assets">
     <h2>Assets</h2>
 
 
         
 
     
-        <div class="filebrowser-item is-active" id="file-14f38d0fb4dee271b4f943fd099a3143" data-role="resource-preview">
+        <div class="filebrowser-item is-active" id="file-9b7952d1fbdd17b0e821c119324254c7" data-role="resource-preview">
             <ul>
                 <li>
                     <strong>Filesystem Path:</strong>
-                    <span>src/components/forms/form-item/_form-item.scss</span>
+                    <span>src/components/layout/wrapper/_wrapper.scss</span>
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>1.2 KB</span>
+                    <span>75 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-class">.form-item</span> {
-	<span class="hljs-attribute">margin-bottom</span> : <span class="hljs-variable">$gutter</span>;
-	<span class="hljs-attribute">display</span>:flex;
-	<span class="hljs-attribute">align-items</span>: center;
-	<span class="hljs-selector-tag">label</span> {
-		<span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">1</span> auto;
-		<span class="hljs-keyword">@if</span> <span class="hljs-variable">$label-as-minititle</span> {
-			<span class="hljs-keyword">@include</span> minititle(<span class="hljs-variable">$label-font-size</span>)
-		} <span class="hljs-keyword">@else</span> {
-			<span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$label-font-size</span>)
-		}
-	}
-	input[type=<span class="hljs-string">"text"</span>],
-	input[type=<span class="hljs-string">"email"</span>],
-	input[type=<span class="hljs-string">"password"</span>],
-	input[type=<span class="hljs-string">"url"</span>],
-	input[type=<span class="hljs-string">"tel"</span>],
-	input[type=<span class="hljs-string">"search"</span>] {
-		<span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> auto;
-	}
-	<span class="hljs-comment">// Radio and checkbox won't use align-items : baseline</span>
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="checkbox"]</span>,
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="radio"]</span> {
-		<span class="hljs-attribute">align-self</span>: center;
-	}
+                                <pre><span class="hljs-comment">// ---------</span>
+<span class="hljs-comment">// Applies wrapper() mixin</span>
 
-	&amp;<span class="hljs-selector-pseudo">:last-child</span>,
-	&amp;<span class="hljs-selector-pseudo">:last-of-type</span> {
-		<span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">0</span>;
-	}
-}
-
-<span class="hljs-selector-class">.form-item--col</span> {
-	<span class="hljs-attribute">display</span>:block;
-	<span class="hljs-selector-tag">label</span>, 
-	<span class="hljs-selector-tag">input</span>,
-	<span class="hljs-selector-tag">textarea</span> {
-		<span class="hljs-attribute">display</span>:block;
-		<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
-	}
-	<span class="hljs-comment">// Except radios and checkboxes!</span>
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="checkbox"]</span>,
-	<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="radio"]</span> {
-        <span class="hljs-attribute">width</span>:auto;
-    }
-}
-
-<span class="hljs-selector-class">.form-item--required</span> {
-	<span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">::after</span> {
-		<span class="hljs-attribute">content</span>: <span class="hljs-string">"*"</span>;
-		<span class="hljs-attribute">color</span>: get-color(state, error);
-	}
-}
-
-<span class="hljs-selector-class">.form-item--label-inside</span> {
-	<span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$form-border-radius</span>;
-	<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
-	<span class="hljs-selector-tag">input</span>,
-	<span class="hljs-selector-tag">textarea</span> {
-		<span class="hljs-attribute">border</span>:none;
-		<span class="hljs-attribute">border-radius</span>:<span class="hljs-number">0</span>;
-		<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
-	}
-}
-
-<span class="hljs-selector-class">.form-item--label-top</span> {
-	<span class="hljs-attribute">align-items</span>: flex-start;
-}
-
-<span class="hljs-selector-class">.form-item--label-bottom</span> {
-	<span class="hljs-attribute">align-items</span>: flex-end;
-}
-
-</pre>
+<span class="hljs-selector-class">.wrapper</span> {
+  <span class="hljs-keyword">@include</span> wrapper();
+}</pre>
                             </code>
                         
                 </li>

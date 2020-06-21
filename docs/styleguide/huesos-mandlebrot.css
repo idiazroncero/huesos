@@ -1,74 +1,99 @@
 @charset "UTF-8";
 /*
-
-Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
-
-*/
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #23241f; }
+  background: #1E1E1E;
+  color: #DCDCDC; }
 
-.hljs,
-.hljs-tag,
-.hljs-subst {
-  color: #f8f8f2; }
-
-.hljs-strong,
-.hljs-emphasis {
-  color: #a8a8a2; }
-
-.hljs-bullet,
-.hljs-quote,
-.hljs-number,
-.hljs-regexp,
+.hljs-keyword,
 .hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: #569CD6; }
+
 .hljs-link {
-  color: #ae81ff; }
+  color: #569CD6;
+  text-decoration: underline; }
 
-.hljs-code,
+.hljs-built_in,
+.hljs-type {
+  color: #4EC9B0; }
+
+.hljs-number,
+.hljs-class {
+  color: #B8D7A3; }
+
+.hljs-string,
+.hljs-meta-string {
+  color: #D69D85; }
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334; }
+
+.hljs-subst,
+.hljs-function,
 .hljs-title,
-.hljs-section,
-.hljs-selector-class {
-  color: #a6e22e; }
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC; }
 
-.hljs-strong {
-  font-weight: bold; }
+.hljs-comment,
+.hljs-quote {
+  color: #57A64A;
+  font-style: italic; }
+
+.hljs-doctag {
+  color: #608B4E; }
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B; }
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #BD63C5; }
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #9CDCFE; }
+
+.hljs-section {
+  color: gold; }
 
 .hljs-emphasis {
   font-style: italic; }
 
-.hljs-keyword,
+.hljs-strong {
+  font-weight: bold; }
+
+/*.hljs-code {
+  font-family:'Monospace';
+}*/
+.hljs-bullet,
 .hljs-selector-tag,
-.hljs-name,
-.hljs-attr {
-  color: #f92672; }
-
-.hljs-symbol,
-.hljs-attribute {
-  color: #66d9ef; }
-
-.hljs-params,
-.hljs-class .hljs-title {
-  color: #f8f8f2; }
-
-.hljs-string,
-.hljs-type,
-.hljs-built_in,
-.hljs-builtin-name,
 .hljs-selector-id,
+.hljs-selector-class,
 .hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-variable {
-  color: #e6db74; }
+.hljs-selector-pseudo {
+  color: #D7BA7D; }
 
-.hljs-comment,
-.hljs-deletion,
-.hljs-meta {
-  color: #75715e; }
+.hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%; }
+
+.hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%; }
 
 *,
 ::before,
@@ -983,6 +1008,9 @@ input[type=checkbox].pseudo-checkbox {
       border: 1px solid #6a6a7f;
       cursor: pointer; }
 
+label input[type=checkbox] + span {
+  vertical-align: middle; }
+
 fieldset {
   margin-right: 0;
   margin-left: 0;
@@ -1017,11 +1045,10 @@ fieldset.fieldset--disabled {
     letter-spacing: 0.1em; }
 
 .form-item {
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center; }
+  display: block;
+  margin-bottom: 1.5rem; }
   .form-item label {
-    flex: 0 1 auto;
+    display: block;
     font-size: 12px;
     font-size: 0.75019rem;
     line-height: 24px;
@@ -1029,33 +1056,54 @@ fieldset.fieldset--disabled {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em; }
-  .form-item input[type="text"],
-  .form-item input[type="email"],
-  .form-item input[type="password"],
-  .form-item input[type="url"],
-  .form-item input[type="tel"],
-  .form-item input[type="search"] {
-    flex: 1 0 auto; }
-  .form-item input[type="checkbox"],
-  .form-item input[type="radio"] {
-    align-self: center; }
+  .form-item input[type="checkbox"] + label,
+  .form-item input[type="radio"] + label {
+    display: inline-block; }
   .form-item:last-child, .form-item:last-of-type {
     margin-bottom: 0; }
 
-.form-item--col {
-  display: block; }
-  .form-item--col label,
-  .form-item--col input,
-  .form-item--col textarea {
-    display: block;
-    width: 100%; }
-  .form-item--col input[type="checkbox"],
-  .form-item--col input[type="radio"] {
-    width: auto; }
+.form-item--inline {
+  display: flex;
+  align-items: baseline; }
+  .form-item--inline label {
+    flex: 0 1 auto; }
 
 .form-item--required label::after {
   content: "*";
+  color: #b00600;
+  margin-left: 0.375rem; }
+
+.form-item--error label {
   color: #b00600; }
+
+.form-item--error input,
+.form-item--error textarea {
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #b00600; }
+  .form-item--error input:hover, .form-item--error input:focus,
+  .form-item--error textarea:hover,
+  .form-item--error textarea:focus {
+    border-color: #760400; }
+
+.form-item--success label {
+  color: #00c368; }
+
+.form-item--success input,
+.form-item--success textarea {
+  border-width: 1px;
+  border-width: 0.0625rem;
+  padding: 5px;
+  padding: 0.3125rem;
+  border-style: solid;
+  border-color: #00c368; }
+  .form-item--success input:hover, .form-item--success input:focus,
+  .form-item--success textarea:hover,
+  .form-item--success textarea:focus {
+    border-color: #008346; }
 
 .form-item--label-inside {
   border-radius: 0px;
@@ -1180,6 +1228,9 @@ input[type=radio].pseudo-radio {
       border-radius: 50%;
       cursor: pointer; }
 
+label input[type=radio] + span {
+  vertical-align: middle; }
+
 select {
   display: inline-block;
   margin: 0;
@@ -1244,7 +1295,7 @@ textarea {
   textarea:hover, textarea:focus {
     border-color: #969699; }
 
-#main-wrapper {
+.wrapper {
   max-width: 2000px;
   margin-left: 0;
   margin-right: auto;

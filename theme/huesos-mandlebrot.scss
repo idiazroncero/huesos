@@ -10,16 +10,25 @@ $sidebar-width: 300px;
 
 @import "../huesos";
 
-h1 {
-    color: $cyan8;
+h1,
+.h1 {
+    color: $primary-700;
 }
 
-h2 {
-    color: $cyan7;
+h2,
+.h2 {
+    color: $primary-600;
 }
 
-h3 {
-    color: $cyan6;
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: $primary-500;
 }
 
 .header,
@@ -31,8 +40,9 @@ h3 {
     @include ritmo-font-size($h7-font-size);
 }
 
-.header-title {
-    @include kill-link($gray9)
+h1 .header-title {
+    @include kill-link($primary-500);
+    font-weight:900;
 }
 
 
@@ -45,7 +55,7 @@ h3 {
 }
 
 .wrapper__sidebar {
-    background-color: $gray0;
+    background-color: get-color(background, light);
     position:fixed;
     padding: $gutter * 2;
     top:0;
@@ -55,14 +65,14 @@ h3 {
     width:$sidebar-width;
     .nav {
         .is-current {
-            background-color: $cyan2;
+            background-color: $primary-200;
             display:inline-block;
             a {
                 @include set-link(
-                    contrast-color($cyan2),
-                    contrast-color($cyan2),
-                    contrast-color($cyan2),
-                    contrast-color($cyan2),
+                    contrast-color($primary-200),
+                    contrast-color($primary-200),
+                    contrast-color($primary-200),
+                    contrast-color($primary-200),
                     false,
                     false
                 )
@@ -208,45 +218,45 @@ code.code {
 }
 
 .contrast-color {
-    background-color: $red6;
+    background-color: $danger-600;
 }
 
 .contrasted-element {
-    color: contrast-color($red6);
+    color: contrast-color($danger-600);
 }
 
 .contrasted-element--overriden {
-    color: contrast-color($red6, $blue9, $orange2);
+    color: contrast-color($danger-600, $info-900, $secondary-200);
 }
 
 .background-contrast {
-    background-color: $teal9;
-    @include background-contrast($teal9);
+    background-color: $gray-900;
+    @include background-contrast($gray-900);
 }
 .background-contrast--typography {
-    background-color: $teal9;
-    @include background-contrast($teal9, true);
+    background-color: $primary-900;
+    @include background-contrast($primary-900, true);
 }
 
 .background-split {
-    @include background-split-color($red5);
+    @include background-split-color($danger-500);
 }
 
 .background-split--links {
-    @include background-split-color($red5, $include-links: true);
+    @include background-split-color($danger-500, $include-links: true);
 }
 
 .background-split--custom {
-    @include background-split-color($orange5, 15%, 66%, true);
+    @include background-split-color($secondary-500, 15%, 66%, true);
 }
 
 .background-split--custom--inverse {
-    @include background-split-color($orange5, 15%, 66%, true, true);
+    @include background-split-color($secondary-500, 15%, 66%, true, true);
 };
 
 .contrast-links {
-    background-color: $teal9;
-    @include contrast-links($teal9);
+    background-color: $info-900;
+    @include contrast-links($info-900);
 }
 
 .invert-links {
@@ -274,11 +284,11 @@ code.code {
     position:relative;
     width:500px;
     height:500px;
-    background-color: $teal4;
+    background-color: $primary-400;
 }
 .layer {
     @include layer(5px, 10px, 15px, 20px, 5);
-    background-color: $red2;
+    background-color: $danger-200;
 }
 
 .item-with-default-separator {
@@ -340,5 +350,5 @@ ul.inline-list {
 }
 
 .text-border {
-    @include text-border($indigo8, 3px, transparent);
+    @include text-border($primary-800, 3px, transparent);
 }
