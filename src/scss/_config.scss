@@ -97,7 +97,7 @@ $colors: (
 
 	text: (
 		"primary": $black,
-		"heading": $gray-900,
+		"heading": $primary-500,
 		"mark" : $warning-400,
 	),
 
@@ -194,7 +194,7 @@ $courier: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida S
 // Add here your custom fonts, if needed
 
 
-// Global variables. It is good practice (performance & design) to only use one or two typefaces.
+// Global variables. It is good practice (performance & design) to use a maximum of two typefaces.
 $font-main: $system;
 $font-secondary: $garamond; // Set to false to only only one font
 $font-monospace: $courier;
@@ -336,20 +336,20 @@ $box-shadow: 2px 2px 2px 0px rgba($black, 0.1);
 
 // Only for $link-strategy:border
 $link-border-color: $primary-300;
-$link-border-hover: $primary-500; // You can set a different color on :hover
+$link-border-color-hover: $primary-500; // You can set a different color on :hover
 $link-border-width: ritmo(1);
 
 // Only for $link-strategy:border-inset
 $link-border-inset-color: $primary-100;
-$link-border-inset-color-hover: $primary-300;
-$link-border-inset-width: 0.33em;
-$link-border-inset-width-hover: 0.33em;
+$link-border-inset-color-hover: $primary-100;
+$link-border-inset-width: 0.25em;
+$link-border-inset-width-hover: 1em;
 
 // Link colors
-$link-color: $primary-600;
-$link-visited: $primary-500;
-$link-hover: $primary-400;
-$link-active: $primary-500;
+$link-color: $primary-700;
+$link-visited: $primary-600;
+$link-hover: $primary-600;
+$link-active: $primary-900;
 
 // BUILD YOUR OWN LINK
 // You can choose one strategy for every state!
@@ -360,8 +360,8 @@ $link-active: $primary-500;
 // - border - Border-bottom with custom width
 // - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
 //
-$link-strategy-default: false;
-$link-strategy-hover: 'border-inset';
+$link-strategy-default: "border-inset";
+$link-strategy-hover: "border-inset";
 
 $link-alternative-strategies: false;
 
@@ -410,6 +410,7 @@ $button-ritmo-padding-x: 3;
 $button-border-radius: 2px; // $border-radius;
 $button-weight: bold(button);
 $button-invert-color: false; // Only valid on border:fill and background
+$button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for darken, negative for lighten.
 
 // BUILD YOUR OWN BUTTON
 // You can choose one strategy for every state!
@@ -422,7 +423,7 @@ $button-invert-color: false; // Only valid on border:fill and background
 //
 // Note that background and outline can be considered "inverse" of each other
 $button-strategy-default: 'outline';
-$button-strategy-hover: 'split-inverse';
+$button-strategy-hover: 'background';
 
 $button-alternative-strategies: false;
 

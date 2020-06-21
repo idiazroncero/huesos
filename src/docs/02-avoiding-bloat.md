@@ -18,7 +18,9 @@ For a fine-tuning, you can also copy & paste `_huesos.scss` (you'll need to adap
 For example, it makes no sense to `@import selectr` if you're not using JS enhancements. Or you might rid of the `show-grid` debug scss, or all the `components` if you only want Huesos as a global reset, etc...
 
 <div class="alert">
-	__Did you wonder why we don't use glob patterns to load scss files?__ Now you know: manually importing files is cumbersome but allows you to easily select which files to drop only by commenting them out.
+
+__Did you wonder why we don't use glob patterns to load scss files?__ Now you know: manually importing files is cumbersome but allows you to easily select which files to drop only by commenting them out.
+
 </div>
 
 ### Do I need all the button states?

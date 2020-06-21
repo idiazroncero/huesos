@@ -2,8 +2,8 @@ input[type=file] {
 	border:none;
 	padding:0;
 	+ label {
-		@extend .button;
-		@extend .button--success;
+		// @extend .button;
+		// @extend .button--success;
 		margin-left: $gutter / 2;
 		margin-right:0,
 	}

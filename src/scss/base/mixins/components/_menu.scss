@@ -1,0 +1,120 @@
+@mixin menu() {
+  @if $menu-kill-links {
+    a {
+      @include kill-link-decoration();
+    }
+  }
+
+  @include inline-list();
+  @if $menu-background-color {
+    background-color: $menu-background-color;
+  }
+
+  // All child menus
+  ul {
+    margin:0;
+    padding: 0;
+    @if $menu-background-color {
+      background-color: $menu-background-color;
+    }
+    li {
+      display:block;
+    }
+  }
+
+  // All a and span elements
+  a, span {
+    display:inline-block;
+  }
+
+  // li
+  > li {
+    margin:0;
+    position:relative;
+    z-index:1;
+    > a {
+      text-align:left; // Override any .right class
+      display:block;
+      white-space:nowrap;
+
+      @if $menu-kill-links {
+        @include set-link(
+          get-color(text, primary),
+          get-color(text, primary),
+          get-color(text, primary),
+          get-color(text, primary),
+          false,
+          false
+        )
+      }
+    }
+
+    > a,
+    > span {      
+      padding:0 $menu-x-padding;
+      @include ritmo-font-size($menu-font-size, 6);
+    }
+
+    // Second-level
+    > ul {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      z-index:2;
+      min-width:120%;
+      padding: 0 0 $gutter / 4 0;
+      
+      > li {
+        position:relative;
+        margin:0;
+        > a {
+          display:block;
+          padding:0 $menu-x-padding;
+          white-space:nowrap;
+        }
+        > a,
+        > span {
+          @include ritmo-font-size(0.8 * $menu-font-size, 4);
+        }
+      }
+    }
+    // Third-level
+    > ul > li {
+      > ul {
+        display:none;
+        position:absolute;
+        top:0;
+        left:100%;
+        min-width:100%;
+        z-index:3;
+        li {
+          position:relative;
+          margin:0;
+          > a {
+            display:block;
+            padding:0 $menu-x-padding;
+            white-space:nowrap;
+          }
+          > a,
+          > span {
+            @include ritmo-font-size(0.66 * $menu-font-size, 4);
+          }
+        }
+      }
+      &:hover {
+        > ul {
+          display:block;
+        }
+      }
+    }
+    &:hover {
+      > ul {
+        display:block;
+        > li {
+          display:block;
+        }
+      }
+    }
+  }
+}

@@ -105,9 +105,17 @@
     &:hover, 
     &:focus {
         @if $button-strategy-hover == 'outline' {
-            @include button-outline($color);
+            @if ($button-color-ratio > 0%) {
+                @include button-outline(darken($color, $button-color-ratio));
+            } @else {
+                @include button-outline(lighten($color, -$button-color-ratio));
+            }
         } @else if $button-strategy-hover == 'background' {
-            @include button-background($color);
+            @if ($button-color-ratio > 0%) {
+                @include button-background(darken($color, $button-color-ratio));
+            } @else {
+                @include button-background(lighten($color, -$button-color-ratio));
+            }
         } @else if $button-strategy-hover == 'split' {
             @include button-split($color);
         } @else if $button-strategy-hover == 'split-inverse' {
@@ -126,7 +134,6 @@
     {
     
     // Custom link decoration override adapted to button elements
-
     &, 
     &:link,
     &:visited,
@@ -134,38 +141,39 @@
         border-radius: $button-border-radius;
         text-decoration:none;
 
-        @if $link-strategy-default == 'border-inset' {
-            &:after {
-                display:none;
-            }
-        }
     }
     &:focus,
     &:hover {
         text-decoration:none;
-        @if $link-strategy-default == 'border-inset' {
-            &:after {
-                display:none;
-            }
-        }
     } 
 
-	@if $button-strategy-default == 'outline' {
-        @include button-link-outline($color);
-    } @else if $button-strategy-default == 'background' {
-        @include button-link-background($color);
-    } @else if $button-strategy-default == 'split' {
-        @include button-link-split($color);
-    } @else if $button-strategy-default == 'split-inverse' {
-        @include button-link-split-inverse($color);
+    &,
+    &:link {
+        @if $button-strategy-default == 'outline' {
+            @include button-link-outline($color);
+        } @else if $button-strategy-default == 'background' {
+            @include button-link-background($color);
+        } @else if $button-strategy-default == 'split' {
+            @include button-link-split($color);
+        } @else if $button-strategy-default == 'split-inverse' {
+            @include button-link-split-inverse($color);
+        }
     }
 
     &:hover, 
     &:focus {
         @if $button-strategy-hover == 'outline' {
-            @include button-link-outline($color);
+            @if ($button-color-ratio > 0%) {
+                @include button-link-outline(darken($color, $button-color-ratio));
+            } @else {
+                @include button-link-outline(lighten($color, -$button-color-ratio));
+            }
         } @else if $button-strategy-hover == 'background' {
-            @include button-link-background($color);
+            @if ($button-color-ratio > 0%) {
+                @include button-link-background(darken($color, $button-color-ratio));
+            } @else {
+                @include button-link-background(lighten($color, -$button-color-ratio));
+            }
         } @else if $button-strategy-hover == 'split' {
             @include button-link-split($color);
         } @else if $button-strategy-hover == 'split-inverse' {

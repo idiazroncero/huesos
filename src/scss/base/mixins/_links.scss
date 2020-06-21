@@ -39,8 +39,6 @@
 }
 
 
-
-
 @mixin set-link-decoration(
 		$link-strategy-default : $link-strategy-default,
 		$link-strategy-hover : $link-strategy-hover
@@ -61,6 +59,10 @@
 	&:focus {
 		@if $link-strategy-hover == false {
 			text-decoration:none;
+			border-bottom: none;
+			&:after {
+				display:none;
+			}
 		} @else if $link-strategy-hover == 'underline' {
 			@include link-underline();
 		} @else if $link-strategy-hover == 'border' {
@@ -137,3 +139,27 @@
 		}
 	} 
 }
+
+
+@mixin kill-link-button(
+		$strategy-default: $link-strategy-default,
+		$strategy-hover: $link-strategy-hover
+	) {
+	&, 
+	&:link,
+	&:visited,
+	&:active {
+		text-decoration:none;
+		&:after {
+			display:none;
+		}
+	}
+	&:focus,
+	&:hover {
+		text-decoration:none;
+		&:after {
+			display:none;
+		}
+	} 
+}
+

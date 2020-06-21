@@ -263,7 +263,7 @@
 }
 
 .selectr-optgroup--label {
-	font-weight: bold;
+	font-weight: $font-main-bold;
 	margin:0;
 	padding: ritmo($input-padding-lines);
 }

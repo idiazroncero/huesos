@@ -31,6 +31,7 @@ html {
 	-ms-text-size-adjust: 100%; /* 3 */
 	-webkit-text-size-adjust: 100%; /* 3 */
 	font-family: $font-main;
+	font-weight: $normal;
 	color: get-color(text, primary);
 	scroll-behavior: smooth;
 }
