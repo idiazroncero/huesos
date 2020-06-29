@@ -326,10 +326,6 @@ h1.poly-fluid-sizing {
     line-height:1;
 }
 
-ul.inline-list {
-    @include inline-list();
-}
-
 .my-minititle {
     @include minititle($h6-font-size, lighter, true, 1em)
 }

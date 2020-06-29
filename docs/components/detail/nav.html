@@ -2686,32 +2686,14 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>373 Bytes</span>
+                    <span>27 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.nav</span> {
-  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$nav-kill-links</span> {
-    <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-keyword">@include</span> kill-link-decoration();
-    }
-  }
-	<span class="hljs-selector-tag">ul</span> {
-    <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
-    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
-    <span class="hljs-attribute">list-style-type</span>:none;
-		<span class="hljs-selector-tag">li</span> {
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">font-weight</span>: <span class="hljs-variable">$nav-font-weight</span>;
-      <span class="hljs-keyword">@if</span> <span class="hljs-variable">$nav-uppercase</span> {
-        <span class="hljs-attribute">text-transform</span>: uppercase;
-      }
-      <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$nav-font-size</span>);
-      <span class="hljs-attribute">letter-spacing</span>:<span class="hljs-variable">$nav-spacing</span>;
-		}
-  }
+  <span class="hljs-keyword">@include</span> nav();
 }
 </pre>
                             </code>

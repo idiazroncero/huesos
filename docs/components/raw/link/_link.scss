@@ -1,22 +1,22 @@
-a:not(.button) {
-	// @include set-link();
-	// &.link--inactive {
-	// 	@include kill-link();
-	// }
-	// // TODO: is this consistent enough?
-	// &.disabled {
-	// 	@include kill-link(get-color(state, muted));
-	// }
-	// &.link--inverted {
-	// 	@include set-link(
-	// 		$inverse-link-color,
-	// 		$inverse-link-visited, 
-	// 		$inverse-link-hover,
-	// 		$inverse-link-active,
-	// 		$inverse-link-strategy-default,
-	// 		$inverse-link-strategy-hover
-	// 	);
-	// }
+a {
+	@include set-link();
+	&.link--inactive {
+		@include kill-link();
+	}
+	// TODO: is this consistent enough?
+	&.disabled {
+		@include kill-link(get-color(state, muted));
+	}
+	&.link--inverted {
+		@include set-link(
+			$inverse-link-color,
+			$inverse-link-visited, 
+			$inverse-link-hover,
+			$inverse-link-active,
+			$inverse-link-strategy-default,
+			$inverse-link-strategy-hover
+		);
+	}
 }
 
 

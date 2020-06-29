@@ -1,0 +1,34 @@
+@mixin toc($kill-links: $toc-kill-links){
+  @if $kill-links {
+    a {
+      @include kill-link-decoration();
+    }
+  }
+  li {
+    margin: 0;
+    font-weight: $toc-font-weight;
+    letter-spacing: initial;
+    @if $toc-uppercase {
+      text-transform: uppercase;
+    } @else {
+      text-transform: initial;
+    }
+    @include ritmo-font-size($toc-font-size);
+    ul,
+    ol {
+      margin: 0 0 $gutter / 2 0;
+      li{
+        // Don't let "bold" pass through here
+        font-weight: normal;
+        @include ritmo-font-size(0.9 * $toc-font-size);
+      }
+      ul,
+      ol {
+        li {
+          @include ritmo-font-size(0.7 * $toc-font-size);
+        }
+      }
+    }
+  }
+}
+

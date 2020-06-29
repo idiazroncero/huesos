@@ -2660,8 +2660,8 @@
 
 
 <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -2710,113 +2710,14 @@
                 </li>
                 <li>
                     <strong>Size:</strong>
-                    <span>1.9 KB</span>
+                    <span>152 Bytes</span>
                 </li>
                 <li>
                     <strong class="visually-hidden">Content:</strong>
                         
                             <code class="code-block code code--lang-SCSS">
                                 <pre><span class="hljs-selector-class">.menu</span> {
-  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$menu-kill-links</span> {
-    <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-keyword">@include</span> kill-link-decoration();
-    }
-  }
-
-  <span class="hljs-comment">// All ul elements</span>
-  <span class="hljs-selector-tag">ul</span> {
-    <span class="hljs-keyword">@include</span> inline-list();
-    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$menu-background-color</span> {
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$menu-background-color</span>;
-    }
-  }
-
-  <span class="hljs-comment">// All a and span elements</span>
-  <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-tag">span</span> {
-    <span class="hljs-attribute">display</span>:inline-block;
-  }
-
-  <span class="hljs-comment">// li</span>
-  <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
-    <span class="hljs-attribute">position</span>:relative;
-    <span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;
-    &gt; <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-attribute">text-align</span><span class="hljs-selector-pseudo">:left</span>; <span class="hljs-comment">// Override any .right class</span>
-      <span class="hljs-attribute">display</span>:block;
-      <span class="hljs-attribute">white-space</span>:nowrap;
-
-      <span class="hljs-keyword">@if</span> <span class="hljs-variable">$menu-kill-links</span> {
-        <span class="hljs-keyword">@include</span> set-link(
-          get-color(text, primary),
-          get-color(text, primary),
-          get-color(text, primary),
-          get-color(text, primary),
-          false,
-          false
-        )
-      }
-    }
-
-    &gt; a,
-    &gt; span {      
-      <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span> <span class="hljs-variable">$menu-x-padding</span>;
-      <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$menu-font-size</span>, <span class="hljs-number">6</span>);
-    }
-
-    <span class="hljs-comment">// Second-level</span>
-    &gt; <span class="hljs-selector-tag">ul</span> {
-      <span class="hljs-attribute">display</span>:none;
-      <span class="hljs-attribute">position</span>:absolute;
-      <span class="hljs-attribute">top</span>:<span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
-      <span class="hljs-attribute">z-index</span>:<span class="hljs-number">2</span>;
-      <span class="hljs-attribute">min-width</span>:<span class="hljs-number">120%</span>;
-      &gt; <span class="hljs-selector-tag">li</span> {
-        <span class="hljs-attribute">display</span>:block;
-        <span class="hljs-attribute">position</span>:relative;
-        &gt; <span class="hljs-selector-tag">a</span> {
-          <span class="hljs-attribute">display</span>:block;
-          <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span> <span class="hljs-variable">$menu-x-padding</span>;
-          <span class="hljs-attribute">white-space</span>:nowrap;
-        }
-        &gt; <span class="hljs-selector-tag">a</span>,
-        &gt; <span class="hljs-selector-tag">span</span> {
-          <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-number">0.8</span> * <span class="hljs-variable">$menu-font-size</span>, <span class="hljs-number">4</span>);
-        }
-      }
-    }
-    <span class="hljs-comment">// Third-level</span>
-    &gt; <span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
-      &gt; <span class="hljs-selector-tag">ul</span> {
-        <span class="hljs-attribute">display</span>:none;
-        <span class="hljs-attribute">position</span>:absolute;
-        <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
-        <span class="hljs-attribute">left</span>:<span class="hljs-number">100%</span>;
-        <span class="hljs-attribute">min-width</span>:<span class="hljs-number">100%</span>;
-        <span class="hljs-attribute">z-index</span>:<span class="hljs-number">3</span>;
-        <span class="hljs-selector-tag">li</span> {
-          &gt; <span class="hljs-selector-tag">a</span>,
-          &gt; <span class="hljs-selector-tag">span</span> {
-            <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-number">0.7</span> * <span class="hljs-variable">$menu-font-size</span>, <span class="hljs-number">4</span>);
-          }
-        }
-      }
-      &amp;<span class="hljs-selector-pseudo">:hover</span> {
-        &gt; <span class="hljs-selector-tag">ul</span> {
-          <span class="hljs-attribute">display</span>:block;
-        }
-      }
-    }
-    &amp;<span class="hljs-selector-pseudo">:hover</span> {
-      &gt; <span class="hljs-selector-tag">ul</span> {
-        <span class="hljs-attribute">display</span>:block;
-        &gt; <span class="hljs-selector-tag">li</span> {
-          <span class="hljs-attribute">display</span>:block;
-        }
-      }
-    }
-  }
+  <span class="hljs-keyword">@include</span> menu();
 }
 
 <span class="hljs-selector-class">.menu-item--has-child</span> {

@@ -10,6 +10,12 @@
 @import "src/scss/base/mixins/layout/wrapper";
 @import "src/scss/base/mixins/components/menu";
 @import "src/scss/base/mixins/components/nav";
+@import "src/scss/base/mixins/components/breadcrumb";
+@import "src/scss/base/mixins/components/toc";
+@import "src/scss/base/mixins/components/tabs";
+
+@import "src/scss/base/mixins/code";
+
 @import "src/scss/base/mixins/arrows";
 @import "src/scss/base/mixins/button";
 @import "src/scss/base/mixins/contrast-color";

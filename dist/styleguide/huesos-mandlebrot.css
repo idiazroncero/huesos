@@ -1738,8 +1738,7 @@ textarea {
 .toc a:focus:after, .toc a:hover:after {
   display: none; }
 
-.toc ul li,
-.toc ol li {
+.toc li {
   margin: 0;
   font-weight: normal;
   letter-spacing: initial;
@@ -1748,48 +1747,37 @@ textarea {
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem; }
-  .toc ul li ul,
-  .toc ul li ol,
-  .toc ol li ul,
-  .toc ol li ol {
-    margin: 0 0 0.75rem 0.75rem; }
-    .toc ul li ul li,
-    .toc ul li ol li,
-    .toc ol li ul li,
-    .toc ol li ol li {
+  .toc li ul,
+  .toc li ol {
+    margin: 0 0 0.75rem 0; }
+    .toc li ul li,
+    .toc li ol li {
       font-weight: normal;
-      font-size: 15px;
-      font-size: 0.95rem;
+      font-size: 14px;
+      font-size: 0.9rem;
       line-height: 24px;
       line-height: 1.5rem; }
-    .toc ul li ul ul li,
-    .toc ul li ul ol li,
-    .toc ul li ol ul li,
-    .toc ul li ol ol li,
-    .toc ol li ul ul li,
-    .toc ol li ul ol li,
-    .toc ol li ol ul li,
-    .toc ol li ol ol li {
+    .toc li ul ul li,
+    .toc li ul ol li,
+    .toc li ol ul li,
+    .toc li ol ol li {
       font-size: 11px;
       font-size: 0.7rem;
       line-height: 18px;
       line-height: 1.125rem; }
 
 .breadcrumb {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 18px;
   line-height: 1.125rem; }
-  .breadcrumb ul,
-  .breadcrumb ol {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap; }
-    .breadcrumb ul li,
-    .breadcrumb ol li {
-      list-style-type: none;
-      display: inline-block; }
+  .breadcrumb li {
+    list-style-type: none;
+    display: inline-block; }
   .breadcrumb a:after, .breadcrumb a:link:after, .breadcrumb a:visited:after, .breadcrumb a:active:after {
     display: none; }
   .breadcrumb a:focus:after, .breadcrumb a:hover:after {
@@ -3991,15 +3979,6 @@ h1.poly-fluid-sizing {
   @media (min-width: 1200px) {
     h1.poly-fluid-sizing {
       font-size: 60px; } }
-
-ul.inline-list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap; }
-  ul.inline-list li {
-    list-style-type: none;
-    display: inline-block; }
 
 .my-minititle {
   font-size: 12px;

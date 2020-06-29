@@ -1,0 +1,20 @@
+@mixin code-block() {
+  display:block;
+  margin-bottom: $spacer;
+
+  @include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
+
+
+  @if $code-background != false or $code-block-background != false {
+    padding: $gutter;
+  }
+  @if $code-block-background {
+    background-color: $code-block-background;
+    color: contrast-color($code-block-background);
+  }
+
+  // Delete margin on pre element
+  pre {
+    margin:0;
+  }
+}
