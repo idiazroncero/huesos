@@ -2219,7 +2219,7 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
   border-radius: 0px;
   background-color: #eef1ed;
   color: #6e726e; }
-  .alert *:last-child {
+  .alert p:last-child {
     margin-bottom: 0; }
 
 .alert--muted {

@@ -161,7 +161,7 @@ $show-grid: false;
 // A "spacer" is a basic unit for both vertical and horizontal spacing
 // The common alias is $gutter
 $spacer-lines: 4;
-$spacer: ritmo(4); 
+$spacer: ritmo(4);
 $gutter: $spacer;
 
 
@@ -216,7 +216,7 @@ $font-secondary-items:
 // Heading overrides and configuration
 // Select a font weight and an alternate line height for your headings
 $heading-font-weight: bold;
-$heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing 
+$heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing
 $heading-decorated-links: false; // Wether to decorate or not links inside headings
 
 // Text alignment for some elements
@@ -235,7 +235,7 @@ $code-block-background: $primary-900; // You might want to apply a different bg 
 $code-border-radius: 10px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
-$letter-spacing: 0.1em; 
+$letter-spacing: 0.1em;
 
 // List margin-bottom between <li> items.
 $list-separator: $gutter / 2;
@@ -354,7 +354,7 @@ $link-active: $primary-900;
 // BUILD YOUR OWN LINK
 // You can choose one strategy for every state!
 //
-// Available strategies: 
+// Available strategies:
 // - false - No styling
 // - underline - Normal, text-decoration:underline
 // - border - Border-bottom with custom width
@@ -369,7 +369,7 @@ $link-alternative-strategies: false;
 //
 // $link-alternative-strategies: (
 // 	border : (
-// 		default : 'border', 
+// 		default : 'border',
 // 		hover : 'border-inset'
 // 	),
 // );
@@ -415,7 +415,7 @@ $button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for da
 // BUILD YOUR OWN BUTTON
 // You can choose one strategy for every state!
 //
-// Available strategies: 
+// Available strategies:
 // - outline - Colored outline and text, background transparent
 // - background - Background solid, font contrasted.
 // - split - Background colored dim, font colored dark, based on same color
@@ -432,18 +432,18 @@ $button-alternative-strategies: false;
 //
 // $button-alternative-strategies: (
 // 	split : (
-// 		default : 'split', 
+// 		default : 'split',
 // 		hover : 'split-inverse'
 // 	),
 // );
 
 
 $button-states : (
-	primary: get-color(base, primary), 
-	secondary: get-color(base, secondary), 
-	success: get-color(state, success), 
-	warning: get-color(state, warning),  
-	error: get-color(state, error), 
+	primary: get-color(base, primary),
+	secondary: get-color(base, secondary),
+	success: get-color(state, success),
+	warning: get-color(state, warning),
+	error: get-color(state, error),
 );
 
 // Checkboxes / Selects

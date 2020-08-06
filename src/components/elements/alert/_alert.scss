@@ -1,25 +1,19 @@
 .alert {
-    padding: $gutter;
-    border-radius: $border-radius;
-    @if $alert-strategy == 'contrast' {
-        @include background-contrast($alert-default-color);
-    } @else if $alert-strategy == 'split' {
-        @include background-split-color($alert-default-color); 
-    }
-
-    *:last-child {
-        margin-bottom:0;
-    }
+  @include alert($alert-default-color);
 }
 
 @each $key, $value in map-get($colors, state) {
-    .alert--#{$key} {
-        @if $alert-strategy == 'contrast' {
-            @include background-contrast($value); 
-        } @else if $alert-strategy == 'split' {
-            @include background-split-color($value); 
-        } @else {
-            @error "You must provide a valid $alert-strategy value";
-        }
+  .alert--#{$key} {
+    @if $alert-strategy=='contrast' {
+      @include background-contrast($value);
     }
+
+    @else if $alert-strategy=='split' {
+      @include background-split-color($value);
+    }
+
+    @else {
+      @error "You must provide a valid $alert-strategy value";
+    }
+  }
 }
