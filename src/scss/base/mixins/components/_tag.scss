@@ -1,0 +1,14 @@
+@mixin tag($color) {
+  display:inline-block;
+  vertical-align: bottom;
+  padding: $tag-padding;
+  @include ritmo-font-size($tag-font-size);
+  border-radius: $border-radius;
+  font-weight:normal;
+
+  @if $tag-strategy == 'contrast' {
+      @include background-contrast($color);
+  } @else if $tag-strategy == 'split' {
+      @include background-split-color($color);
+  }
+}

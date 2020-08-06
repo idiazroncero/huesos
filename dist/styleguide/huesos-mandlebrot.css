@@ -1799,17 +1799,13 @@ textarea {
   font-size: 0.75019rem;
   line-height: 18px;
   line-height: 1.125rem;
-  background-color: #dce3db;
-  color: #1A1A19;
   border-radius: 0px;
-  margin-right: 0.5rem;
-  font-weight: normal; }
-  .right .tag, .right .selectr-tag {
-    margin-right: 0;
-    margin-left: 0.5rem; }
-  .center .tag, .center .selectr-tag {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem; }
+  font-weight: normal;
+  background-color: #dce3db;
+  color: #1A1A19; }
+
+.tag + .tag, .selectr-tag + .tag, .tag + .selectr-tag, .selectr-tag + .selectr-tag {
+  margin-left: 0.375rem; }
 
 a.tag, a.selectr-tag {
   cursor: pointer;
@@ -2315,6 +2311,10 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
     height: 100%;
     width: auto;
     vertical-align: bottom; }
+
+.icon--right {
+  margin-right: 0;
+  margin-left: 0.375rem; }
 
 .alert {
   padding: 1.5rem;

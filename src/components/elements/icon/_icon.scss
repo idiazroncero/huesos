@@ -1,14 +1,8 @@
 .icon {
-	font-weight:normal;
-	font-style:normal;
-	line-height:1;
-	height:1em;
-	font-size: 1em;
-	display:inline-block;
-	margin-right:$gutter / 4;
-	svg {
-		height:100%;
-		width:auto;
-		vertical-align:bottom;
-	}
+	@include icon();
+}
+
+.icon--right {
+	margin-right:0;
+	margin-left:$gutter / 4;
 }
