@@ -17,9 +17,11 @@ For a fine-tuning, you can also copy & paste `_huesos.scss` (you'll need to adap
 
 For example, it makes no sense to `@import selectr` if you're not using JS enhancements. Or you might rid of the `show-grid` debug scss, or all the `components` if you only want Huesos as a global reset, etc...
 
+Starting at version 2.0, you can even use Huesos as a __mixin-only library__: just skip the `@import` statements and use the mixins directly.
+
 <div class="alert">
 
-__Did you wonder why we don't use glob patterns to load scss files?__ Now you know: manually importing files is cumbersome but allows you to easily select which files to drop only by commenting them out.
+__Did you wonder why we don't use glob patterns to load scss files?__ Manually importing files is cumbersome but allows you to easily select which files to drop only by commenting them out.
 
 </div>
 

@@ -1,0 +1,61 @@
+@mixin grid($fallback: true, $grid-name: 'grid') {
+  @if $fallback {
+    .#{$grid-name} {
+      @include clearfix();
+      .#{$grid-name}-item {
+        float:left;
+        margin-bottom: $spacer;
+      }
+    }
+    @for $i from 2 through $max-grid-cols {
+      &.#{$grid-name}--#{$i}col {
+        .#{$grid-name}-item {
+            width: (100% / #{$i});
+            width: calc( (100% / #{$i}) -  ( ( #{$spacer} * ( #{$i} - 1 ) / #{$i} ) + 0.001rem ) );
+            margin-right:$spacer;
+            &:nth-child(#{$i}n) {
+                margin-right:0;
+            }
+        }
+      }
+    }
+  }
+  
+  @supports(display:grid) {
+    .#{$grid-name} {
+      display:grid;
+      grid-gap: $spacer;
+      &:before,
+      &:after {
+        display:none;
+      }
+      .#{$grid-name}-item {
+        float:none;
+        margin:0;
+        width:auto;
+      }
+    }
+
+    @for $i from 2 through $max-grid-cols {
+      &.#{$grid-name}--#{$i}col {
+        grid-template-columns: repeat( #{$i} , 1fr);
+      }
+    }
+
+    @each $point, $value in $breakpoints {
+      @for $i from 2 through $max-grid-cols {
+        &.#{$grid-name}--#{$point}--#{$i}col {
+          @include breakpoint($value) {
+              grid-template-columns: repeat( #{$i} , 1fr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin intrinsic-grid($min: $max-width / 4) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  grid-gap: $spacer;
+}

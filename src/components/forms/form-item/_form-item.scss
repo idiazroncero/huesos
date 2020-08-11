@@ -12,8 +12,8 @@
 	}
 
 	// Label position exception: radios and checkboxes.
-	input[type="checkbox"],
-	input[type="radio"] {
+	input[type="checkbox"]:not(.pseudo-checkbox),
+	input[type="radio"]:not(.pseudo-radio) {
 		+ label {
 			display:inline-block;
 		}
@@ -30,6 +30,18 @@
 	align-items: baseline;
 	label {
 			flex: 0 1 auto;
+	}
+}
+
+.form-item--checkbox,
+.form-item--radio {
+	display:flex;
+	align-items: center;
+	// If label as wrapper
+	label:first-child:last-child {
+		display:inherit;
+		align-items:inherit;
+		margin:0;
 	}
 }
 

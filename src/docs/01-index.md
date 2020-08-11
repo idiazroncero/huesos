@@ -11,7 +11,6 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 - [Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm.
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
-- [Palx](https://palx.jxnblk.com/) for creating a palette based on a single color and its shades.
 
 ### Huesos is (somewhat) opinionated
 
@@ -22,7 +21,7 @@ Huesos is not as opinionated as tools like Bootstrap or Foundation, but there ar
 
 
 - __Always use SVG__  
-  No icon fonts, no images. SVG FTW.
+  No icon fonts, no images. SVG rules.
 
 
 - __Vertical rhythm is important, but not mandatory__  
@@ -33,6 +32,9 @@ Huesos is not as opinionated as tools like Bootstrap or Foundation, but there ar
 - __Mobile-First__  
   We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don't set a `max-width`).  
   Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.
+
+- __(Almost) everyhting is born as a mixin__
+  Huesos provides a set of class names but its core functionality should be able to work the same without enforcing any namint strategy. That's why classes usually implement mixins, and (almost) all the functionality is abstracted to the mixin. 
 
 
 - __All separator borders are solid.__  

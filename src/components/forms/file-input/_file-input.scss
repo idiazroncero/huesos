@@ -20,6 +20,10 @@ input::-webkit-file-upload-button {
 	display:flex;
 	justify-content: space-between;
 	align-items:center;
+	input[type=file] {
+		white-space:nowrap;
+		flex:1;
+	}
 	&[data-file-input] {
 		border:none;
 		padding:0;
@@ -28,6 +32,7 @@ input::-webkit-file-upload-button {
 		}
 		label {
 			margin:0;
+			cursor:pointer;
 		}
 	}
 }

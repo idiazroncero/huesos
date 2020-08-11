@@ -9,6 +9,7 @@
 
 // The mixin library should always be imported in order to be able to use them
 // even if the components (classes) are not imported.
+@import "src/scss/base/mixins/layout/grid";
 @import "src/scss/base/mixins/layout/wrapper";
 @import "src/scss/base/mixins/components/alert";
 @import "src/scss/base/mixins/components/breadcrumb";

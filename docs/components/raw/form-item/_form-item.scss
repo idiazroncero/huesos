@@ -11,14 +11,6 @@
 		}
 	}
 
-	// Label position exception: radios and checkboxes.
-	input[type="checkbox"],
-	input[type="radio"] {
-		+ label {
-			display:inline-block;
-		}
-	}
-
 	&:last-child,
 	&:last-of-type {
 		margin-bottom:0;

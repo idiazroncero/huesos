@@ -1,77 +1,26 @@
-.grid {
-    @include clearfix();
-    .grid-item {
-        float:left;
-        margin-bottom: $spacer;
-    }
-}
+// --------
+// Defaults to 'grid' with fallback
+// --------
+@include grid();
 
-@if $max-grid-cols {
-    @for $i from 2 through $max-grid-cols {
-        .grid--#{$i}col {
-            .grid-item {
-                width: (100% / #{$i});
-                width: calc( (100% / #{$i}) -  ( ( #{$spacer} * ( #{$i} - 1 ) / #{$i} ) + 0.001rem ) );
-                margin-right:$spacer;
-                &:nth-child(#{$i}n) {
-                    margin-right:0;
-                }
-            }
-        }
-    }
-
-    @each $point, $value in $breakpoints {
-        @for $i from 2 through $max-grid-cols {
-            .grid--#{$point}--#{$i}col {
-                @include breakpoint($value) {
-                    .grid-item {
-                        width: (100% / #{$i});
-                        width: calc( (100% / #{$i}) -  ( ( #{$spacer} * ( #{$i} - 1 ) / #{$i} ) + 0.001rem ) );
-                        margin-right:$spacer;
-                        &:nth-child(#{$i}n) {
-                            margin-right:0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-@supports(display:grid) {
-    .grid {
-        display:grid;
-        grid-gap: $spacer;
-        &:before,
-        &:after {
-            display:none;
-        }
-        .grid-item {
-            float:none;
-            margin:0;
-            width:auto;
-        }
-    }
-
-    @for $i from 2 through $max-grid-cols {
-        .grid--#{$i}col {
-            grid-template-columns: repeat( #{$i} , 1fr);
-        }
-    }
-
-    @each $point, $value in $breakpoints {
-        @for $i from 2 through $max-grid-cols {
-            .grid--#{$point}--#{$i}col {
-                @include breakpoint($value) {
-                    grid-template-columns: repeat( #{$i} , 1fr);
-                }
-            }
-        }
-    }
-}
-
-
+// --------
+// MODIFIERS
+// --------
 .grid--gutterless {
     grid-gap: 0;
+}
+
+// --------
+// INTRINSIC GRID
+// --------
+.intrinsic-grid--small {
+    @include intrinsic-grid($max-width / 5)
+}
+
+.intrinsic-grid--medium {
+    @include intrinsic-grid($max-width / 4)
+}
+
+.intrinsic-grid--large {
+    @include intrinsic-grid($max-width / 3)
 }
