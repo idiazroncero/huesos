@@ -21,7 +21,7 @@
       @if $nav-uppercase {
         text-transform: uppercase;
       }
-      @include ritmo-font-size($nav-font-size);
+      @include font-size($nav-font-size);
       letter-spacing:$nav-letter-spacing;
     }
   }

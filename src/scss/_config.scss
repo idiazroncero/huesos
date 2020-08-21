@@ -269,32 +269,53 @@ $golden-ratio:     1.618 !default;
 // Choose your type-scale ratio
 $scale-ratio: $perfect-fourth !default;
 
-// Uses concise.css typeScale mixin to map font-sizes
-$h0-font-size: typeScale(7); // Extra big font
-$h1-font-size: typeScale(6);
-$h2-font-size: typeScale(5);
-$h3-font-size: typeScale(4);
-$h4-font-size: typeScale(3);
-$h5-font-size: typeScale(2); // Equals base-font-size
-$h6-font-size: typeScale(1);
-$h7-font-size: typeScale(0); // Extra small font
-
-// Set vetical rhythm using ritmo lines for headings
-// This might be needed to manually override automatic ritmo.scss calculations
-// For example: h1 and h2 legibility usually benefit from a reduced line height.
-$h1-ritmo-lines: 8;
-$h2-ritmo-lines: 6;
-$h3-ritmo-lines: 6;
-$h4-ritmo-lines: 4;
-$h5-ritmo-lines: 3;
-$h6-ritmo-lines: 2;
+// Uses concise.css typeScale mixin to map font-sizes.
+// Uses ritmo.scss lines for vertical rhythm adjustments.
+$font-sizes : (
+	h0: (
+		size: typeScale(7),
+		lines: 8,
+	),
+	h1: (
+		size: typeScale(6),
+		lines: 8,
+	),
+	h2: (
+		size: typeScale(5),
+		lines: 6,
+	),
+	h3: (
+		size: typeScale(4),
+		lines: 6,
+	),
+	h4: (
+		size: typeScale(3),
+		lines: 4,
+	),
+	base: (
+		size: typeScale(2),
+		lines: 4,
+	),
+	h5: (
+		size: typeScale(2),
+		lines: 3,
+	),
+	h6: (
+		size: typeScale(1),
+		lines: 3,
+	),
+	h7: (
+		size: typeScale(0),
+		lines: 2,
+	)
+);
 
 // Set font sizes of specific, size-aware elements
-$sub-font-size: $h6-font-size;
-$small-font-size: $h6-font-size;
-$figcaption-font-size: $h6-font-size;
-$label-font-size: $h6-font-size;
-$fieldset-font-size: $h5-font-size;
+$sub-font-size: 'h6';
+$small-font-size: 'h6';
+$figcaption-font-size: 'h6';
+$label-font-size: 'h6';
+$fieldset-font-size: 'h5';
 
 
 
@@ -403,7 +424,7 @@ $input-padding-lines: 2;
 
 // Buttons
 $button-font-family: $font-main;
-$button-font-size: $h6-font-size;
+$button-font-size: 'h6';
 $button-border-width: 2px;
 $button-ritmo-height: 6; // Ritmo line units
 $button-ritmo-padding-x: 3;
@@ -467,13 +488,13 @@ $disable-fieldset: false;
 $nav-font-weight: normal;
 $nav-uppercase: true;
 $nav-kill-link-decoration: true;
-$nav-font-size: $h5-font-size;
+$nav-font-size: 'h5';
 $nav-letter-spacing: $letter-spacing;
 $nav-item-gutter: $gutter;
 
 $toc-font-weight: normal;
 $toc-uppercase: false;
-$toc-font-size: $h5-font-size;
+$toc-font-size: 'base';
 $toc-kill-links: $nav-kill-link-decoration;
 
 $menu-x-padding: ritmo(2);
@@ -482,7 +503,7 @@ $menu-background-color: $gray-200;
 $menu-font-size: $nav-font-size;
 
 $breadcrumb-kill-links: true; // Kills decoration
-$breadcrumb-font-size: $h6-font-size; // False avoids setting this value
+$breadcrumb-font-size: 'h6'; // False avoids setting this value
 $breadcrumb-arrow: "›"; // Valid unicode character
 
 // ------
@@ -492,7 +513,7 @@ $breadcrumb-arrow: "›"; // Valid unicode character
 $tag-strategy: 'contrast'; // One of split or contrast
 $tag-default-color: $gray-300;
 $tag-padding: 0 $gutter / 4; // Shorthand
-$tag-font-size: $h6-font-size;
+$tag-font-size: 'h6';
 
 // ------
 // ALERTS

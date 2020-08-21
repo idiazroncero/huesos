@@ -52,7 +52,7 @@
     > a,
     > span {      
       padding:0 $menu-x-padding;
-      @include ritmo-font-size($menu-font-size, 6);
+      @include font-size($menu-font-size);
     }
 
     // Second-level
@@ -75,7 +75,7 @@
         }
         > a,
         > span {
-          @include ritmo-font-size(0.8 * $menu-font-size, 4);
+          font-size: 0.9em;
         }
       }
     }
@@ -98,7 +98,7 @@
           }
           > a,
           > span {
-            @include ritmo-font-size(0.66 * $menu-font-size, 4);
+            @include ritmo-font-size(0.66 * $base-font-size, 4); 
           }
         }
       }

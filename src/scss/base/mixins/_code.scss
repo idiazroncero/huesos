@@ -2,7 +2,7 @@
   display:block;
   margin-bottom: $spacer;
 
-  @include ritmo-font-size($base-font-size); // Keep it lower than $base-line-multi!!
+  @include font-size('base'); // Keep it lower than $base-line-multi!!
 
 
   @if $code-background != false or $code-block-background != false {

@@ -13,19 +13,19 @@
     } @else {
       text-transform: initial;
     }
-    @include ritmo-font-size($toc-font-size);
+    @include font-size($toc-font-size);
     ul,
     ol {
       margin: 0 0 $gutter / 2 0;
       li{
         // Don't let "bold" pass through here
         font-weight: normal;
-        @include ritmo-font-size(0.9 * $toc-font-size);
+        @include ritmo-font-size(0.9 * $base-font-size, 4); 
       }
       ul,
       ol {
         li {
-          @include ritmo-font-size(0.7 * $toc-font-size);
+          @include ritmo-font-size(0.7 * $base-font-size, 3); 
         }
       }
     }

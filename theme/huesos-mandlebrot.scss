@@ -26,7 +26,7 @@ h2,
 }
 
 .repo a {
-    @include ritmo-font-size($h7-font-size);
+    @include font-size('h7');
 }
 
 h1 .header-title {
@@ -327,7 +327,7 @@ h1.poly-fluid-sizing {
 }
 
 .my-minititle {
-    @include minititle($h6-font-size, lighter, true, 1em)
+    @include minititle('h6', lighter, true, 1em)
 }
 
 .text-border {

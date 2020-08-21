@@ -7,7 +7,7 @@
 		@if $label-as-minititle {
 			@include minititle($label-font-size)
 		} @else {
-			@include ritmo-font-size($label-font-size)
+			@include font-size($label-font-size)
 		}
 	}
 

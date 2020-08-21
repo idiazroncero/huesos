@@ -1,7 +1,7 @@
 // Global reset
 .button {
 	@include form-reset-button();
-	@include ritmo-font-size($button-font-size, $base-line-multi);
+	@include ritmo-font-size(font-size($button-font-size), $base-line-multi);
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
 	vertical-align:bottom;
@@ -10,8 +10,8 @@
 
 	// Icons inside buttons
 	.icon {
-		@include ritmo-font-size($h6-font-size);
-		height: $h6-font-size;
+		font-size: font-size(h6);
+		height: font-size(h6);
 		line-height:1;
 		svg {
 			fill:currentColor;

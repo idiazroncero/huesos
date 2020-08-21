@@ -80,7 +80,7 @@
 
 .selectr-tag {
 	@extend .tag;
-	@include ritmo-font-size($h5-font-size, 4);
+	@include font-size('h5');
 	padding-right: $gutter;
 	margin-bottom: $gutter / 4;
 	cursor: default;
@@ -249,7 +249,7 @@
 	font-weight: normal;
 	margin:0;
 	padding: ritmo($input-padding-lines);
-	@include ritmo-font-size($h5-font-size);
+	@include font-size('h5');
 }
 
 .selectr-options.optgroups > .selectr-option {

@@ -11,6 +11,6 @@ figure {
 
 figcaption {
 	display:block;
-	@include ritmo-font-size($figcaption-font-size, $base-line-multi);
+	@include ritmo-font-size(font-size($figcaption-font-size), $base-line-multi);
 	text-align: $figcaption-align;
 }

@@ -2,7 +2,7 @@
   display:inline-block;
   vertical-align: bottom;
   padding: $tag-padding;
-  @include ritmo-font-size($tag-font-size);
+  @include ritmo-font-size(font-size($tag-font-size), 3);
   border-radius: $border-radius;
   font-weight:normal;
 
