@@ -1,5 +1,5 @@
-@mixin nav() {
-  @if $nav-kill-links {
+@mixin nav($direction: 'vertical', $item-gutter: $nav-item-gutter, $kill-link-decoration: $nav-kill-link-decoration) {
+  @if $kill-link-decoration {
     a {
       @include kill-link-decoration();
     }
@@ -8,14 +8,21 @@
     padding:0;
     margin:0;
     list-style-type:none;
+    @if $direction == 'horizontal' {
+      display:flex;
+      flex-wrap:wrap;
+    }
     li {
-      margin: 0;
+      @if $direction == 'horizontal' {
+        padding: 0 $item-gutter / 2;
+      }
+      margin-bottom:0;
       font-weight: $nav-font-weight;
       @if $nav-uppercase {
         text-transform: uppercase;
       }
       @include ritmo-font-size($nav-font-size);
-      letter-spacing:$nav-spacing;
+      letter-spacing:$nav-letter-spacing;
     }
   }
 }

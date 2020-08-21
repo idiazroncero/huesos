@@ -466,17 +466,18 @@ $disable-fieldset: false;
 
 $nav-font-weight: normal;
 $nav-uppercase: true;
-$nav-kill-links: true;
-$nav-font-size: $base-font-size;
-$nav-spacing: $letter-spacing;
+$nav-kill-link-decoration: true;
+$nav-font-size: $h5-font-size;
+$nav-letter-spacing: $letter-spacing;
+$nav-item-gutter: $gutter;
 
 $toc-font-weight: normal;
 $toc-uppercase: false;
 $toc-font-size: $h5-font-size;
-$toc-kill-links: $nav-kill-links;
+$toc-kill-links: $nav-kill-link-decoration;
 
 $menu-x-padding: ritmo(2);
-$menu-kill-links: true; // Kills decoration
+$menu-kill-links: $nav-kill-link-decoration; // Kills decoration
 $menu-background-color: $gray-200;
 $menu-font-size: $nav-font-size;
 
