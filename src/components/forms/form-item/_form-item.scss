@@ -27,9 +27,10 @@
 
 .form-item--inline {
 	display:flex;
-	align-items: baseline;
+	align-items: center;
 	label {
-			flex: 0 1 auto;
+		flex: 0 1 auto;
+		line-height: 1.2;
 	}
 }
 

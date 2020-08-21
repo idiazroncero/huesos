@@ -6,6 +6,6 @@
     max-width: $max-width;
     @include block-align($layout-align);
     @if $layout-padding {
-        padding: $layout-padding;
+        padding: 0 layout-padding;
     }
 }
