@@ -1,58 +1,67 @@
 @function bold($item: &) {
-    @if $font-secondary != false { 
-        @if index($font-secondary-items, $item) != null {
-            @return $font-secondary-bold;
-        } @else {
-            @return $font-main-bold;
-        }
-    } @else {
-        @return $font-main-bold;
+  @if $font-secondary !=false {
+    @if index($font-secondary-items, $item) !=null {
+      @return $font-secondary-bold;
     }
+
+    @else {
+      @return $font-main-bold;
+    }
+  }
+
+  @else {
+    @return $font-main-bold;
+  }
 }
 
 
 @mixin minititle($size: 'h6', $weight: $font-main-bold, $uppercase: true, $letter-spacing: $letter-spacing) {
-	@include font-size($size);
-	font-weight: $weight;
-	@if $uppercase {
-		text-transform:uppercase;
-	}
-	letter-spacing: $letter-spacing;
+  @include ritmo-font-size(font-size($size), 4);
+  font-weight: $weight;
+
+  @if $uppercase {
+    text-transform: uppercase;
+  }
+
+  letter-spacing: $letter-spacing;
 }
 
 
 @mixin text-border($border-color, $border-width, $text-color: false) {
-    @if $text-color {
-        color: $text-color;
+  @if $text-color {
+    color: $text-color;
+  }
+
+  text-shadow: -$border-width -$border-width 0 $border-color,
+  $border-width -$border-width 0 $border-color,
+  -$border-width $border-width 0 $border-color,
+  $border-width $border-width 0 $border-color;
+
+  @at-root {
+    @supports (-webkit-text-stroke: $border-width $border-color) {
+      & {
+        text-stroke: $border-width $border-color;
+        -webkit-text-stroke: ($border-width / 2) $border-color;
+        text-shadow: none;
+      }
     }
-    text-shadow: 
-        -$border-width -$border-width 0 $border-color,  
-        $border-width -$border-width 0 $border-color,
-        -$border-width $border-width 0 $border-color,
-        $border-width $border-width 0 $border-color;
-    
-    @at-root {
-        @supports (-webkit-text-stroke: $border-width $border-color) {
-            & {
-                text-stroke: $border-width $border-color;
-                -webkit-text-stroke: ( $border-width / 2 ) $border-color;
-                text-shadow:none;
-            }
-        }
-    }
+  }
 }
 
 @mixin font-size($size, $smaller-size: false, $breakpoint: false) {
-    @if $breakpoint and $smaller-size {
-        @include ritmo-font-size(map-get(map-get($font-sizes, $smaller-size), 'size'), map-get(map-get($font-sizes, $smaller-size), 'lines'));
-        @include breakpoint($breakpoint) {
-            @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
-        }
-    } @else {
-        @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
+  @if $breakpoint and $smaller-size {
+    @include ritmo-font-size(map-get(map-get($font-sizes, $smaller-size), 'size'), map-get(map-get($font-sizes, $smaller-size), 'lines'));
+
+    @include breakpoint($breakpoint) {
+      @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
     }
+  }
+
+  @else {
+    @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
+  }
 }
 
 @function font-size($size) {
-    @return map-get(map-get($font-sizes, $size), 'size');
+  @return map-get(map-get($font-sizes, $size), 'size');
 }

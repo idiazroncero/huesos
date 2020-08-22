@@ -12,11 +12,10 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 - [Every Layout](https://every-layout.dev/) for clever and arithmetic layouts.
 - [BEM](http://getbem.com/introduction/) for naming conventions
 - [Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm.
-- [Palx](https://palx.jxnblk.com/) for creating a palette based on a single color and its shades.
 
 It is "somehow opinionated", meaning that is neither a Bootstrap-like complete set of closed and almost zero-config components nor a bare-bones css-reset and starterkit.
 
-Browse [the docs and living syle guide](https://idiazroncero.github.io/huesos/) for further information.
+Browse [the docs and living syle guide](https://huesos.idiazroncero.com) for further information.
 
 ## NPM scripts
 
@@ -55,21 +54,13 @@ Browse [the docs and living syle guide](https://idiazroncero.github.io/huesos/) 
 
 ## Add to an existing project
 
-### As a submodule (avoid it!)
-
-`git submodule https://github.com/idiazroncero/huesos`
-
-It is advisable to create a local branch in order to separate your developments from the origin/master branch and yet be able to merge the changes to the master into your project.
-
-### As a npm/yarn package (recommended)
-
-Use `yarn add huesos` to install huesos as a dependency of your project.
+Use `npm install huesos` or `yarn add huesos` to install huesos as a dependency of your project.
 
 Copy `src/scss/_config.scss` to your project and tweak it.
 
 On your SCSS main file, add the following lines before your code (where `path/to/your/config` points to your local copy of `src/scss/_config.scss`):
 
-````
+````scss
 @import "path/or/alias/to/node_modules/huesos/dependencies";
 @import "path/to/your/config";
 @import "path/or/alias/to/node_modules/huesos/huesos";

@@ -511,8 +511,8 @@ caption {
   text-align: left;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em; }
@@ -764,98 +764,308 @@ figcaption {
   line-height: 1.5rem;
   text-align: left; }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 38px;
   font-size: 2.36859rem;
   line-height: 36px;
   line-height: 2.25rem; }
   @media (min-width: 960px) {
-    h1, .h1 {
+    h1,
+    .h1 {
       font-size: 51px;
       font-size: 3.15733rem;
       line-height: 48px;
       line-height: 3rem; } }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 28px;
   font-size: 1.77689rem;
   line-height: 36px;
   line-height: 2.25rem; }
   @media (min-width: 960px) {
-    h2, .h2 {
+    h2,
+    .h2 {
       font-size: 38px;
       font-size: 2.36859rem;
       line-height: 36px;
       line-height: 2.25rem; } }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 21px;
   font-size: 1.333rem;
   line-height: 24px;
   line-height: 1.5rem; }
   @media (min-width: 960px) {
-    h3, .h3 {
+    h3,
+    .h3 {
       font-size: 28px;
       font-size: 1.77689rem;
       line-height: 36px;
       line-height: 2.25rem; } }
 
-h4, .h4 {
-  font-size: 1.333rem; }
+h4,
+.h4 {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
 
-h5, .h5 {
-  font-size: 1rem; }
+h5,
+.h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
 
-h6, .h6 {
-  font-size: 0.75019rem; }
+h6,
+.h6 {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
 
-h1, .h1,
-h2, .h2 {
+h1,
+.h1,
+h2,
+.h2 {
   letter-spacing: -0.03em; }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   color: #146D56;
   font-weight: bold; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
-  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small {
     color: inherit;
     vertical-align: 0; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-  .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a,
+  .h1 a,
+  .h2 a,
+  .h3 a,
+  .h4 a,
+  .h5 a,
+  .h6 a {
     text-decoration: none; }
-    h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus,
+    h1 a:hover, h1 a:focus,
+    h2 a:hover,
+    h2 a:focus,
+    h3 a:hover,
+    h3 a:focus,
+    h4 a:hover,
+    h4 a:focus,
+    h5 a:hover,
+    h5 a:focus,
+    h6 a:hover,
+    h6 a:focus,
     .h1 a:hover,
-    .h1 a:focus, .h2 a:hover, .h2 a:focus, .h3 a:hover, .h3 a:focus, .h4 a:hover, .h4 a:focus, .h5 a:hover, .h5 a:focus, .h6 a:hover, .h6 a:focus {
+    .h1 a:focus,
+    .h2 a:hover,
+    .h2 a:focus,
+    .h3 a:hover,
+    .h3 a:focus,
+    .h4 a:hover,
+    .h4 a:focus,
+    .h5 a:hover,
+    .h5 a:focus,
+    .h6 a:hover,
+    .h6 a:focus {
       text-decoration: none;
       border-bottom: none; }
-      h1 a:hover:after, h1 a:focus:after, h2 a:hover:after, h2 a:focus:after, h3 a:hover:after, h3 a:focus:after, h4 a:hover:after, h4 a:focus:after, h5 a:hover:after, h5 a:focus:after, h6 a:hover:after, h6 a:focus:after,
+      h1 a:hover:after, h1 a:focus:after,
+      h2 a:hover:after,
+      h2 a:focus:after,
+      h3 a:hover:after,
+      h3 a:focus:after,
+      h4 a:hover:after,
+      h4 a:focus:after,
+      h5 a:hover:after,
+      h5 a:focus:after,
+      h6 a:hover:after,
+      h6 a:focus:after,
       .h1 a:hover:after,
-      .h1 a:focus:after, .h2 a:hover:after, .h2 a:focus:after, .h3 a:hover:after, .h3 a:focus:after, .h4 a:hover:after, .h4 a:focus:after, .h5 a:hover:after, .h5 a:focus:after, .h6 a:hover:after, .h6 a:focus:after {
+      .h1 a:focus:after,
+      .h2 a:hover:after,
+      .h2 a:focus:after,
+      .h3 a:hover:after,
+      .h3 a:focus:after,
+      .h4 a:hover:after,
+      .h4 a:focus:after,
+      .h5 a:hover:after,
+      .h5 a:focus:after,
+      .h6 a:hover:after,
+      .h6 a:focus:after {
         display: none; }
-  h1 a, h1 a:link, h2 a, h2 a:link, h3 a, h3 a:link, h4 a, h4 a:link, h5 a, h5 a:link, h6 a, h6 a:link,
+  h1 a, h1 a:link,
+  h2 a,
+  h2 a:link,
+  h3 a,
+  h3 a:link,
+  h4 a,
+  h4 a:link,
+  h5 a,
+  h5 a:link,
+  h6 a,
+  h6 a:link,
   .h1 a,
-  .h1 a:link, .h2 a, .h2 a:link, .h3 a, .h3 a:link, .h4 a, .h4 a:link, .h5 a, .h5 a:link, .h6 a, .h6 a:link {
+  .h1 a:link,
+  .h2 a,
+  .h2 a:link,
+  .h3 a,
+  .h3 a:link,
+  .h4 a,
+  .h4 a:link,
+  .h5 a,
+  .h5 a:link,
+  .h6 a,
+  .h6 a:link {
     color: #146D56; }
-  h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited,
-  .h1 a:visited, .h2 a:visited, .h3 a:visited, .h4 a:visited, .h5 a:visited, .h6 a:visited {
+  h1 a:visited,
+  h2 a:visited,
+  h3 a:visited,
+  h4 a:visited,
+  h5 a:visited,
+  h6 a:visited,
+  .h1 a:visited,
+  .h2 a:visited,
+  .h3 a:visited,
+  .h4 a:visited,
+  .h5 a:visited,
+  .h6 a:visited {
     color: #146D56; }
-  h1 a:focus, h1 a:hover, h2 a:focus, h2 a:hover, h3 a:focus, h3 a:hover, h4 a:focus, h4 a:hover, h5 a:focus, h5 a:hover, h6 a:focus, h6 a:hover,
+  h1 a:focus, h1 a:hover,
+  h2 a:focus,
+  h2 a:hover,
+  h3 a:focus,
+  h3 a:hover,
+  h4 a:focus,
+  h4 a:hover,
+  h5 a:focus,
+  h5 a:hover,
+  h6 a:focus,
+  h6 a:hover,
   .h1 a:focus,
-  .h1 a:hover, .h2 a:focus, .h2 a:hover, .h3 a:focus, .h3 a:hover, .h4 a:focus, .h4 a:hover, .h5 a:focus, .h5 a:hover, .h6 a:focus, .h6 a:hover {
+  .h1 a:hover,
+  .h2 a:focus,
+  .h2 a:hover,
+  .h3 a:focus,
+  .h3 a:hover,
+  .h4 a:focus,
+  .h4 a:hover,
+  .h5 a:focus,
+  .h5 a:hover,
+  .h6 a:focus,
+  .h6 a:hover {
     color: #146D56; }
-  h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active,
-  .h1 a:active, .h2 a:active, .h3 a:active, .h4 a:active, .h5 a:active, .h6 a:active {
+  h1 a:active,
+  h2 a:active,
+  h3 a:active,
+  h4 a:active,
+  h5 a:active,
+  h6 a:active,
+  .h1 a:active,
+  .h2 a:active,
+  .h3 a:active,
+  .h4 a:active,
+  .h5 a:active,
+  .h6 a:active {
     color: #146D56; }
-  h1 a:after, h1 a:link:after, h1 a:visited:after, h1 a:active:after, h2 a:after, h2 a:link:after, h2 a:visited:after, h2 a:active:after, h3 a:after, h3 a:link:after, h3 a:visited:after, h3 a:active:after, h4 a:after, h4 a:link:after, h4 a:visited:after, h4 a:active:after, h5 a:after, h5 a:link:after, h5 a:visited:after, h5 a:active:after, h6 a:after, h6 a:link:after, h6 a:visited:after, h6 a:active:after,
+  h1 a:after, h1 a:link:after, h1 a:visited:after, h1 a:active:after,
+  h2 a:after,
+  h2 a:link:after,
+  h2 a:visited:after,
+  h2 a:active:after,
+  h3 a:after,
+  h3 a:link:after,
+  h3 a:visited:after,
+  h3 a:active:after,
+  h4 a:after,
+  h4 a:link:after,
+  h4 a:visited:after,
+  h4 a:active:after,
+  h5 a:after,
+  h5 a:link:after,
+  h5 a:visited:after,
+  h5 a:active:after,
+  h6 a:after,
+  h6 a:link:after,
+  h6 a:visited:after,
+  h6 a:active:after,
   .h1 a:after,
   .h1 a:link:after,
   .h1 a:visited:after,
-  .h1 a:active:after, .h2 a:after, .h2 a:link:after, .h2 a:visited:after, .h2 a:active:after, .h3 a:after, .h3 a:link:after, .h3 a:visited:after, .h3 a:active:after, .h4 a:after, .h4 a:link:after, .h4 a:visited:after, .h4 a:active:after, .h5 a:after, .h5 a:link:after, .h5 a:visited:after, .h5 a:active:after, .h6 a:after, .h6 a:link:after, .h6 a:visited:after, .h6 a:active:after {
+  .h1 a:active:after,
+  .h2 a:after,
+  .h2 a:link:after,
+  .h2 a:visited:after,
+  .h2 a:active:after,
+  .h3 a:after,
+  .h3 a:link:after,
+  .h3 a:visited:after,
+  .h3 a:active:after,
+  .h4 a:after,
+  .h4 a:link:after,
+  .h4 a:visited:after,
+  .h4 a:active:after,
+  .h5 a:after,
+  .h5 a:link:after,
+  .h5 a:visited:after,
+  .h5 a:active:after,
+  .h6 a:after,
+  .h6 a:link:after,
+  .h6 a:visited:after,
+  .h6 a:active:after {
     display: none; }
-  h1 a:focus:after, h1 a:hover:after, h2 a:focus:after, h2 a:hover:after, h3 a:focus:after, h3 a:hover:after, h4 a:focus:after, h4 a:hover:after, h5 a:focus:after, h5 a:hover:after, h6 a:focus:after, h6 a:hover:after,
+  h1 a:focus:after, h1 a:hover:after,
+  h2 a:focus:after,
+  h2 a:hover:after,
+  h3 a:focus:after,
+  h3 a:hover:after,
+  h4 a:focus:after,
+  h4 a:hover:after,
+  h5 a:focus:after,
+  h5 a:hover:after,
+  h6 a:focus:after,
+  h6 a:hover:after,
   .h1 a:focus:after,
-  .h1 a:hover:after, .h2 a:focus:after, .h2 a:hover:after, .h3 a:focus:after, .h3 a:hover:after, .h4 a:focus:after, .h4 a:hover:after, .h5 a:focus:after, .h5 a:hover:after, .h6 a:focus:after, .h6 a:hover:after {
+  .h1 a:hover:after,
+  .h2 a:focus:after,
+  .h2 a:hover:after,
+  .h3 a:focus:after,
+  .h3 a:hover:after,
+  .h4 a:focus:after,
+  .h4 a:hover:after,
+  .h5 a:focus:after,
+  .h5 a:hover:after,
+  .h6 a:focus:after,
+  .h6 a:hover:after {
     display: none; }
 
 .font-secondary,
@@ -871,8 +1081,8 @@ dt {
 .minititle {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em; }
@@ -882,18 +1092,16 @@ kbd,
 samp,
 var {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  display: inline;
-  vertical-align: baseline;
+  font-size: 0.75em;
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap;
-  background-color: #FCD3B1;
+  background-color: #ebefea;
   color: #1A1A19;
-  padding: 0.1875rem 0.375rem;
-  border-radius: 10px; }
+  padding: 0 0.375rem;
+  border-radius: 5px; }
 
 .code-block, code.language-sass,
 code.language-scss,
@@ -919,7 +1127,10 @@ pre code {
 
 .text-wrapper {
   max-width: 75ch; }
-  .text-wrapper h1, .text-wrapper h2, .text-wrapper h3, .text-wrapper h4 {
+  .text-wrapper h1,
+  .text-wrapper h2,
+  .text-wrapper h3,
+  .text-wrapper h4 {
     margin-top: 3rem; }
   .text-wrapper section,
   .text-wrapper article {
@@ -953,7 +1164,8 @@ dfn {
 mark {
   background-color: #D2C435;
   color: #FFFFFF;
-  padding: 2px; }
+  padding: 0 0.375rem;
+  display: inline-block; }
 
 .max-ch {
   max-width: 75ch; }
@@ -962,33 +1174,33 @@ small,
 .small {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h1 small {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h2 small {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 h3 small {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 sub,
 sup {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -1075,8 +1287,8 @@ fieldset {
   fieldset legend {
     font-size: 16px;
     font-size: 1rem;
-    line-height: 18px;
-    line-height: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em; }
@@ -1090,8 +1302,8 @@ fieldset.fieldset--disabled {
     margin-bottom: 1.5rem;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 18px;
-    line-height: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em; }
@@ -1103,8 +1315,8 @@ fieldset.fieldset--disabled {
     display: block;
     font-size: 12px;
     font-size: 0.75019rem;
-    line-height: 18px;
-    line-height: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em; }
@@ -1532,8 +1744,8 @@ textarea {
     text-transform: uppercase;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 18px;
-    line-height: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.1em; }
 
 .nav--horizontal ul {
@@ -1592,8 +1804,8 @@ textarea {
       padding: 0 0.75rem;
       font-size: 16px;
       font-size: 1rem;
-      line-height: 18px;
-      line-height: 1.125rem; }
+      line-height: 24px;
+      line-height: 1.5rem; }
     .menu > li > ul {
       display: none;
       position: absolute;
@@ -2920,8 +3132,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
 .selectr-tag {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   padding-right: 1.5rem;
   margin-bottom: 0.375rem;
   cursor: default;
@@ -3084,8 +3296,8 @@ a.button--error:hover:link, a.button--error:hover:active, a.button--error:hover:
   padding: 0.75rem;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 .selectr-options.optgroups > .selectr-option {
   padding-left: 25px; }
@@ -3374,17 +3586,19 @@ code.code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  padding: 3rem 2rem 2rem 2rem; }
   .pen-preview .preview-tag {
     position: absolute;
     top: 0.75rem;
-    right: 0.75rem;
-    left: 0.75rem;
+    right: 2rem;
+    left: 2rem;
     margin: 0;
     display: flex; }
     .pen-preview .preview-tag h3 {
       margin: 0 auto 0 0;
-      display: inline-block; }
+      display: inline-block;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
     .pen-preview .preview-tag .tag, .pen-preview .preview-tag .selectr-tag {
       margin: 0 0 0 0.75rem; }
   .pen-preview.pen-preview--medium {
@@ -3903,8 +4117,8 @@ h1.poly-fluid-sizing {
 .my-minititle {
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: lighter;
   text-transform: uppercase;
   letter-spacing: 1em; }

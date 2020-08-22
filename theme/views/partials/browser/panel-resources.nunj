@@ -2,10 +2,10 @@
 {% for collection in entity.resources().items() %}
 {% if collection.size %}
 <div class="browser-resources" id="browser-{{ entity.id }}-panel-{{ collection.name }}">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
-        {# <div class="FileBrowser-selectWrapper">
+  {# <div class="FileBrowser-selectWrapper">
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 {% for resource in collection.items() %}
@@ -14,32 +14,32 @@
             </select>
         </div> #}
 
-    {% for resource in collection.items() %}
-        <div class="filebrowser-item{% if loop.index == 1 %} is-active{% endif %}" id="file-{{ resource.id }}" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>{{ resource.path | componentPath }}</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>{{ resource.stat.size | fileSize(0) }}</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        {% if resource.isBinary and resource.isImage %}
-                            <img src="{{ path(frctl.theme.urlFromRoute('component-resource', {handle: compHandle, asset:resource.base} )) }}">
-                        {% elif not resource.isBinary %}
-                            <code class="code-block code code--lang-{{ resource.lang }}">
-                                <pre>{{ resource.contents | highlight(resource.lang) }}</pre>
-                            </code>
-                        {% else %}
-                            <p><em>Previews are currently not available for this file type.</em></p>
-                        {% endif %}
-                </li>
-            </ul>
-        </div>
-    {% endfor %}
+  {% for resource in collection.items() %}
+  <div class="filebrowser-item{% if loop.index == 1 %} is-active{% endif %}" id="file-{{ resource.id }}"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>{{ resource.path | componentPath }}</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>{{ resource.stat.size | fileSize(0) }}</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
+        {% if resource.isBinary and resource.isImage %}
+        <img
+          src="{{ path(frctl.theme.urlFromRoute('component-resource', {handle: compHandle, asset:resource.base} )) }}">
+        {% elif not resource.isBinary %}
+<code class="code-block code code--lang-{{ resource.lang }}"><pre>{{ resource.contents | highlight(resource.lang) }}</pre></code>
+        {% else %}
+        <p><em>Previews are currently not available for this file type.</em></p>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+  {% endfor %}
 </div>
 {% endif %}
 {% endfor %}

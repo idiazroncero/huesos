@@ -12,80 +12,82 @@ $sidebar-width: 300px;
 
 h1,
 .h1 {
-    color: $primary-700;
+  color: $primary-700;
 }
 
 h2,
 .h2 {
-    color: $primary-600;
+  color: $primary-600;
 }
 
 .header,
 .header h1 {
-    margin:0;
+  margin: 0;
 }
 
 .repo a {
-    @include font-size('h7');
+  @include font-size('h7');
 }
 
 h1 .header-title {
-    @include kill-link($primary-500);
-    font-weight:900;
+  @include kill-link($primary-500);
+  font-weight: 900;
 }
 
 
 .content {
-    margin:0 auto;
+  margin: 0 auto;
 }
 
 .wrapper__sidebar {
-    background-color: get-color(background, light);
-    position:fixed;
-    padding: $gutter * 2;
-    top:0;
-    left:0;
-    bottom:0;
-    overflow:auto;
-    width:$sidebar-width;
-    .nav {
-        .is-current {
-            background-color: $primary-200;
-            display:inline-block;
-            a {
-                @include set-link(
-                    contrast-color($primary-200),
-                    contrast-color($primary-200),
-                    contrast-color($primary-200),
-                    contrast-color($primary-200),
-                    false,
-                    false
-                )
-            }
-            padding: 0 $gutter / 4;
-        }
+  background-color: get-color(background, light);
+  position: fixed;
+  padding: $gutter * 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  width: $sidebar-width;
+
+  .nav {
+    .is-current {
+      background-color: $primary-200;
+      display: inline-block;
+
+      a {
+        @include set-link(contrast-color($primary-200),
+          contrast-color($primary-200),
+          contrast-color($primary-200),
+          contrast-color($primary-200),
+          false,
+          false)
+      }
+
+      padding: 0 $gutter / 4;
     }
+  }
 }
 
 .body {
-    margin-left:$sidebar-width;
-    padding: $gutter 0;
+  margin-left: $sidebar-width;
+  padding: $gutter 0;
 }
 
 .logo {
-    font-weight:lighter;
+  font-weight: lighter;
 }
 
 code.language-sass,
 code.language-scss,
 code.language-html,
 code.code {
-    width: 100%;
-    @extend .code-block;
+  width: 100%;
+  @extend .code-block;
 }
+
 .preview-iframe {
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -95,241 +97,257 @@ code.code {
 
 .pen-header,
 .doc__header {
-    display:flex;
-    flex-wrap:wrap;
-    align-items:flex-end;
-    margin-bottom: $gutter;
-    h1 {
-        margin-bottom: 0;
-        display:inline-block;
-        margin-right: $gutter;
-        min-width:100%;
-    }
-    .doc__subtitle {
-        margin-top: ritmo(2);
-        width:100%;
-        font-family: $font-secondary;
-    }
-    .tag{
-        margin-top: ritmo(1);
-    }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: $gutter;
+
+  h1 {
+    margin-bottom: 0;
+    display: inline-block;
+    margin-right: $gutter;
+    min-width: 100%;
+  }
+
+  .doc__subtitle {
+    margin-top: ritmo(2);
+    width: 100%;
+    font-family: $font-secondary;
+  }
+
+  .tag {
+    margin-top: ritmo(1);
+  }
 }
 
 .browser-controls,
 .browser-notes,
 .browser-code {
-    @include separator();
-} 
+  @include separator();
+}
 
 .pen-preview {
-    height: ritmo(4 * 12);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative; 
-    .preview-tag {
-        position:absolute;
-        top: $gutter / 2;
-        right: $gutter / 2;
-        left: $gutter / 2;
-        margin:0;
-        display:flex;
-        h3 {
-            margin:0 auto 0 0;
-            display:inline-block;
-        }
-        .tag {
-            margin: 0 0 0 $gutter / 2;
-        }
+  height: ritmo(4 * 12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: ritmo($card-padding) ritmo($card-padding / 1.5) ritmo($card-padding / 1.5) ritmo($card-padding / 1.5);
+
+  .preview-tag {
+    position: absolute;
+    top: $gutter / 2;
+    right: ritmo($card-padding / 1.5);
+    left: ritmo($card-padding / 1.5);
+    margin: 0;
+    display: flex;
+
+    h3 {
+      margin: 0 auto 0 0;
+      display: inline-block;
+      font-family: $font-main;
     }
-    &.pen-preview--medium {
-        height: ritmo(4 * 36);
+
+    .tag {
+      margin: 0 0 0 $gutter / 2;
     }
-    &.pen-preview--full {
-        top: 0;
-        position: fixed;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        bottom: 0;
-        background: #fff;
-        height:100%;
-    }
+  }
+
+  &.pen-preview--medium {
+    height: ritmo(4 * 36);
+  }
+
+  &.pen-preview--full {
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    bottom: 0;
+    background: #fff;
+    height: 100%;
+  }
 }
 
 .iframe__inner {
-    display:flex;
-    flex-direction:column;
-    justify-content:center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
 .filebrowser-item {
-    ul {
-        list-style:none;
-    }
+  ul {
+    list-style: none;
+  }
 }
 
 .item--has-children {
-    cursor:pointer;
-    > .item__label:after {
-        content:"▿";
-        display:inline-block;
-        margin-left: $gutter / 4;
-        font-size: 0.66em;
-        line-height: 0.66em;
-        vertical-align:middle;
-        position:relative;
-        top: -0.1em;
-    }
+  cursor: pointer;
+
+  >.item__label:after {
+    content: "▿";
+    display: inline-block;
+    margin-left: $gutter / 4;
+    font-size: 0.66em;
+    line-height: 0.66em;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+  }
 }
 
 .item--has-children--open {
-    > .item__label:after {
-        transform: rotate(180deg);
-        top: 0.1em;
-    }
+  >.item__label:after {
+    transform: rotate(180deg);
+    top: 0.1em;
+  }
 }
 
 
 // Function
 
 .shade {
-    background-color: shade( get-color(base, primary), 7% );
+  background-color: shade(get-color(base, primary), 7%);
 }
 
 .tint {
-    background-color: tint( get-color(base, secondary), 7% );
+  background-color: tint(get-color(base, secondary), 7%);
 }
 
 .contrast-color {
-    background-color: $danger-600;
+  background-color: $danger-600;
 }
 
 .contrasted-element {
-    color: contrast-color($danger-600);
+  color: contrast-color($danger-600);
 }
 
 .contrasted-element--overriden {
-    color: contrast-color($danger-600, $info-900, $secondary-200);
+  color: contrast-color($danger-600, $info-900, $secondary-200);
 }
 
 .background-contrast {
-    background-color: $gray-900;
-    @include background-contrast($gray-900);
+  background-color: $gray-900;
+  @include background-contrast($gray-900);
 }
+
 .background-contrast--typography {
-    background-color: $primary-900;
-    @include background-contrast($primary-900, true);
+  background-color: $primary-900;
+  @include background-contrast($primary-900, true);
 }
 
 .background-split {
-    @include background-split-color($danger-500);
+  @include background-split-color($danger-500);
 }
 
 .background-split--links {
-    @include background-split-color($danger-500, $include-links: true);
+  @include background-split-color($danger-500, $include-links: true);
 }
 
 .background-split--custom {
-    @include background-split-color($secondary-500, 15%, 66%, true);
+  @include background-split-color($secondary-500, 15%, 66%, true);
 }
 
 .background-split--custom--inverse {
-    @include background-split-color($secondary-500, 15%, 66%, true, true);
-};
+  @include background-split-color($secondary-500, 15%, 66%, true, true);
+}
+
+;
 
 .contrast-links {
-    background-color: $info-900;
-    @include contrast-links($info-900);
+  background-color: $info-900;
+  @include contrast-links($info-900);
 }
 
 .invert-links {
-    @include invert-links();
+  @include invert-links();
 }
 
 .hide-me {
-    @include hidden()
+  @include hidden()
 }
 
-.float-parent {    
-    @include clearfix();
-    outline: 1px solid red;
+.float-parent {
+  @include clearfix();
+  outline: 1px solid red;
 }
+
 .float-element {
-    float:left;
+  float: left;
 }
 
 .right-align {
-    width:300px;
-    @include block-align(right);
+  width: 300px;
+  @include block-align(right);
 }
 
 .parent {
-    position:relative;
-    width:500px;
-    height:500px;
-    background-color: $primary-400;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: $primary-400;
 }
+
 .layer {
-    @include layer(5px, 10px, 15px, 20px, 5);
-    background-color: $danger-200;
+  @include layer(5px, 10px, 15px, 20px, 5);
+  background-color: $danger-200;
 }
 
 .item-with-default-separator {
-    @include separator();
+  @include separator();
 }
+
 .item-with-custom-separator {
-    @include separator(8, 6px, green );
+  @include separator(8, 6px, green);
 }
 
 .image-fit {
-    width:400px;
-    height:400px;
-    @include image-fit('height');
+  width: 400px;
+  height: 400px;
+  @include image-fit('height');
 }
 
 a.my-link {
-    @include set-link-decoration('border', 'underline');
+  @include set-link-decoration('border', 'underline');
 }
 
 a.set-link {
-    @include set-link(
-        red,
-        blue,
-        purple,
-        green,
-        'border',
-        'underline'
-    )
+  @include set-link(red,
+    blue,
+    purple,
+    green,
+    'border',
+    'underline'
+  )
 }
 
 a.kill-link {
-    @include kill-link(purple)
+  @include kill-link(purple)
 }
 
 a.kill-my-decoration {
-    @include kill-link-decoration();
+  @include kill-link-decoration();
 }
 
 a.my-very-special-link {
-    @include set-link-decoration('border', 'border-inset');
+  @include set-link-decoration('border', 'border-inset');
 }
 
 a.my-very-special-link--modified {
-    @include kill-link-decoration('border', 'border-inset');
+  @include kill-link-decoration('border', 'border-inset');
 }
 
 h1.poly-fluid-sizing {
-    $map: (400px: 6px, 700px: 30px, 1100px: 35px, 1200px: 60px);
-    @include poly-fluid-sizing('font-size', $map);
-    line-height:1;
+  $map: (400px: 6px, 700px: 30px, 1100px: 35px, 1200px: 60px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1;
 }
 
 .my-minititle {
-    @include minititle('h6', lighter, true, 1em)
+  @include minititle('h6', lighter, true, 1em)
 }
 
 .text-border {
-    @include text-border($primary-800, 3px, transparent);
+  @include text-border($primary-800, 3px, transparent);
 }

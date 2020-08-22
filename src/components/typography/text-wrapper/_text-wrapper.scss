@@ -1,23 +1,30 @@
 .text-wrapper {
-	max-width: $max-ch;
-	h1, h2, h3, h4 {
-		margin-top: $gutter * 2;
-	}
-	section,
-	article {
-		margin-bottom: $gutter * 2;
-	}
-	// Except if it is the first child of the text...
-	h1:first-child, 
-	h2:first-child, 
-	h3:first-child, 
-	h4:first-child {
-		margin-top:0;
-	}
-	// The last p, section of article features no margin-bottom
-	p:last-child,
-	section:last-child,
-	article:last-child {
-		margin-bottom:0;
-	}
+  max-width: $max-ch;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: $gutter * 2;
+  }
+
+  section,
+  article {
+    margin-bottom: $gutter * 2;
+  }
+
+  // Except if it is the first child of the text...
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
+    margin-top: 0;
+  }
+
+  // The last p, section of article features no margin-bottom
+  p:last-child,
+  section:last-child,
+  article:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -230,9 +230,9 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-background: $secondary-300;
+$code-background: $gray-200;
 $code-block-background: $primary-900; // You might want to apply a different bg to block elements using .code-block
-$code-border-radius: 10px;
+$code-border-radius: 5px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.1em;
@@ -246,7 +246,7 @@ $list-padding: 0;
 $max-ch: 75ch;
 
 // Mark padding
-$mark-padding: 2px;
+$mark-padding: 0 $spacer / 4;
 
 
 
@@ -298,7 +298,7 @@ $font-sizes : (
 	),
 	h5: (
 		size: typeScale(2),
-		lines: 3,
+		lines: 4,
 	),
 	h6: (
 		size: typeScale(1),

@@ -8,7 +8,7 @@
         {{ renderError }}
     {% else %}
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="{{ previewUrl }}"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"

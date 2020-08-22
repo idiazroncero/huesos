@@ -1,5 +1,6 @@
 mark {
-	background-color: get-color(text, mark);
-	color: contrast-color(get-color(text, mark));
-	padding: $mark-padding;
+  background-color: get-color(text, mark);
+  color: contrast-color(get-color(text, mark));
+  padding: $mark-padding;
+  display: inline-block;
 }
