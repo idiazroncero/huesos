@@ -1,7 +1,7 @@
 @mixin breadcrumb() {
   @include inline-list();
   @if $breadcrumb-font-size != false {
-    @include font-size($breadcrumb-font-size);
+    @include ritmo-font-size(font-size($breadcrumb-font-size), $base-line-multi);
   }
   @if $breadcrumb-kill-links {
     a {

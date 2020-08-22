@@ -1908,8 +1908,8 @@ textarea {
   flex-wrap: wrap;
   font-size: 12px;
   font-size: 0.75019rem;
-  line-height: 18px;
-  line-height: 1.125rem; }
+  line-height: 24px;
+  line-height: 1.5rem; }
   .breadcrumb li {
     list-style-type: none;
     display: inline-block; }
