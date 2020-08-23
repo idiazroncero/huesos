@@ -60,7 +60,7 @@ h6,
 
   @if $heading-decorated-links == false {
     a {
-      @include kill-link(get-color(text, heading));
+      @include kill-link-decoration();
     }
   }
 }
