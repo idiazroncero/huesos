@@ -59,7 +59,6 @@ h1 .header-title {
           contrast-color($primary-200),
           contrast-color($primary-200),
           contrast-color($primary-200),
-          false,
           false)
       }
 
@@ -308,17 +307,11 @@ code.code {
   @include image-fit('height');
 }
 
-a.my-link {
-  @include set-link-decoration('border', 'underline');
-}
-
 a.set-link {
   @include set-link(red,
     blue,
     purple,
-    green,
-    'border',
-    'underline'
+    green
   )
 }
 
@@ -330,12 +323,8 @@ a.kill-my-decoration {
   @include kill-link-decoration();
 }
 
-a.my-very-special-link {
-  @include set-link-decoration('border', 'border-inset');
-}
-
 a.my-very-special-link--modified {
-  @include kill-link-decoration('border', 'border-inset');
+  @include kill-link-decoration();
 }
 
 h1.poly-fluid-sizing {

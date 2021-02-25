@@ -1,124 +1,123 @@
 @function tint($color, $dilution: 50) {
-	$white: rgba(255, 255, 255, 1);
-	@if $color == "transparent" {
-	  $color: rgba(0, 0, 0, 0); }
-	@if $dilution < 0 or $dilution > 100 {
-	  @warn "Dilution #{$dilution} must be between 0 and 100"; }
-	$tint-color: mix($color, $white, 100 - $dilution);
-	@return $tint-color; 
+  $white: rgba(255, 255, 255, 1);
+  @if $color == "transparent" {
+    $color: rgba(0, 0, 0, 0); }
+  @if $dilution < 0 or $dilution > 100 {
+    @warn "Dilution #{$dilution} must be between 0 and 100"; }
+  $tint-color: mix($color, $white, 100 - $dilution);
+  @return $tint-color; 
 }
   
 @function shade($color, $dilution: 50) {
-	$black: rgba(0, 0, 0, 1);
-	@if $color == "transparent" {
-		$color: rgba(0, 0, 0, 0); }
-	@if $dilution < 0 or $dilution > 100 {
-		@warn "Dilution #{$dilution} must be between 0 and 100"; }
-	$shade-color: mix($color, $black, 100 - $dilution);
-	@return $shade-color; 
+  $black: rgba(0, 0, 0, 1);
+  @if $color == "transparent" {
+    $color: rgba(0, 0, 0, 0); }
+  @if $dilution < 0 or $dilution > 100 {
+    @warn "Dilution #{$dilution} must be between 0 and 100"; }
+  $shade-color: mix($color, $black, 100 - $dilution);
+  @return $shade-color; 
 }
 
 @function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
-	@if (lightness($color) > $lightness-threshold) {
-		@return $dark; // Lighter backgorund, return dark color
-	} @else {
-		@return $light; // Darker background, return light color
-	}
+  @if (lightness($color) > $lightness-threshold) {
+    @return $dark; // Lighter backgorund, return dark color
+  } @else {
+    @return $light; // Darker background, return light color
+  }
 }
 
 @function darken-color($color) {
-	@return shade($color, $color-modify-ratio);
+  @return shade($color, $color-modify-ratio);
 }
 
 @function lighten-color($color) {
-	@return tint($color, $color-modify-ratio);
+  @return tint($color, $color-modify-ratio);
 }
 
 @function get-color($color, $value) {
-	$curmap : map-get($colors, $color);
-	@if type-of($curmap) == map {
-		$map-exists: map-has-key($curmap, $value);
-		@if $map-exists == true {
-			@return map-get($curmap, $value);
-		} @else  {
-			@error 'Parece que el color no existe. Revisa tu get-color()';
-		}
-	} @else {
-		@error 'Parece que el mapa de color no existe. Revisa tu get-color()';
-	}
+  $curmap : map-get($colors, $color);
+  @if type-of($curmap) == map {
+    $map-exists: map-has-key($curmap, $value);
+    @if $map-exists == true {
+      @return map-get($curmap, $value);
+    } @else  {
+      @error 'Parece que el color no existe. Revisa tu get-color()';
+    }
+  } @else {
+    @error 'Parece que el mapa de color no existe. Revisa tu get-color()';
+  }
 }
 
 @mixin invert-links() {
-	a {
-		@include set-link(
-			$inverse-link-color,
-			$inverse-link-visited,
-			$inverse-link-hover,
-			$inverse-link-active,
-			$inverse-link-strategy-default,
-			$inverse-link-strategy-hover
-		)
-	}
+  a {
+    @include set-link(
+      $inverse-link-color,
+      $inverse-link-visited,
+      $inverse-link-hover,
+      $inverse-link-active,
+      $link-decoration   
+    )
+  }
 }
 
 @mixin contrast-links($color) {
-	@if (lightness($color) < $lightness-threshold) { // 50 is too low
-		@include invert-links();
-	}
+  @if (lightness($color) < $lightness-threshold) { // 50 is too low
+    @include invert-links();
+  }
 }
 
 @mixin background-contrast($color, $include-typography: false) {
 
-	background-color: $color;
-	color: contrast-color($color);
-	
-	@include contrast-links($color);
+  background-color: $color;
+  color: contrast-color($color);
+  
+  @include contrast-links($color);
 
-	@if $include-typography {
-		h1,.h1,
-		h2,.h2,
-		h3,.h3,
-		h4,.h4,
-		h5,.h5
-		h6,.h6 {
-			color:inherit;
-		}
-	}
+  @if $include-typography {
+    h1,.h1,
+    h2,.h2,
+    h3,.h3,
+    h4,.h4,
+    h5,.h5
+    h6,.h6 {
+      color:inherit;
+    }
+  }
 }
 
 @mixin background-split-color(
-		$color, 
-		$lighten-amount: $lighten-split-ratio, 
-		$darken-amount: $darken-split-ratio, 
-		$include-links: false,
-		$invert: false
-	) {
-	@if $invert {
-		background-color: shade($color, $lighten-amount);
-		color: tint($color, $darken-amount);
-		@if $include-links {
-			a {
-				@include set-link(
-					tint($color, $darken-amount),
-					tint($color, $darken-amount),
-					$color,
-					tint($color, $darken-amount)
-				)
-			} 
-		}
-	} @else {
-		background-color: tint($color, $lighten-amount);
-		color: shade($color, $darken-amount);
-		@if $include-links {
-			a {
-				@include set-link(
-					shade($color, $darken-amount),
-					shade($color, $darken-amount),
-					$color,
-					shade($color, $darken-amount)
-				)
-			} 
-		}
-	}
+    $color, 
+    $lighten-amount: $lighten-split-ratio, 
+    $darken-amount: $darken-split-ratio, 
+    $include-links: false,
+    $invert: false
+  ) {
+  @if $invert {
+    background-color: shade($color, $lighten-amount);
+    color: tint($color, $darken-amount);
+    @if $include-links {
+      a {
+        @include set-link(
+          tint($color, $darken-amount),
+          tint($color, $darken-amount),
+          $color,
+          tint($color, $darken-amount)
+        )
+      } 
+    }
+  } @else {
+    background-color: tint($color, $lighten-amount);
+    color: shade($color, $darken-amount);
+    @if $include-links {
+      a {
+        @include set-link(
+          shade($color, $darken-amount),
+          shade($color, $darken-amount),
+          $color,
+          shade($color, $darken-amount)
+        )
+      } 
+    }
+  }
 
 }

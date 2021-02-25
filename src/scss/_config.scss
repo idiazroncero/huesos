@@ -8,30 +8,30 @@
 
 // We recommend to import here a palette .scss partial to avoid bloat.
 // Hand-picked colors from Khroma:
-$primary: #146d56;
-$secondary: #f7a57c;
-$background:#d0d7ce;
+$primary: #F3C852;
+$secondary: #641CE8;
+$background:#E3E1DB;
 
 // Semantic colors and variations from Eva.design
-$primary-100: #CFF7DD;
-$primary-200: #A1F0C5;
-$primary-300: #6BD3A4;
-$primary-400: #40A782;
-$primary-500: #146D56;
-$primary-600: #0E5D50;
-$primary-700: #0A4E4A;
-$primary-800: #063D3F;
-$primary-900: #032E34;
+$primary-100: #E7D1FD;
+$primary-200: #CCA3FC;
+$primary-300: #AC75F8;
+$primary-400: #9052F1;
+$primary-500: #641CE8;
+$primary-600: #4D14C7;
+$primary-700: #390EA7;
+$primary-800: #270886;
+$primary-900: #1B056F;
 
-$secondary-100: #FEF4E5;
-$secondary-200: #FEE6CB;
-$secondary-300: #FCD3B1;
-$secondary-400: #FAC19C;
-$secondary-500: #F7A57C;
-$secondary-600: #D47B5A;
-$secondary-700: #B1563E;
-$secondary-800: #8F3627;
-$secondary-900: #761F17;
+$secondary-100: #FEF9DC;
+$secondary-200: #FDF1BA;
+$secondary-300: #FBE697;
+$secondary-400: #F7DA7C;
+$secondary-500: #F3C852;
+$secondary-600: #D0A53B;
+$secondary-700: #AE8329;
+$secondary-800: #8C641A;
+$secondary-900: #744E0F;
 
 $success-100: #CDFACD;
 $success-200: #9DF6A6;
@@ -196,7 +196,7 @@ $courier: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida S
 
 // Global variables. It is good practice (performance & design) to use a maximum of two typefaces.
 $font-main: $system;
-$font-secondary: $garamond; // Set to false to only only one font
+$font-secondary: $system; // Set to false to only only one font
 $font-monospace: $courier;
 
 // Setting custom values for bold and light (100, 500, etc) allow for more precise mapping
@@ -352,50 +352,34 @@ $box-shadow: 2px 2px 2px 0px rgba($black, 0.1);
 // LINKS
 // ------
 // This values are used by set-link() to get your linking strategy
-// There are four link strategies available.
 // ------
 
-// Only for $link-strategy:border
-$link-border-color: $primary-300;
-$link-border-color-hover: $primary-500; // You can set a different color on :hover
-$link-border-width: ritmo(1);
+$link: true; // Set to false if you don't want decorated links.
 
-// Only for $link-strategy:border-inset
-$link-border-inset-color: $primary-100;
-$link-border-inset-color-hover: $primary-100;
-$link-border-inset-width: 0.25em;
-$link-border-inset-width-hover: 1em;
+// Link textcolors
+$link-color: $primary-500;
+$link-visited: $primary-400;
+$link-hover: $primary-800;
+$link-active: $primary-800;
 
-// Link colors
-$link-color: $primary-700;
-$link-visited: $primary-600;
-$link-hover: $primary-600;
-$link-active: $primary-900;
-
-// BUILD YOUR OWN LINK
-// You can choose one strategy for every state!
-//
-// Available strategies:
-// - false - No styling
-// - underline - Normal, text-decoration:underline
-// - border - Border-bottom with custom width
-// - border-inset - Pseudo-element that fakes a border bottom that grows from bottom to top
-//
-$link-strategy-default: "border-inset";
-$link-strategy-hover: "border-inset";
-
-$link-alternative-strategies: false;
-
-// Example of $link-alternative-strategies:
-//
-// $link-alternative-strategies: (
-// 	border : (
-// 		default : 'border',
-// 		hover : 'border-inset'
-// 	),
-// );
+// Link decoration data on default and hover states
+$link-decoration: (
+	underline: (
+		default: true,
+		hover: true,
+	),
+  color: (
+		default: $primary-100,
+		hover: $primary-500,
+	),
+	width: (
+		default: 0.2em,
+		hover: 0.2em,
+	)
+);
 
 // Inverse link colors and strategy (for contrasted backgrounds)
+// TODO: wat?
 $inverse-link-color: $primary-100;
 $inverse-link-visited: $primary-100;
 $inverse-link-hover: $primary-200;

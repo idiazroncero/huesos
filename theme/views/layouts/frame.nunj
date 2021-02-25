@@ -11,8 +11,7 @@
             <h1 class="logo h1">
                 <a href="{{ path('/') }}" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>

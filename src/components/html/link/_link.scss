@@ -1,33 +1,24 @@
-a {
-	@include set-link();
-	&.link--inactive {
-		@include kill-link();
-	}
-	// TODO: is this consistent enough?
-	&.disabled {
-		@include kill-link(get-color(state, muted));
-	}
-	&.link--inverted {
-		@include set-link(
-			$inverse-link-color,
-			$inverse-link-visited, 
-			$inverse-link-hover,
-			$inverse-link-active,
-			$inverse-link-strategy-default,
-			$inverse-link-strategy-hover
-		);
-	}
-}
-
-
-// Link alternative styles
-@if $link-alternative-strategies {
-	@each $strategy, $states in $link-alternative-strategies {
-		.link--#{$strategy} {
-			@include set-link(
-				$strategy-default: map-get($states, default),
-				$strategy-hover: map-get($states, hover)
-			)
-		}
-	}
+@if $link {
+  a {
+    text-decoration-skip-ink: all;
+    @include set-link();
+    
+    // &.link--inactive {
+    // 	@include kill-link();
+    // }
+    // // TODO: is this consistent enough?
+    // &.disabled {
+    // 	@include kill-link(get-color(state, muted));
+    // }
+    // &.link--inverted {
+    // 	@include set-link(
+    // 		$inverse-link-color,
+    // 		$inverse-link-visited, 
+    // 		$inverse-link-hover,
+    // 		$inverse-link-active,
+    // 		$inverse-link-strategy-default,
+    // 		$inverse-link-strategy-hover
+    // 	);
+    // }
+  }
 }

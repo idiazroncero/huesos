@@ -1,13 +1,8 @@
 Applies to `<a>` elements.
 
-As in `<button>`, you can define a separate appearance for each link state (default and hover). We decided to decouple both states in order to give more room for custom styling and combinations, instead of enforcing a default hover state for every different style.
+As in `<button>`, you can define a separate appearance for each link state (default and hover).
 
-These are the available strategies: 
-- __false__ - No styling
-- __underline__ - The old-style, text-decoration:underline
-- __border__ - Border-bottom with custom width
-- __border-inset__ - Pseudo-element that fakes a border bottom that grows from bottom to top
-- __mark__ - Background-color (as in a `<mark>` element)
+Previous styles like `border`, `mark` or `border-inset` have been deprecated in favor of the newer `text-decoration` syntax
 
 Use this values to define a `$link-strategy-default` and a `$link-strategy-hover`.
 

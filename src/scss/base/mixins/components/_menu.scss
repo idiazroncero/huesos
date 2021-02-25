@@ -38,14 +38,7 @@
       white-space:nowrap;
 
       @if $menu-kill-links {
-        @include set-link(
-          get-color(text, primary),
-          get-color(text, primary),
-          get-color(text, primary),
-          get-color(text, primary),
-          false,
-          false
-        )
+        @include kill-link(get-color(text, primary));
       }
     }
 

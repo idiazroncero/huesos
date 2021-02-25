@@ -1,165 +1,93 @@
-@mixin link-underline(){
-	text-decoration:underline;
-	background-color: transparent;
-	border-bottom: none;
-	padding-left: 0;
-	padding-right: 0;
-	&:after { display:none }
-}
+@mixin set-link-decoration($link-decoration-data: $link-decoration) {
+  $underline : map-get($link-decoration-data, 'underline');
+  $color : map-get($link-decoration-data, 'color');
+  $width : map-get($link-decoration-data, 'width');
 
-@mixin link-border($color: $link-border-color, $width: $link-border-width){
-	text-decoration:none;
-	background-color: transparent;
-	border-bottom: $width solid $color; 
-	padding-left: 0;
-	padding-right: 0;
-	&:after { display:none }
-}
+  @if map-get($underline, 'default') {
+    text-decoration:underline;
+    text-decoration-thickness: map-get($width, 'default');
+    text-decoration-color: map-get($color, 'default');
+  } @else if not map-get($underline, 'default') {
+    text-decoration:none;
+  } @else {
+    @error "La estructura del mapa $link-data no es correcta";
+  }
 
-@mixin link-border-inset($color: $link-border-inset-color, $width: $link-border-inset-width){
-	text-decoration:none;
-	background-color: transparent;
-	border-bottom: none; 
-	padding-left: 0;
-	padding-right: 0;
-
-	position:relative;
-	z-index:0;
-	&:after {
-		content:"";
-		display:block; // Explicit override
-		position:absolute;
-		bottom: 0;
-		left:0;
-		width: 100%;
-		height: $width;
-		background-color: $color;
-		z-index:-1;
-	}
-}
-
-
-@mixin set-link-decoration(
-		$link-strategy-default : $link-strategy-default,
-		$link-strategy-hover : $link-strategy-hover
-	) {
-	@if $link-strategy-default == false {
-		text-decoration:none;
-	} @else if $link-strategy-default == 'underline' {
-		@include link-underline();
-	} @else if $link-strategy-default == 'border' {
-		@include link-border();
-	} @else if $link-strategy-default == 'border-inset' {
-		@include link-border-inset();
-	} @else {
-		@error "No se ha definido un valor correcto para $link-strategy-default";
-	}
-
-	&:hover,
-	&:focus {
-		@if $link-strategy-hover == false {
-			text-decoration:none;
-			border-bottom: none;
-			&:after {
-				display:none;
-			}
-		} @else if $link-strategy-hover == 'underline' {
-			@include link-underline();
-		} @else if $link-strategy-hover == 'border' {
-			@include link-border($link-border-color-hover);
-		} @else if $link-strategy-hover == 'border-inset' {
-			@include link-border-inset($link-border-inset-color-hover, $link-border-inset-width-hover);
-		} @else {
-			@error "No se ha definido un valor correcto para $link-strategy-hover";
-		}	
-	}
+  &:hover,
+  &:focus {
+    @if not map-get($underline, 'hover') {
+      text-decoration:none;
+    } @else if map-get($underline, 'hover') {
+      text-decoration:underline;
+      text-decoration-thickness: map-get($width, 'hover');
+      text-decoration-color: map-get($color, 'hover');
+    } @else {
+      @error "La estructura del mapa $link-data no es correcta";
+    }
+  }
 }
 
 
 @mixin set-link(
-	$base: $link-color,
-    $visited: $link-visited,
-    $hover: $link-hover,
-	$active: $link-active,
-	$strategy-default: $link-strategy-default,
-	$strategy-hover: $link-strategy-hover
-	) {
-	& {
-		@include set-link-decoration($strategy-default, $strategy-hover);
-	}
-	&, 
-	&:link {
-		color: $base;
-	}
-	&:visited {
-		color: $visited;
-	}
-	&:focus,
-	&:hover { // Tratamos :hover y :focus siempre indistintamente
-		color: $hover;
-	}
-	&:active {
-		color: $active;
-	}
+  $base: $link-color,
+  $visited: $link-visited,
+  $hover: $link-hover,
+  $active: $link-active,
+  $link-decoration-data: $link-decoration
+) {
+  & {
+    @if $link-decoration-data {
+      @include set-link-decoration($link-decoration-data);
+    }
+    @else if $link-decoration-data == false {
+      @include kill-link-decoration();
+    }
+  }
+
+  &, 
+  &:link {
+    color: $base;
+  }
+  &:visited {
+    color: $visited;
+  }
+  &:focus,
+  &:hover { // Tratamos :hover y :focus siempre indistintamente
+    color: $hover;
+  }
+  &:active {
+    color: $active;
+  }
 }
 
 @mixin kill-link($color: get-color(text, primary)) {
-	@include set-link($color, $color, $color, $color, false, false);
-	@include kill-link-decoration();
+  @include set-link($color, $color, $color, $color, false);
+  @include kill-link-decoration();
 }
 
-@mixin kill-link-decoration(
-	$strategy-default: $link-strategy-default,
-	$strategy-hover: $link-strategy-hover
-	) {
-	&, 
-	&:link,
-	&:visited,
-	&:active {
-		@if $strategy-default == underline {
-			text-decoration:none;
-		} @else if $strategy-default == border {
-			border-bottom: none; 
-		} @else if $strategy-default == 'border-inset' {
-			&:after {
-				display:none;
-			}
-		}
-	}
-	&:focus,
-	&:hover {
-		@if $strategy-hover == underline {
-			text-decoration:none;
-		} @else if $strategy-hover == border {
-			border-bottom: none; 
-		} @else if $strategy-hover == 'border-inset' {
-			&:after {
-				display:none;
-			}
-		}
-	} 
+@mixin kill-link-decoration() {
+  &, 
+  &:link,
+  &:visited,
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  } 
 }
 
 
-@mixin kill-link-button(
-		$strategy-default: $link-strategy-default,
-		$strategy-hover: $link-strategy-hover
-	) {
-	&, 
-	&:link,
-	&:visited,
-	&:active {
-		text-decoration:none;
-		&:after {
-			display:none;
-		}
-	}
-	&:focus,
-	&:hover {
-		text-decoration:none;
-		&:after {
-			display:none;
-		}
-	} 
+@mixin kill-link-button() {
+  &, 
+  &:link,
+  &:visited,
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration:none;
+    &:after {
+      display:none;
+    }
+  } 
 }
 
