@@ -10,6 +10,8 @@
 ::after {
 	background-repeat: no-repeat; /* 1 */
 	box-sizing: inherit; /* 2 */
+	margin: 0;
+	padding: 0;
 }
 
 // 1. Add text decoration inheritance in all browsers (opinionated).
@@ -31,8 +33,10 @@ html {
 	-ms-text-size-adjust: 100%; /* 3 */
 	-webkit-text-size-adjust: 100%; /* 3 */
 	font-family: $font-main;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
 	font-weight: $normal;
-	color: get-color(text, primary);
+	color: var(--color-text-body);
 	scroll-behavior: smooth;
 }
 
@@ -44,24 +48,8 @@ html {
 // 	}
 // }
 
-// Sets vertical rhythm on the html element
-// More info: https://ritmo.marzeelabs.org/
-
-@include ritmo-baseline();
-
 // All margins are set as margin-bottom to avoid collapsing margins
 
-p, h1, h2, h3, h4, h5, h6,
-ul, ol, dl, 
-article, aside, footer, header, nav, section,
-figure, audio, video,
-hr,
-table, caption, figcaption,
-fieldset,
-details, details[open] summary,
-pre {
-	margin: 0 0 $spacer 0;
-}
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
    ========================================================================== */
@@ -144,19 +132,15 @@ a {
 
 /*
  * Remove the text shadow on text selections (opinionated).
- * HUESOS: Use the same as <mark> elements
- * 1. Restore the coloring undone by defining the text shadow (opinionated).
  */
 
 ::-moz-selection {
-	background-color: get-color(text, mark); /* 1 */
-	color: contrast-color(get-color(text, mark)); /* 1 */
+	background-color: var(--color-text-mark); /* 1 */
 	text-shadow: none;
 }
 
 ::selection {
-	background-color: get-color(text, mark); /* 1 */
-	color: contrast-color(get-color(text, mark)); /* 1 */
+	background-color: var(--color-text-mark); /* 1 */
 	text-shadow: none;
 }
 

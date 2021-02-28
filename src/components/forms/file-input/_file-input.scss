@@ -10,8 +10,9 @@ input[type=file] {
 }
 
 input::-webkit-file-upload-button {
-	margin-right: ritmo($input-padding-lines);
-	padding-right: ritmo($input-padding-lines);
+	// TODO: 
+	// margin-right: ritmo($input-padding-lines);
+	// padding-right: ritmo($input-padding-lines);
 	border-right: $input-border-width solid $input-border-color;
 }
 

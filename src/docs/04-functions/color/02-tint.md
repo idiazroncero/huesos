@@ -13,14 +13,14 @@ Sass Function extracted from compass.  Lightens the `$color` by mixing it with w
 
 ```scss
 .tint {
-   tint(get-color(base, secondary), 7%)
+   tint(var(--color-secondary), 7%)
 }
 ```
 
 <div class="bg-base-secondary p">
-   get-color(base, secondary)
+   var(--color-secondary)
 </div>
 
 <div class="tint p invert">
-   tint(get-color(base, secondary), 7%)
+   tint(var(--color-secondary), 7%)
 </div>

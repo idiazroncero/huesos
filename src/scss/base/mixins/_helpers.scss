@@ -47,10 +47,10 @@
 	} 
 }
 
-@mixin separator($ritmo-lines:$spacer-lines, $border-width:$separator-width, $border-color:$separator-color) {
-	margin-bottom: ritmo($ritmo-lines);
+@mixin separator($border-width:$separator-width, $border-color:var(--color-utility-separator)) {
+	margin-top: $spacer;
 	@if $separators == true {
-		@include ritmo-bottom-border( $border-width, $ritmo-lines )
+		border-bottom-width: $border-width;
 		border-bottom-style: solid; 
 		border-bottom-color: $border-color;
 	}

@@ -1,16 +1,16 @@
 img {
-	display:inline-block;
-	border-style: none;
-	max-width:100%;
-	height:auto;
+  display:inline-block;
+  border-style: none;
+  max-width:100%;
+  height:auto;
 }
 
 figure {
-	display:inline-block;
+  display:inline-block;
 }
 
 figcaption {
-	display:block;
-	@include ritmo-font-size(font-size($figcaption-font-size), $base-line-multi);
-	text-align: $figcaption-align;
+  display:block;
+  @include font-size($figcaption-font-size);
+  text-align: $figcaption-align;
 }

@@ -1,8 +1,14 @@
+dl {
+  dd + dt {
+    margin-top: $spacer;
+  }
+}
+
 dt {
-	font-weight: bold();
-	margin: 0;
+  font-weight: $font-main-bold;
+  margin: 0;
 }
 
 dd {
-	margin: 0 0 $spacer $spacer;
+  margin-left: $gutter;
 }

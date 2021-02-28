@@ -1,24 +1,42 @@
-@if $link {
-  a {
-    text-decoration-skip-ink: all;
-    @include set-link();
-    
-    // &.link--inactive {
-    // 	@include kill-link();
-    // }
-    // // TODO: is this consistent enough?
-    // &.disabled {
-    // 	@include kill-link(get-color(state, muted));
-    // }
-    // &.link--inverted {
-    // 	@include set-link(
-    // 		$inverse-link-color,
-    // 		$inverse-link-visited, 
-    // 		$inverse-link-hover,
-    // 		$inverse-link-active,
-    // 		$inverse-link-strategy-default,
-    // 		$inverse-link-strategy-hover
-    // 	);
-    // }
+a {
+
+  --link-color: $link-color;
+  --link-visited-color: $link-visited;
+  --link-focus-color: $link-hover;
+  --link-hover-color: $link-hover;
+  --link-active-color: $link-active;
+
+  text-decoration-skip-ink: all;
+
+  &, 
+  &:link {
+    color: var(--link);
+  }
+  &:visited {
+    color: var(--link-visited-color);
+  }
+  &:focus {
+    color: var(--link-focus-color);
+  }
+  &:hover {
+    color: var(--link-hover-color);
+  }
+  &:active {
+    color: var(--link-active-color);
+  }
+
+  @if $link-decoration {
+    @include set-link-decoration($link-decoration);
+  }
+  @else if $link-decoration == false {
+    @include kill-link-decoration();
+  }
+
+  &.link--inactive {
+  	@include kill-link(currentColor);
+  }
+
+  &.link--disabled {
+  	@include kill-link(var(--color-state-disabled));
   }
 }

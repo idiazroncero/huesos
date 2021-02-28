@@ -4,7 +4,7 @@
 		border-style:solid;
 		border-color: $card-border-color;
 	} @else {
-		padding: ritmo($card-padding);
+		// TODO: padding: ritmo($card-padding);
 	}
 	border-radius: $card-border-radius;
 	@if $card-shadow == true {

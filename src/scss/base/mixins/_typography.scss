@@ -1,20 +1,3 @@
-@function bold($item: &) {
-  @if $font-secondary !=false {
-    @if index($font-secondary-items, $item) !=null {
-      @return $font-secondary-bold;
-    }
-
-    @else {
-      @return $font-main-bold;
-    }
-  }
-
-  @else {
-    @return $font-main-bold;
-  }
-}
-
-
 @mixin minititle($size: 'h6', $weight: $font-main-bold, $uppercase: true, $letter-spacing: $letter-spacing) {
   @include ritmo-font-size(font-size($size), 4);
   font-weight: $weight;
@@ -26,6 +9,11 @@
   letter-spacing: $letter-spacing;
 }
 
+@mixin fluid-font-size($min-value, $max-value, $min-vw: $fluid-typography-min-width, $max-vw: $fluid-typography-max-width) {
+  $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+  font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+}
 
 @mixin text-border($border-color, $border-width, $text-color: false) {
   @if $text-color {
@@ -49,19 +37,31 @@
 }
 
 @mixin font-size($size, $smaller-size: false, $breakpoint: false) {
-  @if $breakpoint and $smaller-size {
-    @include ritmo-font-size(map-get(map-get($font-sizes, $smaller-size), 'size'), map-get(map-get($font-sizes, $smaller-size), 'lines'));
-
-    @include breakpoint($breakpoint) {
-      @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
+  @if $smaller-size {
+    font-size: font-size($smaller-size);
+    @include fluid-font-size(font-size($smaller-size), font-size($size));
+    @if $breakpoint {
+      @include breakpoint($breakpoint) {
+        font-size: font-size($size);
+        @include fluid-font-size(font-size($smaller-size), font-size($size));
+      }
+    }
+    @else {
+      @include breakpoint($small) {
+        font-size: font-size($size);
+        @include fluid-font-size(font-size($smaller-size), font-size($size));
+      }
     }
   }
-
   @else {
-    @include ritmo-font-size(map-get(map-get($font-sizes, $size), 'size'), map-get(map-get($font-sizes, $size), 'lines'));
+    font-size: font-size($size);
   }
 }
 
 @function font-size($size) {
   @return map-get(map-get($font-sizes, $size), 'size');
+}
+
+@function line-height($size) {
+  @return map-get(map-get($font-sizes, $size), 'line-height');
 }

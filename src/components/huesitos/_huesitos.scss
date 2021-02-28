@@ -73,15 +73,15 @@
     }
 
 
-    @if $generate-color-classes {
-        @each $palette, $value in $colors {
-            @each $name, $hex in $value {
-                .bg-#{$palette}-#{$name} {
-                    @include background-contrast($hex, true);
-                }
-            }
-        }
-    }
+    // @if $generate-color-classes {
+    //     @each $palette, $value in $colors {
+    //         @each $name, $hex in $value {
+    //             .bg-#{$palette}-#{$name} {
+    //                 @include background-contrast($hex, true);
+    //             }
+    //         }
+    //     }
+    // }
 
     .half-gutter {
         &.m {
@@ -181,18 +181,19 @@
         box-shadow: $box-shadow;
     }
 
-    .invert {
-        color: $contrast-light;
-        h1, .h1,
-        h2, .h2,
-        h3, .h3,
-        h4, .h4,
-        h5, .h5,
-        h6, .h6 {
-            color: inherit;
-        }
-        @include invert-links();
-    }
+    // TODO: better strategy
+    // .invert {
+    //     color: $contrast-light;
+    //     h1, .h1,
+    //     h2, .h2,
+    //     h3, .h3,
+    //     h4, .h4,
+    //     h5, .h5,
+    //     h6, .h6 {
+    //         color: inherit;
+    //     }
+    //     @include invert-links();
+    // }
 }
 
 

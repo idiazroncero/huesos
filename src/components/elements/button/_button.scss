@@ -1,7 +1,7 @@
 // Global reset
 .button {
 	@include form-reset-button();
-	@include ritmo-font-size(font-size($button-font-size), $base-line-multi);
+	// TODO @include ritmo-font-size(font-size($button-font-size), $base-line-multi);
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
 	vertical-align:bottom;

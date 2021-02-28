@@ -9,7 +9,7 @@
     }
 
     @else if $alert-strategy=='split' {
-      @include background-split-color($value);
+      // @include background-split-color($value);
     }
 
     @else {

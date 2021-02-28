@@ -10,7 +10,7 @@
   }
   @if $code-block-background {
     background-color: $code-block-background;
-    color: contrast-color($code-block-background);
+    // color: contrast-color($code-block-background);
   }
 
   // Delete margin on pre element

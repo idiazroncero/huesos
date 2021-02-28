@@ -1,3 +1,7 @@
+// TODO: remove.
+
+$color-modify-ratio: 0;
+
 @function tint($color, $dilution: 50) {
   $white: rgba(255, 255, 255, 1);
   @if $color == "transparent" {
@@ -18,11 +22,11 @@
   @return $shade-color; 
 }
 
-@function contrast-color($color, $dark: $contrast-dark, $light: $contrast-light) {
+@function contrast-color($color, $dark: var(--color-text-body), $light: var(--dark-color-text-body)) {
   @if (lightness($color) > $lightness-threshold) {
-    @return $dark; // Lighter backgorund, return dark color
+    @return $dark;
   } @else {
-    @return $light; // Darker background, return light color
+    @return $light;
   }
 }
 
@@ -32,20 +36,6 @@
 
 @function lighten-color($color) {
   @return tint($color, $color-modify-ratio);
-}
-
-@function get-color($color, $value) {
-  $curmap : map-get($colors, $color);
-  @if type-of($curmap) == map {
-    $map-exists: map-has-key($curmap, $value);
-    @if $map-exists == true {
-      @return map-get($curmap, $value);
-    } @else  {
-      @error 'Parece que el color no existe. Revisa tu get-color()';
-    }
-  } @else {
-    @error 'Parece que el mapa de color no existe. Revisa tu get-color()';
-  }
 }
 
 @mixin invert-links() {
@@ -69,7 +59,7 @@
 @mixin background-contrast($color, $include-typography: false) {
 
   background-color: $color;
-  color: contrast-color($color);
+  // color: contrast-color($color);
   
   @include contrast-links($color);
 
@@ -120,4 +110,12 @@
     }
   }
 
+}
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function hexToHSL($hex) {
+  @return hue($hex), saturation($hex), lightness($hex);
 }

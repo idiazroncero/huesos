@@ -31,11 +31,11 @@ By default, a `$button-states` map is populated with the following values:
 
 ```scss
 $button-states : (
-    primary: get-color(base, primary),
-    secondary: get-color(base, secondary),
-    success: get-color(state, success),
-    warning: get-color(state, warning),
-    error: get-color(state, error), 
+    primary: var(--color-primary),
+    secondary: var(--color-secondary),
+    success: var(--color-success),
+    warning: var(--color-warning),
+    error: var(--color-danger), 
 );
 ```
 This will generate helper classes for quick styling, like `.button--warning`.

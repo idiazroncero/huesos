@@ -1,14 +1,8 @@
 @if $font-secondary != false {
 
-	.font-secondary,
-	%font-secondary {
-		font-family: $font-secondary;
-	}
-
-	@each $item in $font-secondary-items {
-		#{$item} {
-			@extend %font-secondary;
-		}
-	}
+  .font-secondary,
+  %font-secondary {
+    font-family: $font-secondary;
+  }
 
 }

@@ -2,13 +2,14 @@
   display:inline-block;
   vertical-align: bottom;
   padding: $tag-padding;
-  @include ritmo-font-size(font-size($tag-font-size), 3);
+  // TODO @include ritmo-font-size(font-size($tag-font-size), 3);
   border-radius: $border-radius;
   font-weight:normal;
 
   @if $tag-strategy == 'contrast' {
       @include background-contrast($color);
-  } @else if $tag-strategy == 'split' {
-      @include background-split-color($color);
+  } 
+  @else if $tag-strategy == 'split' {
+  //     @include background-split-color($color);
   }
 }

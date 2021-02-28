@@ -1,6 +1,6 @@
 sub,
 sup {
-  @include ritmo-font-size(font-size($sub-font-size), 4);
+  // TODO: @include ritmo-font-size(font-size($sub-font-size), 4);
   line-height: 0;
   position: relative;
   vertical-align: baseline;

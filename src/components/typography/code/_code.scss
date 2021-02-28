@@ -2,19 +2,22 @@ code,
 kbd,
 samp,
 var {
+  --code-inline-background-color: $code-inline-background-color;
+  --code-inline-color: contrast-color($code-inline-background-color);
+  
   font-family: $font-monospace;
   // Keep the font size relative to its context and smaller.
   font-size: 0.75em;
-  line-height: $vertical-rhythm;
+  line-height: $base-line-height;
   display: inline-block;
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap; // Avoid line breaking!
 
-  @if $code-background !=false {
-    background-color: $code-background;
-    color: contrast-color($code-background);
-    padding: 0 ritmo(1);
+  @if $code-inline-background-color !=false {
+    background-color: var(--code-inline-background-color);
+    color: var(--code-inline-color);
+    padding: 0 $gutter / 4;
   }
 
   @if $code-border-radius !=false {
@@ -23,7 +26,8 @@ var {
 }
 
 .code-block {
-  @include code-block();
+  --code-block-background-color: $code-block-background-color;
+  // @include code-block();
 }
 
 // Some people wrap <pre> inside <code>,

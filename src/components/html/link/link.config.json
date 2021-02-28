@@ -11,16 +11,9 @@
         }
       },
       { 
-        "name" : "Inverted",
-        "context": {
-          "modifier": "link--inverted",
-          "style": "padding: 15px; color: #fff; background-color: #000"
-        }
-      },
-      { 
         "name" : "Disabled",
         "context": {
-          "modifier": "disabled"
+          "modifier": "link--disabled"
         }
       }
   ]

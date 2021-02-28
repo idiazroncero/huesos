@@ -13,14 +13,14 @@ Sass Function extracted from compass. Darkens the `$color` by mixing it with bla
 
 ```scss
 .shade {
-    background-color: shade( get-color(base, primary), 7% );
+    background-color: shade( var(--color-primary), 7% );
 }
 ```
 
 <div class="bg-base-primary p">
-   get-color(base, primary)
+   var(--color-primary)
 </div>
 
 <div class="shade p invert">
-   shade(get-color(base, primary), 7%)
+   shade(var(--color-primary), 7%)
 </div>

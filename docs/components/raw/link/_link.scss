@@ -5,7 +5,7 @@ a {
 	}
 	// TODO: is this consistent enough?
 	&.disabled {
-		@include kill-link(get-color(state, muted));
+		@include kill-link(get-color(state, disabled));
 	}
 	&.link--inverted {
 		@include set-link(

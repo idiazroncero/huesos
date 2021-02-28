@@ -6,23 +6,12 @@
 // Semantic colors from base color: https://colors.eva.design/
 // --------------------
 
-// We recommend to import here a palette .scss partial to avoid bloat.
-// Hand-picked colors from Khroma:
-$primary: #F3C852;
-$secondary: #641CE8;
+// Primary and (optionally) secondary colors.
+$primary: #641CE8;
+$secondary: #F3C852;
 $background:#E3E1DB;
 
-// Semantic colors and variations from Eva.design
-$primary-100: #E7D1FD;
-$primary-200: #CCA3FC;
-$primary-300: #AC75F8;
-$primary-400: #9052F1;
-$primary-500: #641CE8;
-$primary-600: #4D14C7;
-$primary-700: #390EA7;
-$primary-800: #270886;
-$primary-900: #1B056F;
-
+// Shades.
 $secondary-100: #FEF9DC;
 $secondary-200: #FDF1BA;
 $secondary-300: #FBE697;
@@ -33,6 +22,17 @@ $secondary-700: #AE8329;
 $secondary-800: #8C641A;
 $secondary-900: #744E0F;
 
+$primary-100: #E7D1FD;
+$primary-200: #CCA3FC;
+$primary-300: #AC75F8;
+$primary-400: #9052F1;
+$primary-500: #641CE8;
+$primary-600: #4D14C7;
+$primary-700: #390EA7;
+$primary-800: #270886;
+$primary-900: #1B056F;
+
+// Semantic colors
 $success-100: #CDFACD;
 $success-200: #9DF6A6;
 $success-300: #68E481;
@@ -42,6 +42,7 @@ $success-600: #0B904E;
 $success-700: #08784B;
 $success-800: #056145;
 $success-900: #035041;
+$success: $success-500;
 
 $info-100: #CAEAFB;
 $info-200: #96D1F8;
@@ -52,6 +53,7 @@ $info-600: #02449F;
 $info-700: #013285;
 $info-800: #00236B;
 $info-900: #001959;
+$info: $info-500;
 
 $warning-100: #FBF8C9;
 $warning-200: #F7F095;
@@ -62,6 +64,7 @@ $warning-600: #9B8A00;
 $warning-700: #827200;
 $warning-800: #685B00;
 $warning-900: #564A00;
+$warning: $warning-500;
 
 $danger-100: #FCE2D1;
 $danger-200: #F9BEA4;
@@ -72,9 +75,9 @@ $danger-600: #A81517;
 $danger-700: #8D0E1B;
 $danger-800: #71091C;
 $danger-900: #5E051D;
+$danger: $danger-500;
 
 // Gray colors from palx
-
 $gray-100: #f8faf8;
 $gray-200: #ebefea;
 $gray-300: #dce3db;
@@ -84,86 +87,93 @@ $gray-600: #aeb5ac;
 $gray-700: #9ba299;
 $gray-800: #858b84;
 $gray-900: #696d68;
+
 $black: #3d403d;
+$white: #fff;
+
+$lightness-threshold: 65;
+
+// This map is used for color calculations, CSS variables
+// generation and iterations.
 
 $colors: (
-	base: (
-		"primary": $primary,
-		"secondary": $secondary,
-		"separator": $gray-300,
-		"black": $black,
-		"white": #fff,
-	),
+  primary: $primary,
+  secondary: $secondary,
+  black: $black,
+  white: $white,
+  utility: (
+    separator: $gray-500,
+  ),
+  text: (
+    body: $black,
+    heading: $black,
+    mark: $primary-400,
+  ),
+  background: (
+    body: $white,
+    dark: $gray-800,
+    light: $gray-100,
+  ),
+  state : (
+    disabled: $gray-500,
+    success: $success,
+    danger: $danger,
+    warning: $warning,
+  ),
+);
 
-	text: (
-		"primary": $black,
-		"heading": $primary-500,
-		"mark" : $warning-400,
-	),
+$dark-theme-colors: (
+  text: (
+    body: $gray-100,
+    heading: $gray-700,
+  ),
+  state : (
+    disabled: $gray-500,
+    success: $success,
+    danger: $danger,
+    warning: $warning,
+  ),
+);
 
-	background: (
-		"dark":  darken($background, 10%),
-		"dim" : $background,
-		"light": lighten($background, 10%),
-	),
-
-	state: (
-		"muted":   $gray-400,
-		"success": $success-500,
-		"warning": $warning-500,
-		"error":   $danger-500,
-	)
-) !default;
-
-// Quick access to black and white
-$black: get-color(base, "black");
-$white: get-color(base, "white");
-
-// CONTRAST BLACK AND WHITE / Do not remove
-// This values are used as return values for contrast-color()
-$contrast-dark: #1A1A19;
-$contrast-light: #FFFFFF;
-
-// Global % to apply to darken and lighten operations
-$color-modify-ratio: 33%;
-
-// Darken and lighten % to apply to split-color operations
-$darken-split-ratio: 50%;
-$lighten-split-ratio: 50%;
-
-// Lightness threshold for color invertion. A value between 0-100.
-$lightness-threshold: 60;
-
-// Wether to generate helper classes or not.
-// Set this to false to avoid bloating your css
-$generate-color-classes: true;
-
-
+// Define the actual theme colors as CSS custom properties in order to allow for
+// easy theme overriding.
+:root {
+  @each $type, $value in $colors {
+    @if type-of($value) == 'map' {
+      @each $subtype, $subvalue in $value {
+        --color-#{$type}-#{$subtype}: $subvalue;
+      }
+    }
+    @else {
+      --color-#{$type}: $value;
+    }
+  };
+  @each $type, $value in $dark-theme-colors {
+    @if type-of($value) == 'map' {
+      @each $subtype, $subvalue in $value {
+        --dark-color-#{$type}-#{$subtype}: $subvalue;
+      }
+    }
+    @else {
+      --dark-color-#{$type}: $value;
+    }
+  }
+};
 
 // --------------------
 // VERTICAL RHYTHM
-// Using Ritmo.scss
 // --------------------
 
 $base-font-size: 16px;
-$vertical-rhythm: 1.5;
-$base-line-height: $base-font-size * $vertical-rhythm;
-$base-line-multi: 4;
-$base-line-unit: $base-line-height / $base-line-multi;
-$ritmo-unit: 'rem';
-$rem-with-px-fallback: true;
-$ritmo-border-width: 1px;
-$round-to-nearest-half-size: true;
+$base-line-height: 1.5rem;
 
 // Show a grid to see vertical rhythm in action
 $show-grid: false;
 
 // A "spacer" is a basic unit for both vertical and horizontal spacing
-// The common alias is $gutter
-$spacer-lines: 4;
-$spacer: ritmo(4);
+// The gutter is for horizontal spacing and can be equal to spacer or not
+$spacer: $base-line-height;
 $gutter: $spacer;
-
 
 
 
@@ -207,12 +217,6 @@ $font-secondary-bold: bold;
 $light: lighter;
 $normal: normal;
 
-// List of all elements which use $font-secondary. Set $font-secondary to 'false' to set none.
-$font-secondary-items:
-	h1, h2, h3, h4, h5, h6, dt;
-	// '.your-classes',
-	// '#your-ids';
-
 // Heading overrides and configuration
 // Select a font weight and an alternate line height for your headings
 $heading-font-weight: bold;
@@ -230,15 +234,16 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-background: $gray-200;
-$code-block-background: $primary-900; // You might want to apply a different bg to block elements using .code-block
+$code-inline-background-color: $secondary-300;
+$code-block-background-color: $primary-900; // You might want to apply a different bg to block elements using .code-block
+
 $code-border-radius: 5px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.1em;
 
 // List margin-bottom between <li> items.
-$list-separator: $gutter / 2;
+$list-separator: 0;
 // List paddings. We recommend either 1em or 0.
 $list-padding: 0;
 
@@ -254,60 +259,64 @@ $mark-padding: 0 $spacer / 4;
 
 // ------
 // TYPE SCALE
-// Source: http://type-scale.com/ and concise.css
+// Source: http://type-scale.com
 // ------
+$fluid-typography-min-width: 30rem;
+$fluid-typography-max-width: 60rem;
 
-$minor-second:     1.067 !default;
-$major-second:     1.125 !default;
-$minor-third:      1.200 !default;
-$major-third:      1.250 !default;
-$perfect-fourth:   1.333 !default;
-$augmented-fourth: 1.414 !default;
-$perfect-fifth:    1.500 !default;
-$golden-ratio:     1.618 !default;
+// Unlike base-line-height, headings are better expressed as EMs
+// in order to keep consistency on fluid behavior.
+$heading-line-height: 1.1em;
 
-// Choose your type-scale ratio
-$scale-ratio: $perfect-fourth !default;
-
-// Uses concise.css typeScale mixin to map font-sizes.
-// Uses ritmo.scss lines for vertical rhythm adjustments.
 $font-sizes : (
-	h0: (
-		size: typeScale(7),
-		lines: 8,
-	),
-	h1: (
-		size: typeScale(6),
-		lines: 8,
-	),
-	h2: (
-		size: typeScale(5),
-		lines: 6,
-	),
-	h3: (
-		size: typeScale(4),
-		lines: 6,
-	),
-	h4: (
-		size: typeScale(3),
-		lines: 4,
-	),
-	base: (
-		size: typeScale(2),
-		lines: 4,
-	),
-	h5: (
-		size: typeScale(2),
-		lines: 4,
-	),
-	h6: (
-		size: typeScale(1),
-		lines: 3,
-	),
-	h7: (
-		size: typeScale(0),
-		lines: 2,
-	)
+  hero2: (
+    size: 5.61rem,
+    line-height: $heading-line-height,
+  ),
+  hero1: (
+    size: 4.20rem,
+    line-height: $heading-line-height,
+  ),
+  h1: (
+    size: 3.16rem,
+    line-height: $heading-line-height,
+  ),
+  h2: (
+    size: 2.4rem,
+    line-height: $heading-line-height,
+  ),
+  h3: (
+    size: 1.8rem,
+    line-height: $heading-line-height,
+  ),
+  h4: (
+    size: 1.33rem,
+    line-height: $heading-line-height,
+  ),
+  base: (
+    size: 1rem,
+    line-height: $base-line-height,
+  ),
+  h5: (
+    size: 1rem,
+    line-height: $heading-line-height,
+  ),
+  h6: (
+    size: 0.75rem,
+    line-height: $heading-line-height,
+  ),
+  small: (
+    size: 0.75rem,
+    line-height: $base-line-height,
+  ),
+  xsmall: (
+    size: 0.66rem,
+    line-height: $base-line-height,
+  ),
+  tiny: (
+    size: 0.56rem,
+    line-height: $base-line-height,
+  ),
 );
 
 // Set font sizes of specific, size-aware elements
@@ -333,14 +342,14 @@ $border-radius: 0px;
 
 $separators: true; // Set this to false to disable all separators
 $separator-width: 1px;
-$separator-color: get-color(base, separator);
+$separator-color: var(--color-utility-separator);
 
 $table-border-width: 1px;
-$table-border-color: $separator-color; // CSS value or none
+$table-border-color: var(--color-utility-separator); // CSS value or none
 $table-padding: $spacer / 2;
 $table-th-align: left;
 
-$blockquote-whitespace: $spacer * 2;
+$blockquote-whitespace: $spacer;
 
 $shadows: true;
 $box-shadow: 2px 2px 2px 0px rgba($black, 0.1);
@@ -354,8 +363,6 @@ $box-shadow: 2px 2px 2px 0px rgba($black, 0.1);
 // This values are used by set-link() to get your linking strategy
 // ------
 
-$link: true; // Set to false if you don't want decorated links.
-
 // Link textcolors
 $link-color: $primary-500;
 $link-visited: $primary-400;
@@ -364,18 +371,18 @@ $link-active: $primary-800;
 
 // Link decoration data on default and hover states
 $link-decoration: (
-	underline: (
-		default: true,
-		hover: true,
-	),
+  underline: (
+    default: true,
+    hover: true,
+  ),
   color: (
-		default: $primary-100,
-		hover: $primary-500,
-	),
-	width: (
-		default: 0.2em,
-		hover: 0.2em,
-	)
+    default: $primary-100,
+    hover: $primary-500,
+  ),
+  width: (
+    default: 0.2em,
+    hover: 0.2em,
+  )
 );
 
 // Inverse link colors and strategy (for contrasted backgrounds)
@@ -410,10 +417,8 @@ $input-padding-lines: 2;
 $button-font-family: $font-main;
 $button-font-size: 'h6';
 $button-border-width: 2px;
-$button-ritmo-height: 6; // Ritmo line units
-$button-ritmo-padding-x: 3;
 $button-border-radius: 2px; // $border-radius;
-$button-weight: bold(button);
+$button-weight: $font-main-bold;
 $button-invert-color: false; // Only valid on border:fill and background
 $button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for darken, negative for lighten.
 
@@ -444,11 +449,11 @@ $button-alternative-strategies: false;
 
 
 $button-states : (
-	primary: get-color(base, primary),
-	secondary: get-color(base, secondary),
-	success: get-color(state, success),
-	warning: get-color(state, warning),
-	error: get-color(state, error),
+  primary: var(--color-primary),
+  secondary: var(--color-secondary),
+  success: var(--color-success),
+  warning: var(--color-warning),
+  error: var(--color-danger),
 );
 
 // Checkboxes / Selects
@@ -481,7 +486,7 @@ $toc-uppercase: false;
 $toc-font-size: 'base';
 $toc-kill-links: $nav-kill-link-decoration;
 
-$menu-x-padding: ritmo(2);
+$menu-x-padding: $gutter;
 $menu-kill-links: $nav-kill-link-decoration; // Kills decoration
 $menu-background-color: $gray-200;
 $menu-font-size: $nav-font-size;
@@ -540,9 +545,9 @@ $huesitos: true;
 // ------
 
 $z-index : (
-	item1 : 0,
-	item2 : 1,
-	item3 : 3,
+  item1 : 0,
+  item2 : 1,
+  item3 : 3,
 );
 
 
@@ -555,9 +560,9 @@ $z-index : (
 
 // Map for iterations
 $breakpoints: (
-	small : 640px,
-	medium : 960px,
-	large : 1120px
+  small : 640px,
+  medium : 960px,
+  large : 1120px
 );
 
 // Helpers for a simpler use on breakpoint() mixin
@@ -598,7 +603,7 @@ $disabled-opacity: 0.33;
 // ------
 
 $card-border-width: 1px; // Set to false to avoid border
-$card-border-color: $separator-color;// Can be false or a full border value, like 2px solid $separator-color;
+$card-border-color: var(--color-utility-separator);// Can be false or a full border value, like 2px solid var(--color-utility-separator);
 $card-background: $white;
 $card-border-radius: $border-radius;
 $card-padding: 8; // In base-line-multi

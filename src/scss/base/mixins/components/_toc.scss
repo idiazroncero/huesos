@@ -20,12 +20,12 @@
       li{
         // Don't let "bold" pass through here
         font-weight: normal;
-        @include ritmo-font-size(0.9 * $base-font-size, 4); 
+        // @include TODO ritmo-font-size(0.9 * $base-font-size, 4); 
       }
       ul,
       ol {
         li {
-          @include ritmo-font-size(0.7 * $base-font-size, 3); 
+          // @include ritmo-font-size(0.7 * $base-font-size, 3); 
         }
       }
     }

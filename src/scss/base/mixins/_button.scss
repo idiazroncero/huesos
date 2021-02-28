@@ -6,13 +6,12 @@
 @mixin button-outline($color) {
 
     // Calculate the ritmo lines without the text
-    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
 
-
-    @include ritmo-top-border($button-border-width, $ritmo-lines);
-    @include ritmo-bottom-border($button-border-width, $ritmo-lines);
-    @include ritmo-side-border('left', $button-border-width, $button-ritmo-padding-x);
-    @include ritmo-side-border('right', $button-border-width, $button-ritmo-padding-x);
+// TODO
+    // @include ritmo-top-border($button-border-width, $ritmo-lines);
+    // @include ritmo-bottom-border($button-border-width, $ritmo-lines);
+    // @include ritmo-side-border('left', $button-border-width, $button-ritmo-padding-x);
+    // @include ritmo-side-border('right', $button-border-width, $button-ritmo-padding-x);
 
     border-style: solid;
     border-color: $color;
@@ -31,30 +30,26 @@
 
 @mixin button-background($color) {
 
-    // Calculate the ritmo lines without the text
-    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
-
     border-color: $color;
     background-color:$color;
-    color: contrast-color($color);
-    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
+    // color: contrast-color($color);
+    // padding: TODO ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-background($color) {
     &:link,
     &:active,
     &:visited {
-        color: contrast-color($color);
+        // color: contrast-color($color);
     }
 }
 
 @mixin button-split($color) {
     // Calculate the ritmo lines without the text
-    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
 
-    @include background-split-color($color, $include-links: false);
+    // @include background-split-color($color, $include-links: false);
     border-color: tint($color, $lighten-split-ratio);
-    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
+    // TODO padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-split($color) {
@@ -67,11 +62,10 @@
 
 @mixin button-split-inverse($color) {
     // Calculate the ritmo lines without the text
-    $ritmo-lines: ($button-ritmo-height - $base-line-multi) / 2;
 
-    @include background-split-color($color, $include-links: false, $invert: true);
+    // @include background-split-color($color, $include-links: false, $invert: true);
     border-color: shade($color, $darken-split-ratio);
-    padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
+    // TODO: padding: ritmo($ritmo-lines) ritmo($button-ritmo-padding-x);
 }
 
 @mixin button-link-split-inverse($color) {
@@ -95,7 +89,7 @@
 	@if $button-strategy-default == 'outline' {
         @include button-outline($color);
     } @else if $button-strategy-default == 'background' {
-        @include button-background($color);
+        // @include button-background($color);
     } @else if $button-strategy-default == 'split' {
         @include button-split($color);
     } @else if $button-strategy-default == 'split-inverse' {
@@ -106,16 +100,16 @@
     &:focus {
         @if $button-strategy-hover == 'outline' {
             @if ($button-color-ratio > 0%) {
-                @include button-outline(darken($color, $button-color-ratio));
+                // @include button-outline(darken($color, $button-color-ratio));
             } @else {
-                @include button-outline(lighten($color, -$button-color-ratio));
+                // @include button-outline(lighten($color, -$button-color-ratio));
             }
         } @else if $button-strategy-hover == 'background' {
-            @if ($button-color-ratio > 0%) {
-                @include button-background(darken($color, $button-color-ratio));
-            } @else {
-                @include button-background(lighten($color, -$button-color-ratio));
-            }
+            // @if ($button-color-ratio > 0%) {
+            //     @include button-background(darken($color, $button-color-ratio));
+            // } @else {
+            //     @include button-background(lighten($color, -$button-color-ratio));
+            // }
         } @else if $button-strategy-hover == 'split' {
             @include button-split($color);
         } @else if $button-strategy-hover == 'split-inverse' {
@@ -163,17 +157,17 @@
     &:hover, 
     &:focus {
         @if $button-strategy-hover == 'outline' {
-            @if ($button-color-ratio > 0%) {
-                @include button-link-outline(darken($color, $button-color-ratio));
-            } @else {
-                @include button-link-outline(lighten($color, -$button-color-ratio));
-            }
+            // @if ($button-color-ratio > 0%) {
+            //     @include button-link-outline(darken($color, $button-color-ratio));
+            // } @else {
+            //     @include button-link-outline(lighten($color, -$button-color-ratio));
+            // }
         } @else if $button-strategy-hover == 'background' {
-            @if ($button-color-ratio > 0%) {
-                @include button-link-background(darken($color, $button-color-ratio));
-            } @else {
-                @include button-link-background(lighten($color, -$button-color-ratio));
-            }
+            // @if ($button-color-ratio > 0%) {
+            //     @include button-link-background(darken($color, $button-color-ratio));
+            // } @else {
+            //     @include button-link-background(lighten($color, -$button-color-ratio));
+            // }
         } @else if $button-strategy-hover == 'split' {
             @include button-link-split($color);
         } @else if $button-strategy-hover == 'split-inverse' {

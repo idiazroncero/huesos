@@ -49,28 +49,28 @@
 .form-item--required {
 	label::after {
 		content: "*";
-		color: get-color(state, error);
+		color: var(--color-danger);
 		margin-left: $gutter / 4;
 	}
 }
 
 .form-item--error {
 	label {
-		color: get-color(state, error);
+		color: var(--color-danger);
 	}
 	input,
 	textarea {
-		@include form-border($color: get-color(state, error));
+		@include form-border($color: var(--color-danger));
 	}
 }
 
 .form-item--success {
 	label {
-		color: get-color(state, success);
+		color: var(--color-success);
 	}
 	input,
 	textarea {
-		@include form-border($color: get-color(state, success));
+		@include form-border($color: var(--color-success));
 	}
 }
 

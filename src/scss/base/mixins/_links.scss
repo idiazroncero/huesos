@@ -1,12 +1,15 @@
 @mixin set-link-decoration($link-decoration-data: $link-decoration) {
   $underline : map-get($link-decoration-data, 'underline');
-  $color : map-get($link-decoration-data, 'color');
+  $color: map-get($link-decoration-data, 'color');
   $width : map-get($link-decoration-data, 'width');
+
+  --color-link-decoration: map-get($color, 'default');
+  --color-link-decoration-hover: map-get($color, 'hover');
 
   @if map-get($underline, 'default') {
     text-decoration:underline;
     text-decoration-thickness: map-get($width, 'default');
-    text-decoration-color: map-get($color, 'default');
+    text-decoration-color: var(--color-link-decoration);
   } @else if not map-get($underline, 'default') {
     text-decoration:none;
   } @else {
@@ -20,13 +23,12 @@
     } @else if map-get($underline, 'hover') {
       text-decoration:underline;
       text-decoration-thickness: map-get($width, 'hover');
-      text-decoration-color: map-get($color, 'hover');
+      text-decoration-color: var(--color-link-decoration-hover);
     } @else {
       @error "La estructura del mapa $link-data no es correcta";
     }
   }
 }
-
 
 @mixin set-link(
   $base: $link-color,
@@ -35,32 +37,22 @@
   $active: $link-active,
   $link-decoration-data: $link-decoration
 ) {
-  & {
-    @if $link-decoration-data {
-      @include set-link-decoration($link-decoration-data);
-    }
-    @else if $link-decoration-data == false {
-      @include kill-link-decoration();
-    }
-  }
 
-  &, 
-  &:link {
-    color: $base;
+  --link-color: $base;
+  --link-visited-color: $visited;
+  --link-focus-color: $hover;
+  --link-hover-color: $hover;
+  --link-active-color: $active;
+
+  @if $link-decoration-data {
+    @include set-link-decoration($link-decoration-data);
   }
-  &:visited {
-    color: $visited;
-  }
-  &:focus,
-  &:hover { // Tratamos :hover y :focus siempre indistintamente
-    color: $hover;
-  }
-  &:active {
-    color: $active;
+  @else if $link-decoration-data == false {
+    @include kill-link-decoration();
   }
 }
 
-@mixin kill-link($color: get-color(text, primary)) {
+@mixin kill-link($color: var(--color-primary)) {
   @include set-link($color, $color, $color, $color, false);
   @include kill-link-decoration();
 }

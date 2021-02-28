@@ -2,7 +2,7 @@
 	@include card();
 	// Nested cards are applied a padding reduction
 	.card {
-		padding: ritmo($card-padding / 2);
+		padding: $card-padding / 2; // TODO
 	}
 }
 

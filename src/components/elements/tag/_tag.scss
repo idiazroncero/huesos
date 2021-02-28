@@ -22,7 +22,7 @@ a.tag {
     }
 
     @else if $tag-strategy=='split' {
-      @include background-split-color(lighten-color($tag-default-color));
+    //   @include background-split-color(lighten-color($tag-default-color));
     }
   }
 }
@@ -34,7 +34,7 @@ a.tag {
     }
 
     @else if $tag-strategy=='split' {
-      @include background-split-color($value);
+    //   @include background-split-color($value);
     }
 
     @else {
@@ -53,7 +53,7 @@ a.tag {
       }
 
       @else if $tag-strategy=='split' {
-        @include background-split-color(lighten-color($value));
+      //   @include background-split-color(lighten-color($value));
       }
 
       @else {

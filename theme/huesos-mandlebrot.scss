@@ -10,15 +10,15 @@ $sidebar-width: 300px;
 
 @import "../huesos";
 
-h1,
-.h1 {
-  color: $primary-700;
-}
+// h1,
+// .h1 {
+//   color: $primary-700;
+// }
 
-h2,
-.h2 {
-  color: $primary-600;
-}
+// h2,
+// .h2 {
+//   color: $primary-600;
+// }
 
 .header,
 .header h1 {
@@ -26,12 +26,12 @@ h2,
 }
 
 .repo a {
-  @include font-size('h7');
+  @include font-size('small');
 }
 
 h1 .header-title {
   @include kill-link($primary-500);
-  font-weight: 900;
+  font-weight: 300;
 }
 
 
@@ -51,16 +51,16 @@ h1 .header-title {
 
   .nav {
     .is-current {
-      background-color: $primary-200;
+      background-color: $secondary-200;
       display: inline-block;
 
-      a {
-        @include set-link(contrast-color($primary-200),
-          contrast-color($primary-200),
-          contrast-color($primary-200),
-          contrast-color($primary-200),
-          false)
-      }
+      // a {
+      //   @include set-link(contrast-color($secondary-200),
+      //     contrast-color($secondary-200),
+      //     contrast-color($secondary-200),
+      //     contrast-color($secondary-200),
+      //     false)
+      // }
 
       padding: 0 $gutter / 4;
     }
@@ -69,7 +69,7 @@ h1 .header-title {
 
 .body {
   margin-left: $sidebar-width;
-  padding: $gutter 0;
+  padding: $gutter * 2 0;
 }
 
 .logo {
@@ -205,26 +205,26 @@ code.code {
 
 
 // Function
+// TODO: Slve this
+// .shade {
+//   background-color: shade(get-color(base, secondary), 7%);
+// }
 
-.shade {
-  background-color: shade(get-color(base, primary), 7%);
-}
+// .tint {
+//   background-color: tint(get-color(base, secondary), 7%);
+// }
 
-.tint {
-  background-color: tint(get-color(base, secondary), 7%);
-}
+// .contrast-color {
+//   background-color: $danger-600;
+// }
 
-.contrast-color {
-  background-color: $danger-600;
-}
+// .contrasted-element {
+//   color: contrast-color($danger-600);
+// }
 
-.contrasted-element {
-  color: contrast-color($danger-600);
-}
-
-.contrasted-element--overriden {
-  color: contrast-color($danger-600, $info-900, $secondary-200);
-}
+// .contrasted-element--overriden {
+//   color: contrast-color($danger-600);
+// }
 
 .background-contrast {
   background-color: $gray-900;
@@ -232,24 +232,24 @@ code.code {
 }
 
 .background-contrast--typography {
-  background-color: $primary-900;
-  @include background-contrast($primary-900, true);
+  background-color: $secondary-900;
+  @include background-contrast($secondary-900, true);
 }
 
 .background-split {
-  @include background-split-color($danger-500);
+  // @include background-split-color($danger-500);
 }
 
 .background-split--links {
-  @include background-split-color($danger-500, $include-links: true);
+  // @include background-split-color($danger-500, $include-links: true);
 }
 
 .background-split--custom {
-  @include background-split-color($secondary-500, 15%, 66%, true);
+  // @include background-split-color($secondary-500, 15%, 66%, true);
 }
 
 .background-split--custom--inverse {
-  @include background-split-color($secondary-500, 15%, 66%, true, true);
+  // @include background-split-color($secondary-500, 15%, 66%, true, true);
 }
 
 ;
@@ -285,7 +285,7 @@ code.code {
   position: relative;
   width: 500px;
   height: 500px;
-  background-color: $primary-400;
+  background-color: $secondary-400;
 }
 
 .layer {
@@ -298,7 +298,7 @@ code.code {
 }
 
 .item-with-custom-separator {
-  @include separator(8, 6px, green);
+  @include separator(6px, green);
 }
 
 .image-fit {
@@ -338,5 +338,5 @@ h1.poly-fluid-sizing {
 }
 
 .text-border {
-  @include text-border($primary-800, 3px, transparent);
+  @include text-border($secondary-800, 3px, transparent);
 }

@@ -3,8 +3,9 @@
   border-radius: $border-radius;
   @if $alert-strategy == 'contrast' {
       @include background-contrast($color);
-  } @else if $alert-strategy == 'split' {
-      @include background-split-color($color);
+  } 
+  @else if $alert-strategy == 'split' {
+//       @include background-split-color($color);
   }
 
   p:last-child {

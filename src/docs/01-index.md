@@ -11,6 +11,7 @@ Born as a SCSS framework made by and for [idiazroncero](http://idiazroncero.com)
 It exposes a highly configurable `_config.scss` file and makes use of the following principles, techniques and libraries:
 
 - Vertical rhythm.
+- Custom Properties AKA CSS Variables
 - Intrinsic (or algorithmic) design.
 - Responsive typography.
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
@@ -20,13 +21,14 @@ It exposes a highly configurable `_config.scss` file and makes use of the follow
 
 Even if it is a small framework, Huesos is very opinionated and a set of rules are imposed on the whole project 
 
-- __Margins are always applied as margin-bottom.__  
-  TODO: Review
-  This means that the main block-level elements that compose a page (`<p>`, `<header>`, `<article>`, `<div>` and the like) *only* have its margin-bottom set, thus ensuring consistent vertical spacing and avoiding [margin overlap and gotchas](https://www.smashingmagazine.com/2019/07/margins-in-css/).
-
+- __Margins/paddings are unset by default.__  
+  In order to ensure consistent vertical spacing and avoid [margin overlap and gotchas](https://www.smashingmagazine.com/2019/07/margins-in-css/) a radical approach is taken: by default, every item is marginless. A wrapper class that enables common margins is created for readable chunks of text and the [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/) and similar techniques are used to apply spacing without leaving a hanging margin on the last element.
 
 - __Always use SVG__  
   SVG is preferred over icon fonts or PNG images.
+
+- __CSS Variables for color__  
+  Custom Properties are less powerful than SASS variables on preprocess time (color calculations, darken, lighten and the like) but they have a single, winning feature: they are _dynamic_ and can be esily overriden and altered on the client-side, even in real time. For this reason, Huesos 3.0 ditches all the SASS color manipulations in favor of a lighter, CSS Variables-based approach.
 
 - __Vertical rhythm is important, but not mandatory__  
   This version ditches `ritmo.css` in favor of a rem-based approach to vertical rhythm, which is still pretty enforced. You can use `$show-grid` to test it.  
