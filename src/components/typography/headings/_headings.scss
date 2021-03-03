@@ -29,7 +29,9 @@ h5,
 }
 
 h6,
-.h6 {
+.h6,
+small,
+.small {
   @include font-size('h6');
   line-height: line-height('h6');
 }

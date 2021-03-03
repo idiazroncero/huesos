@@ -1,8 +1,8 @@
-<section class="pen-preview card" data-behaviour="preview" id="preview-{{ entity.id }}">
+<section class="pen-preview card mb-3" data-behaviour="preview" id="preview-{{ entity.id }}">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     {% if renderError -%}
         {{ renderError }}

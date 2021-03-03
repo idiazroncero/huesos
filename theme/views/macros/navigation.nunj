@@ -1,8 +1,8 @@
 {% import "macros/status.nunj" as status %}
 
 {% macro tree(root, current, request) %}
-    <h3 class="h4 strong mb half-gutter">{{ root.label }}</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">{{ root.label }}</h3>
+    <ol >
         {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request) }}
     </ol>
 {% endmacro %}

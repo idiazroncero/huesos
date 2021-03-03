@@ -87,6 +87,8 @@ code.code {
 .preview-iframe {
   width: 100%;
   height: 100%;
+  padding-top: $spacer;
+  border-top: 1px solid $gray-100;
 }
 
 
@@ -126,12 +128,12 @@ code.code {
 }
 
 .pen-preview {
-  height: ritmo(4 * 12);
+  height: ritmo(4 * 15);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding: ritmo($card-padding) ritmo($card-padding / 1.5) ritmo($card-padding / 1.5) ritmo($card-padding / 1.5);
+  padding: $gutter * 2 $gutter $gutter;
 
   .preview-tag {
     position: absolute;
@@ -140,6 +142,8 @@ code.code {
     left: ritmo($card-padding / 1.5);
     margin: 0;
     display: flex;
+    align-items: center;
+    height: $spacer;
 
     h3 {
       margin: 0 auto 0 0;

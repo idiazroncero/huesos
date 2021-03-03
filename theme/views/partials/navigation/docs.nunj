@@ -2,5 +2,5 @@
 
 {{ nav.tree(frctl.docs, doc, request) }}
 
-<hr>
+<hr class="mb mt">
 {% endif %}

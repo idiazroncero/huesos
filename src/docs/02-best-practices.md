@@ -1,5 +1,5 @@
 ---
-title: How to avoid bloat
+title: Best practices
 status: draft
 ---
 

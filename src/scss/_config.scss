@@ -78,15 +78,15 @@ $danger-900: #5E051D;
 $danger: $danger-500;
 
 // Gray colors
-$gray-100: hsl(261, 10, 91);
-$gray-200: hsl(261, 10, 81);
+$gray-100: hsl(261, 10, 97);
+$gray-200: hsl(261, 10, 79);
 $gray-300: hsl(261, 10, 71);
-$gray-400: hsl(261, 10, 61);
-$gray-500: hsl(261, 10, 51);
-$gray-600: hsl(261, 10, 45);
-$gray-700: hsl(261, 10, 35);
-$gray-800: hsl(261, 10, 25);
-$gray-900: hsl(261, 10, 15);
+$gray-400: hsl(261, 10, 63);
+$gray-500: hsl(261, 10, 55);
+$gray-600: hsl(261, 10, 47);
+$gray-700: hsl(261, 10, 39);
+$gray-800: hsl(261, 10, 31);
+$gray-900: hsl(261, 10, 23);
 
 
 $black: $gray-900;
@@ -141,6 +141,8 @@ $dark-theme-colors: (
   ),
 );
 
+$generate-color-classes: true;
+
 // Define the actual theme colors as CSS custom properties in order to allow for
 // easy theme overriding.
 :root {
@@ -185,6 +187,16 @@ $show-grid: false;
 // The gutter is for horizontal spacing and can be equal to spacer or not
 $spacer: $base-line-height;
 $gutter: $spacer;
+
+$spacers: (
+  quarter: 0.25, 
+  half : 0.5, 
+  2 : 2, 
+  3 : 3, 
+  4 : 4, 
+  5 : 5, 
+  6 : 6
+);
 
 
 
