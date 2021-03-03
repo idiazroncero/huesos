@@ -1,30 +1,20 @@
 .text-wrapper {
-  max-width: $max-ch;
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-top: $gutter * 2;
+  @if $max-ch != false {
+    --text-max-ch: $max-ch;
+    max-width: var(--text-max-ch);
   }
 
-  section,
-  article {
-    margin-bottom: $gutter * 2;
+  // We use the incredible (but aggresive) lobotomized owl
+  // but only on the first level to avoid leaking into components
+  // and leading to unexpected results.
+  > * + * {
+    margin-top: $gutter;
   }
 
-  // Except if it is the first child of the text...
-  h1:first-child,
-  h2:first-child,
-  h3:first-child,
-  h4:first-child {
-    margin-top: 0;
-  }
-
-  // The last p, section of article features no margin-bottom
-  p:last-child,
-  section:last-child,
-  article:last-child {
-    margin-bottom: 0;
+  @for $i from 1 to 7 {
+    * + h#{$i}, * + .h#{$i} {
+      // TODO: Move to vars?
+      margin-top: $gutter * 2;
+    }
   }
 }

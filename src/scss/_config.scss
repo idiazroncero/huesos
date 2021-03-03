@@ -77,18 +77,19 @@ $danger-800: #71091C;
 $danger-900: #5E051D;
 $danger: $danger-500;
 
-// Gray colors from palx
-$gray-100: #f8faf8;
-$gray-200: #ebefea;
-$gray-300: #dce3db;
-$gray-400: #cdd5cb;
-$gray-500: #bec6bc;
-$gray-600: #aeb5ac;
-$gray-700: #9ba299;
-$gray-800: #858b84;
-$gray-900: #696d68;
+// Gray colors
+$gray-100: hsl(261, 10, 91);
+$gray-200: hsl(261, 10, 81);
+$gray-300: hsl(261, 10, 71);
+$gray-400: hsl(261, 10, 61);
+$gray-500: hsl(261, 10, 51);
+$gray-600: hsl(261, 10, 45);
+$gray-700: hsl(261, 10, 35);
+$gray-800: hsl(261, 10, 25);
+$gray-900: hsl(261, 10, 15);
 
-$black: #3d403d;
+
+$black: $gray-900;
 $white: #fff;
 
 $lightness-threshold: 65;
@@ -102,17 +103,17 @@ $colors: (
   black: $black,
   white: $white,
   utility: (
-    separator: $gray-500,
+    separator: $gray-200,
   ),
   text: (
     body: $black,
     heading: $black,
-    mark: $primary-400,
   ),
   background: (
     body: $white,
     dark: $gray-800,
     light: $gray-100,
+    mark: $secondary-400,
   ),
   state : (
     disabled: $gray-500,
@@ -126,6 +127,11 @@ $dark-theme-colors: (
   text: (
     body: $gray-100,
     heading: $gray-700,
+  ),
+  background: (
+    body: $black,
+    dark: $gray-100,
+    light: $gray-800,
   ),
   state : (
     disabled: $gray-500,
@@ -159,6 +165,11 @@ $dark-theme-colors: (
     }
   }
 };
+
+[data-theme-dark] {
+  --color-text-body: var(--dark-color-text-body);
+  --color-background-body: var(--dark-color-background-body);
+}
 
 // --------------------
 // VERTICAL RHYTHM
@@ -206,21 +217,20 @@ $courier: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida S
 
 // Global variables. It is good practice (performance & design) to use a maximum of two typefaces.
 $font-main: $system;
-$font-secondary: $system; // Set to false to only only one font
+$font-secondary: $georgia; // Set to false to only only one font
 $font-monospace: $courier;
 
 // Setting custom values for bold and light (100, 500, etc) allow for more precise mapping
 // Important! Don't set this to invalid font-weight values or falsy values.
 // Some mixins and functions need valid values in order to work!
 $font-main-bold: bold;
-$font-secondary-bold: bold;
+$font-secondary-bold: bolder;
 $light: lighter;
 $normal: normal;
 
 // Heading overrides and configuration
 // Select a font weight and an alternate line height for your headings
 $heading-font-weight: bold;
-$heading-letter-spacing: -0.03em; // Headings benefit of a reduced letter-spacing
 $heading-decorated-links: false; // Wether to decorate or not links inside headings
 
 // Text alignment for some elements
@@ -234,8 +244,8 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-inline-background-color: $secondary-300;
-$code-block-background-color: $primary-900; // You might want to apply a different bg to block elements using .code-block
+$code-inline-background-color: $secondary-200;
+$code-block-background-color: $gray-900; // You might want to apply a different bg to block elements using .code-block
 
 $code-border-radius: 5px;
 
@@ -243,11 +253,14 @@ $code-border-radius: 5px;
 $letter-spacing: 0.1em;
 
 // List margin-bottom between <li> items.
-$list-separator: 0;
+$list-separator: $spacer / 4;
 // List paddings. We recommend either 1em or 0.
 $list-padding: 0;
+// Separator for all items inside lists. Recommended to be smaller.
+$list-spacing: $spacer / 2;
 
-// Maximum characters per line, to apply using .max-ch class
+// Maximum characters per line, to apply using .max-ch class.
+// Set to false to disable it.
 $max-ch: 75ch;
 
 // Mark padding

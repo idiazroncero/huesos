@@ -4,7 +4,7 @@ samp,
 var {
   --code-inline-background-color: $code-inline-background-color;
   --code-inline-color: contrast-color($code-inline-background-color);
-  
+
   font-family: $font-monospace;
   // Keep the font size relative to its context and smaller.
   font-size: 0.75em;
@@ -13,6 +13,7 @@ var {
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap; // Avoid line breaking!
+  margin: 0; // Prevent lobotomized owl from messing with this.
 
   @if $code-inline-background-color !=false {
     background-color: var(--code-inline-background-color);
@@ -26,8 +27,19 @@ var {
 }
 
 .code-block {
-  --code-block-background-color: $code-block-background-color;
-  // @include code-block();
+  display:block;
+
+  @if $code-block-background-color != false {
+    --code-block-background-color: $code-block-background-color;
+    padding: $gutter;
+    background-color: $code-block-background-color;
+    color: contrast-color($code-block-background-color);
+  }
+
+  // Delete margin on pre element
+  pre {
+    margin:0;
+  }
 }
 
 // Some people wrap <pre> inside <code>,

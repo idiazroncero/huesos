@@ -16,7 +16,7 @@
         {% endblock %}
     </div>
 
-    <div class="doc__body text-wrapper">
+    <div class="doc__body text-wrapper mb">
 
     {% block docContent %}{% endblock %}
 

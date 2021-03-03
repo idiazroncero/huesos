@@ -1,7 +1,8 @@
 mark {
-  background-color:var(--color-text-mark);
+  --color-text-mark: contrast-color(map-get(map-get($colors, 'background'), 'mark'));
+  background-color:var(--color-background-mark);
   // TODO: Find a way for contrasted elements.
-  // color: contrast-color(get-color(text, mark));
+  color: var(--color-text-mark);
   padding: $mark-padding;
   display: inline-block;
 }

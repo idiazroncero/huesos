@@ -34,39 +34,21 @@ h6,
   line-height: line-height('h6');
 }
 
-@if $heading-letter-spacing {
-  h1,
-  .h1,
-  h2,
-  .h2 {
-    letter-spacing: $heading-letter-spacing;
-  }
-}
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  color: var(--color-text-heading);
-  font-weight: $heading-font-weight;
-
-  small {
-    color: inherit;
-    vertical-align: 0;
-  }
-
-  @if $heading-decorated-links == false {
-    a {
-      @include kill-link-decoration();
+@for $i from 1 through 6 {
+  h#{$i}, .h#{i} {
+    color: var(--color-text-heading);
+    font-weight: $heading-font-weight;
+  
+    small {
+      color: inherit;
+      vertical-align: 0;
+    }
+  
+    @if $heading-decorated-links == false {
+      a {
+        @include kill-link-decoration();
+      }
     }
   }
 }
