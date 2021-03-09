@@ -1,70 +1,64 @@
 .tag {
-    display:inline-block;
-    vertical-align: bottom;
-    padding: $tag-padding;
-    @include ritmo-font-size($tag-font-size);
+  @include tag($tag-default-color);
+}
 
-    @if $tag-strategy == 'contrast' {
-        @include background-contrast($tag-default-color);
-    } @else if $tag-strategy == 'split' {
-        @include background-split-color($tag-default-color); 
-    }
-    border-radius: $border-radius;
-    margin-right: $gutter / 3;
-    font-weight:normal;
-
-    .right & {
-        margin-right:0;
-        margin-left: $gutter / 3;
-    }
-    .center & {
-        margin-right: $gutter / 6;
-        margin-left: $gutter / 6;
-    }
+.tag + .tag {
+  margin-left: $gutter / 4;
 }
 
 a.tag {
-    @include kill-link-decoration();
-    cursor:pointer;
+  @include kill-link-decoration();
+  cursor: pointer;
+  // Keep the padding!
+  padding: $tag-padding;
+
+  &:hover,
+  &:focus {
     // Keep the padding!
     padding: $tag-padding;
 
+    @if $tag-strategy=='contrast' {
+      @include background-contrast(darken-color($tag-default-color));
+    }
+
+    @else if $tag-strategy=='split' {
+    //   @include background-split-color(lighten-color($tag-default-color));
+    }
+  }
+}
+
+@each $key, $value in map-get($colors, state) {
+  .tag--#{$key} {
+    @if $tag-strategy=='contrast' {
+      @include background-contrast($value);
+    }
+
+    @else if $tag-strategy=='split' {
+    //   @include background-split-color($value);
+    }
+
+    @else {
+      @error "You must provide a valid $tag-strategy value";
+    }
+  }
+}
+
+@each $key, $value in map-get($colors, state) {
+  a.tag--#{$key} {
+
     &:hover,
     &:focus {
-        // Keep the padding!
-        padding: $tag-padding;
+      @if $tag-strategy=='contrast' {
+        @include background-contrast(darken-color($value));
+      }
 
-        @if $tag-strategy == 'contrast' {
-            @include background-contrast(darken-color($tag-default-color));
-        } @else if $tag-strategy == 'split' {
-            @include background-split-color(lighten-color($tag-default-color)); 
-        }
-    }
-}
+      @else if $tag-strategy=='split' {
+      //   @include background-split-color(lighten-color($value));
+      }
 
-@each $key, $value in map-get($colors, state) {
-    .tag--#{$key} {
-        @if $tag-strategy == 'contrast' {
-            @include background-contrast($value); 
-        } @else if $tag-strategy == 'split' {
-            @include background-split-color($value); 
-        } @else {
-            @error "You must provide a valid $tag-strategy value";
-        }
+      @else {
+        @error "You must provide a valid $tag-strategy value";
+      }
     }
-}
-
-@each $key, $value in map-get($colors, state) {
-    a.tag--#{$key} {
-        &:hover,
-        &:focus {
-            @if $tag-strategy == 'contrast' {
-                @include background-contrast(darken-color($value)); 
-            } @else if $tag-strategy == 'split' {
-                @include background-split-color(lighten-color($value)); 
-            } @else {
-                @error "You must provide a valid $tag-strategy value";
-            }
-        }
-    }
+  }
 }

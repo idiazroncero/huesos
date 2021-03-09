@@ -3,205 +3,167 @@
 // ---
 
 @mixin form-reset-general($width: auto) {
-	display: inline-block;
-	margin: 0;
-	border:0;
-	width: $width;
-	vertical-align: middle; // IE6,IE7
-	white-space: normal;
-	line-height: inherit;
-	background: none;
-	border-radius: $form-border-radius;
+  display: inline-block;
+  margin: 0;
+  border:0;
+  width: $width;
+  vertical-align: middle; // IE6,IE7
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  border-radius: $form-border-radius;
   
-	/* Browsers have different default form fonts */
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 @mixin form-border(
-	$strategy: $input-border-strategy, 
-	$color: $input-border-color, 
-	$padding: $input-padding-lines) {
-	// Border strategy
-	@if ($strategy == full){
-		// @include ritmo-borders($input-border-width, $padding);
-		border-style:solid;
-		border-color: $color;
-		// TODO: Solve this
-		// &:hover, &:focus {
-		// 	border-color: darken-color($color);
-		// }
-	} @else if ($strategy == bottom){
-		border-bottom: $input-border;
-		border-radius: 0; // Reset border-radius, on bottom border has no sense
-		// TODO: Solve this
-		// &:hover, &:focus {
-		// 	border-color: darken-color($color);
-		// }
-	}
+  $strategy: $input-border-strategy, 
+  $color: var(--color-input-border)) {
+  // Border strategy
+  @if ($strategy == full){
+    border: $input-border-width solid $color;
+  } @else if ($strategy == bottom){
+    border-bottom: $input-border-width solid $color;
+    border-radius: 0; // Reset border-radius, on bottom border has no sense
+  }
 }
   
 @mixin form-reset-input {
 
-	@include form-border($input-border-strategy);
+  @include form-border($input-border-strategy);
+  padding: $input-padding-y $input-padding-x;
 
-	&:focus {
-		outline: 0;
-	}
+  &:focus {
+    outline-color: var(--color-utility-focus);
+  }
 
-	&[type=checkbox],
-	&[type=radio] {
-		width:  $base-font-size;
-		height:  $base-font-size;
-		vertical-align: middle;
-		margin-right: $gutter / 2;
-	}
+  &[type=checkbox],
+  &[type=radio] {
+    width:  $base-font-size;
+    height:  $base-font-size;
+    vertical-align: middle;
+    margin-right: $gutter / 2;
+  }
 
-	@if($pseudo-checkbox == true) {
-		&[type=checkbox] {
-			@include pseudo-checkbox();
-		}
-	}
+  @if($pseudo-checkbox == true) {
+    &[type=checkbox] {
+      @include pseudo-checkbox();
+    }
+  }
 
-	@if($pseudo-radio == true) {
-		&[type=radio] {
-			@include pseudo-radio();
-		}
-	}
+  @if($pseudo-radio == true) {
+    &[type=radio] {
+      @include pseudo-radio();
+    }
+  }
 
-	/* Make webkit render the search input like a normal text field */
-	&[type=search] {
-		-webkit-appearance: textfield;
-	}
+  /* Make webkit render the search input like a normal text field */
+  &[type=search] {
+    -webkit-appearance: textfield;
+  }
 
-	/* Turn off the recent search for webkit. It adds about 15px padding on the left */
-	@at-root {
-		::-webkit-search-decoration {
-			display: none;
-		}
-	}
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  @at-root {
+    ::-webkit-search-decoration {
+      display: none;
+    }
+  }
 
-	/* Fix IE7 display bug */
-	&[type="reset"],
-	&[type="button"],
-	&[type="submit"] {
-		overflow: visible;
-	}
+  /* Fix IE7 display bug */
+  &[type="reset"],
+  &[type="button"],
+  &[type="submit"] {
+    overflow: visible;
+  }
 }
-  
-@mixin form-reset-button {
-	background: none;
-	border:none;
-	outline: none;
-	cursor:pointer;
-	display: inline-block;
-	padding:0;
-  
-	&::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
-	&:hover,
-	&:active,
-	&:focus {
-		border:none;;
-		outline: 0;
-	}
-  
-	/* IE8 and FF freak out if this rule is within another selector */
-	@at-root {
-		::-webkit-file-upload-button {
-			padding: 0;
-			border: 0;
-			background: none;
-		}
-	}
-}
+
 
 
 @mixin form-reset-textarea {
-	/* Move the label to the top */
-	vertical-align: top;
+  /* Move the label to the top */
+  vertical-align: top;
   
-	/* Turn off scroll bars in IE unless needed */
-	overflow: auto;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
 }
 
 
 @mixin kill-button {
-	border:none;
-	background:transparent;
-	&:hover, &:focus {
-		border:none;
-		background:transparent;  
-	}
+  border:none;
+  background:transparent;
+  &:hover, &:focus {
+    border:none;
+    background:transparent;  
+  }
 }
 
 @mixin pseudo-checkbox() {
-	@include hidden();
-	&:checked + label {
-		position:relative;
-		&:after {
-			content:"";
-			display:inline-block;
-			width: $base-font-size / 2; // Same as the label
-			height: $base-font-size / 2;
-			position:absolute;
-			top:50%;
-			left:$base-font-size / 4;
-			transform:translateY(-50%);
-			background-color: $pseudo-border-color; // We need to hide the real checkbox
-		}
-	}
-	+ label {
-		cursor:pointer;
-		display: flex;
-		align-items: center;
-		&:before {
-			content:"";
-			display:inline-block;
-			width: $base-font-size;
-			height: $base-font-size;
-			margin: 0 $gutter / 2 0 0;
-			border: $pseudo-border;
-			cursor: pointer;
-		}
-	}
+  @include hidden();
+  &:checked + label {
+    position:relative;
+    &:after {
+      content:"";
+      display:inline-block;
+      width: $base-font-size / 2; // Same as the label
+      height: $base-font-size / 2;
+      position:absolute;
+      top:50%;
+      left:$base-font-size / 4;
+      transform:translateY(-50%);
+      background-color: var(--color-input-pseudo-border) // We need to hide the real checkbox
+    }
+  }
+  + label {
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    &:before {
+      content:"";
+      display:inline-block;
+      width: $base-font-size;
+      height: $base-font-size;
+      margin: 0 $gutter / 2 0 0;
+      border: $pseudo-border;
+      cursor: pointer;
+    }
+  }
 }
 
 @mixin pseudo-radio() {
-	@include hidden();
-	&:checked + label {
-		position:relative;
-		&:after {
-			content:"";
-			position:absolute;
-			display:inline-block;
-			top:50%;
-			left:$base-font-size / 4;
-			width:$base-font-size / 2;
-			height:$base-font-size / 2;
-			transform:translateY(-50%);
-			background-color: $pseudo-border-color;
-			border-radius: 50%;
-			cursor: pointer;
-		}
-	}
-	+ label {
-		cursor:pointer;
-		display:flex;
-		align-items:center;
-		&:before {
-			content:"";
-			display:inline-block;
-			margin: 0 $gutter / 2 0 0;
-			width: $base-font-size;
-			height: $base-font-size;
-			border: $pseudo-border;
-			vertical-align:top;
-			border-radius: 50%;
-			cursor: pointer;
-		}
-	}
+  @include hidden();
+  &:checked + label {
+    position:relative;
+    &:after {
+      content:"";
+      position:absolute;
+      display:inline-block;
+      top:50%;
+      left:$base-font-size / 4;
+      width:$base-font-size / 2;
+      height:$base-font-size / 2;
+      transform:translateY(-50%);
+      background-color: var(--color-input-pseudo-border);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  + label {
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    &:before {
+      content:"";
+      display:inline-block;
+      margin: 0 $gutter / 2 0 0;
+      width: $base-font-size;
+      height: $base-font-size;
+      border: $pseudo-border;
+      vertical-align:top;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
 }

@@ -1,3 +1,14 @@
 .nav {
   @include nav();
 }
+
+.nav--horizontal {
+  ul {
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  li {
+    padding: 0 $nav-item-gutter / 2;
+  }
+}

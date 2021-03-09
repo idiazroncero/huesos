@@ -1,27 +1,3 @@
 .breadcrumb {
-    @if $breadcrumb-font-size != false {
-        @include ritmo-font-size($breadcrumb-font-size);
-    }
-    ul,
-    ol {
-        @include inline-list();
-    }
-    @if $breadcrumb-kill-links {
-        a {
-            @include kill-link-decoration();
-        }
-    }
-    li {
-        margin-bottom:0;
-        @if $breadcrumb-arrow {
-            &:after {
-                content: $breadcrumb-arrow;
-                padding: 0 $gutter / 6;
-            }
-            &:last-child:after {
-                content:"";
-                display:none;
-            }
-        }
-    }
+    @include breadcrumb();
 }

@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Icon | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-02bb718a192787b211cc06a8017473da">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-02bb718a192787b211cc06a8017473da">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/icon.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2628,8 +2556,9 @@
     <div class="text-wrapper">
         
             <p>The preferred use for icons is <code>&lt;svg&gt;</code> inline markup wrapped on <code>&lt;i class=&quot;icon&quot;&gt;</code> tags.</p>
-<p>Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases. It will enforce a <code>1em</code> height, a <code>1em</code> font-size and a line-height of unitless <code>1</code>. </p>
+<p>Instead of SVG, typography can be used as well. Huesos will consistently style the sizing on both cases. It will enforce a <code>1em</code> height, a <code>1em</code> font-size and a line-height of unitless <code>1</code>.</p>
 <p>This means <strong>the icons will always be as big/tall as their context</strong>. Want something else? you’ll need to set a new context (try wrapping on a <code>&lt;span&gt;</code>) or stop using <code>.icon</code>.</p>
+<p>A left-side icon is assumed, but you can change it using the modifier <code>.icon--right</code></p>
 <p>A set of icons is <strong>not</strong> provided. You are supposed to provide your own choices.</p>
 
         
@@ -2639,100 +2568,99 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-02bb718a192787b211cc06a8017473da-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 20 20"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z"</span> /&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 20 20&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z&quot;</span> /&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
     Look ma, an SVG icon!
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span>&gt;</span>✅<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Look ma, an SVG icon on the right!
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon icon--right&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 20 20&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M12.496 17.414c-.394-1.096-1.805-4.775-2.39-6.297-1.103.737-2.334 1.435-3.512 1.928-.366 1.28-1.094 3.709-1.446 4.033-.604.557-.832.485-.925-.279s-.485-3.236-.485-3.236-2.162-1.219-2.84-1.568-.667-.591.057-.974c.422-.223 2.927-.085 4.242.005.861-.951 1.931-1.882 2.993-2.679-1.215-1.076-4.15-3.675-5.034-4.424-.776-.658.079-.797.079-.797.39-.07 1.222-.132 1.628-.009 2.524.763 6.442 2.068 7.363 2.376l1.162-.821c4.702-3.33 5.887-2.593 6.111-2.27s.503 1.701-4.199 5.032l-1.16.823c-.029.98-.157 5.151-.311 7.811-.025.428-.367 1.198-.565 1.544-.001 0-.423.765-.768-.198z&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span>✅<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
     Unicode characters. Damn good.
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--success"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 20 20"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--success&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 20 20&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z&quot;</span> /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
         An icon inside a button inherits its properties!
     <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 20 20"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 20 20&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z&quot;</span> /&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
     An icon inherits the font size (1em) of the parent element
 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h6"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 20 20"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h6&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 20 20&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562 3.779 3.779 0 0 1-3.526-2.621 3.858 3.858 0 0 0 1.705-.065 3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473 3.775 3.775 0 0 1-1.168-5.041 10.716 10.716 0 0 0 7.781 3.945 3.813 3.813 0 0 1-.097-.861 3.773 3.773 0 0 1 3.774-3.773 3.77 3.77 0 0 1 2.756 1.191 7.602 7.602 0 0 0 2.397-.916 3.789 3.789 0 0 1-1.66 2.088 7.55 7.55 0 0 0 2.168-.594 7.623 7.623 0 0 1-1.884 1.953z&quot;</span> /&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
         ✅
     <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
     It does!
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-02bb718a192787b211cc06a8017473da-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-339675d22be8325a720f1cb3f84ac2bb"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/elements/icon/_icon.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>88 Bytes</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-selector-class">.icon</span> {
+	<span class="hljs-keyword">@include</span> icon();
+}
 
-    
-        <div class="filebrowser-item is-active" id="file-9a1a2856e49e4b3f6e9132ea5b271cc9" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/elements/icon/_icon.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>210 Bytes</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-class">.icon</span> {
-	<span class="hljs-attribute">font-weight</span>:normal;
-	<span class="hljs-attribute">font-style</span>:normal;
-	<span class="hljs-attribute">line-height</span>:<span class="hljs-number">1</span>;
-	<span class="hljs-attribute">height</span>:<span class="hljs-number">1em</span>;
-	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
-	<span class="hljs-attribute">display</span>:inline-block;
-	<span class="hljs-attribute">margin-right</span>:<span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-	svg {
-		<span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
-		<span class="hljs-attribute">width</span>:auto;
-		<span class="hljs-attribute">vertical-align</span>:bottom;
-	}
-}</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+<span class="hljs-selector-class">.icon--right</span> {
+	<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">0</span>;
+	<span class="hljs-attribute">margin-left</span>:<span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2756,10 +2684,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

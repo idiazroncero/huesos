@@ -18,7 +18,7 @@ a.tag {
     padding: $tag-padding;
 
     @if $tag-strategy=='contrast' {
-      @include background-contrast(darken-color($tag-default-color));
+      // @include background-contrast(darken-color($tag-default-color));
     }
 
     @else if $tag-strategy=='split' {
@@ -30,7 +30,7 @@ a.tag {
 @each $key, $value in map-get($colors, state) {
   .tag--#{$key} {
     @if $tag-strategy=='contrast' {
-      @include background-contrast($value);
+      // @include background-contrast($value);
     }
 
     @else if $tag-strategy=='split' {
@@ -49,7 +49,7 @@ a.tag {
     &:hover,
     &:focus {
       @if $tag-strategy=='contrast' {
-        @include background-contrast(darken-color($value));
+        // @include background-contrast(darken-color($value));
       }
 
       @else if $tag-strategy=='split' {

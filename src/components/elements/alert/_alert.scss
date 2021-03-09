@@ -2,14 +2,15 @@
   @include alert($alert-default-color);
 }
 
-@each $key, $value in map-get($colors, state) {
+@each $key in $states {
   .alert--#{$key} {
     @if $alert-strategy=='contrast' {
-      @include background-contrast($value);
+      // @include background-contrast($value);
     }
 
     @else if $alert-strategy=='split' {
-      // @include background-split-color($value);
+      background-color: var(--color-split-state-#{$key}-light);
+      color: var(--color-split-state-#{$key}-dark);
     }
 
     @else {

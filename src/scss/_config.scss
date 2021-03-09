@@ -78,15 +78,15 @@ $danger-900: #5E051D;
 $danger: $danger-500;
 
 // Gray colors
-$gray-100: hsl(261, 10, 97);
-$gray-200: hsl(261, 10, 79);
-$gray-300: hsl(261, 10, 71);
-$gray-400: hsl(261, 10, 63);
-$gray-500: hsl(261, 10, 55);
-$gray-600: hsl(261, 10, 47);
-$gray-700: hsl(261, 10, 39);
-$gray-800: hsl(261, 10, 31);
-$gray-900: hsl(261, 10, 23);
+$gray-100: hsl(261, 10%, 97%);
+$gray-200: hsl(261, 10%, 79%);
+$gray-300: hsl(261, 10%, 71%);
+$gray-400: hsl(261, 10%, 63%);
+$gray-500: hsl(261, 10%, 55%);
+$gray-600: hsl(261, 10%, 47%);
+$gray-700: hsl(261, 10%, 39%);
+$gray-800: hsl(261, 10%, 31%);
+$gray-900: hsl(261, 10%, 23%);
 
 
 $black: $gray-900;
@@ -94,39 +94,97 @@ $white: #fff;
 
 $lightness-threshold: 65;
 
-// This map is used for color calculations, CSS variables
-// generation and iterations.
-
-$colors: (
+// We declare themes as a SASS map in order to be able to iterate, 
+// or calculate new colors based on this. This map will be used to generate the
+// actual CSS Custom Properties (variables) that are put into use.
+// These are the mandatory colors, optional ones will be added conditionally.
+$colors : (
   primary: $primary,
+  primary-contrast: contrast-color($primary),
   secondary: $secondary,
+  secondary-contrast: contrast-color($secondary),
   black: $black,
   white: $white,
   utility: (
     separator: $gray-200,
+    focus: $primary,
   ),
-  text: (
+  text : (
     body: $black,
+    body-contrast: $white,
     heading: $black,
   ),
-  background: (
+  mark : (
+    text: $black,
+    background: $secondary-400,
+  ),
+  background : (
     body: $white,
     dark: $gray-800,
     light: $gray-100,
-    mark: $secondary-400,
   ),
   state : (
     disabled: $gray-500,
     success: $success,
+    success-contrast: contrast-color($success),
     danger: $danger,
+    danger-contrast: contrast-color($danger),
     warning: $warning,
+    warning-contrast: contrast-color($warning),
   ),
+  link : (
+    default: $primary-500,
+    visited: $primary-400,
+    focus: $primary-800,
+    hover: $primary-800,
+    active: $primary-800,
+    decoration : $primary-100,
+    decoration-hover: $primary-500,
+  ),
+  input : (
+    border: $gray-200,
+    pseudo-border: $gray-600,
+  ),
+  code : (
+    inline-background: $secondary-200,
+    inline: $black,
+    block-background: $gray-900,
+    block: $white,
+  ),
+  split: (
+    primary: (
+      light: $primary-100,
+      dark: $primary-900,
+    ),
+    secondary: (
+      light: $secondary-100,
+      dark: $secondary-900,
+    ),
+    state-success: (
+      light: $success-100,
+      dark: $success-900,
+    ),
+    state-danger: (
+      light: $danger-100,
+      dark: $danger-900,
+    ),
+    state-warning: (
+      light: $warning-100,
+      dark: $warning-900,
+    ),
+  )
 );
 
-$dark-theme-colors: (
+$dark-colors: (
+  black: $white,
+  white: $black,
+  utility: (
+    separator: $gray-700,
+  ),
   text: (
     body: $gray-100,
-    heading: $gray-700,
+    body-contrast: $black,
+    heading: $gray-200,
   ),
   background: (
     body: $black,
@@ -139,46 +197,39 @@ $dark-theme-colors: (
     danger: $danger,
     warning: $warning,
   ),
+  link : (
+    default: $primary-100,
+    visited: $primary-100,
+    focus: $primary-300,
+    hover: $primary-300,
+    active: $primary-300,
+    decoration : $primary-100,
+    decoration-hover: $primary-500,
+  ),
+  input : (
+    border: $gray-700,
+    pseudo-border: $gray-500,
+  ),
+  code : (
+    inline-background: $gray-700,
+    inline: $white,
+    block-background: $gray-800,
+    block: $white,
+  ),
 );
 
+$states: 'success', 'warning', 'danger';
+
 $generate-color-classes: true;
-
-// Define the actual theme colors as CSS custom properties in order to allow for
-// easy theme overriding.
-:root {
-  @each $type, $value in $colors {
-    @if type-of($value) == 'map' {
-      @each $subtype, $subvalue in $value {
-        --color-#{$type}-#{$subtype}: $subvalue;
-      }
-    }
-    @else {
-      --color-#{$type}: $value;
-    }
-  };
-  @each $type, $value in $dark-theme-colors {
-    @if type-of($value) == 'map' {
-      @each $subtype, $subvalue in $value {
-        --dark-color-#{$type}-#{$subtype}: $subvalue;
-      }
-    }
-    @else {
-      --dark-color-#{$type}: $value;
-    }
-  }
-};
-
-[data-theme-dark] {
-  --color-text-body: var(--dark-color-text-body);
-  --color-background-body: var(--dark-color-background-body);
-}
 
 // --------------------
 // VERTICAL RHYTHM
 // --------------------
 
 $base-font-size: 16px;
+$base-line-height-ratio: 1.5;
 $base-line-height: 1.5rem;
+
 
 // Show a grid to see vertical rhythm in action
 $show-grid: false;
@@ -256,9 +307,8 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-inline-background-color: $secondary-200;
-$code-block-background-color: $gray-900; // You might want to apply a different bg to block elements using .code-block
-
+// Set to false to avoid outputting color variables
+$code-padding-x: $gutter / 4;
 $code-border-radius: 5px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
@@ -367,10 +417,9 @@ $border-radius: 0px;
 
 $separators: true; // Set this to false to disable all separators
 $separator-width: 1px;
-$separator-color: var(--color-utility-separator);
 
 $table-border-width: 1px;
-$table-border-color: var(--color-utility-separator); // CSS value or none
+$table-border-color: var(--color-utility-separator);
 $table-padding: $spacer / 2;
 $table-th-align: left;
 
@@ -388,12 +437,6 @@ $box-shadow: 2px 2px 2px 0px rgba($black, 0.1);
 // This values are used by set-link() to get your linking strategy
 // ------
 
-// Link textcolors
-$link-color: $primary-500;
-$link-visited: $primary-400;
-$link-hover: $primary-800;
-$link-active: $primary-800;
-
 // Link decoration data on default and hover states
 $link-decoration: (
   underline: (
@@ -410,17 +453,6 @@ $link-decoration: (
   )
 );
 
-// Inverse link colors and strategy (for contrasted backgrounds)
-// TODO: wat?
-$inverse-link-color: $primary-100;
-$inverse-link-visited: $primary-100;
-$inverse-link-hover: $primary-200;
-$inverse-link-active: $primary-200;
-$inverse-link-strategy-default:'underline';
-$inverse-link-strategy-hover: false;
-
-
-
 
 // ------
 // FORMS
@@ -430,15 +462,17 @@ $inverse-link-strategy-hover: false;
 $form-border-radius: $border-radius;
 
 // Labels
-$label-as-minititle: true;
+$label-as-minititle: false;
 
 // Inputs
-$input-border-strategy: full; // Options: full, bottom, none;
-$input-border-color: $gray-200;
+$input-border-strategy: bottom; // Options: full, bottom, none;
 $input-border-width: 1px;
-$input-padding-lines: 2;
+$input-padding-x: 0;
+$input-padding-y: $gutter / 6;
 
 // Buttons
+$button-padding-y: $gutter / 8;
+$button-padding-x: $gutter / 2;
 $button-font-family: $font-main;
 $button-font-size: 'h6';
 $button-border-width: 2px;
@@ -447,45 +481,28 @@ $button-weight: $font-main-bold;
 $button-invert-color: false; // Only valid on border:fill and background
 $button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for darken, negative for lighten.
 
-// BUILD YOUR OWN BUTTON
-// You can choose one strategy for every state!
-//
 // Available strategies:
 // - outline - Colored outline and text, background transparent
 // - background - Background solid, font contrasted.
 // - split - Background colored dim, font colored dark, based on same color
 // - split-inverse - Inverse of split
-//
-// Note that background and outline can be considered "inverse" of each other
+
 $button-strategy-default: 'outline';
 $button-strategy-hover: 'background';
 
-$button-alternative-strategies: false;
-
-//
-// Example of $button-alternative-strategies:
-//
-// $button-alternative-strategies: (
-// 	split : (
-// 		default : 'split',
-// 		hover : 'split-inverse'
-// 	),
-// );
-
-
+// Mapping of class names and actual color names
 $button-states : (
-  primary: var(--color-primary),
-  secondary: var(--color-secondary),
-  success: var(--color-success),
-  warning: var(--color-warning),
-  error: var(--color-danger),
+  primary: 'primary', 
+  secondary: 'secondary',
+  success: 'state-success',
+  warning: 'state-warning',
+  danger: 'state-danger',
 );
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;
 $pseudo-radio: false;
-$pseudo-border-color: $gray-800;
-$pseudo-border: 1px solid $pseudo-border-color;
+$pseudo-border: 1px solid var(--color-input-pseudo-border);
 
 // Browser quirks
 $webkit-autofill-color: $gray-500; // When webkit fills the fields whith your stored data.
@@ -642,3 +659,9 @@ $card-shadow: true; // Aplies shadow-definition
 // ------
 
 
+
+// ------
+// CSS VARIABLES
+// Map variables to CSS Custom Properties
+// ------
+@import "css-vars";

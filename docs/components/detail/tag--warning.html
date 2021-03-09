@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Tag: Warning | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-d56eca995dc340a293592a2ab9cac3e7">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-d56eca995dc340a293592a2ab9cac3e7">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/tag--warning.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2641,121 +2569,112 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-d56eca995dc340a293592a2ab9cac3e7-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--warning"</span>&gt;</span>This is a warning tag!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag tag--warning"</span>&gt;</span>This is a warning tag!<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mb&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tag tag--warning&quot;</span>&gt;</span>This is a warning tag!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tag tag--warning&quot;</span>&gt;</span>This is a warning tag!<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-d56eca995dc340a293592a2ab9cac3e7-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-0694789285d3bb22fb9e14df9534c2d0"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/elements/tag/_tag.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>1.3 KB</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-selector-class">.tag</span> {
+  <span class="hljs-keyword">@include</span> tag(<span class="hljs-variable">$tag-default-color</span>);
+}
 
-    
-        <div class="filebrowser-item is-active" id="file-2b7456917eb9d3ab0bdad88a736e9a83" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/elements/tag/_tag.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>1.9 KB</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-class">.tag</span> {
-    <span class="hljs-attribute">display</span>:inline-block;
-    <span class="hljs-attribute">vertical-align</span>: bottom;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
-    <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$tag-font-size</span>);
-
-    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-        <span class="hljs-keyword">@include</span> background-contrast(<span class="hljs-variable">$tag-default-color</span>);
-    } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-        <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$tag-default-color</span>); 
-    }
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius</span>;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">3</span>;
-    <span class="hljs-attribute">font-weight</span>:normal;
-
-    <span class="hljs-selector-class">.right</span> &amp; {
-        <span class="hljs-attribute">margin-right</span>:<span class="hljs-number">0</span>;
-        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">3</span>;
-    }
-    <span class="hljs-selector-class">.center</span> &amp; {
-        <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">6</span>;
-        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">6</span>;
-    }
+<span class="hljs-selector-class">.tag</span> + <span class="hljs-selector-class">.tag</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
 }
 
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.tag</span> {
-    <span class="hljs-keyword">@include</span> kill-link-decoration();
-    <span class="hljs-attribute">cursor</span>:pointer;
+  <span class="hljs-keyword">@include</span> kill-link-decoration();
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-comment">// Keep the padding!</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:hover</span>,
+  &amp;<span class="hljs-selector-pseudo">:focus</span> {
     <span class="hljs-comment">// Keep the padding!</span>
     <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
 
+    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;contrast&#x27;</span> {
+      <span class="hljs-keyword">@include</span> background-contrast(darken-color(<span class="hljs-variable">$tag-default-color</span>));
+    }
+
+    <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;split&#x27;</span> {
+    <span class="hljs-comment">//   @include background-split-color(lighten-color($tag-default-color));</span>
+    }
+  }
+}
+
+<span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
+  <span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
+    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;contrast&#x27;</span> {
+      <span class="hljs-keyword">@include</span> background-contrast(<span class="hljs-variable">$value</span>);
+    }
+
+    <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;split&#x27;</span> {
+    <span class="hljs-comment">//   @include background-split-color($value);</span>
+    }
+
+    <span class="hljs-keyword">@else</span> {
+      <span class="hljs-keyword">@error</span> <span class="hljs-string">&quot;You must provide a valid $tag-strategy value&quot;</span>;
+    }
+  }
+}
+
+<span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
+  <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
+
     &amp;<span class="hljs-selector-pseudo">:hover</span>,
     &amp;<span class="hljs-selector-pseudo">:focus</span> {
-        <span class="hljs-comment">// Keep the padding!</span>
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$tag-padding</span>;
+      <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;contrast&#x27;</span> {
+        <span class="hljs-keyword">@include</span> background-contrast(darken-color(<span class="hljs-variable">$value</span>));
+      }
 
-        <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-            <span class="hljs-keyword">@include</span> background-contrast(darken-color(<span class="hljs-variable">$tag-default-color</span>));
-        } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-            <span class="hljs-keyword">@include</span> background-split-color(lighten-color(<span class="hljs-variable">$tag-default-color</span>)); 
-        }
-    }
-}
+      <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span>==<span class="hljs-string">&#x27;split&#x27;</span> {
+      <span class="hljs-comment">//   @include background-split-color(lighten-color($value));</span>
+      }
 
-<span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
-    <span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
-        <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-            <span class="hljs-keyword">@include</span> background-contrast(<span class="hljs-variable">$value</span>); 
-        } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-            <span class="hljs-keyword">@include</span> background-split-color(<span class="hljs-variable">$value</span>); 
-        } <span class="hljs-keyword">@else</span> {
-            <span class="hljs-keyword">@error</span> <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
-        }
+      <span class="hljs-keyword">@else</span> {
+        <span class="hljs-keyword">@error</span> <span class="hljs-string">&quot;You must provide a valid $tag-strategy value&quot;</span>;
+      }
     }
-}
-
-<span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in map-get(<span class="hljs-variable">$colors</span>, state) {
-    <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$key</span>} {
-        &amp;<span class="hljs-selector-pseudo">:hover</span>,
-        &amp;<span class="hljs-selector-pseudo">:focus</span> {
-            <span class="hljs-keyword">@if</span> <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'contrast'</span> {
-                <span class="hljs-keyword">@include</span> background-contrast(darken-color(<span class="hljs-variable">$value</span>)); 
-            } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$tag-strategy</span> == <span class="hljs-string">'split'</span> {
-                <span class="hljs-keyword">@include</span> background-split-color(lighten-color(<span class="hljs-variable">$value</span>)); 
-            } <span class="hljs-keyword">@else</span> {
-                <span class="hljs-keyword">@error</span> <span class="hljs-string">"You must provide a valid $tag-strategy value"</span>;
-            }
-        }
-    }
-}</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+  }
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2779,10 +2698,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

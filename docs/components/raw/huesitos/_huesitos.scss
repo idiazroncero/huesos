@@ -1,198 +1,166 @@
 @if $huesitos {
 
-    .m {
-        margin: $gutter;
-    }
+  .m {
+    margin: $gutter;
+  }
 
-    .mt {
-        margin-top: $gutter;
-    }
+  .mt {
+    margin-top: $gutter;
+  }
 
-    .mr {
-        margin-right: $gutter;
-    }
+  .mr {
+    margin-right: $gutter;
+  }
 
-    .mb {
-        margin-bottom: $gutter;
-    }
+  .mb {
+    margin-bottom: $gutter;
+  }
 
-    .ml {
-        margin-left: $gutter;
-    }
+  .ml {
+    margin-left: $gutter;
+  }
 
-    .m0 {
-        margin:0;
-    }
+  .m0 {
+    margin: 0;
+  }
 
-    .p {
-        padding: $gutter;
-    }
+  .p {
+    padding: $gutter;
+  }
 
-    .pt {
-        padding-top: $gutter;
-    }
+  .pt {
+    padding-top: $gutter;
+  }
 
-    .pr {
-        padding-right: $gutter;
-    }
+  .pr {
+    padding-right: $gutter;
+  }
 
-    .pb {
-        padding-bottom: $gutter;
-    }
+  .pb {
+    padding-bottom: $gutter;
+  }
 
-    .pl {
-        padding-left: $gutter;
-    }
+  .pl {
+    padding-left: $gutter;
+  }
 
-    .p0 {
-        padding:0;
-    }
+  .p0 {
+    padding: 0;
+  }
 
-    .b {
-        border: $separator-width solid $separator-color;
-    }
+  @if $spacers {
+    @each $name, $ratio in $spacers {
+      .m-#{$name},
+      .p-#{$name} {
+        margin: $gutter * $ratio;
+      }
 
-    .bt {
-        border-top: $separator-width solid $separator-color;
-    }
+      .mt-#{$name},
+      .pt-#{$name} {
+        margin-top: $gutter * $ratio;
+      }
 
-    .br {
-        border-right: $separator-width solid $separator-color;
-    }
+      .mr-#{$name},
+      .pr-#{$name} {
+        margin-right: $gutter * $ratio;
+      }
 
-    .bb {
-        border-bottom: $separator-width solid $separator-color;
-    }
+      .mb-#{$name},
+      .pb-#{$name} {
+        margin-bottom: $gutter * $ratio;
+      }
 
-    .bl {
-        border-left: $separator-width solid $separator-color;
+      .ml-#{$name},
+      .pl-#{$name} {
+        margin-left: $gutter * $ratio;
+      }
     }
+  }
 
-    .b0 {
-        border:none;
-    }
+  .b {
+    border: $separator-width solid var(--color-utility-separator);
+  }
+
+  .bt {
+    border-top: $separator-width solid var(--color-utility-separator);
+  }
+
+  .br {
+    border-right: $separator-width solid var(--color-utility-separator);
+  }
+
+  .bb {
+    border-bottom: $separator-width solid var(--color-utility-separator);
+  }
+
+  .bl {
+    border-left: $separator-width solid var(--color-utility-separator);
+  }
+
+  .b0 {
+    border: none;
+  }
 
 
-    @if $generate-color-classes {
-        @each $palette, $value in $colors {
-            @each $name, $hex in $value {
-                .bg-#{$palette}-#{$name} {
-                    @include background-contrast($hex, true);
-                }
-            }
-        }
-    }
+  // @if $generate-color-classes {
+  //     @each $palette, $value in $colors {
+  //       @if type-of($value) == 'map' {
+  //         @each $name, $hex in $value {
+  //             .bg-#{$palette}-#{$name} {
+  //                 background-color: $hex;
+  //             }
+  //         }
+  //       } @else {
+  //         .bg-#{$palette} {
+  //           background-color: $value;
+  //         }
+  //       }
+  //     }
+  // }
 
-    .half-gutter {
-        &.m {
-            margin: $gutter / 2;
-        }
-        &.mt {
-            margin-top: $gutter / 2;
-        }
-        &.mr {
-            margin-right: $gutter / 2;
-        }
-        &.mb {
-            margin-bottom: $gutter / 2;
-        }
-        &.ml {
-            margin-left: $gutter / 2;
-        } 
-        &.p {
-            padding: $gutter / 2;
-        }
-        &.pt {
-            padding-top: $gutter / 2;
-        }
-        &.pr {
-            padding-right: $gutter / 2;
-        }
-        &.pb {
-            padding-bottom: $gutter / 2;
-        }
-        &.pl {
-            padding-left: $gutter / 2;
-        }
-    }
+  .tl {
+    text-align: left;
+  }
 
-    .quarter-gutter {
-        &.m {
-            margin: $gutter / 4;
-        }
-        &.mt {
-            margin-top: $gutter / 4;
-        }
-        &.mr {
-            margin-right: $gutter / 4;
-        }
-        &.mb {
-            margin-bottom: $gutter / 4;
-        }
-        &.ml {
-            margin-left: $gutter / 4;
-        } 
-        &.p {
-            padding: $gutter / 4;
-        }
-        &.pt {
-            padding-top: $gutter / 4;
-        }
-        &.pr {
-            padding-right: $gutter / 4;
-        }
-        &.pb {
-            padding-bottom: $gutter / 4;
-        }
-        &.pl {
-            padding-left: $gutter / 4;
-        }
-    }
+  .tc {
+    text-align: center;
+  }
 
-    .tl {
-        text-align:left;
-    }
+  .tr {
+    text-align: right;
+  }
 
-    .tc {
-        text-align:center;
-    }
+  .up {
+    text-transform: uppercase;
+  }
 
-    .tr {
-        text-align:right;
-    }
+  .st {
+    font-weight: bold;
+  }
 
-    .up {
-        text-transform:uppercase;
-    }
+  .em {
+    font-style: italic;
+  }
 
-    .st {
-        font-weight:bold;
-    }
+  .ls {
+    letter-spacing: $letter-spacing;
+  }
 
-    .em {
-        font-style: italic;
-    }
+  .sh {
+    box-shadow: $box-shadow;
+  }
 
-    .ls {
-        letter-spacing: $letter-spacing;
-    }
-
-    .sh {
-        box-shadow: $box-shadow;
-    }
-
-    .invert {
-        color: $contrast-light;
-        h1, .h1,
-        h2, .h2,
-        h3, .h3,
-        h4, .h4,
-        h5, .h5,
-        h6, .h6 {
-            color: inherit;
-        }
-        @include invert-links();
-    }
+  // TODO: better strategy
+  // .invert {
+  //     color: $contrast-light;
+  //     h1, .h1,
+  //     h2, .h2,
+  //     h3, .h3,
+  //     h4, .h4,
+  //     h5, .h5,
+  //     h6, .h6 {
+  //         color: inherit;
+  //     }
+  //     @include invert-links();
+  // }
 }
-
-

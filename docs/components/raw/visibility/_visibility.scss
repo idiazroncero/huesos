@@ -1,8 +1,9 @@
 @each $name, $value in $breakpoints {
-    .#{$name}-visible {
-        display:none;
-        @include breakpoint(#{$value}) {
-            display:inherit;
-        }
+  .#{$name}-visible {
+    display: none;
+
+    @include breakpoint(#{$value}) {
+      display: inherit;
     }
+  }
 }

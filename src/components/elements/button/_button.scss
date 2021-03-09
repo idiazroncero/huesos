@@ -1,65 +1,56 @@
 // Global reset
 .button {
-	@include form-reset-button();
-	// TODO @include ritmo-font-size(font-size($button-font-size), $base-line-multi);
-	text-transform: uppercase;
-	letter-spacing: 0.05rem;
-	vertical-align:bottom;
-	font-weight: $button-weight;
-	font-family: $button-font-family;
-
-	// Icons inside buttons
-	.icon {
-		font-size: font-size(h6);
-		height: font-size(h6);
-		line-height:1;
-		svg {
-			fill:currentColor;
-		}
-	}
+  background: none;
+  cursor:pointer;
+  display: inline-block;
+  font-size: font-size($button-font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  vertical-align:bottom;
+  font-weight: $button-weight;
+  font-family: $button-font-family;
+  padding: $button-padding-y $button-padding-x;
+  border-width: $button-border-width;
+  border-style: solid;
+  border-color: transparent; // To be overriden depending on the style.
+  
+  // Icons inside buttons
+  .icon {
+    font-size: font-size(h6);
+    height: font-size(h6);
+    line-height:1;
+    svg {
+      fill:currentColor;
+    }
+  }
 }
 
 a.button {
-	@include kill-link-button();
+  @include kill-link-button();
 }
-
 
 // Adjacent buttons
 .button + .button {
-	margin-left:$gutter / 4;
+  margin-left:$gutter / 4;
 }
 
 // $button-states map states to colors
 @each $key, $value in $button-states {
-	.button--#{$key} {
-		@include style-button($value);
-	}
-	a.button--#{$key} {
-		@include style-link-button($value);
-	}
-}
-
-// Button alternative styles
-@if $button-alternative-strategies {
-	@each $strategy, $states in $button-alternative-strategies {
-		@each $key, $value in $button-states {
-			.button--#{$key}--#{$strategy} {
-				@include style-button($value, map-get($states, default), map-get($states, hover));
-			}
-			a.button--#{$key}--#{$strategy} {
-				@include style-link-button($value, map-get($states, default), map-get($states, hover));
-			}
-		}
-	}
+  .button--#{$value} {
+    @include style-button($value);
+  }
+  a.button--#{$value} {
+    @include style-link-button($value);
+  }
 }
 
 
 .button.disabled {
-	opacity: $disabled-opacity;
-	cursor: arrow;
-	pointer-events:none;
-	&:hover, 
-	&:focus {
-        cursor: arrow;
-	}
+  opacity: $disabled-opacity;
+  cursor: arrow;
+  pointer-events:none;
+  &:hover, 
+  &:focus {
+    cursor: arrow;
+  }
 }

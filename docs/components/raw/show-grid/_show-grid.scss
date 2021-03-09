@@ -1,14 +1,16 @@
+@mixin show-grid() {
+	// TODO: background-size: ritmo($base-line-multi) ritmo($base-line-multi), ritmo($base-line-multi / 2) ritmo($base-line-multi / 2);
+	background-image: linear-gradient(to bottom, rgba(0,0,0, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0, 0.05) 1px, transparent 1px);
+	background-repeat: repeat;
+}
+
+
 @if $show-grid == true {
 	body {
-		background-size: ritmo($base-line-multi) ritmo($base-line-multi), ritmo($base-line-multi / 2) ritmo($base-line-multi / 2);
-		background-image: linear-gradient(to bottom, rgba(0,0,0, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0, 0.05) 1px, transparent 1px);
-		background-repeat: repeat;
+		@include show-grid();
 	}
-	
 }
 
 .show-grid {
-	background-size: ritmo($base-line-multi) ritmo($base-line-multi), ritmo($base-line-multi / 2) ritmo($base-line-multi / 2);
-	background-image: linear-gradient(to bottom, rgba(0,0,0, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0, 0.05) 1px, transparent 1px);
-	background-repeat: repeat;
+	@include show-grid();
 }

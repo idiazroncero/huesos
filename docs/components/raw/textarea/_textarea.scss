@@ -3,4 +3,8 @@ textarea {
 	@include form-reset-textarea();
 	width:100%;
 	min-height: $spacer * 2;
+
+	&:focus {
+    outline-color: var(--color-utility-focus);
+  }
 }

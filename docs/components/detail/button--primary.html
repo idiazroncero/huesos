@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Button: Primary | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-ab11dfda60b9ce2935de01efd5333bdc">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-ab11dfda60b9ce2935de01efd5333bdc">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/button--primary.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2639,12 +2567,12 @@
 <p>Use this values to define a <code>$button-strategy-default</code>and a <code>$button-strategy-hover</code>.</p>
 <p>Some common examples are:</p>
 <pre><code class="hljs language-scss"><span class="hljs-comment">/* Button with outline that fills with color on hover (default) */</span>  
-<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'outline'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'background'</span>;</code></pre><pre><code class="hljs language-scss"><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
-<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'background'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><pre><code class="hljs language-scss"><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
-<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">'split'</span>;
-<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">'split-inverse'</span>;</code></pre><h3 id="disabled-buttons">Disabled buttons</h3>
+<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">&#x27;outline&#x27;</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">&#x27;background&#x27;</span>;</code></pre><pre><code class="hljs language-scss"><span class="hljs-comment">/* Button with solid background that darkens on hover */</span>
+<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">&#x27;background&#x27;</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">&#x27;split-inverse&#x27;</span>;</code></pre><pre><code class="hljs language-scss"><span class="hljs-comment">/* Button with split colors that are set to inverse on hover */</span>
+<span class="hljs-variable">$button-strategy-default</span>: <span class="hljs-string">&#x27;split&#x27;</span>;
+<span class="hljs-variable">$button-strategy-hover</span>: <span class="hljs-string">&#x27;split-inverse&#x27;</span>;</code></pre><h3 id="disabled-buttons">Disabled buttons</h3>
 <p>Instead of using a custom <code>.button--disabled</code> class, disable buttons by usign the global <code>.disabled</code> helper class. </p>
 <p>This class is configured to detect context and apply the correct disabling properties.</p>
 <h3 id="alternative-buttons">Alternative buttons.</h3>
@@ -2652,8 +2580,8 @@
 <p>We provide a commented example on <code>_config.scss</code></p>
 <pre><code class="hljs language-scss"><span class="hljs-variable">$button-alternative-strategies</span>: (
     split : (
-        default : <span class="hljs-string">'split'</span>, 
-        hover : <span class="hljs-string">'split-inverse'</span>
+        default : <span class="hljs-string">&#x27;split&#x27;</span>, 
+        hover : <span class="hljs-string">&#x27;split-inverse&#x27;</span>
     ),
 );</code></pre><p>The generated classes will take the following format: <code>.button--#{variant}--#{strategy}</code>. For example, the <code>split</code> strategy consisting of <code>split</code> as default and <code>split-inverse</code> as hover becomes <code>.button--primary--split</code> for the primary variant, <code>.button--error--split</code> por the error variant and so on…</p>
 <p>Setting <code>$button-alternative-strategies</code> to a falsy value avoids the programatic generation of classes and avoids bloating your css.</p>
@@ -2668,117 +2596,120 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-ab11dfda60b9ce2935de01efd5333bdc-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button--primary"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Primary"</span> /&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mb&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--primary&quot;</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--primary&quot;</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--primary&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Primary&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-ab11dfda60b9ce2935de01efd5333bdc-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-7d57f9dec042ac636ef227874bd87e38"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/elements/button/_button.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>1.6 KB</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
-
-    
-        <div class="filebrowser-item is-active" id="file-8a1022e7507b827053f0e128839147e6" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/elements/button/_button.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>1.3 KB</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-comment">// Global reset</span>
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-comment">// Global reset</span>
 <span class="hljs-selector-class">.button</span> {
-	<span class="hljs-keyword">@include</span> form-reset-button();
-	<span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$button-font-size</span>, <span class="hljs-variable">$base-line-multi</span>);
-	<span class="hljs-attribute">text-transform</span>: uppercase;
-	<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.05rem</span>;
-	<span class="hljs-attribute">vertical-align</span>:bottom;
-	<span class="hljs-attribute">font-weight</span>: <span class="hljs-variable">$button-weight</span>;
-	<span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$button-font-family</span>;
-
-	<span class="hljs-comment">// Icons inside buttons</span>
-	<span class="hljs-selector-class">.icon</span> {
-		<span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h6-font-size</span>);
-		<span class="hljs-attribute">height</span>: <span class="hljs-variable">$h6-font-size</span>;
-		<span class="hljs-attribute">line-height</span>:<span class="hljs-number">1</span>;
-		svg {
-			fill:currentColor;
-		}
-	}
+  <span class="hljs-attribute">background</span>: none;
+  <span class="hljs-attribute">border</span>:none;
+  <span class="hljs-attribute">cursor</span>:pointer;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">font-size</span>: font-size(<span class="hljs-variable">$button-font-size</span>);
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.05rem</span>;
+  <span class="hljs-attribute">vertical-align</span>:bottom;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-variable">$button-weight</span>;
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$button-font-family</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$button-padding-y</span> <span class="hljs-variable">$button-padding-x</span>;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-variable">$button-border-width</span>;
+  <span class="hljs-attribute">border-style</span>: solid;
+  <span class="hljs-attribute">border-color</span>: transparent; <span class="hljs-comment">// To be overriden depending on the style.</span>
+  
+  <span class="hljs-comment">// Icons inside buttons</span>
+  <span class="hljs-selector-class">.icon</span> {
+    <span class="hljs-attribute">font-size</span>: font-size(h6);
+    <span class="hljs-attribute">height</span>: font-size(h6);
+    <span class="hljs-attribute">line-height</span>:<span class="hljs-number">1</span>;
+    svg {
+      fill<span class="hljs-selector-pseudo">:current</span>Color;
+    }
+  }
 }
 
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button</span> {
-	<span class="hljs-keyword">@include</span> kill-link-button();
+  <span class="hljs-keyword">@include</span> kill-link-button();
 }
-
 
 <span class="hljs-comment">// Adjacent buttons</span>
 <span class="hljs-selector-class">.button</span> + <span class="hljs-selector-class">.button</span> {
-	<span class="hljs-attribute">margin-left</span>:<span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
+  <span class="hljs-attribute">margin-left</span>:<span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
 }
 
 <span class="hljs-comment">// $button-states map states to colors</span>
 <span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$button-states</span> {
-	<span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>} {
-		<span class="hljs-keyword">@include</span> style-button(<span class="hljs-variable">$value</span>);
-	}
-	<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>} {
-		<span class="hljs-keyword">@include</span> style-link-button(<span class="hljs-variable">$value</span>);
-	}
+  <span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>} {
+    <span class="hljs-keyword">@include</span> style-button(<span class="hljs-variable">$value</span>);
+  }
+  <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>} {
+    <span class="hljs-keyword">@include</span> style-link-button(<span class="hljs-variable">$value</span>);
+  }
 }
 
-<span class="hljs-comment">// Button alternative styles</span>
-<span class="hljs-keyword">@if</span> <span class="hljs-variable">$button-alternative-strategies</span> {
-	<span class="hljs-keyword">@each</span> <span class="hljs-variable">$strategy</span>, <span class="hljs-variable">$states</span> in <span class="hljs-variable">$button-alternative-strategies</span> {
-		<span class="hljs-keyword">@each</span> <span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$button-states</span> {
-			<span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>}--#{<span class="hljs-variable">$strategy</span>} {
-				<span class="hljs-keyword">@include</span> style-button(<span class="hljs-variable">$value</span>, map-get(<span class="hljs-variable">$states</span>, default), map-get(<span class="hljs-variable">$states</span>, hover));
-			}
-			<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button--</span>#{<span class="hljs-variable">$key</span>}--#{<span class="hljs-variable">$strategy</span>} {
-				<span class="hljs-keyword">@include</span> style-link-button(<span class="hljs-variable">$value</span>, map-get(<span class="hljs-variable">$states</span>, default), map-get(<span class="hljs-variable">$states</span>, hover));
-			}
-		}
-	}
-}
+<span class="hljs-comment">// // Button alternative styles</span>
+<span class="hljs-comment">// @if $button-alternative-strategies {</span>
+<span class="hljs-comment">//   @each $strategy, $states in $button-alternative-strategies {</span>
+<span class="hljs-comment">//     @each $key, $value in $button-states {</span>
+<span class="hljs-comment">//       .button--#{$key}--#{$strategy} {</span>
+<span class="hljs-comment">//         @include style-button($value, map-get($states, default), map-get($states, hover));</span>
+<span class="hljs-comment">//       }</span>
+<span class="hljs-comment">//       a.button--#{$key}--#{$strategy} {</span>
+<span class="hljs-comment">//         @include style-link-button($value, map-get($states, default), map-get($states, hover));</span>
+<span class="hljs-comment">//       }</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
 
 
 <span class="hljs-selector-class">.button</span><span class="hljs-selector-class">.disabled</span> {
-	<span class="hljs-attribute">opacity</span>: <span class="hljs-variable">$disabled-opacity</span>;
-	<span class="hljs-attribute">cursor</span>: arrow;
-	<span class="hljs-attribute">pointer-events</span>:none;
-	&amp;<span class="hljs-selector-pseudo">:hover</span>, 
-	&amp;<span class="hljs-selector-pseudo">:focus</span> {
-        <span class="hljs-attribute">cursor</span>: arrow;
-	}
-}</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-variable">$disabled-opacity</span>;
+  <span class="hljs-attribute">cursor</span>: arrow;
+  <span class="hljs-attribute">pointer-events</span>:none;
+  &amp;<span class="hljs-selector-pseudo">:hover</span>, 
+  &amp;<span class="hljs-selector-pseudo">:focus</span> {
+    <span class="hljs-attribute">cursor</span>: arrow;
+  }
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2802,10 +2733,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

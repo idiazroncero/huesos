@@ -4,10 +4,13 @@
 
 	label {
 		display:block;
+	}
+
+	.label {
 		@if $label-as-minititle {
-			@include minititle($label-font-size)
+			@include minititle($label-font-size);
 		} @else {
-			@include font-size($label-font-size)
+			@include font-size($label-font-size);
 		}
 	}
 
@@ -22,15 +25,6 @@
 	&:last-child,
 	&:last-of-type {
 		margin-bottom:0;
-	}
-}
-
-.form-item--inline {
-	display:flex;
-	align-items: center;
-	label {
-		flex: 0 1 auto;
-		line-height: 1.2;
 	}
 }
 
@@ -49,36 +43,35 @@
 .form-item--required {
 	label::after {
 		content: "*";
-		color: var(--color-danger);
+		color: var(--color-state-danger);
 		margin-left: $gutter / 4;
 	}
 }
 
 .form-item--error {
 	label {
-		color: var(--color-danger);
+		color: var(--color-state-danger);
 	}
 	input,
 	textarea {
-		@include form-border($color: var(--color-danger));
+		@include form-border($color: var(--color-state-danger));
 	}
 }
 
 .form-item--success {
 	label {
-		color: var(--color-success);
+		color: var(--color-state-success);
 	}
 	input,
 	textarea {
-		@include form-border($color: var(--color-success));
+		@include form-border($color: var(--color-state-success));
 	}
 }
 
-
-
 .form-item--label-inside {
 	border-radius: $form-border-radius;
-	@include form-border(); 
+  @include form-border(); 
+  padding: $input-padding-y $input-padding-x;
 	input,
 	textarea {
 		border:none;
@@ -86,13 +79,3 @@
 		padding:0;
 	}
 }
-
-// TODO: Is this even necessary? Can it be abstracted to a general flexbox-alignment class?
-.form-item--label-top {
-	align-items: flex-start;
-}
-
-.form-item--label-bottom {
-	align-items: flex-end;
-}
-

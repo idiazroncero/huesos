@@ -13,7 +13,7 @@ input::-webkit-file-upload-button {
 	// TODO: 
 	// margin-right: ritmo($input-padding-lines);
 	// padding-right: ritmo($input-padding-lines);
-	border-right: $input-border-width solid $input-border-color;
+	border-right: $input-border-width solid var(--color-input-border);
 }
 
 .file-input {

@@ -1,0 +1,25 @@
+// Define the actual theme colors as CSS custom properties in order to allow for
+// easy theme overriding.
+
+@mixin generate-css-var($type, $value, $name) {
+  @if type-of($value) == 'map' {
+    @each $nested-type, $nested-value in $value {
+      @include generate-css-var($nested-type, $nested-value, #{$name}-#{$nested-type})
+    }
+  }
+  @else {
+    --color-#{$name}: #{$value};
+  }
+}
+
+:root {
+  @each $type, $value in $colors {
+    @include generate-css-var($type, $value, #{$type})
+  };
+};
+
+// [data-theme-dark] {
+//   @each $type, $value in $dark-colors {
+//     @include generate-css-var($type, $value, #{$type})
+//   };
+// }

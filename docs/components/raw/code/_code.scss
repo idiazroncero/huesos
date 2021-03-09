@@ -1,33 +1,39 @@
-
 code,
-.code,
 kbd,
 samp,
 var {
-	font-family: $font-monospace;
-	@include ritmo-font-size($base-font-size, 2); // Keep it lower than $base-line-multi!!
-	display:inline;
-	vertical-align: baseline;
-	box-decoration-break: clone;
-	white-space: nowrap; // Avoid line breaking!
-	@if $code-background != false {
-		background-color: $code-background;
-		color: contrast-color($code-background);
-		padding: ritmo(0.5) ritmo(1);
-	}
-	@if $code-border-radius != false {
-		border-radius: $code-border-radius;
-	}
+  font-family: $font-monospace;
+  // Keep the font size relative to its context and smaller.
+  line-height: $base-line-height;
+  display: inline-block;
+  vertical-align: middle;
+  box-decoration-break: clone;
+  white-space: nowrap; // Avoid line breaking!
+  margin: 0; // Prevent lobotomized owl from messing with this.
+  background-color: var(--color-code-inline-background);
+  color: var(--color-code-inline);
+  padding: 0 $code-padding-x;
+
+  @if $code-border-radius !=false {
+    border-radius: $code-border-radius;
+  }
 }
 
 .code-block {
-	@include code-block();
+  display:block;
+  padding: $gutter;
+  background-color: var(--color-code-block-background);
+  color: var(--color-code-block);
+
+  // Delete margin on pre element
+  pre {
+    margin:0;
+  }
 }
 
 // Some people wrap <pre> inside <code>,
 // some people do the opposite.
 // Ensure that white-space is inherited if <pre> is the wrapper:
-
 pre code {
-    white-space: inherit;
+  white-space: inherit;
 }

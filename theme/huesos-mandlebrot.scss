@@ -260,11 +260,9 @@ code.code {
 
 .contrast-links {
   background-color: $info-900;
-  @include contrast-links($info-900);
 }
 
 .invert-links {
-  @include invert-links();
 }
 
 .hide-me {
@@ -312,10 +310,25 @@ code.code {
 }
 
 a.set-link {
-  @include set-link(red,
+  @include set-link(
+    red,
     blue,
     purple,
-    green
+    green,
+    (
+      underline: (
+        default: true,
+        hover: true,
+      ),
+      color: (
+        default: yellow,
+        hover: black,
+      ),
+      width: (
+        default: 0.5em,
+        hover: 0.3em,
+      )
+    )
   )
 }
 

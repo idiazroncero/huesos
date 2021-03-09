@@ -78,23 +78,23 @@
   }
 
   .b {
-    border: $separator-width solid $separator-color;
+    border: $separator-width solid var(--color-utility-separator);
   }
 
   .bt {
-    border-top: $separator-width solid $separator-color;
+    border-top: $separator-width solid var(--color-utility-separator);
   }
 
   .br {
-    border-right: $separator-width solid $separator-color;
+    border-right: $separator-width solid var(--color-utility-separator);
   }
 
   .bb {
-    border-bottom: $separator-width solid $separator-color;
+    border-bottom: $separator-width solid var(--color-utility-separator);
   }
 
   .bl {
-    border-left: $separator-width solid $separator-color;
+    border-left: $separator-width solid var(--color-utility-separator);
   }
 
   .b0 {
@@ -102,21 +102,21 @@
   }
 
 
-  @if $generate-color-classes {
-      @each $palette, $value in $colors {
-        @if type-of($value) == 'map' {
-          @each $name, $hex in $value {
-              .bg-#{$palette}-#{$name} {
-                  background-color: $hex;
-              }
-          }
-        } @else {
-          .bg-#{$palette} {
-            background-color: $value;
-          }
-        }
-      }
-  }
+  // @if $generate-color-classes {
+  //     @each $palette, $value in $colors {
+  //       @if type-of($value) == 'map' {
+  //         @each $name, $hex in $value {
+  //             .bg-#{$palette}-#{$name} {
+  //                 background-color: $hex;
+  //             }
+  //         }
+  //       } @else {
+  //         .bg-#{$palette} {
+  //           background-color: $value;
+  //         }
+  //       }
+  //     }
+  // }
 
   .tl {
     text-align: left;

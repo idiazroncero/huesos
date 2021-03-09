@@ -15,8 +15,8 @@
 	fieldset {
 		margin-right:0;
 		margin-left:0;
-		@include ritmo-borders($input-border-width, 4);
-		border-color: $input-border-color;
+		// TODO: @include ritmo-borders($input-border-width, 4);
+		border-color: var(--color-input-border);
 		border-radius: $form-border-radius;
 		legend {
 			@include minititle($fieldset-font-size);

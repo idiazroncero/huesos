@@ -1,16 +1,16 @@
 small,
 .small {
-	@include ritmo-font-size($h6-font-size);
+  // TODO: @include ritmo-font-size(font-size($small-font-size), 4);
 }
 
 h1 small {
-	@include ritmo-font-size($h3-font-size);
+  // @include ritmo-font-size(font-size($small-font-size), 4);
 }
 
 h2 small {
-	@include ritmo-font-size($h4-font-size);
+  // @include ritmo-font-size(font-size($small-font-size), 4);
 }
 
 h3 small {
-	@include ritmo-font-size($h5-font-size);
+  // @include ritmo-font-size(font-size($small-font-size), 4);
 }

@@ -1,6 +1,7 @@
 caption {
   text-align: $caption-align;
   @include minititle();
+  margin-bottom: $spacer;
 }
 
 // We need to do some hacks to account for border-collapse

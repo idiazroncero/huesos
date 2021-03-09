@@ -1,6 +1,7 @@
 select {
 	@include form-reset-general();
 	@include form-border($input-border-strategy);
+	padding: $input-padding-y $input-padding-x;
 	-webkit-appearance: none;
 	appearance:none;
 	width:100%;
@@ -9,15 +10,19 @@ select {
 		vertical-align: top;
 	}
 
+	&:focus {
+    outline-color: var(--color-utility-focus);
+  }
+
 	option {
 		min-height: 1em; // Overrides default behavior on Chrome that breaks vrhythm
 		// TODO
-		// padding:ritmo(0.5) 0; // We can't use line-height so we size it using ritmo lines...
+		padding:$input-padding-y $input-padding-x; // We can't use line-height so we size it using ritmo lines...
 	}
 }
 
 .select-wrapper {
 	position:relative;
-	// TODO: @include arrow('down', 0.25rem, darken-color($input-border-color), 50%, ritmo($input-padding-lines) );
+	// TODO: @include arrow('down', 0.25rem, darken-color(var(--color-input-border)), 50%, ritmo($input-padding-lines) );
 
 }

@@ -1,27 +1,22 @@
 caption {
-	text-align: $caption-align;
-	@include minititle();
+  text-align: $caption-align;
+  @include minititle();
+  margin-bottom: $spacer;
 }
 
 // We need to do some hacks to account for border-collapse
 table {
-	table-layout: fixed;
-	min-width:100%;
-	margin-bottom: calc( #{ritmo(4)} - #{$table-border-width} );
+  table-layout: fixed;
+  min-width:100%;
 }
 
 th, td {
-	@include ritmo-top-border($table-border-width, 2);
-	@include ritmo-side-border('left', $table-border-width, 2);
-	@include ritmo-side-border('right', $table-border-width, 2);
-	padding-bottom: ritmo(2);
-	border-bottom: $table-border-width solid;
-	border-style: solid;
-	border-color: $table-border-color;
+  border: $table-border-width solid $table-border-color;
+  padding: $spacer / 2 $gutter / 2;
 }
 
 th {
-	text-align: $table-th-align;
+  text-align: $table-th-align;
 }
 
 .table {

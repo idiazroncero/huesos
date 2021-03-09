@@ -26,6 +26,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 

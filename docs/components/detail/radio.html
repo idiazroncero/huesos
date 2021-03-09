@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Radio | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-bc7897ca16119a67b8356b2290a6d7c9">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-bc7897ca16119a67b8356b2290a6d7c9">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/radio.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2629,6 +2557,7 @@
         
             <p>By default, radio items will use the native HTML styling.</p>
 <p>An alternative style can be applied globaly by setting <code>$pseudo-radio: true</code> or case by case using the <code>.pseudo-radio</code> class or <code>pseudo-radio()</code> mixin.</p>
+<p>It is recommended to use <code>.form-item--radio</code> wrapper to ensure proper alignment.</p>
 <p>It is recommended <strong>not</strong> touse the label as a wrapper. If needed, an additional <code>span</code> tag will ensure proper vertical alignment.</p>
 <p>Please note that <strong>you can’t use the label as a wrapper and pseudo-checkboxes at the same time</strong>.</p>
 
@@ -2639,54 +2568,53 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-bc7897ca16119a67b8356b2290a6d7c9-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio normal<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item form-item--radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>Radio normal<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item form-item--radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Radio normal<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pseudo-radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio2"</span>&gt;</span>Pseudo Radio<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item form-item--radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pseudo-radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio2&quot;</span>&gt;</span>Pseudo Radio<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-bc7897ca16119a67b8356b2290a6d7c9-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-8a5c68926ef9ab7e16d9911a97643970"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/forms/radio/_radio.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>167 Bytes</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
-
-    
-        <div class="filebrowser-item is-active" id="file-49627da82afe1c701852646d733babad" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/forms/radio/_radio.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>167 Bytes</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-tag">input</span> {
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-selector-tag">input</span> {
 	<span class="hljs-keyword">@if</span>(<span class="hljs-variable">$pseudo-radio</span> == false) {
 		&amp;<span class="hljs-selector-attr">[type=radio]</span><span class="hljs-selector-class">.pseudo-radio</span> {
 			<span class="hljs-keyword">@include</span> pseudo-radio();
@@ -2696,15 +2624,13 @@
 
 <span class="hljs-selector-tag">label</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span> + <span class="hljs-selector-tag">span</span> {
 	<span class="hljs-attribute">vertical-align</span>: middle;
-}</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2728,10 +2654,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

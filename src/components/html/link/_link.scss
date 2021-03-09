@@ -1,28 +1,23 @@
 a {
 
-  --link-color: $link-color;
-  --link-visited-color: $link-visited;
-  --link-focus-color: $link-hover;
-  --link-hover-color: $link-hover;
-  --link-active-color: $link-active;
-
   text-decoration-skip-ink: all;
 
   &, 
   &:link {
-    color: var(--link);
+    color: var(--color-link-default);
   }
   &:visited {
-    color: var(--link-visited-color);
+    color: var(--color-link-visited);
   }
   &:focus {
-    color: var(--link-focus-color);
+    color: var(--color-link-focus);
+    outline-color: var(--color-utility-focus);
   }
   &:hover {
-    color: var(--link-hover-color);
+    color: var(--color-link-hover);
   }
   &:active {
-    color: var(--link-active-color);
+    color: var(--color-link-active);
   }
 
   @if $link-decoration {

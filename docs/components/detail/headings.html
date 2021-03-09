@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Headings | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-f1afc096b1e80d850f850f538b87c906">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-f1afc096b1e80d850f850f538b87c906">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/headings.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2654,85 +2582,110 @@ The automatic and arithmetic ritmo.scss calculations result on excessive line he
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-f1afc096b1e80d850f850f538b87c906-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main titles will usualy make use of heading one<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Subtitules and main sections might need to use h2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>H3 usually finds its place on nested sections inside a bigger block<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>In case you need further sectioning, use an h4. You can go down any number of levels. Well, actually, not<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Rarely you will need a heading five. But if you need it, you can use it. This is really nested and the font-size is very decreased<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading six is rather unexpected. On this nesting level the font-size has dropped and is small, even compared with normal text<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></pre>
-
-    </code>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main titles will usualy make use of heading one<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Subtitules and main sections might need to use h2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>H3 usually finds its place on nested sections inside a bigger block<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>In case you need further sectioning, use an h4. You can go down any number of levels. Well, actually, not<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Rarely you will need a heading five. But if you need it, you can use it. This is really nested and the font-size
+        is very decreased<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading six is rather unexpected. On this nesting level the font-size has dropped and is small, even compared with
+        normal text<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-f1afc096b1e80d850f850f538b87c906-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-c01c117373401758592105207477d3f7"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/typography/headings/_headings.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>819 Bytes</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-selector-tag">h1</span>,
+<span class="hljs-selector-class">.h1</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h1&#x27;</span>, <span class="hljs-string">&#x27;h2&#x27;</span>, <span class="hljs-variable">$medium</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h1&#x27;</span>);
+}
 
-    
-        <div class="filebrowser-item is-active" id="file-fb68f903df8931fc8991ae8809895f33" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/typography/headings/_headings.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>804 Bytes</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-class">.h1</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h1-font-size</span>, <span class="hljs-variable">$h1-ritmo-lines</span>); }
-<span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-class">.h2</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h2-font-size</span>, <span class="hljs-variable">$h2-ritmo-lines</span>); }
-<span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-class">.h3</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h3-font-size</span>, <span class="hljs-variable">$h3-ritmo-lines</span>); }
-<span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-class">.h4</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h4-font-size</span>, <span class="hljs-variable">$h4-ritmo-lines</span>); }
-<span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-class">.h5</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h5-font-size</span>, <span class="hljs-variable">$h5-ritmo-lines</span>); }
-<span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-class">.h6</span> { <span class="hljs-keyword">@include</span> ritmo-font-size(<span class="hljs-variable">$h6-font-size</span>, <span class="hljs-variable">$h6-ritmo-lines</span>); }
+<span class="hljs-selector-tag">h2</span>,
+<span class="hljs-selector-class">.h2</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h2&#x27;</span>, <span class="hljs-string">&#x27;h3&#x27;</span>, <span class="hljs-variable">$medium</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h2&#x27;</span>);
+}
 
-<span class="hljs-keyword">@if</span> <span class="hljs-variable">$heading-letter-spacing</span> {
-	<span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-class">.h1</span>,
-	<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-class">.h2</span> {
-		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-variable">$heading-letter-spacing</span>;
-	}	
+<span class="hljs-selector-tag">h3</span>,
+<span class="hljs-selector-class">.h3</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h3&#x27;</span>, <span class="hljs-string">&#x27;h4&#x27;</span>, <span class="hljs-variable">$medium</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h3&#x27;</span>);
+}
+
+<span class="hljs-selector-tag">h4</span>,
+<span class="hljs-selector-class">.h4</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h4&#x27;</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h4&#x27;</span>);
+}
+
+<span class="hljs-selector-tag">h5</span>,
+<span class="hljs-selector-class">.h5</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h5&#x27;</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h5&#x27;</span>);
+}
+
+<span class="hljs-selector-tag">h6</span>,
+<span class="hljs-selector-class">.h6</span>,
+small,
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-keyword">@include</span> font-size(<span class="hljs-string">&#x27;h6&#x27;</span>);
+  <span class="hljs-attribute">line-height</span>: line-height(<span class="hljs-string">&#x27;h6&#x27;</span>);
 }
 
 
-<span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>,
-<span class="hljs-selector-class">.h1</span>, <span class="hljs-selector-class">.h2</span>, <span class="hljs-selector-class">.h3</span>, <span class="hljs-selector-class">.h4</span>, <span class="hljs-selector-class">.h5</span>, <span class="hljs-selector-class">.h6</span>  {
-	<span class="hljs-attribute">color</span>: get-color(text, heading);
-	<span class="hljs-attribute">font-weight</span>:<span class="hljs-variable">$heading-font-weight</span>;
-
-	<span class="hljs-selector-tag">small</span> {
-		<span class="hljs-attribute">color</span>: inherit;
-		<span class="hljs-attribute">vertical-align</span>: <span class="hljs-number">0</span>;
-	}
-
-	<span class="hljs-keyword">@if</span> <span class="hljs-variable">$heading-decorated-links</span> == false {
-		<span class="hljs-selector-tag">a</span> {
-			<span class="hljs-keyword">@include</span> kill-link(get-color(text, heading));
-		}
-	}
-}
-</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+<span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">6</span> {
+  h#{<span class="hljs-variable">$i</span>}, <span class="hljs-selector-class">.h</span>#{<span class="hljs-selector-tag">i</span>} {
+    <span class="hljs-attribute">color</span>: var(--color-text-heading);
+    <span class="hljs-attribute">font-weight</span>: <span class="hljs-variable">$heading-font-weight</span>;
+  
+    small {
+      <span class="hljs-attribute">color</span>: inherit;
+      <span class="hljs-attribute">vertical-align</span>: <span class="hljs-number">0</span>;
+    }
+  
+    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$heading-decorated-links</span> == false {
+      <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-keyword">@include</span> kill-link-decoration();
+      }
+    }
+  }
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2756,10 +2709,10 @@ The automatic and arithmetic ritmo.scss calculations result on excessive line he
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

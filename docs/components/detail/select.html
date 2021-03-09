@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Select | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-e284f63a6f38740f65fdf28adec43c39">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-e284f63a6f38740f65fdf28adec43c39">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/select.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2632,12 +2560,12 @@
 <p>Still, if you want to use the native HTML solution, a basic syling is provided: vertical rhythm is preserved, borders are added, sizing is always 100% width.</p>
 <p>In order to make the arrows appear, you will need to wrap the whole <code>&lt;select&gt;</code> element on a <code>.select-wrapper</code> parent (this is because HTML form elements won’t accept pseudo-elements).</p>
 <pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Wrap it on a .select-wrapper to add the arrow --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item select-wrapper"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item select-wrapper&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3 id="js-enhanced">JS-enhanced</h3>
 <p>When <code>[data-selectr]</code> is applied directly on the element, it uses <a href="https://github.com/Mobius1/Selectr">Selectr</a> for a leaner UI, search box, tag-like behavior on <code>[multiple]</code>, etc…</p>
@@ -2650,109 +2578,109 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-e284f63a6f38740f65fdf28adec43c39-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Normal select<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item select-wrapper"</span>&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Normal select<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item select-wrapper&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-selectr</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Multiple select<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"fiat"</span>&gt;</span>Fiat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"seat"</span>&gt;</span>Seat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"renault"</span>&gt;</span>Renault<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"opel"</span>&gt;</span>Opel<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;fiat&quot;</span>&gt;</span>Fiat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;seat&quot;</span>&gt;</span>Seat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;renault&quot;</span>&gt;</span>Renault<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;opel&quot;</span>&gt;</span>Opel<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">data-selectr</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"fiat"</span>&gt;</span>Fiat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"seat"</span>&gt;</span>Seat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"renault"</span>&gt;</span>Renault<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"opel"</span>&gt;</span>Opel<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;fiat&quot;</span>&gt;</span>Fiat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;seat&quot;</span>&gt;</span>Seat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;renault&quot;</span>&gt;</span>Renault<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;opel&quot;</span>&gt;</span>Opel<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Optgroup select<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item select-wrapper"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item select-wrapper&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Expensive cars"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Expensive cars&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Unaffordable cars"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Unaffordable cars&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-item"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-item&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-selectr</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Expensive cars"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Expensive cars&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;volvo&quot;</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;saab&quot;</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Unaffordable cars"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Unaffordable cars&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mercedes&quot;</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;audi&quot;</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-e284f63a6f38740f65fdf28adec43c39-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-cb5c859bafc678ca754321d98a3c289f"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/forms/select/_select.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>669 Bytes</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
-
-    
-        <div class="filebrowser-item is-active" id="file-319ab5460bb8f258ee94ae90fb612b30" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/forms/select/_select.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>515 Bytes</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-selector-tag">select</span> {
+<code class="code-block code code--lang-SCSS"><pre>select {
 	<span class="hljs-keyword">@include</span> form-reset-general();
 	<span class="hljs-keyword">@include</span> form-border(<span class="hljs-variable">$input-border-strategy</span>);
+	<span class="hljs-attribute">padding</span>: <span class="hljs-variable">$input-padding-y</span> <span class="hljs-variable">$input-padding-x</span>;
 	-webkit-appearance: none;
 	appearance:none;
 	<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
@@ -2761,25 +2689,28 @@
 		<span class="hljs-attribute">vertical-align</span>: top;
 	}
 
-	<span class="hljs-selector-tag">option</span> {
+	&amp;<span class="hljs-selector-pseudo">:focus</span> {
+    <span class="hljs-attribute">outline-color</span>: var(--color-utility-focus);
+  }
+
+	option {
 		<span class="hljs-attribute">min-height</span>: <span class="hljs-number">1em</span>; <span class="hljs-comment">// Overrides default behavior on Chrome that breaks vrhythm</span>
-		<span class="hljs-attribute">padding</span>:ritmo(<span class="hljs-number">0.5</span>) <span class="hljs-number">0</span>; <span class="hljs-comment">// We can't use line-height so we size it using ritmo lines...</span>
+		<span class="hljs-comment">// TODO</span>
+		<span class="hljs-attribute">padding</span>:<span class="hljs-variable">$input-padding-y</span> <span class="hljs-variable">$input-padding-x</span>; <span class="hljs-comment">// We can&#x27;t use line-height so we size it using ritmo lines...</span>
 	}
 }
 
 <span class="hljs-selector-class">.select-wrapper</span> {
 	<span class="hljs-attribute">position</span>:relative;
-	<span class="hljs-keyword">@include</span> arrow(<span class="hljs-string">'down'</span>, <span class="hljs-number">0.25rem</span>, darken-color(<span class="hljs-variable">$input-border-color</span>), <span class="hljs-number">50%</span>, ritmo(<span class="hljs-variable">$input-padding-lines</span>) );
+	<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> @include arrow(&#x27;down&#x27;, 0.25rem, darken-color(var(--color-input-border)), 50%, ritmo($input-padding-lines) );</span>
 
-}</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2803,10 +2734,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

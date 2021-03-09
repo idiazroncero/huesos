@@ -1,57 +1,35 @@
 {
-  "order" : 0,
-  "context" : {
-    "text" : "Default"
+  "order": 0,
+  "context": {
+    "text": "Default"
   },
-  "variants" : [
-      { 
-        "name" : "Required",
-        "context": {
-          "modifier": "form-item--required",
-          "text": "required"
-        }
-      },
-      { 
-        "name" : "Inline",
-        "context": {
-          "modifier": "form-item--inline",
-          "text": "Column"
-        }
-      },
-      { 
-        "name" : "Errored",
-        "context": {
-          "modifier": "form-item--error",
-          "text": "error"
-        }
-      },
-      { 
-        "name" : "Succeeded",
-        "context": {
-          "modifier": "form-item--success",
-          "text": "success"
-        }
-      },
-      { 
-        "name" : "Label inside",
-        "context": {
-          "modifier": "form-item--label-inside",
-          "text": "Label inside"
-        }
-      },
-      { 
-        "name" : "Inline Label top",
-        "context": {
-          "modifier": "form-item--inline form-item--label-top",
-          "text": "Label inside"
-        }
-      },
-      { 
-        "name" : "Inline Label bottom",
-        "context": {
-          "modifier": "form-item--inline form-item--label-bottom",
-          "text": "Label inside"
-        }
+  "variants": [{
+      "name": "Required",
+      "context": {
+        "modifier": "form-item--required",
+        "text": "required"
       }
+    },
+    {
+      "name": "Errored",
+      "context": {
+        "modifier": "form-item--error",
+        "text": "error"
+      }
+    },
+    {
+      "name": "Succeeded",
+      "context": {
+        "modifier": "form-item--success",
+        "text": "success"
+      }
+    },
+    {
+      "name": "Label inside",
+      "context": {
+        "modifier": "form-item--label-inside",
+        "text": "Label inside"
+      }
+    }
   ]
 }

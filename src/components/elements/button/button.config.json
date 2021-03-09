@@ -33,9 +33,9 @@
         }
       },
       { 
-        "name" : "Error",
+        "name" : "Danger",
         "context": {
-          "modifier": "button--error",
+          "modifier": "button--danger",
           "text": "Error"
         }
       },

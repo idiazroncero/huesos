@@ -4,10 +4,21 @@
 
 	label {
 		display:block;
+	}
+
+	.label {
 		@if $label-as-minititle {
-			@include minititle($label-font-size)
+			@include minititle($label-font-size);
 		} @else {
-			@include ritmo-font-size($label-font-size)
+			@include font-size($label-font-size);
+		}
+	}
+
+	// Label position exception: radios and checkboxes.
+	input[type="checkbox"]:not(.pseudo-checkbox),
+	input[type="radio"]:not(.pseudo-radio) {
+		+ label {
+			display:inline-block;
 		}
 	}
 
@@ -17,47 +28,50 @@
 	}
 }
 
-.form-item--inline {
+.form-item--checkbox,
+.form-item--radio {
 	display:flex;
-	align-items: baseline;
-	label {
-			flex: 0 1 auto;
+	align-items: center;
+	// If label as wrapper
+	label:first-child:last-child {
+		display:inherit;
+		align-items:inherit;
+		margin:0;
 	}
 }
 
 .form-item--required {
 	label::after {
 		content: "*";
-		color: get-color(state, error);
+		color: var(--color-state-danger);
 		margin-left: $gutter / 4;
 	}
 }
 
 .form-item--error {
 	label {
-		color: get-color(state, error);
+		color: var(--color-state-danger);
 	}
 	input,
 	textarea {
-		@include form-border($color: get-color(state, error));
+		@include form-border($color: var(--color-state-danger));
 	}
 }
 
 .form-item--success {
 	label {
-		color: get-color(state, success);
+		color: var(--color-state-success);
 	}
 	input,
 	textarea {
-		@include form-border($color: get-color(state, success));
+		@include form-border($color: var(--color-state-success));
 	}
 }
 
-
-
 .form-item--label-inside {
 	border-radius: $form-border-radius;
-	@include form-border(); 
+  @include form-border(); 
+  padding: $input-padding-y $input-padding-x;
 	input,
 	textarea {
 		border:none;
@@ -65,12 +79,3 @@
 		padding:0;
 	}
 }
-
-.form-item--label-top {
-	align-items: flex-start;
-}
-
-.form-item--label-bottom {
-	align-items: flex-end;
-}
-

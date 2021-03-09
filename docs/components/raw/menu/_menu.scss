@@ -6,7 +6,7 @@
   @include arrow(
     'right', 
     0.25em, 
-    get-color(text, primary),
+    var(--color-primary),
     50%,
     1em
   );

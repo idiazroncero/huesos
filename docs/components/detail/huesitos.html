@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="../../styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
 <title>Huesitos | Huesos</title>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="../../index.html" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="../../docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="../../docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2544,15 +2472,15 @@
 
     
 
-    <section class="pen-preview card" data-behaviour="preview" id="preview-612d8c5370c4767da366a80ff2a6ef6c">
+    <section class="pen-preview card mb-3" data-behaviour="preview" id="preview-612d8c5370c4767da366a80ff2a6ef6c">
     <div class="preview-tag">
-        <h3 class="small">Preview</h3>
-        <button class="preview tag">Expand</button>
-        <button class="fullscreen tag">Fullscreen</button>
+        <h3 class="h5">Preview</h3>
+        <button class="preview pl-quarter pr-quarter small">Expand</button>
+        <button class="fullscreen pl-quarter pr-quarter small">Fullscreen</button>
     </div>
     
         <iframe
-        class="preview-iframe"
+        class="preview-iframe scrollbar-hidden"
         data-role="window"
         src="../preview/huesitos.html"
         sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
@@ -2689,276 +2617,240 @@
     
         
 <section class="browser-code is-active" data-role="tab-panel" id="browser-612d8c5370c4767da366a80ff2a6ef6c-panel-html">
-    <h2>Example</h2>
-    <code class="code-block code code--lang-html">
-
-
-<pre><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>TYpography and helpers<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <h2>Example</h2>
+  <code class="code-block code code--lang-html">
+    
+    
+    <pre><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>TYpography and helpers<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"st"</span>&gt;</span>Bold text, <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"up"</span>&gt;</span>uppercase applied<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"em"</span>&gt;</span>italic as font-style<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ls"</span>&gt;</span>letter-spacing as defined on config...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sh"</span>&gt;</span>...and box-shadow as well.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;st&quot;</span>&gt;</span>Bold text, <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;up&quot;</span>&gt;</span>uppercase applied<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;em&quot;</span>&gt;</span>italic as font-style<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ls&quot;</span>&gt;</span>letter-spacing as defined on config...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sh&quot;</span>&gt;</span>...and box-shadow as well.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Color Classes<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>Base<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--5col"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-primary p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Primary + <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-base-secondary p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;minititle&quot;</span>&gt;</span>Base<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid grid--5col&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-base-primary p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Primary + <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-base-secondary p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"minititle"</span>&gt;</span>State<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid grid--5col"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-success p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-warning p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-error p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid-item bg-state-muted p strong half-gutter"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:90px"</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;minititle&quot;</span>&gt;</span>State<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid grid--5col&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-state-success p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-state-warning p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-state-error p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid-item bg-state-muted p strong half-gutter&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:90px&quot;</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Color inversion<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color:#000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p invert"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color:#000&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;p invert&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m0"</span>&gt;</span>Lorem ipsum dolor sit amet consectetur, <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adipisicing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> Autem aperiam laborum atque harum vel ex iusto illum laboriosam minima! Mollitia debitis quae fugiat necessitatibus quam ex tempora ullam eum expedita.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;m0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet consectetur, <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>adipisicing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> Autem aperiam laborum atque harum vel ex iusto illum laboriosam minima! Mollitia debitis quae fugiat necessitatibus quam ex tempora ullam eum expedita.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></pre>
-
-    </code>
+    
+  </code>
 </section>
-
     
         
 
 
 <div class="browser-resources" id="browser-612d8c5370c4767da366a80ff2a6ef6c-panel-assets">
-    <h2>Assets</h2>
+  <h2>Assets</h2>
 
 
+  
+
+  
+  <div class="filebrowser-item is-active" id="file-7ad7e202d31a550a5520dfde96f7f214"
+    data-role="resource-preview">
+    <ul>
+      <li>
+        <strong>Filesystem Path:</strong>
+        <span>src/components/huesitos/_huesitos.scss</span>
+      </li>
+      <li>
+        <strong>Size:</strong>
+        <span>2.4 KB</span>
+      </li>
+      <li>
+        <strong class="visually-hidden">Content:</strong>
         
+<code class="code-block code code--lang-SCSS"><pre><span class="hljs-keyword">@if</span> <span class="hljs-variable">$huesitos</span> {
 
-    
-        <div class="filebrowser-item is-active" id="file-492d4510381263dc1f694117c181d8fc" data-role="resource-preview">
-            <ul>
-                <li>
-                    <strong>Filesystem Path:</strong>
-                    <span>src/components/huesitos/_huesitos.scss</span>
-                </li>
-                <li>
-                    <strong>Size:</strong>
-                    <span>3.2 KB</span>
-                </li>
-                <li>
-                    <strong class="visually-hidden">Content:</strong>
-                        
-                            <code class="code-block code code--lang-SCSS">
-                                <pre><span class="hljs-keyword">@if</span> <span class="hljs-variable">$huesitos</span> {
+  <span class="hljs-selector-class">.m</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$gutter</span>;
+  }
 
-    <span class="hljs-selector-class">.m</span> {
-        <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$gutter</span>;
+  <span class="hljs-selector-class">.mt</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.mr</span> {
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.mb</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.ml</span> {
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.m0</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-selector-class">.p</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.pt</span> {
+    <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.pr</span> {
+    <span class="hljs-attribute">padding-right</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.pb</span> {
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.pl</span> {
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$gutter</span>;
+  }
+
+  <span class="hljs-selector-class">.p0</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$spacers</span> {
+    <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$ratio</span> in <span class="hljs-variable">$spacers</span> {
+      <span class="hljs-selector-class">.m-</span>#{<span class="hljs-variable">$name</span>},
+      <span class="hljs-selector-class">.p-</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-variable">$ratio</span>;
+      }
+
+      <span class="hljs-selector-class">.mt-</span>#{<span class="hljs-variable">$name</span>},
+      <span class="hljs-selector-class">.pt-</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-variable">$ratio</span>;
+      }
+
+      <span class="hljs-selector-class">.mr-</span>#{<span class="hljs-variable">$name</span>},
+      <span class="hljs-selector-class">.pr-</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-variable">$ratio</span>;
+      }
+
+      <span class="hljs-selector-class">.mb-</span>#{<span class="hljs-variable">$name</span>},
+      <span class="hljs-selector-class">.pb-</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-variable">$ratio</span>;
+      }
+
+      <span class="hljs-selector-class">.ml-</span>#{<span class="hljs-variable">$name</span>},
+      <span class="hljs-selector-class">.pl-</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> * <span class="hljs-variable">$ratio</span>;
+      }
     }
+  }
 
-    <span class="hljs-selector-class">.mt</span> {
-        <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span>;
-    }
+  <span class="hljs-selector-class">.b</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-variable">$separator-width</span> solid var(--color-utility-separator);
+  }
 
-    <span class="hljs-selector-class">.mr</span> {
-        <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span>;
-    }
+  <span class="hljs-selector-class">.bt</span> {
+    <span class="hljs-attribute">border-top</span>: <span class="hljs-variable">$separator-width</span> solid var(--color-utility-separator);
+  }
 
-    <span class="hljs-selector-class">.mb</span> {
-        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span>;
-    }
+  <span class="hljs-selector-class">.br</span> {
+    <span class="hljs-attribute">border-right</span>: <span class="hljs-variable">$separator-width</span> solid var(--color-utility-separator);
+  }
 
-    <span class="hljs-selector-class">.ml</span> {
-        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span>;
-    }
+  <span class="hljs-selector-class">.bb</span> {
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$separator-width</span> solid var(--color-utility-separator);
+  }
 
-    <span class="hljs-selector-class">.m0</span> {
-        <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
-    }
+  <span class="hljs-selector-class">.bl</span> {
+    <span class="hljs-attribute">border-left</span>: <span class="hljs-variable">$separator-width</span> solid var(--color-utility-separator);
+  }
 
-    <span class="hljs-selector-class">.p</span> {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span>;
-    }
-
-    <span class="hljs-selector-class">.pt</span> {
-        <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$gutter</span>;
-    }
-
-    <span class="hljs-selector-class">.pr</span> {
-        <span class="hljs-attribute">padding-right</span>: <span class="hljs-variable">$gutter</span>;
-    }
-
-    <span class="hljs-selector-class">.pb</span> {
-        <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$gutter</span>;
-    }
-
-    <span class="hljs-selector-class">.pl</span> {
-        <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$gutter</span>;
-    }
-
-    <span class="hljs-selector-class">.p0</span> {
-        <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
-    }
-
-    <span class="hljs-selector-class">.b</span> {
-        <span class="hljs-attribute">border</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-    }
-
-    <span class="hljs-selector-class">.bt</span> {
-        <span class="hljs-attribute">border-top</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-    }
-
-    <span class="hljs-selector-class">.br</span> {
-        <span class="hljs-attribute">border-right</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-    }
-
-    <span class="hljs-selector-class">.bb</span> {
-        <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-    }
-
-    <span class="hljs-selector-class">.bl</span> {
-        <span class="hljs-attribute">border-left</span>: <span class="hljs-variable">$separator-width</span> solid <span class="hljs-variable">$separator-color</span>;
-    }
-
-    <span class="hljs-selector-class">.b0</span> {
-        <span class="hljs-attribute">border</span>:none;
-    }
+  <span class="hljs-selector-class">.b0</span> {
+    <span class="hljs-attribute">border</span>: none;
+  }
 
 
-    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$generate-color-classes</span> {
-        <span class="hljs-keyword">@each</span> <span class="hljs-variable">$palette</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$colors</span> {
-            <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$hex</span> in <span class="hljs-variable">$value</span> {
-                <span class="hljs-selector-class">.bg-</span>#{<span class="hljs-variable">$palette</span>}-#{<span class="hljs-variable">$name</span>} {
-                    <span class="hljs-keyword">@include</span> background-contrast(<span class="hljs-variable">$hex</span>, true);
-                }
-            }
-        }
-    }
+  <span class="hljs-comment">// @if $generate-color-classes {</span>
+  <span class="hljs-comment">//     @each $palette, $value in $colors {</span>
+  <span class="hljs-comment">//       @if type-of($value) == &#x27;map&#x27; {</span>
+  <span class="hljs-comment">//         @each $name, $hex in $value {</span>
+  <span class="hljs-comment">//             .bg-#{$palette}-#{$name} {</span>
+  <span class="hljs-comment">//                 background-color: $hex;</span>
+  <span class="hljs-comment">//             }</span>
+  <span class="hljs-comment">//         }</span>
+  <span class="hljs-comment">//       } @else {</span>
+  <span class="hljs-comment">//         .bg-#{$palette} {</span>
+  <span class="hljs-comment">//           background-color: $value;</span>
+  <span class="hljs-comment">//         }</span>
+  <span class="hljs-comment">//       }</span>
+  <span class="hljs-comment">//     }</span>
+  <span class="hljs-comment">// }</span>
 
-    <span class="hljs-selector-class">.half-gutter</span> {
-        &amp;<span class="hljs-selector-class">.m</span> {
-            <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mt</span> {
-            <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mr</span> {
-            <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mb</span> {
-            <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.ml</span> {
-            <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        } 
-        &amp;<span class="hljs-selector-class">.p</span> {
-            <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pt</span> {
-            <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pr</span> {
-            <span class="hljs-attribute">padding-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pb</span> {
-            <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pl</span> {
-            <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">2</span>;
-        }
-    }
+  <span class="hljs-selector-class">.tl</span> {
+    <span class="hljs-attribute">text-align</span>: left;
+  }
 
-    <span class="hljs-selector-class">.quarter-gutter</span> {
-        &amp;<span class="hljs-selector-class">.m</span> {
-            <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mt</span> {
-            <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mr</span> {
-            <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.mb</span> {
-            <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.ml</span> {
-            <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        } 
-        &amp;<span class="hljs-selector-class">.p</span> {
-            <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pt</span> {
-            <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pr</span> {
-            <span class="hljs-attribute">padding-right</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pb</span> {
-            <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-        &amp;<span class="hljs-selector-class">.pl</span> {
-            <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$gutter</span> / <span class="hljs-number">4</span>;
-        }
-    }
+  <span class="hljs-selector-class">.tc</span> {
+    <span class="hljs-attribute">text-align</span>: center;
+  }
 
-    <span class="hljs-selector-class">.tl</span> {
-        <span class="hljs-attribute">text-align</span><span class="hljs-selector-pseudo">:left</span>;
-    }
+  <span class="hljs-selector-class">.tr</span> {
+    <span class="hljs-attribute">text-align</span>: right;
+  }
 
-    <span class="hljs-selector-class">.tc</span> {
-        <span class="hljs-attribute">text-align</span>:center;
-    }
+  <span class="hljs-selector-class">.up</span> {
+    <span class="hljs-attribute">text-transform</span>: uppercase;
+  }
 
-    <span class="hljs-selector-class">.tr</span> {
-        <span class="hljs-attribute">text-align</span><span class="hljs-selector-pseudo">:right</span>;
-    }
+  <span class="hljs-selector-class">.st</span> {
+    <span class="hljs-attribute">font-weight</span>: bold;
+  }
 
-    <span class="hljs-selector-class">.up</span> {
-        <span class="hljs-attribute">text-transform</span>:uppercase;
-    }
+  <span class="hljs-selector-class">.em</span> {
+    <span class="hljs-attribute">font-style</span>: italic;
+  }
 
-    <span class="hljs-selector-class">.st</span> {
-        <span class="hljs-attribute">font-weight</span>:bold;
-    }
+  <span class="hljs-selector-class">.ls</span> {
+    <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-variable">$letter-spacing</span>;
+  }
 
-    <span class="hljs-selector-class">.em</span> {
-        <span class="hljs-attribute">font-style</span>: italic;
-    }
+  <span class="hljs-selector-class">.sh</span> {
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$box-shadow</span>;
+  }
 
-    <span class="hljs-selector-class">.ls</span> {
-        <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-variable">$letter-spacing</span>;
-    }
-
-    <span class="hljs-selector-class">.sh</span> {
-        <span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$box-shadow</span>;
-    }
-
-    <span class="hljs-selector-class">.invert</span> {
-        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$contrast-light</span>;
-        <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-class">.h1</span>,
-        <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-class">.h2</span>,
-        <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-class">.h3</span>,
-        <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-class">.h4</span>,
-        <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-class">.h5</span>,
-        <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-class">.h6</span> {
-            <span class="hljs-attribute">color</span>: inherit;
-        }
-        <span class="hljs-keyword">@include</span> invert-links();
-    }
-}
-
-
-</pre>
-                            </code>
-                        
-                </li>
-            </ul>
-        </div>
-    
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> better strategy</span>
+  <span class="hljs-comment">// .invert {</span>
+  <span class="hljs-comment">//     color: $contrast-light;</span>
+  <span class="hljs-comment">//     h1, .h1,</span>
+  <span class="hljs-comment">//     h2, .h2,</span>
+  <span class="hljs-comment">//     h3, .h3,</span>
+  <span class="hljs-comment">//     h4, .h4,</span>
+  <span class="hljs-comment">//     h5, .h5,</span>
+  <span class="hljs-comment">//     h6, .h6 {</span>
+  <span class="hljs-comment">//         color: inherit;</span>
+  <span class="hljs-comment">//     }</span>
+  <span class="hljs-comment">//     @include invert-links();</span>
+  <span class="hljs-comment">// }</span>
+}</pre></code>
+        
+      </li>
+    </ul>
+  </div>
+  
 </div>
-
 
 
     
@@ -2982,10 +2874,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="../../styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 

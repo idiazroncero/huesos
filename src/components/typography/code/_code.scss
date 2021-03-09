@@ -2,9 +2,6 @@ code,
 kbd,
 samp,
 var {
-  --code-inline-background-color: $code-inline-background-color;
-  --code-inline-color: contrast-color($code-inline-background-color);
-
   font-family: $font-monospace;
   // Keep the font size relative to its context and smaller.
   line-height: $base-line-height;
@@ -13,12 +10,9 @@ var {
   box-decoration-break: clone;
   white-space: nowrap; // Avoid line breaking!
   margin: 0; // Prevent lobotomized owl from messing with this.
-
-  @if $code-inline-background-color !=false {
-    background-color: var(--code-inline-background-color);
-    color: var(--code-inline-color);
-    padding: 0 $gutter / 4;
-  }
+  background-color: var(--color-code-inline-background);
+  color: var(--color-code-inline);
+  padding: 0 $code-padding-x;
 
   @if $code-border-radius !=false {
     border-radius: $code-border-radius;
@@ -27,13 +21,9 @@ var {
 
 .code-block {
   display:block;
-
-  @if $code-block-background-color != false {
-    --code-block-background-color: $code-block-background-color;
-    padding: $gutter;
-    background-color: $code-block-background-color;
-    color: contrast-color($code-block-background-color);
-  }
+  padding: $gutter;
+  background-color: var(--color-code-block-background);
+  color: var(--color-code-block);
 
   // Delete margin on pre element
   pre {

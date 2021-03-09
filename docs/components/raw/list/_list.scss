@@ -1,40 +1,39 @@
 ol,
 ul {
-	padding-left: $list-padding;
-	@if $list-padding == 0 {
-		list-style-position: outside;
-	}
-	li {
-		margin-bottom: $list-separator
-	}
+  padding-left: $list-padding;
 
-	ol,
-	ul {
-		@if $list-padding == 0 {
-			// Ensure that child lists get a paddding even if we set them to 0
-			padding-left: 1em;
-		} @else {
-			padding-left: $list-padding;
-		}
-		li {
-			margin-bottom: $list-separator / 2;
-		}
-	}
+  @if $list-padding == 0 {
+    list-style-position: outside;
+  }
+  @if $list-separator > 0 {
+    li {
+      margin-bottom: $list-separator;
+    }
+  }
+
+  li {
+    @if $list-spacing {
+      > * + * {
+        margin-top: $spacer / 2;
+      }
+    }
+  }
+
+  ol,
+  ul {
+    @if $list-padding == 0 {
+      // Ensure that child lists get a paddding even if we set them to 0
+      padding-left: 1em;
+    } @else {
+      padding-left: $list-padding;
+    }
+  }
 }
 
 ul {
-	list-style-type: square;
-}
-
-dt {
-	font-weight: bold();
-	margin: 0;
-}
-
-dd {
-	margin: 0 0 $spacer $spacer;
+  list-style-type: square;
 }
 
 .list--inline {
-	@include inline-list();
+  @include inline-list();
 }

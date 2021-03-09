@@ -1,10 +1,13 @@
-@mixin set-link-decoration($link-decoration-data: $link-decoration) {
+@mixin set-link-decoration($link-decoration-data) {
   $underline : map-get($link-decoration-data, 'underline');
   $color: map-get($link-decoration-data, 'color');
   $width : map-get($link-decoration-data, 'width');
 
-  --color-link-decoration: map-get($color, 'default');
-  --color-link-decoration-hover: map-get($color, 'hover');
+  // Redefine variables
+  @if $color {
+    --color-link-decoration: map-get($color, 'default');
+    --color-link-decoration-hover: map-get($color, 'hover');
+  }
 
   @if map-get($underline, 'default') {
     text-decoration:underline;
@@ -30,19 +33,21 @@
   }
 }
 
-@mixin set-link(
-  $base: $link-color,
-  $visited: $link-visited,
-  $hover: $link-hover,
-  $active: $link-active,
-  $link-decoration-data: $link-decoration
-) {
+@mixin set-link($base, $visited, $hover, $active, $link-decoration-data: null) {
 
-  --link-color: $base;
-  --link-visited-color: $visited;
-  --link-focus-color: $hover;
-  --link-hover-color: $hover;
-  --link-active-color: $active;
+  @if $base {
+    --color-link-default: $base;
+  }
+  @if $visited {
+    --color-link-visited: $visited;
+  }
+  @if $hover {
+    --color-link-focus: $hover;
+    --color-link-hover: $hover;
+  }
+  @if $active {
+    --color-link-active: $active;
+  }
 
   @if $link-decoration-data {
     @include set-link-decoration($link-decoration-data);

@@ -10,9 +10,10 @@ input[type=file] {
 }
 
 input::-webkit-file-upload-button {
-	margin-right: ritmo($input-padding-lines);
-	padding-right: ritmo($input-padding-lines);
-	border-right: $input-border-width solid $input-border-color;
+	// TODO: 
+	// margin-right: ritmo($input-padding-lines);
+	// padding-right: ritmo($input-padding-lines);
+	border-right: $input-border-width solid var(--color-input-border);
 }
 
 .file-input {
@@ -20,6 +21,10 @@ input::-webkit-file-upload-button {
 	display:flex;
 	justify-content: space-between;
 	align-items:center;
+	input[type=file] {
+		white-space:nowrap;
+		flex:1;
+	}
 	&[data-file-input] {
 		border:none;
 		padding:0;
@@ -28,6 +33,7 @@ input::-webkit-file-upload-button {
 		}
 		label {
 			margin:0;
+			cursor:pointer;
 		}
 	}
 }

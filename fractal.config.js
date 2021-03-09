@@ -40,5 +40,4 @@ const huesosTheme = mandelbrot({
 
 // Hasta que tengamos tema propio, cargamos el css directamente
 huesosTheme.addLoadPath(__dirname + '/theme/views'); 
-fractal.web.theme(huesosTheme); 
-// fractal.web.theme(huesosTheme);
+// fractal.web.theme(huesosTheme); 

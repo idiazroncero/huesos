@@ -11,10 +11,10 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
 
-    <link rel="stylesheet" href="styleguide/huesos-mandlebrot.css?cachebust=1.4.0" type="text/css">
+    <link rel="stylesheet" href="styleguide/huesos-mandlebrot.css?cachebust=1.8.1" type="text/css">
 
 
-<title>A basic osamenta for your web proyects | Huesos</title>
+<title>A basic osamenta for digital projects | Huesos</title>
 
 </head>
 <body>
@@ -23,31 +23,30 @@
 
 <div id="main-wrapper" data-role="body">
 
-    <div class="wrapper__sidebar scrollbar-hidden">
+    <div class="wrapper__sidebar scrollbar-hidden bg-background-light">
 
         <header class="header">
             <h1 class="logo h1">
                 <a href="" class="header-title" data-pjax>
                     Huesos <br>
-                    Style <br>
-                    Guide
+                    3.0
                 </a>
             </h1>
         </header>
 
-        <section class="repo">
+        <section class="repo mb-2">
             <h1 class="visually-hidden">Repositoire</h1>
             <a target="_blank" href="https://github.com/idiazroncero/huesos">GitHub</a>
         </section>
     
         <aside class="sidebar" data-role="sidebar">
-            <nav class="nav toc">
+            <nav class="toc">
 
     
 
 
-    <h3 class="h4 strong mb half-gutter">Documentation</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Documentation</h3>
+    <ol >
         
     
         
@@ -63,8 +62,8 @@
         
             
             <li class="" data-role="item">
-                <a href="docs/avoiding-bloat.html" data-pjax>
-                    Avoiding Bloat
+                <a href="docs/best-practices.html" data-pjax>
+                    Best Practices
                     
 
 <div class="Status Status--unlabelled">
@@ -603,7 +602,7 @@
     </ol>
 
 
-<hr>
+<hr class="mb mt">
 
 
 
@@ -611,8 +610,8 @@
 
 
     
-    <h3 class="h4 strong mb half-gutter">Components</h3>
-    <ol>
+    <h3 class="h4 strong mb-half">Components</h3>
+    <ol >
         
     
         
@@ -668,30 +667,6 @@
             <li class="" data-role="item">
                 <a href="components/detail/link--inactive.html" data-pjax>
                     Inactive
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="components/detail/link--inverted.html" data-pjax>
-                    Inverted
                     
 
 <div class="Status Status--unlabelled">
@@ -1053,30 +1028,6 @@
         
             
             <li class="" data-role="item">
-                <a href="components/detail/form-item--inline.html" data-pjax>
-                    Inline
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
                 <a href="components/detail/form-item--errored.html" data-pjax>
                     Errored
                     
@@ -1127,54 +1078,6 @@
             <li class="" data-role="item">
                 <a href="components/detail/form-item--label-inside.html" data-pjax>
                     Label Inside
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="components/detail/form-item--inline-label-top.html" data-pjax>
-                    Inline Label Top
-                    
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
-
-
-</div>
-
-</div>
-
-
-                </a>
-            </li>
-        
-    
-        
-            
-            <li class="" data-role="item">
-                <a href="components/detail/form-item--inline-label-bottom.html" data-pjax>
-                    Inline Label Bottom
                     
 
 <div class="Status Status--unlabelled">
@@ -1896,6 +1799,30 @@
         
             
             <li class="" data-role="item">
+                <a href="components/detail/grid--intrinsic.html" data-pjax>
+                    Intrinsic
+                    
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+    <span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+                </a>
+            </li>
+        
+    
+        
+            
+            <li class="" data-role="item">
                 <a href="components/detail/grid--responsive.html" data-pjax>
                     Responsive
                     
@@ -2529,6 +2456,7 @@
         </aside>
 
         <button id="toggle-grid" class="small">Toggle Grid</button>
+        <button id="toggle-dark" class="small">Toggle Theme</button>
     
     </div>
 
@@ -2541,7 +2469,7 @@
     <div class="doc__header">
         
         
-            <h1>A basic osamenta for your web proyects</h1>
+            <h1>A basic osamenta for digital projects</h1>
         
         
 
@@ -2549,7 +2477,7 @@
         
     </div>
 
-    <div class="doc__body text-wrapper">
+    <div class="doc__body text-wrapper mb">
 
     
 
@@ -2560,33 +2488,34 @@
     
     
     <h3 id="what-is-this">What is this?</h3>
-<p>This is a custom SCSS framework made by and for <a href="http://idiazroncero.com">idiaz.roncero</a>.</p>
-<p>It sets sensible defaults, exposes a highly configurable <code>_config.scss</code> file and makes use of the following libraries and techniques:</p>
+<p>This is the third iteration over Huesos.</p>
+<p>Born as a SCSS framework made by and for <a href="http://idiazroncero.com">idiazroncero</a>, it has been reduced to a set of standards, resets, mixins and utilities to help fasten front-end development.</p>
+<p>It exposes a highly configurable <code>_config.scss</code> file and makes use of the following principles, techniques and libraries:</p>
 <ul>
-<li><a href="https://github.com/marzeelabs/ritmo">Ritmo</a> for vertical rhythm.</li>
+<li>Vertical rhythm.</li>
+<li>Custom Properties AKA CSS Variables</li>
+<li>Intrinsic (or algorithmic) design.</li>
+<li>Responsive typography.</li>
 <li><a href="http://breakpoint-sass.com/">Breakpoint</a> for a leaner @media-query syntax.</li>
 <li><a href="https://lukyvj.github.io/family.scss/">Family</a> for syntactic sugar around nth-* selectors</li>
-<li><a href="https://palx.jxnblk.com/">Palx</a> for creating a palette based on a single color and its shades.</li>
 </ul>
-<h3 id="huesos-is-somewhat-opinionated">Huesos is (somewhat) opinionated</h3>
-<p>Huesos is not as opinionated as tools like Bootstrap or Foundation, but there are some common rules that are imposed on the whole project (and thus not exposed on the <code>_config.scss</code> file)</p>
+<h3 id="huesos-is-very-opinionated-and-mixin-first">Huesos is very opinionated and mixin-first</h3>
+<p>Even if it is a small framework, Huesos is very opinionated and adheres to a strict set of rules:</p>
 <ul>
-<li><strong>Margins are always applied as margin-bottom.</strong><br>This means that the main block-level elements that compose a page (<code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;div&gt;</code> and the like) <em>only</em> have its margin-bottom set, thus ensuring consistent vertical spacing and avoiding <a href="https://www.smashingmagazine.com/2019/07/margins-in-css/">margin overlap and gotchas</a>.</li>
-</ul>
-<ul>
-<li><strong>Always use SVG</strong><br>No icon fonts, no images. SVG FTW.</li>
-</ul>
-<ul>
-<li><strong>Vertical rhythm is important, but not mandatory</strong><br>We use ritmo.scss and its own functions and mixins (mainly <code>ritmo($unit)</code>) to keep a constant vertical rhythm. You can use <code>$show-grid</code> to test it.<br>Still, vertical rhythm is not mandatory, it could and even should be avoided on specific ocasions (like smaller line-heights on bigger type sizes). <strong>Vertical rhythm is to be used as a tool rather than a constraint.</strong></li>
-</ul>
-<ul>
-<li><strong>Mobile-First</strong><br>We use the mobile-first approach to @media queries and responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don’t set a <code>max-width</code>).<br>Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</li>
-</ul>
-<ul>
-<li><strong>All separator borders are solid.</strong><br>Borders that indicate boundaries are always set to <code>solid</code> and are not configurable. This is because 1) we find solid borders to be the most “solid” choice and 2) exposing that level of detail on our config file would kill this projects’s purpose.<br>If you need decorator borders to be set to other value, write them on your own css. If you don’t agree with this or don’t need separator borders, you can set <code>$separators</code> to <code>false</code>.</li>
-</ul>
-<ul>
-<li><p><strong>Utility classes have their uses</strong><br>Utility classes are the subject of a heated debate. <a href="https://tachyons.io/">Some frameworks</a> are based exclusively on utility classes. Some people say they’re unmaintanable, bloated and meaningless while others praise the quick prototyping and development you can achieve with them.</p>
+<li><p><strong>Margins/paddings are unset by default.</strong><br>In order to ensure consistent vertical spacing and avoid <a href="https://www.smashingmagazine.com/2019/07/margins-in-css/">margin overlap and gotchas</a> a radical approach is taken: by default, every item is marginless. A set of wrapper classes are created for applying spacing to texts and child items and the <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/">lobotomized owl</a> and similar techniques are used to apply spacing without leaving a hanging margin on the last element.</p>
+</li>
+<li><p><strong>Always use SVG</strong><br>SVG is preferred over icon fonts or PNG images.</p>
+</li>
+<li><p><strong>CSS Variables for color… and more</strong><br>Custom Properties are less powerful than SASS variables on preprocess but they have a single, winning feature: they are <em>dynamic</em> and can be easily overriden and altered on the client-side, even in real time. For this reason, Huesos 3.0 ditches all the SASS color manipulations in favor of a lighter, CSS Variables-based approach.</p>
+</li>
+<li><p><strong>Vertical rhythm is important, but not mandatory</strong><br>This version eliminates <code>ritmo.css</code> in favor of a rem-based approach to vertical rhythm, which is enforced but not mandatory. It could and even should be avoided on specific ocasions (like smaller line-heights on bigger type sizes). Vertical rhythm is to be used as a tool rather than a constraint.</p>
+</li>
+<li><p><strong>Intrinsic design first, mobile second</strong><br>We favor the intrinsic (or algorithmic) design over media queries for a perfectly fluid desig. Where not possible, we follow a mobile-first approach for responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don’t set a <code>max-width</code>).<br>Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.</p>
+</li>
+<li><p><strong>Mixin-first, utility class after</strong><br>Huesos provides a set of default class names for quick prototyping and design, but its core functionality should be able to work the same without enforcing any naming strategy. That’s why some classes implement mixins and delegate all functionality to them.</p>
+</li>
+<li><p><strong>Utility classes. Some. Not everyone</strong></p>
+<p>Utility classes are the subject of a heated debate. <a href="https://tachyons.io/">Some frameworks</a> are based exclusively on utility classes. Some people say they’re unmaintanable, bloated and meaningless while others praise the quick prototyping and development you can achieve with them.</p>
 <p>Huesitos is our (optional and small) library of utility classes. We don’t favor design by using utility classes, we do embrace BEM and semantical naming but <strong>we have found that a small subset of utility classes on top of BEM is really useful on two cases:</strong></p>
 <ol>
 <li>For overrides so small they won’t justify a modifier class (i.e: deleting/adding margins).</li>
@@ -2595,16 +2524,8 @@
 </li>
 </ul>
 <h3 id="javascript">Javascript</h3>
-<p>Some nasty native HTML shortcomings (like the infamous <code>&lt;select&gt;</code>) need to be tamed. We use a little (and optional) JS for this.</p>
-<p>Javascript libraries that are bundled follow this requirements:</p>
-<ul>
-<li><strong>Zero overweight.</strong> Small, concise, single-purpose libraries</li>
-<li><strong>Vanilla javascript.</strong> jQuery shouldn’t be a dependency.</li>
-</ul>
-<p>Apart from custom solutions, Huesos make use of the following JS third-pary libraries:</p>
-<ul>
-<li><a href="https://github.com/Mobius1/Selectr">Selectr</a> for vanilla-JS, Chosen-like <code>&lt;select&gt;</code> fields.</li>
-</ul>
+<p>Huesos 3.0 has prescinded of all third-party libraries. </p>
+<p>This framework is suposed to provide a minimalistic approach to front-end design. It is meant to be opinionated about design principles and strategies, but not about the specific tools to solve common problems. That’s why the Javascript tooling for taming elements like <code>&lt;select&gt;</code> has been removed.</p>
 
     
 
@@ -2627,10 +2548,10 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.4.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.3/cash.min.js?cachebust=1.8.1"></script>
 
 
-<script src="styleguide/huesos-mandlebrot.js?cachebust=1.4.0"></script>
+<script src="styleguide/huesos-mandlebrot.js?cachebust=1.8.1"></script>
 
 
 
