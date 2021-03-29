@@ -17,7 +17,7 @@ It exposes a highly configurable `_config.scss` file and makes use of the follow
 - [Breakpoint](http://breakpoint-sass.com/) for a leaner @media-query syntax.
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
 
-### Huesos is very opinionated and mixin-first
+### Opinionated and strong headed
 
 Even if it is a small framework, Huesos is very opinionated and adheres to a strict set of rules:
 
@@ -34,14 +34,12 @@ Even if it is a small framework, Huesos is very opinionated and adheres to a str
   This version eliminates `ritmo.css` in favor of a rem-based approach to vertical rhythm, which is enforced but not mandatory. It could and even should be avoided on specific ocasions (like smaller line-heights on bigger type sizes). Vertical rhythm is to be used as a tool rather than a constraint.
 
 - __Intrinsic design first, mobile second__  
-  We favor the intrinsic (or algorithmic) design over media queries for a perfectly fluid desig. Where not possible, we follow a mobile-first approach for responsive web design. This results, amongst other things, on all of our @media queries being open-ended (they don't set a `max-width`).  
-  Breakpoint helper classes always follow this principle and work by larger breakpoints overriding smaller ones.
+  We favor the intrinsic (or algorithmic) design over media queries for a perfectly fluid desig. Where not possible, we follow a mobile-first approach for responsive web design.
 
 - __Mixin-first, utility class after__  
-  Huesos provides a set of default class names for quick prototyping and design, but its core functionality should be able to work the same without enforcing any naming strategy. That's why some classes implement mixins and delegate all functionality to them.
+  Huesos provides a set of default class names for quick prototyping and design, but its core functionality should be able to work the same without enforcing any naming strategy. That's why most classes should implement mixins and delegate all functionality to them.
 
-- __Utility classes. Some. Not everyone__
-
+- __Utility classes. Some. Not everyone__  
   Utility classes are the subject of a heated debate. [Some frameworks](https://tachyons.io/) are based exclusively on utility classes. Some people say they're unmaintanable, bloated and meaningless while others praise the quick prototyping and development you can achieve with them.
 
   Huesitos is our (optional and small) library of utility classes. We don't favor design by using utility classes, we do embrace BEM and semantical naming but __we have found that a small subset of utility classes on top of BEM is really useful on two cases:__

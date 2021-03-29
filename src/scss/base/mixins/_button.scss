@@ -3,29 +3,29 @@
 // ---
 
 @mixin button-outline($color) {
-  border-color: var(--color-#{$color});
-  color: var(--color-#{$color});
+  border-color: var(--color-button-#{$color}-default);
+  color: var(--color-button-#{$color}-default);
 }
 
 @mixin button-link-outline($color) {
   &:link,
   &:active,
   &:visited {
-    color: var(--color-#{$color});
+    color: var(--color-button-#{$color}-default);
   }
 }
 
 @mixin button-background($color) {
-  border-color: var(--color-#{$color});
-  background-color: var(--color-#{$color});
-  color: var(--color-#{$color}-contrast);
+  border-color: var(--color-button-#{$color}-default);
+  background-color: var(--color-button-#{$color}-default);
+  color: var(--color-button-#{$color}-contrast);
 }
 
 @mixin button-link-background($color) {
   &:link,
   &:active,
   &:visited {
-    color: var(--color-#{$color}-contrast);
+    color: var(--color-button-#{$color}-contrast);
   }
 }
 

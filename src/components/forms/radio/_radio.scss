@@ -1,11 +1,11 @@
 input {
-	@if($pseudo-radio == false) {
-		&[type=radio].pseudo-radio {
-			@include pseudo-radio();
-		}
-	}
+  @if($pseudo-radio == false) {
+    &[type=radio].pseudo-radio {
+      @include pseudo-radio();
+    }
+  }
 }
 
 label input[type=radio] + span {
-	vertical-align: middle;
+  vertical-align: middle;
 }

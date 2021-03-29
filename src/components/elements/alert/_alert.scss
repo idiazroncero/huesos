@@ -1,16 +1,39 @@
 .alert {
-  @include alert($alert-default-color);
+  padding: $gutter;
+
+  @if $border-radius {
+    border-radius: $border-radius;
+  }
+
+  @if $alert-strategy == 'contrast' {
+    @include background-contrast($alert-default-color);
+  }
+
+  @else if $alert-strategy == 'split' {
+    @include background-split-color($alert-default-color);
+  }
+
+  @else if $alert-strategy == 'split-inverse' {
+    @include background-split-color($alert-default-color, true);
+  }
+
+  *:last-child {
+    margin-bottom:0;
+  }
 }
 
 @each $key in $states {
   .alert--#{$key} {
-    @if $alert-strategy=='contrast' {
-      // @include background-contrast($value);
+    @if $alert-strategy == 'contrast' {
+      @include background-contrast('state-#{$key}');
     }
 
-    @else if $alert-strategy=='split' {
-      background-color: var(--color-split-state-#{$key}-light);
-      color: var(--color-split-state-#{$key}-dark);
+    @else if $alert-strategy == 'split' {
+      @include background-split-color('state-#{$key}');
+    }
+
+    @else if $alert-strategy == 'split-inverse' {
+      @include background-split-color('state-#{$key}', true);
     }
 
     @else {

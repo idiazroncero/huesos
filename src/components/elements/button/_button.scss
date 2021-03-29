@@ -35,12 +35,12 @@ a.button {
 }
 
 // $button-states map states to colors
-@each $key, $value in $button-states {
-  .button--#{$value} {
-    @include style-button($value);
+@each $key, $value in $buttons {
+  .button--#{$key} {
+    @include style-button($key);
   }
-  a.button--#{$value} {
-    @include style-link-button($value);
+  a.button--#{$key} {
+    @include style-link-button($key);
   }
 }
 

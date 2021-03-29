@@ -1,7 +1,6 @@
 @if $font-secondary != false {
   .font-secondary,
   %font-secondary {
-    --text-bold: $font-secondary-bold;
     font-family: $font-secondary;
   }
 }

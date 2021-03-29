@@ -1,13 +1,15 @@
 @mixin card() {
+  @if $card-border-radius {
+    border-radius: $card-border-radius;
+  }
   @if $card-border-width {
-		@include ritmo-borders($card-border-width, $card-padding);
-		border-style:solid;
-		border-color: $card-border-color;
-	} @else {
-		// TODO: padding: ritmo($card-padding);
-	}
-	border-radius: $card-border-radius;
-	@if $card-shadow == true {
-		box-shadow: $box-shadow;
-	}
+    border-width: $card-border-width;
+    border-style: solid;
+    border-color: $card-border-color;
+  } @else {
+    padding: $card-padding;
+  }
+  @if $card-shadow == true {
+    box-shadow: $box-shadow;
+  }
 }

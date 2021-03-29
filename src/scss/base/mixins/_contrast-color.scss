@@ -1,27 +1,3 @@
-// TODO: remove.
-
-$color-modify-ratio: 0;
-
-@function tint($color, $dilution: 50) {
-  $white: rgba(255, 255, 255, 1);
-  @if $color == "transparent" {
-    $color: rgba(0, 0, 0, 0); }
-  @if $dilution < 0 or $dilution > 100 {
-    @warn "Dilution #{$dilution} must be between 0 and 100"; }
-  $tint-color: mix($color, $white, 100 - $dilution);
-  @return $tint-color; 
-}
-  
-@function shade($color, $dilution: 50) {
-  $black: rgba(0, 0, 0, 1);
-  @if $color == "transparent" {
-    $color: rgba(0, 0, 0, 0); }
-  @if $dilution < 0 or $dilution > 100 {
-    @warn "Dilution #{$dilution} must be between 0 and 100"; }
-  $shade-color: mix($color, $black, 100 - $dilution);
-  @return $shade-color; 
-}
-
 @function contrast-color($color, $dark: var(--color-text-body), $light: var(--color-text-body-contrast)) {
   @if (lightness($color) > $lightness-threshold) {
     @return $dark;
@@ -30,67 +6,24 @@ $color-modify-ratio: 0;
   }
 }
 
-@function darken-color($color) {
-  @return shade($color, $color-modify-ratio);
-}
-
-@function lighten-color($color) {
-  @return tint($color, $color-modify-ratio);
-}
-
-@mixin background-contrast($color, $include-typography: false) {
-
-  background-color: $color;
-  // color: contrast-color($color);
-
-
-  @if $include-typography {
-    h1,.h1,
-    h2,.h2,
-    h3,.h3,
-    h4,.h4,
-    h5,.h5
-    h6,.h6 {
-      color:inherit;
-    }
-  }
-}
-
-@mixin background-split-color(
-    $color, 
-    $lighten-amount: $lighten-split-ratio, 
-    $darken-amount: $darken-split-ratio, 
-    $include-links: false,
-    $invert: false
-  ) {
-  @if $invert {
-    background-color: shade($color, $lighten-amount);
-    color: tint($color, $darken-amount);
-    @if $include-links {
-      a {
-        @include set-link(
-          tint($color, $darken-amount),
-          tint($color, $darken-amount),
-          $color,
-          tint($color, $darken-amount)
-        )
-      } 
-    }
+@mixin background-contrast($color-key, $inverse: false) {
+  @if $inverse {
+    color: var(--color-#{$color-key});
+    background-color: var(--color-#{$color-key}-contrast);
   } @else {
-    background-color: tint($color, $lighten-amount);
-    color: shade($color, $darken-amount);
-    @if $include-links {
-      a {
-        @include set-link(
-          shade($color, $darken-amount),
-          shade($color, $darken-amount),
-          $color,
-          shade($color, $darken-amount)
-        )
-      } 
-    }
+    background-color: var(--color-#{$color-key});
+    color: var(--color-#{$color-key}-contrast);
   }
+}
 
+@mixin background-split-color($color-key, $inverse: false) {
+  @if $inverse {
+    color: var(--color-split-#{$color-key}-light);
+    background-color: var(--color-split-#{$color-key}-dark);
+  } @else {
+    background-color: var(--color-split-#{$color-key}-light);
+    color: var(--color-split-#{$color-key}-dark);
+  }
 }
 
 @function hexToRGB($hex) {

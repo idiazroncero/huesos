@@ -1,8 +1,8 @@
 @charset "UTF-8";
 :root {
   --color-primary: #641CE8;
-  --color-primary-contrast: var(--color-text-body-contrast);
   --color-secondary: #F3C852;
+  --color-primary-contrast: var(--color-text-body-contrast);
   --color-secondary-contrast: var(--color-text-body-contrast);
   --color-black: #393541;
   --color-white: #fff;
@@ -46,6 +46,16 @@
   --color-split-state-danger-dark: #5E051D;
   --color-split-state-warning-light: #FBF8C9;
   --color-split-state-warning-dark: #564A00;
+  --color-button-primary-default: #641CE8;
+  --color-button-primary-contrast: var(--color-text-body-contrast);
+  --color-button-secondary-default: #F3C852;
+  --color-button-secondary-contrast: var(--color-text-body-contrast);
+  --color-button-success-default: #10A84D;
+  --color-button-success-contrast: var(--color-text-body-contrast);
+  --color-button-warning-default: #B5A301;
+  --color-button-warning-contrast: var(--color-text-body-contrast);
+  --color-button-danger-default: #C4281D;
+  --color-button-danger-contrast: var(--color-text-body-contrast);
 }
 
 /*
@@ -936,7 +946,7 @@ var {
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap;
-  margin: 0;
+  margin: 0 !important;
   background-color: var(--color-code-inline-background);
   color: var(--color-code-inline);
   padding: 0 0.375rem;
@@ -996,20 +1006,18 @@ abbr[title] {
   /* 2 */
   text-decoration: underline dotted;
   /* 2 */
-}
-
-:root {
-  --text-bold: $font-main-bold;
+  margin: 0 !important;
 }
 
 b,
 strong,
 .strong {
-  font-weight: var(--text-bold);
+  font-weight: bold;
 }
 
 dfn {
   font-style: italic;
+  margin: 0 !important;
 }
 
 mark {
@@ -1017,6 +1025,7 @@ mark {
   color: var(--color-mark-text);
   padding: 0 0.375rem;
   display: inline-block;
+  margin: 0 !important;
 }
 
 .max-ch {
@@ -1040,6 +1049,7 @@ sup {
 
 q {
   quotes: "«" "»" "“" "”";
+  margin: 0 !important;
 }
 
 input,
@@ -1055,7 +1065,7 @@ textarea {
   white-space: normal;
   line-height: inherit;
   background: none;
-  border-radius: 0px;
+  border-radius: false;
   /* Browsers have different default form fonts */
   color: inherit;
   font-size: inherit;
@@ -1116,7 +1126,7 @@ fieldset {
   margin-right: 0;
   margin-left: 0;
   border-color: var(--color-input-border);
-  border-radius: 0px;
+  border-radius: false;
 }
 fieldset legend {
   font-size: 1rem;
@@ -1196,7 +1206,7 @@ fieldset.fieldset--disabled legend {
 }
 
 .form-item--label-inside {
-  border-radius: 0px;
+  border-radius: false;
   border-bottom: 1px solid var(--color-input-border);
   border-radius: 0;
   padding: 0.25rem 0;
@@ -1333,7 +1343,7 @@ select {
   white-space: normal;
   line-height: inherit;
   background: none;
-  border-radius: 0px;
+  border-radius: false;
   /* Browsers have different default form fonts */
   color: inherit;
   font-size: inherit;
@@ -1809,9 +1819,10 @@ textarea:focus {
   display: inline-block;
   vertical-align: bottom;
   padding: 0 0.375rem;
-  border-radius: 0px;
+  border-radius: false;
   font-weight: normal;
-  background-color: #b3aebc;
+  background-color: var(--color-#b3aebc);
+  color: var(--color-#b3aebc-contrast);
 }
 
 .tag + .tag {
@@ -1830,15 +1841,13 @@ a.tag:hover, a.tag:focus {
 }
 
 .card {
-  border-width: 0.0625rem;
-  padding: 2.4375rem;
+  border-width: 1px;
   border-style: solid;
   border-color: var(--color-utility-separator);
-  border-radius: 0px;
   box-shadow: 2px 2px 2px 0px rgba(57, 53, 65, 0.1);
 }
 .card .card {
-  padding: 4;
+  padding: 0.75rem;
 }
 
 .card--image {
@@ -1886,13 +1895,13 @@ a.button:after, a.button:link:after, a.button:visited:after, a.button:active:aft
 
 .button--primary {
   border-radius: 2px;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--color-button-primary-default);
+  color: var(--color-button-primary-default);
 }
 .button--primary:hover, .button--primary:focus {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
-  color: var(--color-primary-contrast);
+  border-color: var(--color-button-primary-default);
+  background-color: var(--color-button-primary-default);
+  color: var(--color-button-primary-contrast);
 }
 
 a.button--primary, a.button--primary:link, a.button--primary:visited, a.button--primary:active {
@@ -1903,21 +1912,21 @@ a.button--primary:focus, a.button--primary:hover {
   text-decoration: none;
 }
 a.button--primary:link, a.button--primary:active, a.button--primary:visited, a.button--primary:link:link, a.button--primary:link:active, a.button--primary:link:visited {
-  color: var(--color-primary);
+  color: var(--color-button-primary-default);
 }
 a.button--primary:hover:link, a.button--primary:hover:active, a.button--primary:hover:visited, a.button--primary:focus:link, a.button--primary:focus:active, a.button--primary:focus:visited {
-  color: var(--color-primary-contrast);
+  color: var(--color-button-primary-contrast);
 }
 
 .button--secondary {
   border-radius: 2px;
-  border-color: var(--color-secondary);
-  color: var(--color-secondary);
+  border-color: var(--color-button-secondary-default);
+  color: var(--color-button-secondary-default);
 }
 .button--secondary:hover, .button--secondary:focus {
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
-  color: var(--color-secondary-contrast);
+  border-color: var(--color-button-secondary-default);
+  background-color: var(--color-button-secondary-default);
+  color: var(--color-button-secondary-contrast);
 }
 
 a.button--secondary, a.button--secondary:link, a.button--secondary:visited, a.button--secondary:active {
@@ -1928,85 +1937,85 @@ a.button--secondary:focus, a.button--secondary:hover {
   text-decoration: none;
 }
 a.button--secondary:link, a.button--secondary:active, a.button--secondary:visited, a.button--secondary:link:link, a.button--secondary:link:active, a.button--secondary:link:visited {
-  color: var(--color-secondary);
+  color: var(--color-button-secondary-default);
 }
 a.button--secondary:hover:link, a.button--secondary:hover:active, a.button--secondary:hover:visited, a.button--secondary:focus:link, a.button--secondary:focus:active, a.button--secondary:focus:visited {
-  color: var(--color-secondary-contrast);
+  color: var(--color-button-secondary-contrast);
 }
 
-.button--state-success {
+.button--success {
   border-radius: 2px;
-  border-color: var(--color-state-success);
-  color: var(--color-state-success);
+  border-color: var(--color-button-success-default);
+  color: var(--color-button-success-default);
 }
-.button--state-success:hover, .button--state-success:focus {
-  border-color: var(--color-state-success);
-  background-color: var(--color-state-success);
-  color: var(--color-state-success-contrast);
-}
-
-a.button--state-success, a.button--state-success:link, a.button--state-success:visited, a.button--state-success:active {
-  border-radius: 2px;
-  text-decoration: none;
-}
-a.button--state-success:focus, a.button--state-success:hover {
-  text-decoration: none;
-}
-a.button--state-success:link, a.button--state-success:active, a.button--state-success:visited, a.button--state-success:link:link, a.button--state-success:link:active, a.button--state-success:link:visited {
-  color: var(--color-state-success);
-}
-a.button--state-success:hover:link, a.button--state-success:hover:active, a.button--state-success:hover:visited, a.button--state-success:focus:link, a.button--state-success:focus:active, a.button--state-success:focus:visited {
-  color: var(--color-state-success-contrast);
+.button--success:hover, .button--success:focus {
+  border-color: var(--color-button-success-default);
+  background-color: var(--color-button-success-default);
+  color: var(--color-button-success-contrast);
 }
 
-.button--state-warning {
-  border-radius: 2px;
-  border-color: var(--color-state-warning);
-  color: var(--color-state-warning);
-}
-.button--state-warning:hover, .button--state-warning:focus {
-  border-color: var(--color-state-warning);
-  background-color: var(--color-state-warning);
-  color: var(--color-state-warning-contrast);
-}
-
-a.button--state-warning, a.button--state-warning:link, a.button--state-warning:visited, a.button--state-warning:active {
+a.button--success, a.button--success:link, a.button--success:visited, a.button--success:active {
   border-radius: 2px;
   text-decoration: none;
 }
-a.button--state-warning:focus, a.button--state-warning:hover {
+a.button--success:focus, a.button--success:hover {
   text-decoration: none;
 }
-a.button--state-warning:link, a.button--state-warning:active, a.button--state-warning:visited, a.button--state-warning:link:link, a.button--state-warning:link:active, a.button--state-warning:link:visited {
-  color: var(--color-state-warning);
+a.button--success:link, a.button--success:active, a.button--success:visited, a.button--success:link:link, a.button--success:link:active, a.button--success:link:visited {
+  color: var(--color-button-success-default);
 }
-a.button--state-warning:hover:link, a.button--state-warning:hover:active, a.button--state-warning:hover:visited, a.button--state-warning:focus:link, a.button--state-warning:focus:active, a.button--state-warning:focus:visited {
-  color: var(--color-state-warning-contrast);
+a.button--success:hover:link, a.button--success:hover:active, a.button--success:hover:visited, a.button--success:focus:link, a.button--success:focus:active, a.button--success:focus:visited {
+  color: var(--color-button-success-contrast);
 }
 
-.button--state-danger {
+.button--warning {
   border-radius: 2px;
-  border-color: var(--color-state-danger);
-  color: var(--color-state-danger);
+  border-color: var(--color-button-warning-default);
+  color: var(--color-button-warning-default);
 }
-.button--state-danger:hover, .button--state-danger:focus {
-  border-color: var(--color-state-danger);
-  background-color: var(--color-state-danger);
-  color: var(--color-state-danger-contrast);
+.button--warning:hover, .button--warning:focus {
+  border-color: var(--color-button-warning-default);
+  background-color: var(--color-button-warning-default);
+  color: var(--color-button-warning-contrast);
 }
 
-a.button--state-danger, a.button--state-danger:link, a.button--state-danger:visited, a.button--state-danger:active {
+a.button--warning, a.button--warning:link, a.button--warning:visited, a.button--warning:active {
   border-radius: 2px;
   text-decoration: none;
 }
-a.button--state-danger:focus, a.button--state-danger:hover {
+a.button--warning:focus, a.button--warning:hover {
   text-decoration: none;
 }
-a.button--state-danger:link, a.button--state-danger:active, a.button--state-danger:visited, a.button--state-danger:link:link, a.button--state-danger:link:active, a.button--state-danger:link:visited {
-  color: var(--color-state-danger);
+a.button--warning:link, a.button--warning:active, a.button--warning:visited, a.button--warning:link:link, a.button--warning:link:active, a.button--warning:link:visited {
+  color: var(--color-button-warning-default);
 }
-a.button--state-danger:hover:link, a.button--state-danger:hover:active, a.button--state-danger:hover:visited, a.button--state-danger:focus:link, a.button--state-danger:focus:active, a.button--state-danger:focus:visited {
-  color: var(--color-state-danger-contrast);
+a.button--warning:hover:link, a.button--warning:hover:active, a.button--warning:hover:visited, a.button--warning:focus:link, a.button--warning:focus:active, a.button--warning:focus:visited {
+  color: var(--color-button-warning-contrast);
+}
+
+.button--danger {
+  border-radius: 2px;
+  border-color: var(--color-button-danger-default);
+  color: var(--color-button-danger-default);
+}
+.button--danger:hover, .button--danger:focus {
+  border-color: var(--color-button-danger-default);
+  background-color: var(--color-button-danger-default);
+  color: var(--color-button-danger-contrast);
+}
+
+a.button--danger, a.button--danger:link, a.button--danger:visited, a.button--danger:active {
+  border-radius: 2px;
+  text-decoration: none;
+}
+a.button--danger:focus, a.button--danger:hover {
+  text-decoration: none;
+}
+a.button--danger:link, a.button--danger:active, a.button--danger:visited, a.button--danger:link:link, a.button--danger:link:active, a.button--danger:link:visited {
+  color: var(--color-button-danger-default);
+}
+a.button--danger:hover:link, a.button--danger:hover:active, a.button--danger:hover:visited, a.button--danger:focus:link, a.button--danger:focus:active, a.button--danger:focus:visited {
+  color: var(--color-button-danger-contrast);
 }
 
 .button.disabled {
@@ -2040,10 +2049,26 @@ a.button--state-danger:hover:link, a.button--state-danger:hover:active, a.button
 
 .alert {
   padding: 1.5rem;
-  border-radius: 0px;
+  background-color: var(--color-split-primary-light);
+  color: var(--color-split-primary-dark);
 }
-.alert p:last-child {
+.alert *:last-child {
   margin-bottom: 0;
+}
+
+.alert--success {
+  background-color: var(--color-split-state-success-light);
+  color: var(--color-split-state-success-dark);
+}
+
+.alert--warning {
+  background-color: var(--color-split-state-warning-light);
+  color: var(--color-split-state-warning-dark);
+}
+
+.alert--danger {
+  background-color: var(--color-split-state-danger-light);
+  color: var(--color-split-state-danger-dark);
 }
 
 .m {
@@ -2498,8 +2523,8 @@ code.code {
 .pen-preview .preview-tag {
   position: absolute;
   top: 0.75rem;
-  right: 1.6666666667rem;
-  left: 1.6666666667rem;
+  right: 1rem;
+  left: 1rem;
   margin: 0;
   display: flex;
   align-items: center;
@@ -2558,20 +2583,14 @@ code.code {
 
 .background-contrast {
   background-color: #393541;
-  background-color: #393541;
+  background-color: var(--color-#393541);
+  color: var(--color-#393541-contrast);
 }
 
 .background-contrast--typography {
   background-color: #744E0F;
-  background-color: #744E0F;
-}
-.background-contrast--typography h1, .background-contrast--typography .h1,
-.background-contrast--typography h2, .background-contrast--typography .h2,
-.background-contrast--typography h3, .background-contrast--typography .h3,
-.background-contrast--typography h4, .background-contrast--typography .h4,
-.background-contrast--typography h5, .background-contrast--typography .h5 h6,
-.background-contrast--typography .h6 {
-  color: inherit;
+  color: var(--color-#744E0F);
+  background-color: var(--color-#744E0F-contrast);
 }
 
 .contrast-links {

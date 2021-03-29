@@ -138,8 +138,8 @@ code.code {
   .preview-tag {
     position: absolute;
     top: $gutter / 2;
-    right: ritmo($card-padding / 1.5);
-    left: ritmo($card-padding / 1.5);
+    right: $card-padding / 1.5;
+    left: $card-padding / 1.5;
     margin: 0;
     display: flex;
     align-items: center;

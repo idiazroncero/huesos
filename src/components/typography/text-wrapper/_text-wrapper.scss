@@ -4,16 +4,12 @@
     max-width: var(--text-max-ch);
   }
 
-  // We use the incredible (but aggresive) lobotomized owl
-  // but only on the first level to avoid leaking into components
-  // and leading to unexpected results.
   > * + * {
     margin-top: $gutter;
   }
 
   @for $i from 1 to 7 {
     * + h#{$i}, * + .h#{$i} {
-      // TODO: Move to vars?
       margin-top: $gutter * 2;
     }
   }

@@ -100,8 +100,8 @@ $lightness-threshold: 65;
 // These are the mandatory colors, optional ones will be added conditionally.
 $colors : (
   primary: $primary,
-  primary-contrast: contrast-color($primary),
   secondary: $secondary,
+  primary-contrast: contrast-color($primary),
   secondary-contrast: contrast-color($secondary),
   black: $black,
   white: $white,
@@ -160,17 +160,19 @@ $colors : (
       light: $secondary-100,
       dark: $secondary-900,
     ),
-    state-success: (
-      light: $success-100,
-      dark: $success-900,
-    ),
-    state-danger: (
-      light: $danger-100,
-      dark: $danger-900,
-    ),
-    state-warning: (
-      light: $warning-100,
-      dark: $warning-900,
+    state: (
+      success: (
+        light: $success-100,
+        dark: $success-900,
+      ),
+      danger: (
+        light: $danger-100,
+        dark: $danger-900,
+      ),
+      warning: (
+        light: $warning-100,
+        dark: $warning-900,
+      ),
     ),
   )
 );
@@ -307,7 +309,7 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-// Set to false to avoid outputting color variables
+$code-padding-y: $gutter / 4;
 $code-padding-x: $gutter / 4;
 $code-border-radius: 5px;
 
@@ -413,7 +415,7 @@ $fieldset-font-size: 'h5';
 // Some common patterns
 // ------
 
-$border-radius: 0px;
+$border-radius: false;
 
 $separators: true; // Set this to false to disable all separators
 $separator-width: 1px;
@@ -490,14 +492,31 @@ $button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for da
 $button-strategy-default: 'outline';
 $button-strategy-hover: 'background';
 
-// Mapping of class names and actual color names
-$button-states : (
-  primary: 'primary', 
-  secondary: 'secondary',
-  success: 'state-success',
-  warning: 'state-warning',
-  danger: 'state-danger',
+$buttons : (
+  primary: (
+    default: $primary,
+    contrast: contrast-color($primary),
+  ),
+  secondary: (
+    default: $secondary,
+    contrast: contrast-color($secondary),
+  ),
+  success: (
+    default: $success,
+    contrast: contrast-color($success),
+  ),
+  warning: (
+    default: $warning,
+    contrast: contrast-color($warning),
+  ),
+  danger: (
+    default: $danger,
+    contrast: contrast-color($danger),
+  )
 );
+
+// Add button keys to color map.
+$colors: map-merge($colors, (button: $buttons));
 
 // Checkboxes / Selects
 $pseudo-checkbox : false;
@@ -551,7 +570,7 @@ $tag-font-size: 'h6';
 // ------
 
 $alert-strategy: 'split'; // One of split or contrast
-$alert-default-color: $gray-300;
+$alert-default-color: 'primary'; // Ensure it's a color with split and contrast alues.
 
 // ------
 // GRID
@@ -648,7 +667,7 @@ $card-border-width: 1px; // Set to false to avoid border
 $card-border-color: var(--color-utility-separator);// Can be false or a full border value, like 2px solid var(--color-utility-separator);
 $card-background: $white;
 $card-border-radius: $border-radius;
-$card-padding: 8; // In base-line-multi
+$card-padding: $spacer; // In base-line-multi
 $card-shadow: true; // Aplies shadow-definition
 
 

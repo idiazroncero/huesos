@@ -18,8 +18,8 @@
   };
 };
 
-// [data-theme-dark] {
-//   @each $type, $value in $dark-colors {
-//     @include generate-css-var($type, $value, #{$type})
-//   };
-// }
+[data-theme-dark] {
+  @each $type, $value in $dark-colors {
+    @include generate-css-var($type, $value, #{$type})
+  };
+}

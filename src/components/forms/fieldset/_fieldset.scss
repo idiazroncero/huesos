@@ -1,35 +1,35 @@
 
 
 @if $disable-fieldset {
-	fieldset {
-		margin-right:0;
-		margin-left:0;
-		border: none;
-		padding: 0;
-		legend {
-			margin-bottom: $spacer;
-			@include minititle($fieldset-font-size);
-		}
-	}
+  fieldset {
+    margin-right:0;
+    margin-left:0;
+    border: none;
+    padding: 0;
+    legend {
+      margin-bottom: $spacer;
+      @include minititle($fieldset-font-size);
+    }
+  }
 } @else {
-	fieldset {
-		margin-right:0;
-		margin-left:0;
-		// TODO: @include ritmo-borders($input-border-width, 4);
-		border-color: var(--color-input-border);
-		border-radius: $form-border-radius;
-		legend {
-			@include minititle($fieldset-font-size);
-		}
-	}
-	fieldset.fieldset--disabled {
-		margin-right:0;
-		margin-left:0;
-		border: none;
-		padding: 0;
-		legend {
-			margin-bottom: $spacer;
-			@include minititle($fieldset-font-size);
-		}
-	}
+  fieldset {
+    margin-right:0;
+    margin-left:0;
+    // TODO: @include ritmo-borders($input-border-width, 4);
+    border-color: var(--color-input-border);
+    border-radius: $form-border-radius;
+    legend {
+      @include minititle($fieldset-font-size);
+    }
+  }
+  fieldset.fieldset--disabled {
+    margin-right:0;
+    margin-left:0;
+    border: none;
+    padding: 0;
+    legend {
+      margin-bottom: $spacer;
+      @include minititle($fieldset-font-size);
+    }
+  }
 }

@@ -19,9 +19,9 @@
       }
     },
     { 
-      "name" : "Error",
+      "name" : "Danger",
       "context": {
-        "modifier": "alert--error"
+        "modifier": "alert--danger"
       }
     }
   ]
