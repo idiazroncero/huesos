@@ -91,7 +91,7 @@
           }
           > a,
           > span {
-            @include ritmo-font-size(0.66 * $base-font-size, 4); 
+            font-size: font-size(h6); 
           }
         }
       }
