@@ -3,8 +3,8 @@
 // Mixins and third-party libraries
 // IMPORTANT: This needs to be @imported before config()
 // --------------------
-@import "node_modules/family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
-@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "family.scss/source/src/family"; // Source: http://lukyvj.github.io/family.scss/
+@import "breakpoint-sass/stylesheets/breakpoint";
 
 // The mixin library should always be imported in order to be able to use them
 // even if the components (classes) are not imported.

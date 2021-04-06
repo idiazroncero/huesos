@@ -11,7 +11,6 @@ It sets sensible defaults, exposes a highly configurable `_config.scss` file and
 - [Family](https://lukyvj.github.io/family.scss/) for syntactic sugar around nth-* selectors
 - [Every Layout](https://every-layout.dev/) for clever and arithmetic layouts.
 - [BEM](http://getbem.com/introduction/) for naming conventions
-- [Ritmo](https://github.com/marzeelabs/ritmo) for vertical rhythm.
 
 It is "somehow opinionated", meaning that is neither a Bootstrap-like complete set of closed and almost zero-config components nor a bare-bones css-reset and starterkit.
 
@@ -61,9 +60,11 @@ Copy `src/scss/_config.scss` to your project and tweak it.
 On your SCSS main file, add the following lines before your code (where `path/to/your/config` points to your local copy of `src/scss/_config.scss`):
 
 ````scss
-@import "path/or/alias/to/node_modules/huesos/dependencies";
+@import "huesos/dependencies";
 @import "path/to/your/config";
-@import "path/or/alias/to/node_modules/huesos/huesos";
+@import "huesos/huesos";
+
+Please note that you will need to tweak your sass compiler to resolve `@import` rules also to `node_modules`. This can be achieved with `--load-path` on Dart Sass and `--include-path` on Node Sass.
 
 /* Start coding here */
 ````
