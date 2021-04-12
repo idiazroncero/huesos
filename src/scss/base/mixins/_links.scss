@@ -36,17 +36,17 @@
 @mixin set-link($base, $visited, $hover, $active, $link-decoration-data: null) {
 
   @if $base {
-    --color-link-default: $base;
-  }
+    --color-link-default: #{$base};
+}  }
   @if $visited {
-    --color-link-visited: $visited;
+    --color-link-visited: #{$visited};
   }
   @if $hover {
-    --color-link-focus: $hover;
-    --color-link-hover: $hover;
+    --color-link-focus: #{$hover;}
+    --color-link-hover: #{$hover;}
   }
   @if $active {
-    --color-link-active: $active;
+    --color-link-active: #{$active};
   }
 
   @if $link-decoration-data {
@@ -58,7 +58,7 @@
 }
 
 @mixin kill-link($color: var(--color-primary)) {
-  @include set-link($color, $color, $color, $color, false);
+  @include ($color, $color, $color, $color, false);
   @include kill-link-decoration();
 }
 
