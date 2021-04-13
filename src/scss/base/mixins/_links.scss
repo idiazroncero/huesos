@@ -37,13 +37,13 @@
 
   @if $base {
     --color-link-default: #{$base};
-}  }
+  }
   @if $visited {
     --color-link-visited: #{$visited};
   }
   @if $hover {
-    --color-link-focus: #{$hover;}
-    --color-link-hover: #{$hover;}
+    --color-link-focus: #{$hover};
+    --color-link-hover: #{$hover};
   }
   @if $active {
     --color-link-active: #{$active};
