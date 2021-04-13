@@ -58,7 +58,7 @@
 }
 
 @mixin kill-link($color: var(--color-primary)) {
-  @include ($color, $color, $color, $color, false);
+  @include set-link($color, $color, $color, $color, false);
   @include kill-link-decoration();
 }
 

@@ -528,7 +528,6 @@ textarea,
 caption {
   text-align: left;
   font-size: 0.75rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -586,11 +585,11 @@ a:hover, a:focus {
   text-decoration-color: var(--color-link-decoration-hover);
 }
 a.link--inactive {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: currentColor;
+  --color-link-visited: currentColor;
+  --color-link-focus: currentColor;
+  --color-link-hover: currentColor;
+  --color-link-active: currentColor;
 }
 a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:active, a.link--inactive:focus, a.link--inactive:hover {
   text-decoration: none;
@@ -599,11 +598,11 @@ a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inact
   text-decoration: none;
 }
 a.link--disabled {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-state-disabled);
+  --color-link-visited: var(--color-state-disabled);
+  --color-link-focus: var(--color-state-disabled);
+  --color-link-hover: var(--color-state-disabled);
+  --color-link-active: var(--color-state-disabled);
 }
 a.link--disabled, a.link--disabled:link, a.link--disabled:visited, a.link--disabled:active, a.link--disabled:focus, a.link--disabled:hover {
   text-decoration: none;
@@ -838,13 +837,11 @@ h6 a, h6 a:link, h6 a:visited, h6 a:active, h6 a:focus, h6 a:hover, .hi a, .hi a
 }
 
 .font-secondary {
-  --text-bold: $font-secondary-bold;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
 .minititle {
   font-size: 0.75rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -856,14 +853,13 @@ samp,
 var {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   line-height: 1.5rem;
-  display: inline-block;
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap;
   margin: 0 !important;
   background-color: var(--color-code-inline-background);
   color: var(--color-code-inline);
-  padding: 0 0.375rem;
+  padding: 0.375rem 0.375rem;
   border-radius: 5px;
 }
 
@@ -1038,7 +1034,6 @@ fieldset {
 }
 fieldset legend {
   font-size: 1rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1053,7 +1048,6 @@ fieldset.fieldset--disabled {
 fieldset.fieldset--disabled legend {
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1590,11 +1584,11 @@ textarea:focus {
   text-align: left;
   display: block;
   white-space: nowrap;
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-primary);
+  --color-link-visited: var(--color-primary);
+  --color-link-focus: var(--color-primary);
+  --color-link-hover: var(--color-primary);
+  --color-link-active: var(--color-primary);
 }
 .menu > li > a, .menu > li > a:link, .menu > li > a:visited, .menu > li > a:active, .menu > li > a:focus, .menu > li > a:hover {
   text-decoration: none;
@@ -1648,8 +1642,7 @@ textarea:focus {
 }
 .menu > li > ul > li > ul li > a,
 .menu > li > ul > li > ul li > span {
-  font-size: 0.66rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
 }
 .menu > li > ul > li:hover > ul {
   display: block;
@@ -1701,8 +1694,6 @@ textarea:focus {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.75rem;
-  line-height: 1.5625rem;
 }
 .breadcrumb li {
   list-style-type: none;
@@ -2297,11 +2288,11 @@ a.button--danger:hover:link, a.button--danger:hover:active, a.button--danger:hov
 }
 
 .kill-link a {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-primary);
+  --color-link-visited: var(--color-primary);
+  --color-link-focus: var(--color-primary);
+  --color-link-hover: var(--color-primary);
+  --color-link-active: var(--color-primary);
 }
 .kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:active, .kill-link a:focus, .kill-link a:hover {
   text-decoration: none;
