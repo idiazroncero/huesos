@@ -7,7 +7,9 @@
   @if $button-text-transform {
     text-transform: $button-text-transform;
   }
-  letter-spacing: 0.05rem;
+  @if $button-letter-spacing {
+    letter-spacing: $button-letter-spacing;
+  }
   vertical-align:bottom;
   font-weight: $button-weight;
   font-family: $button-font-family;
