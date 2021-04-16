@@ -121,7 +121,7 @@ $colors : (
   background : (
     body: $white,
     dark: $gray-800,
-    light: $gray-100,
+    light: $gray-200,
   ),
   state : (
     disabled: $gray-500,
@@ -338,6 +338,7 @@ $mark-padding: 0 $spacer / 4;
 // TYPE SCALE
 // Source: http://type-scale.com
 // ------
+$fluid-typography: true;
 $fluid-typography-min-width: 30rem;
 $fluid-typography-max-width: 60rem;
 
@@ -561,7 +562,7 @@ $breadcrumb-arrow: "›"; // Valid unicode character
 // ------
 
 $tag-strategy: 'contrast'; // One of split or contrast
-$tag-default-color: $gray-300;
+$tag-default-color: 'background-light';
 $tag-padding: 0 $gutter / 4; // Shorthand
 $tag-font-size: 'h6';
 

@@ -30,11 +30,11 @@ a.tag {
 @each $key, $value in map-get($colors, state) {
   .tag--#{$key} {
     @if $tag-strategy=='contrast' {
-      // @include background-contrast($value);
+      @include background-contrast($value);
     }
 
     @else if $tag-strategy=='split' {
-    //   @include background-split-color($value);
+      @include background-split-color($value);
     }
 
     @else {

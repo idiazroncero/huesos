@@ -38,24 +38,35 @@
 
 @mixin font-size($size, $smaller-size: false, $breakpoint: false) {
   @if $smaller-size {
-    font-size: font-size($smaller-size);
-    @include fluid-font-size(font-size($smaller-size), font-size($size));
+    @include full-font-size($smaller-size);
+    @if $fluid-typography {
+      @include fluid-font-size(font-size($smaller-size), font-size($size));
+    }
     @if $breakpoint {
       @include breakpoint($breakpoint) {
-        font-size: font-size($size);
-        @include fluid-font-size(font-size($smaller-size), font-size($size));
+        @include full-font-size($size);
+        @if $fluid-typography {
+          @include fluid-font-size(font-size($smaller-size), font-size($size));
+        }
       }
     }
     @else {
       @include breakpoint($small) {
-        font-size: font-size($size);
-        @include fluid-font-size(font-size($smaller-size), font-size($size));
+        @include full-font-size($size);
+        @if $fluid-typography {
+          @include fluid-font-size(font-size($smaller-size), font-size($size));
+        }
       }
     }
   }
   @else {
-    font-size: font-size($size);
+    @include full-font-size($size);
   }
+}
+
+@mixin full-font-size($size) {
+  font-size: font-size($size);
+  line-height: line-height($size);
 }
 
 @function font-size($size) {
