@@ -477,6 +477,7 @@ $input-padding-y: $gutter / 6;
 $button-padding-y: $gutter / 8;
 $button-padding-x: $gutter / 2;
 $button-font-family: $font-main;
+$button-text-transform: uppercase; // False to apply none.
 $button-font-size: 'h6';
 $button-border-width: 2px;
 $button-border-radius: 2px; // $border-radius;

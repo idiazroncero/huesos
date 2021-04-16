@@ -4,7 +4,9 @@
   cursor:pointer;
   display: inline-block;
   font-size: font-size($button-font-size);
-  text-transform: uppercase;
+  @if $button-text-transform {
+    text-transform: $button-text-transform;
+  }
   letter-spacing: 0.05rem;
   vertical-align:bottom;
   font-weight: $button-weight;
