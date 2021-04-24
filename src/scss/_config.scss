@@ -99,10 +99,22 @@ $lightness-threshold: 65;
 // actual CSS Custom Properties (variables) that are put into use.
 // These are the mandatory colors, optional ones will be added conditionally.
 $colors : (
-  primary: $primary,
-  secondary: $secondary,
-  primary-contrast: contrast-color($primary),
-  secondary-contrast: contrast-color($secondary),
+  primary: (
+    base: $primary,
+    contrast: contrast-color($primary),
+    split: (
+      light: $primary-100,
+      dark: $primary-900,
+    ),
+  ),
+  secondary: (
+    base: $secondary,
+    contrast: contrast-color($secondary),
+    split: (
+      light: $secondary-100,
+      dark: $secondary-900,
+    ),
+  ),
   black: $black,
   white: $white,
   utility: (
@@ -125,12 +137,30 @@ $colors : (
   ),
   state : (
     disabled: $gray-500,
-    success: $success,
-    success-contrast: contrast-color($success),
-    danger: $danger,
-    danger-contrast: contrast-color($danger),
-    warning: $warning,
-    warning-contrast: contrast-color($warning),
+    success: (
+      base: $success,
+      contrast: contrast-color($success),
+      split: (
+        light: $success-100,
+        dark: $success-900,
+      )
+    ),
+    danger: (
+      base: $danger,
+      contrast: contrast-color($danger),
+      split: (
+        light: $danger-100,
+        dark: $danger-900,
+      )
+    ),
+    warning: (
+      base: $warning,
+      contrast: contrast-color($warning),
+      split: (
+        light: $warning-100,
+        dark: $warning-900,
+      )
+    )
   ),
   link : (
     default: $primary-500,
@@ -146,35 +176,15 @@ $colors : (
     pseudo-border: $gray-600,
   ),
   code : (
-    inline-background: $secondary-200,
-    inline: $black,
-    block-background: $gray-900,
-    block: $white,
+    inline: (
+      base: $black,
+      background: $secondary-200,
+    ),
+    block: (
+      base: $white,
+      background: $gray-900
+    )
   ),
-  split: (
-    primary: (
-      light: $primary-100,
-      dark: $primary-900,
-    ),
-    secondary: (
-      light: $secondary-100,
-      dark: $secondary-900,
-    ),
-    state: (
-      success: (
-        light: $success-100,
-        dark: $success-900,
-      ),
-      danger: (
-        light: $danger-100,
-        dark: $danger-900,
-      ),
-      warning: (
-        light: $warning-100,
-        dark: $warning-900,
-      ),
-    ),
-  )
 );
 
 $dark-colors: (
@@ -220,8 +230,7 @@ $dark-colors: (
   ),
 );
 
-$states: 'success', 'warning', 'danger';
-
+$state-namespace: 'state';
 $generate-color-classes: true;
 
 // --------------------

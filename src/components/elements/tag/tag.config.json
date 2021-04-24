@@ -19,10 +19,10 @@
         }
       },
       { 
-        "name" : "Error",
+        "name" : "Danger",
         "context": {
-          "modifier": "tag--error",
-          "text": "This is an error tag!"
+          "modifier": "tag--danger",
+          "text": "This is an error or danger tag!"
         }
       }
   ]

@@ -6,6 +6,14 @@
   }
 }
 
+@function get-base-color-key($key) {
+  @if type-of($key) == 'map' {
+    @return map-get($key, 'base');
+  } @else {
+    @return $key;
+  }
+}
+
 @mixin background-contrast($color-key, $inverse: false) {
   @if $inverse {
     color: var(--color-#{$color-key});
@@ -18,11 +26,11 @@
 
 @mixin background-split-color($color-key, $inverse: false) {
   @if $inverse {
-    color: var(--color-split-#{$color-key}-light);
-    background-color: var(--color-split-#{$color-key}-dark);
+    color: var(--color-#{$color-key}-split-light);
+    background-color: var(--color-#{$color-key}-split-dark);
   } @else {
-    background-color: var(--color-split-#{$color-key}-light);
-    color: var(--color-split-#{$color-key}-dark);
+    background-color: var(--color-#{$color-key}-split-light);
+    color: var(--color-#{$color-key}-split-dark);
   }
 }
 

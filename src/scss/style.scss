@@ -15,8 +15,3 @@
 // Import the library
 // --------------------
 @import "../../huesos";
-
-body {
-  --color: rgb(hexToRgb(#334455));
-  background-color: var(--color);
-}

@@ -22,18 +22,19 @@
   }
 }
 
-@each $key in $states {
+@each $key, $value in map-get($colors, $state-namespace) {
+  $namespaced-key: '#{$state-namespace}-#{$key}';
   .alert--#{$key} {
     @if $alert-strategy == 'contrast' {
-      @include background-contrast('state-#{$key}');
+      @include background-contrast($namespaced-key);
     }
 
     @else if $alert-strategy == 'split' {
-      @include background-split-color('state-#{$key}');
+      @include background-split-color($namespaced-key);
     }
 
     @else if $alert-strategy == 'split-inverse' {
-      @include background-split-color('state-#{$key}', true);
+      @include background-split-color($namespaced-key, true);
     }
 
     @else {

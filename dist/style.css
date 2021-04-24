@@ -1,9 +1,13 @@
 @charset "UTF-8";
 :root {
   --color-primary: #641CE8;
-  --color-secondary: #F3C852;
   --color-primary-contrast: var(--color-text-body-contrast);
+  --color-primary-split-light: #E7D1FD;
+  --color-primary-split-dark: #1B056F;
+  --color-secondary: #F3C852;
   --color-secondary-contrast: var(--color-text-body-contrast);
+  --color-secondary-split-light: #FEF9DC;
+  --color-secondary-split-dark: #744E0F;
   --color-black: #393541;
   --color-white: #fff;
   --color-utility-separator: #c8c4cf;
@@ -19,10 +23,16 @@
   --color-state-disabled: #898198;
   --color-state-success: #10A84D;
   --color-state-success-contrast: var(--color-text-body-contrast);
+  --color-state-success-split-light: #CDFACD;
+  --color-state-success-split-dark: #035041;
   --color-state-danger: #C4281D;
   --color-state-danger-contrast: var(--color-text-body-contrast);
+  --color-state-danger-split-light: #FCE2D1;
+  --color-state-danger-split-dark: #5E051D;
   --color-state-warning: #B5A301;
   --color-state-warning-contrast: var(--color-text-body-contrast);
+  --color-state-warning-split-light: #FBF8C9;
+  --color-state-warning-split-dark: #564A00;
   --color-link-default: #641CE8;
   --color-link-visited: #9052F1;
   --color-link-focus: #270886;
@@ -32,20 +42,10 @@
   --color-link-decoration-hover: #641CE8;
   --color-input-border: #c8c4cf;
   --color-input-pseudo-border: #746c84;
-  --color-code-inline-background: #FDF1BA;
   --color-code-inline: #393541;
-  --color-code-block-background: #393541;
+  --color-code-inline-background: #FDF1BA;
   --color-code-block: #fff;
-  --color-split-primary-light: #E7D1FD;
-  --color-split-primary-dark: #1B056F;
-  --color-split-secondary-light: #FEF9DC;
-  --color-split-secondary-dark: #744E0F;
-  --color-split-state-success-light: #CDFACD;
-  --color-split-state-success-dark: #035041;
-  --color-split-state-danger-light: #FCE2D1;
-  --color-split-state-danger-dark: #5E051D;
-  --color-split-state-warning-light: #FBF8C9;
-  --color-split-state-warning-dark: #564A00;
+  --color-code-block-background: #393541;
   --color-button-primary-default: #641CE8;
   --color-button-primary-contrast: var(--color-text-body-contrast);
   --color-button-secondary-default: #F3C852;
@@ -1753,6 +1753,48 @@ a.tag, a.tag:link, a.tag:visited, a.tag:active, a.tag:focus, a.tag:hover {
 }
 a.tag:hover, a.tag:focus {
   padding: 0 0.375rem;
+  background-color: var(--color-darken-color("background-light"));
+  color: var(--color-darken-color("background-light")-contrast);
+}
+
+.tag--disabled {
+  background-color: var(--color-state-disabled);
+  color: var(--color-state-disabled-contrast);
+}
+
+.tag--success {
+  background-color: var(--color-state-success);
+  color: var(--color-state-success-contrast);
+}
+
+.tag--danger {
+  background-color: var(--color-state-danger);
+  color: var(--color-state-danger-contrast);
+}
+
+.tag--warning {
+  background-color: var(--color-state-warning);
+  color: var(--color-state-warning-contrast);
+}
+
+a.tag--disabled:hover, a.tag--disabled:focus {
+  background-color: var(--color-state-disabled);
+  color: var(--color-state-disabled-contrast);
+}
+
+a.tag--success:hover, a.tag--success:focus {
+  background-color: var(--color-state-success);
+  color: var(--color-state-success-contrast);
+}
+
+a.tag--danger:hover, a.tag--danger:focus {
+  background-color: var(--color-state-danger);
+  color: var(--color-state-danger-contrast);
+}
+
+a.tag--warning:hover, a.tag--warning:focus {
+  background-color: var(--color-state-warning);
+  color: var(--color-state-warning-contrast);
 }
 
 .card {
@@ -1779,7 +1821,7 @@ a.tag:hover, a.tag:focus {
   display: inline-block;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1em;
   vertical-align: bottom;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -1964,26 +2006,31 @@ a.button--danger:hover:link, a.button--danger:hover:active, a.button--danger:hov
 
 .alert {
   padding: 1.5rem;
-  background-color: var(--color-split-primary-light);
-  color: var(--color-split-primary-dark);
+  background-color: var(--color-primary-split-light);
+  color: var(--color-primary-split-dark);
 }
 .alert *:last-child {
   margin-bottom: 0;
 }
 
-.alert--success {
-  background-color: var(--color-split-state-success-light);
-  color: var(--color-split-state-success-dark);
+.alert--disabled {
+  background-color: var(--color-state-disabled-split-light);
+  color: var(--color-state-disabled-split-dark);
 }
 
-.alert--warning {
-  background-color: var(--color-split-state-warning-light);
-  color: var(--color-split-state-warning-dark);
+.alert--success {
+  background-color: var(--color-state-success-split-light);
+  color: var(--color-state-success-split-dark);
 }
 
 .alert--danger {
-  background-color: var(--color-split-state-danger-light);
-  color: var(--color-split-state-danger-dark);
+  background-color: var(--color-state-danger-split-light);
+  color: var(--color-state-danger-split-dark);
+}
+
+.alert--warning {
+  background-color: var(--color-state-warning-split-light);
+  color: var(--color-state-warning-split-dark);
 }
 
 .m {
@@ -2324,11 +2371,6 @@ a.button--danger:hover:link, a.button--danger:hover:active, a.button--danger:hov
 .owl * + * {
   margin-top: 1.5rem;
   margin-bottom: 0;
-}
-
-body {
-  --color: rgb(hexToRgb(#334455));
-  background-color: var(--color);
 }
 
 /*# sourceMappingURL=style.css.map */

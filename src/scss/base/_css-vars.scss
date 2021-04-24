@@ -1,10 +1,13 @@
-// Define the actual theme colors as CSS custom properties in order to allow for
-// easy theme overriding.
-
+// Recursively iterate over map in order to programmatically
+// generate CSS Custom Properties
 @mixin generate-css-var($type, $value, $name) {
   @if type-of($value) == 'map' {
     @each $nested-type, $nested-value in $value {
-      @include generate-css-var($nested-type, $nested-value, #{$name}-#{$nested-type})
+      $nested-name: #{$name}-#{$nested-type};
+      @if $nested-type == 'base' {
+        $nested-name: #{$name};
+      }
+      @include generate-css-var($nested-type, $nested-value, $nested-name)
     }
   }
   @else {
