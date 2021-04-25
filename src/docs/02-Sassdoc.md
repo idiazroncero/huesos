@@ -6,4 +6,4 @@ The documentation of Huesos' mixins and functions as been moved to an auto-gener
 
 All of the mixins and funcions are self-documented on code and SassDoc generates a human-friendly HTML version.
 
-<a href="/docs/sassdoc" class="button button--primary">See the docs!</a>
+<a href="/sassdoc" class="button button--primary">See the docs!</a>
