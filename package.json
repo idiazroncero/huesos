@@ -11,7 +11,7 @@
     "css:mandlebrot:watch": "yarn sass --watch theme/huesos-mandlebrot.scss dist/styleguide/huesos-mandlebrot.css --load-path=node_modules",
     "styleguide:build": "yarn fractal build",
     "styleguide:serve": "yarn fractal start --sync",
-    "sassdoc:build" : "yarn sassdoc src/scss/base/mixins -d docs/sassdoc",
+    "sassdoc:build": "yarn sassdoc src/scss/base/mixins -d docs/sassdoc",
     "test": "yarn sass src/scss/style.scss test/style.css --source-map=0",
     "lint:css": "stylelint dist/**/*.css",
     "build": "yarn styleguide:build; yarn css; yarn sassdoc:build",
@@ -39,6 +39,7 @@
     "postcss-loader": "^2.0.6",
     "postcss-preset-env": "^6.6.0",
     "sass": "^1.32.8",
+    "sassdoc": "^2.7.3",
     "stylelint": "^7.12.0"
   }
 }
