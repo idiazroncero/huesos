@@ -101,23 +101,6 @@
     border: none;
   }
 
-
-  // @if $generate-color-classes {
-  //     @each $palette, $value in $colors {
-  //       @if type-of($value) == 'map' {
-  //         @each $name, $hex in $value {
-  //             .bg-#{$palette}-#{$name} {
-  //                 background-color: $hex;
-  //             }
-  //         }
-  //       } @else {
-  //         .bg-#{$palette} {
-  //           background-color: $value;
-  //         }
-  //       }
-  //     }
-  // }
-
   .tl {
     text-align: left;
   }
@@ -149,18 +132,4 @@
   .sh {
     box-shadow: $box-shadow;
   }
-
-  // TODO: better strategy
-  // .invert {
-  //     color: $contrast-light;
-  //     h1, .h1,
-  //     h2, .h2,
-  //     h3, .h3,
-  //     h4, .h4,
-  //     h5, .h5,
-  //     h6, .h6 {
-  //         color: inherit;
-  //     }
-  //     @include invert-links();
-  // }
 }

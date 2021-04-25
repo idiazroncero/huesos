@@ -1,6 +1,6 @@
 // Recursively iterate over map in order to programmatically
-// generate CSS Custom Properties
-@mixin generate-css-var($type, $value, $name) {
+// generate CSS Custom Properties.
+@mixin generate-css-var($key, $value, $name) {
   @if type-of($value) == 'map' {
     @each $nested-type, $nested-value in $value {
       $nested-name: #{$name}-#{$nested-type};
@@ -15,14 +15,50 @@
   }
 }
 
+// Recursively iterate over map in order to programmatically
+// generate helper color classes.
+@mixin generate-css-color($key, $value, $name) {
+  @if type-of($value)=='map' {
+
+    @each $nested-type,
+    $nested-value in $value {
+      $nested-name: #{$name}-#{$nested-type};
+
+      @if $nested-type=='base' {
+        $nested-name: #{$name};
+      }
+
+      @include generate-css-color($nested-type, $nested-value, $nested-name)
+    }
+  }
+
+  @else {
+    .bg-#{$name} {
+      background-color: var(--color-#{$name});
+    }
+
+    .color-#{$name} {
+      color: var(--color-#{$name});
+    }
+  }
+}
+
+// Generate the color themes.
 :root {
-  @each $type, $value in $colors {
-    @include generate-css-var($type, $value, #{$type})
+  @each $key, $value in $colors {
+    @include generate-css-var($key, $value, #{$key})
   };
 };
 
 [data-theme-dark] {
-  @each $type, $value in $dark-colors {
-    @include generate-css-var($type, $value, #{$type})
+  @each $key, $value in $dark-colors {
+    @include generate-css-var($key, $value, #{$key})
   };
+}
+
+// Generate the color helper classes.
+@if $generate-color-classes {
+  @each $key, $value in $colors {
+    @include generate-css-color($key, $value, #{$key});
+  }
 }

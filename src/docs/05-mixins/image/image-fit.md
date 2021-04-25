@@ -1,5 +1,6 @@
 ---
 title: image-fit($priority)
+hidden: true
 ---
 
 Applied to the parent of an image, sets an `object-fit:cover` for the inner image and provides a fallback using `position:absolute`.

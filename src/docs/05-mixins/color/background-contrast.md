@@ -1,5 +1,6 @@
 ---
 title: background-contrast($color, $include-typography)
+hidden: true
 ---
 
 __Bloat alert:__ this mixin is intended as a block-level override and, as such, is verbose and powerful. Please check the rest of the color functions and mixins before resorting to this.

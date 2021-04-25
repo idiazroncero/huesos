@@ -76,9 +76,7 @@ h1 .header-title {
   font-weight: lighter;
 }
 
-code.language-sass,
-code.language-scss,
-code.language-html,
+code.hljs,
 code.code {
   width: 100%;
   @extend .code-block;

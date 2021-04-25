@@ -1,40 +1,4 @@
 @charset "UTF-8";
-:root {
-  --color-primary: #641CE8;
-  --color-secondary: #F3C852;
-  --color-black: #393541;
-  --color-white: #fff;
-  --color-utility-separator: #c8c4cf;
-  --color-utility-focus: #641CE8;
-  --color-text-body: #393541;
-  --color-text-body-contrast: #fff;
-  --color-text-heading: #393541;
-  --color-mark-text: #393541;
-  --color-mark-background: #F7DA7C;
-  --color-background-body: #fff;
-  --color-background-dark: #4d4757;
-  --color-background-light: #f7f7f8;
-  --color-state-disabled: #898198;
-  --color-state-success: #10A84D;
-  --color-state-danger: #C4281D;
-  --color-state-warning: #B5A301;
-  --color-link-default: #641CE8;
-  --color-link-visited: #9052F1;
-  --color-link-focus: #270886;
-  --color-link-hover: #270886;
-  --color-link-active: #270886;
-  --color-link-decoration: #E7D1FD;
-  --color-link-decoration-hover: #641CE8;
-  --color-input-border: #c8c4cf;
-  --color-input-pseudo-border: #746c84;
-  --color-code-inline-background: #FDF1BA;
-  --color-code-inline: #393541;
-  --color-code-block-background: #393541;
-  --color-code-block: #fff;
-  --color-split-success-light: #CDFACD;
-  --color-split-success-dark: #035041;
-}
-
 /*
  * Visual Studio 2015 dark style
  * Author: Nicolas LLOBERA <nllobera@gmail.com>
@@ -150,6 +114,542 @@
   width: 100%;
 }
 
+:root {
+  --color-primary: #641CE8;
+  --color-primary-contrast: var(--color-text-body-contrast);
+  --color-primary-split-light: #E7D1FD;
+  --color-primary-split-dark: #1B056F;
+  --color-secondary: #F3C852;
+  --color-secondary-contrast: var(--color-text-body);
+  --color-secondary-split-light: #FEF9DC;
+  --color-secondary-split-dark: #744E0F;
+  --color-black: #393541;
+  --color-white: #fff;
+  --color-utility-separator: #c8c4cf;
+  --color-utility-focus: #641CE8;
+  --color-text-body: #393541;
+  --color-text-body-contrast: #fff;
+  --color-text-heading: #393541;
+  --color-mark-text: #393541;
+  --color-mark-background: #F7DA7C;
+  --color-background-body: #fff;
+  --color-background-dark: red;
+  --color-background-light: #f7f7f8;
+  --color-state-disabled: #898198;
+  --color-state-success: #10A84D;
+  --color-state-success-contrast: var(--color-text-body-contrast);
+  --color-state-success-split-light: #CDFACD;
+  --color-state-success-split-dark: #035041;
+  --color-state-danger: #C4281D;
+  --color-state-danger-contrast: var(--color-text-body-contrast);
+  --color-state-danger-split-light: #F9BEA4;
+  --color-state-danger-split-dark: #5E051D;
+  --color-state-warning: #B5A301;
+  --color-state-warning-contrast: var(--color-text-body-contrast);
+  --color-state-warning-split-light: #F7F095;
+  --color-state-warning-split-dark: #564A00;
+  --color-link-default: #641CE8;
+  --color-link-visited: #9052F1;
+  --color-link-focus: #270886;
+  --color-link-hover: #270886;
+  --color-link-active: #270886;
+  --color-link-decoration: #E7D1FD;
+  --color-link-decoration-hover: #641CE8;
+  --color-input-border: #c8c4cf;
+  --color-input-pseudo-border: #746c84;
+  --color-code-inline: #393541;
+  --color-code-inline-background: #FDF1BA;
+  --color-code-block: #fff;
+  --color-code-block-background: #393541;
+  --color-button-primary-default: #641CE8;
+  --color-button-primary-contrast: var(--color-text-body-contrast);
+  --color-button-secondary-default: #F3C852;
+  --color-button-secondary-contrast: var(--color-text-body);
+  --color-button-success-default: #10A84D;
+  --color-button-success-contrast: var(--color-text-body-contrast);
+  --color-button-warning-default: #B5A301;
+  --color-button-warning-contrast: var(--color-text-body-contrast);
+  --color-button-danger-default: #C4281D;
+  --color-button-danger-contrast: var(--color-text-body-contrast);
+}
+
+[data-theme-dark] {
+  --color-black: #fff;
+  --color-white: #393541;
+  --color-utility-separator: #605a6d;
+  --color-text-body: #f7f7f8;
+  --color-text-body-contrast: #393541;
+  --color-text-heading: #c8c4cf;
+  --color-background-body: #393541;
+  --color-background-dark: #f7f7f8;
+  --color-background-light: #4d4757;
+  --color-state-disabled: #898198;
+  --color-state-success: #10A84D;
+  --color-state-danger: #C4281D;
+  --color-state-warning: #B5A301;
+  --color-link-default: #E7D1FD;
+  --color-link-visited: #E7D1FD;
+  --color-link-focus: #AC75F8;
+  --color-link-hover: #AC75F8;
+  --color-link-active: #AC75F8;
+  --color-link-decoration: #E7D1FD;
+  --color-link-decoration-hover: #641CE8;
+  --color-input-border: #605a6d;
+  --color-input-pseudo-border: #898198;
+  --color-code-inline-background: #605a6d;
+  --color-code-inline: #fff;
+  --color-code-block-background: #4d4757;
+  --color-code-block: #fff;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary-contrast {
+  background-color: var(--color-primary-contrast);
+}
+
+.color-primary-contrast {
+  color: var(--color-primary-contrast);
+}
+
+.bg-primary-split-light {
+  background-color: var(--color-primary-split-light);
+}
+
+.color-primary-split-light {
+  color: var(--color-primary-split-light);
+}
+
+.bg-primary-split-dark {
+  background-color: var(--color-primary-split-dark);
+}
+
+.color-primary-split-dark {
+  color: var(--color-primary-split-dark);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary-contrast {
+  background-color: var(--color-secondary-contrast);
+}
+
+.color-secondary-contrast {
+  color: var(--color-secondary-contrast);
+}
+
+.bg-secondary-split-light {
+  background-color: var(--color-secondary-split-light);
+}
+
+.color-secondary-split-light {
+  color: var(--color-secondary-split-light);
+}
+
+.bg-secondary-split-dark {
+  background-color: var(--color-secondary-split-dark);
+}
+
+.color-secondary-split-dark {
+  color: var(--color-secondary-split-dark);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.bg-utility-separator {
+  background-color: var(--color-utility-separator);
+}
+
+.color-utility-separator {
+  color: var(--color-utility-separator);
+}
+
+.bg-utility-focus {
+  background-color: var(--color-utility-focus);
+}
+
+.color-utility-focus {
+  color: var(--color-utility-focus);
+}
+
+.bg-text-body {
+  background-color: var(--color-text-body);
+}
+
+.color-text-body {
+  color: var(--color-text-body);
+}
+
+.bg-text-body-contrast {
+  background-color: var(--color-text-body-contrast);
+}
+
+.color-text-body-contrast {
+  color: var(--color-text-body-contrast);
+}
+
+.bg-text-heading {
+  background-color: var(--color-text-heading);
+}
+
+.color-text-heading {
+  color: var(--color-text-heading);
+}
+
+.bg-mark-text {
+  background-color: var(--color-mark-text);
+}
+
+.color-mark-text {
+  color: var(--color-mark-text);
+}
+
+.bg-mark-background {
+  background-color: var(--color-mark-background);
+}
+
+.color-mark-background {
+  color: var(--color-mark-background);
+}
+
+.bg-background-body {
+  background-color: var(--color-background-body);
+}
+
+.color-background-body {
+  color: var(--color-background-body);
+}
+
+.bg-background-dark {
+  background-color: var(--color-background-dark);
+}
+
+.color-background-dark {
+  color: var(--color-background-dark);
+}
+
+.bg-background-light {
+  background-color: var(--color-background-light);
+}
+
+.color-background-light {
+  color: var(--color-background-light);
+}
+
+.bg-state-disabled {
+  background-color: var(--color-state-disabled);
+}
+
+.color-state-disabled {
+  color: var(--color-state-disabled);
+}
+
+.bg-state-success {
+  background-color: var(--color-state-success);
+}
+
+.color-state-success {
+  color: var(--color-state-success);
+}
+
+.bg-state-success-contrast {
+  background-color: var(--color-state-success-contrast);
+}
+
+.color-state-success-contrast {
+  color: var(--color-state-success-contrast);
+}
+
+.bg-state-success-split-light {
+  background-color: var(--color-state-success-split-light);
+}
+
+.color-state-success-split-light {
+  color: var(--color-state-success-split-light);
+}
+
+.bg-state-success-split-dark {
+  background-color: var(--color-state-success-split-dark);
+}
+
+.color-state-success-split-dark {
+  color: var(--color-state-success-split-dark);
+}
+
+.bg-state-danger {
+  background-color: var(--color-state-danger);
+}
+
+.color-state-danger {
+  color: var(--color-state-danger);
+}
+
+.bg-state-danger-contrast {
+  background-color: var(--color-state-danger-contrast);
+}
+
+.color-state-danger-contrast {
+  color: var(--color-state-danger-contrast);
+}
+
+.bg-state-danger-split-light {
+  background-color: var(--color-state-danger-split-light);
+}
+
+.color-state-danger-split-light {
+  color: var(--color-state-danger-split-light);
+}
+
+.bg-state-danger-split-dark {
+  background-color: var(--color-state-danger-split-dark);
+}
+
+.color-state-danger-split-dark {
+  color: var(--color-state-danger-split-dark);
+}
+
+.bg-state-warning {
+  background-color: var(--color-state-warning);
+}
+
+.color-state-warning {
+  color: var(--color-state-warning);
+}
+
+.bg-state-warning-contrast {
+  background-color: var(--color-state-warning-contrast);
+}
+
+.color-state-warning-contrast {
+  color: var(--color-state-warning-contrast);
+}
+
+.bg-state-warning-split-light {
+  background-color: var(--color-state-warning-split-light);
+}
+
+.color-state-warning-split-light {
+  color: var(--color-state-warning-split-light);
+}
+
+.bg-state-warning-split-dark {
+  background-color: var(--color-state-warning-split-dark);
+}
+
+.color-state-warning-split-dark {
+  color: var(--color-state-warning-split-dark);
+}
+
+.bg-link-default {
+  background-color: var(--color-link-default);
+}
+
+.color-link-default {
+  color: var(--color-link-default);
+}
+
+.bg-link-visited {
+  background-color: var(--color-link-visited);
+}
+
+.color-link-visited {
+  color: var(--color-link-visited);
+}
+
+.bg-link-focus {
+  background-color: var(--color-link-focus);
+}
+
+.color-link-focus {
+  color: var(--color-link-focus);
+}
+
+.bg-link-hover {
+  background-color: var(--color-link-hover);
+}
+
+.color-link-hover {
+  color: var(--color-link-hover);
+}
+
+.bg-link-active {
+  background-color: var(--color-link-active);
+}
+
+.color-link-active {
+  color: var(--color-link-active);
+}
+
+.bg-link-decoration {
+  background-color: var(--color-link-decoration);
+}
+
+.color-link-decoration {
+  color: var(--color-link-decoration);
+}
+
+.bg-link-decoration-hover {
+  background-color: var(--color-link-decoration-hover);
+}
+
+.color-link-decoration-hover {
+  color: var(--color-link-decoration-hover);
+}
+
+.bg-input-border {
+  background-color: var(--color-input-border);
+}
+
+.color-input-border {
+  color: var(--color-input-border);
+}
+
+.bg-input-pseudo-border {
+  background-color: var(--color-input-pseudo-border);
+}
+
+.color-input-pseudo-border {
+  color: var(--color-input-pseudo-border);
+}
+
+.bg-code-inline {
+  background-color: var(--color-code-inline);
+}
+
+.color-code-inline {
+  color: var(--color-code-inline);
+}
+
+.bg-code-inline-background {
+  background-color: var(--color-code-inline-background);
+}
+
+.color-code-inline-background {
+  color: var(--color-code-inline-background);
+}
+
+.bg-code-block {
+  background-color: var(--color-code-block);
+}
+
+.color-code-block {
+  color: var(--color-code-block);
+}
+
+.bg-code-block-background {
+  background-color: var(--color-code-block-background);
+}
+
+.color-code-block-background {
+  color: var(--color-code-block-background);
+}
+
+.bg-button-primary-default {
+  background-color: var(--color-button-primary-default);
+}
+
+.color-button-primary-default {
+  color: var(--color-button-primary-default);
+}
+
+.bg-button-primary-contrast {
+  background-color: var(--color-button-primary-contrast);
+}
+
+.color-button-primary-contrast {
+  color: var(--color-button-primary-contrast);
+}
+
+.bg-button-secondary-default {
+  background-color: var(--color-button-secondary-default);
+}
+
+.color-button-secondary-default {
+  color: var(--color-button-secondary-default);
+}
+
+.bg-button-secondary-contrast {
+  background-color: var(--color-button-secondary-contrast);
+}
+
+.color-button-secondary-contrast {
+  color: var(--color-button-secondary-contrast);
+}
+
+.bg-button-success-default {
+  background-color: var(--color-button-success-default);
+}
+
+.color-button-success-default {
+  color: var(--color-button-success-default);
+}
+
+.bg-button-success-contrast {
+  background-color: var(--color-button-success-contrast);
+}
+
+.color-button-success-contrast {
+  color: var(--color-button-success-contrast);
+}
+
+.bg-button-warning-default {
+  background-color: var(--color-button-warning-default);
+}
+
+.color-button-warning-default {
+  color: var(--color-button-warning-default);
+}
+
+.bg-button-warning-contrast {
+  background-color: var(--color-button-warning-contrast);
+}
+
+.color-button-warning-contrast {
+  color: var(--color-button-warning-contrast);
+}
+
+.bg-button-danger-default {
+  background-color: var(--color-button-danger-default);
+}
+
+.color-button-danger-default {
+  color: var(--color-button-danger-default);
+}
+
+.bg-button-danger-contrast {
+  background-color: var(--color-button-danger-contrast);
+}
+
+.color-button-danger-contrast {
+  color: var(--color-button-danger-contrast);
+}
+
 *,
 ::before,
 ::after {
@@ -245,6 +745,7 @@ pre {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   /* 1 */
   font-size: 1rem;
+  line-height: 1.5rem;
   /* 2 */
   white-space: pre-wrap;
 }
@@ -591,7 +1092,6 @@ textarea,
 caption {
   text-align: left;
   font-size: 0.75rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -649,11 +1149,11 @@ a:hover, a:focus {
   text-decoration-color: var(--color-link-decoration-hover);
 }
 a.link--inactive {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: currentColor;
+  --color-link-visited: currentColor;
+  --color-link-focus: currentColor;
+  --color-link-hover: currentColor;
+  --color-link-active: currentColor;
 }
 a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inactive:active, a.link--inactive:focus, a.link--inactive:hover {
   text-decoration: none;
@@ -662,11 +1162,11 @@ a.link--inactive, a.link--inactive:link, a.link--inactive:visited, a.link--inact
   text-decoration: none;
 }
 a.link--disabled {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-state-disabled);
+  --color-link-visited: var(--color-state-disabled);
+  --color-link-focus: var(--color-state-disabled);
+  --color-link-hover: var(--color-state-disabled);
+  --color-link-active: var(--color-state-disabled);
 }
 a.link--disabled, a.link--disabled:link, a.link--disabled:visited, a.link--disabled:active, a.link--disabled:focus, a.link--disabled:hover {
   text-decoration: none;
@@ -763,12 +1263,14 @@ figure {
 figcaption {
   display: block;
   font-size: 0.75rem;
+  line-height: 1.1em;
   text-align: left;
 }
 
 h1,
 .h1 {
   font-size: 2.4rem;
+  line-height: 1.1em;
   font-size: clamp(2.4rem, 1.64rem + 2.5333333333vw, 3.16rem);
   line-height: 1.1em;
 }
@@ -776,6 +1278,7 @@ h1,
   h1,
 .h1 {
     font-size: 3.16rem;
+    line-height: 1.1em;
     font-size: clamp(2.4rem, 1.64rem + 2.5333333333vw, 3.16rem);
   }
 }
@@ -783,6 +1286,7 @@ h1,
 h2,
 .h2 {
   font-size: 1.8rem;
+  line-height: 1.1em;
   font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem);
   line-height: 1.1em;
 }
@@ -790,6 +1294,7 @@ h2,
   h2,
 .h2 {
     font-size: 2.4rem;
+    line-height: 1.1em;
     font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem);
   }
 }
@@ -797,6 +1302,7 @@ h2,
 h3,
 .h3 {
   font-size: 1.33rem;
+  line-height: 1.1em;
   font-size: clamp(1.33rem, 0.86rem + 1.5666666667vw, 1.8rem);
   line-height: 1.1em;
 }
@@ -804,6 +1310,7 @@ h3,
   h3,
 .h3 {
     font-size: 1.8rem;
+    line-height: 1.1em;
     font-size: clamp(1.33rem, 0.86rem + 1.5666666667vw, 1.8rem);
   }
 }
@@ -812,11 +1319,13 @@ h4,
 .h4 {
   font-size: 1.33rem;
   line-height: 1.1em;
+  line-height: 1.1em;
 }
 
 h5,
 .h5 {
   font-size: 1rem;
+  line-height: 1.1em;
   line-height: 1.1em;
 }
 
@@ -825,6 +1334,7 @@ h6,
 small,
 .small {
   font-size: 0.75rem;
+  line-height: 1.1em;
   line-height: 1.1em;
 }
 
@@ -901,13 +1411,11 @@ h6 a, h6 a:link, h6 a:visited, h6 a:active, h6 a:focus, h6 a:hover, .hi a, .hi a
 }
 
 .font-secondary {
-  --text-bold: $font-secondary-bold;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
 .minititle {
   font-size: 0.75rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -919,29 +1427,24 @@ samp,
 var {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   line-height: 1.5rem;
-  display: inline-block;
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap;
-  margin: 0;
+  margin: 0 !important;
   background-color: var(--color-code-inline-background);
   color: var(--color-code-inline);
-  padding: 0 0.375rem;
-  border-radius: 5px;
+  padding: 2px 0.25rem;
+  border-radius: 3px;
 }
 
-.code-block, code.language-sass,
-code.language-scss,
-code.language-html,
+.code-block, code.hljs,
 code.code {
   display: block;
   padding: 1.5rem;
   background-color: var(--color-code-block-background);
   color: var(--color-code-block);
 }
-.code-block pre, code.language-sass pre,
-code.language-scss pre,
-code.language-html pre,
+.code-block pre, code.hljs pre,
 code.code pre {
   margin: 0;
 }
@@ -983,20 +1486,18 @@ abbr[title] {
   /* 2 */
   text-decoration: underline dotted;
   /* 2 */
-}
-
-:root {
-  --text-bold: $font-main-bold;
+  margin: 0 !important;
 }
 
 b,
 strong,
 .strong {
-  font-weight: var(--text-bold);
+  font-weight: bold;
 }
 
 dfn {
   font-style: italic;
+  margin: 0 !important;
 }
 
 mark {
@@ -1004,6 +1505,7 @@ mark {
   color: var(--color-mark-text);
   padding: 0 0.375rem;
   display: inline-block;
+  margin: 0 !important;
 }
 
 .max-ch {
@@ -1027,6 +1529,7 @@ sup {
 
 q {
   quotes: "«" "»" "“" "”";
+  margin: 0 !important;
 }
 
 input,
@@ -1042,7 +1545,7 @@ textarea {
   white-space: normal;
   line-height: inherit;
   background: none;
-  border-radius: 0px;
+  border-radius: false;
   /* Browsers have different default form fonts */
   color: inherit;
   font-size: inherit;
@@ -1103,11 +1606,10 @@ fieldset {
   margin-right: 0;
   margin-left: 0;
   border-color: var(--color-input-border);
-  border-radius: 0px;
+  border-radius: false;
 }
 fieldset legend {
   font-size: 1rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1122,7 +1624,6 @@ fieldset.fieldset--disabled {
 fieldset.fieldset--disabled legend {
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1137,6 +1638,7 @@ fieldset.fieldset--disabled legend {
 }
 .form-item .label {
   font-size: 0.75rem;
+  line-height: 1.1em;
 }
 .form-item input[type=checkbox]:not(.pseudo-checkbox) + label,
 .form-item input[type=radio]:not(.pseudo-radio) + label {
@@ -1183,7 +1685,7 @@ fieldset.fieldset--disabled legend {
 }
 
 .form-item--label-inside {
-  border-radius: 0px;
+  border-radius: false;
   border-bottom: 1px solid var(--color-input-border);
   border-radius: 0;
   padding: 0.25rem 0;
@@ -1320,7 +1822,7 @@ select {
   white-space: normal;
   line-height: inherit;
   background: none;
-  border-radius: 0px;
+  border-radius: false;
   /* Browsers have different default form fonts */
   color: inherit;
   font-size: inherit;
@@ -1614,6 +2116,7 @@ textarea:focus {
   font-weight: normal;
   text-transform: uppercase;
   font-size: 1rem;
+  line-height: 1.1em;
   letter-spacing: 0.1em;
 }
 
@@ -1659,11 +2162,11 @@ textarea:focus {
   text-align: left;
   display: block;
   white-space: nowrap;
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-primary);
+  --color-link-visited: var(--color-primary);
+  --color-link-focus: var(--color-primary);
+  --color-link-hover: var(--color-primary);
+  --color-link-active: var(--color-primary);
 }
 .menu > li > a, .menu > li > a:link, .menu > li > a:visited, .menu > li > a:active, .menu > li > a:focus, .menu > li > a:hover {
   text-decoration: none;
@@ -1675,6 +2178,7 @@ textarea:focus {
 .menu > li > span {
   padding: 0 1.5rem;
   font-size: 1rem;
+  line-height: 1.1em;
 }
 .menu > li > ul {
   display: none;
@@ -1717,8 +2221,7 @@ textarea:focus {
 }
 .menu > li > ul > li > ul li > a,
 .menu > li > ul > li > ul li > span {
-  font-size: 0.66rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
 }
 .menu > li > ul > li:hover > ul {
   display: block;
@@ -1756,6 +2259,7 @@ textarea:focus {
   letter-spacing: initial;
   text-transform: initial;
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 .toc li ul,
 .toc li ol {
@@ -1770,8 +2274,6 @@ textarea:focus {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.75rem;
-  line-height: 1.5625rem;
 }
 .breadcrumb li {
   list-style-type: none;
@@ -1796,9 +2298,11 @@ textarea:focus {
   display: inline-block;
   vertical-align: bottom;
   padding: 0 0.375rem;
-  border-radius: 0px;
+  font-size: 0.75rem;
+  border-radius: false;
   font-weight: normal;
-  background-color: #b3aebc;
+  background-color: var(--color-background-light);
+  color: var(--color-background-light-contrast);
 }
 
 .tag + .tag {
@@ -1814,51 +2318,58 @@ a.tag, a.tag:link, a.tag:visited, a.tag:active, a.tag:focus, a.tag:hover {
 }
 a.tag:hover, a.tag:focus {
   padding: 0 0.375rem;
-  background-color: #b3aebc;
+  background-color: var(--color-darken-color("background-light"));
+  color: var(--color-darken-color("background-light")-contrast);
 }
 
 .tag--disabled {
-  background-color: #898198;
+  background-color: var(--color-state-disabled);
+  color: var(--color-state-disabled-contrast);
 }
 
 .tag--success {
-  background-color: #10A84D;
+  background-color: var(--color-state-success);
+  color: var(--color-state-success-contrast);
 }
 
 .tag--danger {
-  background-color: #C4281D;
+  background-color: var(--color-state-danger);
+  color: var(--color-state-danger-contrast);
 }
 
 .tag--warning {
-  background-color: #B5A301;
+  background-color: var(--color-state-warning);
+  color: var(--color-state-warning-contrast);
 }
 
 a.tag--disabled:hover, a.tag--disabled:focus {
-  background-color: #898198;
+  background-color: var(--color-state-disabled);
+  color: var(--color-state-disabled-contrast);
 }
 
 a.tag--success:hover, a.tag--success:focus {
-  background-color: #10a84d;
+  background-color: var(--color-state-success);
+  color: var(--color-state-success-contrast);
 }
 
 a.tag--danger:hover, a.tag--danger:focus {
-  background-color: #c4281d;
+  background-color: var(--color-state-danger);
+  color: var(--color-state-danger-contrast);
 }
 
 a.tag--warning:hover, a.tag--warning:focus {
-  background-color: #b5a301;
+  background-color: var(--color-state-warning);
+  color: var(--color-state-warning-contrast);
 }
 
 .card {
-  border-width: 0.0625rem;
-  padding: 2.4375rem;
+  border-width: 1px;
   border-style: solid;
   border-color: var(--color-utility-separator);
-  border-radius: 0px;
   box-shadow: 2px 2px 2px 0px rgba(57, 53, 65, 0.1);
 }
 .card .card {
-  padding: 4;
+  padding: 0.75rem;
 }
 
 .card--image {
@@ -1871,13 +2382,11 @@ a.tag--warning:hover, a.tag--warning:focus {
 
 .button {
   background: none;
-  border: none;
   cursor: pointer;
   display: inline-block;
-  /* IE8 and FF freak out if this rule is within another selector */
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1em;
   vertical-align: bottom;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -1886,19 +2395,6 @@ a.tag--warning:hover, a.tag--warning:focus {
   border-style: solid;
   border-color: transparent;
 }
-.button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-.button:hover, .button:active, .button:focus {
-  border: none;
-}
-::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none;
-}
-
 .button .icon {
   font-size: 0.75rem;
   height: 0.75rem;
@@ -1921,10 +2417,15 @@ a.button:after, a.button:link:after, a.button:visited:after, a.button:active:aft
 
 .button--primary {
   border-radius: 2px;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background-color: transparent;
+  border-color: var(--color-button-primary-default);
+  color: var(--color-button-primary-default);
 }
+.button--primary:hover, .button--primary:focus {
+  border-color: var(--color-button-primary-default);
+  background-color: var(--color-button-primary-default);
+  color: var(--color-button-primary-contrast);
+}
+
 a.button--primary, a.button--primary:link, a.button--primary:visited, a.button--primary:active {
   border-radius: 2px;
   text-decoration: none;
@@ -1933,14 +2434,23 @@ a.button--primary:focus, a.button--primary:hover {
   text-decoration: none;
 }
 a.button--primary:link, a.button--primary:active, a.button--primary:visited, a.button--primary:link:link, a.button--primary:link:active, a.button--primary:link:visited {
-  color: var(--color-primary);
+  color: var(--color-button-primary-default);
 }
+a.button--primary:hover:link, a.button--primary:hover:active, a.button--primary:hover:visited, a.button--primary:focus:link, a.button--primary:focus:active, a.button--primary:focus:visited {
+  color: var(--color-button-primary-contrast);
+}
+
 .button--secondary {
   border-radius: 2px;
-  border-color: var(--color-secondary);
-  color: var(--color-secondary);
-  background-color: transparent;
+  border-color: var(--color-button-secondary-default);
+  color: var(--color-button-secondary-default);
 }
+.button--secondary:hover, .button--secondary:focus {
+  border-color: var(--color-button-secondary-default);
+  background-color: var(--color-button-secondary-default);
+  color: var(--color-button-secondary-contrast);
+}
+
 a.button--secondary, a.button--secondary:link, a.button--secondary:visited, a.button--secondary:active {
   border-radius: 2px;
   text-decoration: none;
@@ -1949,14 +2459,23 @@ a.button--secondary:focus, a.button--secondary:hover {
   text-decoration: none;
 }
 a.button--secondary:link, a.button--secondary:active, a.button--secondary:visited, a.button--secondary:link:link, a.button--secondary:link:active, a.button--secondary:link:visited {
-  color: var(--color-secondary);
+  color: var(--color-button-secondary-default);
 }
+a.button--secondary:hover:link, a.button--secondary:hover:active, a.button--secondary:hover:visited, a.button--secondary:focus:link, a.button--secondary:focus:active, a.button--secondary:focus:visited {
+  color: var(--color-button-secondary-contrast);
+}
+
 .button--success {
   border-radius: 2px;
-  border-color: var(--color-success);
-  color: var(--color-success);
-  background-color: transparent;
+  border-color: var(--color-button-success-default);
+  color: var(--color-button-success-default);
 }
+.button--success:hover, .button--success:focus {
+  border-color: var(--color-button-success-default);
+  background-color: var(--color-button-success-default);
+  color: var(--color-button-success-contrast);
+}
+
 a.button--success, a.button--success:link, a.button--success:visited, a.button--success:active {
   border-radius: 2px;
   text-decoration: none;
@@ -1965,14 +2484,23 @@ a.button--success:focus, a.button--success:hover {
   text-decoration: none;
 }
 a.button--success:link, a.button--success:active, a.button--success:visited, a.button--success:link:link, a.button--success:link:active, a.button--success:link:visited {
-  color: var(--color-success);
+  color: var(--color-button-success-default);
 }
+a.button--success:hover:link, a.button--success:hover:active, a.button--success:hover:visited, a.button--success:focus:link, a.button--success:focus:active, a.button--success:focus:visited {
+  color: var(--color-button-success-contrast);
+}
+
 .button--warning {
   border-radius: 2px;
-  border-color: var(--color-warning);
-  color: var(--color-warning);
-  background-color: transparent;
+  border-color: var(--color-button-warning-default);
+  color: var(--color-button-warning-default);
 }
+.button--warning:hover, .button--warning:focus {
+  border-color: var(--color-button-warning-default);
+  background-color: var(--color-button-warning-default);
+  color: var(--color-button-warning-contrast);
+}
+
 a.button--warning, a.button--warning:link, a.button--warning:visited, a.button--warning:active {
   border-radius: 2px;
   text-decoration: none;
@@ -1981,24 +2509,37 @@ a.button--warning:focus, a.button--warning:hover {
   text-decoration: none;
 }
 a.button--warning:link, a.button--warning:active, a.button--warning:visited, a.button--warning:link:link, a.button--warning:link:active, a.button--warning:link:visited {
-  color: var(--color-warning);
+  color: var(--color-button-warning-default);
 }
-.button--error {
+a.button--warning:hover:link, a.button--warning:hover:active, a.button--warning:hover:visited, a.button--warning:focus:link, a.button--warning:focus:active, a.button--warning:focus:visited {
+  color: var(--color-button-warning-contrast);
+}
+
+.button--danger {
   border-radius: 2px;
-  border-color: var(--color-danger);
-  color: var(--color-danger);
-  background-color: transparent;
+  border-color: var(--color-button-danger-default);
+  color: var(--color-button-danger-default);
 }
-a.button--error, a.button--error:link, a.button--error:visited, a.button--error:active {
+.button--danger:hover, .button--danger:focus {
+  border-color: var(--color-button-danger-default);
+  background-color: var(--color-button-danger-default);
+  color: var(--color-button-danger-contrast);
+}
+
+a.button--danger, a.button--danger:link, a.button--danger:visited, a.button--danger:active {
   border-radius: 2px;
   text-decoration: none;
 }
-a.button--error:focus, a.button--error:hover {
+a.button--danger:focus, a.button--danger:hover {
   text-decoration: none;
 }
-a.button--error:link, a.button--error:active, a.button--error:visited, a.button--error:link:link, a.button--error:link:active, a.button--error:link:visited {
-  color: var(--color-danger);
+a.button--danger:link, a.button--danger:active, a.button--danger:visited, a.button--danger:link:link, a.button--danger:link:active, a.button--danger:link:visited {
+  color: var(--color-button-danger-default);
 }
+a.button--danger:hover:link, a.button--danger:hover:active, a.button--danger:hover:visited, a.button--danger:focus:link, a.button--danger:focus:active, a.button--danger:focus:visited {
+  color: var(--color-button-danger-contrast);
+}
+
 .button.disabled {
   opacity: 0.33;
   cursor: arrow;
@@ -2030,10 +2571,31 @@ a.button--error:link, a.button--error:active, a.button--error:visited, a.button-
 
 .alert {
   padding: 1.5rem;
-  border-radius: 0px;
+  background-color: var(--color-primary-split-light);
+  color: var(--color-primary-split-dark);
 }
-.alert p:last-child {
+.alert *:last-child {
   margin-bottom: 0;
+}
+
+.alert--disabled {
+  background-color: var(--color-state-disabled-split-light);
+  color: var(--color-state-disabled-split-dark);
+}
+
+.alert--success {
+  background-color: var(--color-state-success-split-light);
+  color: var(--color-state-success-split-dark);
+}
+
+.alert--danger {
+  background-color: var(--color-state-danger-split-light);
+  color: var(--color-state-danger-split-dark);
+}
+
+.alert--warning {
+  background-color: var(--color-state-warning-split-light);
+  color: var(--color-state-warning-split-dark);
 }
 
 .m {
@@ -2354,11 +2916,11 @@ a.button--error:link, a.button--error:active, a.button--error:visited, a.button-
 }
 
 .kill-link a {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: var(--color-primary);
+  --color-link-visited: var(--color-primary);
+  --color-link-focus: var(--color-primary);
+  --color-link-hover: var(--color-primary);
+  --color-link-active: var(--color-primary);
 }
 .kill-link a, .kill-link a:link, .kill-link a:visited, .kill-link a:active, .kill-link a:focus, .kill-link a:hover {
   text-decoration: none;
@@ -2383,14 +2945,15 @@ a.button--error:link, a.button--error:active, a.button--error:visited, a.button-
 
 .repo a {
   font-size: 0.75rem;
+  line-height: 1.5rem;
 }
 
 h1 .header-title {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: #641CE8;
+  --color-link-visited: #641CE8;
+  --color-link-focus: #641CE8;
+  --color-link-hover: #641CE8;
+  --color-link-active: #641CE8;
   font-weight: 300;
 }
 h1 .header-title, h1 .header-title:link, h1 .header-title:visited, h1 .header-title:active, h1 .header-title:focus, h1 .header-title:hover {
@@ -2429,9 +2992,7 @@ h1 .header-title, h1 .header-title:link, h1 .header-title:visited, h1 .header-ti
   font-weight: lighter;
 }
 
-code.language-sass,
-code.language-scss,
-code.language-html,
+code.hljs,
 code.code {
   width: 100%;
 }
@@ -2459,13 +3020,13 @@ code.code {
 }
 .pen-header .doc__subtitle,
 .doc__header .doc__subtitle {
-  margin-top: 0.625rem;
+  margin-top: ritmo(2);
   width: 100%;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 .pen-header .tag,
 .doc__header .tag {
-  margin-top: 0.3125rem;
+  margin-top: ritmo(1);
 }
 
 .browser-controls,
@@ -2478,7 +3039,7 @@ code.code {
 }
 
 .pen-preview {
-  height: 18.75rem;
+  height: ritmo(60);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2488,8 +3049,8 @@ code.code {
 .pen-preview .preview-tag {
   position: absolute;
   top: 0.75rem;
-  right: 1.6666666667rem;
-  left: 1.6666666667rem;
+  right: 1rem;
+  left: 1rem;
   margin: 0;
   display: flex;
   align-items: center;
@@ -2504,7 +3065,7 @@ code.code {
   margin: 0 0 0 0.75rem;
 }
 .pen-preview.pen-preview--medium {
-  height: 45rem;
+  height: ritmo(144);
 }
 .pen-preview.pen-preview--full {
   top: 0;
@@ -2548,20 +3109,14 @@ code.code {
 
 .background-contrast {
   background-color: #393541;
-  background-color: #393541;
+  background-color: var(--color-#393541);
+  color: var(--color-#393541-contrast);
 }
 
 .background-contrast--typography {
   background-color: #744E0F;
-  background-color: #744E0F;
-}
-.background-contrast--typography h1, .background-contrast--typography .h1,
-.background-contrast--typography h2, .background-contrast--typography .h2,
-.background-contrast--typography h3, .background-contrast--typography .h3,
-.background-contrast--typography h4, .background-contrast--typography .h4,
-.background-contrast--typography h5, .background-contrast--typography .h5 h6,
-.background-contrast--typography .h6 {
-  color: inherit;
+  color: var(--color-#744E0F);
+  background-color: var(--color-#744E0F-contrast);
 }
 
 .contrast-links {
@@ -2656,11 +3211,11 @@ code.code {
 }
 
 a.set-link {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: red;
+  --color-link-visited: blue;
+  --color-link-focus: purple;
+  --color-link-hover: purple;
+  --color-link-active: green;
   --color-link-decoration: map-get($color, "default");
   --color-link-decoration-hover: map-get($color, "hover");
   text-decoration: underline;
@@ -2674,11 +3229,11 @@ a.set-link:hover, a.set-link:focus {
 }
 
 a.kill-link {
-  --color-link-default: $base;
-  --color-link-visited: $visited;
-  --color-link-focus: $hover;
-  --color-link-hover: $hover;
-  --color-link-active: $active;
+  --color-link-default: purple;
+  --color-link-visited: purple;
+  --color-link-focus: purple;
+  --color-link-hover: purple;
+  --color-link-active: purple;
 }
 a.kill-link, a.kill-link:link, a.kill-link:visited, a.kill-link:active, a.kill-link:focus, a.kill-link:hover {
   text-decoration: none;
@@ -2722,7 +3277,6 @@ h1.poly-fluid-sizing {
 
 .my-minititle {
   font-size: 0.75rem;
-  line-height: 1.25rem;
   font-weight: lighter;
   text-transform: uppercase;
   letter-spacing: 1em;

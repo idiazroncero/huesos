@@ -1,5 +1,6 @@
 ---
 title: inline-list
+hidden: true
 ---
 
 Shortcut to apply an inline styling to `<li>` elements on a `<ul>`or `<ol>`, reset margins and paddings and delete list styles.

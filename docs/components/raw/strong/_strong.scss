@@ -1,10 +1,5 @@
-:root {
-  --text-bold: $font-main-bold;
-}
-
-
 b,
 strong,
 .strong {
-  font-weight: var(--text-bold);
+  font-weight: $font-main-bold;
 }

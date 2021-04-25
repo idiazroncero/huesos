@@ -1,5 +1,6 @@
 ---
 title: set-link($base, $visited, $hover, $active, $link-decoration-data)
+hidden: true
 ---
 
 Sets link sytling, including all possible states.

@@ -1,8 +1,11 @@
 ---
 title: contrast-color($color, $dark, $light)
+hidden: true
 ---
 
 Returns a `$dark` or `$light` color value according to the background-color provided as `$color`.
+
+But... __¿when should we decide that a given color is "too dark" or "too light?__ The threshold of lightness that activate the contrast can also be set using `$lightness-threshold`. 
 
 ### Parameters
 - `$color` - Background-color to check

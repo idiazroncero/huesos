@@ -1,5 +1,6 @@
 ---
 title: kill-link($color)
+hidden: true
 ---
 
 Completely overrides link style to make it appear as plain text. You can define a `$color` to give on each state.

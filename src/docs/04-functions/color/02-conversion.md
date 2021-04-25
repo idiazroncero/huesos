@@ -1,5 +1,6 @@
 ---
 title: Color Conversion
+hidden: true
 ---
 
 Helper functions to convert hexadecimal values to HSL and RBG

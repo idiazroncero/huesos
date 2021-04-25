@@ -1,5 +1,6 @@
 ---
 title: clearfix
+hidden: true
 ---
 
 Aplies a clearfix hack to a wrapper element.

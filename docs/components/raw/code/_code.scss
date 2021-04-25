@@ -5,14 +5,13 @@ var {
   font-family: $font-monospace;
   // Keep the font size relative to its context and smaller.
   line-height: $base-line-height;
-  display: inline-block;
   vertical-align: middle;
   box-decoration-break: clone;
   white-space: nowrap; // Avoid line breaking!
-  margin: 0; // Prevent lobotomized owl from messing with this.
+  margin: 0 !important; // Prevent lobotomized owl from messing with this.
   background-color: var(--color-code-inline-background);
   color: var(--color-code-inline);
-  padding: 0 $code-padding-x;
+  padding: $code-padding-y $code-padding-x;
 
   @if $code-border-radius !=false {
     border-radius: $code-border-radius;

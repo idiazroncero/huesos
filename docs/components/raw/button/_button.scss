@@ -1,12 +1,15 @@
 // Global reset
 .button {
   background: none;
-  border:none;
   cursor:pointer;
   display: inline-block;
   font-size: font-size($button-font-size);
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  @if $button-text-transform {
+    text-transform: $button-text-transform;
+  }
+  @if $button-letter-spacing {
+    letter-spacing: $button-letter-spacing;
+  }
   vertical-align:bottom;
   font-weight: $button-weight;
   font-family: $button-font-family;
@@ -36,28 +39,14 @@ a.button {
 }
 
 // $button-states map states to colors
-@each $key, $value in $button-states {
+@each $key, $value in $buttons {
   .button--#{$key} {
-    @include style-button($value);
+    @include style-button($key);
   }
   a.button--#{$key} {
-    @include style-link-button($value);
+    @include style-link-button($key);
   }
 }
-
-// // Button alternative styles
-// @if $button-alternative-strategies {
-//   @each $strategy, $states in $button-alternative-strategies {
-//     @each $key, $value in $button-states {
-//       .button--#{$key}--#{$strategy} {
-//         @include style-button($value, map-get($states, default), map-get($states, hover));
-//       }
-//       a.button--#{$key}--#{$strategy} {
-//         @include style-link-button($value, map-get($states, default), map-get($states, hover));
-//       }
-//     }
-//   }
-// }
 
 
 .button.disabled {

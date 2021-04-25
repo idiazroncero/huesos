@@ -1,5 +1,6 @@
 ---
 title: layer($top, $right, $bottom, $left, $z-index)
+hidden: true
 ---
 
 Sets an absolutely positioned layer above the closest parent ancestor which has position different to `static`.

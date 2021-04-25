@@ -1,5 +1,6 @@
 ---
 title: block-align($align)
+hidden: true
 ---
 
 Helper mixin that aligns a block element using `margin:auto`.

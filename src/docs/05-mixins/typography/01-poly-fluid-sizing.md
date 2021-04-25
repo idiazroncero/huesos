@@ -1,5 +1,6 @@
 ---
 title: poly-fluid-sizing($property, $map);
+hidden: true
 ---
 
 <div class="mb alert alert--warning">

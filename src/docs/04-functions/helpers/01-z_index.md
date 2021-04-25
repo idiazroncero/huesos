@@ -1,5 +1,6 @@
 ---
 title: z-index($item)
+hidden: true
 ---
 
 Returns the z-index value of the `$item` as defined on the `$z-index` map on `_config.scss`.

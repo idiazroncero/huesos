@@ -1,5 +1,6 @@
 ---
 title: invert-links
+hidden: true
 ---
 
 Apply inverted colors for links using predefined values.

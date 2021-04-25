@@ -1,5 +1,6 @@
 ---
 title: hidden
+hidden: true
 ---
 
 Applies css styles to visually hide the given element without affecting accessibility.

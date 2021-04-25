@@ -1,5 +1,6 @@
 ---
 title: background-split-color($color, $lighten-amount, $darken-amount, $include-links, $invert)
+hidden: true
 ---
 
 Split colors are a different strategy from `background-contrast`. Instead of contrasting a given dark/light color against a background, this mixin receives a `$color` and then applies a `tint()` function to the background and a `shade()` to the text and links.

@@ -22,19 +22,20 @@ a.tag {
     }
 
     @else if $tag-strategy=='split' {
-    //   @include background-split-color(lighten-color($tag-default-color));
+      @include background-split-color(lighten-color($tag-default-color));
     }
   }
 }
 
-@each $key, $value in map-get($colors, state) {
+@each $key, $value in map-get($colors, $state-namespace) {
+  $namespaced-key: '#{$state-namespace}-#{$key}';
   .tag--#{$key} {
     @if $tag-strategy=='contrast' {
-      @include background-contrast($value);
+      @include background-contrast($namespaced-key);
     }
 
     @else if $tag-strategy=='split' {
-    //   @include background-split-color($value);
+      @include background-split-color($namespaced-key);
     }
 
     @else {
@@ -43,17 +44,18 @@ a.tag {
   }
 }
 
-@each $key, $value in map-get($colors, state) {
+@each $key, $value in map-get($colors, 'state') {
+  $namespaced-key: '#{$state-namespace}-#{$key}';
   a.tag--#{$key} {
 
     &:hover,
     &:focus {
       @if $tag-strategy=='contrast' {
-        @include background-contrast(darken-color($value));
+        @include background-contrast($namespaced-key);
       }
 
       @else if $tag-strategy=='split' {
-      //   @include background-split-color(lighten-color($value));
+        @include background-split-color($namespaced-key);
       }
 
       @else {

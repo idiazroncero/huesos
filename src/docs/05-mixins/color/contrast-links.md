@@ -1,5 +1,6 @@
 ---
 title: contrast-links($color)
+hidden: true
 ---
 
 Overrides all `<a>` elements against the provided background `$color`, only if necessary as defined by `$lightness-threshold` config.

@@ -1,6 +1,6 @@
 // --------------------
 // COLOR PALETTE
-// Recommended set of tools: 
+// Recommended set of tools:
 // Palette from color base: https://palx.jxnblk.com/
 // AI-generated palette: http://khroma.co/generator/
 // Semantic colors from base color: https://colors.eva.design/
@@ -92,9 +92,9 @@ $gray-900: hsl(261, 10%, 23%);
 $black: $gray-900;
 $white: #fff;
 
-$lightness-threshold: 65;
+$lightness-threshold: 60;
 
-// We declare themes as a SASS map in order to be able to iterate, 
+// We declare themes as a SASS map in order to be able to iterate,
 // or calculate new colors based on this. This map will be used to generate the
 // actual CSS Custom Properties (variables) that are put into use.
 // These are the mandatory colors, optional ones will be added conditionally.
@@ -133,7 +133,7 @@ $colors : (
   background : (
     body: $white,
     dark: $gray-800,
-    light: $gray-200,
+    light: $gray-100,
   ),
   state : (
     disabled: $gray-500,
@@ -149,7 +149,7 @@ $colors : (
       base: $danger,
       contrast: contrast-color($danger),
       split: (
-        light: $danger-100,
+        light: $danger-200,
         dark: $danger-900,
       )
     ),
@@ -157,7 +157,7 @@ $colors : (
       base: $warning,
       contrast: contrast-color($warning),
       split: (
-        light: $warning-100,
+        light: $warning-200,
         dark: $warning-900,
       )
     )
@@ -251,12 +251,12 @@ $spacer: $base-line-height;
 $gutter: $spacer;
 
 $spacers: (
-  quarter: 0.25, 
-  half : 0.5, 
-  2 : 2, 
-  3 : 3, 
-  4 : 4, 
-  5 : 5, 
+  quarter: 0.25,
+  half : 0.5,
+  2 : 2,
+  3 : 3,
+  4 : 4,
+  5 : 5,
   6 : 6
 );
 
@@ -318,9 +318,9 @@ $figcaption-align: left;
 $quotes: "«" "»" "“" "”";
 
 // Code-like items
-$code-padding-y: $gutter / 4;
-$code-padding-x: $gutter / 4;
-$code-border-radius: 5px;
+$code-padding-y: 2px;
+$code-padding-x: $gutter / 6;
+$code-border-radius: 3px;
 
 // Letter-spacing (always EM units to keep it relative to the element scope)
 $letter-spacing: 0.1em;

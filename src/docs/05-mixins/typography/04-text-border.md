@@ -1,5 +1,6 @@
 ---
 title: text-border($border-color, $border-width, $text-color)
+hidden: true
 ---
 
 Another little trick to pull off from the hat when needed.

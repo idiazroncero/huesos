@@ -1,5 +1,6 @@
 ---
 title: bold($element)
+hidden: true
 ---
 
 Huesos will let you define different bold weights (`$font-main-bold` and `$font-secondary-bold`) for the two typefaces used in a proyect. This way, you can fine-tune your bold weights using specific values, like 300 or 900, instead of the generic and relative __bold__ or __bolder__.

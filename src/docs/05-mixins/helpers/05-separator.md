@@ -1,5 +1,6 @@
 ---
 title: separator($ritmo-lines:$spacer-lines, $border-width:$separator-width $border-color:var(--color-utility-separator))
+hidden: true
 ---
 
 Uses a positive margin bottom, border width and border color to apply an offset and, depending on the `$separators` value, a border.

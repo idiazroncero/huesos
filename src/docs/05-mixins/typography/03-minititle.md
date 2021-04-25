@@ -1,5 +1,6 @@
 ---
 title: minititle($size, $weight, $uppercase, $letter-spacing)
+hidden: true
 ---
 
 Formats a text to apply what we call a _minititle_ (in absence of a better name). You can see minititles all around the web: is that small but highly visible text, usually a heading, that acts as a mini-heading for blocks, sections, etc. 

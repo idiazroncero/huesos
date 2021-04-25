@@ -1,5 +1,6 @@
 ---
 title: set-link-decoration($link-strategy-default, $link-strategy-hover)
+hidden: true
 ---
 
 Sets the link decoration on a `<a>` element, defaults to `$link-strategy` as defined on `_config.scss`.

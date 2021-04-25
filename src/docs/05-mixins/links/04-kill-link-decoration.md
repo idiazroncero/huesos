@@ -1,5 +1,6 @@
 ---
 title: kill-link-decoration($strategy-default, $strategy-hover);
+hidden: true
 ---
 
 Completely removes any link decoration.

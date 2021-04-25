@@ -1,3 +1,19 @@
+/// Returns a dark or light color according to the lightness of the provided color.
+/// 
+/// @group Color
+/// @author Ignacio Díaz-Roncero
+///
+/// @param {String} $color - The color to check against 
+/// @param {String} $dark [var(--color-text-body] - The dark color
+/// @param {String} $light [var(--color-text-body] - The light color
+/// 
+/// @return {String} - The contrasted color
+///
+/// @example scss - Contrast color function
+///   .my-item {
+///     --color-primary-contrast: contrast-color(#ccc);
+///   }
+
 @function contrast-color($color, $dark: var(--color-text-body), $light: var(--color-text-body-contrast)) {
   @if (lightness($color) > $lightness-threshold) {
     @return $dark;
