@@ -501,8 +501,8 @@ $button-color-ratio: 10%; // Ratio to apply for color darkening. Positive for da
 // - split - Background colored dim, font colored dark, based on same color
 // - split-inverse - Inverse of split
 
-$button-strategy-default: 'outline';
-$button-strategy-hover: 'background';
+$button-strategy-default: 'background';
+$button-strategy-hover: 'outline';
 
 $buttons : (
   primary: (

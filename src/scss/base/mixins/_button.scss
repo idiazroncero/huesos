@@ -4,6 +4,7 @@
 
 @mixin button-outline($color) {
   border-color: var(--color-button-#{$color}-default);
+  background-color: transparent;
   color: var(--color-button-#{$color}-default);
 }
 
