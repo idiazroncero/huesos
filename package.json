@@ -37,7 +37,7 @@
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
     "mobius1-selectr": "^2.4.4",
-    "node-sass": "4.5.3",
+    "node-sass": "7.0.0",
     "node-sass-import": "^2.0.1",
     "parcel": "^1.12.3",
     "postcss": "^7.0.2",
